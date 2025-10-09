@@ -209,10 +209,6 @@ See individual repositories for details.
 
 ---
 
-<div align="center">
+**Made with 🔥 for the decentralized web**
 
-**Made with ❤️ for the decentralized web**
-
-[Get Started](getting-started/quickstart.md) • [View on GitHub](https://github.com/tfgrid-studio) • [Community](https://github.com/orgs/tfgrid-compose/discussions)
-
-</div>
+[Get Started](getting-started/quickstart.md) • [View on GitHub](https://github.com/tfgrid-studio)

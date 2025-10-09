@@ -1,15 +1,15 @@
-# TFGrid Compose Documentation
+# TFGrid Studio Documentation
 
-**Comprehensive documentation for TFGrid Compose - Universal deployment orchestrator for ThreeFold Grid**
+**Comprehensive documentation for TFGrid Studio - Complete development platform for ThreeFold Grid**
 
 ---
 
 ## 📖 Documentation Structure
 
-This repository contains complete documentation for the TFGrid Compose platform.
+This repository contains complete documentation for the TFGrid Studio platform.
 
 ### Getting Started
-- **[Introduction](getting-started/introduction.md)** - What is TFGrid Compose
+- **[Introduction](getting-started/introduction.md)** - What is TFGrid Studio
 - **[Installation](getting-started/installation.md)** - Install and configure
 - **[Quick Start](getting-started/quickstart.md)** - Deploy in 5 minutes
 - **[Core Concepts](getting-started/concepts.md)** - Patterns, apps, manifests _(coming soon)_
@@ -123,7 +123,7 @@ This repository contains complete documentation for the TFGrid Compose platform.
 **Coming Soon:** GitHub Pages site with MkDocs Material
 
 The documentation will be available at:
-- `https://tfgrid-compose.github.io/tfgrid-docs/` (planned)
+- `https://tfgrid.studio/tfgrid-docs/` (planned)
 - Beautiful, searchable, mobile-friendly interface
 - Dark mode support
 - Version switching
@@ -174,9 +174,9 @@ Apache 2.0 License - See [LICENSE](LICENSE) file for details.
 
 ## 🔗 Related Repositories
 
-- **[tfgrid-deployer](https://github.com/tfgrid-compose/tfgrid-deployer)** - Main orchestrator
-- **[tfgrid-ai-agent](https://github.com/tfgrid-compose/tfgrid-ai-agent)** - AI coding agent
-- **[tfgrid-compose org](https://github.com/tfgrid-compose)** - All repositories
+- **[tfgrid-compose](https://github.com/tfgrid-studio/tfgrid-compose)** - Main CLI tool
+- **[tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)** - AI coding agent
+- **[TFGrid Studio](https://github.com/tfgrid-studio)** - All repositories
 
 ---
 

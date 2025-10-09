@@ -1,16 +1,16 @@
-# MkDocs Configuration for TFGrid Compose Documentation
-site_name: TFGrid Compose
-site_description: Universal deployment orchestrator for ThreeFold Grid
-site_author: TFGrid Compose Team
-site_url: https://tfgrid-compose.github.io/tfgrid-docs/
+# MkDocs Configuration for TFGrid Studio Documentation
+site_name: TFGrid Studio
+site_description: Complete development platform for ThreeFold Grid
+site_author: TFGrid Studio Team
+site_url: https://docs.tfgrid.studio/
 
 # Repository
-repo_name: tfgrid-compose/tfgrid-docs
-repo_url: https://github.com/tfgrid-compose/tfgrid-docs
+repo_name: tfgrid-studio/tfgrid-docs
+repo_url: https://github.com/tfgrid-studio/tfgrid-docs
 edit_uri: edit/main/docs/
 
 # Copyright
-copyright: Copyright &copy; 2025 TFGrid Compose - Apache 2.0 License
+copyright: Copyright &copy; 2025 TFGrid Studio - Apache 2.0 License
 
 # Theme
 theme:
@@ -93,7 +93,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/tfgrid-compose
+      link: https://github.com/tfgrid-studio
       name: TFGrid Compose on GitHub
     - icon: fontawesome/brands/discord
       link: https://github.com/orgs/tfgrid-compose/discussions

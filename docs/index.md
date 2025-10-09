@@ -1,14 +1,14 @@
-# TFGrid Compose Documentation
+# TFGrid Studio Documentation
 
-**Universal deployment orchestrator for ThreeFold Grid**
+**Complete development platform for ThreeFold Grid**
 
-Deploy applications to decentralized infrastructure as simply as `tfgrid-compose up`.
+Build, deploy, and scale decentralized applications with `tfgrid-compose` CLI and integrated tools.
 
 ---
 
-## 🎯 What is TFGrid Compose?
+## 🎯 What is TFGrid Studio?
 
-TFGrid Compose is a **production-ready deployment platform** that brings docker-compose-style simplicity to ThreeFold Grid. It unifies proven deployment patterns into a single, powerful CLI tool.
+**TFGrid Studio** is a complete development platform for ThreeFold Grid. The flagship tool, **tfgrid-compose**, brings docker-compose-style simplicity to decentralized deployments.
 
 ```bash
 # Deploy any application with one command
@@ -25,7 +25,7 @@ tfgrid-compose up my-app
 
 | Component | Status | Description |
 |-----------|--------|-------------|
-| **tfgrid-deployer** | ✅ v1.0.0 | Universal orchestrator with single-vm pattern |
+| **tfgrid-compose** | ✅ v1.0.0 | Universal orchestrator with single-vm pattern |
 | **tfgrid-ai-agent** | ✅ v2.0.0 | AI coding agent (reference application) |
 | **Single-VM Pattern** | ✅ Production | Deploy isolated VMs with private networking |
 | **Context Files** | ✅ Production | Simplified workflow with `.tfgrid-compose.yaml` |
@@ -44,12 +44,12 @@ tfgrid-compose up my-app
 
 ## 🚀 Quick Start
 
-### 1. Install tfgrid-deployer
+### 1. Install tfgrid-compose
 
 ```bash
 # Clone and install
-git clone https://github.com/tfgrid-compose/tfgrid-deployer
-cd tfgrid-deployer
+git clone https://github.com/tfgrid-studio/tfgrid-compose
+cd tfgrid-compose
 make install
 
 # Verify installation
@@ -90,7 +90,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 
 ### Getting Started
 - **[Introduction](getting-started/introduction.md)** - What is TFGrid Compose and why use it
-- **[Installation](getting-started/installation.md)** - Install and configure tfgrid-deployer
+- **[Installation](getting-started/installation.md)** - Install and configure tfgrid-compose
 - **[Quick Start](getting-started/quickstart.md)** - Deploy your first application in 5 minutes
 - **[Core Concepts](getting-started/concepts.md)** - Understand patterns, apps, and manifests
 
@@ -185,9 +185,9 @@ Built from **proven, working implementations**:
 
 ## 🔗 Links
 
-- **GitHub Organization:** [github.com/tfgrid-compose](https://github.com/tfgrid-compose)
-- **Main Repository:** [tfgrid-deployer](https://github.com/tfgrid-compose/tfgrid-deployer)
-- **AI Agent:** [tfgrid-ai-agent](https://github.com/tfgrid-compose/tfgrid-ai-agent)
+- **GitHub Organization:** [github.com/tfgrid-studio](https://github.com/tfgrid-studio)
+- **Main Repository:** [tfgrid-compose](https://github.com/tfgrid-studio/tfgrid-compose)
+- **AI Agent:** [tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)
 - **ThreeFold Grid:** [threefold.io](https://threefold.io)
 
 ---
@@ -213,6 +213,6 @@ See individual repositories for details.
 
 **Made with ❤️ for the decentralized web**
 
-[Get Started](getting-started/quickstart.md) • [View on GitHub](https://github.com/tfgrid-compose) • [Community](https://github.com/orgs/tfgrid-compose/discussions)
+[Get Started](getting-started/quickstart.md) • [View on GitHub](https://github.com/tfgrid-studio) • [Community](https://github.com/orgs/tfgrid-compose/discussions)
 
 </div>

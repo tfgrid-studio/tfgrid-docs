@@ -370,8 +370,8 @@ make deploy
 
 **After:**
 ```bash
-git clone https://github.com/tfgrid-compose/tfgrid-deployer
-cd tfgrid-deployer
+git clone https://github.com/tfgrid-studio/tfgrid-compose
+cd tfgrid-compose
 make install
 tfgrid-compose up ../tfgrid-ai-agent
 ```
@@ -395,10 +395,10 @@ tfgrid-compose up ../tfgrid-ai-agent
 - [mik-tf/ai-agent](https://github.com/mik-tf/ai-agent)
 
 ### TFGrid Compose Organization
-- [tfgrid-compose](https://github.com/tfgrid-compose)
-- [tfgrid-deployer](https://github.com/tfgrid-compose/tfgrid-deployer)
-- [tfgrid-ai-agent](https://github.com/tfgrid-compose/tfgrid-ai-agent)
-- [tfgrid-docs](https://github.com/tfgrid-compose/tfgrid-docs)
+- [tfgrid-compose](https://github.com/tfgrid-studio)
+- [tfgrid-compose](https://github.com/tfgrid-studio/tfgrid-compose)
+- [tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)
+- [tfgrid-docs](https://github.com/tfgrid-studio/tfgrid-docs)
 
 ---
 
@@ -412,7 +412,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 - tfgrid-k3s: Apache 2.0 License
 
 **TFGrid Compose:**
-- tfgrid-deployer: Apache 2.0 License
+- tfgrid-compose: Apache 2.0 License
 - tfgrid-ai-agent: Apache 2.0 License
 - Commercial repos: Business Source License / Proprietary
 

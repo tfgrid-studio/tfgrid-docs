@@ -60,7 +60,7 @@ TFGrid Compose separates concerns into three layers:
                         ↓
 ┌─────────────────────────────────────────────────────┐
 │  Deployer (Universal Orchestrator)                  │
-│  tfgrid-deployer                                    │
+│  tfgrid-compose                                    │
 │  • Pattern system (single-vm, gateway, k3s)         │
 │  • Terraform + Ansible automation                   │
 │  • State management                                 │
@@ -334,7 +334,7 @@ These repositories contain complete, working code that has been validated in rea
 
 ## Next Steps
 
-- **[Installation](installation.md)** - Install tfgrid-deployer and prerequisites
+- **[Installation](installation.md)** - Install tfgrid-compose and prerequisites
 - **[Quick Start](quickstart.md)** - Deploy your first application in 5 minutes
 - **[Core Concepts](concepts.md)** - Deep dive into patterns and manifests
 

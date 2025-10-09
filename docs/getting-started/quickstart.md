@@ -17,19 +17,19 @@ Before starting, ensure you have:
 
 ```bash
 # Create workspace
-mkdir -p ~/code/github.com/tfgrid-compose
-cd ~/code/github.com/tfgrid-compose
+mkdir -p ~/code/github.com/tfgrid-studio
+cd ~/code/github.com/tfgrid-studio
 
 # Clone deployer
-git clone https://github.com/tfgrid-compose/tfgrid-deployer
-cd tfgrid-deployer
+git clone https://github.com/tfgrid-studio/tfgrid-compose
+cd tfgrid-compose
 
 # Install CLI
 make install
 
 # Clone an app to deploy (AI agent example)
-cd ~/code/github.com/tfgrid-compose
-git clone https://github.com/tfgrid-compose/tfgrid-ai-agent
+cd ~/code/github.com/tfgrid-studio
+git clone https://github.com/tfgrid-studio/tfgrid-ai-agent
 ```
 
 ---
@@ -54,7 +54,7 @@ export TF_VAR_mnemonic=$(cat ~/.config/threefold/mnemonic)
 Context files make deployment commands simpler:
 
 ```bash
-cd ~/code/github.com/tfgrid-compose/tfgrid-deployer
+cd ~/code/github.com/tfgrid-studio/tfgrid-compose
 echo "app: ../tfgrid-ai-agent" > .tfgrid-compose.yaml
 ```
 
@@ -169,11 +169,11 @@ Here's the entire workflow in one go:
 
 ```bash
 # Setup (one-time)
-mkdir -p ~/code/github.com/tfgrid-compose
-cd ~/code/github.com/tfgrid-compose
-git clone https://github.com/tfgrid-compose/tfgrid-deployer
-git clone https://github.com/tfgrid-compose/tfgrid-ai-agent
-cd tfgrid-deployer
+mkdir -p ~/code/github.com/tfgrid-studio
+cd ~/code/github.com/tfgrid-studio
+git clone https://github.com/tfgrid-studio/tfgrid-compose
+git clone https://github.com/tfgrid-studio/tfgrid-ai-agent
+cd tfgrid-compose
 make install
 
 # Configure
@@ -301,7 +301,7 @@ tfgrid-compose up
 sudo wg show
 
 # Reconnect
-cd ~/code/github.com/tfgrid-compose/tfgrid-deployer
+cd ~/code/github.com/tfgrid-studio/tfgrid-compose
 make wg APP=../tfgrid-ai-agent
 
 # Test SSH
@@ -312,7 +312,7 @@ tfgrid-compose ssh
 
 ```bash
 # Re-install CLI
-cd ~/code/github.com/tfgrid-compose/tfgrid-deployer
+cd ~/code/github.com/tfgrid-studio/tfgrid-compose
 make install
 
 # Or add to PATH manually
@@ -377,4 +377,4 @@ tfgrid-compose down      # Destroy
 
 **Congratulations!** You've successfully deployed on ThreeFold Grid. 🚀
 
-Need help? [Join our community](https://github.com/orgs/tfgrid-compose/discussions) or [open an issue](https://github.com/tfgrid-compose/tfgrid-deployer/issues).
+Need help? [Join our community](https://github.com/orgs/tfgrid-compose/discussions) or [open an issue](https://github.com/tfgrid-studio/tfgrid-compose/issues).

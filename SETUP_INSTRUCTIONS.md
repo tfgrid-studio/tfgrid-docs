@@ -9,7 +9,7 @@ Quick guide to deploy the documentation site.
 ### 1. Push to GitHub
 
 ```bash
-cd /home/pcone/code/github.com/tfgrid-compose/tfgrid-docs
+cd /home/pcone/code/github.com/tfgrid-studio/tfgrid-docs
 
 # Add all files
 git add .
@@ -32,7 +32,7 @@ git push origin main
 
 ### 2. Enable GitHub Pages
 
-1. Go to: `https://github.com/tfgrid-compose/tfgrid-docs/settings/pages`
+1. Go to: `https://github.com/tfgrid-studio/tfgrid-docs/settings/pages`
 2. Under "Source", select: **Deploy from a branch**
 3. Select branch: **gh-pages**
 4. Select folder: **/ (root)**
@@ -41,13 +41,13 @@ git push origin main
 ### 3. Wait for Deployment
 
 - GitHub Actions will automatically build and deploy
-- Check progress: `https://github.com/tfgrid-compose/tfgrid-docs/actions`
+- Check progress: `https://github.com/tfgrid-studio/tfgrid-docs/actions`
 - First deployment takes ~2-3 minutes
 
 ### 4. Access Documentation
 
 Your docs will be live at:
-- **Default:** `https://tfgrid-compose.github.io/tfgrid-docs/`
+- **Default:** `https://tfgrid.studio/tfgrid-docs/`
 - **Custom domain (optional):** `https://docs.tfgrid-compose.io/`
 
 ---
@@ -68,7 +68,7 @@ pipenv install mkdocs-material mkdocs-minify-plugin
 ### Serve Locally
 
 ```bash
-cd /home/pcone/code/github.com/tfgrid-compose/tfgrid-docs
+cd /home/pcone/code/github.com/tfgrid-studio/tfgrid-docs
 
 # Start development server
 mkdocs serve
@@ -151,7 +151,7 @@ theme:
    ```
 
 2. Configure DNS:
-   - Add CNAME record: `docs` → `tfgrid-compose.github.io`
+   - Add CNAME record: `docs` → `tfgrid.studio`
 
 3. Enable in GitHub Pages settings
 
@@ -252,9 +252,9 @@ After deployment, verify:
 
 ## 🔗 Useful Links
 
-- **Live Site:** https://tfgrid-compose.github.io/tfgrid-docs/
-- **GitHub Repo:** https://github.com/tfgrid-compose/tfgrid-docs
-- **Actions:** https://github.com/tfgrid-compose/tfgrid-docs/actions
+- **Live Site:** https://tfgrid.studio/tfgrid-docs/
+- **GitHub Repo:** https://github.com/tfgrid-studio/tfgrid-docs
+- **Actions:** https://github.com/tfgrid-studio/tfgrid-docs/actions
 - **MkDocs Material:** https://squidfunk.github.io/mkdocs-material/
 - **MkDocs:** https://www.mkdocs.org/
 

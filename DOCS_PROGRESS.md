@@ -45,7 +45,7 @@
 
 5. **roadmap/current.md** ✅ - Current status documentation
    - v1.0.0 production ready status
-   - tfgrid-deployer features
+   - tfgrid-compose features
    - tfgrid-ai-agent features
    - Single-VM pattern details
    - Feature completion status
@@ -214,7 +214,7 @@
 1. Push to GitHub
 2. Enable GitHub Pages in repository settings
 3. Select "gh-pages" branch as source
-4. Documentation will be live at: `https://tfgrid-compose.github.io/tfgrid-docs/`
+4. Documentation will be live at: `https://tfgrid.studio/tfgrid-docs/`
 
 ### Features Configured:
 - ✅ Material Design theme

@@ -6,7 +6,7 @@
 
 ## ✅ Production Ready Components
 
-### tfgrid-deployer (v1.0.0)
+### tfgrid-compose (v1.0.0)
 
 **Status:** ✅ Production Ready  
 **Grade:** 9/10

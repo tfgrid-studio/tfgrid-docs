@@ -67,8 +67,8 @@ git --version
 
 ```bash
 # Clone repository
-git clone https://github.com/tfgrid-compose/tfgrid-deployer
-cd tfgrid-deployer
+git clone https://github.com/tfgrid-studio/tfgrid-compose
+cd tfgrid-compose
 
 # Run install script (automatically sets up PATH)
 make install
@@ -86,8 +86,8 @@ The install script:
 
 ```bash
 # Clone repository
-git clone https://github.com/tfgrid-compose/tfgrid-deployer
-cd tfgrid-deployer
+git clone https://github.com/tfgrid-studio/tfgrid-compose
+cd tfgrid-compose
 
 # Make CLI executable
 chmod +x cli/tfgrid-compose
@@ -170,18 +170,18 @@ TFGrid Compose works best with an organized workspace structure:
 
 ```bash
 # Create standard workspace
-mkdir -p ~/code/github.com/tfgrid-compose
-cd ~/code/github.com/tfgrid-compose
+mkdir -p ~/code/github.com/tfgrid-studio
+cd ~/code/github.com/tfgrid-studio
 
 # Clone deployer
-git clone https://github.com/tfgrid-compose/tfgrid-deployer
+git clone https://github.com/tfgrid-studio/tfgrid-compose
 
 # Clone apps you want to deploy
-git clone https://github.com/tfgrid-compose/tfgrid-ai-agent
+git clone https://github.com/tfgrid-studio/tfgrid-ai-agent
 
 # Your workspace should look like:
-# ~/code/github.com/tfgrid-compose/
-# ├── tfgrid-deployer/
+# ~/code/github.com/tfgrid-studio/
+# ├── tfgrid-compose/
 # └── tfgrid-ai-agent/
 ```
 
@@ -215,7 +215,7 @@ tfgrid-compose --help
 
 ```bash
 # Run built-in validation
-cd tfgrid-deployer
+cd tfgrid-compose
 make check-prereqs
 
 # Should verify:
@@ -229,7 +229,7 @@ make check-prereqs
 
 ```bash
 # Deploy the AI agent to verify everything works
-cd ~/code/github.com/tfgrid-compose/tfgrid-deployer
+cd ~/code/github.com/tfgrid-studio/tfgrid-compose
 tfgrid-compose up ../tfgrid-ai-agent
 
 # If successful, you'll see:
@@ -254,7 +254,7 @@ tfgrid-compose down ../tfgrid-ai-agent
 which tfgrid-compose
 
 # If not found, add manually:
-export PATH="$PATH:$HOME/code/github.com/tfgrid-compose/tfgrid-deployer/cli"
+export PATH="$PATH:$HOME/code/github.com/tfgrid-studio/tfgrid-compose/cli"
 ```
 
 ### Mnemonic Not Set
@@ -271,7 +271,7 @@ export TF_VAR_mnemonic=$(cat ~/.config/threefold/mnemonic)
 
 ```bash
 # Make CLI executable
-chmod +x ~/code/github.com/tfgrid-compose/tfgrid-deployer/cli/tfgrid-compose
+chmod +x ~/code/github.com/tfgrid-studio/tfgrid-compose/cli/tfgrid-compose
 
 # Fix mnemonic permissions
 chmod 600 ~/.config/threefold/mnemonic
@@ -323,7 +323,7 @@ Create a context file to avoid specifying app paths:
 
 ```bash
 # In your deployer directory
-cd ~/code/github.com/tfgrid-compose/tfgrid-deployer
+cd ~/code/github.com/tfgrid-studio/tfgrid-compose
 echo "app: ../tfgrid-ai-agent" > .tfgrid-compose.yaml
 
 # Now you can run commands without app path:
@@ -382,7 +382,7 @@ Installation complete! 🎉
 To upgrade to the latest version:
 
 ```bash
-cd ~/code/github.com/tfgrid-compose/tfgrid-deployer
+cd ~/code/github.com/tfgrid-studio/tfgrid-compose
 git pull origin main
 
 # Re-install if needed
@@ -404,7 +404,7 @@ rm ~/.local/bin/tfgrid-compose
 # Fish: nano ~/.config/fish/config.fish
 
 # Remove workspace (optional)
-rm -rf ~/code/github.com/tfgrid-compose
+rm -rf ~/code/github.com/tfgrid-studio
 ```
 
 ---

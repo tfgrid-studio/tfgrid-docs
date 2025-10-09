@@ -4,6 +4,9 @@ site_description: Universal deployment orchestrator for ThreeFold Grid
 site_author: TFGrid Compose Team
 site_url: https://tfgrid-compose.github.io/tfgrid-docs/
 
+# Documentation directory (use root instead of default 'docs/')
+docs_dir: .
+
 # Repository
 repo_name: tfgrid-compose/tfgrid-docs
 repo_url: https://github.com/tfgrid-compose/tfgrid-docs

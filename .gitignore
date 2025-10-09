@@ -1,4 +1,7 @@
-# Build output
+# MkDocs build output
+site/
+
+# Jekyll build output (legacy)
 _site/
 .jekyll-cache/
 .jekyll-metadata

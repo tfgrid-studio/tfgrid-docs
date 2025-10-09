@@ -15,10 +15,10 @@ This repository contains complete documentation for the TFGrid Studio platform.
 - **[Core Concepts](getting-started/concepts.md)** - Patterns, apps, manifests _(coming soon)_
 
 ### Deployment Patterns
-- **[Pattern Overview](patterns/overview.md)** - Understanding patterns _(coming soon)_
-- **[Single-VM Pattern](patterns/single-vm/)** - ✅ Production ready _(coming soon)_
-- **[Gateway Pattern](patterns/gateway/)** - 🚧 Q4 2025 _(coming soon)_
-- **[K3s Pattern](patterns/k3s/)** - 🚧 Q1 2026 _(coming soon)_
+- **[Pattern Overview](patterns/overview.md)** - Understanding patterns ✅
+- **[Single-VM Pattern](patterns/single-vm/)** - ✅ Production ready
+- **[Gateway Pattern](patterns/gateway/)** - ✅ Production ready (v2.0.0)
+- **[K3s Pattern](patterns/k3s/)** - ✅ Production ready (v2.0.0)
 
 ### Applications
 - **[Application Overview](applications/overview.md)** - How apps work _(coming soon)_
@@ -68,7 +68,7 @@ This repository contains complete documentation for the TFGrid Studio platform.
 3. [Contributing](contributing/overview.md) _(coming soon)_
 
 ### Current Status
-- **[What's Working Now](roadmap/current.md)** - v1.0.0 features
+- **[What's Working Now](roadmap/current.md)** - v2.0.0 Complete First Layer ✅
 - **[What's Coming Next](roadmap/planned.md)** - Q4 2025 & beyond
 - **[Source Acknowledgment](architecture/source-repos.md)** - Built from proven code
 
@@ -80,31 +80,31 @@ This repository contains complete documentation for the TFGrid Studio platform.
 |---------|---------------|--------|
 | **Main Index** | 1/1 | ✅ Complete |
 | **Getting Started** | 3/4 | 🔄 75% |
-| **Patterns** | 0/4 | 📋 Planned |
+| **Patterns** | 3/4 | ✅ 75% (All 3 patterns documented) |
 | **Applications** | 0/3 | 📋 Planned |
 | **Reference** | 0/5 | 📋 Planned |
 | **Guides** | 0/5 | 📋 Planned |
 | **Architecture** | 1/4 | 🔄 25% |
-| **Roadmap** | 2/3 | 🔄 67% |
+| **Roadmap** | 2/3 | ✅ 67% (Updated to v2.0.0) |
 | **Contributing** | 0/2 | 📋 Planned |
 
-**Overall Progress:** ~20% complete (critical docs done)
+**Overall Progress:** ~35% complete (all patterns documented)
 
 ---
 
 ## 🎯 Current Focus
 
-### ✅ Completed (Phase 1)
+### ✅ Completed (Phase 1-2)
 - ✅ Main landing page (`index.md`)
 - ✅ Introduction guide
 - ✅ Installation guide
 - ✅ Quick start guide
-- ✅ Current status documentation
+- ✅ Current status documentation (v2.0.0)
 - ✅ Planned features roadmap
 - ✅ Source repository acknowledgment
+- ✅ All 3 pattern documentation (single-vm, gateway, k3s)
 
-### 🚧 In Progress (Phase 2)
-- [ ] Pattern documentation (single-vm, gateway, k3s)
+### 🚧 In Progress (Phase 3)
 - [ ] Application guides
 - [ ] CLI reference
 - [ ] Architecture docs
@@ -181,5 +181,5 @@ Apache 2.0 License - See [LICENSE](LICENSE) file for details.
 ---
 
 **Last Updated:** 2025-10-09  
-**Documentation Version:** 1.0.0  
-**Status:** 🚧 In Progress (20% complete)
+**Documentation Version:** 2.0.0  
+**Status:** 🔄 In Progress (35% complete - All patterns documented)

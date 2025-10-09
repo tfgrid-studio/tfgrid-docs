@@ -1,0 +1,183 @@
+# MkDocs Configuration for TFGrid Compose Documentation
+site_name: TFGrid Compose
+site_description: Universal deployment orchestrator for ThreeFold Grid
+site_author: TFGrid Compose Team
+site_url: https://tfgrid-compose.github.io/tfgrid-docs/
+
+# Repository
+repo_name: tfgrid-compose/tfgrid-docs
+repo_url: https://github.com/tfgrid-compose/tfgrid-docs
+edit_uri: edit/main/
+
+# Copyright
+copyright: Copyright &copy; 2025 TFGrid Compose - Apache 2.0 License
+
+# Theme
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.action.view
+  
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - minify:
+      minify_html: true
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tfgrid-compose
+      name: TFGrid Compose on GitHub
+    - icon: fontawesome/brands/discord
+      link: https://github.com/orgs/tfgrid-compose/discussions
+      name: Join our community
+  
+  version:
+    provider: mike
+    default: latest
+  
+  status:
+    production: Production Ready
+    planned: Coming Soon
+    wip: Work in Progress
+
+# Navigation
+nav:
+  - Home: index.md
+  
+  - Getting Started:
+    - Introduction: getting-started/introduction.md
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+    - Core Concepts: getting-started/concepts.md
+  
+  - Patterns:
+    - Overview: patterns/overview.md
+    - Single-VM:
+      - Overview: patterns/single-vm/README.md
+      - Guide: patterns/single-vm/guide.md
+      - Examples: patterns/single-vm/examples.md
+      - Reference: patterns/single-vm/reference.md
+    - Gateway:
+      - Overview: patterns/gateway/README.md
+      - Guide: patterns/gateway/guide.md
+      - Examples: patterns/gateway/examples.md
+      - Migration: patterns/gateway/migration.md
+    - K3s:
+      - Overview: patterns/k3s/README.md
+      - Guide: patterns/k3s/guide.md
+      - Examples: patterns/k3s/examples.md
+      - Migration: patterns/k3s/migration.md
+  
+  - Applications:
+    - Overview: applications/overview.md
+    - TFGrid AI Agent:
+      - Overview: applications/tfgrid-ai-agent/README.md
+      - Quick Start: applications/tfgrid-ai-agent/quickstart.md
+      - Workflows: applications/tfgrid-ai-agent/workflows.md
+      - Reference: applications/tfgrid-ai-agent/reference.md
+    - Creating Apps: applications/creating-apps.md
+  
+  - CLI Reference:
+    - Commands: reference/cli.md
+    - App Manifest: reference/manifest.md
+    - Context File: reference/context-file.md
+    - State Management: reference/state.md
+    - Environment: reference/environment.md
+  
+  - Guides:
+    - Migration: guides/migration.md
+    - Advanced Deployment: guides/deployment.md
+    - Networking: guides/networking.md
+    - Security: guides/security.md
+    - Troubleshooting: guides/troubleshooting.md
+  
+  - Architecture:
+    - Overview: architecture/overview.md
+    - Design Decisions: architecture/design-decisions.md
+    - Source Repositories: architecture/source-repos.md
+    - Comparison: architecture/comparison.md
+  
+  - Roadmap:
+    - Current Status: roadmap/current.md
+    - Planned Features: roadmap/planned.md
+    - Changelog: roadmap/changelog.md
+  
+  - Contributing:
+    - Overview: contributing/overview.md
+    - Development: contributing/development.md
+    - Patterns: contributing/patterns.md
+    - Apps: contributing/apps.md
+
+# Google Analytics (optional - add your tracking ID)
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX

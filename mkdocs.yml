@@ -4,13 +4,10 @@ site_description: Universal deployment orchestrator for ThreeFold Grid
 site_author: TFGrid Compose Team
 site_url: https://tfgrid-compose.github.io/tfgrid-docs/
 
-# Documentation directory (use root instead of default 'docs/')
-docs_dir: .
-
 # Repository
 repo_name: tfgrid-compose/tfgrid-docs
 repo_url: https://github.com/tfgrid-compose/tfgrid-docs
-edit_uri: edit/main/
+edit_uri: edit/main/docs/
 
 # Copyright
 copyright: Copyright &copy; 2025 TFGrid Compose - Apache 2.0 License
@@ -121,63 +118,12 @@ nav:
     - Quick Start: getting-started/quickstart.md
     - Core Concepts: getting-started/concepts.md
   
-  - Patterns:
-    - Overview: patterns/overview.md
-    - Single-VM:
-      - Overview: patterns/single-vm/README.md
-      - Guide: patterns/single-vm/guide.md
-      - Examples: patterns/single-vm/examples.md
-      - Reference: patterns/single-vm/reference.md
-    - Gateway:
-      - Overview: patterns/gateway/README.md
-      - Guide: patterns/gateway/guide.md
-      - Examples: patterns/gateway/examples.md
-      - Migration: patterns/gateway/migration.md
-    - K3s:
-      - Overview: patterns/k3s/README.md
-      - Guide: patterns/k3s/guide.md
-      - Examples: patterns/k3s/examples.md
-      - Migration: patterns/k3s/migration.md
-  
-  - Applications:
-    - Overview: applications/overview.md
-    - TFGrid AI Agent:
-      - Overview: applications/tfgrid-ai-agent/README.md
-      - Quick Start: applications/tfgrid-ai-agent/quickstart.md
-      - Workflows: applications/tfgrid-ai-agent/workflows.md
-      - Reference: applications/tfgrid-ai-agent/reference.md
-    - Creating Apps: applications/creating-apps.md
-  
-  - CLI Reference:
-    - Commands: reference/cli.md
-    - App Manifest: reference/manifest.md
-    - Context File: reference/context-file.md
-    - State Management: reference/state.md
-    - Environment: reference/environment.md
-  
-  - Guides:
-    - Migration: guides/migration.md
-    - Advanced Deployment: guides/deployment.md
-    - Networking: guides/networking.md
-    - Security: guides/security.md
-    - Troubleshooting: guides/troubleshooting.md
-  
   - Architecture:
-    - Overview: architecture/overview.md
-    - Design Decisions: architecture/design-decisions.md
     - Source Repositories: architecture/source-repos.md
-    - Comparison: architecture/comparison.md
   
   - Roadmap:
     - Current Status: roadmap/current.md
     - Planned Features: roadmap/planned.md
-    - Changelog: roadmap/changelog.md
-  
-  - Contributing:
-    - Overview: contributing/overview.md
-    - Development: contributing/development.md
-    - Patterns: contributing/patterns.md
-    - Apps: contributing/apps.md
 
 # Google Analytics (optional - add your tracking ID)
 # extra:

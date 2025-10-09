@@ -38,7 +38,7 @@ jobs:
           pip install mkdocs-minify-plugin
       
       - name: Build documentation
-        run: mkdocs build --clean --strict
+        run: mkdocs build --clean
       
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

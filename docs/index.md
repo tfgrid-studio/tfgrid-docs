@@ -4,6 +4,8 @@
 
 Build, deploy, and scale decentralized applications with `tfgrid-compose` CLI and integrated tools.
 
+> 🌐 **New here?** Check out our [main website](https://tfgrid.studio) for an overview of TFGrid Studio, pricing, and features.
+
 ---
 
 ## 🎯 What is TFGrid Studio?

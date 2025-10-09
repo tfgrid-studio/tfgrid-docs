@@ -92,11 +92,14 @@ plugins:
 # Extra
 extra:
   social:
+    - icon: fontawesome/solid/house
+      link: https://tfgrid.studio
+      name: TFGrid Studio Main Site
     - icon: fontawesome/brands/github
       link: https://github.com/tfgrid-studio
-      name: TFGrid Compose on GitHub
-    - icon: fontawesome/brands/discord
-      link: https://github.com/orgs/tfgrid-compose/discussions
+      name: TFGrid Studio on GitHub
+    - icon: fontawesome/solid/comments
+      link: https://github.com/orgs/tfgrid-studio/discussions
       name: Join our community
   
   version:

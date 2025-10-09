@@ -185,16 +185,18 @@ Built from **proven, working implementations**:
 
 ## 🔗 Links
 
-- **GitHub Organization:** [github.com/tfgrid-studio](https://github.com/tfgrid-studio)
-- **Main Repository:** [tfgrid-compose](https://github.com/tfgrid-studio/tfgrid-compose)
-- **AI Agent:** [tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)
-- **ThreeFold Grid:** [threefold.io](https://threefold.io)
+- **Website:** [tfgrid.studio](https://tfgrid.studio) - Marketing site
+- **Documentation:** [docs.tfgrid.studio](https://docs.tfgrid.studio) - You are here!
+- **GitHub:** [github.com/tfgrid-studio](https://github.com/tfgrid-studio) - Organization
+- **CLI Tool:** [tfgrid-compose](https://github.com/tfgrid-studio/tfgrid-compose) - Main repository
+- **AI Agent:** [tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent) - AI development
+- **ThreeFold Grid:** [threefold.io](https://threefold.io) - Infrastructure
 
 ---
 
 ## 🤝 Community & Support
 
-- **Discussions:** [GitHub Discussions](https://github.com/orgs/tfgrid-compose/discussions)
+- **Discussions:** [GitHub Discussions](https://github.com/orgs/tfgrid-studio/discussions)
 - **Issues:** Open issues in respective repositories
 - **Contributing:** See [contributing guide](contributing/overview.md)
 

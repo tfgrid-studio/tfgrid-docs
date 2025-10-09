@@ -234,6 +234,23 @@ tfgrid-compose helm list
 
 ---
 
+## ✅ Completed: Brand & Website (Oct 9, 2025)
+
+**What was delivered:**
+- ✅ **Rebranded to TFGrid Studio** - Better positioning as complete platform
+- ✅ **Marketing website** ([tfgrid.studio](https://tfgrid.studio)) - Modern Astro + Tailwind site
+- ✅ **Documentation site** ([docs.tfgrid.studio](https://docs.tfgrid.studio)) - MkDocs Material
+- ✅ **Renamed repos** - tfgrid-deployer → tfgrid-compose (more accurate)
+- ✅ **GitHub organization** - github.com/tfgrid-studio
+
+**Impact:**
+- Professional brand presence
+- Clear product positioning
+- Zero-cost hosting (GitHub Pages)
+- Fast, modern web stack
+
+---
+
 ## 📋 Q2 2026: Advanced Features
 
 ### v2.0 Enhancements

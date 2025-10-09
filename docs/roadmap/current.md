@@ -1,15 +1,21 @@
 # Current Status - v1.0.0
 
-**Production Ready: October 8, 2025**
 
 ---
 
 ## ✅ Production Ready Components
 
+### Brand & Web Presence
+
+**Organization:** tfgrid-studio (rebranded Oct 9, 2025)  
+**Website:** [tfgrid.studio](https://tfgrid.studio) - ✅ Live  
+**Documentation:** [docs.tfgrid.studio](https://docs.tfgrid.studio) - ✅ Live
+
 ### tfgrid-compose (v1.0.0)
 
 **Status:** ✅ Production Ready  
-**Grade:** 9/10
+**Grade:** 9/10  
+**Note:** Renamed from tfgrid-deployer (Oct 9, 2025)
 
 **Core Features:**
 - ✅ Full deployment orchestration (Terraform + Ansible + WireGuard)

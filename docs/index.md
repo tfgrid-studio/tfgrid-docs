@@ -98,9 +98,9 @@ tfgrid-compose up ../tfgrid-ai-agent
 
 ### Deployment Patterns
 - **[Pattern Overview](patterns/overview.md)** - Understanding the pattern system
-- **[Single-VM Pattern](patterns/single-vm/)** - ✅ Production ready
-- **[Gateway Pattern](patterns/gateway/)** - ✅ Production ready
-- **[K3s Pattern](patterns/k3s/)** - ✅ Production ready
+- **[Single-VM Pattern](patterns/single-vm.md)** - ✅ Production ready
+- **[Gateway Pattern](patterns/gateway.md)** - ✅ Production ready
+- **[K3s Pattern](patterns/k3s.md)** - ✅ Production ready
 
 ### Applications
 - **[Application Overview](applications/overview.md)** - How apps work in TFGrid Compose

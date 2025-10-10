@@ -63,7 +63,29 @@ git --version
 
 ## Install TFGrid Compose
 
-### Method 1: Install Script (Recommended)
+### Method 1: One-Line Installer (Recommended)
+
+```bash
+curl -sSL install.tfgrid.studio/install.sh | sh
+```
+
+The installer automatically:
+- ✅ Checks prerequisites (git, make)
+- ✅ Clones tfgrid-compose repository to `~/.tfgrid/`
+- ✅ Installs CLI to `~/.local/bin/`
+- ✅ Adds to PATH in your shell config
+- ✅ Works with bash, zsh, fish
+
+After installation:
+```bash
+# Reload your shell
+source ~/.bashrc  # or ~/.zshrc or ~/.config/fish/config.fish
+
+# Verify installation
+tfgrid-compose --version
+```
+
+### Method 2: Manual Clone and Install
 
 ```bash
 # Clone repository
@@ -77,12 +99,7 @@ make install
 tfgrid-compose --version
 ```
 
-The install script:
-- ✅ Creates `~/.local/bin/tfgrid-compose` symlink
-- ✅ Adds to PATH in your shell config
-- ✅ Works with bash, zsh, fish
-
-### Method 2: Manual Installation
+### Method 3: Manual Installation
 
 ```bash
 # Clone repository

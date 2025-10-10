@@ -49,10 +49,8 @@ tfgrid-compose up my-app
 ### 1. Install tfgrid-compose
 
 ```bash
-# Clone and install
-git clone https://github.com/tfgrid-studio/tfgrid-compose
-cd tfgrid-compose
-make install
+# One-line installer
+curl -sSL install.tfgrid.studio/install.sh | sh
 
 # Verify installation
 tfgrid-compose --version

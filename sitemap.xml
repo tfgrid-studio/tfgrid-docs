@@ -25,6 +25,22 @@
          <lastmod>2025-10-10</lastmod>
     </url>
     <url>
+         <loc>https://docs.tfgrid.studio/patterns/gateway/</loc>
+         <lastmod>2025-10-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.tfgrid.studio/patterns/k3s/</loc>
+         <lastmod>2025-10-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.tfgrid.studio/patterns/overview/</loc>
+         <lastmod>2025-10-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.tfgrid.studio/patterns/single-vm/</loc>
+         <lastmod>2025-10-10</lastmod>
+    </url>
+    <url>
          <loc>https://docs.tfgrid.studio/roadmap/changelog/</loc>
          <lastmod>2025-10-10</lastmod>
     </url>

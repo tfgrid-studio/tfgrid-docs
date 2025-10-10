@@ -224,13 +224,14 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 **Source:** mik-tf/tfgrid-gateway (complete repo)
 
 **Plan:**
-1. [ ] Extract Terraform multi-VM configs
-2. [ ] Extract Ansible NAT/proxy playbooks
-3. [ ] Extract SSL automation (certbot)
-4. [ ] Create gateway pattern structure
-5. [ ] Adapt to manifest system
-6. [ ] Test with multiple apps
-7. [ ] Write pattern documentation
+
+- [ ] Extract Terraform multi-VM configs
+- [ ] Extract Ansible NAT/proxy playbooks
+- [ ] Extract SSL automation (certbot)
+- [ ] Create gateway pattern structure
+- [ ] Adapt to manifest system
+- [ ] Test with multiple apps
+- [ ] Write pattern documentation
 
 **Complexity:** Medium  
 **Timeline:** 2-4 weeks  
@@ -241,13 +242,14 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 **Source:** ucli-tools/tfgrid-k3s (complete repo)
 
 **Plan:**
-1. [ ] Extract Terraform cluster configs
-2. [ ] Extract Ansible K3s playbooks
-3. [ ] Extract MetalLB/Ingress configs
-4. [ ] Create k3s pattern structure
-5. [ ] Add Helm chart support
-6. [ ] GitOps integration
-7. [ ] Write pattern documentation
+
+- [ ] Extract Terraform cluster configs
+- [ ] Extract Ansible K3s playbooks
+- [ ] Extract MetalLB/Ingress configs
+- [ ] Create k3s pattern structure
+- [ ] Add Helm chart support
+- [ ] GitOps integration
+- [ ] Write pattern documentation
 
 **Complexity:** High  
 **Timeline:** 4-6 weeks  
@@ -330,6 +332,7 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 ### What's New in TFGrid Compose
 
 **Features not in source repos:**
+
 - ✅ **Universal deployer** - Single CLI for all patterns
 - ✅ **Manifest system** - `tfgrid-compose.yaml` for apps
 - ✅ **Context files** - `.tfgrid-compose.yaml` for projects
@@ -339,6 +342,7 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 - ✅ **Unified CLI** - Consistent commands across patterns
 
 **Simplifications:**
+
 - ✅ One command deployment (`tfgrid-compose up`)
 - ✅ Auto-detect configurations
 - ✅ Smart defaults
@@ -348,6 +352,7 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 ### What's Preserved
 
 **Kept from source repos:**
+
 - ✅ All core functionality
 - ✅ Infrastructure code (Terraform)
 - ✅ Platform configs (Ansible)

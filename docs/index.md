@@ -23,13 +23,15 @@ tfgrid-compose up my-app
 
 ## ✨ Current Status
 
-### ✅ Production Ready (v1.0.0)
+### ✅ Production Ready (v2.0.0)
 
 | Component | Status | Description |
 |-----------|--------|-------------|
-| **tfgrid-compose** | ✅ v1.0.0 | Universal orchestrator with single-vm pattern |
+| **tfgrid-compose** | ✅ v2.0.0 | Universal orchestrator with all 3 patterns |
 | **tfgrid-ai-agent** | ✅ v2.0.0 | AI coding agent (reference application) |
 | **Single-VM Pattern** | ✅ Production | Deploy isolated VMs with private networking |
+| **Gateway Pattern** | ✅ Production | Multi-VM with public access and SSL |
+| **K3s Pattern** | ✅ Production | Full Kubernetes cluster deployment |
 | **Context Files** | ✅ Production | Simplified workflow with `.tfgrid-compose.yaml` |
 | **Agent Subcommand** | ✅ Production | AI agent management built-in |
 
@@ -37,8 +39,6 @@ tfgrid-compose up my-app
 
 | Component | Status | Timeline | Source |
 |-----------|--------|----------|--------|
-| **Gateway Pattern** | 🚧 Planned | Q4 2025 | Inspired by [mik-tf/tfgrid-gateway](https://github.com/mik-tf/tfgrid-gateway) |
-| **K3s Pattern** | 🚧 Planned | Q1 2026 | Inspired by [ucli-tools/tfgrid-k3s](https://github.com/ucli-tools/tfgrid-k3s) |
 | **Web Dashboard** | 📋 Future | Q2 2026 | SaaS offering |
 | **Marketplace** | 📋 Future | Q3 2026 | One-click app deployment |
 
@@ -99,8 +99,8 @@ tfgrid-compose up ../tfgrid-ai-agent
 ### Deployment Patterns
 - **[Pattern Overview](patterns/overview.md)** - Understanding the pattern system
 - **[Single-VM Pattern](patterns/single-vm/)** - ✅ Production ready
-- **[Gateway Pattern](patterns/gateway/)** - 🚧 Coming Q4 2025 (source available)
-- **[K3s Pattern](patterns/k3s/)** - 🚧 Coming Q1 2026 (source available)
+- **[Gateway Pattern](patterns/gateway/)** - ✅ Production ready
+- **[K3s Pattern](patterns/k3s/)** - ✅ Production ready
 
 ### Applications
 - **[Application Overview](applications/overview.md)** - How apps work in TFGrid Compose
@@ -128,7 +128,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 - **[Comparison](architecture/comparison.md)** - vs standalone repos, vs other platforms
 
 ### Roadmap & Contributing
-- **[Current Status](roadmap/current.md)** - ✅ What's working now (v1.0.0)
+- **[Current Status](roadmap/current.md)** - ✅ What's working now (v2.0.0 Complete First Layer)
 - **[Planned Features](roadmap/planned.md)** - 🚧 What's coming next
 - **[Changelog](roadmap/changelog.md)** - Version history
 - **[Contributing](contributing/overview.md)** - How to contribute
@@ -143,13 +143,13 @@ Deploy isolated AI coding environments on ThreeFold Grid.
 tfgrid-compose up tfgrid-ai-agent
 ```
 
-### Web Applications (Coming Soon)
+### Web Applications
 Deploy web apps with public IPv4, SSL, and reverse proxy.
 ```bash
 tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
 ```
 
-### Cloud-Native Apps (Coming Soon)
+### Cloud-Native Apps
 Deploy microservices on Kubernetes clusters.
 ```bash
 tfgrid-compose up my-saas --pattern=k3s

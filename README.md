@@ -45,8 +45,8 @@ This repository contains complete documentation for the TFGrid Studio platform.
 - **[Comparison](architecture/comparison.md)** - vs alternatives _(coming soon)_
 
 ### Roadmap
-- **[Current Status](roadmap/current.md)** - ✅ v1.0.0 production ready
-- **[Planned Features](roadmap/planned.md)** - ✅ Gateway & K3s patterns
+- **[Current Status](roadmap/current.md)** - ✅ v2.0.0 Complete First Layer
+- **[Planned Features](roadmap/planned.md)** - Testing & web dashboard
 - **[Changelog](roadmap/changelog.md)** - Version history _(coming soon)_
 
 ### Contributing
@@ -69,7 +69,7 @@ This repository contains complete documentation for the TFGrid Studio platform.
 
 ### Current Status
 - **[What's Working Now](roadmap/current.md)** - v2.0.0 Complete First Layer ✅
-- **[What's Coming Next](roadmap/planned.md)** - Q4 2025 & beyond
+- **[What's Coming Next](roadmap/planned.md)** - Testing & polish
 - **[Source Acknowledgment](architecture/source-repos.md)** - Built from proven code
 
 ---

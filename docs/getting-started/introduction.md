@@ -60,7 +60,7 @@ TFGrid Compose separates concerns into three layers:
                         ↓
 ┌─────────────────────────────────────────────────────┐
 │  Deployer (Universal Orchestrator)                  │
-│  tfgrid-compose                                    │
+│  tfgrid-compose                                     │
 │  • Pattern system (single-vm, gateway, k3s)         │
 │  • Terraform + Ansible automation                   │
 │  • State management                                 │

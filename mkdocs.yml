@@ -86,8 +86,6 @@ markdown_extensions:
 plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-  - minify:
-      minify_html: true
 
 # Extra
 extra:
@@ -120,6 +118,12 @@ nav:
     - Installation: getting-started/installation.md
     - Quick Start: getting-started/quickstart.md
     - Core Concepts: getting-started/concepts.md
+  
+  - Deployment Patterns:
+    - Overview: patterns/overview.md
+    - Single-VM Pattern: patterns/single-vm.md
+    - Gateway Pattern: patterns/gateway.md
+    - K3s Pattern: patterns/k3s.md
   
   - Architecture:
     - Source Repositories: architecture/source-repos.md

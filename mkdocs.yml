@@ -131,6 +131,9 @@ nav:
   - Architecture:
     - Source Repositories: architecture/source-repos.md
   
+  - Development:
+    - Versioning Policy: development/versioning-policy.md
+  
   - Roadmap:
     - Current Status: roadmap/current.md
     - Planned Features: roadmap/planned.md

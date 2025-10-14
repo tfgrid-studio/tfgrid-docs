@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.tfgrid.studio/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/architecture/source-repos/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.tfgrid.studio/development/versioning-policy/</loc>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/concepts/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/installation/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/introduction/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/quickstart/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/gateway/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/k3s/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/overview/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/single-vm/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/roadmap/changelog/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/roadmap/current/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/roadmap/planned/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
 </urlset>

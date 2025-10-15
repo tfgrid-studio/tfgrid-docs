@@ -1,13 +1,9 @@
 # App Registry
 
-The TFGrid App Registry is a catalog of verified applications that can be deployed with a single command.
-
-## Overview
-
-Rather than manually cloning repositories, tfgrid-compose can pull applications directly from the registry:
+The TFGrid App Registry catalogs official and verified community applications that can be deployed using `tfgrid-compose`. Applications listed here are discoverable at [registry.tfgrid.studio](https://registry.tfgrid.studio) and can be deployed with a simple command:
 
 ```bash
-# Deploy official app
+# Deploy official app (v0.10.0+)
 tfgrid-compose up tfgrid-ai-agent
 
 # Deploy community app
@@ -21,8 +17,8 @@ tfgrid-compose up https://gitlab.com/org/app
 
 ### For Users
 
-1. **Browse Apps**: Visit [registry.tfgrid.studio](https://registry.tfgrid.studio) (coming soon)
-2. **Deploy**: Run `tfgrid-compose up <app-name>`
+1. **Browse Apps**: Visit [registry.tfgrid.studio](https://registry.tfgrid.studio)
+2. **Deploy**: Run `tfgrid-compose up <app-name>` (v0.10.0+)
 3. **Done**: App is automatically cloned and deployed
 
 **No configuration needed** - apps include their own `tfgrid-compose.yaml`.
@@ -49,15 +45,14 @@ tfgrid-compose up tfgrid-ai-agent
 
 **Details:**
 - **Pattern**: single-vm
-- **Requirements**: 4 CPU, 8GB RAM, 100GB disk
 - **Repo**: [tfgrid-studio/tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)
 - **Docs**: [AI Agent Guide](ai-agent.md)
 
 ## Community Apps
 
-Community-contributed applications that have been verified:
+Community-contributed apps that have passed verification:
 
-> **Coming Soon**: Submit your app for verification!  
+> Ready to share your app? Submit it for verification!  
 > See [Submission Guidelines →](https://github.com/tfgrid-studio/app-registry/blob/main/docs/submit-app.md)
 
 ## Using Apps
@@ -269,12 +264,12 @@ tfgrid-compose up ./app
 
 ## Resources
 
-- **Registry Website**: [registry.tfgrid.studio](https://registry.tfgrid.studio) (coming soon)
-- **Registry Repo**: [tfgrid-studio/app-registry](https://github.com/tfgrid-studio/app-registry)
+- **Registry Website**: [registry.tfgrid.studio](https://registry.tfgrid.studio) ✅ Live
+- **Registry Data**: [tfgrid-studio/app-registry](https://github.com/tfgrid-studio/app-registry)
 - **Submit Apps**: [Submission Guide](https://github.com/tfgrid-studio/app-registry/blob/main/docs/submit-app.md)
 - **App Guidelines**: [Development Guidelines](https://github.com/tfgrid-studio/app-registry/blob/main/docs/app-guidelines.md)
 
 ---
 
-**Available**: v0.10.0 (Coming Soon)  
-**Registry**: [github.com/tfgrid-studio/app-registry](https://github.com/tfgrid-studio/app-registry)
+**Registry Deployment**: v0.10.0 (CLI integration coming soon)  
+**Browse Apps Now**: [registry.tfgrid.studio](https://registry.tfgrid.studio)

@@ -122,17 +122,30 @@ nav:
     - Quick Start: getting-started/quickstart.md
     - Core Concepts: getting-started/concepts.md
   
+  - Guides:
+    - AI Agent Deployment: guides/ai-agent.md
+  
+  - Architecture:
+    - System Overview: architecture/overview.md
+    - Source Repositories: architecture/source-repos.md
+  
   - Deployment Patterns:
     - Overview: patterns/overview.md
     - Single-VM Pattern: patterns/single-vm.md
     - Gateway Pattern: patterns/gateway.md
     - K3s Pattern: patterns/k3s.md
   
-  - Architecture:
-    - Source Repositories: architecture/source-repos.md
+  - Troubleshooting:
+    - Complete Guide: troubleshooting/guide.md
   
   - Development:
     - Versioning Policy: development/versioning-policy.md
+    - Pattern Contract: development/pattern-contract.md
+  
+  - Community:
+    - Code of Conduct: community/code-of-conduct.md
+    - Contributing Guide: community/contributing.md
+    - Security Policy: community/security.md
   
   - Roadmap:
     - Current Status: roadmap/current.md

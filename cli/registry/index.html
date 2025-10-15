@@ -12,7 +12,7 @@
         <meta name="author" content="TFGrid Studio Team">
       
       
-        <link rel="canonical" href="https://docs.tfgrid.studio/development/submit-app/">
+        <link rel="canonical" href="https://docs.tfgrid.studio/cli/registry/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Submitting Your App to TFGrid Registry - TFGrid Studio</title>
+        <title>Registry Integration - TFGrid Studio</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#submitting-your-app-to-tfgrid-registry" class="md-skip">
+        <a href="#registry-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Submitting Your App to TFGrid Registry
+              Registry Integration
             
           </span>
         </div>
@@ -350,7 +350,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../versioning-policy/" class="md-tabs__link">
+        <a href="../../development/versioning-policy/" class="md-tabs__link">
           
   
   
@@ -1056,7 +1056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../versioning-policy/" class="md-nav__link">
+      <a href="../../development/versioning-policy/" class="md-nav__link">
         
   
   
@@ -1079,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pattern-contract/" class="md-nav__link">
+      <a href="../../development/pattern-contract/" class="md-nav__link">
         
   
   
@@ -1394,37 +1394,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Quick Start
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#searching-apps" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Searching Apps
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#required-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Required Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Required Files">
+    <nav class="md-nav" aria-label="Searching Apps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#minimum-tfgrid-composeyaml" class="md-nav__link">
+  <a href="#browse-all-apps" class="md-nav__link">
     <span class="md-ellipsis">
-      Minimum tfgrid-compose.yaml
+      Browse All Apps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search by Name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-by-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search by Keyword
     </span>
   </a>
   
@@ -1436,46 +1445,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submission-process" class="md-nav__link">
+  <a href="#deploying-apps" class="md-nav__link">
     <span class="md-ellipsis">
-      Submission Process
+      Deploying Apps
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Submission Process">
+    <nav class="md-nav" aria-label="Deploying Apps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-test-thoroughly" class="md-nav__link">
+  <a href="#deploy-by-name" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Test Thoroughly
+      Deploy by Name
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-fork-app-registry" class="md-nav__link">
+  <a href="#deploy-from-local-path" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Fork App Registry
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-add-your-app-entry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Add Your App Entry
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-create-pull-request" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Create Pull Request
+      Deploy from Local Path
     </span>
   </a>
   
@@ -1487,46 +1478,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#review-process" class="md-nav__link">
+  <a href="#managing-multiple-apps" class="md-nav__link">
     <span class="md-ellipsis">
-      Review Process
+      Managing Multiple Apps
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Review Process">
+    <nav class="md-nav" aria-label="Managing Multiple Apps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-code-review-1-3-days" class="md-nav__link">
+  <a href="#list-deployed-apps" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Code Review (1-3 days)
+      List Deployed Apps
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-testing-1-2-days" class="md-nav__link">
+  <a href="#switch-active-app" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Testing (1-2 days)
+      Switch Active App
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-documentation-review-1-day" class="md-nav__link">
+  <a href="#context-aware-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Documentation Review (1 day)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-approval-or-feedback" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Approval or Feedback
+      Context-Aware Commands
     </span>
   </a>
   
@@ -1538,37 +1520,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verification-criteria" class="md-nav__link">
+  <a href="#complete-workflow-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Verification Criteria
+      Complete Workflow Example
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verification Criteria">
+    <nav class="md-nav" aria-label="Complete Workflow Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#must-have" class="md-nav__link">
+  <a href="#deploy-multiple-apps" class="md-nav__link">
     <span class="md-ellipsis">
-      Must Have ✅
+      Deploy Multiple Apps
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#should-have" class="md-nav__link">
+  <a href="#work-with-different-apps" class="md-nav__link">
     <span class="md-ellipsis">
-      Should Have 📋
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nice-to-have" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nice to Have 🌟
+      Work with Different Apps
     </span>
   </a>
   
@@ -1580,46 +1553,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#after-verification" class="md-nav__link">
+  <a href="#app-caching" class="md-nav__link">
     <span class="md-ellipsis">
-      After Verification
+      App Caching
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maintaining-your-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      Maintaining Your App
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Maintaining Your App">
+    <nav class="md-nav" aria-label="App Caching">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#updates" class="md-nav__link">
+  <a href="#cache-location" class="md-nav__link">
     <span class="md-ellipsis">
-      Updates
+      Cache Location
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#support" class="md-nav__link">
+  <a href="#cache-behavior" class="md-nav__link">
     <span class="md-ellipsis">
-      Support
+      Cache Behavior
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#revocation" class="md-nav__link">
+  <a href="#updating-cached-apps" class="md-nav__link">
     <span class="md-ellipsis">
-      Revocation
+      Updating Cached Apps
     </span>
   </a>
   
@@ -1631,46 +1595,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#app-development-guidelines" class="md-nav__link">
+  <a href="#state-management" class="md-nav__link">
     <span class="md-ellipsis">
-      App Development Guidelines
+      State Management
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="App Development Guidelines">
+    <nav class="md-nav" aria-label="State Management">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#security-best-practices" class="md-nav__link">
+  <a href="#per-app-state" class="md-nav__link">
     <span class="md-ellipsis">
-      Security Best Practices
+      Per-App State
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#resource-requirements" class="md-nav__link">
+  <a href="#no-conflicts" class="md-nav__link">
     <span class="md-ellipsis">
-      Resource Requirements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Patterns
+      No Conflicts
     </span>
   </a>
   
@@ -1682,18 +1628,210 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
+  <a href="#comparison-old-vs-new" class="md-nav__link">
     <span class="md-ellipsis">
-      Examples
+      Comparison: Old vs New
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison: Old vs New">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#old-way-pre-v0100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Old Way (Pre-v0.10.0)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-way-v0100" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Way (v0.10.0+)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registry-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registry Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-registry-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Registry Entry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registry-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry Location
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mix-registry-and-local-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mix Registry and Local Apps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-same-app-multiple-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy Same App Multiple Times
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      App Not Found
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-already-deployed" class="md-nav__link">
+    <span class="md-ellipsis">
+      App Already Deployed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-search-before-deploying" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Search Before Deploying
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-list-regularly" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. List Regularly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-switch-explicitly" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Switch Explicitly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-clean-up-unused-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Clean Up Unused Apps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-help" class="md-nav__link">
+  <a href="#related" class="md-nav__link">
     <span class="md-ellipsis">
-      Get Help
+      Related
     </span>
   </a>
   
@@ -1716,7 +1854,7 @@
 
 
   
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/development/submit-app.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/cli/registry.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -1725,253 +1863,328 @@
     
       
     
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/development/submit-app.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/cli/registry.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="submitting-your-app-to-tfgrid-registry">Submitting Your App to TFGrid Registry<a class="headerlink" href="#submitting-your-app-to-tfgrid-registry" title="Permanent link">&para;</a></h1>
-<p>Share your application with the TFGrid community by submitting it to the official app registry.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Getting your app verified means:
-- ✅ Discoverable at <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a>
-- ✅ Listed in official registry
-- ✅ Verified badge
-- ✅ Increased visibility and trust
-- ✅ Available via <code>tfgrid-compose up your-app</code> (v0.10.0+)</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Before submitting:</p>
-<ol>
-<li><strong>Working App</strong>: Deploys successfully with tfgrid-compose</li>
-<li><strong>Documentation</strong>: Clear README with setup instructions</li>
-<li><strong>App Manifest</strong>: Valid <code>tfgrid-compose.yaml</code></li>
-<li><strong>Open Source</strong>: Public repository with open source license (Apache 2.0 recommended)</li>
-<li><strong>No Secrets</strong>: No hardcoded credentials or API keys</li>
-</ol>
-<h2 id="required-files">Required Files<a class="headerlink" href="#required-files" title="Permanent link">&para;</a></h2>
-<p>Your repository must include:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>your-app/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── tfgrid-compose.yaml       # Required: App manifest
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── README.md                  # Required: Documentation
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── LICENSE                    # Required: Open source license
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── deployment/                # Recommended: Deployment scripts
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── setup.sh
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── configure.sh
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   └── healthcheck.sh
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>└── .gitignore                # Recommended: Ignore secrets
+<h1 id="registry-integration">Registry Integration<a class="headerlink" href="#registry-integration" title="Permanent link">&para;</a></h1>
+<p>The TFGrid Compose registry allows you to discover and deploy apps by name, without manually cloning repositories.</p>
+<p>:::info Version
+Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
+:::</p>
+<hr />
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Search available apps</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tfgrid-compose<span class="w"> </span>search
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Deploy an app by name</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># List deployed apps</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>tfgrid-compose<span class="w"> </span>list
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Switch between apps</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>ai-agent
 </code></pre></div>
-<h3 id="minimum-tfgrid-composeyaml">Minimum tfgrid-compose.yaml<a class="headerlink" href="#minimum-tfgrid-composeyaml" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your-app</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brief description of your app</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">patterns</span><span class="p">:</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span><span class="w">  </span><span class="c1"># or gateway, k3s</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">resources</span><span class="p">:</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4096</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nt">hooks</span><span class="p">:</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="nt">setup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/setup.sh</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="nt">configure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/configure.sh</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/healthcheck.sh</span>
+<hr />
+<h2 id="searching-apps">Searching Apps<a class="headerlink" href="#searching-apps" title="Permanent link">&para;</a></h2>
+<h3 id="browse-all-apps">Browse All Apps<a class="headerlink" href="#browse-all-apps" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tfgrid-compose<span class="w"> </span>search
 </code></pre></div>
-<p>See <a href="../reference/manifest.md">App Manifest Reference</a> for full specification.</p>
-<h2 id="submission-process">Submission Process<a class="headerlink" href="#submission-process" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-test-thoroughly">Step 1: Test Thoroughly<a class="headerlink" href="#step-1-test-thoroughly" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Test local deployment</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>your-app
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>.
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Verify all functionality</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>tfgrid-compose<span class="w"> </span>status
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># Clean up</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>tfgrid-compose<span class="w"> </span>down
+<p><strong>Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Available apps:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ai-agent             AI-powered deployment assistant
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>wordpress            WordPress CMS platform
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>nextcloud            File sharing and collaboration
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>ghost                Modern blogging platform
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>discourse            Community discussion forum
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>...
+</code></pre></div></p>
+<h3 id="search-by-name">Search by Name<a class="headerlink" href="#search-by-name" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>wordpress
 </code></pre></div>
-<h3 id="step-2-fork-app-registry">Step 2: Fork App Registry<a class="headerlink" href="#step-2-fork-app-registry" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR-USERNAME/app-registry
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">cd</span><span class="w"> </span>app-registry
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>add-your-app
+<p><strong>Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>wordpress            WordPress CMS platform
+</code></pre></div></p>
+<h3 id="search-by-keyword">Search by Keyword<a class="headerlink" href="#search-by-keyword" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>blog
 </code></pre></div>
-<h3 id="step-3-add-your-app-entry">Step 3: Add Your App Entry<a class="headerlink" href="#step-3-add-your-app-entry" title="Permanent link">&para;</a></h3>
-<p>Edit <code>registry/verified/community.yaml</code> (create if doesn't exist):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apps</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">verified</span><span class="p">:</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your-app-name</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/your-username/your-app-repo</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your-username</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Clear one-line description of your app</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span><span class="w">  </span><span class="c1"># or gateway, k3s</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">beta</span><span class="w">  </span><span class="c1"># beta or production</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.1.0</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="nt">verified</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># Will be set to true after review</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nt">tags</span><span class="p">:</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag1</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag2</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag3</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">      </span><span class="nt">requirements</span><span class="p">:</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4GB</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50GB</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">      </span><span class="nt">links</span><span class="p">:</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">        </span><span class="nt">docs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/your-username/your-app-repo</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/your-username/your-app-repo</span>
+<p><strong>Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>wordpress            WordPress CMS platform
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ghost                Modern blogging platform
+</code></pre></div></p>
+<hr />
+<h2 id="deploying-apps">Deploying Apps<a class="headerlink" href="#deploying-apps" title="Permanent link">&para;</a></h2>
+<h3 id="deploy-by-name">Deploy by Name<a class="headerlink" href="#deploy-by-name" title="Permanent link">&para;</a></h3>
+<p>Instead of cloning repositories manually, deploy directly by name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
 </code></pre></div>
-<h3 id="step-4-create-pull-request">Step 4: Create Pull Request<a class="headerlink" href="#step-4-create-pull-request" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>add<span class="w"> </span>registry/verified/community.yaml
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat: add YOUR-APP to verified apps&quot;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>add-your-app
+<p><strong>What happens:</strong>
+1. ✅ Fetches app info from registry
+2. ✅ Downloads app repository to cache
+3. ✅ Deploys the app
+4. ✅ Sets it as active context</p>
+<h3 id="deploy-from-local-path">Deploy from Local Path<a class="headerlink" href="#deploy-from-local-path" title="Permanent link">&para;</a></h3>
+<p>You can still deploy from local paths:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./my-custom-app
 </code></pre></div>
-<p>Create PR on GitHub with:
-- <strong>Title</strong>: <code>Add [Your App Name] to verified apps</code>
-- <strong>Description</strong>: 
-  - What does your app do?
-  - Why should users try it?
-  - Any special requirements or notes?</p>
-<h2 id="review-process">Review Process<a class="headerlink" href="#review-process" title="Permanent link">&para;</a></h2>
-<p>Our team will review your submission:</p>
-<h3 id="1-code-review-1-3-days">1. Code Review (1-3 days)<a class="headerlink" href="#1-code-review-1-3-days" title="Permanent link">&para;</a></h3>
+<p><strong>Both methods work identically</strong> - the CLI automatically detects whether you're providing a name or path.</p>
+<hr />
+<h2 id="managing-multiple-apps">Managing Multiple Apps<a class="headerlink" href="#managing-multiple-apps" title="Permanent link">&para;</a></h2>
+<h3 id="list-deployed-apps">List Deployed Apps<a class="headerlink" href="#list-deployed-apps" title="Permanent link">&para;</a></h3>
+<p>See all your deployed apps:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>tfgrid-compose<span class="w"> </span>list
+</code></pre></div>
+<p><strong>Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>  * wordpress (active)
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    ai-agent
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    nextcloud
+</code></pre></div></p>
+<p>The asterisk (<code>*</code>) indicates the currently active app.</p>
+<h3 id="switch-active-app">Switch Active App<a class="headerlink" href="#switch-active-app" title="Permanent link">&para;</a></h3>
+<p>Change which app commands operate on:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>ai-agent
+</code></pre></div>
+<p><strong>After switching:</strong>
+- <code>tfgrid-compose logs</code> → shows ai-agent logs
+- <code>tfgrid-compose status</code> → shows ai-agent status
+- <code>tfgrid-compose exec</code> → runs commands on ai-agent</p>
+<h3 id="context-aware-commands">Context-Aware Commands<a class="headerlink" href="#context-aware-commands" title="Permanent link">&para;</a></h3>
+<p>Once you switch, all commands operate on the active app:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Switch to WordPress</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>wordpress
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># These all operate on WordPress now</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>tfgrid-compose<span class="w"> </span>logs
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>tfgrid-compose<span class="w"> </span>status
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>tfgrid-compose<span class="w"> </span>address
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1"># Switch to AI agent</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>ai-agent
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="c1"># Now these operate on ai-agent</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>tfgrid-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>login
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>tfgrid-compose<span class="w"> </span>logs
+</code></pre></div>
+<hr />
+<h2 id="complete-workflow-example">Complete Workflow Example<a class="headerlink" href="#complete-workflow-example" title="Permanent link">&para;</a></h2>
+<h3 id="deploy-multiple-apps">Deploy Multiple Apps<a class="headerlink" href="#deploy-multiple-apps" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Search for apps</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>tfgrid-compose<span class="w"> </span>search
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Deploy WordPress blog</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Deploy AI agent for development</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>ai-agent
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># Deploy Nextcloud for file storage</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>nextcloud
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="c1"># List all deployed apps</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>tfgrid-compose<span class="w"> </span>list
+</code></pre></div>
+<p><strong>Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>  * nextcloud (active)
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    ai-agent
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    wordpress
+</code></pre></div></p>
+<h3 id="work-with-different-apps">Work with Different Apps<a class="headerlink" href="#work-with-different-apps" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Work with AI agent</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>ai-agent
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>tfgrid-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>create<span class="w"> </span>my-project
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>tfgrid-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>run<span class="w"> </span>my-project
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>tfgrid-compose<span class="w"> </span>logs
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># Check WordPress status</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>wordpress
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>tfgrid-compose<span class="w"> </span>address
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>tfgrid-compose<span class="w"> </span>logs
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="c1"># Manage Nextcloud</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>nextcloud
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>tfgrid-compose<span class="w"> </span>status
+</code></pre></div>
+<hr />
+<h2 id="app-caching">App Caching<a class="headerlink" href="#app-caching" title="Permanent link">&para;</a></h2>
+<p>Apps are automatically cached locally for fast deployment.</p>
+<h3 id="cache-location">Cache Location<a class="headerlink" href="#cache-location" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>~/.config/tfgrid-compose/
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>├── registry/
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>│   └── apps.yaml           # Registry cache (1hr TTL)
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>├── apps/
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>│   ├── wordpress/          # Cached app repos
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>│   ├── ai-agent/
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>│   └── nextcloud/
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>├── state/
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>│   ├── wordpress/          # Per-app deployment state
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>│   ├── ai-agent/
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>│   └── nextcloud/
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>└── current-app             # Active app pointer
+</code></pre></div>
+<h3 id="cache-behavior">Cache Behavior<a class="headerlink" href="#cache-behavior" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Repository structure</li>
-<li>Security issues</li>
-<li>No hardcoded secrets</li>
-<li>Valid app manifest</li>
+<li><strong>Registry</strong>: Refreshed every hour automatically</li>
+<li><strong>Apps</strong>: Downloaded once, reused for all deployments</li>
+<li><strong>Updates</strong>: Apps use cached version (pull updates manually if needed)</li>
 </ul>
-<h3 id="2-testing-1-2-days">2. Testing (1-2 days)<a class="headerlink" href="#2-testing-1-2-days" title="Permanent link">&para;</a></h3>
+<h3 id="updating-cached-apps">Updating Cached Apps<a class="headerlink" href="#updating-cached-apps" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Navigate to cached app</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">cd</span><span class="w"> </span>~/.config/tfgrid-compose/apps/wordpress
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Pull latest changes</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>git<span class="w"> </span>pull
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># Redeploy with updates</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+</code></pre></div>
+<hr />
+<h2 id="state-management">State Management<a class="headerlink" href="#state-management" title="Permanent link">&para;</a></h2>
+<p>Each app has isolated state, preventing conflicts.</p>
+<h3 id="per-app-state">Per-App State<a class="headerlink" href="#per-app-state" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Deploy two apps</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>nextcloud
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1"># Each has independent state</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>~/.config/tfgrid-compose/state/
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>├──<span class="w"> </span>wordpress/
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>│<span class="w">   </span>├──<span class="w"> </span>vm_ip
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>│<span class="w">   </span>├──<span class="w"> </span>wireguard.conf
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>│<span class="w">   </span>└──<span class="w"> </span>ansible_inventory.yaml
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>└──<span class="w"> </span>nextcloud/
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span>├──<span class="w"> </span>vm_ip
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">    </span>├──<span class="w"> </span>wireguard.conf
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">    </span>└──<span class="w"> </span>ansible_inventory.yaml
+</code></pre></div>
+<h3 id="no-conflicts">No Conflicts<a class="headerlink" href="#no-conflicts" title="Permanent link">&para;</a></h3>
+<p>You can deploy the same app multiple times by deploying from different paths with different names.</p>
+<hr />
+<h2 id="comparison-old-vs-new">Comparison: Old vs New<a class="headerlink" href="#comparison-old-vs-new" title="Permanent link">&para;</a></h2>
+<h3 id="old-way-pre-v0100">Old Way (Pre-v0.10.0)<a class="headerlink" href="#old-way-pre-v0100" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Manual steps</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tfgrid-studio/wordpress-app
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nb">cd</span><span class="w"> </span>wordpress-app
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>.
+</code></pre></div>
+<h3 id="new-way-v0100">New Way (v0.10.0+)<a class="headerlink" href="#new-way-v0100" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># One command</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+</code></pre></div>
+<hr />
+<h2 id="registry-format">Registry Format<a class="headerlink" href="#registry-format" title="Permanent link">&para;</a></h2>
+<p>The registry is a simple YAML file hosted on GitHub.</p>
+<h3 id="example-registry-entry">Example Registry Entry<a class="headerlink" href="#example-registry-entry" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">wordpress</span><span class="p">:</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WordPress CMS platform</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/tfgrid-studio/wordpress-app</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cms</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">php</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="nt">ai-agent</span><span class="p">:</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI-powered deployment assistant</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">  </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/tfgrid-studio/tfgrid-ai-agent</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">  </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools</span>
+</code></pre></div>
+<h3 id="registry-location">Registry Location<a class="headerlink" href="#registry-location" title="Permanent link">&para;</a></h3>
+<p><strong>Public registry:</strong> https://github.com/tfgrid-studio/registry</p>
+<hr />
+<h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
+<h3 id="mix-registry-and-local-apps">Mix Registry and Local Apps<a class="headerlink" href="#mix-registry-and-local-apps" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Deploy from registry</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Deploy from local path</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./my-custom-app
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># Both work together</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>tfgrid-compose<span class="w"> </span>list
+</code></pre></div>
+<p><strong>Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>  * my-custom-app (active)
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    wordpress
+</code></pre></div></p>
+<h3 id="deploy-same-app-multiple-times">Deploy Same App Multiple Times<a class="headerlink" href="#deploy-same-app-multiple-times" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Deploy production WordPress from registry</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Deploy staging WordPress from local fork</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./wordpress-staging
+</code></pre></div>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="app-not-found">App Not Found<a class="headerlink" href="#app-not-found" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>myapp
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1"># Error: App &#39;myapp&#39; not found in registry</span>
+</code></pre></div>
+<p><strong>Solution:</strong> Search the registry to find the correct name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>tfgrid-compose<span class="w"> </span>search
+</code></pre></div>
+<h3 id="cache-issues">Cache Issues<a class="headerlink" href="#cache-issues" title="Permanent link">&para;</a></h3>
+<p>If the registry seems outdated, it refreshes automatically after 1 hour. To force refresh:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Remove cache</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/.config/tfgrid-compose/registry/
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># Next command will fetch fresh registry</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>tfgrid-compose<span class="w"> </span>search
+</code></pre></div>
+<h3 id="app-already-deployed">App Already Deployed<a class="headerlink" href="#app-already-deployed" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="c1"># Error: App &#39;wordpress&#39; is already deployed</span>
+</code></pre></div>
+<p><strong>Solution:</strong> Destroy first or switch to it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># Option 1: Destroy and redeploy</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span>wordpress
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="c1"># Option 2: Switch to it</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>wordpress
+</code></pre></div>
+<hr />
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="1-search-before-deploying">1. Search Before Deploying<a class="headerlink" href="#1-search-before-deploying" title="Permanent link">&para;</a></h3>
+<p>Always search to find the right app name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>tfgrid-compose<span class="w"> </span>search
+</code></pre></div>
+<h3 id="2-list-regularly">2. List Regularly<a class="headerlink" href="#2-list-regularly" title="Permanent link">&para;</a></h3>
+<p>Keep track of deployed apps:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>tfgrid-compose<span class="w"> </span>list
+</code></pre></div>
+<h3 id="3-switch-explicitly">3. Switch Explicitly<a class="headerlink" href="#3-switch-explicitly" title="Permanent link">&para;</a></h3>
+<p>Always switch before running commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>myapp
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>tfgrid-compose<span class="w"> </span>logs
+</code></pre></div>
+<h3 id="4-clean-up-unused-apps">4. Clean Up Unused Apps<a class="headerlink" href="#4-clean-up-unused-apps" title="Permanent link">&para;</a></h3>
+<p>Destroy apps you're no longer using:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span>wordpress
+</code></pre></div>
+<hr />
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Deploy app on test environment</li>
-<li>Verify all features work</li>
-<li>Check resource requirements</li>
-<li>Test cleanup process</li>
-</ul>
-<h3 id="3-documentation-review-1-day">3. Documentation Review (1 day)<a class="headerlink" href="#3-documentation-review-1-day" title="Permanent link">&para;</a></h3>
-<ul>
-<li>README clarity</li>
-<li>Setup instructions</li>
-<li>Prerequisites listed</li>
-<li>Troubleshooting info</li>
-</ul>
-<h3 id="4-approval-or-feedback">4. Approval or Feedback<a class="headerlink" href="#4-approval-or-feedback" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>If approved</strong>: Merged, <code>verified: true</code> set</li>
-<li><strong>If changes needed</strong>: Comments on PR</li>
-</ul>
-<p><strong>Total Timeline</strong>: ~5-7 days</p>
-<h2 id="verification-criteria">Verification Criteria<a class="headerlink" href="#verification-criteria" title="Permanent link">&para;</a></h2>
-<h3 id="must-have">Must Have ✅<a class="headerlink" href="#must-have" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Valid <code>tfgrid-compose.yaml</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Clear README with setup instructions</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Open source license (Apache 2.0 recommended)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No hardcoded secrets or credentials</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Deploys successfully</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cleans up properly with <code>tfgrid-compose down</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Works with current tfgrid-compose version</li>
-</ul>
-<h3 id="should-have">Should Have 📋<a class="headerlink" href="#should-have" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Comprehensive documentation</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Example configurations</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Troubleshooting guide</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Security best practices documented</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Resource requirements documented</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Regular maintenance commitment</li>
-</ul>
-<h3 id="nice-to-have">Nice to Have 🌟<a class="headerlink" href="#nice-to-have" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated tests</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CI/CD pipeline</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Multiple pattern support</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configuration examples</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Video tutorial or demo</li>
-</ul>
-<h2 id="after-verification">After Verification<a class="headerlink" href="#after-verification" title="Permanent link">&para;</a></h2>
-<p>Once approved:</p>
-<ol>
-<li><strong>Merged to Registry</strong>: Your app appears in official registry</li>
-<li><strong>Discoverable</strong>: Listed at registry.tfgrid.studio</li>
-<li><strong>Verified Badge</strong>: Shows as verified</li>
-<li><strong>CLI Integration</strong>: Available via <code>tfgrid-compose up your-app</code> (v0.10.0+)</li>
-<li><strong>Responsibility</strong>: Maintain app, respond to issues, keep updated</li>
-</ol>
-<h2 id="maintaining-your-app">Maintaining Your App<a class="headerlink" href="#maintaining-your-app" title="Permanent link">&para;</a></h2>
-<h3 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h3>
-<p>When you update your app:
-1. Update version in <code>tfgrid-compose.yaml</code>
-2. Create PR to update version in registry
-3. Include changelog in PR description</p>
-<h3 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Respond to user issues in your repo</li>
-<li>Keep documentation updated</li>
-<li>Fix bugs promptly</li>
-<li>Announce breaking changes</li>
-</ul>
-<h3 id="revocation">Revocation<a class="headerlink" href="#revocation" title="Permanent link">&para;</a></h3>
-<p>Verification may be revoked if:
-- App becomes unmaintained
-- Security vulnerabilities not fixed
-- Breaking changes without migration guide
-- Violates community guidelines</p>
-<h2 id="app-development-guidelines">App Development Guidelines<a class="headerlink" href="#app-development-guidelines" title="Permanent link">&para;</a></h2>
-<h3 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h3>
-<ul>
-<li>✅ Never hardcode credentials</li>
-<li>✅ Use environment variables for secrets</li>
-<li>✅ Document security requirements</li>
-<li>✅ Keep dependencies updated</li>
-<li>✅ Follow principle of least privilege</li>
-</ul>
-<h3 id="resource-requirements">Resource Requirements<a class="headerlink" href="#resource-requirements" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Document minimum and recommended resources</li>
-<li>Test with minimal resources</li>
-<li>Provide configuration for different sizes</li>
-<li>Note any resource-intensive operations</li>
-</ul>
-<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h3>
-<p>Your README should include:
-- <strong>Overview</strong>: What does the app do?
-- <strong>Prerequisites</strong>: Requirements before deployment
-- <strong>Quick Start</strong>: Minimal steps to get running
-- <strong>Configuration</strong>: Available options
-- <strong>Usage</strong>: How to use the app
-- <strong>Troubleshooting</strong>: Common issues
-- <strong>License</strong>: Open source license</p>
-<h3 id="patterns">Patterns<a class="headerlink" href="#patterns" title="Permanent link">&para;</a></h3>
-<p>Choose the appropriate pattern:</p>
-<p><strong>single-vm</strong>: Single VM, private networking
-- Databases, internal APIs, development environments</p>
-<p><strong>gateway</strong>: Multi-VM with public access and SSL
-- Web applications, SaaS products, e-commerce</p>
-<p><strong>k3s</strong>: Kubernetes cluster
-- Microservices, cloud-native apps, enterprise scale</p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>See official apps for reference:
-- <a href="https://github.com/tfgrid-studio/tfgrid-ai-agent">tfgrid-ai-agent</a> - Single-VM pattern
-- <a href="https://github.com/tfgrid-studio/tfgrid-gateway">tfgrid-gateway</a> - Gateway pattern
-- <a href="https://github.com/tfgrid-studio/tfgrid-k3s">tfgrid-k3s</a> - K3s pattern</p>
-<h2 id="get-help">Get Help<a class="headerlink" href="#get-help" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Questions</strong>: <a href="https://github.com/tfgrid-studio/app-registry/discussions">Discussions</a></li>
-<li><strong>Issues</strong>: <a href="https://github.com/tfgrid-studio/app-registry/issues">Report problems</a></li>
-<li><strong>Documentation</strong>: <a href="https://docs.tfgrid.studio">TFGrid Docs</a></li>
+<li><a href="../../getting-started/quickstart/">Deploy Your First App</a></li>
+<li><a href="./commands.md">CLI Reference</a></li>
+<li><a href="../patterns/">Pattern Guide</a></li>
+<li><a href="../../community/contributing/">Contributing Apps to Registry</a></li>
 </ul>
 <hr />
-<p><strong>Thank you for contributing to the TFGrid ecosystem!</strong> 🎉</p>
-<p><strong>Ready to submit?</strong> <a href="https://github.com/tfgrid-studio/app-registry">Create your PR →</a></p>
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../getting-started/">Getting Started</a></li>
+<li><a href="./commands.md">CLI Commands</a></li>
+<li><a href="../patterns/">Deployment Patterns</a></li>
+</ul>
 
 
 

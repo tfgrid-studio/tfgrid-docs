@@ -35,18 +35,21 @@ tfgrid-compose switch prod
 ### Features Included
 
 **Registry Integration:**
+
 - Search apps from CLI
 - Fetch app manifests automatically
 - Cache apps locally
 - Auto-update when available
 
 **Multi-Deployment Management:**
+
 - Deploy same app multiple times
 - Name your deployments
 - Switch between contexts
 - List all active deployments
 
 **Smart Caching:**
+
 - Apps cached in `~/.config/tfgrid-compose/apps/`
 - Offline mode for cached apps
 - Version checking

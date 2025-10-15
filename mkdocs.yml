@@ -15,6 +15,7 @@ copyright: Copyright &copy; 2025 TFGrid Studio - Apache 2.0 License
 # Theme
 theme:
   name: material
+  custom_dir: overrides
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"

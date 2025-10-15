@@ -47,16 +47,19 @@ Marketplace monetization, white label solutions, and enterprise features.
 ## 📍 How We Work
 
 ### Transparent Development
+
 - All progress tracked publicly on GitHub
 - Regular updates in Discussions
 - Community input shapes priorities
 
 ### Flexible Timeline
+
 - No hard dates - features ship when ready
 - Status indicators show progress
 - Phases move as we learn
 
 ### Open Source First
+
 - Core tools remain free forever
 - Premium features fund development
 - Community contributions welcome
@@ -72,11 +75,13 @@ tfgrid-compose up tfgrid-ai-agent
 ```
 
 ### Influence What's Next
+
 - Join [GitHub Discussions](https://github.com/orgs/tfgrid-studio/discussions)
 - Submit [Feature Requests](https://github.com/tfgrid-studio/tfgrid-compose/issues)
 - Contribute to [Documentation](https://github.com/tfgrid-studio/tfgrid-docs)
 
 ### Stay Updated
+
 - Star repositories on GitHub
 - Follow progress in internal docs
 - Join community discussions

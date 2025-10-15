@@ -1348,15 +1348,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       How It Works
@@ -1644,10 +1635,8 @@
 
 
 <h1 id="app-registry">App Registry<a class="headerlink" href="#app-registry" title="Permanent link">&para;</a></h1>
-<p>The TFGrid App Registry is a catalog of verified applications that can be deployed with a single command.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Rather than manually cloning repositories, tfgrid-compose can pull applications directly from the registry:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Deploy official app</span>
+<p>The TFGrid App Registry catalogs official and verified community applications that can be deployed using <code>tfgrid-compose</code>. Applications listed here are discoverable at <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a> and can be deployed with a simple command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Deploy official app (v0.10.0+)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Deploy community app</span>
@@ -1659,8 +1648,8 @@
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <h3 id="for-users">For Users<a class="headerlink" href="#for-users" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Browse Apps</strong>: Visit <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a> (coming soon)</li>
-<li><strong>Deploy</strong>: Run <code>tfgrid-compose up &lt;app-name&gt;</code></li>
+<li><strong>Browse Apps</strong>: Visit <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a></li>
+<li><strong>Deploy</strong>: Run <code>tfgrid-compose up &lt;app-name&gt;</code> (v0.10.0+)</li>
 <li><strong>Done</strong>: App is automatically cloned and deployed</li>
 </ol>
 <p><strong>No configuration needed</strong> - apps include their own <code>tfgrid-compose.yaml</code>.</p>
@@ -1679,13 +1668,12 @@
 </code></pre></div>
 <p><strong>Details:</strong>
 - <strong>Pattern</strong>: single-vm
-- <strong>Requirements</strong>: 4 CPU, 8GB RAM, 100GB disk
 - <strong>Repo</strong>: <a href="https://github.com/tfgrid-studio/tfgrid-ai-agent">tfgrid-studio/tfgrid-ai-agent</a>
 - <strong>Docs</strong>: <a href="../ai-agent/">AI Agent Guide</a></p>
 <h2 id="community-apps">Community Apps<a class="headerlink" href="#community-apps" title="Permanent link">&para;</a></h2>
-<p>Community-contributed applications that have been verified:</p>
+<p>Community-contributed apps that have passed verification:</p>
 <blockquote>
-<p><strong>Coming Soon</strong>: Submit your app for verification!<br />
+<p>Ready to share your app? Submit it for verification!<br />
 See <a href="https://github.com/tfgrid-studio/app-registry/blob/main/docs/submit-app.md">Submission Guidelines →</a></p>
 </blockquote>
 <h2 id="using-apps">Using Apps<a class="headerlink" href="#using-apps" title="Permanent link">&para;</a></h2>
@@ -1873,14 +1861,14 @@ See <a href="https://github.com/tfgrid-studio/app-registry/blob/main/docs/submit
 </code></pre></div>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Registry Website</strong>: <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a> (coming soon)</li>
-<li><strong>Registry Repo</strong>: <a href="https://github.com/tfgrid-studio/app-registry">tfgrid-studio/app-registry</a></li>
+<li><strong>Registry Website</strong>: <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a> ✅ Live</li>
+<li><strong>Registry Data</strong>: <a href="https://github.com/tfgrid-studio/app-registry">tfgrid-studio/app-registry</a></li>
 <li><strong>Submit Apps</strong>: <a href="https://github.com/tfgrid-studio/app-registry/blob/main/docs/submit-app.md">Submission Guide</a></li>
 <li><strong>App Guidelines</strong>: <a href="https://github.com/tfgrid-studio/app-registry/blob/main/docs/app-guidelines.md">Development Guidelines</a></li>
 </ul>
 <hr />
-<p><strong>Available</strong>: v0.10.0 (Coming Soon)<br />
-<strong>Registry</strong>: <a href="https://github.com/tfgrid-studio/app-registry">github.com/tfgrid-studio/app-registry</a></p>
+<p><strong>Registry Deployment</strong>: v0.10.0 (CLI integration coming soon)<br />
+<strong>Browse Apps Now</strong>: <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a></p>
 
 
 

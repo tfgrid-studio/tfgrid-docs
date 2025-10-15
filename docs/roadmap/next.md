@@ -15,12 +15,14 @@ Visual management interface - deploy and manage apps without touching the CLI.
 ### What You'll Get
 
 **Deployment Management:**
+
 - Deploy apps with GUI (no CLI needed)
 - Drag-and-drop configuration
 - Visual deployment wizard
 - One-click app installation
 
 **Monitoring & Observability:**
+
 - Monitor all deployments in one view
 - Real-time logs and metrics
 - Visual network topology
@@ -28,12 +30,14 @@ Visual management interface - deploy and manage apps without touching the CLI.
 - Health status indicators
 
 **Team Collaboration:**
+
 - Shared deployments
 - Role-based access control
 - Team activity feed
 - Collaborative debugging
 
 **Mobile Experience:**
+
 - Mobile-responsive design
 - Monitor on the go
 - Quick actions
@@ -81,23 +85,27 @@ tfgrid-compose ai "Scale my API to 3 instances"
 ### Capabilities
 
 **Natural Language Understanding:**
+
 - Parse intent from plain English
 - Extract requirements
 - Handle ambiguity with clarifying questions
 
 **Code Generation:**
+
 - Generate application code
 - Create Docker configurations
 - Write deployment manifests
 - Set up networking
 
 **Smart Deployment:**
+
 - Choose optimal pattern
 - Configure resources
 - Set up SSL automatically
 - Handle DNS configuration
 
 **Learning & Context:**
+
 - Learns from your preferences
 - Remembers past deployments
 - Suggests improvements
@@ -133,24 +141,28 @@ Layer on top of AI CLI with speech-to-text and text-to-speech - deploy applicati
 ### Features
 
 **Speech-to-Text (STT):**
+
 - Speak commands naturally
 - Multi-language support
 - Noise cancellation
 - Continuous listening mode
 
 **Text-to-Speech (TTS):**
+
 - AI responds with voice
 - Natural-sounding output
 - Adjustable speed/voice
 - Progress updates spoken
 
 **Conversation Flow:**
+
 - Multi-turn dialogue
 - Follow-up questions
 - Confirmation requests
 - Error explanations
 
 **Use Cases:**
+
 - **Hands-free operation** - Perfect for multitasking
 - **Accessibility** - Voice-first interface
 - **Mobile-friendly** - Use while commuting
@@ -167,12 +179,14 @@ Voice Input → STT → AI CLI → TTS → Voice Output
 ## Revenue Model
 
 ### Free Tier
+
 - CLI tools (forever free)
 - Browse registry
 - Deploy up to 3 apps
 - Community support
 
 ### Pro Tier - $29/month
+
 - **Web Dashboard** access 🔑
 - Unlimited deployments
 - **AI CLI Assistant** (text) 🔑

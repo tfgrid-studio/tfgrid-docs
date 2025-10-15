@@ -416,11 +416,11 @@ All planned patterns are based on proven, working implementations:
 
 | Quarter | Release | Key Features |
 |---------|---------|--------------|
-| **Q4 2025** | v1.1.0 | Gateway pattern |
-| **Q1 2026** | v2.0.0 | K3s pattern |
-| **Q2 2026** | v2.1.0 | Web dashboard, monitoring |
-| **Q3 2026** | v3.0.0 | Marketplace, enterprise |
-| **Q4 2026** | v3.1.0 | Multi-cloud, GitOps |
+| **Q4 2025** | v0.10.0 | Multi-deployment, enhanced monitoring |
+| **Q1 2026** | v1.0.0 | Stable release, API locked |
+| **Q2 2026** | v1.1.0 | Web dashboard, pattern registry |
+| **Q3 2026** | v1.2.0 | Marketplace, community patterns |
+| **Q4 2026** | v2.0.0 | Major enhancements (if needed) |
 
 ---
 
@@ -450,6 +450,6 @@ Want to help make these features happen?
 
 ---
 
-**Current Status:** [v1.0.0 Production Ready](current.md)  
-**Next Up:** Gateway Pattern (Q4 2025)  
+**Current Status:** [v0.9.0 Production Ready](current.md)  
+**Next Up:** Multi-deployment support (v0.10.0)  
 **Long-term:** Full platform ecosystem

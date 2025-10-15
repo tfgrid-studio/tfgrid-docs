@@ -52,8 +52,8 @@ tfgrid-compose up ../tfgrid-ai-agent
 **Output:**
 ```
 ✅ 🎉 Deployment complete!
-ℹ App: tfgrid-ai-agent v2.0.0
-ℹ Pattern: single-vm v1.0.0
+ℹ App: tfgrid-ai-agent v0.9.0
+ℹ Pattern: single-vm v0.9.0
 ℹ Next steps:
   • Check status: tfgrid-compose status tfgrid-ai-agent
   • View logs: tfgrid-compose logs tfgrid-ai-agent

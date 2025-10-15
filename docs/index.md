@@ -23,12 +23,12 @@ tfgrid-compose up my-app
 
 ## ✨ Current Status
 
-### ✅ Production Ready (v2.0.0)
+### ✅ Production Ready (v0.9.0)
 
 | Component | Status | Description |
 |-----------|--------|-------------|
-| **tfgrid-compose** | ✅ v2.0.0 | Universal orchestrator with all 3 patterns |
-| **tfgrid-ai-agent** | ✅ v2.0.0 | AI coding agent (reference application) |
+| **tfgrid-compose** | ✅ v0.9.0 | Universal orchestrator with all 3 patterns |
+| **tfgrid-ai-agent** | ✅ v0.9.0 | AI coding agent (reference application) |
 | **Single-VM Pattern** | ✅ Production | Deploy isolated VMs with private networking |
 | **Gateway Pattern** | ✅ Production | Multi-VM with public access and SSL |
 | **K3s Pattern** | ✅ Production | Full Kubernetes cluster deployment |
@@ -126,7 +126,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 - **[Comparison](architecture/comparison.md)** - vs standalone repos, vs other platforms
 
 ### Roadmap & Contributing
-- **[Current Status](roadmap/current.md)** - ✅ What's working now (v2.0.0 Complete First Layer)
+- **[Current Status](roadmap/current.md)** - ✅ What's working now (v0.9.0 Production Ready)
 - **[Planned Features](roadmap/planned.md)** - 🚧 What's coming next
 - **[Changelog](roadmap/changelog.md)** - Version history
 - **[Contributing](contributing/overview.md)** - How to contribute

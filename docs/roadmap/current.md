@@ -1,4 +1,4 @@
-# Current Status - v2.0.0 Complete First Layer
+# Current Status - v0.9.0 Production Ready
 
 **🎉 All 3 Core Deployment Patterns Production-Ready!**
 
@@ -12,9 +12,9 @@
 **Website:** [tfgrid.studio](https://tfgrid.studio) - ✅ Live  
 **Documentation:** [docs.tfgrid.studio](https://docs.tfgrid.studio) - ✅ Live
 
-### tfgrid-compose (v2.0.0)
+### tfgrid-compose (v0.9.0)
 
-**Status:** ✅ Complete First Layer - All 3 Patterns Production Ready  
+**Status:** ✅ Production Ready - All 3 Patterns Complete  
 **Grade:** 9.5/10  
 **Note:** Renamed from tfgrid-deployer (Oct 9, 2025)  
 **Achievement:** Completed gateway and k3s patterns on Oct 9, 2025
@@ -57,7 +57,7 @@ tfgrid-compose patterns         # List available patterns
 
 ---
 
-### tfgrid-ai-agent (v2.0.0)
+### tfgrid-ai-agent (v0.9.0)
 
 **Status:** ✅ Production Ready (with critical fix applied)  
 **Source:** Based on [mik-tf/tfgrid-ai-agent](https://github.com/mik-tf/tfgrid-ai-agent)
@@ -103,7 +103,7 @@ make list                       # List all projects
 
 ### Single-VM Pattern ✅
 
-**Status:** ✅ Production Ready (v1.0.0)  
+**Status:** ✅ Production Ready (v0.9.0)  
 **Extracted From:** Original standalone repos (tfgrid-ai-agent infrastructure)
 
 **Architecture:**
@@ -149,7 +149,7 @@ patterns/single-vm/
 
 ### Gateway Pattern ✅
 
-**Status:** ✅ Production Ready (v2.0.0)  
+**Status:** ✅ Production Ready (v0.9.0)  
 **Released:** Oct 9, 2025  
 **Extracted From:** [tfgrid-gateway](https://github.com/mik-tf/tfgrid-gateway)
 
@@ -179,7 +179,7 @@ Internet → [Gateway VM] → [Backend VMs]
 
 ### K3s Pattern ✅
 
-**Status:** ✅ Production Ready (v2.0.0)  
+**Status:** ✅ Production Ready (v0.9.0)  
 **Released:** Oct 9, 2025  
 **Extracted From:** [tfgrid-k3s](https://github.com/mik-tf/tfgrid-k3s)
 
@@ -412,11 +412,11 @@ tfgrid-compose exec "cat /var/log/app.log"
 
 ## 📅 Timeline
 
-- **Oct 8, 2025** - v1.0.0 released (single-vm pattern)
-- **Oct 8, 2025** - Critical AI agent bug fixed
-- **Oct 9, 2025** - v2.0.0 released (Complete First Layer)
-- **Oct 9, 2025** - Gateway pattern production-ready ✅
-- **Oct 9, 2025** - K3s pattern production-ready ✅
+- **Oct 9, 2025** - Project rebranded to TFGrid Studio
+- **Oct 9, 2025** - All 3 patterns completed
+- **Oct 14, 2025** - v0.9.0 released (Semantic Versioning adopted)
+- **Oct 14, 2025** - OpenTofu priority support added
+- **Oct 14, 2025** - Comprehensive documentation created
 - **Q4 2025** - Web dashboard (planned)
 - **Q1 2026** - Marketplace MVP (planned)
 

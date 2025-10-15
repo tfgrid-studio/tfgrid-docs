@@ -50,6 +50,7 @@ Examples of unacceptable behavior include:
 This Code of Conduct applies to all TFGrid Studio spaces, including but not limited to:
 
 **Online Spaces:**
+
 - GitHub repositories (issues, pull requests, discussions)
 - Official Discord/Slack channels
 - Social media accounts
@@ -58,6 +59,7 @@ This Code of Conduct applies to all TFGrid Studio spaces, including but not limi
 - Video calls and meetings
 
 **Offline Spaces:**
+
 - Conferences and meetups
 - Workshops and training sessions
 - Any event representing TFGrid Studio
@@ -77,6 +79,7 @@ If you experience or witness unacceptable behavior, or have any other concerns, 
 3. **Direct Message:** Contact a maintainer privately
 
 **What to include in your report:**
+
 - Your contact information
 - Names (usernames) of people involved
 - Description of the behavior
@@ -132,6 +135,7 @@ Appeals will be reviewed by a different maintainer when possible.
 ### GitHub
 
 **Issues and Pull Requests:**
+
 - Stay on topic
 - Be patient with maintainers (they're volunteers)
 - Don't demand immediate responses
@@ -139,12 +143,14 @@ Appeals will be reviewed by a different maintainer when possible.
 - Close resolved issues
 
 **Code Reviews:**
+
 - Focus on code, not people ("This function could be improved" vs "You wrote bad code")
 - Suggest alternatives
 - Acknowledge good work
 - Accept feedback gracefully
 
 **Discussions:**
+
 - Search before posting duplicates
 - Use appropriate categories
 - Mark solutions when found
@@ -185,6 +191,7 @@ Maintainers who do not follow or enforce the Code of Conduct in good faith may f
 ## Attribution
 
 This Code of Conduct is adapted from:
+
 - [Contributor Covenant](https://www.contributor-covenant.org/), version 2.1
 - [Django Code of Conduct](https://www.djangoproject.com/conduct/)
 - [Rust Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct)
@@ -196,6 +203,7 @@ This Code of Conduct is adapted from:
 We may update this Code of Conduct from time to time. All changes will be announced through official channels and posted to this document.
 
 **Version History:**
+
 - v1.0 (2025-10-14): Initial Code of Conduct
 
 ---

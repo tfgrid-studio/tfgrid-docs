@@ -94,6 +94,7 @@ chmod 600 .tfgrid-mnemonic
 ```
 
 **Security Warning:**
+
 - Never commit mnemonic to version control
 - Use 600 permissions (owner read/write only)
 - Rotate regularly
@@ -152,6 +153,7 @@ EOF
 ```
 
 **Required Fields:**
+
 - `name`: Application name
 - `pattern`: Deployment pattern (single-vm, gateway, k3s)
 - `config`: Pattern-specific configuration
@@ -310,6 +312,7 @@ ssh root@<primary-ip>
 ```
 
 **Common Causes:**
+
 - VM still booting (wait 2-3 minutes)
 - WireGuard interface down
 - Firewall blocking port 22
@@ -388,6 +391,7 @@ tfgrid-compose --debug up <app>
 ### Debug Output
 
 **What you'll see:**
+
 - Every command executed (`+ command args`)
 - Variable expansions
 - Function calls
@@ -535,6 +539,7 @@ nc -zv <primary-ip> 22
 ### State Corruption
 
 **Symptoms:**
+
 - Inconsistent state information
 - Terraform errors about existing resources
 - Deployment shows running but no VM exists
@@ -623,6 +628,7 @@ rm -rf .tfgrid-compose/
 ### WireGuard Cleanup
 
 **When to clean:**
+
 - Deployment destroyed but WireGuard still running
 - Interface conflicts
 - Network issues
@@ -800,6 +806,7 @@ To use specific key, set in pattern config.
 
 **Q: How much does deployment cost?**  
 **A:** Depends on resources:
+
 - VM: ~$2-10/month
 - Storage: ~$0.15/GB/month
 - Network: Usually included
@@ -812,6 +819,7 @@ Check ThreeFold pricing: https://threefold.io/pricing
 
 **Q: OpenTofu vs Terraform - which should I use?**  
 **A:** OpenTofu is recommended:
+
 - Open source (Apache 2.0)
 - Community-driven
 - Compatible with Terraform
@@ -881,6 +889,7 @@ tfgrid-compose ssh <app>
 
 **Q: Can I use this for production?**  
 **A:** Yes! tfgrid-compose v0.9.0 is production-ready. Recommendations:
+
 - Use gateway pattern for web apps (public IP + SSL)
 - Enable monitoring
 - Set up backups
@@ -893,6 +902,7 @@ tfgrid-compose ssh <app>
 
 **Q: Deployment takes too long**  
 **A:** Typical times:
+
 - Infrastructure: 30-60s
 - Network setup: 5-10s
 - SSH wait: 30-90s
@@ -900,6 +910,7 @@ tfgrid-compose ssh <app>
 - Total: 2-5 minutes
 
 If longer:
+
 - Check node availability (may be slow/busy)
 - Check network connectivity
 - Try different node
@@ -1003,18 +1014,22 @@ sudo wg show
 ### Support Channels
 
 **GitHub Issues:**
+
 - Bug reports: https://github.com/tfgrid-studio/tfgrid-compose/issues
 - Feature requests: Label as "enhancement"
 
 **Discussions:**
+
 - Questions: https://github.com/orgs/tfgrid-studio/discussions
 - Community help
 
 **Documentation:**
+
 - Docs site: https://docs.tfgrid.studio
 - GitHub: https://github.com/tfgrid-studio
 
 **ThreeFold Resources:**
+
 - ThreeFold Manual: https://manual.grid.tf/
 - ThreeFold Forum: https://forum.threefold.io/
 - ThreeFold Support: https://threefold.io/support

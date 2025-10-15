@@ -61,16 +61,19 @@
 ### Design Philosophy
 
 **1. Pattern-Based Architecture**
+
 - Patterns encapsulate infrastructure, platform, and application concerns
 - Orchestrator is pattern-agnostic (knows nothing about pattern internals)
 - New patterns can be added without modifying core code
 
 **2. Contract-Driven Integration**
+
 - Patterns must implement a [standard contract](../patterns/PATTERN_CONTRACT.md)
 - Orchestrator consumes contract outputs (primary_ip, deployment_name, etc.)
 - Loose coupling enables extensibility
 
 **3. Shell-Based Implementation**
+
 - Bash scripts for simplicity and transparency
 - Easy to understand, debug, and extend
 - Minimal dependencies (bash, common Unix tools)
@@ -85,12 +88,14 @@
 **Purpose:** User-facing command interface
 
 **Responsibilities:**
+
 - Parse command-line arguments
 - Load context file (`.tfgrid-compose.yaml`)
 - Route commands to appropriate handlers
 - Display help and version information
 
 **Key Features:**
+
 - Context file support for simplified commands
 - Command aliases (e.g., `agent` subcommand)
 - Global flags (--debug, --version)
@@ -131,6 +136,7 @@ state_clear()       # Clear state directory
 ```
 
 **Color-Coded Output:**
+
 - 🔵 Blue: Informational
 - ✅ Green: Success
 - ⚠️ Yellow: Warnings
@@ -531,15 +537,18 @@ output "node_ids" {
 **Use Case:** Development, databases, internal services, AI agents
 
 **Infrastructure:**
+
 - 1 VM on TFGrid
 - WireGuard private network
 - Optional Mycelium IPv6
 
 **Network:**
+
 - Primary: WireGuard IP (10.x.x.x)
 - Secondary: Mycelium IP (IPv6)
 
 **Platform:**
+
 - Ubuntu 24.04
 - Base packages (git, curl, build-essential)
 - Docker (optional)
@@ -548,15 +557,18 @@ output "node_ids" {
 **Use Case:** Production web apps with public IPv4
 
 **Infrastructure:**
+
 - 1 Gateway VM (public IPv4)
 - N Backend VMs (private network)
 - WireGuard + Mycelium
 
 **Network:**
+
 - Primary: Public IPv4 (gateway)
 - Secondary: WireGuard IPs (backends)
 
 **Platform:**
+
 - Gateway: Nginx/HAProxy reverse proxy
 - Backends: Application servers
 - SSL/TLS: Let's Encrypt (automated)
@@ -565,15 +577,18 @@ output "node_ids" {
 **Use Case:** Kubernetes clusters
 
 **Infrastructure:**
+
 - 1+ Control plane nodes
 - N Worker nodes
 - 1 Management node (kubectl, helm, k9s)
 
 **Network:**
+
 - Primary: Control plane WireGuard IP
 - Secondary: Worker node IPs
 
 **Platform:**
+
 - K3s lightweight Kubernetes
 - MetalLB load balancer
 - Nginx Ingress Controller
@@ -713,12 +728,15 @@ terraform output primary_ip_type
 # My Pattern
 
 ## Use Cases
+
 - What problems does this solve?
 
 ## Configuration
+
 - What options are available?
 
 ## Example
+
 - Show complete example
 ```
 
@@ -779,6 +797,7 @@ echo "  my-command <args>  - Description"
 ### Why Bash?
 
 **Pros:**
+
 - ✅ Universal availability (every Unix system)
 - ✅ Easy to understand and debug
 - ✅ Transparent execution (no compilation)
@@ -787,11 +806,13 @@ echo "  my-command <args>  - Description"
 - ✅ Minimal dependencies
 
 **Cons:**
+
 - ❌ Error handling can be tricky
 - ❌ No type safety
 - ❌ Testing is harder
 
 **Mitigation:**
+
 - Use `set -e` (exit on error)
 - Extensive validation
 - Logging at each step
@@ -800,12 +821,14 @@ echo "  my-command <args>  - Description"
 ### Why Pattern-Based?
 
 **Benefits:**
+
 - Different use cases need different infrastructure
 - Patterns encapsulate best practices
 - Easy to add new patterns without modifying core
 - Users can create custom patterns
 
 **Alternatives Considered:**
+
 - Single monolithic template (too rigid)
 - Full config DSL (too complex)
 - GUI builder (not CLI-friendly)
@@ -813,6 +836,7 @@ echo "  my-command <args>  - Description"
 ### Why OpenTofu Priority?
 
 **Rationale:**
+
 - Open source (Apache 2.0 license)
 - Compatible with Terraform
 - Community-driven development
@@ -820,6 +844,7 @@ echo "  my-command <args>  - Description"
 - Same user experience
 
 **Fallback:**
+
 - Terraform still supported
 - Auto-detection at runtime
 - No breaking changes
@@ -827,12 +852,14 @@ echo "  my-command <args>  - Description"
 ### Why State in `.tfgrid-compose/`?
 
 **Benefits:**
+
 - Co-located with deployment
 - Easy to find and inspect
 - Git-ignored by default
 - Self-contained
 
 **Alternatives:**
+
 - `~/.tfgrid/` (harder to track per-project)
 - Database (added complexity)
 - Cloud storage (requires connectivity)
@@ -844,6 +871,7 @@ echo "  my-command <args>  - Description"
 ### Deployment Speed
 
 **Typical Timeline:**
+
 - Infrastructure (Terraform): 30-60 seconds
 - Network setup (WireGuard): 5-10 seconds
 - Wait for SSH: 30-90 seconds
@@ -855,25 +883,30 @@ echo "  my-command <args>  - Description"
 ### Optimization Opportunities
 
 **1. Parallel Execution:**
+
 - Multiple Ansible hosts configured in parallel
 - Background tasks where possible
 
 **2. Caching:**
+
 - Terraform state cached locally
 - Ansible facts cached between runs
 
 **3. Incremental Updates:**
+
 - Only run changed playbooks
 - Terraform plan before apply
 
 ### Resource Usage
 
 **Local Machine:**
+
 - Minimal CPU usage (mostly waiting)
 - Small disk footprint (<50MB for state)
 - Network: Depends on Terraform operations
 
 **Remote VMs:**
+
 - Configured per pattern requirements
 - Single-VM: 2-8 CPU, 4-16GB RAM typical
 - Gateway: 1-2 CPU per VM, 2-4GB RAM
@@ -886,11 +919,13 @@ echo "  my-command <args>  - Description"
 ### Mnemonic Security
 
 **Storage:**
+
 - File permissions: 600 (read/write owner only)
 - Standard location: `~/.config/threefold/mnemonic`
 - Warning if permissions are incorrect
 
 **Best Practices:**
+
 - Never commit to version control
 - Use environment variable in CI/CD
 - Rotate regularly
@@ -898,6 +933,7 @@ echo "  my-command <args>  - Description"
 ### SSH Key Management
 
 **Default Behavior:**
+
 - Uses system SSH keys (`~/.ssh/id_*.pub`)
 - Injected into VMs during deployment
 - No passwords (key-based auth only)
@@ -905,11 +941,13 @@ echo "  my-command <args>  - Description"
 ### WireGuard Security
 
 **Private Keys:**
+
 - Generated by Terraform provider
 - Stored in Terraform state (encrypted at rest)
 - Deployed to `/etc/wireguard/` with 600 permissions
 
 **Network Isolation:**
+
 - Private networks per deployment
 - No default internet routing
 - Explicit rules required for external access
@@ -926,6 +964,7 @@ tfgrid-compose --debug up <app>
 ```
 
 **Effects:**
+
 - Verbose logging (`set -x`)
 - Keep temporary files
 - Show all command output
@@ -934,6 +973,7 @@ tfgrid-compose --debug up <app>
 ### Log Files
 
 All logs saved to `.tfgrid-compose/`:
+
 - `terraform-init.log`
 - `terraform-plan.log`
 - `terraform-apply.log`

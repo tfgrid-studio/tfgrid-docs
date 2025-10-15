@@ -4,89 +4,109 @@
 
 ---
 
-## CLI Integration
+## Recently Completed ✅
 
-**Status:** 🔨 Building
+### CLI Integration (v0.10.0 - Oct 15, 2025)
 
-### Overview
+**Status:** ✅ **COMPLETED**
 
-Deploy apps by name directly from the registry. No more copying manifests - just use the app name.
-
-### What You'll Be Able To Do
+Deploy apps by name directly from the registry!
 
 ```bash
 # Search the registry
 tfgrid-compose search
-tfgrid-compose search wordpress
-tfgrid-compose search --tag=cms
 
 # Deploy by name
 tfgrid-compose up wordpress
-tfgrid-compose up nextcloud
-tfgrid-compose up ghost
 
-# Manage multiple deployments
-tfgrid-compose up wordpress --name=prod
-tfgrid-compose up wordpress --name=staging
+# Manage multiple apps
 tfgrid-compose list
-tfgrid-compose switch prod
+tfgrid-compose switch ai-agent
 ```
 
-### Features Included
+**See:** [Registry Guide](../cli/registry.md) | [Release Notes](https://github.com/tfgrid-studio/tfgrid-compose/releases/tag/v0.10.0)
 
-**Registry Integration:**
+---
 
-- Search apps from CLI
-- Fetch app manifests automatically
-- Cache apps locally
-- Auto-update when available
+## Currently Building 🔨
 
-**Multi-Deployment Management:**
+### Web Dashboard
 
-- Deploy same app multiple times
-- Name your deployments
-- Switch between contexts
-- List all active deployments
+**Status:** 🔨 Planning & Design
 
-**Smart Caching:**
+**Goal:** Visual management interface for deployments
 
-- Apps cached in `~/.config/tfgrid-compose/apps/`
-- Offline mode for cached apps
-- Version checking
-- Update notifications
+### What It Will Do
 
-### Technical Details
-
-**App Resolution:**
 ```
-tfgrid-compose up wordpress
-  ↓
-1. Check local cache
-2. Fetch from registry if needed
-3. Validate manifest
-4. Deploy with context name
-5. Track in state
+🖥️ Modern web interface to:
+- View all deployments at a glance
+- Deploy apps with GUI
+- Monitor resources in real-time  
+- Manage team access
+- View logs and metrics
 ```
 
-**Context Management:**
+### Features Planned
+
+**Visual Deployment:**
+- Browse registry in GUI
+- One-click app deployment
+- Configuration wizard
+- Pattern selection UI
+
+**Real-Time Monitoring:**
+- Resource usage graphs
+- Live log streaming
+- Health check dashboard
+- Alert notifications
+
+**Team Collaboration:**
+- Multi-user access
+- Role-based permissions
+- Deployment history
+- Activity audit log
+
+**Topology View:**
+- Visual network diagram
+- VM connections
+- Service relationships
+- Traffic flow
+
+### Architecture Preview
+
 ```
-~/.config/tfgrid-compose/
-├── apps/              # Cached apps
-│   ├── wordpress/
-│   ├── nextcloud/
-│   └── ghost/
-├── contexts/          # Deployment contexts
-│   ├── prod/
-│   ├── staging/
-│   └── dev/
-└── config.yaml        # Global config
+┌─────────────────────────────────────────┐
+│         Web Dashboard (React)           │
+│  ┌────────┐  ┌────────┐  ┌────────┐   │
+│  │Registry│  │Deploys │  │Monitor │   │
+│  └────────┘  └────────┘  └────────┘   │
+└─────────────────────────────────────────┘
+                    ↕️
+┌─────────────────────────────────────────┐
+│      Backend API (FastAPI/Go)           │
+│  ┌────────┐  ┌────────┐  ┌────────┐   │
+│  │ Auth  │  │  State │  │Metrics │   │
+│  └────────┘  └────────┘  └────────┘   │
+└─────────────────────────────────────────┘
+                    ↕️
+┌─────────────────────────────────────────┐
+│      tfgrid-compose CLI Engine          │
+└─────────────────────────────────────────┘
 ```
+
+### Timeline
+
+- **Research:** Q4 2025
+- **Design:** Q4 2025
+- **Development:** Q1 2026
+- **Beta:** Q1 2026
 
 ---
 
 ## Try Current Features
 
-While CLI integration is in development, you can use all current features:
+Use the newly released CLI features:
 
 ```bash
 # Install

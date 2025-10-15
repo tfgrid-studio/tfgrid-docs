@@ -2,6 +2,10 @@
 
 Deploy your first application on ThreeFold Grid in **5 minutes**.
 
+:::tip New in v0.10.0
+You can now deploy apps directly by name! No need to clone repositories manually.
+:::
+
 ---
 
 ## Prerequisites
@@ -13,7 +17,66 @@ Before starting, ensure you have:
 
 ---
 
-## Step 1: Setup Workspace (2 minutes)
+## 🚀 Quick Start (Registry Method)
+
+**Fastest way to deploy** - uses the app registry (v0.10.0+):
+
+### Step 1: Configure ThreeFold (1 minute)
+
+```bash
+# Store mnemonic
+mkdir -p ~/.config/threefold
+echo "your twelve word mnemonic here" > ~/.config/threefold/mnemonic
+chmod 600 ~/.config/threefold/mnemonic
+
+# Set environment variable
+export TF_VAR_mnemonic=$(cat ~/.config/threefold/mnemonic)
+# Or for Fish: set -x TF_VAR_mnemonic (cat ~/.config/threefold/mnemonic)
+```
+
+### Step 2: Search & Deploy (1 minute)
+
+```bash
+# Browse available apps
+tfgrid-compose search
+
+# Deploy an app by name
+tfgrid-compose up ai-agent
+
+# Watch the magic happen! ✨
+# ✅ Fetching from registry...
+# ✅ Downloading app...
+# ✅ Provisioning infrastructure...
+# ✅ Deployment complete!
+```
+
+### Step 3: Use Your App
+
+```bash
+# Check status
+tfgrid-compose status
+
+# View logs
+tfgrid-compose logs
+
+# SSH into VM
+tfgrid-compose ssh
+
+# For AI agent specifically
+tfgrid-compose exec login
+```
+
+**That's it!** 🎉
+
+See [Registry Guide](../cli/registry.md) for more details.
+
+---
+
+## 📦 Manual Method (Local Path)
+
+If you prefer working with local repositories:
+
+### Step 1: Setup Workspace (2 minutes)
 
 ```bash
 # Create workspace

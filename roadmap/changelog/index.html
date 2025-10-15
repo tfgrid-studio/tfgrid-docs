@@ -1348,23 +1348,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#100-2025-10-09" class="md-nav__link">
+  <a href="#090-2025-10-14" class="md-nav__link">
     <span class="md-ellipsis">
-      [1.0.0] - 2025-10-09
+      [0.9.0] - 2025-10-14
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="[1.0.0] - 2025-10-09">
+    <nav class="md-nav" aria-label="[0.9.0] - 2025-10-14">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#major-rebrand-launch" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎉 Major Rebrand &amp; Launch
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#added" class="md-nav__link">
@@ -1386,6 +1377,57 @@
         
           <li class="md-nav__item">
   <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-090-2025-10-09" class="md-nav__link">
+    <span class="md-ellipsis">
+      [Pre-0.9.0] - 2025-10-09
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[Pre-0.9.0] - 2025-10-09">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tfgrid-studio-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 TFGrid Studio Launch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Added
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_1" class="md-nav__link">
     <span class="md-ellipsis">
       Fixed
     </span>
@@ -1457,8 +1499,30 @@
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>All notable changes to TFGrid Studio will be documented in this file.</p>
 <hr />
-<h2 id="100-2025-10-09">[1.0.0] - 2025-10-09<a class="headerlink" href="#100-2025-10-09" title="Permanent link">&para;</a></h2>
-<h3 id="major-rebrand-launch">🎉 Major Rebrand &amp; Launch<a class="headerlink" href="#major-rebrand-launch" title="Permanent link">&para;</a></h3>
+<h2 id="090-2025-10-14">[0.9.0] - 2025-10-14<a class="headerlink" href="#090-2025-10-14" title="Permanent link">&para;</a></h2>
+<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>OpenTofu Priority Support</strong>: Now checks for and prefers OpenTofu over Terraform</li>
+<li><strong>Versioning Policy</strong>: Comprehensive versioning documentation following Semantic Versioning 2.0.0</li>
+<li><strong>Architecture Documentation</strong>: Complete system architecture guide</li>
+<li><strong>Troubleshooting Guide</strong>: Comprehensive error handling and recovery procedures</li>
+<li><strong>Community Documentation</strong>: Code of Conduct, Contributing Guide, Security Policy</li>
+</ul>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Version Standardization</strong>: Unified version to 0.9.0 across all files following SemVer</li>
+<li><strong>Documentation Migration</strong>: Moved all user-facing docs to tfgrid-docs for centralized access</li>
+<li><strong>Install Messages</strong>: Updated to recommend OpenTofu as primary option</li>
+</ul>
+<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Version Inconsistency</strong>: Resolved conflicting versions (was showing 2.0.0, 1.0.0, 0.1.0-mvp)</li>
+<li><strong>Tool Detection</strong>: Fixed hardcoded terraform references to support OpenTofu</li>
+<li><strong>README Paths</strong>: Updated tfgrid-deployer references to tfgrid-compose</li>
+</ul>
+<hr />
+<h2 id="pre-090-2025-10-09">[Pre-0.9.0] - 2025-10-09<a class="headerlink" href="#pre-090-2025-10-09" title="Permanent link">&para;</a></h2>
+<h3 id="tfgrid-studio-launch">🎉 TFGrid Studio Launch<a class="headerlink" href="#tfgrid-studio-launch" title="Permanent link">&para;</a></h3>
 <p><strong>Rebranded to TFGrid Studio</strong>
 - Changed organization from <code>tfgrid-compose</code> to <code>tfgrid-studio</code>
 - Better positioning as complete development platform (not just deployment)
@@ -1482,8 +1546,8 @@
 - Planned features roadmap
 - Source repository acknowledgment
 - Architecture documentation</p>
-<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
-<p><strong>tfgrid-compose (formerly tfgrid-deployer) - v1.0.0</strong>
+<h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
+<p><strong>tfgrid-compose (formerly tfgrid-deployer)</strong>
 - Full deployment orchestration (Terraform + Ansible + WireGuard)
 - Context file support (<code>.tfgrid-compose.yaml</code>)
 - Agent subcommand for AI operations
@@ -1492,23 +1556,23 @@
 - Remote command execution (<code>exec</code>)
 - State management system
 - Single-VM pattern (production ready)</p>
-<p><strong>tfgrid-ai-agent - v2.0.0</strong>
+<p><strong>tfgrid-ai-agent</strong>
 - AI coding with Qwen integration
 - Loop technique for iterative development
 - Project management system
 - Systemd service management
 - Critical bug fix: Unified project directory structure</p>
-<p><strong>tfgrid-www - v1.0.0</strong>
+<p><strong>tfgrid-www</strong>
 - Beautiful marketing landing page
 - Pricing tiers (Community/Pro/Business/Enterprise)
 - Feature showcase
 - GitHub Pages deployment</p>
-<p><strong>tfgrid-docs - v1.0.0</strong>
+<p><strong>tfgrid-docs</strong>
 - Complete documentation structure
 - Getting started guides
 - Roadmap documentation
 - Source acknowledgment</p>
-<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Organization name:</strong> <code>tfgrid-compose</code> → <code>tfgrid-studio</code></li>
 <li><strong>Main CLI repo:</strong> <code>tfgrid-deployer</code> → <code>tfgrid-compose</code></li>
@@ -1516,7 +1580,7 @@
 <li>Main site: <code>tfgrid.studio</code></li>
 <li>Docs: <code>docs.tfgrid.studio</code></li>
 </ul>
-<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>AI agent project directory structure (unified to <code>/opt/ai-agent/projects/</code>)</li>
 <li>All documentation references updated to new organization</li>

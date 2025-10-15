@@ -176,30 +176,17 @@ Voice Input → STT → AI CLI → TTS → Voice Output
 
 ---
 
-## Revenue Model
+## Availability
 
-### Free Tier
-
+**Free & Open Source:**
 - CLI tools (forever free)
-- Browse registry
-- Deploy up to 3 apps
-- Community support
 
-### Pro Tier - $29/month
+**Pro & Team Tiers:**
+- Web Dashboard
+- AI CLI Assistant
+- Voice Interface (Team+)
 
-- **Web Dashboard** access 🔑
-- Unlimited deployments
-- **AI CLI Assistant** (text) 🔑
-- Advanced monitoring
-- Email support
-
-### Team Tier - $99/month
-
-- Everything in Pro
-- Team collaboration
-- **Voice Interface** 🔑
-- Priority support
-- API access
+[View Pricing →](https://tfgrid.studio/#pricing)
 
 ---
 

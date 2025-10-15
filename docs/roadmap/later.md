@@ -216,42 +216,18 @@ Advanced features for large organizations with complex requirements.
 
 ---
 
-## Revenue Summary
+## Availability
 
-### Individual Tier - FREE
+**Free & Open Source:**
+- Core CLI tools remain free forever
 
-- CLI tools forever
-- Community support
-- Up to 3 deployments
+**Premium Tiers:**
+- Marketplace available in all paid tiers
+- White Label for Enterprise
 
-### Pro Tier - $29/month
+**For pricing details:** [View Pricing →](https://tfgrid.studio/#pricing)
 
-- Web Dashboard
-- AI Assistant (text)
-- Unlimited deployments
-
-### Team Tier - $99/month
-
-- Pro features
-- Team collaboration
-- Voice interface
-
-### Enterprise - $499/month
-
-- Team features
-- SSO/SAML
-- Custom SLA
-
-### Marketplace - 15% fee
-
-- Platform commission
-- Creator gets 85%
-
-### White Label - $50k-200k/year
-
-- Full rebranding
-- Annual license
-- Optional 20% marketplace share
+**For white label inquiries:** Contact enterprise@tfgrid.studio
 
 ---
 

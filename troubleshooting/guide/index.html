@@ -2571,10 +2571,12 @@
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;your mnemonic&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>.tfgrid-mnemonic
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>.tfgrid-mnemonic
 </code></pre></div></p>
-<p><strong>Security Warning:</strong>
-- Never commit mnemonic to version control
-- Use 600 permissions (owner read/write only)
-- Rotate regularly</p>
+<p><strong>Security Warning:</strong></p>
+<ul>
+<li>Never commit mnemonic to version control</li>
+<li>Use 600 permissions (owner read/write only)</li>
+<li>Rotate regularly</li>
+</ul>
 <hr />
 <h3 id="deployment-errors">Deployment Errors<a class="headerlink" href="#deployment-errors" title="Permanent link">&para;</a></h3>
 <h4 id="error-existing-deployment-detected">Error: "Existing deployment detected"<a class="headerlink" href="#error-existing-deployment-detected" title="Permanent link">&para;</a></h4>
@@ -2615,10 +2617,12 @@
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="s">  disk: 102400</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="s">EOF</span>
 </code></pre></div></p>
-<p><strong>Required Fields:</strong>
-- <code>name</code>: Application name
-- <code>pattern</code>: Deployment pattern (single-vm, gateway, k3s)
-- <code>config</code>: Pattern-specific configuration</p>
+<p><strong>Required Fields:</strong></p>
+<ul>
+<li><code>name</code>: Application name</li>
+<li><code>pattern</code>: Deployment pattern (single-vm, gateway, k3s)</li>
+<li><code>config</code>: Pattern-specific configuration</li>
+</ul>
 <hr />
 <h4 id="error-pattern-directory-not-found">Error: "Pattern directory not found"<a class="headerlink" href="#error-pattern-directory-not-found" title="Permanent link">&para;</a></h4>
 <p><strong>Cause:</strong> Referenced pattern doesn't exist</p>
@@ -2740,11 +2744,13 @@
 <a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="c1"># 6. Manual SSH test</span>
 <a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>ssh<span class="w"> </span>root@&lt;primary-ip&gt;
 </code></pre></div></p>
-<p><strong>Common Causes:</strong>
-- VM still booting (wait 2-3 minutes)
-- WireGuard interface down
-- Firewall blocking port 22
-- Wrong IP address in state</p>
+<p><strong>Common Causes:</strong></p>
+<ul>
+<li>VM still booting (wait 2-3 minutes)</li>
+<li>WireGuard interface down</li>
+<li>Firewall blocking port 22</li>
+<li>Wrong IP address in state</li>
+</ul>
 <hr />
 <h4 id="error-cannot-establish-ssh-connection">Error: "Cannot establish SSH connection"<a class="headerlink" href="#error-cannot-establish-ssh-connection" title="Permanent link">&para;</a></h4>
 <p><strong>Cause:</strong> SSH keys not configured or VM doesn't have key</p>
@@ -2798,11 +2804,13 @@
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>tfgrid-compose<span class="w"> </span>--debug<span class="w"> </span>up<span class="w"> </span>&lt;app&gt;
 </code></pre></div></p>
 <h3 id="debug-output">Debug Output<a class="headerlink" href="#debug-output" title="Permanent link">&para;</a></h3>
-<p><strong>What you'll see:</strong>
-- Every command executed (<code>+ command args</code>)
-- Variable expansions
-- Function calls
-- Exit codes</p>
+<p><strong>What you'll see:</strong></p>
+<ul>
+<li>Every command executed (<code>+ command args</code>)</li>
+<li>Variable expansions</li>
+<li>Function calls</li>
+<li>Exit codes</li>
+</ul>
 <p><strong>Example:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>+<span class="w"> </span>log_step<span class="w"> </span><span class="s1">&#39;Deploying infrastructure...&#39;</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>+<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;\033[0;35m▶\033[0m Deploying infrastructure...&#39;</span>
@@ -2913,10 +2921,12 @@
 <hr />
 <h2 id="recovery-procedures">Recovery Procedures<a class="headerlink" href="#recovery-procedures" title="Permanent link">&para;</a></h2>
 <h3 id="state-corruption">State Corruption<a class="headerlink" href="#state-corruption" title="Permanent link">&para;</a></h3>
-<p><strong>Symptoms:</strong>
-- Inconsistent state information
-- Terraform errors about existing resources
-- Deployment shows running but no VM exists</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Inconsistent state information</li>
+<li>Terraform errors about existing resources</li>
+<li>Deployment shows running but no VM exists</li>
+</ul>
 <p><strong>Recovery:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># 1. Backup current state</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>cp<span class="w"> </span>-r<span class="w"> </span>.tfgrid-compose<span class="w"> </span>.tfgrid-compose.backup
@@ -2986,10 +2996,12 @@
 </code></pre></div></p>
 <hr />
 <h3 id="wireguard-cleanup">WireGuard Cleanup<a class="headerlink" href="#wireguard-cleanup" title="Permanent link">&para;</a></h3>
-<p><strong>When to clean:</strong>
-- Deployment destroyed but WireGuard still running
-- Interface conflicts
-- Network issues</p>
+<p><strong>When to clean:</strong></p>
+<ul>
+<li>Deployment destroyed but WireGuard still running</li>
+<li>Interface conflicts</li>
+<li>Network issues</li>
+</ul>
 <p><strong>Cleanup:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># 1. List all interfaces</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>sudo<span class="w"> </span>wg<span class="w"> </span>show
@@ -3122,19 +3134,23 @@
 <p>To use specific key, set in pattern config.</p>
 <hr />
 <p><strong>Q: How much does deployment cost?</strong><br />
-<strong>A:</strong> Depends on resources:
-- VM: ~$2-10/month
-- Storage: ~$0.15/GB/month
-- Network: Usually included</p>
+<strong>A:</strong> Depends on resources:</p>
+<ul>
+<li>VM: ~$2-10/month</li>
+<li>Storage: ~$0.15/GB/month</li>
+<li>Network: Usually included</li>
+</ul>
 <p>Check ThreeFold pricing: https://threefold.io/pricing</p>
 <hr />
 <h3 id="technical">Technical<a class="headerlink" href="#technical" title="Permanent link">&para;</a></h3>
 <p><strong>Q: OpenTofu vs Terraform - which should I use?</strong><br />
-<strong>A:</strong> OpenTofu is recommended:
-- Open source (Apache 2.0)
-- Community-driven
-- Compatible with Terraform
-- No license restrictions</p>
+<strong>A:</strong> OpenTofu is recommended:</p>
+<ul>
+<li>Open source (Apache 2.0)</li>
+<li>Community-driven</li>
+<li>Compatible with Terraform</li>
+<li>No license restrictions</li>
+</ul>
 <p>tfgrid-compose automatically detects and prefers OpenTofu.</p>
 <hr />
 <p><strong>Q: Can I customize the Ansible playbook?</strong><br />
@@ -3181,25 +3197,31 @@
 </code></pre></div></p>
 <hr />
 <p><strong>Q: Can I use this for production?</strong><br />
-<strong>A:</strong> Yes! tfgrid-compose v0.9.0 is production-ready. Recommendations:
-- Use gateway pattern for web apps (public IP + SSL)
-- Enable monitoring
-- Set up backups
-- Use version control for configuration
-- Test deployments in staging first</p>
+<strong>A:</strong> Yes! tfgrid-compose v0.9.0 is production-ready. Recommendations:</p>
+<ul>
+<li>Use gateway pattern for web apps (public IP + SSL)</li>
+<li>Enable monitoring</li>
+<li>Set up backups</li>
+<li>Use version control for configuration</li>
+<li>Test deployments in staging first</li>
+</ul>
 <hr />
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
 <p><strong>Q: Deployment takes too long</strong><br />
-<strong>A:</strong> Typical times:
-- Infrastructure: 30-60s
-- Network setup: 5-10s
-- SSH wait: 30-90s
-- Platform config: 60-120s
-- Total: 2-5 minutes</p>
-<p>If longer:
-- Check node availability (may be slow/busy)
-- Check network connectivity
-- Try different node</p>
+<strong>A:</strong> Typical times:</p>
+<ul>
+<li>Infrastructure: 30-60s</li>
+<li>Network setup: 5-10s</li>
+<li>SSH wait: 30-90s</li>
+<li>Platform config: 60-120s</li>
+<li>Total: 2-5 minutes</li>
+</ul>
+<p>If longer:</p>
+<ul>
+<li>Check node availability (may be slow/busy)</li>
+<li>Check network connectivity</li>
+<li>Try different node</li>
+</ul>
 <hr />
 <p><strong>Q: "Connection refused" on SSH</strong><br />
 <strong>A:</strong> VM may still be booting:
@@ -3288,19 +3310,27 @@
 </ol>
 <hr />
 <h3 id="support-channels">Support Channels<a class="headerlink" href="#support-channels" title="Permanent link">&para;</a></h3>
-<p><strong>GitHub Issues:</strong>
-- Bug reports: https://github.com/tfgrid-studio/tfgrid-compose/issues
-- Feature requests: Label as "enhancement"</p>
-<p><strong>Discussions:</strong>
-- Questions: https://github.com/orgs/tfgrid-studio/discussions
-- Community help</p>
-<p><strong>Documentation:</strong>
-- Docs site: https://docs.tfgrid.studio
-- GitHub: https://github.com/tfgrid-studio</p>
-<p><strong>ThreeFold Resources:</strong>
-- ThreeFold Manual: https://manual.grid.tf/
-- ThreeFold Forum: https://forum.threefold.io/
-- ThreeFold Support: https://threefold.io/support</p>
+<p><strong>GitHub Issues:</strong></p>
+<ul>
+<li>Bug reports: https://github.com/tfgrid-studio/tfgrid-compose/issues</li>
+<li>Feature requests: Label as "enhancement"</li>
+</ul>
+<p><strong>Discussions:</strong></p>
+<ul>
+<li>Questions: https://github.com/orgs/tfgrid-studio/discussions</li>
+<li>Community help</li>
+</ul>
+<p><strong>Documentation:</strong></p>
+<ul>
+<li>Docs site: https://docs.tfgrid.studio</li>
+<li>GitHub: https://github.com/tfgrid-studio</li>
+</ul>
+<p><strong>ThreeFold Resources:</strong></p>
+<ul>
+<li>ThreeFold Manual: https://manual.grid.tf/</li>
+<li>ThreeFold Forum: https://forum.threefold.io/</li>
+<li>ThreeFold Support: https://threefold.io/support</li>
+</ul>
 <hr />
 <h2 id="quick-reference">Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h2>
 <h3 id="common-commands">Common Commands<a class="headerlink" href="#common-commands" title="Permanent link">&para;</a></h3>

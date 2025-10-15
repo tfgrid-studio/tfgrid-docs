@@ -2611,32 +2611,42 @@
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>└─────────────────────────────────────────────────────────────┘
 </code></pre></div>
 <h3 id="design-philosophy">Design Philosophy<a class="headerlink" href="#design-philosophy" title="Permanent link">&para;</a></h3>
-<p><strong>1. Pattern-Based Architecture</strong>
-- Patterns encapsulate infrastructure, platform, and application concerns
-- Orchestrator is pattern-agnostic (knows nothing about pattern internals)
-- New patterns can be added without modifying core code</p>
-<p><strong>2. Contract-Driven Integration</strong>
-- Patterns must implement a <a href="../patterns/PATTERN_CONTRACT.md">standard contract</a>
-- Orchestrator consumes contract outputs (primary_ip, deployment_name, etc.)
-- Loose coupling enables extensibility</p>
-<p><strong>3. Shell-Based Implementation</strong>
-- Bash scripts for simplicity and transparency
-- Easy to understand, debug, and extend
-- Minimal dependencies (bash, common Unix tools)
-- Works on any Unix-like system (Linux, macOS)</p>
+<p><strong>1. Pattern-Based Architecture</strong></p>
+<ul>
+<li>Patterns encapsulate infrastructure, platform, and application concerns</li>
+<li>Orchestrator is pattern-agnostic (knows nothing about pattern internals)</li>
+<li>New patterns can be added without modifying core code</li>
+</ul>
+<p><strong>2. Contract-Driven Integration</strong></p>
+<ul>
+<li>Patterns must implement a <a href="../patterns/PATTERN_CONTRACT.md">standard contract</a></li>
+<li>Orchestrator consumes contract outputs (primary_ip, deployment_name, etc.)</li>
+<li>Loose coupling enables extensibility</li>
+</ul>
+<p><strong>3. Shell-Based Implementation</strong></p>
+<ul>
+<li>Bash scripts for simplicity and transparency</li>
+<li>Easy to understand, debug, and extend</li>
+<li>Minimal dependencies (bash, common Unix tools)</li>
+<li>Works on any Unix-like system (Linux, macOS)</li>
+</ul>
 <hr />
 <h2 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
 <h3 id="1-cli-entry-point-clitfgrid-compose">1. CLI Entry Point (<code>cli/tfgrid-compose</code>)<a class="headerlink" href="#1-cli-entry-point-clitfgrid-compose" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose:</strong> User-facing command interface</p>
-<p><strong>Responsibilities:</strong>
-- Parse command-line arguments
-- Load context file (<code>.tfgrid-compose.yaml</code>)
-- Route commands to appropriate handlers
-- Display help and version information</p>
-<p><strong>Key Features:</strong>
-- Context file support for simplified commands
-- Command aliases (e.g., <code>agent</code> subcommand)
-- Global flags (--debug, --version)</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Parse command-line arguments</li>
+<li>Load context file (<code>.tfgrid-compose.yaml</code>)</li>
+<li>Route commands to appropriate handlers</li>
+<li>Display help and version information</li>
+</ul>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Context file support for simplified commands</li>
+<li>Command aliases (e.g., <code>agent</code> subcommand)</li>
+<li>Global flags (--debug, --version)</li>
+</ul>
 <p><strong>Example Flow:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>/path/to/app
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>↓
@@ -2664,12 +2674,14 @@
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>state_get<span class="o">()</span><span class="w">         </span><span class="c1"># Retrieve from state file</span>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>state_clear<span class="o">()</span><span class="w">       </span><span class="c1"># Clear state directory</span>
 </code></pre></div>
-<p><strong>Color-Coded Output:</strong>
-- 🔵 Blue: Informational
-- ✅ Green: Success
-- ⚠️ Yellow: Warnings
-- ❌ Red: Errors
-- ▶ Purple: Major steps</p>
+<p><strong>Color-Coded Output:</strong></p>
+<ul>
+<li>🔵 Blue: Informational</li>
+<li>✅ Green: Success</li>
+<li>⚠️ Yellow: Warnings</li>
+<li>❌ Red: Errors</li>
+<li>▶ Purple: Major steps</li>
+</ul>
 <hr />
 <h3 id="3-validation-module-corevalidationsh">3. Validation Module (<code>core/validation.sh</code>)<a class="headerlink" href="#3-validation-module-corevalidationsh" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose:</strong> Validate prerequisites and configurations</p>
@@ -3000,44 +3012,62 @@
 <h3 id="pattern-types">Pattern Types<a class="headerlink" href="#pattern-types" title="Permanent link">&para;</a></h3>
 <h4 id="1-single-vm-pattern">1. Single-VM Pattern<a class="headerlink" href="#1-single-vm-pattern" title="Permanent link">&para;</a></h4>
 <p><strong>Use Case:</strong> Development, databases, internal services, AI agents</p>
-<p><strong>Infrastructure:</strong>
-- 1 VM on TFGrid
-- WireGuard private network
-- Optional Mycelium IPv6</p>
-<p><strong>Network:</strong>
-- Primary: WireGuard IP (10.x.x.x)
-- Secondary: Mycelium IP (IPv6)</p>
-<p><strong>Platform:</strong>
-- Ubuntu 24.04
-- Base packages (git, curl, build-essential)
-- Docker (optional)</p>
+<p><strong>Infrastructure:</strong></p>
+<ul>
+<li>1 VM on TFGrid</li>
+<li>WireGuard private network</li>
+<li>Optional Mycelium IPv6</li>
+</ul>
+<p><strong>Network:</strong></p>
+<ul>
+<li>Primary: WireGuard IP (10.x.x.x)</li>
+<li>Secondary: Mycelium IP (IPv6)</li>
+</ul>
+<p><strong>Platform:</strong></p>
+<ul>
+<li>Ubuntu 24.04</li>
+<li>Base packages (git, curl, build-essential)</li>
+<li>Docker (optional)</li>
+</ul>
 <h4 id="2-gateway-pattern">2. Gateway Pattern<a class="headerlink" href="#2-gateway-pattern" title="Permanent link">&para;</a></h4>
 <p><strong>Use Case:</strong> Production web apps with public IPv4</p>
-<p><strong>Infrastructure:</strong>
-- 1 Gateway VM (public IPv4)
-- N Backend VMs (private network)
-- WireGuard + Mycelium</p>
-<p><strong>Network:</strong>
-- Primary: Public IPv4 (gateway)
-- Secondary: WireGuard IPs (backends)</p>
-<p><strong>Platform:</strong>
-- Gateway: Nginx/HAProxy reverse proxy
-- Backends: Application servers
-- SSL/TLS: Let's Encrypt (automated)</p>
+<p><strong>Infrastructure:</strong></p>
+<ul>
+<li>1 Gateway VM (public IPv4)</li>
+<li>N Backend VMs (private network)</li>
+<li>WireGuard + Mycelium</li>
+</ul>
+<p><strong>Network:</strong></p>
+<ul>
+<li>Primary: Public IPv4 (gateway)</li>
+<li>Secondary: WireGuard IPs (backends)</li>
+</ul>
+<p><strong>Platform:</strong></p>
+<ul>
+<li>Gateway: Nginx/HAProxy reverse proxy</li>
+<li>Backends: Application servers</li>
+<li>SSL/TLS: Let's Encrypt (automated)</li>
+</ul>
 <h4 id="3-k3s-pattern">3. K3s Pattern<a class="headerlink" href="#3-k3s-pattern" title="Permanent link">&para;</a></h4>
 <p><strong>Use Case:</strong> Kubernetes clusters</p>
-<p><strong>Infrastructure:</strong>
-- 1+ Control plane nodes
-- N Worker nodes
-- 1 Management node (kubectl, helm, k9s)</p>
-<p><strong>Network:</strong>
-- Primary: Control plane WireGuard IP
-- Secondary: Worker node IPs</p>
-<p><strong>Platform:</strong>
-- K3s lightweight Kubernetes
-- MetalLB load balancer
-- Nginx Ingress Controller
-- Local-path storage provisioner</p>
+<p><strong>Infrastructure:</strong></p>
+<ul>
+<li>1+ Control plane nodes</li>
+<li>N Worker nodes</li>
+<li>1 Management node (kubectl, helm, k9s)</li>
+</ul>
+<p><strong>Network:</strong></p>
+<ul>
+<li>Primary: Control plane WireGuard IP</li>
+<li>Secondary: Worker node IPs</li>
+</ul>
+<p><strong>Platform:</strong></p>
+<ul>
+<li>K3s lightweight Kubernetes</li>
+<li>MetalLB load balancer</li>
+<li>Nginx Ingress Controller</li>
+<li>Local-path storage provisioner</li>
+</ul>
 <hr />
 <h2 id="state-management">State Management<a class="headerlink" href="#state-management" title="Permanent link">&para;</a></h2>
 <h3 id="state-lifecycle">State Lifecycle<a class="headerlink" href="#state-lifecycle" title="Permanent link">&para;</a></h3>
@@ -3143,13 +3173,16 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="gh"># My Pattern</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
 <a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="gu">## Use Cases</span>
-<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="k">-</span><span class="w"> </span>What problems does this solve?
-<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
-<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="gu">## Configuration</span>
-<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="k">-</span><span class="w"> </span>What options are available?
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="k">-</span><span class="w"> </span>What problems does this solve?
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="gu">## Configuration</span>
 <a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
-<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="gu">## Example</span>
-<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="k">-</span><span class="w"> </span>Show complete example
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="k">-</span><span class="w"> </span>What options are available?
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="gu">## Example</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="k">-</span><span class="w"> </span>Show complete example
 </code></pre></div></p>
 <h3 id="adding-a-new-task">Adding a New Task<a class="headerlink" href="#adding-a-new-task" title="Permanent link">&para;</a></h3>
 <p><strong>1. Create Task Script:</strong>
@@ -3192,126 +3225,170 @@
 <hr />
 <h2 id="design-decisions">Design Decisions<a class="headerlink" href="#design-decisions" title="Permanent link">&para;</a></h2>
 <h3 id="why-bash">Why Bash?<a class="headerlink" href="#why-bash" title="Permanent link">&para;</a></h3>
-<p><strong>Pros:</strong>
-- ✅ Universal availability (every Unix system)
-- ✅ Easy to understand and debug
-- ✅ Transparent execution (no compilation)
-- ✅ Excellent for orchestration
-- ✅ Direct integration with CLI tools
-- ✅ Minimal dependencies</p>
-<p><strong>Cons:</strong>
-- ❌ Error handling can be tricky
-- ❌ No type safety
-- ❌ Testing is harder</p>
-<p><strong>Mitigation:</strong>
-- Use <code>set -e</code> (exit on error)
-- Extensive validation
-- Logging at each step
-- Test scripts provided</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>✅ Universal availability (every Unix system)</li>
+<li>✅ Easy to understand and debug</li>
+<li>✅ Transparent execution (no compilation)</li>
+<li>✅ Excellent for orchestration</li>
+<li>✅ Direct integration with CLI tools</li>
+<li>✅ Minimal dependencies</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>❌ Error handling can be tricky</li>
+<li>❌ No type safety</li>
+<li>❌ Testing is harder</li>
+</ul>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li>Use <code>set -e</code> (exit on error)</li>
+<li>Extensive validation</li>
+<li>Logging at each step</li>
+<li>Test scripts provided</li>
+</ul>
 <h3 id="why-pattern-based">Why Pattern-Based?<a class="headerlink" href="#why-pattern-based" title="Permanent link">&para;</a></h3>
-<p><strong>Benefits:</strong>
-- Different use cases need different infrastructure
-- Patterns encapsulate best practices
-- Easy to add new patterns without modifying core
-- Users can create custom patterns</p>
-<p><strong>Alternatives Considered:</strong>
-- Single monolithic template (too rigid)
-- Full config DSL (too complex)
-- GUI builder (not CLI-friendly)</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Different use cases need different infrastructure</li>
+<li>Patterns encapsulate best practices</li>
+<li>Easy to add new patterns without modifying core</li>
+<li>Users can create custom patterns</li>
+</ul>
+<p><strong>Alternatives Considered:</strong></p>
+<ul>
+<li>Single monolithic template (too rigid)</li>
+<li>Full config DSL (too complex)</li>
+<li>GUI builder (not CLI-friendly)</li>
+</ul>
 <h3 id="why-opentofu-priority">Why OpenTofu Priority?<a class="headerlink" href="#why-opentofu-priority" title="Permanent link">&para;</a></h3>
-<p><strong>Rationale:</strong>
-- Open source (Apache 2.0 license)
-- Compatible with Terraform
-- Community-driven development
-- No license restrictions
-- Same user experience</p>
-<p><strong>Fallback:</strong>
-- Terraform still supported
-- Auto-detection at runtime
-- No breaking changes</p>
+<p><strong>Rationale:</strong></p>
+<ul>
+<li>Open source (Apache 2.0 license)</li>
+<li>Compatible with Terraform</li>
+<li>Community-driven development</li>
+<li>No license restrictions</li>
+<li>Same user experience</li>
+</ul>
+<p><strong>Fallback:</strong></p>
+<ul>
+<li>Terraform still supported</li>
+<li>Auto-detection at runtime</li>
+<li>No breaking changes</li>
+</ul>
 <h3 id="why-state-in-tfgrid-compose">Why State in <code>.tfgrid-compose/</code>?<a class="headerlink" href="#why-state-in-tfgrid-compose" title="Permanent link">&para;</a></h3>
-<p><strong>Benefits:</strong>
-- Co-located with deployment
-- Easy to find and inspect
-- Git-ignored by default
-- Self-contained</p>
-<p><strong>Alternatives:</strong>
-- <code>~/.tfgrid/</code> (harder to track per-project)
-- Database (added complexity)
-- Cloud storage (requires connectivity)</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Co-located with deployment</li>
+<li>Easy to find and inspect</li>
+<li>Git-ignored by default</li>
+<li>Self-contained</li>
+</ul>
+<p><strong>Alternatives:</strong></p>
+<ul>
+<li><code>~/.tfgrid/</code> (harder to track per-project)</li>
+<li>Database (added complexity)</li>
+<li>Cloud storage (requires connectivity)</li>
+</ul>
 <hr />
 <h2 id="performance-considerations">Performance Considerations<a class="headerlink" href="#performance-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="deployment-speed">Deployment Speed<a class="headerlink" href="#deployment-speed" title="Permanent link">&para;</a></h3>
-<p><strong>Typical Timeline:</strong>
-- Infrastructure (Terraform): 30-60 seconds
-- Network setup (WireGuard): 5-10 seconds
-- Wait for SSH: 30-90 seconds
-- Platform config (Ansible): 60-120 seconds
-- App deployment: 10-30 seconds</p>
+<p><strong>Typical Timeline:</strong></p>
+<ul>
+<li>Infrastructure (Terraform): 30-60 seconds</li>
+<li>Network setup (WireGuard): 5-10 seconds</li>
+<li>Wait for SSH: 30-90 seconds</li>
+<li>Platform config (Ansible): 60-120 seconds</li>
+<li>App deployment: 10-30 seconds</li>
+</ul>
 <p><strong>Total: 2-5 minutes</strong></p>
 <h3 id="optimization-opportunities">Optimization Opportunities<a class="headerlink" href="#optimization-opportunities" title="Permanent link">&para;</a></h3>
-<p><strong>1. Parallel Execution:</strong>
-- Multiple Ansible hosts configured in parallel
-- Background tasks where possible</p>
-<p><strong>2. Caching:</strong>
-- Terraform state cached locally
-- Ansible facts cached between runs</p>
-<p><strong>3. Incremental Updates:</strong>
-- Only run changed playbooks
-- Terraform plan before apply</p>
+<p><strong>1. Parallel Execution:</strong></p>
+<ul>
+<li>Multiple Ansible hosts configured in parallel</li>
+<li>Background tasks where possible</li>
+</ul>
+<p><strong>2. Caching:</strong></p>
+<ul>
+<li>Terraform state cached locally</li>
+<li>Ansible facts cached between runs</li>
+</ul>
+<p><strong>3. Incremental Updates:</strong></p>
+<ul>
+<li>Only run changed playbooks</li>
+<li>Terraform plan before apply</li>
+</ul>
 <h3 id="resource-usage">Resource Usage<a class="headerlink" href="#resource-usage" title="Permanent link">&para;</a></h3>
-<p><strong>Local Machine:</strong>
-- Minimal CPU usage (mostly waiting)
-- Small disk footprint (&lt;50MB for state)
-- Network: Depends on Terraform operations</p>
-<p><strong>Remote VMs:</strong>
-- Configured per pattern requirements
-- Single-VM: 2-8 CPU, 4-16GB RAM typical
-- Gateway: 1-2 CPU per VM, 2-4GB RAM
-- K3s: 2+ CPU per node, 4+GB RAM</p>
+<p><strong>Local Machine:</strong></p>
+<ul>
+<li>Minimal CPU usage (mostly waiting)</li>
+<li>Small disk footprint (&lt;50MB for state)</li>
+<li>Network: Depends on Terraform operations</li>
+</ul>
+<p><strong>Remote VMs:</strong></p>
+<ul>
+<li>Configured per pattern requirements</li>
+<li>Single-VM: 2-8 CPU, 4-16GB RAM typical</li>
+<li>Gateway: 1-2 CPU per VM, 2-4GB RAM</li>
+<li>K3s: 2+ CPU per node, 4+GB RAM</li>
+</ul>
 <hr />
 <h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="mnemonic-security">Mnemonic Security<a class="headerlink" href="#mnemonic-security" title="Permanent link">&para;</a></h3>
-<p><strong>Storage:</strong>
-- File permissions: 600 (read/write owner only)
-- Standard location: <code>~/.config/threefold/mnemonic</code>
-- Warning if permissions are incorrect</p>
-<p><strong>Best Practices:</strong>
-- Never commit to version control
-- Use environment variable in CI/CD
-- Rotate regularly</p>
+<p><strong>Storage:</strong></p>
+<ul>
+<li>File permissions: 600 (read/write owner only)</li>
+<li>Standard location: <code>~/.config/threefold/mnemonic</code></li>
+<li>Warning if permissions are incorrect</li>
+</ul>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Never commit to version control</li>
+<li>Use environment variable in CI/CD</li>
+<li>Rotate regularly</li>
+</ul>
 <h3 id="ssh-key-management">SSH Key Management<a class="headerlink" href="#ssh-key-management" title="Permanent link">&para;</a></h3>
-<p><strong>Default Behavior:</strong>
-- Uses system SSH keys (<code>~/.ssh/id_*.pub</code>)
-- Injected into VMs during deployment
-- No passwords (key-based auth only)</p>
+<p><strong>Default Behavior:</strong></p>
+<ul>
+<li>Uses system SSH keys (<code>~/.ssh/id_*.pub</code>)</li>
+<li>Injected into VMs during deployment</li>
+<li>No passwords (key-based auth only)</li>
+</ul>
 <h3 id="wireguard-security">WireGuard Security<a class="headerlink" href="#wireguard-security" title="Permanent link">&para;</a></h3>
-<p><strong>Private Keys:</strong>
-- Generated by Terraform provider
-- Stored in Terraform state (encrypted at rest)
-- Deployed to <code>/etc/wireguard/</code> with 600 permissions</p>
-<p><strong>Network Isolation:</strong>
-- Private networks per deployment
-- No default internet routing
-- Explicit rules required for external access</p>
+<p><strong>Private Keys:</strong></p>
+<ul>
+<li>Generated by Terraform provider</li>
+<li>Stored in Terraform state (encrypted at rest)</li>
+<li>Deployed to <code>/etc/wireguard/</code> with 600 permissions</li>
+</ul>
+<p><strong>Network Isolation:</strong></p>
+<ul>
+<li>Private networks per deployment</li>
+<li>No default internet routing</li>
+<li>Explicit rules required for external access</li>
+</ul>
 <hr />
 <h2 id="troubleshooting-architecture">Troubleshooting Architecture<a class="headerlink" href="#troubleshooting-architecture" title="Permanent link">&para;</a></h2>
 <h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
 <p><strong>Enable:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>tfgrid-compose<span class="w"> </span>--debug<span class="w"> </span>up<span class="w"> </span>&lt;app&gt;
 </code></pre></div></p>
-<p><strong>Effects:</strong>
-- Verbose logging (<code>set -x</code>)
-- Keep temporary files
-- Show all command output
-- Network diagnostics</p>
+<p><strong>Effects:</strong></p>
+<ul>
+<li>Verbose logging (<code>set -x</code>)</li>
+<li>Keep temporary files</li>
+<li>Show all command output</li>
+<li>Network diagnostics</li>
+</ul>
 <h3 id="log-files">Log Files<a class="headerlink" href="#log-files" title="Permanent link">&para;</a></h3>
-<p>All logs saved to <code>.tfgrid-compose/</code>:
-- <code>terraform-init.log</code>
-- <code>terraform-plan.log</code>
-- <code>terraform-apply.log</code>
-- <code>ansible.log</code>
-- <code>hook-*.log</code></p>
+<p>All logs saved to <code>.tfgrid-compose/</code>:</p>
+<ul>
+<li><code>terraform-init.log</code></li>
+<li><code>terraform-plan.log</code></li>
+<li><code>terraform-apply.log</code></li>
+<li><code>ansible.log</code></li>
+<li><code>hook-*.log</code></li>
+</ul>
 <h3 id="state-inspection">State Inspection<a class="headerlink" href="#state-inspection" title="Permanent link">&para;</a></h3>
 <p><strong>Check Deployment:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>cat<span class="w"> </span>.tfgrid-compose/state.yaml

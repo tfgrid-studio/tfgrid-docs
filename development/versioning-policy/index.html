@@ -2396,34 +2396,40 @@
 <p>Given a version number <strong>MAJOR.MINOR.PATCH</strong> (e.g., 1.2.3):</p>
 <h4 id="major-version-x00"><strong>MAJOR Version (X.0.0)</strong><a class="headerlink" href="#major-version-x00" title="Permanent link">&para;</a></h4>
 <p>Increment when making <strong>incompatible API changes</strong> or <strong>breaking changes</strong>.</p>
-<p><strong>Examples:</strong>
-- Changing CLI command structure (e.g., <code>tfgrid-compose deploy</code> → <code>tfgrid-compose up</code>)
-- Removing or renaming core features
-- Changing pattern contract requirements
-- Modifying state file format without migration
-- Removing deprecated features
-- Changing default behavior in non-backward-compatible ways</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Changing CLI command structure (e.g., <code>tfgrid-compose deploy</code> → <code>tfgrid-compose up</code>)</li>
+<li>Removing or renaming core features</li>
+<li>Changing pattern contract requirements</li>
+<li>Modifying state file format without migration</li>
+<li>Removing deprecated features</li>
+<li>Changing default behavior in non-backward-compatible ways</li>
+</ul>
 <p><strong>User Impact:</strong> May require code/script changes, migration steps, or configuration updates.</p>
 <h4 id="minor-version-xy0"><strong>MINOR Version (x.Y.0)</strong><a class="headerlink" href="#minor-version-xy0" title="Permanent link">&para;</a></h4>
 <p>Increment when adding <strong>new features</strong> in a <strong>backward-compatible</strong> manner.</p>
-<p><strong>Examples:</strong>
-- Adding new patterns (e.g., adding k3s pattern)
-- Adding new CLI commands (e.g., <code>tfgrid-compose monitor</code>)
-- Adding new configuration options
-- Adding new networking modes
-- Introducing new capabilities without breaking existing functionality
-- Adding optional parameters to existing commands</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Adding new patterns (e.g., adding k3s pattern)</li>
+<li>Adding new CLI commands (e.g., <code>tfgrid-compose monitor</code>)</li>
+<li>Adding new configuration options</li>
+<li>Adding new networking modes</li>
+<li>Introducing new capabilities without breaking existing functionality</li>
+<li>Adding optional parameters to existing commands</li>
+</ul>
 <p><strong>User Impact:</strong> No changes required; new features available opt-in.</p>
 <h4 id="patch-version-xyz"><strong>PATCH Version (x.y.Z)</strong><a class="headerlink" href="#patch-version-xyz" title="Permanent link">&para;</a></h4>
 <p>Increment when making <strong>backward-compatible bug fixes</strong>.</p>
-<p><strong>Examples:</strong>
-- Fixing validation logic
-- Correcting error messages
-- Improving performance
-- Documentation corrections
-- Security patches (non-breaking)
-- Dependency updates (non-breaking)
-- Minor UI/UX improvements</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Fixing validation logic</li>
+<li>Correcting error messages</li>
+<li>Improving performance</li>
+<li>Documentation corrections</li>
+<li>Security patches (non-breaking)</li>
+<li>Dependency updates (non-breaking)</li>
+<li>Minor UI/UX improvements</li>
+</ul>
 <p><strong>User Impact:</strong> Seamless upgrade; fixes only.</p>
 <hr />
 <h2 id="version-0xy-pre-10-policy">Version 0.x.y (Pre-1.0) Policy<a class="headerlink" href="#version-0xy-pre-10-policy" title="Permanent link">&para;</a></h2>
@@ -2438,11 +2444,13 @@
 </ul>
 <h3 id="current-status-tfgrid-compose">Current Status (tfgrid-compose)<a class="headerlink" href="#current-status-tfgrid-compose" title="Permanent link">&para;</a></h3>
 <p><strong>Version:</strong> 0.9.0 (October 2025)</p>
-<p><strong>What this means:</strong>
-- Core features are production-ready
-- API is stable but may evolve based on feedback
-- Breaking changes possible but minimized
-- Path to 1.0.0 within 2-3 months</p>
+<p><strong>What this means:</strong></p>
+<ul>
+<li>Core features are production-ready</li>
+<li>API is stable but may evolve based on feedback</li>
+<li>Breaking changes possible but minimized</li>
+<li>Path to 1.0.0 within 2-3 months</li>
+</ul>
 <hr />
 <h2 id="release-process">Release Process<a class="headerlink" href="#release-process" title="Permanent link">&para;</a></h2>
 <h3 id="1-version-decision">1. Version Decision<a class="headerlink" href="#1-version-decision" title="Permanent link">&para;</a></h3>
@@ -2455,11 +2463,13 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Breaking change (post-1.0) → 2.0.0</span>
 </code></pre></div>
 <h3 id="2-update-version-references">2. Update Version References<a class="headerlink" href="#2-update-version-references" title="Permanent link">&para;</a></h3>
-<p><strong>Files to update:</strong>
-- <code>cli/tfgrid-compose</code> (VERSION variable)
-- <code>Makefile</code> (help text)
-- <code>README.md</code> (version badge)
-- Any other version references</p>
+<p><strong>Files to update:</strong></p>
+<ul>
+<li><code>cli/tfgrid-compose</code> (VERSION variable)</li>
+<li><code>Makefile</code> (help text)</li>
+<li><code>README.md</code> (version badge)</li>
+<li>Any other version references</li>
+</ul>
 <h3 id="3-update-changelog">3. Update Changelog<a class="headerlink" href="#3-update-changelog" title="Permanent link">&para;</a></h3>
 <p><strong>Format:</strong> Keep a <code>CHANGELOG.md</code> using <a href="https://keepachangelog.com/">Keep a Changelog</a> format.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Changelog</span>
@@ -2495,25 +2505,31 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v0.9.1
 </code></pre></div>
 <h3 id="5-release-notes">5. Release Notes<a class="headerlink" href="#5-release-notes" title="Permanent link">&para;</a></h3>
-<p><strong>Create GitHub Release with:</strong>
-- Version number
-- Release date
-- Changelog excerpt
-- Installation instructions
-- Breaking changes (if any)
-- Migration guide (if needed)</p>
+<p><strong>Create GitHub Release with:</strong></p>
+<ul>
+<li>Version number</li>
+<li>Release date</li>
+<li>Changelog excerpt</li>
+<li>Installation instructions</li>
+<li>Breaking changes (if any)</li>
+<li>Migration guide (if needed)</li>
+</ul>
 <hr />
 <h2 id="backward-compatibility">Backward Compatibility<a class="headerlink" href="#backward-compatibility" title="Permanent link">&para;</a></h2>
 <h3 id="commitment">Commitment<a class="headerlink" href="#commitment" title="Permanent link">&para;</a></h3>
-<p><strong>Post-1.0.0:</strong>
-- MAJOR version changes only for breaking changes
-- Deprecation warnings before removal
-- Migration guides for breaking changes
-- Support for N-1 version during transition</p>
-<p><strong>Pre-1.0.0 (0.x.y):</strong>
-- Best effort to maintain compatibility
-- Breaking changes documented in changelog
-- Migration notes provided when needed</p>
+<p><strong>Post-1.0.0:</strong></p>
+<ul>
+<li>MAJOR version changes only for breaking changes</li>
+<li>Deprecation warnings before removal</li>
+<li>Migration guides for breaking changes</li>
+<li>Support for N-1 version during transition</li>
+</ul>
+<p><strong>Pre-1.0.0 (0.x.y):</strong></p>
+<ul>
+<li>Best effort to maintain compatibility</li>
+<li>Breaking changes documented in changelog</li>
+<li>Migration notes provided when needed</li>
+</ul>
 <h3 id="deprecation-policy">Deprecation Policy<a class="headerlink" href="#deprecation-policy" title="Permanent link">&para;</a></h3>
 <p><strong>Post-1.0.0:</strong></p>
 <ol>

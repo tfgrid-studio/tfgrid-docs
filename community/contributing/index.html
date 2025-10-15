@@ -2406,16 +2406,20 @@
 <hr />
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
-<p><strong>For tfgrid-compose development:</strong>
-- Bash 4.0+
-- Git
-- OpenTofu or Terraform
-- Ansible
-- Basic understanding of shell scripting</p>
-<p><strong>For documentation:</strong>
-- Markdown knowledge
-- Git
-- Python 3.8+ (for local MkDocs preview)</p>
+<p><strong>For tfgrid-compose development:</strong></p>
+<ul>
+<li>Bash 4.0+</li>
+<li>Git</li>
+<li>OpenTofu or Terraform</li>
+<li>Ansible</li>
+<li>Basic understanding of shell scripting</li>
+</ul>
+<p><strong>For documentation:</strong></p>
+<ul>
+<li>Markdown knowledge</li>
+<li>Git</li>
+<li>Python 3.8+ (for local MkDocs preview)</li>
+</ul>
 <h3 id="set-up-development-environment">Set Up Development Environment<a class="headerlink" href="#set-up-development-environment" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Clone the repository</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tfgrid-studio/tfgrid-compose
@@ -2452,55 +2456,71 @@
 <p>We welcome many types of contributions:</p>
 <h4 id="bug-reports">🐛 Bug Reports<a class="headerlink" href="#bug-reports" title="Permanent link">&para;</a></h4>
 <p>Found a bug? Help us fix it!</p>
-<p><strong>Before reporting:</strong>
-- Search existing issues
-- Try latest version
-- Gather reproduction steps</p>
-<p><strong>Create an issue with:</strong>
-- Clear title
-- Description of the bug
-- Steps to reproduce
-- Expected vs actual behavior
-- Environment details (OS, versions)
-- Logs (with sensitive data removed)</p>
+<p><strong>Before reporting:</strong></p>
+<ul>
+<li>Search existing issues</li>
+<li>Try latest version</li>
+<li>Gather reproduction steps</li>
+</ul>
+<p><strong>Create an issue with:</strong></p>
+<ul>
+<li>Clear title</li>
+<li>Description of the bug</li>
+<li>Steps to reproduce</li>
+<li>Expected vs actual behavior</li>
+<li>Environment details (OS, versions)</li>
+<li>Logs (with sensitive data removed)</li>
+</ul>
 <h4 id="feature-requests">💡 Feature Requests<a class="headerlink" href="#feature-requests" title="Permanent link">&para;</a></h4>
 <p>Have an idea for improvement?</p>
-<p><strong>Create an issue with:</strong>
-- Clear use case
-- Proposed solution
-- Alternatives considered
-- Willingness to implement</p>
+<p><strong>Create an issue with:</strong></p>
+<ul>
+<li>Clear use case</li>
+<li>Proposed solution</li>
+<li>Alternatives considered</li>
+<li>Willingness to implement</li>
+</ul>
 <h4 id="documentation">📝 Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h4>
-<p>Improve or add documentation:
-- Fix typos
-- Clarify confusing sections
-- Add examples
-- Write guides
-- Translate content</p>
+<p>Improve or add documentation:</p>
+<ul>
+<li>Fix typos</li>
+<li>Clarify confusing sections</li>
+<li>Add examples</li>
+<li>Write guides</li>
+<li>Translate content</li>
+</ul>
 <h4 id="code-contributions">💻 Code Contributions<a class="headerlink" href="#code-contributions" title="Permanent link">&para;</a></h4>
-<p>Implement features or fix bugs:
-- Bug fixes
-- New features
-- Performance improvements
-- Refactoring
-- Tests</p>
+<p>Implement features or fix bugs:</p>
+<ul>
+<li>Bug fixes</li>
+<li>New features</li>
+<li>Performance improvements</li>
+<li>Refactoring</li>
+<li>Tests</li>
+</ul>
 <h4 id="design-patterns">🎨 Design Patterns<a class="headerlink" href="#design-patterns" title="Permanent link">&para;</a></h4>
-<p>Create new deployment patterns:
-- Follow <a href="../../development/pattern-contract/">Pattern Contract</a>
-- Document use cases
-- Provide examples
-- Test thoroughly</p>
+<p>Create new deployment patterns:</p>
+<ul>
+<li>Follow <a href="../../development/pattern-contract/">Pattern Contract</a></li>
+<li>Document use cases</li>
+<li>Provide examples</li>
+<li>Test thoroughly</li>
+</ul>
 <hr />
 <h2 id="development-workflow">Development Workflow<a class="headerlink" href="#development-workflow" title="Permanent link">&para;</a></h2>
 <h3 id="1-pick-an-issue">1. Pick an Issue<a class="headerlink" href="#1-pick-an-issue" title="Permanent link">&para;</a></h3>
-<p><strong>Good first issues:</strong>
-- Look for <code>good-first-issue</code> label
-- Check <code>help-wanted</code> label
-- Simple bug fixes
-- Documentation improvements</p>
-<p><strong>Claim an issue:</strong>
-- Comment "I'd like to work on this"
-- Wait for assignment (prevents duplicates)</p>
+<p><strong>Good first issues:</strong></p>
+<ul>
+<li>Look for <code>good-first-issue</code> label</li>
+<li>Check <code>help-wanted</code> label</li>
+<li>Simple bug fixes</li>
+<li>Documentation improvements</li>
+</ul>
+<p><strong>Claim an issue:</strong></p>
+<ul>
+<li>Comment "I'd like to work on this"</li>
+<li>Wait for assignment (prevents duplicates)</li>
+</ul>
 <h3 id="2-create-a-branch">2. Create a Branch<a class="headerlink" href="#2-create-a-branch" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Get latest code</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
@@ -2516,12 +2536,14 @@
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># refactor/validation-module</span>
 </code></pre></div>
 <h3 id="3-make-changes">3. Make Changes<a class="headerlink" href="#3-make-changes" title="Permanent link">&para;</a></h3>
-<p><strong>Best practices:</strong>
-- Make focused, atomic commits
-- Write clear commit messages
-- Test your changes
-- Update documentation
-- Follow code standards</p>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Make focused, atomic commits</li>
+<li>Write clear commit messages</li>
+<li>Test your changes</li>
+<li>Update documentation</li>
+<li>Follow code standards</li>
+</ul>
 <h3 id="4-commit-your-changes">4. Commit Your Changes<a class="headerlink" href="#4-commit-your-changes" title="Permanent link">&para;</a></h3>
 <p><strong>Commit message format:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>type(scope): brief description
@@ -2530,13 +2552,15 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Fixes #123
 </code></pre></div></p>
-<p><strong>Types:</strong>
-- <code>feat</code>: New feature
-- <code>fix</code>: Bug fix
-- <code>docs</code>: Documentation only
-- <code>refactor</code>: Code refactoring
-- <code>test</code>: Adding tests
-- <code>chore</code>: Maintenance tasks</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><code>feat</code>: New feature</li>
+<li><code>fix</code>: Bug fix</li>
+<li><code>docs</code>: Documentation only</li>
+<li><code>refactor</code>: Code refactoring</li>
+<li><code>test</code>: Adding tests</li>
+<li><code>chore</code>: Maintenance tasks</li>
+</ul>
 <p><strong>Examples:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat(orchestrator): add multi-deployment support&quot;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;fix(validation): resolve mnemonic loading issue&quot;</span>

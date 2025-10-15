@@ -5,6 +5,7 @@ Share your application with the TFGrid community by submitting it to the officia
 ## Overview
 
 Getting your app verified means:
+
 - ✅ Discoverable at [registry.tfgrid.studio](https://registry.tfgrid.studio)
 - ✅ Listed in official registry
 - ✅ Verified badge
@@ -139,18 +140,21 @@ Create PR on GitHub with:
 Our team will review your submission:
 
 ### 1. Code Review (1-3 days)
+
 - Repository structure
 - Security issues
 - No hardcoded secrets
 - Valid app manifest
 
 ### 2. Testing (1-2 days)
+
 - Deploy app on test environment
 - Verify all features work
 - Check resource requirements
 - Test cleanup process
 
 ### 3. Documentation Review (1 day)
+
 - README clarity
 - Setup instructions
 - Prerequisites listed

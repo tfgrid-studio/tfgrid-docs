@@ -143,7 +143,11 @@ nav:
     - Versioning Policy: development/versioning-policy.md
     - Pattern Contract: development/pattern-contract.md
   
-  - Roadmap: roadmap.md
+  - Roadmap:
+    - Overview: roadmap/index.md
+    - Now (Active): roadmap/now.md
+    - Next (Planned): roadmap/next.md
+    - Later (Concepts): roadmap/later.md
   
   - Community:
     - Code of Conduct: community/code-of-conduct.md

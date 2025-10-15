@@ -124,7 +124,10 @@ tfgrid-compose up ../tfgrid-ai-agent
 - **[Comparison](architecture/comparison.md)** - vs standalone repos, vs other platforms
 
 ### Roadmap
-- **[Platform Roadmap](roadmap.md)** - 🚀 The vision and what's coming next
+- **[Platform Roadmap](roadmap/index.md)** - 🚀 Now / Next / Later
+- **[Now - Active Development](roadmap/now.md)** - What we're building
+- **[Next - Planned Features](roadmap/next.md)** - What's coming
+- **[Later - Future Concepts](roadmap/later.md)** - Long-term vision
 
 ### Contributing
 - **[Contributing Guide](contributing/overview.md)** - How to contribute

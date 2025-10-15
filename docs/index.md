@@ -123,11 +123,13 @@ tfgrid-compose up ../tfgrid-ai-agent
 - **[Source Repositories](architecture/source-repos.md)** - Acknowledgment of source work
 - **[Comparison](architecture/comparison.md)** - vs standalone repos, vs other platforms
 
-### Roadmap & Contributing
-- **[Current Status](roadmap/current.md)** - ✅ What's working now (v0.9.0 Production Ready)
-- **[Planned Features](roadmap/planned.md)** - 🚧 What's coming next
-- **[Changelog](roadmap/changelog.md)** - Version history
-- **[Contributing](contributing/overview.md)** - How to contribute
+### Roadmap
+- **[Platform Roadmap](roadmap.md)** - 🚀 The vision and what's coming next
+
+### Contributing
+- **[Contributing Guide](contributing/overview.md)** - How to contribute
+- **[Code of Conduct](community/code-of-conduct.md)** - Community guidelines
+- **[Security Policy](community/security.md)** - Report security issues
 
 ### Development
 - **[Submit Your App](development/submit-app.md)** - Share your app with the community
@@ -139,7 +141,6 @@ tfgrid-compose up ../tfgrid-ai-agent
 
 ## 🎯 Use Cases
 
-{{ ... }}
 Deploy isolated AI coding environments on ThreeFold Grid.
 ```bash
 tfgrid-compose up tfgrid-ai-agent

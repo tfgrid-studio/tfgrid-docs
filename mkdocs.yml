@@ -143,14 +143,13 @@ nav:
     - Versioning Policy: development/versioning-policy.md
     - Pattern Contract: development/pattern-contract.md
   
+  - Roadmap: roadmap.md
+  
   - Community:
     - Code of Conduct: community/code-of-conduct.md
     - Contributing Guide: community/contributing.md
     - Security Policy: community/security.md
   
-  - Roadmap:
-    - Current Status: roadmap/current.md
-    - Planned Features: roadmap/planned.md
 
 # Google Analytics (optional - add your tracking ID)
 # extra:

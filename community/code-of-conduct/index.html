@@ -12,13 +12,13 @@
         <meta name="author" content="TFGrid Studio Team">
       
       
-        <link rel="canonical" href="https://docs.tfgrid.studio/patterns/gateway/">
+        <link rel="canonical" href="https://docs.tfgrid.studio/community/code-of-conduct/">
       
       
-        <link rel="prev" href="../single-vm/">
+        <link rel="prev" href="../../development/pattern-contract/">
       
       
-        <link rel="next" href="../k3s/">
+        <link rel="next" href="../contributing/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Gateway Pattern - TFGrid Studio</title>
+        <title>Code of Conduct - TFGrid Studio</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gateway-pattern" class="md-skip">
+        <a href="#code-of-conduct" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gateway Pattern
+              Code of Conduct
             
           </span>
         </div>
@@ -310,13 +310,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../patterns/overview/" class="md-tabs__link">
           
   
   
@@ -372,11 +370,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../community/code-of-conduct/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -795,31 +795,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -832,7 +829,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Deployment Patterns
@@ -846,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../patterns/overview/" class="md-nav__link">
         
   
   
@@ -869,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../single-vm/" class="md-nav__link">
+      <a href="../../patterns/single-vm/" class="md-nav__link">
         
   
   
@@ -889,32 +886,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Gateway Pattern
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../patterns/gateway/" class="md-nav__link">
         
   
   
@@ -925,191 +900,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gateway-vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gateway VM
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backend-vms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backend VMs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Network Flow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Cases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Use Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#production-web-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Production Web Apps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#e-commerce-sites" class="md-nav__link">
-    <span class="md-ellipsis">
-      E-commerce Sites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#saas-applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      SaaS Applications
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssltls-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      SSL/TLS Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-balancing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load Balancing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1122,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../k3s/" class="md-nav__link">
+      <a href="../../patterns/k3s/" class="md-nav__link">
         
   
   
@@ -1322,28 +1112,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -1356,7 +1149,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Community
@@ -1367,10 +1160,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../community/code-of-conduct/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1381,6 +1196,248 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#our-pledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Pledge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#our-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Standards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Our Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Expected Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unacceptable-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ Unacceptable Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enforcement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enforcement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response Timeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enforcement Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enforcement Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Warning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-temporary-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Temporary Ban
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-permanent-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Permanent Ban
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appeal-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appeal Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guidelines-for-specific-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guidelines for Specific Spaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guidelines for Specific Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-discordslack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chat (Discord/Slack)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      Social Media
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainer-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainer Responsibilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1393,7 +1450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../community/contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         
   
   
@@ -1416,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../community/security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   
@@ -1564,73 +1621,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#our-pledge" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Our Pledge
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#our-standards" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Start
+      Our Standards
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture">
+    <nav class="md-nav" aria-label="Our Standards">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gateway-vm" class="md-nav__link">
+  <a href="#expected-behavior" class="md-nav__link">
     <span class="md-ellipsis">
-      Gateway VM
+      ✅ Expected Behavior
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backend-vms" class="md-nav__link">
+  <a href="#unacceptable-behavior" class="md-nav__link">
     <span class="md-ellipsis">
-      Backend VMs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Network Flow
+      ❌ Unacceptable Behavior
     </span>
   </a>
   
@@ -1642,46 +1663,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      Scope
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
+  <a href="#enforcement" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Cases
+      Enforcement
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Use Cases">
+    <nav class="md-nav" aria-label="Enforcement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#production-web-apps" class="md-nav__link">
+  <a href="#reporting" class="md-nav__link">
     <span class="md-ellipsis">
-      Production Web Apps
+      Reporting
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#e-commerce-sites" class="md-nav__link">
+  <a href="#response-timeline" class="md-nav__link">
     <span class="md-ellipsis">
-      E-commerce Sites
+      Response Timeline
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#saas-applications" class="md-nav__link">
+  <a href="#enforcement-actions" class="md-nav__link">
     <span class="md-ellipsis">
-      SaaS Applications
+      Enforcement Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enforcement Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Warning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-temporary-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Temporary Ban
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-permanent-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Permanent Ban
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appeal-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appeal Process
     </span>
   </a>
   
@@ -1693,36 +1756,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssltls-configuration" class="md-nav__link">
+  <a href="#guidelines-for-specific-spaces" class="md-nav__link">
     <span class="md-ellipsis">
-      SSL/TLS Configuration
+      Guidelines for Specific Spaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guidelines for Specific Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-discordslack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chat (Discord/Slack)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      Social Media
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainer-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainer Responsibilities
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#load-balancing" class="md-nav__link">
+  <a href="#attribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Load Balancing
+      Attribution
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-documentation" class="md-nav__link">
+  <a href="#changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Documentation
+      Changes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#contact" class="md-nav__link">
     <span class="md-ellipsis">
-      Next Steps
+      Contact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
     </span>
   </a>
   
@@ -1744,7 +1858,7 @@
 
 
   
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/patterns/gateway.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/community/code-of-conduct.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -1753,145 +1867,174 @@
     
       
     
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/patterns/gateway.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/community/code-of-conduct.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="gateway-pattern">Gateway Pattern<a class="headerlink" href="#gateway-pattern" title="Permanent link">&para;</a></h1>
-<p><strong>Multi-VM with public access and SSL for production web apps</strong></p>
-<p>The gateway pattern deploys a multi-VM architecture with a reverse proxy gateway that provides public IPv4 access, automatic SSL/TLS certificates, and load balancing for your backend services.</p>
+<h1 id="code-of-conduct">Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0<br />
+<strong>Last Updated:</strong> October 14, 2025<br />
+<strong>Applies To:</strong> All TFGrid Studio projects and community spaces</p>
 <hr />
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Internet → [Gateway VM] → [Backend VMs]
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        (Public IPv4)   (Private Network)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        (SSL/TLS)       (Your App + DB)
-</code></pre></div>
-<p><strong>Perfect For:</strong>
-- Production websites &amp; web apps
-- E-commerce sites
-- SaaS applications
-- Anything needing public HTTPS access</p>
+<h2 id="our-pledge">Our Pledge<a class="headerlink" href="#our-pledge" title="Permanent link">&para;</a></h2>
+<p>We as members, contributors, and leaders pledge to make participation in TFGrid Studio a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.</p>
+<p>We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.</p>
 <hr />
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-saas<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>myapp.com
-</code></pre></div>
-<p><strong>Deploy time:</strong> 5-7 minutes<br />
-<strong>Cost:</strong> $30-100/month</p>
-<hr />
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<h2 id="our-standards">Our Standards<a class="headerlink" href="#our-standards" title="Permanent link">&para;</a></h2>
+<h3 id="expected-behavior">✅ Expected Behavior<a class="headerlink" href="#expected-behavior" title="Permanent link">&para;</a></h3>
+<p>Examples of behavior that contributes to a positive environment:</p>
 <ul>
-<li>🔒 <strong>Free SSL certificates</strong> - Automatic Let's Encrypt SSL/TLS</li>
-<li>🌐 <strong>Public IPv4 included</strong> - Direct internet access</li>
-<li>⚖️ <strong>Load balancing</strong> - Distribute traffic across backends</li>
-<li>❤️ <strong>Health checks</strong> - Automatic failover for reliability</li>
-<li>🔄 <strong>Reverse proxy</strong> - Nginx-based gateway with custom configs</li>
-<li>🛡️ <strong>Private backend network</strong> - Backends only accessible via gateway</li>
+<li><strong>Respect:</strong> Treating all community members with respect and consideration</li>
+<li><strong>Kindness:</strong> Being welcoming and supportive to newcomers</li>
+<li><strong>Constructive Feedback:</strong> Providing helpful, actionable criticism</li>
+<li><strong>Collaboration:</strong> Working together toward common goals</li>
+<li><strong>Responsibility:</strong> Taking accountability for mistakes and learning from them</li>
+<li><strong>Focus:</strong> Keeping discussions relevant and productive</li>
+<li><strong>Empathy:</strong> Showing understanding of different viewpoints and experiences</li>
+<li><strong>Professionalism:</strong> Maintaining professional standards in all interactions</li>
+</ul>
+<h3 id="unacceptable-behavior">❌ Unacceptable Behavior<a class="headerlink" href="#unacceptable-behavior" title="Permanent link">&para;</a></h3>
+<p>Examples of unacceptable behavior include:</p>
+<ul>
+<li><strong>Harassment:</strong> Trolling, insulting/derogatory comments, personal or political attacks</li>
+<li><strong>Discrimination:</strong> Any form of discrimination or exclusionary jokes/language</li>
+<li><strong>Privacy Violation:</strong> Publishing others' private information without permission</li>
+<li><strong>Intimidation:</strong> Threatening, stalking, or doxxing community members</li>
+<li><strong>Sexual Content:</strong> Unwelcome sexual attention or advances</li>
+<li><strong>Disruption:</strong> Deliberately disrupting discussions or community activities</li>
+<li><strong>Spam:</strong> Excessive self-promotion or off-topic posts</li>
+<li><strong>Bad Faith:</strong> Arguing in bad faith or sea-lioning</li>
+<li><strong>Weaponization:</strong> Using the Code of Conduct as a tool for harassment</li>
 </ul>
 <hr />
-<h2 id="example-deployment">Example Deployment<a class="headerlink" href="#example-deployment" title="Permanent link">&para;</a></h2>
-<p>Deploy a SaaS application with SSL:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-saas<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>myapp.com
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>✨<span class="w"> </span>Live<span class="w"> </span>with<span class="w"> </span>SSL<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">5</span><span class="w"> </span>minutes!
-</code></pre></div>
-<p>The gateway pattern will:
-1. Create a gateway VM with public IPv4
-2. Deploy your backend application VMs
-3. Configure reverse proxy and SSL
-4. Set up health checks and load balancing</p>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
+<p>This Code of Conduct applies to all TFGrid Studio spaces, including but not limited to:</p>
+<p><strong>Online Spaces:</strong>
+- GitHub repositories (issues, pull requests, discussions)
+- Official Discord/Slack channels
+- Social media accounts
+- Email communications
+- Documentation sites
+- Video calls and meetings</p>
+<p><strong>Offline Spaces:</strong>
+- Conferences and meetups
+- Workshops and training sessions
+- Any event representing TFGrid Studio</p>
+<p>This Code of Conduct also applies when an individual is officially representing the community in public spaces.</p>
 <hr />
-<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
-<h3 id="gateway-vm">Gateway VM<a class="headerlink" href="#gateway-vm" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Public IPv4 address</li>
-<li>Nginx reverse proxy</li>
-<li>Let's Encrypt SSL automation</li>
-<li>Load balancer</li>
-<li>Health check monitoring</li>
-</ul>
-<h3 id="backend-vms">Backend VMs<a class="headerlink" href="#backend-vms" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Private network only</li>
-<li>Your application code</li>
-<li>Database services</li>
-<li>Internal APIs</li>
-</ul>
-<h3 id="network-flow">Network Flow<a class="headerlink" href="#network-flow" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>User → Public IP → Gateway VM → WireGuard/Mycelium → Backend VMs
-</code></pre></div>
-<hr />
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>Example <code>tfgrid-compose.yaml</code> for gateway pattern:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-webapp</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">gateway</span><span class="p">:</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp.com</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nt">backends</span><span class="p">:</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4096</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="nt">private</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
-<hr />
-<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
-<h3 id="production-web-apps">Production Web Apps<a class="headerlink" href="#production-web-apps" title="Permanent link">&para;</a></h3>
-<p>Deploy full-stack web applications with SSL:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-webapp<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>example.com
-</code></pre></div>
-<h3 id="e-commerce-sites">E-commerce Sites<a class="headerlink" href="#e-commerce-sites" title="Permanent link">&para;</a></h3>
-<p>Run online stores with secure payments:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-store<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>store.com
-</code></pre></div>
-<h3 id="saas-applications">SaaS Applications<a class="headerlink" href="#saas-applications" title="Permanent link">&para;</a></h3>
-<p>Launch multi-tenant SaaS products:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-saas<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>app.mycompany.com
-</code></pre></div>
-<hr />
-<h2 id="ssltls-configuration">SSL/TLS Configuration<a class="headerlink" href="#ssltls-configuration" title="Permanent link">&para;</a></h2>
-<p>The gateway pattern automatically handles SSL certificate:</p>
+<h2 id="enforcement">Enforcement<a class="headerlink" href="#enforcement" title="Permanent link">&para;</a></h2>
+<h3 id="reporting">Reporting<a class="headerlink" href="#reporting" title="Permanent link">&para;</a></h3>
+<p>If you experience or witness unacceptable behavior, or have any other concerns, please report it by:</p>
 <ol>
-<li><strong>Automatic issuance</strong> - Let's Encrypt certificates on deployment</li>
-<li><strong>Auto-renewal</strong> - Certificates renew automatically</li>
-<li><strong>HTTPS redirect</strong> - HTTP traffic automatically redirects to HTTPS</li>
-<li><strong>Modern security</strong> - TLS 1.2+ with strong cipher suites</li>
+<li><strong>Email:</strong> <a href="mailto:conduct@tfgrid.studio">conduct@tfgrid.studio</a></li>
+<li><strong>GitHub:</strong> Create a confidential security advisory</li>
+<li><strong>Direct Message:</strong> Contact a maintainer privately</li>
 </ol>
-<hr />
-<h2 id="load-balancing">Load Balancing<a class="headerlink" href="#load-balancing" title="Permanent link">&para;</a></h2>
-<p>When you deploy multiple backend instances:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">backends</span><span class="p">:</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-1</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-2</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-3</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
-</code></pre></div>
-<p>The gateway automatically:
-- Distributes traffic across all instances
-- Performs health checks
-- Routes traffic away from unhealthy instances
-- Provides zero-downtime deployments</p>
-<hr />
-<h2 id="full-documentation">Full Documentation<a class="headerlink" href="#full-documentation" title="Permanent link">&para;</a></h2>
-<p>For complete implementation details, see the <a href="https://github.com/tfgrid-studio/tfgrid-compose/tree/main/patterns/gateway">gateway pattern source</a>.</p>
-<hr />
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p><strong>What to include in your report:</strong>
+- Your contact information
+- Names (usernames) of people involved
+- Description of the behavior
+- Links or screenshots (if applicable)
+- Any other relevant context
+- Whether you prefer to remain anonymous</p>
+<p>All reports will be kept confidential. We will never share reporter information without explicit consent unless required by law.</p>
+<h3 id="response-timeline">Response Timeline<a class="headerlink" href="#response-timeline" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../../getting-started/quickstart/">Deploy your first gateway app</a></li>
-<li><a href="../single-vm/">Learn about Single-VM pattern</a> for simpler deployments</li>
-<li><a href="../k3s/">Explore K3s pattern</a> for cloud-native applications</li>
+<li><strong>Acknowledgment:</strong> Within 24 hours</li>
+<li><strong>Initial Review:</strong> Within 3 business days</li>
+<li><strong>Resolution:</strong> Varies by complexity, typically within 1-2 weeks</li>
 </ul>
+<p>You will receive updates on the progress of your report.</p>
+<h3 id="enforcement-actions">Enforcement Actions<a class="headerlink" href="#enforcement-actions" title="Permanent link">&para;</a></h3>
+<p>Project maintainers are responsible for clarifying and enforcing our standards. They will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.</p>
+<p><strong>Possible consequences include:</strong></p>
+<h4 id="1-warning">1. Warning<a class="headerlink" href="#1-warning" title="Permanent link">&para;</a></h4>
+<p><strong>Impact:</strong> A private, written warning explaining the violation and why the behavior was inappropriate.</p>
+<p><strong>Duration:</strong> Single incident</p>
+<h4 id="2-temporary-ban">2. Temporary Ban<a class="headerlink" href="#2-temporary-ban" title="Permanent link">&para;</a></h4>
+<p><strong>Impact:</strong> A temporary ban from all community spaces (GitHub, Discord, etc.)</p>
+<p><strong>Duration:</strong> Days to weeks, depending on severity</p>
+<h4 id="3-permanent-ban">3. Permanent Ban<a class="headerlink" href="#3-permanent-ban" title="Permanent link">&para;</a></h4>
+<p><strong>Impact:</strong> Permanent ban from all TFGrid Studio community spaces</p>
+<p><strong>Duration:</strong> Indefinite</p>
+<h3 id="appeal-process">Appeal Process<a class="headerlink" href="#appeal-process" title="Permanent link">&para;</a></h3>
+<p>If you believe an enforcement action was made in error, you may appeal by:</p>
+<ol>
+<li>Emailing <a href="mailto:conduct@tfgrid.studio">conduct@tfgrid.studio</a> with "Appeal" in the subject</li>
+<li>Providing new information or context</li>
+<li>Explaining why you believe the decision was incorrect</li>
+</ol>
+<p>Appeals will be reviewed by a different maintainer when possible.</p>
+<hr />
+<h2 id="guidelines-for-specific-spaces">Guidelines for Specific Spaces<a class="headerlink" href="#guidelines-for-specific-spaces" title="Permanent link">&para;</a></h2>
+<h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<p><strong>Issues and Pull Requests:</strong>
+- Stay on topic
+- Be patient with maintainers (they're volunteers)
+- Don't demand immediate responses
+- Provide complete information (logs, versions, steps to reproduce)
+- Close resolved issues</p>
+<p><strong>Code Reviews:</strong>
+- Focus on code, not people ("This function could be improved" vs "You wrote bad code")
+- Suggest alternatives
+- Acknowledge good work
+- Accept feedback gracefully</p>
+<p><strong>Discussions:</strong>
+- Search before posting duplicates
+- Use appropriate categories
+- Mark solutions when found
+- Help others when you can</p>
+<h3 id="chat-discordslack">Chat (Discord/Slack)<a class="headerlink" href="#chat-discordslack" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Keep conversations in appropriate channels</li>
+<li>No excessive @mentions</li>
+<li>Use threads for long discussions</li>
+<li>Respect Do Not Disturb status</li>
+<li>No spam or unsolicited DMs</li>
+<li>Keep memes and off-topic content minimal</li>
+</ul>
+<h3 id="social-media">Social Media<a class="headerlink" href="#social-media" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Don't speak on behalf of TFGrid Studio without authorization</li>
+<li>Be respectful in comments and replies</li>
+<li>Disclose your relationship when promoting TFGrid Studio projects</li>
+<li>Don't engage with trolls or bad-faith actors</li>
+</ul>
+<hr />
+<h2 id="maintainer-responsibilities">Maintainer Responsibilities<a class="headerlink" href="#maintainer-responsibilities" title="Permanent link">&para;</a></h2>
+<p>Project maintainers are responsible for:</p>
+<ul>
+<li><strong>Modeling:</strong> Exemplifying the Code of Conduct in their own behavior</li>
+<li><strong>Enforcing:</strong> Fairly and consistently enforcing the Code of Conduct</li>
+<li><strong>Communicating:</strong> Clearly communicating expectations and decisions</li>
+<li><strong>Transparency:</strong> Being transparent about enforcement actions (while respecting privacy)</li>
+<li><strong>Improvement:</strong> Continuously improving community health</li>
+</ul>
+<p>Maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.</p>
+<hr />
+<h2 id="attribution">Attribution<a class="headerlink" href="#attribution" title="Permanent link">&para;</a></h2>
+<p>This Code of Conduct is adapted from:
+- <a href="https://www.contributor-covenant.org/">Contributor Covenant</a>, version 2.1
+- <a href="https://www.djangoproject.com/conduct/">Django Code of Conduct</a>
+- <a href="https://www.rust-lang.org/policies/code-of-conduct">Rust Code of Conduct</a></p>
+<hr />
+<h2 id="changes">Changes<a class="headerlink" href="#changes" title="Permanent link">&para;</a></h2>
+<p>We may update this Code of Conduct from time to time. All changes will be announced through official channels and posted to this document.</p>
+<p><strong>Version History:</strong>
+- v1.0 (2025-10-14): Initial Code of Conduct</p>
+<hr />
+<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
+<p><strong>Enforcement Team:</strong> <a href="mailto:conduct@tfgrid.studio">conduct@tfgrid.studio</a><br />
+<strong>General Inquiries:</strong> <a href="mailto:community@tfgrid.studio">community@tfgrid.studio</a><br />
+<strong>Security Issues:</strong> See <a href="../security/">Security Policy</a></p>
+<hr />
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This Code of Conduct is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+<hr />
+<p><strong>Thank you for helping make TFGrid Studio a welcoming and inclusive community!</strong> 🌟</p>
 
 
 
@@ -1927,7 +2070,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../single-vm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Single-VM Pattern">
+          <a href="../../development/pattern-contract/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pattern Contract">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1937,20 +2080,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Single-VM Pattern
+                Pattern Contract
               </div>
             </div>
           </a>
         
         
           
-          <a href="../k3s/" class="md-footer__link md-footer__link--next" aria-label="Next: K3s Pattern">
+          <a href="../contributing/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                K3s Pattern
+                Contributing Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">

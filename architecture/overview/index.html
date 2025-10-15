@@ -1,0 +1,3495 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete development platform for ThreeFold Grid">
+      
+      
+        <meta name="author" content="TFGrid Studio Team">
+      
+      
+        <link rel="canonical" href="https://docs.tfgrid.studio/architecture/overview/">
+      
+      
+        <link rel="prev" href="../../guides/ai-agent/">
+      
+      
+        <link rel="next" href="../source-repos/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>System Overview - TFGrid Studio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tfgrid-compose-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TFGrid Studio" class="md-header__button md-logo" aria-label="TFGrid Studio" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TFGrid Studio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tfgrid-studio/tfgrid-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tfgrid-studio/tfgrid-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/introduction/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/ai-agent/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../patterns/overview/" class="md-tabs__link">
+          
+  
+  
+  Deployment Patterns
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../troubleshooting/guide/" class="md-tabs__link">
+          
+  
+  
+  Troubleshooting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../development/versioning-policy/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../community/code-of-conduct/" class="md-tabs__link">
+          
+  
+  
+  Community
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../roadmap/current/" class="md-tabs__link">
+          
+  
+  
+  Roadmap
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TFGrid Studio" class="md-nav__button md-logo" aria-label="TFGrid Studio" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    TFGrid Studio
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tfgrid-studio/tfgrid-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tfgrid-studio/tfgrid-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/ai-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI Agent Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    System Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-Level Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Philosophy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cli-entry-point-clitfgrid-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. CLI Entry Point (cli/tfgrid-compose)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-common-utilities-corecommonsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Common Utilities (core/common.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validation-module-corevalidationsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Validation Module (core/validation.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pattern-loader-corepattern-loadersh" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Pattern Loader (core/pattern-loader.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-app-loader-coreapp-loadersh" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. App Loader (core/app-loader.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-orchestrator-coreorchestratorsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Orchestrator (core/orchestrator.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-task-executors-coretasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Task Executors (core/tasks/)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Task Executors (core/tasks/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraformsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      terraform.sh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguardsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      wireguard.sh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      ansible.sh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-sshsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      wait-ssh.sh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Directory Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-file-stateyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      State File (state.yaml)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern Contract
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-single-vm-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Single-VM Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gateway-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Gateway Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-k3s-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. K3s Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extension Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extension Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-new-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a New Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-new-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a New Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-new-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding New Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Decisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Bash?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-pattern-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Pattern-Based?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-opentofu-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why OpenTofu Priority?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-state-in-tfgrid-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why State in .tfgrid-compose/?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Opportunities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mnemonic-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mnemonic Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Key Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguard-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      WireGuard Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Inspection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planned-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planned Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../source-repos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Source Repositories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deployment Patterns
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Deployment Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/single-vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single-VM Pattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gateway Pattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/k3s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K3s Pattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/versioning-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Versioning Policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/pattern-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pattern Contract
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Community
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Community
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/code-of-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Roadmap
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Roadmap
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Current Status
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/planned/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planned Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-Level Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Philosophy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cli-entry-point-clitfgrid-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. CLI Entry Point (cli/tfgrid-compose)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-common-utilities-corecommonsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Common Utilities (core/common.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validation-module-corevalidationsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Validation Module (core/validation.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pattern-loader-corepattern-loadersh" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Pattern Loader (core/pattern-loader.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-app-loader-coreapp-loadersh" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. App Loader (core/app-loader.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-orchestrator-coreorchestratorsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Orchestrator (core/orchestrator.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-task-executors-coretasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Task Executors (core/tasks/)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Task Executors (core/tasks/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraformsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      terraform.sh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguardsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      wireguard.sh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansiblesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      ansible.sh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-sshsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      wait-ssh.sh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Directory Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-file-stateyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      State File (state.yaml)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern Contract
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-single-vm-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Single-VM Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gateway-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Gateway Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-k3s-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. K3s Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extension Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extension Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-new-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a New Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-new-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a New Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-new-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding New Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Decisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Bash?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-pattern-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Pattern-Based?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-opentofu-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why OpenTofu Priority?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-state-in-tfgrid-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why State in .tfgrid-compose/?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Opportunities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mnemonic-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mnemonic Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Key Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguard-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      WireGuard Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Inspection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planned-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planned Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/architecture/overview.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/architecture/overview.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+    </a>
+  
+
+
+<h1 id="tfgrid-compose-architecture">TFGrid Compose Architecture<a class="headerlink" href="#tfgrid-compose-architecture" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 0.9.0<br />
+<strong>Status:</strong> Active<br />
+<strong>Audience:</strong> Developers, Contributors, Advanced Users</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#system-overview">System Overview</a></li>
+<li><a href="#core-components">Core Components</a></li>
+<li><a href="#data-flow">Data Flow</a></li>
+<li><a href="#pattern-system">Pattern System</a></li>
+<li><a href="#state-management">State Management</a></li>
+<li><a href="#extension-guide">Extension Guide</a></li>
+<li><a href="#design-decisions">Design Decisions</a></li>
+<li><a href="#performance-considerations">Performance Considerations</a></li>
+</ol>
+<hr />
+<h2 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h2>
+<h3 id="high-level-architecture">High-Level Architecture<a class="headerlink" href="#high-level-architecture" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                     tfgrid-compose CLI                      │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│                    (User Entry Point)                       │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└──────────────────┬──────────────────────────────────────────┘
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                   │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                   ▼
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│                    Core Orchestrator                        │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│  ┌──────────────────────────────────────────────────────┐   │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│  │  Validation → Pattern Loading → App Loading          │   │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│  │       ↓            ↓               ↓                 │   │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│  │  Infrastructure → Network → Platform → App Deploy    │   │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│  └──────────────────────────────────────────────────────┘   │
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>└─────────────┬────────────────────────────┬──────────────────┘
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>              │                            │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>              ▼                            ▼
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>┌──────────────────────────┐  ┌──────────────────────────┐
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   Pattern System         │  │   Task Executors         │
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│  ┌────────────────────┐  │  │  ┌────────────────────┐  │
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│  │ Infrastructure/    │  │  │  │ terraform.sh       │  │
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│  │ Platform/          │  │  │  │ wireguard.sh       │  │
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│  │ App/               │  │  │  │ ansible.sh         │  │
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│  └────────────────────┘  │  │  └────────────────────┘  │
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>└──────────────────────────┘  └──────────────────────────┘
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>              │                            │
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>              ▼                            ▼
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│                     ThreeFold Grid                          │
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│  ┌────────────┐    ┌────────────┐  ┌──────────────────┐     │
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│  │   Nodes    │    │  Network   │  │  Storage/ZDB     │     │
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│  └────────────┘    └────────────┘  └──────────────────┘     │
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="design-philosophy">Design Philosophy<a class="headerlink" href="#design-philosophy" title="Permanent link">&para;</a></h3>
+<p><strong>1. Pattern-Based Architecture</strong>
+- Patterns encapsulate infrastructure, platform, and application concerns
+- Orchestrator is pattern-agnostic (knows nothing about pattern internals)
+- New patterns can be added without modifying core code</p>
+<p><strong>2. Contract-Driven Integration</strong>
+- Patterns must implement a <a href="../patterns/PATTERN_CONTRACT.md">standard contract</a>
+- Orchestrator consumes contract outputs (primary_ip, deployment_name, etc.)
+- Loose coupling enables extensibility</p>
+<p><strong>3. Shell-Based Implementation</strong>
+- Bash scripts for simplicity and transparency
+- Easy to understand, debug, and extend
+- Minimal dependencies (bash, common Unix tools)
+- Works on any Unix-like system (Linux, macOS)</p>
+<hr />
+<h2 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
+<h3 id="1-cli-entry-point-clitfgrid-compose">1. CLI Entry Point (<code>cli/tfgrid-compose</code>)<a class="headerlink" href="#1-cli-entry-point-clitfgrid-compose" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> User-facing command interface</p>
+<p><strong>Responsibilities:</strong>
+- Parse command-line arguments
+- Load context file (<code>.tfgrid-compose.yaml</code>)
+- Route commands to appropriate handlers
+- Display help and version information</p>
+<p><strong>Key Features:</strong>
+- Context file support for simplified commands
+- Command aliases (e.g., <code>agent</code> subcommand)
+- Global flags (--debug, --version)</p>
+<p><strong>Example Flow:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>/path/to/app
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>↓
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Load<span class="w"> </span>context<span class="w"> </span><span class="o">(</span>optional<span class="o">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>↓
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Validate<span class="w"> </span>prerequisites
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span>↓
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Call<span class="w"> </span>orchestrator.deploy_app<span class="o">()</span>
+</code></pre></div></p>
+<hr />
+<h3 id="2-common-utilities-corecommonsh">2. Common Utilities (<code>core/common.sh</code>)<a class="headerlink" href="#2-common-utilities-corecommonsh" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Shared functions used across all modules</p>
+<p><strong>Key Functions:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Logging</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>log_info<span class="o">()</span><span class="w">      </span><span class="c1"># Informational messages</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>log_success<span class="o">()</span><span class="w">   </span><span class="c1"># Success indicators</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>log_warning<span class="o">()</span><span class="w">   </span><span class="c1"># Warnings</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>log_error<span class="o">()</span><span class="w">     </span><span class="c1"># Errors</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>log_step<span class="o">()</span><span class="w">      </span><span class="c1"># Major steps</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Utilities</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>command_exists<span class="o">()</span><span class="w">    </span><span class="c1"># Check if command is available</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>yaml_get<span class="o">()</span><span class="w">          </span><span class="c1"># Extract values from YAML files</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>state_save<span class="o">()</span><span class="w">        </span><span class="c1"># Save to state file</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>state_get<span class="o">()</span><span class="w">         </span><span class="c1"># Retrieve from state file</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>state_clear<span class="o">()</span><span class="w">       </span><span class="c1"># Clear state directory</span>
+</code></pre></div>
+<p><strong>Color-Coded Output:</strong>
+- 🔵 Blue: Informational
+- ✅ Green: Success
+- ⚠️ Yellow: Warnings
+- ❌ Red: Errors
+- ▶ Purple: Major steps</p>
+<hr />
+<h3 id="3-validation-module-corevalidationsh">3. Validation Module (<code>core/validation.sh</code>)<a class="headerlink" href="#3-validation-module-corevalidationsh" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Validate prerequisites and configurations</p>
+<p><strong>Validation Stages:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>validate_prerequisites<span class="o">()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>├──<span class="w"> </span>Check<span class="w"> </span>OpenTofu/Terraform<span class="w"> </span><span class="o">(</span>prefer<span class="w"> </span>OpenTofu<span class="o">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>├──<span class="w"> </span>Check<span class="w"> </span>Ansible
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>├──<span class="w"> </span>Check<span class="w"> </span>SSH<span class="w"> </span>client
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span>├──<span class="w"> </span>Check<span class="w"> </span>WireGuard<span class="w"> </span><span class="o">(</span>optional<span class="w"> </span>warning<span class="o">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span>├──<span class="w"> </span>Load<span class="w"> </span>ThreeFold<span class="w"> </span>mnemonic
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span>└──<span class="w"> </span>Export<span class="w"> </span>TF_CMD<span class="w"> </span>environment<span class="w"> </span>variable
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>validate_app_path<span class="o">()</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span>├──<span class="w"> </span>Check<span class="w"> </span>directory<span class="w"> </span>exists
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span>└──<span class="w"> </span>Check<span class="w"> </span>tfgrid-compose.yaml<span class="w"> </span>exists
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>validate_deployment_exists<span class="o">()</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span>├──<span class="w"> </span>Check<span class="w"> </span>.tfgrid-compose/<span class="w"> </span>directory
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span>└──<span class="w"> </span>Check<span class="w"> </span>state.yaml<span class="w"> </span>file
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>validate_no_deployment<span class="o">()</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span>└──<span class="w"> </span>Prevent<span class="w"> </span>duplicate<span class="w"> </span>deployments
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>validate_network_prerequisites<span class="o">()</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span>├──<span class="w"> </span>Check<span class="w"> </span>WireGuard<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>needed<span class="o">)</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span>├──<span class="w"> </span>Check<span class="w"> </span>Mycelium<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>needed<span class="o">)</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span>└──<span class="w"> </span>Test<span class="w"> </span>connectivity
+</code></pre></div>
+<p><strong>Mnemonic Loading Priority:</strong>
+1. Environment variable: <code>$TF_VAR_mnemonic</code>
+2. Standard location: <code>~/.config/threefold/mnemonic</code>
+3. Project-specific: <code>./.tfgrid-mnemonic</code></p>
+<p><strong>OpenTofu Priority:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Check tofu first (open source)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">if</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>tofu<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">TF_CMD</span><span class="o">=</span><span class="s2">&quot;tofu&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">elif</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>terraform<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">TF_CMD</span><span class="o">=</span><span class="s2">&quot;terraform&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">else</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span>error<span class="w"> </span><span class="s2">&quot;Neither found&quot;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">fi</span>
+</code></pre></div></p>
+<hr />
+<h3 id="4-pattern-loader-corepattern-loadersh">4. Pattern Loader (<code>core/pattern-loader.sh</code>)<a class="headerlink" href="#4-pattern-loader-corepattern-loadersh" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Load and validate deployment patterns</p>
+<p><strong>Pattern Structure:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>patterns/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>└── single-vm/
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    ├── pattern.yaml           # Pattern metadata
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    ├── infrastructure/        # Terraform/OpenTofu files
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    │   ├── main.tf
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    │   ├── variables.tf
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    │   └── outputs.tf        # MUST implement contract
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    ├── platform/             # Ansible playbooks
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    │   ├── site.yml
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    │   └── roles/
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    └── README.md
+</code></pre></div></p>
+<p><strong>Pattern Loading Flow:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>load_pattern<span class="o">()</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>├──<span class="w"> </span>Read<span class="w"> </span>pattern<span class="w"> </span>name<span class="w"> </span>from<span class="w"> </span>app<span class="w"> </span>manifest
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>├──<span class="w"> </span>Validate<span class="w"> </span>pattern<span class="w"> </span>directory<span class="w"> </span>exists
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>├──<span class="w"> </span>Load<span class="w"> </span>pattern.yaml<span class="w"> </span>metadata
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span>├──<span class="w"> </span>Verify<span class="w"> </span>infrastructure/<span class="w"> </span><span class="o">(</span>Terraform<span class="w"> </span>files<span class="o">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span>├──<span class="w"> </span>Verify<span class="w"> </span>platform/<span class="w"> </span><span class="o">(</span>Ansible<span class="w"> </span>playbooks<span class="o">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span>└──<span class="w"> </span>Export<span class="w"> </span>pattern<span class="w"> </span>variables
+</code></pre></div></p>
+<p><strong>Pattern Metadata (<code>pattern.yaml</code>):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Single VM deployment</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">requires</span><span class="p">:</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">terraform</span><span class="w">  </span><span class="c1"># or opentofu</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wireguard</span><span class="w">  </span><span class="c1"># optional</span>
+</code></pre></div></p>
+<hr />
+<h3 id="5-app-loader-coreapp-loadersh">5. App Loader (<code>core/app-loader.sh</code>)<a class="headerlink" href="#5-app-loader-coreapp-loadersh" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Load and validate application manifests</p>
+<p><strong>App Manifest (<code>tfgrid-compose.yaml</code>):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># Pattern configuration</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="nt">node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">102400</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1"># Optional app-specific hooks</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nt">hooks</span><span class="p">:</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="nt">setup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./deployment/hooks/setup.sh</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">  </span><span class="nt">configure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./deployment/hooks/configure.sh</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./deployment/hooks/healthcheck.sh</span>
+</code></pre></div></p>
+<p><strong>App Loading Flow:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>load_app<span class="o">()</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span>├──<span class="w"> </span>Parse<span class="w"> </span>tfgrid-compose.yaml
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>├──<span class="w"> </span>Extract<span class="w"> </span>app<span class="w"> </span>metadata
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span>├──<span class="w"> </span>Load<span class="w"> </span>pattern<span class="w"> </span>configuration
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span>├──<span class="w"> </span>Validate<span class="w"> </span>hooks<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>present<span class="o">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span>└──<span class="w"> </span>Export<span class="w"> </span>app<span class="w"> </span>variables
+</code></pre></div></p>
+<hr />
+<h3 id="6-orchestrator-coreorchestratorsh">6. Orchestrator (<code>core/orchestrator.sh</code>)<a class="headerlink" href="#6-orchestrator-coreorchestratorsh" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Main deployment orchestration logic</p>
+<p><strong>Deployment Flow:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>deploy_app<span class="o">()</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span>│
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span>├─<span class="w"> </span><span class="m">1</span>.<span class="w"> </span>VALIDATION<span class="w"> </span>PHASE
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Validate<span class="w"> </span>system<span class="w"> </span>prerequisites
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Validate<span class="w"> </span>no<span class="w"> </span>existing<span class="w"> </span>deployment
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Validate<span class="w"> </span>app<span class="w"> </span>path<span class="w"> </span>and<span class="w"> </span>manifest
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span>│<span class="w">      </span>└──<span class="w"> </span>Load<span class="w"> </span>pattern<span class="w"> </span>and<span class="w"> </span>app<span class="w"> </span>config
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span>│
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span>├─<span class="w"> </span><span class="m">2</span>.<span class="w"> </span>INFRASTRUCTURE<span class="w"> </span>PHASE
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Generate<span class="w"> </span>Terraform<span class="w"> </span>config
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Run:<span class="w"> </span>terraform<span class="w"> </span>init
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Run:<span class="w"> </span>terraform<span class="w"> </span>plan
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Run:<span class="w"> </span>terraform<span class="w"> </span>apply
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span>│<span class="w">      </span>└──<span class="w"> </span>Extract<span class="w"> </span>outputs<span class="w"> </span><span class="o">(</span>primary_ip,<span class="w"> </span>node_ids,<span class="w"> </span>etc.<span class="o">)</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span>│
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span>├─<span class="w"> </span><span class="m">3</span>.<span class="w"> </span>NETWORK<span class="w"> </span>PHASE
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>If<span class="w"> </span><span class="nv">primary_ip_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>:
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span>│<span class="w">      </span>│<span class="w">    </span>├──<span class="w"> </span>Extract<span class="w"> </span>WireGuard<span class="w"> </span>config
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">    </span>│<span class="w">      </span>│<span class="w">    </span>├──<span class="w"> </span>Deploy<span class="w"> </span>to<span class="w"> </span>/etc/wireguard/
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">    </span>│<span class="w">      </span>│<span class="w">    </span>└──<span class="w"> </span>Start<span class="w"> </span>wg-quick<span class="w"> </span>up
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span>│<span class="w">      </span>└──<span class="w"> </span>Test<span class="w"> </span>connectivity
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span>│
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">    </span>├─<span class="w"> </span><span class="m">4</span>.<span class="w"> </span>WAIT<span class="w"> </span>PHASE
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Wait<span class="w"> </span><span class="k">for</span><span class="w"> </span>SSH<span class="w"> </span><span class="o">(</span>up<span class="w"> </span>to<span class="w"> </span><span class="m">5</span><span class="w"> </span>minutes<span class="o">)</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Retry<span class="w"> </span>connection<span class="w"> </span>every<span class="w"> </span><span class="m">10</span><span class="w"> </span>seconds
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">    </span>│<span class="w">      </span>└──<span class="w"> </span>Verify<span class="w"> </span>SSH<span class="w"> </span>access
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">    </span>│
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">    </span>├─<span class="w"> </span><span class="m">5</span>.<span class="w"> </span>PLATFORM<span class="w"> </span>PHASE
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Generate<span class="w"> </span>Ansible<span class="w"> </span>inventory
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Run:<span class="w"> </span>ansible-playbook<span class="w"> </span>site.yml
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">    </span>│<span class="w">      </span>└──<span class="w"> </span>Configure<span class="w"> </span>base<span class="w"> </span>system
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">    </span>│
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">    </span>├─<span class="w"> </span><span class="m">6</span>.<span class="w"> </span>APPLICATION<span class="w"> </span>PHASE
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Copy<span class="w"> </span>app<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span>VM
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Run<span class="w"> </span>setup<span class="w"> </span>hook<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>present<span class="o">)</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Run<span class="w"> </span>configure<span class="w"> </span>hook<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>present<span class="o">)</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="w">    </span>│<span class="w">      </span>└──<span class="w"> </span>Run<span class="w"> </span>healthcheck<span class="w"> </span>hook<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>present<span class="o">)</span>
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="w">    </span>│
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="w">    </span>├─<span class="w"> </span><span class="m">7</span>.<span class="w"> </span>VERIFICATION<span class="w"> </span>PHASE
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Test<span class="w"> </span>SSH<span class="w"> </span>connectivity
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">    </span>│<span class="w">      </span>├──<span class="w"> </span>Check<span class="w"> </span>application<span class="w"> </span>service
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="w">    </span>│<span class="w">      </span>└──<span class="w"> </span>Validate<span class="w"> </span>deployment
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="w">    </span>│
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="w">    </span>└─<span class="w"> </span><span class="m">8</span>.<span class="w"> </span>FINALIZATION
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="w">           </span>├──<span class="w"> </span>Save<span class="w"> </span>deployment<span class="w"> </span>metadata
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="w">           </span>├──<span class="w"> </span>Display<span class="w"> </span>connection<span class="w"> </span>info
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="w">           </span>└──<span class="w"> </span>Show<span class="w"> </span>next<span class="w"> </span>steps
+</code></pre></div>
+<p><strong>Destroy Flow:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>destroy_deployment<span class="o">()</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span>├──<span class="w"> </span>Validate<span class="w"> </span>deployment<span class="w"> </span>exists
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span>├──<span class="w"> </span>Stop<span class="w"> </span>WireGuard<span class="w"> </span>interface<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>active<span class="o">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span>├──<span class="w"> </span>Run:<span class="w"> </span>terraform<span class="w"> </span>destroy
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span>└──<span class="w"> </span>Clear<span class="w"> </span>state<span class="w"> </span>directory
+</code></pre></div></p>
+<hr />
+<h3 id="7-task-executors-coretasks">7. Task Executors (<code>core/tasks/</code>)<a class="headerlink" href="#7-task-executors-coretasks" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Execute specific deployment tasks</p>
+<h4 id="terraformsh"><code>terraform.sh</code><a class="headerlink" href="#terraformsh" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Detects OpenTofu or Terraform</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>TF_CMD<span class="w"> </span>detection<span class="w"> </span><span class="o">(</span>tofu<span class="w"> </span>→<span class="w"> </span>terraform<span class="w"> </span>→<span class="w"> </span>error<span class="o">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>├──<span class="w"> </span>terraform<span class="w"> </span>init
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span>├──<span class="w"> </span>terraform<span class="w"> </span>plan
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span>├──<span class="w"> </span>terraform<span class="w"> </span>apply
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span>└──<span class="w"> </span>Extract<span class="w"> </span>outputs<span class="w"> </span>to<span class="w"> </span>state.yaml
+</code></pre></div>
+<h4 id="wireguardsh"><code>wireguard.sh</code><a class="headerlink" href="#wireguardsh" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Sets up WireGuard VPN</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span>├──<span class="w"> </span>Extract<span class="w"> </span>wg_config<span class="w"> </span>from<span class="w"> </span>Terraform
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span>├──<span class="w"> </span>Generate<span class="w"> </span>interface<span class="w"> </span>name<span class="w"> </span><span class="o">(</span>wg0,<span class="w"> </span>wg1,<span class="w"> </span>...<span class="o">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span>├──<span class="w"> </span>Deploy<span class="w"> </span>to<span class="w"> </span>/etc/wireguard/
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span>├──<span class="w"> </span>Handle<span class="w"> </span>conflicts<span class="w"> </span>with<span class="w"> </span>existing<span class="w"> </span>interfaces
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span>└──<span class="w"> </span>Start<span class="w"> </span>interface<span class="w"> </span>with<span class="w"> </span>wg-quick
+</code></pre></div>
+<h4 id="ansiblesh"><code>ansible.sh</code><a class="headerlink" href="#ansiblesh" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Configures platform</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span>├──<span class="w"> </span>Generate<span class="w"> </span>inventory<span class="w"> </span>from<span class="w"> </span>state
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span>├──<span class="w"> </span>Test<span class="w"> </span>connectivity
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span>├──<span class="w"> </span>Run<span class="w"> </span>playbook
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span>└──<span class="w"> </span>Capture<span class="w"> </span>logs
+</code></pre></div>
+<h4 id="wait-sshsh"><code>wait-ssh.sh</code><a class="headerlink" href="#wait-sshsh" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Waits for SSH to be ready</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span>├──<span class="w"> </span>Timeout:<span class="w"> </span><span class="m">300</span><span class="w"> </span>seconds<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="w"> </span>minutes<span class="o">)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span>├──<span class="w"> </span>Retry:<span class="w"> </span>Every<span class="w"> </span><span class="m">10</span><span class="w"> </span>seconds
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span>├──<span class="w"> </span>Test:<span class="w"> </span>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">BatchMode</span><span class="o">=</span>yes<span class="w"> </span>&lt;ip&gt;<span class="w"> </span><span class="s1">&#39;echo ok&#39;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span>└──<span class="w"> </span>Early<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>on<span class="w"> </span>first<span class="w"> </span>success
+</code></pre></div>
+<hr />
+<h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
+<h3 id="state-directory-structure">State Directory Structure<a class="headerlink" href="#state-directory-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>.tfgrid-compose/
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>├── state.yaml                    # Deployment metadata
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>├── terraform/                    # Generated Terraform config
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>│   ├── main.tf
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>│   ├── variables.tf
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>│   ├── outputs.tf
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>│   ├── .terraform/              # Terraform state
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>│   └── terraform.tfstate
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>├── inventory.ini                 # Generated Ansible inventory
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>├── wg0.conf                     # WireGuard config (if used)
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>├── terraform-init.log           # Terraform init log
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>├── terraform-plan.log           # Terraform plan log
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>├── terraform-apply.log          # Terraform apply log
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>├── ansible.log                  # Ansible playbook log
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>├── hook-setup.log              # Setup hook log
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>├── hook-configure.log          # Configure hook log
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>└── hook-healthcheck.log        # Healthcheck hook log
+</code></pre></div>
+<h3 id="state-file-stateyaml">State File (<code>state.yaml</code>)<a class="headerlink" href="#state-file-stateyaml" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Metadata</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nt">app_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nt">app_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nt">deployment_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc123xyz</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nt">created_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-14T12:00:00Z</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="c1"># Infrastructure outputs</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="nt">vm_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.1.3.2</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="nt">primary_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.1.3.2</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="nt">primary_ip_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wireguard</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="nt">deployment_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vm_abc123xyz</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="nt">node_ids</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">8</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="nt">mycelium_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">543:7233:7534:51c4:ff0f:f38b:d69b:8f19</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="c1"># Network</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="nt">wg_interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wg0</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="nt">network_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">net_abc123xyz</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="c1"># Platform</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="nt">ssh_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="nt">ssh_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/user/.ssh/id_ed25519</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="c1"># Status</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">running</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="nt">last_updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-14T12:05:00Z</span>
+</code></pre></div>
+<h3 id="data-flow-diagram">Data Flow Diagram<a class="headerlink" href="#data-flow-diagram" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>┌──────────────────┐
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>│  User Command    │
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>│  tfgrid-compose  │
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>│       up         │
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>└────────┬─────────┘
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>         │
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>         ▼
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>┌──────────────────┐
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>│ App Manifest     │
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>│ .yaml file       │───┐
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>└────────┬─────────┘   │
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>         │             │
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>         ▼             │
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>┌──────────────────┐   │
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>│ Pattern Files    │◄──┘
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>│ Infrastructure/  │
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>│ Platform/        │
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>└────────┬─────────┘
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>         │
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>         ▼
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>┌──────────────────┐
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>│ Terraform Apply  │
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>│ Creates VMs      │
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>└────────┬─────────┘
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>         │
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>         ▼
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>┌──────────────────┐
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>│ Extract Outputs  │
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>│ Save to state    │
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>└────────┬─────────┘
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>         │
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>         ▼
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>┌──────────────────┐
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>│ WireGuard Setup  │
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>│ Network Access   │
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>└────────┬─────────┘
+<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>         │
+<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>         ▼
+<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>┌──────────────────┐
+<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>│ Ansible Config   │
+<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a>│ Platform Setup   │
+<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a>└────────┬─────────┘
+<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>         │
+<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a>         ▼
+<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a>┌──────────────────┐
+<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>│ App Deployment   │
+<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a>│ Hooks Execution  │
+<a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a>└────────┬─────────┘
+<a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a>         │
+<a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a>         ▼
+<a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a>┌──────────────────┐
+<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a>│ State Saved      │
+<a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a>│ Deployment Done  │
+<a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a>└──────────────────┘
+</code></pre></div>
+<hr />
+<h2 id="pattern-system">Pattern System<a class="headerlink" href="#pattern-system" title="Permanent link">&para;</a></h2>
+<h3 id="pattern-contract">Pattern Contract<a class="headerlink" href="#pattern-contract" title="Permanent link">&para;</a></h3>
+<p>Every pattern MUST implement <a href="../patterns/PATTERN_CONTRACT.md">the standard contract</a>.</p>
+<p><strong>Required Terraform Outputs:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10.1.3.2&quot;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Primary IP for SSH&quot;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">}</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;  # or &quot;public&quot; or &quot;mycelium&quot;</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Type of primary IP&quot;</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="p">}</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;deployment_name&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vm_abc123&quot;</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Deployment name&quot;</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="p">}</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="m">8</span><span class="p">]</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Node IDs used&quot;</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="pattern-types">Pattern Types<a class="headerlink" href="#pattern-types" title="Permanent link">&para;</a></h3>
+<h4 id="1-single-vm-pattern">1. Single-VM Pattern<a class="headerlink" href="#1-single-vm-pattern" title="Permanent link">&para;</a></h4>
+<p><strong>Use Case:</strong> Development, databases, internal services, AI agents</p>
+<p><strong>Infrastructure:</strong>
+- 1 VM on TFGrid
+- WireGuard private network
+- Optional Mycelium IPv6</p>
+<p><strong>Network:</strong>
+- Primary: WireGuard IP (10.x.x.x)
+- Secondary: Mycelium IP (IPv6)</p>
+<p><strong>Platform:</strong>
+- Ubuntu 24.04
+- Base packages (git, curl, build-essential)
+- Docker (optional)</p>
+<h4 id="2-gateway-pattern">2. Gateway Pattern<a class="headerlink" href="#2-gateway-pattern" title="Permanent link">&para;</a></h4>
+<p><strong>Use Case:</strong> Production web apps with public IPv4</p>
+<p><strong>Infrastructure:</strong>
+- 1 Gateway VM (public IPv4)
+- N Backend VMs (private network)
+- WireGuard + Mycelium</p>
+<p><strong>Network:</strong>
+- Primary: Public IPv4 (gateway)
+- Secondary: WireGuard IPs (backends)</p>
+<p><strong>Platform:</strong>
+- Gateway: Nginx/HAProxy reverse proxy
+- Backends: Application servers
+- SSL/TLS: Let's Encrypt (automated)</p>
+<h4 id="3-k3s-pattern">3. K3s Pattern<a class="headerlink" href="#3-k3s-pattern" title="Permanent link">&para;</a></h4>
+<p><strong>Use Case:</strong> Kubernetes clusters</p>
+<p><strong>Infrastructure:</strong>
+- 1+ Control plane nodes
+- N Worker nodes
+- 1 Management node (kubectl, helm, k9s)</p>
+<p><strong>Network:</strong>
+- Primary: Control plane WireGuard IP
+- Secondary: Worker node IPs</p>
+<p><strong>Platform:</strong>
+- K3s lightweight Kubernetes
+- MetalLB load balancer
+- Nginx Ingress Controller
+- Local-path storage provisioner</p>
+<hr />
+<h2 id="state-management">State Management<a class="headerlink" href="#state-management" title="Permanent link">&para;</a></h2>
+<h3 id="state-lifecycle">State Lifecycle<a class="headerlink" href="#state-lifecycle" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>┌──────────────┐
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>│   No State   │  Initial state
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>└──────┬───────┘
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>       │
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>       │  deploy_app()
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>       ▼
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>┌──────────────┐
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>│  Deploying   │  Terraform running
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>└──────┬───────┘
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>       │
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>       │  Success
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>       ▼
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>┌──────────────┐
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>│   Running    │  Deployment active
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>└──────┬───────┘
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>       │
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>       │  destroy_deployment()
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>       ▼
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>┌──────────────┐
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>│  Destroying  │  Terraform destroy
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>└──────┬───────┘
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>       │
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>       │  Success
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>       ▼
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>┌──────────────┐
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>│   Cleaned    │  State removed
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>└──────────────┘
+</code></pre></div>
+<h3 id="state-operations">State Operations<a class="headerlink" href="#state-operations" title="Permanent link">&para;</a></h3>
+<p><strong>Create State:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>create_state_dir<span class="o">()</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span>.tfgrid-compose
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span>touch<span class="w"> </span>.tfgrid-compose/state.yaml
+</code></pre></div></p>
+<p><strong>Save to State:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>state_save<span class="w"> </span><span class="s2">&quot;key&quot;</span><span class="w"> </span><span class="s2">&quot;value&quot;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;key: value&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.tfgrid-compose/state.yaml
+</code></pre></div></p>
+<p><strong>Read from State:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>state_get<span class="w"> </span><span class="s2">&quot;key&quot;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span>grep<span class="w"> </span><span class="s2">&quot;^key:&quot;</span><span class="w"> </span>.tfgrid-compose/state.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span>
+</code></pre></div></p>
+<p><strong>Clear State:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>state_clear<span class="o">()</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span>.tfgrid-compose/
+</code></pre></div></p>
+<h3 id="state-validation">State Validation<a class="headerlink" href="#state-validation" title="Permanent link">&para;</a></h3>
+<p><strong>Check Deployment Exists:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;.tfgrid-compose/state.yaml&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Deployment exists&quot;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">fi</span>
+</code></pre></div></p>
+<p><strong>Prevent Duplicate Deployments:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>validate_no_deployment<span class="o">()</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span>deployment_exists<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">        </span>show<span class="w"> </span>current<span class="w"> </span>deployment<span class="w"> </span>info
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">        </span>error<span class="w"> </span><span class="s2">&quot;Cannot deploy while another exists&quot;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="k">fi</span>
+</code></pre></div></p>
+<hr />
+<h2 id="extension-guide">Extension Guide<a class="headerlink" href="#extension-guide" title="Permanent link">&para;</a></h2>
+<h3 id="adding-a-new-pattern">Adding a New Pattern<a class="headerlink" href="#adding-a-new-pattern" title="Permanent link">&para;</a></h3>
+<p><strong>1. Create Pattern Directory:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>patterns/my-pattern/
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>├──<span class="w"> </span>pattern.yaml
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>├──<span class="w"> </span>infrastructure/
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>│<span class="w">   </span>└──<span class="w"> </span>main.tf<span class="w">         </span><span class="c1"># Implement pattern contract!</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>├──<span class="w"> </span>platform/
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>│<span class="w">   </span>└──<span class="w"> </span>site.yml
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>└──<span class="w"> </span>README.md
+</code></pre></div></p>
+<p><strong>2. Implement Pattern Contract:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># infrastructure/outputs.tf</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">your_resource.primary_ip</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">}</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="p">}</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;deployment_name&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">your_resource.name</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="p">}</span>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">var.node_id</span><span class="p">]</span>
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>3. Test Pattern:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># Test with example app</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>/path/to/test-app
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="c1"># Verify outputs</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="nb">cd</span><span class="w"> </span>.tfgrid-compose/terraform
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>terraform<span class="w"> </span>output<span class="w"> </span>primary_ip
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>terraform<span class="w"> </span>output<span class="w"> </span>primary_ip_type
+</code></pre></div></p>
+<p><strong>4. Document Pattern:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="gh"># My Pattern</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="gu">## Use Cases</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="k">-</span><span class="w"> </span>What problems does this solve?
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="gu">## Configuration</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="k">-</span><span class="w"> </span>What options are available?
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="gu">## Example</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="k">-</span><span class="w"> </span>Show complete example
+</code></pre></div></p>
+<h3 id="adding-a-new-task">Adding a New Task<a class="headerlink" href="#adding-a-new-task" title="Permanent link">&para;</a></h3>
+<p><strong>1. Create Task Script:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>core/tasks/my-task.sh
+</code></pre></div></p>
+<p><strong>2. Implement Task:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="ch">#!/usr/bin/env bash</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nb">set</span><span class="w"> </span>-e
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SCRIPT_DIR</span><span class="s2">/../common.sh&quot;</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>log_step<span class="w"> </span><span class="s2">&quot;Running my task...&quot;</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="c1"># Task implementation</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="c1"># ...</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>log_success<span class="w"> </span><span class="s2">&quot;Task complete&quot;</span>
+</code></pre></div></p>
+<p><strong>3. Call from Orchestrator:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># In core/orchestrator.sh</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>bash<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DEPLOYER_ROOT</span><span class="s2">/core/tasks/my-task.sh&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">    </span>log_error<span class="w"> </span><span class="s2">&quot;My task failed&quot;</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="k">fi</span>
+</code></pre></div></p>
+<h3 id="adding-new-commands">Adding New Commands<a class="headerlink" href="#adding-new-commands" title="Permanent link">&para;</a></h3>
+<p><strong>1. Add Command Handler:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># In cli/tfgrid-compose</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$COMMAND</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span>my-command<span class="o">)</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">        </span><span class="c1"># Implementation</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">        </span><span class="p">;;</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="k">esac</span>
+</code></pre></div></p>
+<p><strong>2. Update Help Text:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># In core/common.sh show_help()</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  my-command &lt;args&gt;  - Description&quot;</span>
+</code></pre></div></p>
+<hr />
+<h2 id="design-decisions">Design Decisions<a class="headerlink" href="#design-decisions" title="Permanent link">&para;</a></h2>
+<h3 id="why-bash">Why Bash?<a class="headerlink" href="#why-bash" title="Permanent link">&para;</a></h3>
+<p><strong>Pros:</strong>
+- ✅ Universal availability (every Unix system)
+- ✅ Easy to understand and debug
+- ✅ Transparent execution (no compilation)
+- ✅ Excellent for orchestration
+- ✅ Direct integration with CLI tools
+- ✅ Minimal dependencies</p>
+<p><strong>Cons:</strong>
+- ❌ Error handling can be tricky
+- ❌ No type safety
+- ❌ Testing is harder</p>
+<p><strong>Mitigation:</strong>
+- Use <code>set -e</code> (exit on error)
+- Extensive validation
+- Logging at each step
+- Test scripts provided</p>
+<h3 id="why-pattern-based">Why Pattern-Based?<a class="headerlink" href="#why-pattern-based" title="Permanent link">&para;</a></h3>
+<p><strong>Benefits:</strong>
+- Different use cases need different infrastructure
+- Patterns encapsulate best practices
+- Easy to add new patterns without modifying core
+- Users can create custom patterns</p>
+<p><strong>Alternatives Considered:</strong>
+- Single monolithic template (too rigid)
+- Full config DSL (too complex)
+- GUI builder (not CLI-friendly)</p>
+<h3 id="why-opentofu-priority">Why OpenTofu Priority?<a class="headerlink" href="#why-opentofu-priority" title="Permanent link">&para;</a></h3>
+<p><strong>Rationale:</strong>
+- Open source (Apache 2.0 license)
+- Compatible with Terraform
+- Community-driven development
+- No license restrictions
+- Same user experience</p>
+<p><strong>Fallback:</strong>
+- Terraform still supported
+- Auto-detection at runtime
+- No breaking changes</p>
+<h3 id="why-state-in-tfgrid-compose">Why State in <code>.tfgrid-compose/</code>?<a class="headerlink" href="#why-state-in-tfgrid-compose" title="Permanent link">&para;</a></h3>
+<p><strong>Benefits:</strong>
+- Co-located with deployment
+- Easy to find and inspect
+- Git-ignored by default
+- Self-contained</p>
+<p><strong>Alternatives:</strong>
+- <code>~/.tfgrid/</code> (harder to track per-project)
+- Database (added complexity)
+- Cloud storage (requires connectivity)</p>
+<hr />
+<h2 id="performance-considerations">Performance Considerations<a class="headerlink" href="#performance-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="deployment-speed">Deployment Speed<a class="headerlink" href="#deployment-speed" title="Permanent link">&para;</a></h3>
+<p><strong>Typical Timeline:</strong>
+- Infrastructure (Terraform): 30-60 seconds
+- Network setup (WireGuard): 5-10 seconds
+- Wait for SSH: 30-90 seconds
+- Platform config (Ansible): 60-120 seconds
+- App deployment: 10-30 seconds</p>
+<p><strong>Total: 2-5 minutes</strong></p>
+<h3 id="optimization-opportunities">Optimization Opportunities<a class="headerlink" href="#optimization-opportunities" title="Permanent link">&para;</a></h3>
+<p><strong>1. Parallel Execution:</strong>
+- Multiple Ansible hosts configured in parallel
+- Background tasks where possible</p>
+<p><strong>2. Caching:</strong>
+- Terraform state cached locally
+- Ansible facts cached between runs</p>
+<p><strong>3. Incremental Updates:</strong>
+- Only run changed playbooks
+- Terraform plan before apply</p>
+<h3 id="resource-usage">Resource Usage<a class="headerlink" href="#resource-usage" title="Permanent link">&para;</a></h3>
+<p><strong>Local Machine:</strong>
+- Minimal CPU usage (mostly waiting)
+- Small disk footprint (&lt;50MB for state)
+- Network: Depends on Terraform operations</p>
+<p><strong>Remote VMs:</strong>
+- Configured per pattern requirements
+- Single-VM: 2-8 CPU, 4-16GB RAM typical
+- Gateway: 1-2 CPU per VM, 2-4GB RAM
+- K3s: 2+ CPU per node, 4+GB RAM</p>
+<hr />
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="mnemonic-security">Mnemonic Security<a class="headerlink" href="#mnemonic-security" title="Permanent link">&para;</a></h3>
+<p><strong>Storage:</strong>
+- File permissions: 600 (read/write owner only)
+- Standard location: <code>~/.config/threefold/mnemonic</code>
+- Warning if permissions are incorrect</p>
+<p><strong>Best Practices:</strong>
+- Never commit to version control
+- Use environment variable in CI/CD
+- Rotate regularly</p>
+<h3 id="ssh-key-management">SSH Key Management<a class="headerlink" href="#ssh-key-management" title="Permanent link">&para;</a></h3>
+<p><strong>Default Behavior:</strong>
+- Uses system SSH keys (<code>~/.ssh/id_*.pub</code>)
+- Injected into VMs during deployment
+- No passwords (key-based auth only)</p>
+<h3 id="wireguard-security">WireGuard Security<a class="headerlink" href="#wireguard-security" title="Permanent link">&para;</a></h3>
+<p><strong>Private Keys:</strong>
+- Generated by Terraform provider
+- Stored in Terraform state (encrypted at rest)
+- Deployed to <code>/etc/wireguard/</code> with 600 permissions</p>
+<p><strong>Network Isolation:</strong>
+- Private networks per deployment
+- No default internet routing
+- Explicit rules required for external access</p>
+<hr />
+<h2 id="troubleshooting-architecture">Troubleshooting Architecture<a class="headerlink" href="#troubleshooting-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
+<p><strong>Enable:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>tfgrid-compose<span class="w"> </span>--debug<span class="w"> </span>up<span class="w"> </span>&lt;app&gt;
+</code></pre></div></p>
+<p><strong>Effects:</strong>
+- Verbose logging (<code>set -x</code>)
+- Keep temporary files
+- Show all command output
+- Network diagnostics</p>
+<h3 id="log-files">Log Files<a class="headerlink" href="#log-files" title="Permanent link">&para;</a></h3>
+<p>All logs saved to <code>.tfgrid-compose/</code>:
+- <code>terraform-init.log</code>
+- <code>terraform-plan.log</code>
+- <code>terraform-apply.log</code>
+- <code>ansible.log</code>
+- <code>hook-*.log</code></p>
+<h3 id="state-inspection">State Inspection<a class="headerlink" href="#state-inspection" title="Permanent link">&para;</a></h3>
+<p><strong>Check Deployment:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>cat<span class="w"> </span>.tfgrid-compose/state.yaml
+</code></pre></div></p>
+<p><strong>Check Terraform State:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nb">cd</span><span class="w"> </span>.tfgrid-compose/terraform
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>terraform<span class="w"> </span>show
+</code></pre></div></p>
+<p><strong>Check WireGuard:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>sudo<span class="w"> </span>wg<span class="w"> </span>show
+</code></pre></div></p>
+<hr />
+<h2 id="future-architecture">Future Architecture<a class="headerlink" href="#future-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="planned-enhancements">Planned Enhancements<a class="headerlink" href="#planned-enhancements" title="Permanent link">&para;</a></h3>
+<p><strong>1. Multi-Deployment Support</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>~/.tfgrid-compose/
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>├── deployments/
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>│   ├── abc123/  # Deployment 1
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>│   └── def456/  # Deployment 2
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>└── index.yaml   # Registry
+</code></pre></div></p>
+<p><strong>2. Plugin System</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>~/.tfgrid/plugins/
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>└── my-plugin/
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>    ├── plugin.yaml
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>    └── hooks/
+</code></pre></div></p>
+<p><strong>3. Remote State</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c1"># tfgrid-compose.yaml</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="nt">state</span><span class="p">:</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">  </span><span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">    </span><span class="nt">bucket</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-tfgrid-state</span>
+</code></pre></div></p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../patterns/PATTERN_CONTRACT.md">Pattern Contract</a></li>
+<li><a href="QUICKSTART.md">Quick Start Guide</a></li>
+<li><a href="TROUBLESHOOTING.md">Troubleshooting Guide</a></li>
+<li><a href="https://docs.tfgrid.studio/development/versioning-policy/">Versioning Policy</a></li>
+</ul>
+<hr />
+<p><strong>Document Status:</strong> Active<br />
+<strong>Last Updated:</strong> 2025-10-14<br />
+<strong>Next Review:</strong> After 1.0.0 release</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../guides/ai-agent/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AI Agent Deployment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                AI Agent Deployment
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../source-repos/" class="md-footer__link md-footer__link--next" aria-label="Next: Source Repositories">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Source Repositories
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 TFGrid Studio - Apache 2.0 License
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://tfgrid.studio" target="_blank" rel="noopener" title="TFGrid Studio Main Site" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272h16v176c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V272h16c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1zM240 320h32c26.5 0 48 21.5 48 48v96H192v-96c0-26.5 21.5-48 48-48"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/tfgrid-studio" target="_blank" rel="noopener" title="TFGrid Studio on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/orgs/tfgrid-studio/discussions" target="_blank" rel="noopener" title="Join our community" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M384 144c0 97.2-86 176-192 176-26.7 0-52.1-5-75.2-14l-81.6 43.2c-9.3 4.9-20.7 3.2-28.2-4.2s-9.2-18.9-4.2-28.2l35.6-67.2C14.3 220.2 0 183.6 0 144 0 46.8 86-32 192-32s192 78.8 192 176m0 368c-94.1 0-172.4-62.1-188.8-144 120-1.5 224.3-86.9 235.8-202.7 83.3 19.2 145 88.3 145 170.7 0 39.6-14.3 76.2-38.4 105.6l35.6 67.2c4.9 9.3 3.2 20.7-4.2 28.2s-18.9 9.2-28.2 4.2L459.2 498c-23.1 9-48.5 14-75.2 14"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

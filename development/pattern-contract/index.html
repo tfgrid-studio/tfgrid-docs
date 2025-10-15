@@ -12,13 +12,13 @@
         <meta name="author" content="TFGrid Studio Team">
       
       
-        <link rel="canonical" href="https://docs.tfgrid.studio/patterns/gateway/">
+        <link rel="canonical" href="https://docs.tfgrid.studio/development/pattern-contract/">
       
       
-        <link rel="prev" href="../single-vm/">
+        <link rel="prev" href="../versioning-policy/">
       
       
-        <link rel="next" href="../k3s/">
+        <link rel="next" href="../../community/code-of-conduct/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Gateway Pattern - TFGrid Studio</title>
+        <title>Pattern Contract - TFGrid Studio</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gateway-pattern" class="md-skip">
+        <a href="#pattern-contract" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gateway Pattern
+              Pattern Contract
             
           </span>
         </div>
@@ -310,13 +310,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../patterns/overview/" class="md-tabs__link">
           
   
   
@@ -352,11 +350,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../development/versioning-policy/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../versioning-policy/" class="md-tabs__link">
           
   
   
@@ -795,31 +795,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -832,7 +829,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Deployment Patterns
@@ -846,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../patterns/overview/" class="md-nav__link">
         
   
   
@@ -869,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../single-vm/" class="md-nav__link">
+      <a href="../../patterns/single-vm/" class="md-nav__link">
         
   
   
@@ -889,32 +886,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Gateway Pattern
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../patterns/gateway/" class="md-nav__link">
         
   
   
@@ -925,191 +900,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gateway-vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gateway VM
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backend-vms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backend VMs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Network Flow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Cases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Use Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#production-web-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Production Web Apps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#e-commerce-sites" class="md-nav__link">
-    <span class="md-ellipsis">
-      E-commerce Sites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#saas-applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      SaaS Applications
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssltls-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      SSL/TLS Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-balancing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load Balancing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1122,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../k3s/" class="md-nav__link">
+      <a href="../../patterns/k3s/" class="md-nav__link">
         
   
   
@@ -1224,28 +1014,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1258,7 +1051,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Development
@@ -1272,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/versioning-policy/" class="md-nav__link">
+      <a href="../versioning-policy/" class="md-nav__link">
         
   
   
@@ -1292,10 +1085,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../development/pattern-contract/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Pattern Contract
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1306,6 +1121,179 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Outputs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary_ip-string-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      primary_ip (string, required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary_ip_type-string-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      primary_ip_type (string, required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment_name-string-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      deployment_name (string, required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node_ids-list-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      node_ids (list, required)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Outputs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secondary_ips-list-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      secondary_ips (list, optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mycelium_ip-string-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      mycelium_ip (string, optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection_info-map-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      connection_info (map, optional)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-vm-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-VM Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gateway-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gateway Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k3s-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      K3s Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Contract?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1564,73 +1552,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#required-outputs" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Required Outputs
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture">
+    <nav class="md-nav" aria-label="Required Outputs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gateway-vm" class="md-nav__link">
+  <a href="#primary_ip-string-required" class="md-nav__link">
     <span class="md-ellipsis">
-      Gateway VM
+      primary_ip (string, required)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backend-vms" class="md-nav__link">
+  <a href="#primary_ip_type-string-required" class="md-nav__link">
     <span class="md-ellipsis">
-      Backend VMs
+      primary_ip_type (string, required)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#network-flow" class="md-nav__link">
+  <a href="#deployment_name-string-required" class="md-nav__link">
     <span class="md-ellipsis">
-      Network Flow
+      deployment_name (string, required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node_ids-list-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      node_ids (list, required)
     </span>
   </a>
   
@@ -1642,46 +1603,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#optional-outputs" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      Optional Outputs
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Cases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Use Cases">
+    <nav class="md-nav" aria-label="Optional Outputs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#production-web-apps" class="md-nav__link">
+  <a href="#secondary_ips-list-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      Production Web Apps
+      secondary_ips (list, optional)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#e-commerce-sites" class="md-nav__link">
+  <a href="#mycelium_ip-string-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      E-commerce Sites
+      mycelium_ip (string, optional)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#saas-applications" class="md-nav__link">
+  <a href="#connection_info-map-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      SaaS Applications
+      connection_info (map, optional)
     </span>
   </a>
   
@@ -1693,36 +1645,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssltls-configuration" class="md-nav__link">
+  <a href="#pattern-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      SSL/TLS Configuration
+      Pattern Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-vm-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-VM Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gateway-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gateway Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k3s-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      K3s Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Contract?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#load-balancing" class="md-nav__link">
+  <a href="#validation" class="md-nav__link">
     <span class="md-ellipsis">
-      Load Balancing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
+      Validation
     </span>
   </a>
   
@@ -1744,7 +1720,7 @@
 
 
   
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/patterns/gateway.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/development/pattern-contract.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -1753,145 +1729,172 @@
     
       
     
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/patterns/gateway.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/development/pattern-contract.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="gateway-pattern">Gateway Pattern<a class="headerlink" href="#gateway-pattern" title="Permanent link">&para;</a></h1>
-<p><strong>Multi-VM with public access and SSL for production web apps</strong></p>
-<p>The gateway pattern deploys a multi-VM architecture with a reverse proxy gateway that provides public IPv4 access, automatic SSL/TLS certificates, and load balancing for your backend services.</p>
-<hr />
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Internet → [Gateway VM] → [Backend VMs]
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        (Public IPv4)   (Private Network)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        (SSL/TLS)       (Your App + DB)
+<h1 id="pattern-contract">Pattern Contract<a class="headerlink" href="#pattern-contract" title="Permanent link">&para;</a></h1>
+<p><strong>All deployment patterns MUST follow this contract to work with tfgrid-compose orchestrator.</strong></p>
+<h2 id="required-outputs">Required Outputs<a class="headerlink" href="#required-outputs" title="Permanent link">&para;</a></h2>
+<p>Every pattern's Terraform configuration MUST provide these outputs:</p>
+<h3 id="primary_ip-string-required"><code>primary_ip</code> (string, required)<a class="headerlink" href="#primary_ip-string-required" title="Permanent link">&para;</a></h3>
+<p>The main IP address for connecting to the deployment. This is used for SSH and management.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">value</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10.1.3.2&quot;</span><span class="c1">  # or whatever the IP is</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Primary IP address for SSH connection&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>Perfect For:</strong>
-- Production websites &amp; web apps
-- E-commerce sites
-- SaaS applications
-- Anything needing public HTTPS access</p>
-<hr />
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-saas<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>myapp.com
+<h3 id="primary_ip_type-string-required"><code>primary_ip_type</code> (string, required)<a class="headerlink" href="#primary_ip_type-string-required" title="Permanent link">&para;</a></h3>
+<p>The type of the primary IP. Valid values: <code>wireguard</code>, <code>public</code>, <code>mycelium</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="na">value</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Type of primary IP&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>Deploy time:</strong> 5-7 minutes<br />
-<strong>Cost:</strong> $30-100/month</p>
-<hr />
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<ul>
-<li>🔒 <strong>Free SSL certificates</strong> - Automatic Let's Encrypt SSL/TLS</li>
-<li>🌐 <strong>Public IPv4 included</strong> - Direct internet access</li>
-<li>⚖️ <strong>Load balancing</strong> - Distribute traffic across backends</li>
-<li>❤️ <strong>Health checks</strong> - Automatic failover for reliability</li>
-<li>🔄 <strong>Reverse proxy</strong> - Nginx-based gateway with custom configs</li>
-<li>🛡️ <strong>Private backend network</strong> - Backends only accessible via gateway</li>
-</ul>
-<hr />
-<h2 id="example-deployment">Example Deployment<a class="headerlink" href="#example-deployment" title="Permanent link">&para;</a></h2>
-<p>Deploy a SaaS application with SSL:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-saas<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>myapp.com
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>✨<span class="w"> </span>Live<span class="w"> </span>with<span class="w"> </span>SSL<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">5</span><span class="w"> </span>minutes!
+<h3 id="deployment_name-string-required"><code>deployment_name</code> (string, required)<a class="headerlink" href="#deployment_name-string-required" title="Permanent link">&para;</a></h3>
+<p>The name of the deployment on TFGrid.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;deployment_name&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="na">value</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my_deployment&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Name of the deployment&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
 </code></pre></div>
-<p>The gateway pattern will:
-1. Create a gateway VM with public IPv4
-2. Deploy your backend application VMs
-3. Configure reverse proxy and SSL
-4. Set up health checks and load balancing</p>
-<hr />
-<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
-<h3 id="gateway-vm">Gateway VM<a class="headerlink" href="#gateway-vm" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Public IPv4 address</li>
-<li>Nginx reverse proxy</li>
-<li>Let's Encrypt SSL automation</li>
-<li>Load balancer</li>
-<li>Health check monitoring</li>
-</ul>
-<h3 id="backend-vms">Backend VMs<a class="headerlink" href="#backend-vms" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Private network only</li>
-<li>Your application code</li>
-<li>Database services</li>
-<li>Internal APIs</li>
-</ul>
-<h3 id="network-flow">Network Flow<a class="headerlink" href="#network-flow" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>User → Public IP → Gateway VM → WireGuard/Mycelium → Backend VMs
+<h3 id="node_ids-list-required"><code>node_ids</code> (list, required)<a class="headerlink" href="#node_ids-list-required" title="Permanent link">&para;</a></h3>
+<p>List of node IDs used in this deployment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="na">value</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">]</span><span class="c1">  # Single or multiple nodes</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;List of node IDs used in deployment&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>Example <code>tfgrid-compose.yaml</code> for gateway pattern:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-webapp</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">gateway</span><span class="p">:</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp.com</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nt">backends</span><span class="p">:</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4096</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="nt">private</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<h2 id="optional-outputs">Optional Outputs<a class="headerlink" href="#optional-outputs" title="Permanent link">&para;</a></h2>
+<h3 id="secondary_ips-list-optional"><code>secondary_ips</code> (list, optional)<a class="headerlink" href="#secondary_ips-list-optional" title="Permanent link">&para;</a></h3>
+<p>Additional IP addresses for multi-node deployments (workers, backends, etc.)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;secondary_ips&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;worker-1&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="na">ip</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10.1.3.3&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;worker&quot;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;worker-2&quot;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="na">ip</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10.1.3.4&quot;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">      </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;worker&quot;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Additional IPs for multi-node deployments&quot;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="mycelium_ip-string-optional"><code>mycelium_ip</code> (string, optional)<a class="headerlink" href="#mycelium_ip-string-optional" title="Permanent link">&para;</a></h3>
+<p>Mycelium IPv6 address if available.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;mycelium_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="na">value</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;57e:efab:75c4:1a3a:ff0f:2ac:d184:9715&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Mycelium IPv6 address&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="connection_info-map-optional"><code>connection_info</code> (map, optional)<a class="headerlink" href="#connection_info-map-optional" title="Permanent link">&para;</a></h3>
+<p>Special connection information for non-standard deployments.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;connection_info&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nb">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="na">method</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kubectl&quot;</span><span class="c1">      # How to connect: ssh, kubectl, etc.</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="na">kubeconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="c1">          # Config file content if needed</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="na">endpoint</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://...&quot;</span><span class="c1">  # API endpoint</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Connection information&quot;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
-<h3 id="production-web-apps">Production Web Apps<a class="headerlink" href="#production-web-apps" title="Permanent link">&para;</a></h3>
-<p>Deploy full-stack web applications with SSL:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-webapp<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>example.com
+<h2 id="pattern-examples">Pattern Examples<a class="headerlink" href="#pattern-examples" title="Permanent link">&para;</a></h2>
+<h3 id="single-vm-pattern">Single-VM Pattern<a class="headerlink" href="#single-vm-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">grid_deployment.vm.vms[0].computedip</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;deployment_name&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.vm.name</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">var.node_id</span><span class="p">]</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="e-commerce-sites">E-commerce Sites<a class="headerlink" href="#e-commerce-sites" title="Permanent link">&para;</a></h3>
-<p>Run online stores with secure payments:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-store<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>store.com
+<h3 id="gateway-pattern">Gateway Pattern<a class="headerlink" href="#gateway-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.gateway.vms[0].public_ip</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">}</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public&quot;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;secondary_ips&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="err">for</span><span class="w"> </span><span class="err">vm</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="nv">grid_deployment.backends.vms</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">      </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.name</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">      </span><span class="na">ip</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">vm.computedip</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">      </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">      </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;backend&quot;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="p">}</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">concat</span><span class="p">([</span><span class="nv">var.gateway_node</span><span class="p">],</span><span class="w"> </span><span class="nv">var.backend_nodes</span><span class="p">)</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="saas-applications">SaaS Applications<a class="headerlink" href="#saas-applications" title="Permanent link">&para;</a></h3>
-<p>Launch multi-tenant SaaS products:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-saas<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>app.mycompany.com
+<h3 id="k3s-pattern">K3s Pattern<a class="headerlink" href="#k3s-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.k3s.vms[0].computedip</span><span class="c1">  # master</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;secondary_ips&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="err">for</span><span class="w"> </span><span class="err">vm</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="nf">slice</span><span class="p">(</span><span class="nv">grid_deployment.k3s.vms</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="nv">grid_deployment.k3s.vms</span><span class="p">))</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">      </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.name</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">      </span><span class="na">ip</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.computedip</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">      </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">      </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;worker&quot;</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="p">}</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;connection_info&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">  </span><span class="nb">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="na">method</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kubectl&quot;</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="na">kubeconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.remote_file.kubeconfig.content</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">    </span><span class="na">endpoint</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://${primary_ip}:6443&quot;</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="ssltls-configuration">SSL/TLS Configuration<a class="headerlink" href="#ssltls-configuration" title="Permanent link">&para;</a></h2>
-<p>The gateway pattern automatically handles SSL certificate:</p>
-<ol>
-<li><strong>Automatic issuance</strong> - Let's Encrypt certificates on deployment</li>
-<li><strong>Auto-renewal</strong> - Certificates renew automatically</li>
-<li><strong>HTTPS redirect</strong> - HTTP traffic automatically redirects to HTTPS</li>
-<li><strong>Modern security</strong> - TLS 1.2+ with strong cipher suites</li>
-</ol>
+<h2 id="why-this-contract">Why This Contract?<a class="headerlink" href="#why-this-contract" title="Permanent link">&para;</a></h2>
+<p><strong>Universal Orchestration</strong>: The orchestrator never needs to know pattern-specific details. It just reads standard outputs.</p>
+<p><strong>Future-Proof</strong>: New patterns automatically work with the orchestrator.</p>
+<p><strong>Multi-Node Support</strong>: Secondary IPs handle gateway backends, k8s workers, database replicas, etc.</p>
+<p><strong>Flexibility</strong>: Optional outputs allow pattern-specific features without breaking compatibility.</p>
 <hr />
-<h2 id="load-balancing">Load Balancing<a class="headerlink" href="#load-balancing" title="Permanent link">&para;</a></h2>
-<p>When you deploy multiple backend instances:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">backends</span><span class="p">:</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-1</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-2</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-3</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
-</code></pre></div>
-<p>The gateway automatically:
-- Distributes traffic across all instances
-- Performs health checks
-- Routes traffic away from unhealthy instances
-- Provides zero-downtime deployments</p>
-<hr />
-<h2 id="full-documentation">Full Documentation<a class="headerlink" href="#full-documentation" title="Permanent link">&para;</a></h2>
-<p>For complete implementation details, see the <a href="https://github.com/tfgrid-studio/tfgrid-compose/tree/main/patterns/gateway">gateway pattern source</a>.</p>
-<hr />
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../getting-started/quickstart/">Deploy your first gateway app</a></li>
-<li><a href="../single-vm/">Learn about Single-VM pattern</a> for simpler deployments</li>
-<li><a href="../k3s/">Explore K3s pattern</a> for cloud-native applications</li>
-</ul>
+<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h2>
+<p>The orchestrator will <strong>fail</strong> deployment if <code>primary_ip</code> is not provided. All other standard outputs have sensible defaults.</p>
+<p>Test your pattern:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>patterns/my-pattern/infrastructure
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>terraform<span class="w"> </span>output<span class="w"> </span>primary_ip<span class="w">        </span><span class="c1"># MUST return an IP</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>terraform<span class="w"> </span>output<span class="w"> </span>primary_ip_type<span class="w">   </span><span class="c1"># MUST return wireguard/public/mycelium</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>terraform<span class="w"> </span>output<span class="w"> </span>deployment_name<span class="w">   </span><span class="c1"># MUST return a name</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>terraform<span class="w"> </span>output<span class="w"> </span>node_ids<span class="w">          </span><span class="c1"># MUST return JSON array</span>
+</code></pre></div></p>
 
 
 
@@ -1927,7 +1930,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../single-vm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Single-VM Pattern">
+          <a href="../versioning-policy/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Versioning Policy">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1937,20 +1940,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Single-VM Pattern
+                Versioning Policy
               </div>
             </div>
           </a>
         
         
           
-          <a href="../k3s/" class="md-footer__link md-footer__link--next" aria-label="Next: K3s Pattern">
+          <a href="../../community/code-of-conduct/" class="md-footer__link md-footer__link--next" aria-label="Next: Code of Conduct">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                K3s Pattern
+                Code of Conduct
               </div>
             </div>
             <div class="md-footer__button md-icon">

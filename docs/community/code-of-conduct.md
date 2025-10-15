@@ -74,7 +74,7 @@ This Code of Conduct also applies when an individual is officially representing 
 
 If you experience or witness unacceptable behavior, or have any other concerns, please report it by:
 
-1. **Email:** [conduct@tfgrid.studio](mailto:conduct@tfgrid.studio)
+1. **Email:** [contact@tfgrid.studio](mailto:contact@tfgrid.studio)
 2. **GitHub:** Create a confidential security advisory
 3. **Direct Message:** Contact a maintainer privately
 
@@ -122,7 +122,7 @@ Project maintainers are responsible for clarifying and enforcing our standards. 
 
 If you believe an enforcement action was made in error, you may appeal by:
 
-1. Emailing [conduct@tfgrid.studio](mailto:conduct@tfgrid.studio) with "Appeal" in the subject
+1. Emailing [contact@tfgrid.studio](mailto:contact@tfgrid.studio) with "Appeal" in the subject
 2. Providing new information or context
 3. Explaining why you believe the decision was incorrect
 
@@ -210,8 +210,8 @@ We may update this Code of Conduct from time to time. All changes will be announ
 
 ## Contact
 
-**Enforcement Team:** [conduct@tfgrid.studio](mailto:conduct@tfgrid.studio)  
-**General Inquiries:** [community@tfgrid.studio](mailto:community@tfgrid.studio)  
+**Enforcement Team:** [contact@tfgrid.studio](mailto:contact@tfgrid.studio)  
+**General Inquiries:** [contact@tfgrid.studio](mailto:contact@tfgrid.studio)  
 **Security Issues:** See [Security Policy](security.md)
 
 ---

@@ -465,7 +465,7 @@ We recognize security researchers who help keep TFGrid Studio secure.
 ## Contact
 
 **Security Team:** [security@tfgrid.studio](mailto:security@tfgrid.studio)  
-**General Inquiries:** [community@tfgrid.studio](mailto:community@tfgrid.studio)  
+**General Inquiries:** [contact@tfgrid.studio](mailto:contact@tfgrid.studio)  
 **Code of Conduct:** [Code of Conduct](code-of-conduct.md)
 
 ---

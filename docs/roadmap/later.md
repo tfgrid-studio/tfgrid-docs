@@ -227,7 +227,7 @@ Advanced features for large organizations with complex requirements.
 
 **For pricing details:** [View Pricing →](https://tfgrid.studio/#pricing)
 
-**For white label inquiries:** Contact enterprise@tfgrid.studio
+**For white label inquiries:** [enterprise@tfgrid.studio](mailto:enterprise@tfgrid.studio)
 
 ---
 

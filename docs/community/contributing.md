@@ -576,7 +576,7 @@ Thank you for contributing to TFGrid Studio! Your help makes this project better
 
 **Questions?**
 - Create a [GitHub Discussion](https://github.com/orgs/tfgrid-studio/discussions)
-- Email: [community@tfgrid.studio](mailto:community@tfgrid.studio)
+- Email: [contact@tfgrid.studio](mailto:contact@tfgrid.studio)
 
 ---
 

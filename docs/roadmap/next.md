@@ -194,6 +194,7 @@ Voice Input → STT → AI CLI → TTS → Voice Output
 - Email support
 
 ### Team Tier - $99/month
+
 - Everything in Pro
 - Team collaboration
 - **Voice Interface** 🔑

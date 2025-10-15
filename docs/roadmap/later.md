@@ -15,17 +15,20 @@ Monetize your applications - sell apps on the marketplace with automatic billing
 ### For App Creators
 
 **Sell Your Apps:**
+
 - Submit your app to marketplace
 - Set your own pricing
 - Monthly or one-time payment
 - Automatic billing integration
 
 **Hosting Options:**
+
 - **Self-Managed:** User deploys and manages
 - **Managed:** You host and support (SaaS model)
 - **Hybrid:** Offer both options
 
 **Revenue Share:**
+
 - **85% to you**
 - **15% platform fee**
 - Payment in TFT or fiat
@@ -42,12 +45,14 @@ WordPress hosting at $10/mo × 100 users
 ### For Users
 
 **One-Click Installation:**
+
 - Browse marketplace
 - Click to install
 - Automatic deployment
 - Subscription management
 
 **Benefits:**
+
 - Automatic updates
 - Professional support
 - Managed backups
@@ -56,11 +61,13 @@ WordPress hosting at $10/mo × 100 users
 ### Use Cases
 
 **For Developers:**
+
 - Build once, sell many times
 - Recurring revenue from subscriptions
 - Focus on product, not infrastructure
 
 **For Users:**
+
 - Vetted, quality applications
 - Managed and supported
 - No deployment hassle
@@ -86,6 +93,7 @@ Rebrand TFGrid Studio as your own platform - perfect for cloud providers, enterp
 ### What You Get
 
 **Full Platform Rebranding:**
+
 - Custom domain and logos
 - Your company colors and styling
 - Branded documentation
@@ -93,6 +101,7 @@ Rebrand TFGrid Studio as your own platform - perfect for cloud providers, enterp
 - Private registry for your apps
 
 **Infrastructure:**
+
 - Self-hosted or managed
 - Your database
 - Your authentication
@@ -100,6 +109,7 @@ Rebrand TFGrid Studio as your own platform - perfect for cloud providers, enterp
 - Your monitoring
 
 **Customization:**
+
 - Custom features
 - Integration with your tools
 - Your workflows
@@ -108,15 +118,18 @@ Rebrand TFGrid Studio as your own platform - perfect for cloud providers, enterp
 ### Revenue Model
 
 **Annual License:**
+
 - $50k-$200k/year (based on scale)
 - Tiered by users/deployments
 - Volume discounts available
 
 **Revenue Share:**
+
 - 20% of your marketplace sales
 - Optional (if you enable marketplace)
 
 **Professional Services:**
+
 - Custom development
 - Integration support
 - Training and onboarding
@@ -142,18 +155,21 @@ Advanced features for large organizations with complex requirements.
 ### Security & Compliance
 
 **Authentication:**
+
 - SSO/SAML integration
 - LDAP/Active Directory
 - MFA enforcement
 - Session management
 
 **Authorization:**
+
 - Advanced RBAC
 - Fine-grained permissions
 - Resource-level access control
 - Approval workflows
 
 **Compliance:**
+
 - Audit logging
 - Compliance reports
 - Data residency controls
@@ -162,18 +178,21 @@ Advanced features for large organizations with complex requirements.
 ### Operations
 
 **High Availability:**
+
 - Multi-region deployment
 - Automatic failover
 - Load balancing
 - Disaster recovery
 
 **Support:**
+
 - Custom SLA (99.9% or 99.99%)
 - Dedicated support team
 - 24/7 emergency hotline
 - Quarterly business reviews
 
 **Deployment Options:**
+
 - On-premise installation
 - Private cloud
 - Air-gapped environments
@@ -182,12 +201,14 @@ Advanced features for large organizations with complex requirements.
 ### Pricing
 
 **Enterprise Tier:** $499/month
+
 - Up to 50 users
 - Custom SLA
 - Priority support
 - All features included
 
 **Custom Enterprise:** Contact sales
+
 - Unlimited users
 - Custom pricing
 - Dedicated resources
@@ -198,30 +219,36 @@ Advanced features for large organizations with complex requirements.
 ## Revenue Summary
 
 ### Individual Tier - FREE
+
 - CLI tools forever
 - Community support
 - Up to 3 deployments
 
 ### Pro Tier - $29/month
+
 - Web Dashboard
 - AI Assistant (text)
 - Unlimited deployments
 
 ### Team Tier - $99/month
+
 - Pro features
 - Team collaboration
 - Voice interface
 
 ### Enterprise - $499/month
+
 - Team features
 - SSO/SAML
 - Custom SLA
 
 ### Marketplace - 15% fee
+
 - Platform commission
 - Creator gets 85%
 
 ### White Label - $50k-200k/year
+
 - Full rebranding
 - Annual license
 - Optional 20% marketplace share
@@ -231,18 +258,21 @@ Advanced features for large organizations with complex requirements.
 ## The Complete Ecosystem
 
 ### Free & Open Source
+
 - tfgrid-compose CLI
 - App Registry
 - Documentation
 - Community support
 
 ### Premium Features
+
 - Web Dashboard (Pro+)
 - AI Assistant (Pro+)
 - Voice Interface (Team+)
 - Team Collaboration (Team+)
 
 ### Enterprise Revenue
+
 - Marketplace (15% commission)
 - White Label (annual licenses)
 - Professional services

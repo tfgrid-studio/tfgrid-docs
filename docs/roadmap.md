@@ -62,9 +62,11 @@ tfgrid-compose up k8s-app --pattern=k3s        # Kubernetes cluster
 
 ---
 
-## 🚀 Coming Soon
+## 🚀 Now (Active Development)
 
-### v0.10.0 - CLI Integration (November 2025)
+### CLI Integration
+
+**Status:** 🔨 Building
 
 **Deploy apps by name from the registry**
 
@@ -75,70 +77,113 @@ tfgrid-compose search
 # Deploy by name
 tfgrid-compose up wordpress
 tfgrid-compose up nextcloud
-tfgrid-compose up ghost
 
 # Manage multiple deployments
 tfgrid-compose list
 tfgrid-compose switch my-prod-app
 ```
 
-**Features:**
+**What You'll Get:**
 - Registry integration in CLI
 - App caching and updates
 - Multi-deployment management
-- Context switching
+- Context switching between deployments
 
 ---
 
-## 🔮 The Future
+## ⏭️ Next
 
-### Web Dashboard (2026 Q1)
+### Web Dashboard
 
-**Visual management interface**
+**Status:** 📋 Planned
 
-- Deploy apps with GUI
+**Visual management interface for everyone**
+
+- Deploy apps with GUI (no CLI needed)
 - Monitor all deployments in one view
 - Real-time logs and metrics
 - Team collaboration features
-
-**Benefits:**
-- No CLI required for basic tasks
 - Visual network topology
 - Drag-and-drop configuration
 - Mobile-responsive design
 
+**Perfect For:**
+- Non-technical users
+- Team management
+- Quick monitoring
+- Mobile access
+
 ---
 
-### AI Terminal Assistant (2026 Q2)
+### AI Terminal Assistant (CLI)
 
-**Build and deploy with AI - voice or text**
+**Status:** 💭 Researching
+
+**Build and deploy with AI using text commands**
 
 ```bash
-# Voice command
-"Deploy a WordPress blog with SSL on mysite.com"
-
-# Text command
+# Text commands
 tfgrid-compose ai "Create a Node.js API with Redis and deploy it"
+tfgrid-compose ai "Deploy WordPress with SSL on mysite.com"
+tfgrid-compose ai "Add monitoring to my app"
 
 # AI builds, configures, and deploys
 ```
 
+**The Killer Feature:**
+1. Tell the AI what you want (in plain English)
+2. AI writes the code
+3. AI configures infrastructure
+4. AI deploys to ThreeFold Grid
+5. You get the URL
+
 **Capabilities:**
-- Voice commands (speech-to-text)
-- Natural language deployment
-- AI generates configurations
+- Natural language understanding
+- AI generates code and configurations
 - One-prompt deployment
 - Learns from your preferences
-
-**The Killer Feature:**
-- Tell the AI what you want
-- AI writes the code
-- AI deploys to ThreeFold Grid
-- You get the URL
+- Context-aware suggestions
 
 ---
 
-### Marketplace (2026 Q3)
+### Voice Interface (STT/TTS)
+
+**Status:** 💭 Researching
+
+**Layer on top of AI CLI with speech-to-text and text-to-speech**
+
+```bash
+# Speak naturally
+🎤 "Deploy a WordPress blog with SSL on mysite.com"
+
+# AI responds with voice
+🔊 "Creating WordPress deployment with SSL... Done! Your site is live at https://mysite.com"
+
+# Hands-free workflow
+🎤 "Show me the logs"
+🎤 "Scale to 3 instances"
+🎤 "Check the status"
+```
+
+**Features:**
+- **STT (Speech-to-Text):** Speak commands naturally
+- **TTS (Text-to-Speech):** AI responds with voice
+- **Continuous conversation:** Multi-turn dialogue
+- **Hands-free operation:** Perfect for multitasking
+- **Mobile-friendly:** Use on phone while commuting
+
+**Architecture:**
+```
+Voice Input → STT → AI CLI → TTS → Voice Output
+```
+
+---
+
+## 🔮 Later
+
+### Marketplace
+
+**Status:** 💭 Concept
 
 **Monetize your applications**
 
@@ -146,7 +191,7 @@ tfgrid-compose ai "Create a Node.js API with Redis and deploy it"
 - Sell your apps on the marketplace
 - Set your own pricing
 - Automatic billing integration
-- Revenue sharing
+- Revenue sharing (85% to you, 15% platform)
 
 **Hosting Options:**
 - **Self-Managed:** User deploys and manages
@@ -159,10 +204,53 @@ tfgrid-compose ai "Create a Node.js API with Redis and deploy it"
 - Automatic updates
 - Professional support
 
+---
+
+### Enterprise Features
+
+**Status:** 💭 Concept
+
+**For large organizations**
+
+- SSO/SAML integration
+- Custom SLA agreements
+- On-premise deployment option
+- Advanced RBAC
+- Audit logging
+- Dedicated support
+
+---
+
+### White Label Solution
+
+**Status:** 💭 Concept
+
+**Rebrand TFGrid Studio as your own platform**
+
+**Perfect For:**
+- Cloud providers wanting their own deployment platform
+- Enterprises needing branded internal tools
+- Service providers building managed services
+- Resellers and integrators
+
+**What You Get:**
+- Full platform with your branding
+- Custom domain and logos
+- Your company colors and styling
+- Private registry for your apps
+- Your support channels
+
 **Revenue Model:**
-- 15% platform fee
-- 85% to app creator
-- Payment in TFT or fiat
+- **Annual License:** $50k-$200k/year based on scale
+- **Revenue Share:** 20% of marketplace sales (if enabled)
+- **Support Tier:** Additional professional services
+- **Custom Development:** Bespoke features on request
+
+**Use Cases:**
+- **Cloud Provider:** "AcmeCloud Studio powered by TFGrid"
+- **Enterprise:** "TechCorp Internal Deployment Platform"
+- **MSP:** "ManagedApps Platform by YourCompany"
+- **Consulting:** "DevOps Solutions Platform"
 
 ---
 
@@ -189,7 +277,8 @@ tfgrid-compose ai "Create a Node.js API with Redis and deploy it"
 **AI Assistant** - Voice + text deployment  
 **Marketplace** - Monetization platform  
 **Team Collaboration** - Multi-user management  
-**Priority Support** - SLA and dedicated help
+**Priority Support** - SLA and dedicated help  
+**White Label** - Rebrand as your own platform (Enterprise revenue)
 
 ---
 

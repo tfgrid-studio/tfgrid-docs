@@ -7,6 +7,7 @@ Complete guide for deploying and using the AI coding agent on ThreeFold Grid.
 ## Overview
 
 The AI Agent is an AI-powered coding assistant that runs on ThreeFold Grid. It can:
+
 - 🤖 Write and edit code autonomously
 - 🔄 Run iterative improvement loops
 - 🧪 Test and debug automatically

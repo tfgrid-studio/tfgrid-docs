@@ -37,10 +37,12 @@ tfgrid-compose up my-app
 
 ### 🚧 Coming Soon
 
-| Component | Status | Timeline | Source |
-|-----------|--------|----------|--------|
-| **Web Dashboard** | 📋 Future | Q2 2026 | SaaS offering |
-| **Marketplace** | 📋 Future | Q3 2026 | One-click app deployment |
+| Component | Status | Timeline | Description |
+|-----------|--------|----------|-------------|
+| **App Registry** | 🔨 Development | v0.10.0 (Nov 2025) | Deploy apps by name: `tfgrid-compose up tfgrid-ai-agent` |
+| **Multi-Deployment** | 🔨 Development | v0.10.0 (Nov 2025) | Manage multiple deployments simultaneously |
+| **Web Dashboard** | 📋 Planned | Q2 2026 | Visual management interface |
+| **Marketplace** | 📋 Planned | Q3 2026 | Community app ecosystem |
 
 ---
 
@@ -65,18 +67,14 @@ echo "your mnemonic words" > ~/.config/threefold/mnemonic
 chmod 600 ~/.config/threefold/mnemonic
 ```
 
-### 3. Create Context File (Optional but Recommended)
+### 3. Deploy an App
 
 ```bash
-# In your project directory
-echo "app: ../tfgrid-ai-agent" > .tfgrid-compose.yaml
-```
+# Deploy official app (v0.10.0+)
+tfgrid-compose up tfgrid-ai-agent
 
-### 4. Deploy
-
-```bash
-# With context file
-tfgrid-compose up
+# Or use local path (current)
+tfgrid-compose up ../tfgrid-ai-agent
 
 # Or specify app path
 tfgrid-compose up ../tfgrid-ai-agent
@@ -113,6 +111,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 - **[Environment Variables](reference/environment.md)** - Configuration options
 
 ### Guides
+- **[App Registry](guides/app-registry.md)** - 🆕 Deploy apps by name (v0.10.0+)
 - **[Migration Guide](guides/migration.md)** - Migrate from standalone repos
 - **[Advanced Deployment](guides/deployment.md)** - Production deployment strategies
 - **[Networking](guides/networking.md)** - WireGuard and Mycelium setup

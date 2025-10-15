@@ -53,7 +53,7 @@ tfgrid-compose up tfgrid-ai-agent
 Community-contributed apps that have passed verification:
 
 > Ready to share your app? Submit it for verification!  
-> See [Submission Guidelines →](https://github.com/tfgrid-studio/app-registry/blob/main/docs/submit-app.md)
+> See [Submission Guidelines →](../development/submit-app.md)
 
 ## Using Apps
 
@@ -186,7 +186,7 @@ Want to share your app with the community?
    - Appears in `tfgrid-compose search`
    - Listed on registry.tfgrid.studio
 
-**Full Guide**: [How to Submit →](https://github.com/tfgrid-studio/app-registry/blob/main/docs/submit-app.md)
+**Full Guide**: [How to Submit →](../development/submit-app.md)
 
 ## App Cache Location
 
@@ -266,8 +266,8 @@ tfgrid-compose up ./app
 
 - **Registry Website**: [registry.tfgrid.studio](https://registry.tfgrid.studio) ✅ Live
 - **Registry Data**: [tfgrid-studio/app-registry](https://github.com/tfgrid-studio/app-registry)
-- **Submit Apps**: [Submission Guide](https://github.com/tfgrid-studio/app-registry/blob/main/docs/submit-app.md)
-- **App Guidelines**: [Development Guidelines](https://github.com/tfgrid-studio/app-registry/blob/main/docs/app-guidelines.md)
+- **Submit Your App**: [Submission Guide](../development/submit-app.md)
+- **App Manifest**: [Manifest Reference](../reference/manifest.md)
 
 ---
 

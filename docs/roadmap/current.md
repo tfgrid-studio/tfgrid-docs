@@ -387,17 +387,10 @@ tfgrid-compose exec "cat /var/log/app.log"
 ---
 
 ### Known Limitations
-
-### Current Constraints
-- ⚠️ **No automated tests** - Manual testing only (automated tests planned)
-- ⚠️ **No rollback** - Can't rollback failed deployments (planned for v2.1)
+- ⚠️ **No rollback** - Manual recovery required for failed deployments
 - ⚠️ **No shell completion** - Bash/zsh/fish completion not yet available
-
-### Future Enhancements
-- 📋 **Web UI** - Command-line only (dashboard planned for Q4 2025)
-- 📋 **Automated testing** - CI/CD pipeline (planned)
-- 📋 **Advanced monitoring** - Integrated observability (future)
-- 📋 **Additional patterns** - More specialized patterns (future)
+- ⚠️ **Command-line only** - No web UI (see [roadmap](planned.md) for future plans)
+- ⚠️ **Single deployment** - Can only manage one deployment at a time (v0.10.0 will support multi-deployment)
 
 ---
 

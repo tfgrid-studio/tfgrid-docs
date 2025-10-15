@@ -219,13 +219,13 @@ Deploy isolated coding environments for AI agents.
 tfgrid-compose up tfgrid-ai-agent
 ```
 
-### 2. Web Applications (Coming Soon)
+### 2. Web Applications
 Deploy traditional web apps with public access.
 ```bash
 tfgrid-compose up my-webapp --pattern=gateway
 ```
 
-### 3. Microservices (Coming Soon)
+### 3. Microservices
 Deploy cloud-native apps on Kubernetes.
 ```bash
 tfgrid-compose up my-saas --pattern=k3s

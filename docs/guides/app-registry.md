@@ -267,16 +267,6 @@ less deployment/setup.sh
 tfgrid-compose up ./app
 ```
 
-## Future Features
-
-Coming in future releases:
-
-- **Web Dashboard**: Visual registry browser
-- **App Ratings**: Community ratings and reviews
-- **Dependencies**: Automatic dependency management
-- **Private Registries**: Host your own app registry
-- **App Marketplace**: Paid/premium applications
-
 ## Resources
 
 - **Registry Website**: [registry.tfgrid.studio](https://registry.tfgrid.studio) (coming soon)

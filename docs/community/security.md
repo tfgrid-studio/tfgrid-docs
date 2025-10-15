@@ -35,6 +35,7 @@ Send details to: **[security@tfgrid.studio](mailto:security@tfgrid.studio)**
 ### 📋 What to Include
 
 **Please provide:**
+
 - **Description:** Clear explanation of the vulnerability
 - **Impact:** What an attacker could do
 - **Affected versions:** Which versions are vulnerable
@@ -85,18 +86,22 @@ We aim to respond quickly to security reports:
 ### Severity-Based Timelines
 
 **Critical (CVSS 9.0-10.0):**
+
 - Emergency patch within 7 days
 - Immediate notification to users
 
 **High (CVSS 7.0-8.9):**
+
 - Patch within 30 days
 - Advance notification to users
 
 **Medium (CVSS 4.0-6.9):**
+
 - Patch in next regular release
 - Standard release notes
 
 **Low (CVSS 0.1-3.9):**
+
 - May be batched with other fixes
 - Documented in changelog
 

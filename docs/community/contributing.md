@@ -21,6 +21,7 @@
 ### Prerequisites
 
 **For tfgrid-compose development:**
+
 - Bash 4.0+
 - Git
 - OpenTofu or Terraform
@@ -28,6 +29,7 @@
 - Basic understanding of shell scripting
 
 **For documentation:**
+
 - Markdown knowledge
 - Git
 - Python 3.8+ (for local MkDocs preview)
@@ -80,11 +82,13 @@ We welcome many types of contributions:
 Found a bug? Help us fix it!
 
 **Before reporting:**
+
 - Search existing issues
 - Try latest version
 - Gather reproduction steps
 
 **Create an issue with:**
+
 - Clear title
 - Description of the bug
 - Steps to reproduce
@@ -96,6 +100,7 @@ Found a bug? Help us fix it!
 Have an idea for improvement?
 
 **Create an issue with:**
+
 - Clear use case
 - Proposed solution
 - Alternatives considered
@@ -103,6 +108,7 @@ Have an idea for improvement?
 
 #### 📝 Documentation
 Improve or add documentation:
+
 - Fix typos
 - Clarify confusing sections
 - Add examples
@@ -111,6 +117,7 @@ Improve or add documentation:
 
 #### 💻 Code Contributions
 Implement features or fix bugs:
+
 - Bug fixes
 - New features
 - Performance improvements
@@ -119,6 +126,7 @@ Implement features or fix bugs:
 
 #### 🎨 Design Patterns
 Create new deployment patterns:
+
 - Follow [Pattern Contract](../development/pattern-contract.md)
 - Document use cases
 - Provide examples
@@ -131,12 +139,14 @@ Create new deployment patterns:
 ### 1. Pick an Issue
 
 **Good first issues:**
+
 - Look for `good-first-issue` label
 - Check `help-wanted` label
 - Simple bug fixes
 - Documentation improvements
 
 **Claim an issue:**
+
 - Comment "I'd like to work on this"
 - Wait for assignment (prevents duplicates)
 
@@ -160,6 +170,7 @@ git checkout -b type/description
 ### 3. Make Changes
 
 **Best practices:**
+
 - Make focused, atomic commits
 - Write clear commit messages
 - Test your changes
@@ -178,6 +189,7 @@ Fixes #123
 ```
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation only

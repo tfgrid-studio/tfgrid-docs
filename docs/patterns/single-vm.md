@@ -17,6 +17,7 @@ The single-vm pattern is the simplest deployment pattern in TFGrid Compose. It c
 ```
 
 **Perfect For:**
+
 - AI agents & coding environments
 - Databases (PostgreSQL, MongoDB, Redis)
 - Internal services & APIs

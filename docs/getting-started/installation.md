@@ -70,6 +70,7 @@ curl -sSL install.tfgrid.studio/install.sh | sh
 ```
 
 The installer automatically:
+
 - ✅ Checks prerequisites (git, make)
 - ✅ Clones tfgrid-compose repository to `~/.tfgrid/`
 - ✅ Installs CLI to `~/.local/bin/`

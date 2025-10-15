@@ -20,6 +20,7 @@ Given a version number **MAJOR.MINOR.PATCH** (e.g., 1.2.3):
 Increment when making **incompatible API changes** or **breaking changes**.
 
 **Examples:**
+
 - Changing CLI command structure (e.g., `tfgrid-compose deploy` → `tfgrid-compose up`)
 - Removing or renaming core features
 - Changing pattern contract requirements
@@ -33,6 +34,7 @@ Increment when making **incompatible API changes** or **breaking changes**.
 Increment when adding **new features** in a **backward-compatible** manner.
 
 **Examples:**
+
 - Adding new patterns (e.g., adding k3s pattern)
 - Adding new CLI commands (e.g., `tfgrid-compose monitor`)
 - Adding new configuration options
@@ -46,6 +48,7 @@ Increment when adding **new features** in a **backward-compatible** manner.
 Increment when making **backward-compatible bug fixes**.
 
 **Examples:**
+
 - Fixing validation logic
 - Correcting error messages
 - Improving performance
@@ -75,6 +78,7 @@ During the **0.x.y** phase, the project is considered **pre-release** with more 
 **Version:** 0.9.0 (October 2025)
 
 **What this means:**
+
 - Core features are production-ready
 - API is stable but may evolve based on feedback
 - Breaking changes possible but minimized
@@ -100,6 +104,7 @@ During the **0.x.y** phase, the project is considered **pre-release** with more 
 ### 2. Update Version References
 
 **Files to update:**
+
 - `cli/tfgrid-compose` (VERSION variable)
 - `Makefile` (help text)
 - `README.md` (version badge)
@@ -150,6 +155,7 @@ git push origin v0.9.1
 ### 5. Release Notes
 
 **Create GitHub Release with:**
+
 - Version number
 - Release date
 - Changelog excerpt
@@ -164,12 +170,14 @@ git push origin v0.9.1
 ### Commitment
 
 **Post-1.0.0:**
+
 - MAJOR version changes only for breaking changes
 - Deprecation warnings before removal
 - Migration guides for breaking changes
 - Support for N-1 version during transition
 
 **Pre-1.0.0 (0.x.y):**
+
 - Best effort to maintain compatibility
 - Breaking changes documented in changelog
 - Migration notes provided when needed

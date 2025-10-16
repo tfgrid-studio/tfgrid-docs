@@ -12,13 +12,13 @@
         <meta name="author" content="TFGrid Studio Team">
       
       
-        <link rel="canonical" href="https://docs.tfgrid.studio/guides/app-registry/">
+        <link rel="canonical" href="https://docs.tfgrid.studio/guides/gitea/">
       
       
-        <link rel="prev" href="../gitea/">
+        <link rel="prev" href="../ai-agent/">
       
       
-        <link rel="next" href="../../architecture/overview/">
+        <link rel="next" href="../app-registry/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
@@ -26,7 +26,7 @@
     
     
       
-        <title>App Registry - TFGrid Studio</title>
+        <title>Gitea Self-Hosted Git - TFGrid Studio</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#app-registry" class="md-skip">
+        <a href="#tfgrid-gitea-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              App Registry
+              Gitea Self-Hosted Git
             
           </span>
         </div>
@@ -716,29 +716,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../gitea/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Gitea Self-Hosted Git
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -756,7 +733,7 @@
   
   
   <span class="md-ellipsis">
-    App Registry
+    Gitea Self-Hosted Git
     
   </span>
   
@@ -769,7 +746,7 @@
   
   
   <span class="md-ellipsis">
-    App Registry
+    Gitea Self-Hosted Git
     
   </span>
   
@@ -792,28 +769,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How It Works">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Deployment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-users" class="md-nav__link">
+  <a href="#option-1-standalone-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      For Users
+      Option 1: Standalone Deployment
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-developers" class="md-nav__link">
+  <a href="#option-2-with-gateway-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      For Developers
+      Option 2: With Gateway (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-full-ai-dev-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 3: Full AI Dev Stack
     </span>
   </a>
   
@@ -825,19 +829,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#official-apps" class="md-nav__link">
+  <a href="#default-credentials" class="md-nav__link">
     <span class="md-ellipsis">
-      Official Apps
+      Default Credentials
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Official Apps">
+    <nav class="md-nav" aria-label="Default Credentials">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tfgrid-ai-agent" class="md-nav__link">
+  <a href="#changing-admin-password" class="md-nav__link">
     <span class="md-ellipsis">
-      tfgrid-ai-agent
+      Changing Admin Password
     </span>
   </a>
   
@@ -849,55 +853,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#community-apps" class="md-nav__link">
+  <a href="#using-with-ai-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      Community Apps
+      Using with AI Agent
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Apps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using Apps">
+    <nav class="md-nav" aria-label="Using with AI Agent">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deploy-official-app" class="md-nav__link">
+  <a href="#setup-git-remote" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploy Official App
+      Setup Git Remote
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deploy-community-app-unverified" class="md-nav__link">
+  <a href="#automated-workflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploy Community App (Unverified)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#list-available-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      List Available Apps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manage-cached-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Manage Cached Apps
+      Automated Workflow
     </span>
   </a>
   
@@ -909,46 +886,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#app-structure" class="md-nav__link">
+  <a href="#api-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      App Structure
+      API Usage
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#registry-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Registry Structure
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Registry Structure">
+    <nav class="md-nav" aria-label="API Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#official-apps_1" class="md-nav__link">
+  <a href="#generate-api-token" class="md-nav__link">
     <span class="md-ellipsis">
-      Official Apps
+      Generate API Token
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verified-apps" class="md-nav__link">
+  <a href="#api-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Verified Apps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unverified-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unverified Apps
+      API Examples
     </span>
   </a>
   
@@ -960,73 +919,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submitting-your-app" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Submitting Your App
+      Configuration
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#app-cache-location" class="md-nav__link">
-    <span class="md-ellipsis">
-      App Cache Location
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-pinning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Version Pinning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#registry-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Registry API
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Security">
+    <nav class="md-nav" aria-label="Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#official-apps_2" class="md-nav__link">
+  <a href="#custom-settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Official Apps
+      Custom Settings
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verified-apps_1" class="md-nav__link">
+  <a href="#resource-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Verified Apps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unverified-apps_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unverified Apps
+      Resource Requirements
     </span>
   </a>
   
@@ -1038,9 +952,219 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#gateway-integration" class="md-nav__link">
     <span class="md-ellipsis">
-      Resources
+      Gateway Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup &amp; Restore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup &amp; Restore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-not-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Not Starting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cant-access-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Can't Access Web Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-security-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Security Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL/TLS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webhooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-lfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git LFS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mirror-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mirror Repositories
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support
     </span>
   </a>
   
@@ -1050,6 +1174,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app-registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    App Registry
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1769,28 +1916,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How It Works">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Deployment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-users" class="md-nav__link">
+  <a href="#option-1-standalone-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      For Users
+      Option 1: Standalone Deployment
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-developers" class="md-nav__link">
+  <a href="#option-2-with-gateway-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      For Developers
+      Option 2: With Gateway (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-full-ai-dev-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 3: Full AI Dev Stack
     </span>
   </a>
   
@@ -1802,19 +1976,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#official-apps" class="md-nav__link">
+  <a href="#default-credentials" class="md-nav__link">
     <span class="md-ellipsis">
-      Official Apps
+      Default Credentials
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Official Apps">
+    <nav class="md-nav" aria-label="Default Credentials">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tfgrid-ai-agent" class="md-nav__link">
+  <a href="#changing-admin-password" class="md-nav__link">
     <span class="md-ellipsis">
-      tfgrid-ai-agent
+      Changing Admin Password
     </span>
   </a>
   
@@ -1826,55 +2000,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#community-apps" class="md-nav__link">
+  <a href="#using-with-ai-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      Community Apps
+      Using with AI Agent
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Apps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using Apps">
+    <nav class="md-nav" aria-label="Using with AI Agent">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deploy-official-app" class="md-nav__link">
+  <a href="#setup-git-remote" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploy Official App
+      Setup Git Remote
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deploy-community-app-unverified" class="md-nav__link">
+  <a href="#automated-workflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploy Community App (Unverified)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#list-available-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      List Available Apps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manage-cached-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Manage Cached Apps
+      Automated Workflow
     </span>
   </a>
   
@@ -1886,46 +2033,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#app-structure" class="md-nav__link">
+  <a href="#api-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      App Structure
+      API Usage
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#registry-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Registry Structure
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Registry Structure">
+    <nav class="md-nav" aria-label="API Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#official-apps_1" class="md-nav__link">
+  <a href="#generate-api-token" class="md-nav__link">
     <span class="md-ellipsis">
-      Official Apps
+      Generate API Token
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verified-apps" class="md-nav__link">
+  <a href="#api-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Verified Apps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unverified-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unverified Apps
+      API Examples
     </span>
   </a>
   
@@ -1937,73 +2066,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submitting-your-app" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Submitting Your App
+      Configuration
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#app-cache-location" class="md-nav__link">
-    <span class="md-ellipsis">
-      App Cache Location
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-pinning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Version Pinning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#registry-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Registry API
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Security">
+    <nav class="md-nav" aria-label="Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#official-apps_2" class="md-nav__link">
+  <a href="#custom-settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Official Apps
+      Custom Settings
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verified-apps_1" class="md-nav__link">
+  <a href="#resource-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Verified Apps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unverified-apps_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unverified Apps
+      Resource Requirements
     </span>
   </a>
   
@@ -2015,9 +2099,219 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#gateway-integration" class="md-nav__link">
     <span class="md-ellipsis">
-      Resources
+      Gateway Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup &amp; Restore
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup &amp; Restore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-not-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Not Starting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cant-access-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Can't Access Web Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-security-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Security Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL/TLS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webhooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-lfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git LFS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mirror-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mirror Repositories
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support
     </span>
   </a>
   
@@ -2040,7 +2334,7 @@
 
 
   
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/guides/app-registry.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/guides/gitea.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2049,248 +2343,339 @@
     
       
     
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/guides/app-registry.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/guides/gitea.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="app-registry">App Registry<a class="headerlink" href="#app-registry" title="Permanent link">&para;</a></h1>
-<p>The TFGrid App Registry catalogs official and verified community applications that can be deployed using <code>tfgrid-compose</code>. Applications listed here are discoverable at <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a> and can be deployed with a simple command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Deploy official app (v0.10.0+)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<h1 id="tfgrid-gitea-guide">TFGrid Gitea Guide<a class="headerlink" href="#tfgrid-gitea-guide" title="Permanent link">&para;</a></h1>
+<p>Self-hosted Git service with web interface - perfect for AI agent repositories and team collaboration.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p><strong>TFGrid Gitea</strong> provides a lightweight, self-hosted Git service similar to GitHub but running on your ThreeFold Grid infrastructure. Ideal for storing code generated by tfgrid-ai-agent, private repositories, and team collaboration.</p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🔒 <strong>Self-hosted</strong> - Your code, your infrastructure, full control</li>
+<li>🌐 <strong>Web Interface</strong> - GitHub-like UI for browsing repos and managing projects</li>
+<li>🔑 <strong>User Management</strong> - Multiple users, organizations, and teams</li>
+<li>📝 <strong>Issues &amp; PRs</strong> - Built-in issue tracking and pull requests</li>
+<li>🔗 <strong>API Access</strong> - Full RESTful API for automation</li>
+<li>🪶 <strong>Lightweight</strong> - Runs efficiently on 2 cores, 2GB RAM</li>
+<li>🔐 <strong>Secure</strong> - Keep your code private on decentralized infrastructure</li>
+</ul>
+<h2 id="quick-deployment">Quick Deployment<a class="headerlink" href="#quick-deployment" title="Permanent link">&para;</a></h2>
+<h3 id="option-1-standalone-deployment">Option 1: Standalone Deployment<a class="headerlink" href="#option-1-standalone-deployment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Deploy Gitea on single VM</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Deploy community app</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>username/app-name
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Get access information</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tfgrid-compose<span class="w"> </span>address<span class="w"> </span>tfgrid-gitea
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Deploy from any git URL</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>https://gitlab.com/org/app
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Access at: http://&lt;vm-ip&gt;:3000</span>
 </code></pre></div>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<h3 id="for-users">For Users<a class="headerlink" href="#for-users" title="Permanent link">&para;</a></h3>
+<h3 id="option-2-with-gateway-recommended">Option 2: With Gateway (Recommended)<a class="headerlink" href="#option-2-with-gateway-recommended" title="Permanent link">&para;</a></h3>
+<p>Deploy Gitea behind a gateway for SSL and custom domain:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Deploy with gateway pattern</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea<span class="w"> </span>--pattern<span class="w"> </span>gateway<span class="w"> </span>--domain<span class="w"> </span>example.com
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Access at: https://example.com/gitea</span>
+</code></pre></div>
+<h3 id="option-3-full-ai-dev-stack">Option 3: Full AI Dev Stack<a class="headerlink" href="#option-3-full-ai-dev-stack" title="Permanent link">&para;</a></h3>
+<p>Deploy AI agent + Gateway + Gitea together:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Complete integrated workflow</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>ai-gateway-stack<span class="w"> </span>--domain<span class="w"> </span>example.com
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Access:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># - example.com/gitea → Gitea UI</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># - example.com/website1 → AI-generated sites</span>
+</code></pre></div>
+<h2 id="default-credentials">Default Credentials<a class="headerlink" href="#default-credentials" title="Permanent link">&para;</a></h2>
+<p><strong>⚠️ Important:</strong> Change these immediately after first login!</p>
+<ul>
+<li><strong>Username:</strong> <code>gitadmin</code></li>
+<li><strong>Password:</strong> <code>changeme123</code></li>
+<li><strong>Email:</strong> <code>admin@localhost</code></li>
+</ul>
+<h3 id="changing-admin-password">Changing Admin Password<a class="headerlink" href="#changing-admin-password" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Browse Apps</strong>: Visit <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a></li>
-<li><strong>Deploy</strong>: Run <code>tfgrid-compose up &lt;app-name&gt;</code> (v0.10.0+)</li>
-<li><strong>Done</strong>: App is automatically cloned and deployed</li>
+<li>Login to Gitea web interface</li>
+<li>Click your avatar → Settings</li>
+<li>Navigate to Account → Change Password</li>
+<li>Save new password</li>
 </ol>
-<p><strong>No configuration needed</strong> - apps include their own <code>tfgrid-compose.yaml</code>.</p>
-<h3 id="for-developers">For Developers<a class="headerlink" href="#for-developers" title="Permanent link">&para;</a></h3>
-<p>Apps in the registry:</p>
-<ul>
-<li>Include <code>tfgrid-compose.yaml</code> in their repository</li>
-<li>Follow <a href="https://github.com/tfgrid-studio/app-registry/blob/main/docs/app-guidelines.md">app guidelines</a></li>
-<li>Can be submitted for verification via PR</li>
-</ul>
-<h2 id="official-apps">Official Apps<a class="headerlink" href="#official-apps" title="Permanent link">&para;</a></h2>
-<p>Maintained by TFGrid Studio:</p>
-<h3 id="tfgrid-ai-agent">tfgrid-ai-agent<a class="headerlink" href="#tfgrid-ai-agent" title="Permanent link">&para;</a></h3>
-<p>AI coding agent with Qwen integration.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-</code></pre></div>
-<p><strong>Details:</strong>
-- <strong>Pattern</strong>: single-vm
-- <strong>Repo</strong>: <a href="https://github.com/tfgrid-studio/tfgrid-ai-agent">tfgrid-studio/tfgrid-ai-agent</a>
-- <strong>Docs</strong>: <a href="../ai-agent/">AI Agent Guide</a></p>
-<h2 id="community-apps">Community Apps<a class="headerlink" href="#community-apps" title="Permanent link">&para;</a></h2>
-<p>Community-contributed apps that have passed verification:</p>
-<blockquote>
-<p>Ready to share your app? Submit it for verification!<br />
-See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
-</blockquote>
-<h2 id="using-apps">Using Apps<a class="headerlink" href="#using-apps" title="Permanent link">&para;</a></h2>
-<h3 id="deploy-official-app">Deploy Official App<a class="headerlink" href="#deploy-official-app" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Deploy with auto-generated name</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># → Deployment name: tfgrid-ai-agent</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Deploy with custom name</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>--name<span class="o">=</span>dev
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># → Deployment name: dev</span>
-</code></pre></div>
-<h3 id="deploy-community-app-unverified">Deploy Community App (Unverified)<a class="headerlink" href="#deploy-community-app-unverified" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># From GitHub</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>username/repo-name
+<h2 id="using-with-ai-agent">Using with AI Agent<a class="headerlink" href="#using-with-ai-agent" title="Permanent link">&para;</a></h2>
+<p>Perfect companion for tfgrid-ai-agent - automatically store generated code in Gitea:</p>
+<h3 id="setup-git-remote">Setup Git Remote<a class="headerlink" href="#setup-git-remote" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># SSH to AI agent VM</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span>ssh<span class="w"> </span>ai-gateway-stack<span class="w"> </span>--vm<span class="w"> </span>ai-agent
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># From any git URL</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>https://gitlab.com/org/app
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Configure git</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;AI Agent&quot;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;ai@example.com&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Create and push project</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>mkdir<span class="w"> </span>my-website<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>my-website
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>git<span class="w"> </span>init
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>http://example.com/gitea/gitadmin/my-website.git
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
-<p>⚠️ <strong>Security Note</strong>: Always review code before deploying unverified apps!</p>
-<h3 id="list-available-apps">List Available Apps<a class="headerlink" href="#list-available-apps" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Search registry</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>tfgrid-compose<span class="w"> </span>search
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Search by keyword</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>ai
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Get app details</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>tfgrid-compose<span class="w"> </span>info<span class="w"> </span>tfgrid-ai-agent
-</code></pre></div>
-<h3 id="manage-cached-apps">Manage Cached Apps<a class="headerlink" href="#manage-cached-apps" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Pull/update app</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tfgrid-compose<span class="w"> </span>pull<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># List cached apps</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>tfgrid-compose<span class="w"> </span>cache
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Clean unused apps</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>tfgrid-compose<span class="w"> </span>prune
-</code></pre></div>
-<h2 id="app-structure">App Structure<a class="headerlink" href="#app-structure" title="Permanent link">&para;</a></h2>
-<p>All apps must include <code>tfgrid-compose.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My application</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nt">patterns</span><span class="p">:</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nt">resources</span><span class="p">:</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="nt">hooks</span><span class="p">:</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="nt">setup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/setup.sh</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">  </span><span class="nt">configure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/configure.sh</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">  </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/healthcheck.sh</span>
-</code></pre></div>
-<p>See <a href="../development/app-manifest.md">App Manifest Reference</a> for full specification.</p>
-<h2 id="registry-structure">Registry Structure<a class="headerlink" href="#registry-structure" title="Permanent link">&para;</a></h2>
-<p>Apps are organized by verification status:</p>
-<h3 id="official-apps_1">Official Apps<a class="headerlink" href="#official-apps_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Maintained by TFGrid Studio</li>
-<li>Full support and documentation</li>
-<li>Production-ready</li>
-</ul>
-<h3 id="verified-apps">Verified Apps<a class="headerlink" href="#verified-apps" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Community-contributed</li>
-<li>Code reviewed by TFGrid Studio</li>
-<li>Security checked</li>
-<li>Documentation verified</li>
-</ul>
-<h3 id="unverified-apps">Unverified Apps<a class="headerlink" href="#unverified-apps" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Any GitHub/GitLab repo</li>
-<li>Use at your own risk</li>
-<li>Not listed in registry</li>
-<li>Access via direct URL</li>
-</ul>
-<h2 id="submitting-your-app">Submitting Your App<a class="headerlink" href="#submitting-your-app" title="Permanent link">&para;</a></h2>
-<p>Want to share your app with the community?</p>
+<h3 id="automated-workflow">Automated Workflow<a class="headerlink" href="#automated-workflow" title="Permanent link">&para;</a></h3>
+<p>Coming in v0.11.0 - AI agent automatically:
+1. Creates code
+2. Pushes to Gitea (example.com/gitea/repos/projectname)
+3. Deploys to gateway (example.com/projectname)
+4. Complete visibility of all changes</p>
+<h2 id="api-usage">API Usage<a class="headerlink" href="#api-usage" title="Permanent link">&para;</a></h2>
+<p>Gitea provides a full RESTful API for automation:</p>
+<h3 id="generate-api-token">Generate API Token<a class="headerlink" href="#generate-api-token" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Develop Your App</strong></li>
-<li>Include <code>tfgrid-compose.yaml</code></li>
-<li>Add deployment scripts</li>
+<li>Login to Gitea</li>
+<li>Settings → Applications</li>
+<li>Generate New Token</li>
+<li>Copy token (shown only once!)</li>
+</ol>
+<h3 id="api-examples">API Examples<a class="headerlink" href="#api-examples" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create repository</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://example.com/gitea/api/v1/user/repos&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: token YOUR_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;name&quot;:&quot;new-repo&quot;,&quot;description&quot;:&quot;My new repository&quot;,&quot;private&quot;:false}&#39;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># List repositories</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>curl<span class="w"> </span><span class="s2">&quot;http://example.com/gitea/api/v1/user/repos&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: token YOUR_TOKEN&quot;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># Get repository info</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>curl<span class="w"> </span><span class="s2">&quot;http://example.com/gitea/api/v1/repos/gitadmin/my-repo&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: token YOUR_TOKEN&quot;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1"># Create issue</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://example.com/gitea/api/v1/repos/gitadmin/my-repo/issues&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: token YOUR_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;title&quot;:&quot;Bug found&quot;,&quot;body&quot;:&quot;Description of the bug&quot;}&#39;</span>
+</code></pre></div>
+<p>Full API docs available at: <code>http://your-gitea/api/swagger</code></p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="custom-settings">Custom Settings<a class="headerlink" href="#custom-settings" title="Permanent link">&para;</a></h3>
+<p>Set environment variables before deployment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_ADMIN_USER</span><span class="o">=</span>myadmin
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_ADMIN_PASSWORD</span><span class="o">=</span>mysecurepassword
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_ADMIN_EMAIL</span><span class="o">=</span>admin@example.com
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_DOMAIN</span><span class="o">=</span>example.com
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_PORT</span><span class="o">=</span><span class="m">3000</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea
+</code></pre></div>
+<h3 id="resource-requirements">Resource Requirements<a class="headerlink" href="#resource-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>Minimum:</strong>
+- 2 CPU cores
+- 2 GB RAM
+- 25 GB disk</p>
+<p><strong>Recommended:</strong>
+- 2 CPU cores
+- 4 GB RAM
+- 50 GB disk (for multiple large repos)</p>
+<h2 id="gateway-integration">Gateway Integration<a class="headerlink" href="#gateway-integration" title="Permanent link">&para;</a></h2>
+<p>When deployed with the gateway pattern, Gitea is automatically proxied:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Gateway automatically configures nginx:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">location</span><span class="w"> </span><span class="s">/gitea/</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://gitea-vm:3000/</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Proto</span><span class="w"> </span><span class="nv">$scheme</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Benefits:</strong>
+- SSL/TLS encryption via Let's Encrypt
+- Custom domain support
+- No port specification needed
+- Professional URL: <code>https://example.com/gitea</code></p>
+<h2 id="user-management">User Management<a class="headerlink" href="#user-management" title="Permanent link">&para;</a></h2>
+<h3 id="creating-users">Creating Users<a class="headerlink" href="#creating-users" title="Permanent link">&para;</a></h3>
+<p><strong>Via Web UI:</strong>
+1. Login as admin
+2. Site Administration → User Accounts
+3. Create New Account
+4. Fill in details and save</p>
+<p><strong>Via CLI:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># SSH to Gitea VM</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tfgrid-compose<span class="w"> </span>ssh<span class="w"> </span>tfgrid-gitea
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Create user</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>su<span class="w"> </span>-<span class="w"> </span>git<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;gitea admin user create \</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="s2">  --username newuser \</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="s2">  --password secretpass \</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="s2">  --email user@example.com \</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="s2">  --config /etc/gitea/app.ini&quot;</span>
+</code></pre></div></p>
+<h3 id="organizations">Organizations<a class="headerlink" href="#organizations" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click + icon → New Organization</li>
+<li>Fill in organization details</li>
+<li>Add members and set permissions</li>
+<li>Create repos under organization</li>
+</ol>
+<h2 id="backup-restore">Backup &amp; Restore<a class="headerlink" href="#backup-restore" title="Permanent link">&para;</a></h2>
+<h3 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># SSH to Gitea VM</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tfgrid-compose<span class="w"> </span>ssh<span class="w"> </span>tfgrid-gitea
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Create backup</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-czf<span class="w"> </span>/tmp/gitea-backup-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.tar.gz<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span>/var/lib/gitea/data<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span>/etc/gitea
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1"># Download backup</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nb">exit</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>scp<span class="w"> </span>root@&lt;gitea-ip&gt;:/tmp/gitea-backup-*.tar.gz<span class="w"> </span>./
+</code></pre></div>
+<h3 id="restore">Restore<a class="headerlink" href="#restore" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Upload backup to new VM</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>scp<span class="w"> </span>gitea-backup-*.tar.gz<span class="w"> </span>root@&lt;new-gitea-ip&gt;:/tmp/
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># SSH to new VM</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tfgrid-compose<span class="w"> </span>ssh<span class="w"> </span>tfgrid-gitea
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Stop service</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>gitea
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># Restore</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>/tmp/gitea-backup-*.tar.gz<span class="w"> </span>-C<span class="w"> </span>/
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># Fix permissions</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>git:git<span class="w"> </span>/var/lib/gitea
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>git:git<span class="w"> </span>/etc/gitea
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="c1"># Start service</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>gitea
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="service-not-starting">Service Not Starting<a class="headerlink" href="#service-not-starting" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Check service status</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>systemctl<span class="w"> </span>status<span class="w"> </span>gitea
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># View logs</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>gitea<span class="w"> </span>-f
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Check configuration</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>sudo<span class="w"> </span>-u<span class="w"> </span>git<span class="w"> </span>/usr/local/bin/gitea<span class="w"> </span>doctor<span class="w"> </span>--config<span class="w"> </span>/etc/gitea/app.ini
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="c1"># Restart service</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>gitea
+</code></pre></div>
+<h3 id="cant-access-web-interface">Can't Access Web Interface<a class="headerlink" href="#cant-access-web-interface" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Check if port is listening</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>netstat<span class="w"> </span>-tuln<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">3000</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Test local connection</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>curl<span class="w"> </span>http://localhost:3000
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Check firewall (if using standalone)</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>ufw<span class="w"> </span>status
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">3000</span>/tcp
+</code></pre></div>
+<h3 id="database-issues">Database Issues<a class="headerlink" href="#database-issues" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Check database file</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>ls<span class="w"> </span>-lh<span class="w"> </span>/var/lib/gitea/data/gitea.db
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Check permissions</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>ls<span class="w"> </span>-ld<span class="w"> </span>/var/lib/gitea/data
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># Should be owned by git:git</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1"># Repair if needed</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>sudo<span class="w"> </span>-u<span class="w"> </span>git<span class="w"> </span>sqlite3<span class="w"> </span>/var/lib/gitea/data/gitea.db<span class="w"> </span><span class="s2">&quot;PRAGMA integrity_check;&quot;</span>
+</code></pre></div>
+<h3 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">&para;</a></h3>
+<p><strong>For large repositories:</strong></p>
+<ol>
 <li>
-<p>Write comprehensive README</p>
-</li>
-<li>
-<p><strong>Test Locally</strong>
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./my-app
+<p>Increase resources in tfgrid-compose.yaml:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>Submit for Verification</strong></p>
+<p>Redeploy:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span>tfgrid-gitea
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea
+</code></pre></div></p>
 </li>
-<li>Fork <a href="https://github.com/tfgrid-studio/app-registry">tfgrid-studio/app-registry</a></li>
-<li>Add your app to <code>registry/verified/community.yaml</code></li>
-<li>
-<p>Create pull request</p>
-</li>
-<li>
-<p><strong>Review Process</strong></p>
-</li>
-<li>Code review (~3 days)</li>
-<li>Security check</li>
-<li>Testing</li>
-<li>
-<p>Documentation review</p>
-</li>
-<li>
-<p><strong>Approved!</strong></p>
-</li>
-<li>Merged to registry</li>
-<li>Appears in <code>tfgrid-compose search</code></li>
-<li>Listed on registry.tfgrid.studio</li>
 </ol>
-<p><strong>Full Guide</strong>: <a href="../../development/submit-app/">How to Submit →</a></p>
-<h2 id="app-cache-location">App Cache Location<a class="headerlink" href="#app-cache-location" title="Permanent link">&para;</a></h2>
-<p>Apps are cached locally:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>~/.config/tfgrid-compose/
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├──<span class="w"> </span>apps/<span class="w">                    </span><span class="c1"># Cached app repositories</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>│<span class="w">   </span>├──<span class="w"> </span>tfgrid-ai-agent/
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>│<span class="w">   </span>└──<span class="w"> </span>other-apps/
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>├──<span class="w"> </span>deployments/<span class="w">             </span><span class="c1"># Your deployments</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>└──<span class="w"> </span>registry.yaml<span class="w">            </span><span class="c1"># Cached registry</span>
+<h2 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="essential-security-steps">Essential Security Steps<a class="headerlink" href="#essential-security-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Change default password</strong> immediately</li>
+<li><strong>Enable 2FA</strong> (Settings → Security → Two-Factor Authentication)</li>
+<li><strong>Use strong passwords</strong> for all accounts</li>
+<li><strong>Disable registration</strong> if not needed (app.ini: <code>DISABLE_REGISTRATION = true</code>)</li>
+<li><strong>Regular backups</strong> of /var/lib/gitea/data</li>
+<li><strong>Keep updated</strong> - monitor Gitea releases</li>
+</ol>
+<h3 id="ssltls">SSL/TLS<a class="headerlink" href="#ssltls" title="Permanent link">&para;</a></h3>
+<p>Always deploy behind a gateway with SSL in production:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea<span class="w"> </span>--pattern<span class="w"> </span>gateway<span class="w"> </span>--domain<span class="w"> </span>example.com
 </code></pre></div>
-<h2 id="version-pinning">Version Pinning<a class="headerlink" href="#version-pinning" title="Permanent link">&para;</a></h2>
-<p>Pin apps to specific versions:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Latest version (default)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Specific version</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent:v0.9.0
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Specific branch</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent:develop
+<p>This provides:
+- ✅ Free Let's Encrypt SSL certificates
+- ✅ Automatic HTTPS redirect
+- ✅ Certificate auto-renewal</p>
+<h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
+<h3 id="webhooks">Webhooks<a class="headerlink" href="#webhooks" title="Permanent link">&para;</a></h3>
+<p>Configure webhooks to trigger actions on push:</p>
+<ol>
+<li>Repository → Settings → Webhooks</li>
+<li>Add Webhook</li>
+<li>Set URL (e.g., https://example.com/deploy-hook)</li>
+<li>Select events (push, pull request, etc.)</li>
+<li>Save</li>
+</ol>
+<p><strong>Use case:</strong> Auto-deploy to gateway when AI agent pushes code.</p>
+<h3 id="git-lfs">Git LFS<a class="headerlink" href="#git-lfs" title="Permanent link">&para;</a></h3>
+<p>For large files (&gt;100MB):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Install git-lfs on client</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>git<span class="w"> </span>lfs<span class="w"> </span>install
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Track large files</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>git<span class="w"> </span>lfs<span class="w"> </span>track<span class="w"> </span><span class="s2">&quot;*.psd&quot;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>git<span class="w"> </span>lfs<span class="w"> </span>track<span class="w"> </span><span class="s2">&quot;*.zip&quot;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1"># Commit and push as normal</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add large files&quot;</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>git<span class="w"> </span>push
 </code></pre></div>
-<h2 id="registry-api">Registry API<a class="headerlink" href="#registry-api" title="Permanent link">&para;</a></h2>
-<p>For automation and integrations:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># JSON API</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps.json
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># YAML API</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps.yaml
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># App details</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps/tfgrid-ai-agent.json
-</code></pre></div>
-<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
-<h3 id="official-apps_2">Official Apps<a class="headerlink" href="#official-apps_2" title="Permanent link">&para;</a></h3>
+<h3 id="mirror-repositories">Mirror Repositories<a class="headerlink" href="#mirror-repositories" title="Permanent link">&para;</a></h3>
+<p>Mirror external repos to Gitea:</p>
+<ol>
+<li>New Migration → GitHub/GitLab/etc.</li>
+<li>Enter source URL</li>
+<li>Configure mirror settings</li>
+<li>Gitea will sync automatically</li>
+</ol>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>✅ Audited by TFGrid Studio</li>
-<li>✅ Regular security updates</li>
-<li>✅ Full support</li>
+<li><strong><a href="../ai-agent/">AI Agent Guide</a></strong> - Use AI agent with Gitea</li>
+<li><strong><a href="../../patterns/gateway/">Gateway Pattern</a></strong> - Deploy with SSL</li>
+<li><strong><a href="../app-registry/">App Registry</a></strong> - Explore more apps</li>
+<li><strong><a href="https://docs.gitea.com/">Gitea Official Docs</a></strong> - Full Gitea documentation</li>
 </ul>
-<h3 id="verified-apps_1">Verified Apps<a class="headerlink" href="#verified-apps_1" title="Permanent link">&para;</a></h3>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
 <ul>
-<li>✅ Code reviewed</li>
-<li>✅ Security checked</li>
-<li>✅ No hardcoded secrets</li>
-<li>✅ Documentation verified</li>
-</ul>
-<h3 id="unverified-apps_1">Unverified Apps<a class="headerlink" href="#unverified-apps_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>⚠️ Use at your own risk</li>
-<li>⚠️ Review code before deploying</li>
-<li>⚠️ Check for secrets/malicious code</li>
-</ul>
-<p><strong>Best Practice</strong>: Always inspect app code before deployment:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Clone and inspect</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/app
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">cd</span><span class="w"> </span>app
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Review code, check for secrets</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>less<span class="w"> </span>deployment/setup.sh
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Deploy if satisfied</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./app
-</code></pre></div>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Registry Website</strong>: <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a> ✅ Live</li>
-<li><strong>Registry Data</strong>: <a href="https://github.com/tfgrid-studio/app-registry">tfgrid-studio/app-registry</a></li>
-<li><strong>Submit Your App</strong>: <a href="../../development/submit-app/">Submission Guide</a></li>
-<li><strong>App Manifest</strong>: <a href="../reference/manifest.md">Manifest Reference</a></li>
+<li><strong>TFGrid Docs:</strong> https://docs.tfgrid.studio</li>
+<li><strong>Gitea Docs:</strong> https://docs.gitea.com</li>
+<li><strong>GitHub Issues:</strong> https://github.com/tfgrid-studio/tfgrid-gitea</li>
+<li><strong>Community:</strong> https://forum.threefold.io</li>
 </ul>
 <hr />
-<p><strong>Registry Deployment</strong>: v0.10.0 (CLI integration coming soon)<br />
-<strong>Browse Apps Now</strong>: <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a></p>
+<p><strong>Made with 🔥 for decentralized development</strong></p>
 
 
 
@@ -2368,7 +2753,7 @@ See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../gitea/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gitea Self-Hosted Git">
+          <a href="../ai-agent/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AI Agent Deployment">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2378,20 +2763,20 @@ See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Gitea Self-Hosted Git
+                AI Agent Deployment
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../architecture/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: System Overview">
+          <a href="../app-registry/" class="md-footer__link md-footer__link--next" aria-label="Next: App Registry">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                System Overview
+                App Registry
               </div>
             </div>
             <div class="md-footer__button md-icon">

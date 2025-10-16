@@ -126,6 +126,8 @@ nav:
   
   - Guides:
     - AI Agent Deployment: guides/ai-agent.md
+    - Gitea Self-Hosted Git: guides/gitea.md
+    - App Registry: guides/app-registry.md
   
   - Architecture:
     - System Overview: architecture/overview.md

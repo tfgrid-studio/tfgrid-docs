@@ -29,29 +29,33 @@ tfgrid-compose up my-app
 |-----------|--------|-------------|
 | **tfgrid-compose** | ✅ v0.10.0 | Universal orchestrator with registry integration |
 | **tfgrid-ai-agent** | ✅ v0.10.0 | AI coding agent (reference application) |
+| **tfgrid-gitea** | 🆕 v1.0.0 | Self-hosted Git service with web interface |
 | **Single-VM Pattern** | ✅ Production | Deploy isolated VMs with private networking |
 | **Gateway Pattern** | ✅ Production | Multi-VM with public access and SSL |
 | **K3s Pattern** | ✅ Production | Full Kubernetes cluster deployment |
 | **App Registry** | ✅ v0.10.0 | Deploy apps by name from registry |
 | **Context Files** | ✅ Production | Simplified workflow with `.tfgrid-compose.yaml` |
 
-### 🔨 In Progress (v0.10.1)
+### 🔨 In Progress (v0.10.1) - 95% Complete!
 
 | Component | Status | Description |
 |-----------|--------|-------------|
-| **Login/Logout UX** | 90% | Enhanced credential management |
+| **Login/Logout UX** | ✅ Complete | Enhanced credential management |
 | **ThreeFold Setup Guide** | ✅ Complete | Complete DIY onboarding documentation |
 | **Config Management** | ✅ Complete | `tfgrid-compose config` commands |
 | **Docs Command** | ✅ Complete | Open docs in browser |
+| **Enhanced Error Messages** | ✅ Complete | Helpful guidance throughout CLI |
+| **Release** | 🔄 Testing | Final testing before release |
 
 ### 🚧 Coming Soon
 
 | Component | Status | Timeline | Description |
 |-----------|--------|----------|-------------|
-| **Pattern Library** | 📋 Planned | v0.11.0 | AI agents, databases, web frameworks |
-| **Interactive Wizard** | 📋 Planned | v0.12.0 | `tfgrid-compose init` with prompts |
-| **CI/CD Integration** | 📋 Planned | v0.13.0 | GitHub Actions, GitLab CI |
-| **Web Dashboard** | 📋 Planned | Q2 2026 | Visual management interface |
+| **AI Gateway Integration** | 📋 Planned | v0.11.0 (Nov) | AI agent + Gateway + Gitea workflow |
+| **AI Dashboard Web UI** | 📋 Planned | v0.12.0 (Dec-Jan) | Visual project management |
+| **Voice Coding** | 📋 Planned | v0.13.0 (Feb) | "Vibe code by talking" interface |
+| **CI/CD Integration** | 📋 Planned | v0.13.0+ | GitHub Actions, GitLab CI |
+| **Web Dashboard** | 📋 Planned | Q2 2026 | Complete visual management |
 | **Managed Service** | 📋 Planned | Q3 2026+ | Email + credit card deployments |
 
 ---
@@ -113,6 +117,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 ### Applications
 - **[Application Overview](applications/overview.md)** - How apps work in TFGrid Compose
 - **[TFGrid AI Agent](applications/tfgrid-ai-agent/)** - ✅ AI coding agent
+- **[TFGrid Gitea](guides/gitea.md)** - 🆕 Self-hosted Git service
 - **[Creating Apps](applications/creating-apps.md)** - Build your own deployable apps
 
 ### CLI Reference
@@ -210,6 +215,7 @@ Built from **proven, working implementations**:
 - **GitHub:** [github.com/tfgrid-studio](https://github.com/tfgrid-studio) - Organization
 - **CLI Tool:** [tfgrid-compose](https://github.com/tfgrid-studio/tfgrid-compose) - Main repository
 - **AI Agent:** [tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent) - AI development
+- **Gitea:** [tfgrid-gitea](https://github.com/tfgrid-studio/tfgrid-gitea) - Self-hosted Git
 - **ThreeFold Grid:** [threefold.io](https://threefold.io) - Infrastructure
 
 ---

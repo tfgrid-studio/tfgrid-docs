@@ -89,6 +89,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 ### Getting Started
 - **[Introduction](getting-started/introduction.md)** - What is TFGrid Compose and why use it
 - **[Installation](getting-started/installation.md)** - Install and configure tfgrid-compose
+- **[ThreeFold Setup](getting-started/threefold-setup.md)** - Complete DIY guide (wallet, TFT, KYC)
 - **[Quick Start](getting-started/quickstart.md)** - Deploy your first application in 5 minutes
 - **[Core Concepts](getting-started/concepts.md)** - Understand patterns, apps, and manifests
 

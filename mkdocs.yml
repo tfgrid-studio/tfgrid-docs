@@ -120,6 +120,7 @@ nav:
   - Getting Started:
     - Introduction: getting-started/introduction.md
     - Installation: getting-started/installation.md
+    - ThreeFold Setup: getting-started/threefold-setup.md
     - Quick Start: getting-started/quickstart.md
     - Core Concepts: getting-started/concepts.md
   

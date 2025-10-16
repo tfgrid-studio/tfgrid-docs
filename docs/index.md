@@ -58,13 +58,14 @@ curl -sSL install.tfgrid.studio/install.sh | sh
 tfgrid-compose --version
 ```
 
-### 2. Configure ThreeFold
+### 2. Set Up ThreeFold
 
+Need a ThreeFold wallet with TFT? See the [complete setup guide](getting-started/threefold-setup.md).
+
+Already have a wallet? Configure it:
 ```bash
-# Store your mnemonic
-mkdir -p ~/.config/threefold
-echo "your mnemonic words" > ~/.config/threefold/mnemonic
-chmod 600 ~/.config/threefold/mnemonic
+tfgrid-compose login
+# Enter your seed phrase when prompted
 ```
 
 ### 3. Deploy an App

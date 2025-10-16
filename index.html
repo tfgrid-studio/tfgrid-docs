@@ -568,9 +568,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-threefold" class="md-nav__link">
+  <a href="#2-set-up-threefold" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Configure ThreeFold
+      2. Set Up ThreeFold
     </span>
   </a>
   
@@ -1810,9 +1810,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-threefold" class="md-nav__link">
+  <a href="#2-set-up-threefold" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Configure ThreeFold
+      2. Set Up ThreeFold
     </span>
   </a>
   
@@ -2198,12 +2198,12 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Verify installation</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>tfgrid-compose<span class="w"> </span>--version
 </code></pre></div>
-<h3 id="2-configure-threefold">2. Configure ThreeFold<a class="headerlink" href="#2-configure-threefold" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Store your mnemonic</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/threefold
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;your mnemonic words&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.config/threefold/mnemonic
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.config/threefold/mnemonic
-</code></pre></div>
+<h3 id="2-set-up-threefold">2. Set Up ThreeFold<a class="headerlink" href="#2-set-up-threefold" title="Permanent link">&para;</a></h3>
+<p>Need a ThreeFold wallet with TFT? See the <a href="getting-started/threefold-setup/">complete setup guide</a>.</p>
+<p>Already have a wallet? Configure it:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tfgrid-compose<span class="w"> </span>login
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Enter your seed phrase when prompted</span>
+</code></pre></div></p>
 <h3 id="3-deploy-an-app">3. Deploy an App<a class="headerlink" href="#3-deploy-an-app" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Deploy official app (v0.10.0+)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent

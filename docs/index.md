@@ -23,26 +23,36 @@ tfgrid-compose up my-app
 
 ## ✨ Current Status
 
-### ✅ Production Ready (v0.9.0)
+### ✅ Production Ready (v0.10.0)
 
 | Component | Status | Description |
 |-----------|--------|-------------|
-| **tfgrid-compose** | ✅ v0.9.0 | Universal orchestrator with all 3 patterns |
-| **tfgrid-ai-agent** | ✅ v0.9.0 | AI coding agent (reference application) |
+| **tfgrid-compose** | ✅ v0.10.0 | Universal orchestrator with registry integration |
+| **tfgrid-ai-agent** | ✅ v0.10.0 | AI coding agent (reference application) |
 | **Single-VM Pattern** | ✅ Production | Deploy isolated VMs with private networking |
 | **Gateway Pattern** | ✅ Production | Multi-VM with public access and SSL |
 | **K3s Pattern** | ✅ Production | Full Kubernetes cluster deployment |
+| **App Registry** | ✅ v0.10.0 | Deploy apps by name from registry |
 | **Context Files** | ✅ Production | Simplified workflow with `.tfgrid-compose.yaml` |
-| **Agent Subcommand** | ✅ Production | AI agent management built-in |
+
+### 🔨 In Progress (v0.10.1)
+
+| Component | Status | Description |
+|-----------|--------|-------------|
+| **Login/Logout UX** | 90% | Enhanced credential management |
+| **ThreeFold Setup Guide** | ✅ Complete | Complete DIY onboarding documentation |
+| **Config Management** | ✅ Complete | `tfgrid-compose config` commands |
+| **Docs Command** | ✅ Complete | Open docs in browser |
 
 ### 🚧 Coming Soon
 
 | Component | Status | Timeline | Description |
 |-----------|--------|----------|-------------|
-| **App Registry** | 🔨 Development | v0.10.0 (Nov 2025) | Deploy apps by name: `tfgrid-compose up tfgrid-ai-agent` |
-| **Multi-Deployment** | 🔨 Development | v0.10.0 (Nov 2025) | Manage multiple deployments simultaneously |
+| **Pattern Library** | 📋 Planned | v0.11.0 | AI agents, databases, web frameworks |
+| **Interactive Wizard** | 📋 Planned | v0.12.0 | `tfgrid-compose init` with prompts |
+| **CI/CD Integration** | 📋 Planned | v0.13.0 | GitHub Actions, GitLab CI |
 | **Web Dashboard** | 📋 Planned | Q2 2026 | Visual management interface |
-| **Marketplace** | 📋 Planned | Q3 2026 | Community app ecosystem |
+| **Managed Service** | 📋 Planned | Q3 2026+ | Email + credit card deployments |
 
 ---
 

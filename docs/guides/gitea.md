@@ -398,8 +398,8 @@ Mirror external repos to Gitea:
 
 - **TFGrid Docs:** https://docs.tfgrid.studio
 - **Gitea Docs:** https://docs.gitea.com
-- **GitHub Issues:** https://github.com/tfgrid-studio/tfgrid-gitea
-- **Community:** https://forum.threefold.io
+- **GitHub Issues:** https://github.com/tfgrid-studio/tfgrid-gitea/issues
+- **Discussions:** https://github.com/orgs/tfgrid-studio/discussions
 
 ---
 

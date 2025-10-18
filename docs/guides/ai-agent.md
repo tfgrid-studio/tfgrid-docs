@@ -1,4 +1,4 @@
-# AI Agent Integration Guide
+# AI Agent Guide
 
 Complete guide for deploying and using the AI coding agent on ThreeFold Grid.
 
@@ -6,48 +6,41 @@ Complete guide for deploying and using the AI coding agent on ThreeFold Grid.
 
 ## Overview
 
-The AI Agent is an AI-powered coding assistant that runs on ThreeFold Grid. It can:
+The **TFGrid AI Agent** is an autonomous AI coding assistant that runs on ThreeFold Grid. It can:
 
 - 🤖 Write and edit code autonomously
 - 🔄 Run iterative improvement loops
 - 🧪 Test and debug automatically
 - 📝 Generate documentation
 - 🔧 Refactor and optimize code
+- ⏰ Work within time constraints
 
 **Deployment time:** 2-3 minutes  
 **Cost:** Pay-as-you-go on ThreeFold Grid  
-**Access:** From your local machine via `tfgrid-compose exec`
+**Access:** Native commands via `tfgrid-compose`
+
+**Version:** 0.3.0 (Pre-1.0)
 
 ---
 
 ## Quick Start
 
-**Two ways to use:** Make wrapper (easier) or direct CLI (more control)
-
 ### 1. Deploy the AI Agent
 
-**Option A: Using Make (Recommended for beginners)**
-```bash
-# Set your app path (do once)
-export APP=../tfgrid-ai-agent
-
-# Deploy to ThreeFold Grid
-make up
-```
-
-**Option B: Using tfgrid-compose CLI directly**
 ```bash
 # Deploy to ThreeFold Grid
-tfgrid-compose up ../tfgrid-ai-agent
+tfgrid-compose up tfgrid-ai-agent
 ```
 
 **What happens:**
 1. ✅ Creates Ubuntu 24.04 VM (4 CPU, 8GB RAM, 100GB disk)
-2. ✅ Configures WireGuard networking
-3. ✅ Installs Node.js, Qwen CLI, and dependencies
-4. ✅ Sets up git credentials
-5. ✅ Configures workspace directories
+2. ✅ Configures WireGuard networking  
+3. ✅ Installs Node.js 20.x, Qwen CLI
+4. ✅ Prompts for git credentials (one time)
+5. ✅ Sets up workspace at `/home/developer/code`
 6. ✅ Runs health checks
+
+**Duration:** ~2-3 minutes
 
 **Output:**
 ```
@@ -60,335 +53,306 @@ tfgrid-compose up ../tfgrid-ai-agent
   • Connect: tfgrid-compose ssh tfgrid-ai-agent
 ```
 
-### 2. Login to Qwen AI
+### 2. Configure Git Credentials (Optional)
 
-**Make wrapper:**
+If not set during deployment:
+
 ```bash
-make login
+tfgrid-compose login
 ```
 
-**Direct CLI:**
-```bash
-# Get VM IP
-VM_IP=$(cat .tfgrid-compose/state.yaml | grep '^vm_ip:' | awk '{print $2}')
+Prompts for:
+- Your name (for git commits)
+- Your email
 
-# SSH with TTY for OAuth
-ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP qwen
-```
-
-Follow the OAuth prompts, copy the URL to your browser, authenticate, and press Enter.
+**Set once, used for all projects!**
 
 ### 3. Create Your First Project
 
-**Make wrapper:**
 ```bash
-make create
-# Interactive - follow prompts for:
-# - Project name
-# - Duration
-# - Prompt type
+tfgrid-compose create my-music-website
 ```
 
-**Direct CLI:**
-```bash
-# Get VM IP
-VM_IP=$(cat .tfgrid-compose/state.yaml | grep '^vm_ip:' | awk '{print $2}')
+Interactive prompts:
+1. **Project name** (if not specified)
+2. **Duration** (30m, 1h, 2h, indefinite)
+3. **Git credentials** (if not configured)
+4. **Prompt type** (Custom or Generic template)
+5. **Your coding prompt**
+6. **Start now?** (y/N)
 
-# Create interactively
-ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP \
-  "cd /opt/ai-agent && /opt/ai-agent/scripts/create-project.sh"
+**Example session:**
+```
+🚀 AI-Agent Project Creator
+==============================
+
+Enter project name: music-website
+
+⏱️  How long should the AI agent run?
+Examples: 30m, 1h, 2h30m, indefinite
+
+Enter duration: 1h
+
+🔧 Let's set up your git credentials (used for all projects)
+
+Enter your name (for git commits): John Doe
+Enter your email (for git commits): john@example.com
+
+✅ Git configured globally
+
+📝 Choose prompt type:
+1) Custom prompt (paste your own)
+2) Generic template (select from options)
+
+Select (1-2) [2]: 1
+
+📋 Enter your custom prompt (press Ctrl+D when done):
+Create a beautiful music website showcasing John Lennon 
+and Mozart with lyrics and biography
+
+✅ Custom prompt configured
+
+✅ Project 'music-website' created successfully!
+
+🚀 Do you want to start the AI agent now?
+Start now? (y/N): y
+
+Starting AI agent for project 'music-website'...
+
+✅ AI agent loop started with PID: 12345
+🛑 To stop the loop, run: tfgrid-compose stop music-website
 ```
 
-### 4. Run the AI Agent Loop
+### 4. Monitor Your Project
 
-**Make wrapper:**
 ```bash
-# Run specific project
-make run project=my-webapp
+# Check all projects
+tfgrid-compose projects
 
-# Or interactive selection
-make run
+# Monitor specific project in real-time
+tfgrid-compose monitor music-website
+
+# View project summary
+tfgrid-compose summary music-website
+
+# View logs
+tfgrid-compose logs music-website
 ```
 
-**Direct CLI:**
+### 5. Manage Projects
+
 ```bash
-# Run specific project
-tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/run-project.sh my-webapp"
+# Run a stopped project
+tfgrid-compose run music-website
 
-# Or interactive selection
-VM_IP=$(cat .tfgrid-compose/state.yaml | grep '^vm_ip:' | awk '{print $2}')
-ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP \
-  "cd /opt/ai-agent && bash scripts/interactive-wrapper.sh run"
-```
+# Stop a running project
+tfgrid-compose stop music-website
 
-### 5. Check Status & Monitor
+# Restart project
+tfgrid-compose restart music-website
 
-**Make wrapper:**
-```bash
-# List all projects
-make list
+# Stop all projects
+tfgrid-compose stopall
 
-# Monitor specific project
-make monitor project=my-webapp
+# Remove a project
+tfgrid-compose remove music-website
 
-# Stop project
-make stop project=my-webapp
-```
-
-**Direct CLI:**
-```bash
-# List all projects
-tfgrid-compose exec ../tfgrid-ai-agent /opt/ai-agent/scripts/status-projects.sh
-
-# Monitor specific project
-tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/monitor-project.sh my-webapp"
-
-# Stop project
-tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/stop-project.sh my-webapp"
-
-# SSH to see files
-tfgrid-compose ssh ../tfgrid-ai-agent
-cd /opt/ai-agent/projects/my-webapp
-ls -la
+# Edit project configuration
+tfgrid-compose edit music-website
 ```
 
 ---
 
 ## Complete Command Reference
 
-### Two Ways to Run Commands
+### All AI Agent Commands
 
-Every command can be run **two ways**:
+| Command | Description | Arguments |
+|---------|-------------|-----------|
+| `create` | Create new AI project | `[project-name]` |
+| `run` | Start agent loop | `[project-name]` |
+| `stop` | Stop agent loop | `[project-name]` |
+| `restart` | Restart agent | `[project-name]` |
+| `projects` | Show all projects | None |
+| `monitor` | Watch progress live | `[project-name]` |
+| `logs` | View project logs | `[project-name]` |
+| `summary` | Show project summary | `[project-name]` |
+| `edit` | Edit configuration | `[project-name]` |
+| `remove` | Delete project | `[project-name]` |
+| `stopall` | Stop all projects | None |
+| `login` | Configure git credentials | None |
+| `version` | Show agent version | None |
 
-1. **Make wrapper** (shorter, needs `export APP=../tfgrid-ai-agent`)
-2. **Direct CLI** (full control, no exports needed)
-
----
-
-### Deployment Commands
-
-| Action | Make Wrapper | Direct CLI |
-|--------|--------------|------------|
-| **Deploy** | `make up` | `tfgrid-compose up ../tfgrid-ai-agent` |
-| **Status** | `make status` | `tfgrid-compose status ../tfgrid-ai-agent` |
-| **SSH** | `make ssh` | `tfgrid-compose ssh ../tfgrid-ai-agent` |
-| **Logs** | `make logs` | `tfgrid-compose logs ../tfgrid-ai-agent` |
-| **Destroy** | `make down` | `tfgrid-compose down ../tfgrid-ai-agent` |
-
----
-
-### AI Agent Commands
-
-| Action | Make Wrapper | Direct CLI |
-|--------|--------------|------------|
-| **Login (one-time)** | `make login` | See login script below |
-| **Create project** | `make create` | See interactive method below |
-| **List projects** | `make list` | `tfgrid-compose exec ../tfgrid-ai-agent /opt/ai-agent/scripts/status-projects.sh` |
-| **Run project** | `make run project=my-app` | `tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/run-project.sh my-app"` |
-| **Monitor** | `make monitor project=my-app` | `tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/monitor-project.sh my-app"` |
-| **Stop** | `make stop project=my-app` | `tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/stop-project.sh my-app"` |
-| **Remove** | `make remove project=my-app` | `tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/remove-project.sh my-app"` |
-
----
-
-### Interactive Commands (Need SSH -t)
-
-Some commands require **interactive terminal** (`ssh -t`):
-
-**Login to Qwen (direct CLI)**
-```bash
-# Get VM IP
-VM_IP=$(cat .tfgrid-compose/state.yaml | grep '^vm_ip:' | awk '{print $2}')
-
-# SSH with TTY and run qwen
-ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP qwen
-```
-
-**Create project interactively (direct CLI)**
-```bash
-# Get VM IP
-VM_IP=$(cat .tfgrid-compose/state.yaml | grep '^vm_ip:' | awk '{print $2}')
-
-# SSH and create
-ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP \
-  "cd /opt/ai-agent && /opt/ai-agent/scripts/create-project.sh"
-```
-
-**Run project interactively (direct CLI)**
-```bash
-# Get VM IP  
-VM_IP=$(cat .tfgrid-compose/state.yaml | grep '^vm_ip:' | awk '{print $2}')
-
-# SSH and run with selection
-ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP \
-  "cd /opt/ai-agent && bash scripts/interactive-wrapper.sh run"
-```
-
----
-
-### Quick CLI Scripts
-
-**Create reusable script for direct CLI usage:**
+**Note:** Arguments in `[]` are optional. If omitted, interactive selection is shown.
 
 ```bash
-# Save as: ~/bin/tfgrid-agent
-#!/bin/bash
-APP="../tfgrid-ai-agent"
-VM_IP=$(cat .tfgrid-compose/state.yaml 2>/dev/null | grep '^vm_ip:' | awk '{print $2}')
+# Short form (context-aware)
+tfgrid-compose create my-project
+tfgrid-compose run my-project
 
-case "$1" in
-  list)
-    tfgrid-compose exec $APP /opt/ai-agent/scripts/status-projects.sh
-    ;;
-  run)
-    tfgrid-compose exec $APP "/opt/ai-agent/scripts/run-project.sh $2"
-    ;;
-  stop)
-    tfgrid-compose exec $APP "/opt/ai-agent/scripts/stop-project.sh $2"
-    ;;
-  ssh)
-    ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP
-    ;;
-  *)
-    echo "Usage: tfgrid-agent {list|run|stop|ssh} [project-name]"
-    ;;
-esac
+# Explicit form (no context needed)
+tfgrid-compose tfgrid-ai-agent create my-project
+tfgrid-compose tfgrid-ai-agent run my-project
 ```
 
-Then use it:
-```bash
-chmod +x ~/bin/tfgrid-agent
-tfgrid-agent list
-tfgrid-agent run my-app
-tfgrid-agent stop my-app
-tfgrid-agent ssh
-```
+**Context is automatic with single app!**
 
 ---
 
 ## Workflows
 
-### Workflow 1: Simple Web App (Make Wrapper)
+### Workflow 1: Simple Web App
 
 ```bash
-export APP=../tfgrid-ai-agent
-
 # 1. Deploy
-make up
+tfgrid-compose up tfgrid-ai-agent
 
-# 2. Login (one-time)
-make login
+# 2. Configure git (first time only)
+tfgrid-compose login
 
-# 3. Create project
-make create
-# Enter: simple-blog
-# Duration: 1h
-# Prompt: "Create a simple blog with React and Node.js"
+# 3. Create project (interactive)
+tfgrid-compose create simple-blog
+# Prompts for:
+# - Duration: 1h
+# - Prompt: "Create a simple blog with React and Node.js"
+# - Start now: y
 
-# 4. Agent starts automatically, or run:
-make run project=simple-blog
+# 4. Monitor progress
+tfgrid-compose monitor simple-blog
 
-# 5. Monitor (in another terminal)
-make list
-make monitor project=simple-blog
+# 5. Check all projects
+tfgrid-compose projects
 
-# 6. When done, check results
-make ssh
-cd /opt/ai-agent/projects/simple-blog
+# 6. View results
+tfgrid-compose summary simple-blog
+tfgrid-compose ssh
+cd /home/developer/code/simple-blog
 ls -la
 cat README.md
 
-# 7. Git push (if configured)
-git push origin main
+# 7. Stop project
+tfgrid-compose stop simple-blog
 
-# 8. Stop and cleanup
-make stop project=simple-blog
-make down
-```
-
-### Workflow 1b: Simple Web App (Direct CLI)
-
-```bash
-# 1. Deploy
-tfgrid-compose up ../tfgrid-ai-agent
-
-# 2. Login (one-time)
-VM_IP=$(cat .tfgrid-compose/state.yaml | grep '^vm_ip:' | awk '{print $2}')
-ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP qwen
-
-# 3. Create project
-ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$VM_IP \
-  "cd /opt/ai-agent && /opt/ai-agent/scripts/create-project.sh"
-# Enter: simple-blog, 1h, custom prompt
-
-# 4. Run agent
-tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/run-project.sh simple-blog"
-
-# 5. Monitor
-tfgrid-compose exec ../tfgrid-ai-agent /opt/ai-agent/scripts/status-projects.sh
-tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/monitor-project.sh simple-blog"
-
-# 6. Check results
-tfgrid-compose ssh ../tfgrid-ai-agent
-cd /opt/ai-agent/projects/simple-blog
-ls -la
-
-# 7. Stop and cleanup
-tfgrid-compose exec ../tfgrid-ai-agent "/opt/ai-agent/scripts/stop-project.sh simple-blog"
-tfgrid-compose down ../tfgrid-ai-agent
+# 8. Cleanup (if done)
+tfgrid-compose down
 ```
 
 ### Workflow 2: Code Refactoring
 
 ```bash
-export APP=../tfgrid-ai-agent
+# 1. Create refactoring project
+tfgrid-compose create refactor-legacy
+# Prompt: "Refactor this legacy code to TypeScript with best practices"
 
-# 1. Create project
-make create
-# Enter: refactor-project
-# Prompt: "Refactor this code to use TypeScript and improve performance"
-
-# 2. Upload your existing code
-make ssh
-cd /opt/ai-agent/projects/refactor-project
-# Copy your files here, commit them
+# 2. Upload existing code
+tfgrid-compose ssh
+cd /home/developer/code/refactor-legacy
+# Copy your files here
 git add .
 git commit -m "Initial code to refactor"
 exit
 
 # 3. Run agent
-make run project=refactor-project
+tfgrid-compose run refactor-legacy
 
-# 4. Monitor and review
-make list
-make monitor project=refactor-project
+# 4. Watch it work
+tfgrid-compose monitor refactor-legacy
+
+# 5. Check progress
+tfgrid-compose summary refactor-legacy
+
+# 6. Review and iterate
+tfgrid-compose logs refactor-legacy
+tfgrid-compose edit refactor-legacy  # Adjust if needed
+tfgrid-compose restart refactor-legacy
 ```
 
-### Workflow 3: Documentation Generation
+### Workflow 3: Multiple Projects
 
 ```bash
-export APP=../tfgrid-ai-agent
+# Create several projects
+tfgrid-compose create frontend-app
+tfgrid-compose create backend-api
+tfgrid-compose create mobile-app
 
-# 1. Create docs project
-make create
-# Enter: api-docs
-# Prompt: "Generate comprehensive documentation for this API with examples"
+# Run them all
+tfgrid-compose run frontend-app
+tfgrid-compose run backend-api
+tfgrid-compose run mobile-app
 
-# 2. Run agent
-make run project=api-docs
+# Check status of all
+tfgrid-compose projects
 
-# 3. Check logs
-make monitor project=api-docs
+# Monitor specific one
+tfgrid-compose monitor frontend-app
 
-# 4. View results
-make ssh
-cd /opt/ai-agent/projects/api-docs
-cat README.md
+# Stop all when done
+tfgrid-compose stopall
 ```
 
 ---
 
-## Configuration
+## Best Practices
+
+### 1. Clear Prompts
+
+**Good:**
+```
+"Create a REST API with Express.js and PostgreSQL for a todo app with authentication"
+"Refactor this code to use async/await and add error handling"
+"Generate API documentation with examples for all endpoints"
+```
+
+**Bad:**
+```
+"Make it better" (too vague)
+"Build everything" (too broad)
+"Fix bugs" (which bugs?)
+```
+
+### 2. Time Constraints
+
+```bash
+# Short tasks
+tfgrid-compose create quick-fix
+# Duration: 30m
+
+# Medium projects
+tfgrid-compose create web-dashboard  
+# Duration: 2h
+
+# Long-running projects
+tfgrid-compose create full-refactor
+# Duration: indefinite
+```
+
+### 3. Monitor Progress
+
+```bash
+# Always monitor long-running tasks
+tfgrid-compose run big-project &
+tfgrid-compose monitor big-project
+
+# Check all projects regularly
+tfgrid-compose projects
+```
+
+### 4. Resource Management
+
+```bash
+# Stop when not needed
+tfgrid-compose stopall
+
+# Remove completed projects
+tfgrid-compose remove old-project
+
+# Destroy VM when done
+tfgrid-compose down
+```
+
+---
+
+##Configuration
 
 ### Environment Variables
 

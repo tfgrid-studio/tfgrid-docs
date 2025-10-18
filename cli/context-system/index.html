@@ -2290,21 +2290,27 @@
 <h2 id="command-resolution-order">Command Resolution Order<a class="headerlink" href="#command-resolution-order" title="Permanent link">&para;</a></h2>
 <p>When you run a command, tfgrid-compose checks:</p>
 <ol>
-<li><strong>Is it a generic command?</strong> (up, down, status, logs, ssh, etc.)</li>
+<li>
+<p><strong>Is it a generic command?</strong> (up, down, status, logs, ssh, etc.)</p>
+</li>
 <li>
 <p>If yes: Execute generic command</p>
 </li>
 <li>
 <p><strong>Is it app-specific?</strong> (create, run, stop for ai-agent, etc.)</p>
 </li>
-<li>Check context (auto or explicit)</li>
+<li>
+<p>Check context (auto or explicit)</p>
+</li>
 <li>
 <p>Route to app's command script</p>
 </li>
 <li>
 <p><strong>Explicit app in command?</strong></p>
 </li>
-<li><code>tfgrid-compose tfgrid-ai-agent create</code> overrides context</li>
+<li>
+<p><code>tfgrid-compose tfgrid-ai-agent create</code> overrides context</p>
+</li>
 </ol>
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>

@@ -2358,10 +2358,12 @@
 <hr />
 <h2 id="design-philosophy">Design Philosophy<a class="headerlink" href="#design-philosophy" title="Permanent link">&para;</a></h2>
 <p><strong>Universal CLI, App-Specific Features</strong></p>
-<p>tfgrid-compose provides a <strong>universal interface</strong> where:
-- 🔧 <strong>Generic commands</strong> work for all apps (up, down, status, logs, ssh)
-- 🎯 <strong>App-specific commands</strong> are defined by each app (create, run, stop, etc.)
-- 🚀 <strong>One CLI</strong> to rule them all</p>
+<p>tfgrid-compose provides a <strong>universal interface</strong> where:</p>
+<ul>
+<li>🔧 <strong>Generic commands</strong> work for all apps (up, down, status, logs, ssh)</li>
+<li>🎯 <strong>App-specific commands</strong> are defined by each app (create, run, stop, etc.)</li>
+<li>🚀 <strong>One CLI</strong> to rule them all</li>
+</ul>
 <p>Each app becomes a <strong>first-class citizen</strong> with its own command set!</p>
 <hr />
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
@@ -2391,11 +2393,13 @@
 <p>When you run a command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>my-project
 </code></pre></div>
-<p>tfgrid-compose:
-1. ✅ Checks if it's a generic command
-2. ✅ If not, looks in active app's manifest
-3. ✅ Finds the script path
-4. ✅ Executes on the VM via SSH</p>
+<p>tfgrid-compose:</p>
+<ol>
+<li>✅ Checks if it's a generic command</li>
+<li>✅ If not, looks in active app's manifest</li>
+<li>✅ Finds the script path</li>
+<li>✅ Executes on the VM via SSH</li>
+</ol>
 <p><strong>You get native app functionality through the universal CLI!</strong></p>
 <hr />
 <h2 id="generic-commands">Generic Commands<a class="headerlink" href="#generic-commands" title="Permanent link">&para;</a></h2>
@@ -2637,10 +2641,12 @@
 <a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>   → ssh root@10.1.3.2 &quot;/opt/ai-agent/scripts/create-project.sh my-project&quot;
 </code></pre></div>
 <h3 id="script-execution"><strong>Script Execution</strong><a class="headerlink" href="#script-execution" title="Permanent link">&para;</a></h3>
-<p>Commands run with:
-- <strong>SSH TTY</strong> - Interactive prompts work
-- <strong>Arguments passed</strong> - Via command line
-- <strong>Exit codes</strong> - Propagated to local CLI</p>
+<p>Commands run with:</p>
+<ul>
+<li><strong>SSH TTY</strong> - Interactive prompts work</li>
+<li><strong>Arguments passed</strong> - Via command line</li>
+<li><strong>Exit codes</strong> - Propagated to local CLI</li>
+</ul>
 <hr />
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="example-1-ai-agent-workflow"><strong>Example 1: AI Agent Workflow</strong><a class="headerlink" href="#example-1-ai-agent-workflow" title="Permanent link">&para;</a></h3>

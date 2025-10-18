@@ -391,7 +391,7 @@ resources:
 
 Then redeploy:
 ```bash
-make down && make up
+tfgrid-compose down && tfgrid-compose up tfgrid-ai-agent
 ```
 
 ---
@@ -401,37 +401,44 @@ make down && make up
 ### Setup GitHub
 
 ```bash
-# 1. Show SSH key
-make exec CMD='ai-agent git-show-key'
+# 1. Show SSH key (from VM)
+tfgrid-compose ssh
+cat ~/.ssh/id_rsa.pub
 
 # 2. Add to GitHub
 # Copy the key and add it to https://github.com/settings/keys
 
-# 3. Setup project with GitHub
-make exec CMD='ai-agent git-setup my-project github'
+# 3. Setup git remote in project
+tfgrid-compose ssh
+cd /home/developer/code/my-project
+git remote add origin git@github.com:user/repo.git
+git push -u origin main
 ```
 
 ### Setup Gitea
 
 ```bash
-# 1. Show SSH key
-make exec CMD='ai-agent git-show-key'
+# 1. Show SSH key (from VM)
+tfgrid-compose ssh
+cat ~/.ssh/id_rsa.pub
 
 # 2. Add to your Gitea instance
 # Go to Gitea → Settings → SSH Keys
 
-# 3. Setup project with Gitea
-make exec CMD='ai-agent git-setup my-project gitea'
+# 3. Setup git remote in project
+cd /home/developer/code/my-project
+git remote add origin git@git.example.com:user/repo.git
+git push -u origin main
 ```
 
 ### Manual Git Configuration
 
 ```bash
 # SSH into VM
-make ssh
+tfgrid-compose ssh
 
 # Configure git
-cd /opt/ai-agent/projects/my-project
+cd /home/developer/code/my-project
 git remote add origin git@github.com:user/repo.git
 git push -u origin main
 ```
@@ -444,39 +451,43 @@ git push -u origin main
 
 ```bash
 # Watch agent progress
-make exec CMD='ai-agent monitor my-project'
+tfgrid-compose monitor my-project
 
 # View live logs
-make exec CMD='ai-agent logs my-project'
+tfgrid-compose logs my-project
+
+# View project summary
+tfgrid-compose summary my-project
 ```
 
 ### SSH Access
 
 ```bash
 # SSH into VM
-make ssh
+tfgrid-compose ssh
 
 # Check running processes
 ps aux | grep ai-agent
 
 # View project files
-ls -la /opt/ai-agent/projects/
+ls -la /home/developer/code/
 
-# Check system logs
-journalctl -u ai-agent -f
+# Check system logs  
+journalctl -u tfgrid-ai-agent -f
 ```
 
 ### Status Overview
 
 ```bash
 # All projects status
-make exec CMD='ai-agent status'
+tfgrid-compose projects
 
 # Deployment status
-make status
+tfgrid-compose status
 
-# VM addresses
-make address
+# Service status on VM
+tfgrid-compose ssh
+systemctl status tfgrid-ai-agent
 ```
 
 ---
@@ -487,54 +498,58 @@ make address
 
 ```bash
 # Check logs
-make exec CMD='ai-agent logs <project>'
+tfgrid-compose logs my-project
 
-# Verify Qwen login
-make exec CMD='qwen whoami'
+# Check service status
+tfgrid-compose ssh
+systemctl status tfgrid-ai-agent
+journalctl -u tfgrid-ai-agent -n 50
 
-# Re-login if needed
-make exec CMD='qwen login'
+# Restart service if needed
+systemctl restart tfgrid-ai-agent
 ```
 
 ### SSH Connection Issues
 
 ```bash
 # Check WireGuard
-sudo wg show wg-ai-agent
+sudo wg show
 
-# Restart WireGuard if needed
-make wg
+# Test connectivity (get IP from status)
+tfgrid-compose status
+ping -c 3 10.1.3.2  # Use your actual IP
 
-# Test connectivity
-ping -c 3 $(cat .tfgrid-compose/state.yaml | grep vm_ip | awk '{print $2}')
+# Reconnect if needed
+tfgrid-compose ssh
 ```
 
 ### Out of Disk Space
 
 ```bash
 # SSH in and check
-make ssh
+tfgrid-compose ssh
 df -h
 
 # Clean up old projects
-ai-agent remove old-project-name
+tfgrid-compose remove old-project-name
 
 # Or increase disk size (requires redeployment)
-# Edit tfgrid-compose.yaml → resources.disk
-make down && make up
+# Edit app's tfgrid-compose.yaml → resources.disk
+tfgrid-compose down
+tfgrid-compose up tfgrid-ai-agent
 ```
 
 ### Performance Issues
 
 ```bash
 # Check resource usage
-make ssh
+tfgrid-compose ssh
 htop
 
 # Consider upgrading resources
-# Edit tfgrid-compose.yaml
-# Increase CPU/memory
-make down && make up
+# Edit app's tfgrid-compose.yaml → resources (cpu/memory)
+tfgrid-compose down
+tfgrid-compose up tfgrid-ai-agent
 ```
 
 ---
@@ -570,36 +585,33 @@ ai-agent create backend-api
 
 ```bash
 # Always monitor long-running tasks
-make exec CMD='ai-agent run big-project' &
-make exec CMD='ai-agent monitor big-project'
+tfgrid-compose run big-project &
+tfgrid-compose monitor big-project
 ```
 
 ### 4. Git Workflow
 
 ```bash
-# Setup git first
-make exec CMD='ai-agent git-setup project github'
-
-# Agent will auto-commit
+# Agent auto-commits to local git
 # Review before pushing
-make ssh
-cd /opt/ai-agent/projects/project
+tfgrid-compose ssh
+cd /home/developer/code/my-project
 git log
 git diff
-git push
+git push origin main
 ```
 
 ### 5. Resource Management
 
 ```bash
 # Stop projects when not needed
-make exec CMD='ai-agent stopall'
+tfgrid-compose stopall
 
 # Remove completed projects
-make exec CMD='ai-agent remove old-project'
+tfgrid-compose remove old-project
 
 # Destroy VM when not in use
-make down
+tfgrid-compose down
 ```
 
 ---
@@ -610,48 +622,47 @@ make down
 
 ```bash
 # Create and run multiple projects
-make exec CMD='ai-agent create frontend'
-make exec CMD='ai-agent create backend'
-make exec CMD='ai-agent create docs'
+tfgrid-compose create frontend
+tfgrid-compose create backend
+tfgrid-compose create docs
 
-make exec CMD='ai-agent run frontend' &
-make exec CMD='ai-agent run backend' &
-make exec CMD='ai-agent run docs' &
+tfgrid-compose run frontend &
+tfgrid-compose run backend &
+tfgrid-compose run docs &
 
 # Monitor all
-make exec CMD='ai-agent status'
+tfgrid-compose projects
 ```
 
-### Custom Agent Scripts
+### Custom Automation Scripts
 
 ```bash
-# SSH in
-make ssh
-
-# Create custom script
-cat > /opt/ai-agent/custom-agent.sh << 'EOF'
+# Create local automation script
+cat > ~/ai-agent-batch.sh << 'EOF'
 #!/bin/bash
-ai-agent create "$1"
-ai-agent run "$1" &
-ai-agent monitor "$1"
+for project in "$@"; do
+  tfgrid-compose create "$project"
+  tfgrid-compose run "$project" &
+done
+tfgrid-compose projects
 EOF
 
-chmod +x /opt/ai-agent/custom-agent.sh
+chmod +x ~/ai-agent-batch.sh
 
 # Use it
-/opt/ai-agent/custom-agent.sh my-new-project
+~/ai-agent-batch.sh frontend backend docs
 ```
 
 ### Scheduled Runs
 
 ```bash
-# SSH in and setup cron
-make ssh
+# SSH into VM and setup cron
+tfgrid-compose ssh
 crontab -e
 
-# Add scheduled agent runs
-0 2 * * * ai-agent run nightly-refactor
-0 9 * * * ai-agent run morning-docs
+# Add scheduled runs (runs on VM)
+0 2 * * * cd /opt/ai-agent && ./scripts/run-project.sh nightly-refactor
+0 9 * * * cd /opt/ai-agent && ./scripts/run-project.sh morning-docs
 ```
 
 ---
@@ -659,7 +670,7 @@ crontab -e
 ## FAQ
 
 **Q: Can I run multiple agents simultaneously?**  
-A: Yes! Each project runs independently. Use `ai-agent status` to see all.
+A: Yes! Each project runs independently. Use `tfgrid-compose projects` to see all.
 
 **Q: How much does it cost?**  
 A: Depends on ThreeFold Grid pricing. Typically $10-30/month for a 4CPU/8GB VM.
@@ -668,16 +679,16 @@ A: Depends on ThreeFold Grid pricing. Typically $10-30/month for a 4CPU/8GB VM.
 A: Yes, deploy once and use `tfgrid-compose exec` from any machine with access.
 
 **Q: What if my local machine disconnects?**  
-A: Agent keeps running on the VM. Reconnect anytime with `make exec`.
+A: Agent keeps running on the VM. Reconnect anytime with `tfgrid-compose ssh`.
 
 **Q: Can I use my own AI API keys?**  
 A: Yes, set `QWEN_API_KEY` before deployment or SSH in and configure.
 
 **Q: How do I backup projects?**  
-A: SSH in and copy `/opt/ai-agent/projects/` or use git push.
+A: SSH in and copy `/home/developer/code/` or use git push to remote.
 
 **Q: Can I upgrade the agent version?**  
-A: Yes, `make down` then `make up` with updated tfgrid-ai-agent repo.
+A: Yes, `tfgrid-compose down` then deploy updated app from registry.
 
 ---
 
@@ -689,8 +700,9 @@ A: Yes, `make down` then `make up` with updated tfgrid-ai-agent repo.
 - **Scale:** Deploy multiple instances for different teams
 
 **Need help?** 
-- Check logs: `make exec CMD='ai-agent logs <project>'`
-- SSH debug: `make ssh`
+
+- Check logs: `tfgrid-compose logs <project>`
+- SSH debug: `tfgrid-compose ssh`
 - Community: https://forum.threefold.io
 
 ---

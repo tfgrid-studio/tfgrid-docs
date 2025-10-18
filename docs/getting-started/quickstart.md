@@ -2,7 +2,8 @@
 
 Deploy your first application on ThreeFold Grid in **5 minutes**.
 
-:::tip New in v0.10.0
+:::tip 
+New in v0.10.0
 You can now deploy apps directly by name! No need to clone repositories manually.
 :::
 

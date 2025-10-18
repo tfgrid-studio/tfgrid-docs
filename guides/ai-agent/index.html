@@ -1320,9 +1320,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#custom-agent-scripts" class="md-nav__link">
+  <a href="#custom-automation-scripts" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom Agent Scripts
+      Custom Automation Scripts
     </span>
   </a>
   
@@ -2562,9 +2562,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#custom-agent-scripts" class="md-nav__link">
+  <a href="#custom-automation-scripts" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom Agent Scripts
+      Custom Automation Scripts
     </span>
   </a>
   
@@ -3013,36 +3013,43 @@
 <a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w">   </span><span class="c1"># Change this</span>
 </code></pre></div>
 <p>Then redeploy:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>make<span class="w"> </span>down<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>up
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div></p>
 <hr />
 <h2 id="git-integration">Git Integration<a class="headerlink" href="#git-integration" title="Permanent link">&para;</a></h2>
 <h3 id="setup-github">Setup GitHub<a class="headerlink" href="#setup-github" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 1. Show SSH key</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent git-show-key&#39;</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># 2. Add to GitHub</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># Copy the key and add it to https://github.com/settings/keys</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1"># 3. Setup project with GitHub</span>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent git-setup my-project github&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 1. Show SSH key (from VM)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># 2. Add to GitHub</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1"># Copy the key and add it to https://github.com/settings/keys</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="c1"># 3. Setup git remote in project</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user/repo.git
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <h3 id="setup-gitea">Setup Gitea<a class="headerlink" href="#setup-gitea" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># 1. Show SSH key</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent git-show-key&#39;</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># 2. Add to your Gitea instance</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1"># Go to Gitea → Settings → SSH Keys</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="c1"># 3. Setup project with Gitea</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent git-setup my-project gitea&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># 1. Show SSH key (from VM)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1"># 2. Add to your Gitea instance</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1"># Go to Gitea → Settings → SSH Keys</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="c1"># 3. Setup git remote in project</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@git.example.com:user/repo.git
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <h3 id="manual-git-configuration">Manual Git Configuration<a class="headerlink" href="#manual-git-configuration" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># SSH into VM</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>make<span class="w"> </span>ssh
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>tfgrid-compose<span class="w"> </span>ssh
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Configure git</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nb">cd</span><span class="w"> </span>/opt/ai-agent/projects/my-project
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
 <a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user/repo.git
 <a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
@@ -3050,77 +3057,85 @@
 <h2 id="monitoring-logs">Monitoring &amp; Logs<a class="headerlink" href="#monitoring-logs" title="Permanent link">&para;</a></h2>
 <h3 id="real-time-monitoring">Real-time Monitoring<a class="headerlink" href="#real-time-monitoring" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Watch agent progress</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent monitor my-project&#39;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>my-project
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># View live logs</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent logs my-project&#39;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>my-project
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># View project summary</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>tfgrid-compose<span class="w"> </span>summary<span class="w"> </span>my-project
 </code></pre></div>
 <h3 id="ssh-access">SSH Access<a class="headerlink" href="#ssh-access" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># SSH into VM</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>make<span class="w"> </span>ssh
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>tfgrid-compose<span class="w"> </span>ssh
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1"># Check running processes</span>
 <a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ai-agent
 <a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
 <a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="c1"># View project files</span>
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>ls<span class="w"> </span>-la<span class="w"> </span>/opt/ai-agent/projects/
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>ls<span class="w"> </span>-la<span class="w"> </span>/home/developer/code/
 <a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
-<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="c1"># Check system logs</span>
-<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>ai-agent<span class="w"> </span>-f
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="c1"># Check system logs  </span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>-f
 </code></pre></div>
 <h3 id="status-overview">Status Overview<a class="headerlink" href="#status-overview" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># All projects status</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent status&#39;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>tfgrid-compose<span class="w"> </span>projects
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Deployment status</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>make<span class="w"> </span>status
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>tfgrid-compose<span class="w"> </span>status
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="c1"># VM addresses</span>
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>make<span class="w"> </span>address
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="c1"># Service status on VM</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>systemctl<span class="w"> </span>status<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <hr />
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="agent-wont-start">Agent Won't Start<a class="headerlink" href="#agent-wont-start" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Check logs</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent logs &lt;project&gt;&#39;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>my-project
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c1"># Verify Qwen login</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;qwen whoami&#39;</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="c1"># Re-login if needed</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;qwen login&#39;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c1"># Check service status</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>systemctl<span class="w"> </span>status<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="c1"># Restart service if needed</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <h3 id="ssh-connection-issues">SSH Connection Issues<a class="headerlink" href="#ssh-connection-issues" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Check WireGuard</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>sudo<span class="w"> </span>wg<span class="w"> </span>show<span class="w"> </span>wg-ai-agent
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>sudo<span class="w"> </span>wg<span class="w"> </span>show
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1"># Restart WireGuard if needed</span>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>make<span class="w"> </span>wg
-<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="c1"># Test connectivity</span>
-<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="k">$(</span>cat<span class="w"> </span>.tfgrid-compose/state.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>vm_ip<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1"># Test connectivity (get IP from status)</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>tfgrid-compose<span class="w"> </span>status
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">10</span>.1.3.2<span class="w">  </span><span class="c1"># Use your actual IP</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="c1"># Reconnect if needed</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>tfgrid-compose<span class="w"> </span>ssh
 </code></pre></div>
 <h3 id="out-of-disk-space">Out of Disk Space<a class="headerlink" href="#out-of-disk-space" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># SSH in and check</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>make<span class="w"> </span>ssh
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>tfgrid-compose<span class="w"> </span>ssh
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>df<span class="w"> </span>-h
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
 <a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="c1"># Clean up old projects</span>
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>ai-agent<span class="w"> </span>remove<span class="w"> </span>old-project-name
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>old-project-name
 <a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
 <a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1"># Or increase disk size (requires redeployment)</span>
-<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="c1"># Edit tfgrid-compose.yaml → resources.disk</span>
-<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>make<span class="w"> </span>down<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>up
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="c1"># Edit app&#39;s tfgrid-compose.yaml → resources.disk</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>tfgrid-compose<span class="w"> </span>down
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <h3 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># Check resource usage</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>make<span class="w"> </span>ssh
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>tfgrid-compose<span class="w"> </span>ssh
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>htop
 <a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
 <a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="c1"># Consider upgrading resources</span>
-<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1"># Edit tfgrid-compose.yaml</span>
-<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="c1"># Increase CPU/memory</span>
-<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>make<span class="w"> </span>down<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>up
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1"># Edit app&#39;s tfgrid-compose.yaml → resources (cpu/memory)</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>tfgrid-compose<span class="w"> </span>down
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <hr />
 <h2 id="best-practices_1">Best Practices<a class="headerlink" href="#best-practices_1" title="Permanent link">&para;</a></h2>
@@ -3145,88 +3160,84 @@
 - "Fix bugs" (which bugs?)</p>
 <h3 id="3-monitoring">3. Monitoring<a class="headerlink" href="#3-monitoring" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Always monitor long-running tasks</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent run big-project&#39;</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent monitor big-project&#39;</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>big-project<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>big-project
 </code></pre></div>
 <h3 id="4-git-workflow">4. Git Workflow<a class="headerlink" href="#4-git-workflow" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Setup git first</span>
-<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent git-setup project github&#39;</span>
-<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
-<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1"># Agent will auto-commit</span>
-<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="c1"># Review before pushing</span>
-<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>make<span class="w"> </span>ssh
-<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="nb">cd</span><span class="w"> </span>/opt/ai-agent/projects/project
-<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>git<span class="w"> </span>log
-<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>git<span class="w"> </span>diff
-<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>git<span class="w"> </span>push
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Agent auto-commits to local git</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="c1"># Review before pushing</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>git<span class="w"> </span>log
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>git<span class="w"> </span>diff
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <h3 id="5-resource-management">5. Resource Management<a class="headerlink" href="#5-resource-management" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Stop projects when not needed</span>
-<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent stopall&#39;</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>tfgrid-compose<span class="w"> </span>stopall
 <a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
 <a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c1"># Remove completed projects</span>
-<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent remove old-project&#39;</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>old-project
 <a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
 <a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="c1"># Destroy VM when not in use</span>
-<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>make<span class="w"> </span>down
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>tfgrid-compose<span class="w"> </span>down
 </code></pre></div>
 <hr />
 <h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
 <h3 id="multiple-projects">Multiple Projects<a class="headerlink" href="#multiple-projects" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># Create and run multiple projects</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent create frontend&#39;</span>
-<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent create backend&#39;</span>
-<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent create docs&#39;</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>frontend
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>backend
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>docs
 <a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
-<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent run frontend&#39;</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent run backend&#39;</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent run docs&#39;</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>frontend<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>backend<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>docs<span class="w"> </span><span class="p">&amp;</span>
 <a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>
 <a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="c1"># Monitor all</span>
-<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>make<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;ai-agent status&#39;</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>tfgrid-compose<span class="w"> </span>projects
 </code></pre></div>
-<h3 id="custom-agent-scripts">Custom Agent Scripts<a class="headerlink" href="#custom-agent-scripts" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># SSH in</span>
-<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>make<span class="w"> </span>ssh
-<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
-<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="c1"># Create custom script</span>
-<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>/opt/ai-agent/custom-agent.sh<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
-<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="s">#!/bin/bash</span>
-<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="s">ai-agent create &quot;$1&quot;</span>
-<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="s">ai-agent run &quot;$1&quot; &amp;</span>
-<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="s">ai-agent monitor &quot;$1&quot;</span>
-<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="s">EOF</span>
-<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>
-<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>chmod<span class="w"> </span>+x<span class="w"> </span>/opt/ai-agent/custom-agent.sh
-<a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a>
-<a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a><span class="c1"># Use it</span>
-<a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a>/opt/ai-agent/custom-agent.sh<span class="w"> </span>my-new-project
+<h3 id="custom-automation-scripts">Custom Automation Scripts<a class="headerlink" href="#custom-automation-scripts" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># Create local automation script</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>~/ai-agent-batch.sh<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="s">#!/bin/bash</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="s">for project in &quot;$@&quot;; do</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="s">  tfgrid-compose create &quot;$project&quot;</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="s">  tfgrid-compose run &quot;$project&quot; &amp;</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="s">done</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="s">tfgrid-compose projects</span>
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="s">EOF</span>
+<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>
+<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>chmod<span class="w"> </span>+x<span class="w"> </span>~/ai-agent-batch.sh
+<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>
+<a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="c1"># Use it</span>
+<a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a>~/ai-agent-batch.sh<span class="w"> </span>frontend<span class="w"> </span>backend<span class="w"> </span>docs
 </code></pre></div>
 <h3 id="scheduled-runs">Scheduled Runs<a class="headerlink" href="#scheduled-runs" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># SSH in and setup cron</span>
-<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>make<span class="w"> </span>ssh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># SSH into VM and setup cron</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>tfgrid-compose<span class="w"> </span>ssh
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>crontab<span class="w"> </span>-e
 <a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
-<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="c1"># Add scheduled agent runs</span>
-<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>ai-agent<span class="w"> </span>run<span class="w"> </span>nightly-refactor
-<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="m">0</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>ai-agent<span class="w"> </span>run<span class="w"> </span>morning-docs
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="c1"># Add scheduled runs (runs on VM)</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/ai-agent<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./scripts/run-project.sh<span class="w"> </span>nightly-refactor
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="m">0</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/ai-agent<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./scripts/run-project.sh<span class="w"> </span>morning-docs
 </code></pre></div>
 <hr />
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <p><strong>Q: Can I run multiple agents simultaneously?</strong><br />
-A: Yes! Each project runs independently. Use <code>ai-agent status</code> to see all.</p>
+A: Yes! Each project runs independently. Use <code>tfgrid-compose projects</code> to see all.</p>
 <p><strong>Q: How much does it cost?</strong><br />
 A: Depends on ThreeFold Grid pricing. Typically $10-30/month for a 4CPU/8GB VM.</p>
 <p><strong>Q: Can I access from multiple machines?</strong><br />
 A: Yes, deploy once and use <code>tfgrid-compose exec</code> from any machine with access.</p>
 <p><strong>Q: What if my local machine disconnects?</strong><br />
-A: Agent keeps running on the VM. Reconnect anytime with <code>make exec</code>.</p>
+A: Agent keeps running on the VM. Reconnect anytime with <code>tfgrid-compose ssh</code>.</p>
 <p><strong>Q: Can I use my own AI API keys?</strong><br />
 A: Yes, set <code>QWEN_API_KEY</code> before deployment or SSH in and configure.</p>
 <p><strong>Q: How do I backup projects?</strong><br />
-A: SSH in and copy <code>/opt/ai-agent/projects/</code> or use git push.</p>
+A: SSH in and copy <code>/home/developer/code/</code> or use git push to remote.</p>
 <p><strong>Q: Can I upgrade the agent version?</strong><br />
-A: Yes, <code>make down</code> then <code>make up</code> with updated tfgrid-ai-agent repo.</p>
+A: Yes, <code>tfgrid-compose down</code> then deploy updated app from registry.</p>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3235,10 +3246,12 @@ A: Yes, <code>make down</code> then <code>make up</code> with updated tfgrid-ai-
 <li><strong>Share:</strong> Push your projects to GitHub/Gitea</li>
 <li><strong>Scale:</strong> Deploy multiple instances for different teams</li>
 </ul>
-<p><strong>Need help?</strong> 
-- Check logs: <code>make exec CMD='ai-agent logs &lt;project&gt;'</code>
-- SSH debug: <code>make ssh</code>
-- Community: https://forum.threefold.io</p>
+<p><strong>Need help?</strong> </p>
+<ul>
+<li>Check logs: <code>tfgrid-compose logs &lt;project&gt;</code></li>
+<li>SSH debug: <code>tfgrid-compose ssh</code></li>
+<li>Community: https://forum.threefold.io</li>
+</ul>
 <hr />
 <p><strong>Ready to code with AI on ThreeFold Grid!</strong> 🚀</p>
 

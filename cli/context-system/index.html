@@ -850,9 +850,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#switch-change-active-app" class="md-nav__link">
+  <a href="#select-change-active-app" class="md-nav__link">
     <span class="md-ellipsis">
-      switch - Change Active App
+      select - Change Active App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unselect-clear-active-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      unselect - Clear Active App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-project-change-active-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      select-project - Change Active Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unselect-project-clear-project-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      unselect-project - Clear Project Selection
     </span>
   </a>
   
@@ -943,9 +970,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quick-commands-without-switching" class="md-nav__link">
+  <a href="#quick-commands-without-selection" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Commands Without Switching
+      Quick Commands Without Selection
     </span>
   </a>
   
@@ -1968,9 +1995,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#switch-change-active-app" class="md-nav__link">
+  <a href="#select-change-active-app" class="md-nav__link">
     <span class="md-ellipsis">
-      switch - Change Active App
+      select - Change Active App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unselect-clear-active-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      unselect - Clear Active App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-project-change-active-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      select-project - Change Active Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unselect-project-clear-project-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      unselect-project - Clear Project Selection
     </span>
   </a>
   
@@ -2061,9 +2115,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quick-commands-without-switching" class="md-nav__link">
+  <a href="#quick-commands-without-selection" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Commands Without Switching
+      Quick Commands Without Selection
     </span>
   </a>
   
@@ -2198,8 +2252,9 @@
 <p>The <strong>context system</strong> allows you to work with multiple deployed apps without constantly specifying which one you're targeting. It's like setting a "current directory" for your deployed apps.</p>
 <p><strong>Key Features:</strong>
 - 🎯 <strong>Smart auto-detection</strong> - Single app? No setup needed!
-- 🔄 <strong>Switch between apps</strong> - <code>tfgrid-compose switch</code>
-- 📝 <strong>Context-aware commands</strong> - Commands use active app
+- 🔄 <strong>Select between apps</strong> - <code>tfgrid-compose select</code>
+- 🔄 <strong>Select between projects</strong> - <code>tfgrid-compose select-project</code> (for apps that support it)
+- 📝 <strong>Context-aware commands</strong> - Commands use active app and project
 - 🌐 <strong>Both modes</strong> - Explicit or contextual</p>
 <hr />
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
@@ -2220,7 +2275,7 @@
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>some-web-app
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Now you need to specify which app</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Commands now target tfgrid-ai-agent</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>my-project
@@ -2237,10 +2292,10 @@
 </code></pre></div>
 <hr />
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<h3 id="switch-change-active-app"><strong>switch</strong> - Change Active App<a class="headerlink" href="#switch-change-active-app" title="Permanent link">&para;</a></h3>
+<h3 id="select-change-active-app"><strong>select</strong> - Change Active App<a class="headerlink" href="#select-change-active-app" title="Permanent link">&para;</a></h3>
 <p>Set which app commands should target:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Switch to an app</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Select an app</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># All subsequent commands use this app</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project1
@@ -2249,9 +2304,38 @@
 <p><strong>When to use:</strong>
 - You have multiple apps deployed
 - You want to work with a specific app for a while</p>
+<h3 id="unselect-clear-active-app"><strong>unselect</strong> - Clear Active App<a class="headerlink" href="#unselect-clear-active-app" title="Permanent link">&para;</a></h3>
+<p>Clear the current app selection:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Clear app context</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>tfgrid-compose<span class="w"> </span>unselect
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Commands now require explicit app</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project<span class="w">  </span><span class="c1"># Error</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>tfgrid-compose<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>create<span class="w"> </span>project<span class="w">  </span><span class="c1"># Works</span>
+</code></pre></div>
+<h3 id="select-project-change-active-project"><strong>select-project</strong> - Change Active Project<a class="headerlink" href="#select-project-change-active-project" title="Permanent link">&para;</a></h3>
+<p>For apps that manage multiple projects (like tfgrid-ai-agent):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Interactive selection</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span>-project
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Direct selection</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span>-project<span class="w"> </span>my-project
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Commands now use selected project</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>tfgrid-compose<span class="w"> </span>run<span class="w">       </span><span class="c1"># Runs my-project</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>tfgrid-compose<span class="w"> </span>logs<span class="w">      </span><span class="c1"># Logs for my-project</span>
+</code></pre></div>
+<h3 id="unselect-project-clear-project-selection"><strong>unselect-project</strong> - Clear Project Selection<a class="headerlink" href="#unselect-project-clear-project-selection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Clear project context</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tfgrid-compose<span class="w"> </span>unselect-project
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Commands require project name</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>tfgrid-compose<span class="w"> </span>run<span class="w">            </span><span class="c1"># Error</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>my-project<span class="w"> </span><span class="c1"># Works</span>
+</code></pre></div>
 <h3 id="list-show-all-apps"><strong>list</strong> - Show All Apps<a class="headerlink" href="#list-show-all-apps" title="Permanent link">&para;</a></h3>
 <p>See all deployed apps and which is active:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tfgrid-compose<span class="w"> </span>list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>list
 </code></pre></div>
 <p><strong>Output shows:</strong>
 - ✅ All deployed apps with IPs
@@ -2260,30 +2344,30 @@
 <hr />
 <h2 id="context-behavior">Context Behavior<a class="headerlink" href="#context-behavior" title="Permanent link">&para;</a></h2>
 <h3 id="single-app-scenario"><strong>Single App Scenario</strong><a class="headerlink" href="#single-app-scenario" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># You deploy one app</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># NO switch needed!</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># → Automatically uses tfgrid-ai-agent</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># You deploy one app</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># NO switch needed!</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># → Automatically uses tfgrid-ai-agent</span>
 </code></pre></div>
 <p>✅ <strong>Zero friction for common case</strong></p>
 <h3 id="multiple-apps-scenario"><strong>Multiple Apps Scenario</strong><a class="headerlink" href="#multiple-apps-scenario" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># You have multiple apps</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tfgrid-compose<span class="w"> </span>list
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">#   * tfgrid-ai-agent (active)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">#     web-dashboard</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">#     api-backend</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Commands without context fail helpfully</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># → Error: Multiple apps. Use: tfgrid-compose switch &lt;app&gt;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># Set context</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>web-dashboard
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1"># Now commands work</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>tfgrid-compose<span class="w"> </span>deploy
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># You have multiple apps</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>list
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1">#   * tfgrid-ai-agent (active)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">#     web-dashboard</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1">#     api-backend</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Commands without context fail helpfully</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># → Error: Multiple apps. Use: tfgrid-compose select &lt;app&gt;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># Set context</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>web-dashboard
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1"># Now commands work</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>tfgrid-compose<span class="w"> </span>deploy
 </code></pre></div>
 <p>✅ <strong>Clear errors guide you</strong></p>
 <hr />
@@ -2315,93 +2399,97 @@
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="working-with-one-app"><strong>Working with One App</strong><a class="headerlink" href="#working-with-one-app" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Deploy</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Just use commands directly</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>project
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>tfgrid-compose<span class="w"> </span>projects
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Deploy</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Just use commands directly</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>project
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>tfgrid-compose<span class="w"> </span>projects
 </code></pre></div>
-<p><strong>No <code>switch</code> needed!</strong></p>
+<p><strong>No <code>select</code> needed!</strong></p>
 <h3 id="working-with-multiple-apps"><strong>Working with Multiple Apps</strong><a class="headerlink" href="#working-with-multiple-apps" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Set context at start of work session</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Work on multiple projects</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project1
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project2
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>project1
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1"># Switch when changing apps</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>web-dashboard
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>tfgrid-compose<span class="w"> </span>deploy
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Set context at start of work session</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Work on multiple projects</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project1
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project2
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>project1
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1"># Select when changing apps</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>web-dashboard
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>tfgrid-compose<span class="w"> </span>deploy
 </code></pre></div>
-<p><strong>One <code>switch</code> per work session</strong></p>
-<h3 id="quick-commands-without-switching"><strong>Quick Commands Without Switching</strong><a class="headerlink" href="#quick-commands-without-switching" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Explicit app name (no switch needed)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>create<span class="w"> </span>quick-project
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>tfgrid-compose<span class="w"> </span>web-dashboard<span class="w"> </span>status
+<p><strong>One <code>select</code> per work session</strong></p>
+<h3 id="quick-commands-without-selection"><strong>Quick Commands Without Selection</strong><a class="headerlink" href="#quick-commands-without-selection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Explicit app name (no select needed)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>tfgrid-compose<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>create<span class="w"> </span>quick-project
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>tfgrid-compose<span class="w"> </span>web-dashboard<span class="w"> </span>status
 </code></pre></div>
 <p><strong>Override context for one-off commands</strong></p>
 <hr />
 <h2 id="technical-details">Technical Details<a class="headerlink" href="#technical-details" title="Permanent link">&para;</a></h2>
 <h3 id="context-storage"><strong>Context Storage</strong><a class="headerlink" href="#context-storage" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Location:</strong> <code>~/.config/tfgrid-compose/current-app</code></li>
-<li><strong>Format:</strong> Plain text file with app name</li>
+<li><strong>Location:</strong> <code>~/.config/tfgrid-compose/context.yaml</code></li>
+<li><strong>Format:</strong> YAML with app and project context</li>
 <li><strong>Scope:</strong> Global (all directories)</li>
 </ul>
+<p><strong>Example context file:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">active_app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tfgrid-ai-agent</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">active_project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
+</code></pre></div></p>
 <h3 id="auto-detection-logic"><strong>Auto-Detection Logic</strong><a class="headerlink" href="#auto-detection-logic" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>1. Check deployed apps count
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>2. If count == 1:
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>   - Use that app automatically
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>   - No context file needed
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>3. If count &gt; 1:
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>   - Check context file
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>   - If missing: Prompt to switch
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>4. If count == 0:
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>   - Show help to deploy
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>1. Check deployed apps count
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>2. If count == 1:
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>   - Use that app automatically
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>   - No context file needed
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>3. If count &gt; 1:
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>   - Check context file
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>   - If missing: Prompt to select
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>4. If count == 0:
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>   - Show help to deploy
 </code></pre></div>
 <hr />
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="example-1-fresh-start"><strong>Example 1: Fresh Start</strong><a class="headerlink" href="#example-1-fresh-start" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Deploy your first app</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Start using it immediately</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>music-website
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>music-website
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>music-website
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Deploy your first app</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Start using it immediately</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>music-website
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>music-website
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>music-website
 </code></pre></div>
 <h3 id="example-2-multiple-apps"><strong>Example 2: Multiple Apps</strong><a class="headerlink" href="#example-2-multiple-apps" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Deploy apps</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>web-dashboard
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># Set context</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1"># Work with AI agent</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>backend-api
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>backend-api
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="c1"># Switch to other app</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>web-dashboard
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>tfgrid-compose<span class="w"> </span>deploy
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Deploy apps</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>web-dashboard
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># Set context</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1"># Work with AI agent</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>backend-api
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>backend-api
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="c1"># Select other app</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>web-dashboard
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>tfgrid-compose<span class="w"> </span>deploy
 </code></pre></div>
 <h3 id="example-3-mixed-mode"><strong>Example 3: Mixed Mode</strong><a class="headerlink" href="#example-3-mixed-mode" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Have context set to ai-agent</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Use contextual commands</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project1
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Quick command on other app (no switch)</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>tfgrid-compose<span class="w"> </span>web-dashboard<span class="w"> </span>status
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># Continue with ai-agent (context unchanged)</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>project1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Have context set to ai-agent</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Use contextual commands</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project1
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># Quick command on other app (no selection change)</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>tfgrid-compose<span class="w"> </span>web-dashboard<span class="w"> </span>status
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="c1"># Continue with ai-agent (context unchanged)</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>project1
 </code></pre></div>
 <hr />
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>

@@ -915,9 +915,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-git-credentials-optional" class="md-nav__link">
+  <a href="#2-configure-git-identity" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Configure Git Credentials (Optional)
+      2. Configure Git Identity
     </span>
   </a>
   
@@ -980,6 +980,66 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#project-selection-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Selection &amp; Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Selection &amp; Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-level-context-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Level Context System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-active-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Active Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-aware-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context-Aware Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Override Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#workflows" class="md-nav__link">
     <span class="md-ellipsis">
       Workflows
@@ -1008,9 +1068,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#workflow-3-multiple-projects" class="md-nav__link">
+  <a href="#workflow-3-multiple-projects-concurrent-execution" class="md-nav__link">
     <span class="md-ellipsis">
-      Workflow 3: Multiple Projects
+      Workflow 3: Multiple Projects (Concurrent Execution)
     </span>
   </a>
   
@@ -2157,9 +2217,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-git-credentials-optional" class="md-nav__link">
+  <a href="#2-configure-git-identity" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Configure Git Credentials (Optional)
+      2. Configure Git Identity
     </span>
   </a>
   
@@ -2222,6 +2282,66 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#project-selection-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Selection &amp; Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Selection &amp; Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-level-context-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Level Context System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-active-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Active Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-aware-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context-Aware Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Override Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#workflows" class="md-nav__link">
     <span class="md-ellipsis">
       Workflows
@@ -2250,9 +2370,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#workflow-3-multiple-projects" class="md-nav__link">
+  <a href="#workflow-3-multiple-projects-concurrent-execution" class="md-nav__link">
     <span class="md-ellipsis">
-      Workflow 3: Multiple Projects
+      Workflow 3: Multiple Projects (Concurrent Execution)
     </span>
   </a>
   
@@ -2677,16 +2797,19 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  • View logs: tfgrid-compose logs tfgrid-ai-agent
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  • Connect: tfgrid-compose ssh tfgrid-ai-agent
 </code></pre></div></p>
-<h3 id="2-configure-git-credentials-optional">2. Configure Git Credentials (Optional)<a class="headerlink" href="#2-configure-git-credentials-optional" title="Permanent link">&para;</a></h3>
-<p>If not set during deployment:</p>
+<h3 id="2-configure-git-identity">2. Configure Git Identity<a class="headerlink" href="#2-configure-git-identity" title="Permanent link">&para;</a></h3>
+<p>Configure your git identity for commit attribution:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tfgrid-compose<span class="w"> </span>login
 </code></pre></div>
-<p>Prompts for:</p>
+<p>The login flow collects:</p>
 <ul>
-<li>Your name (for git commits)</li>
-<li>Your email</li>
+<li>ThreeFold mnemonic</li>
+<li>GitHub token (optional)</li>
+<li>Gitea credentials (optional)</li>
+<li>Git name (for commit attribution)</li>
+<li>Git email (for commit attribution)</li>
 </ul>
-<p><strong>Set once, used for all projects!</strong></p>
+<p>Git identity is automatically deployed to all VMs and used for all project commits.</p>
 <h3 id="3-create-your-first-project">3. Create Your First Project<a class="headerlink" href="#3-create-your-first-project" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>my-music-website
 </code></pre></div>
@@ -2780,6 +2903,7 @@
 <th>Command</th>
 <th>Description</th>
 <th>Arguments</th>
+<th>Context</th>
 </tr>
 </thead>
 <tbody>
@@ -2787,66 +2911,97 @@
 <td><code>create</code></td>
 <td>Create new AI project</td>
 <td><code>[project-name]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>select-project</code></td>
+<td>Select active project</td>
+<td><code>[project-name]</code></td>
+<td>Sets context</td>
+</tr>
+<tr>
+<td><code>unselect-project</code></td>
+<td>Clear project selection</td>
+<td>None</td>
+<td>Clears context</td>
 </tr>
 <tr>
 <td><code>run</code></td>
 <td>Start agent loop</td>
 <td><code>[project-name]</code></td>
+<td>Uses context</td>
 </tr>
 <tr>
 <td><code>stop</code></td>
 <td>Stop agent loop</td>
 <td><code>[project-name]</code></td>
+<td>Uses context</td>
 </tr>
 <tr>
 <td><code>restart</code></td>
 <td>Restart agent</td>
 <td><code>[project-name]</code></td>
+<td>Uses context</td>
 </tr>
 <tr>
 <td><code>projects</code></td>
 <td>Show all projects</td>
 <td>None</td>
+<td>-</td>
 </tr>
 <tr>
 <td><code>monitor</code></td>
 <td>Watch progress live</td>
 <td><code>[project-name]</code></td>
+<td>Uses context</td>
 </tr>
 <tr>
 <td><code>logs</code></td>
 <td>View project logs</td>
 <td><code>[project-name]</code></td>
+<td>Uses context</td>
 </tr>
 <tr>
 <td><code>summary</code></td>
 <td>Show project summary</td>
 <td><code>[project-name]</code></td>
+<td>Uses context</td>
 </tr>
 <tr>
 <td><code>edit</code></td>
 <td>Edit configuration</td>
 <td><code>[project-name]</code></td>
+<td>Uses context</td>
 </tr>
 <tr>
 <td><code>remove</code></td>
 <td>Delete project</td>
 <td><code>[project-name]</code></td>
+<td>Uses context</td>
 </tr>
 <tr>
 <td><code>stopall</code></td>
 <td>Stop all projects</td>
 <td>None</td>
+<td>-</td>
 </tr>
 <tr>
 <td><code>login</code></td>
-<td>Configure git credentials</td>
+<td>Configure credentials</td>
 <td>None</td>
+<td>-</td>
 </tr>
 <tr>
-<td><code>version</code></td>
-<td>Show agent version</td>
+<td><code>update-git-config</code></td>
+<td>Update git config on VM</td>
 <td>None</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>whoami</code></td>
+<td>Check authentication</td>
+<td>None</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -2861,293 +3016,341 @@
 </code></pre></div>
 <p><strong>Context is automatic with single app!</strong></p>
 <hr />
+<h2 id="project-selection-context">Project Selection &amp; Context<a class="headerlink" href="#project-selection-context" title="Permanent link">&para;</a></h2>
+<p>The AI agent supports project-level context for streamlined command usage.</p>
+<h3 id="two-level-context-system">Two-Level Context System<a class="headerlink" href="#two-level-context-system" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>App Context (tfgrid-ai-agent)
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  └── Project Context (my-project)
+</code></pre></div>
+<h3 id="select-active-project">Select Active Project<a class="headerlink" href="#select-active-project" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Interactive selection (shows all projects with status)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span>-project
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Direct selection</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span>-project<span class="w"> </span>my-project
+</code></pre></div>
+<h3 id="context-aware-commands">Context-Aware Commands<a class="headerlink" href="#context-aware-commands" title="Permanent link">&para;</a></h3>
+<p>Once a project is selected, commands use it automatically:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Select project once</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span>-project<span class="w"> </span>frontend-app
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># All subsequent commands use selected project</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>tfgrid-compose<span class="w"> </span>run<span class="w">        </span><span class="c1"># Runs frontend-app</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>tfgrid-compose<span class="w"> </span>logs<span class="w">       </span><span class="c1"># Logs for frontend-app</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w">    </span><span class="c1"># Monitors frontend-app</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>tfgrid-compose<span class="w"> </span>stop<span class="w">       </span><span class="c1"># Stops frontend-app</span>
+</code></pre></div>
+<h3 id="override-context">Override Context<a class="headerlink" href="#override-context" title="Permanent link">&para;</a></h3>
+<p>Provide project name to override selection:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Context is set to frontend-app</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span>-project<span class="w"> </span>frontend-app
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># But you can still run commands on other projects</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>backend-api<span class="w">     </span><span class="c1"># Runs backend-api</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>mobile-app<span class="w">     </span><span class="c1"># Logs for mobile-app</span>
+</code></pre></div>
+<h3 id="clear-selection">Clear Selection<a class="headerlink" href="#clear-selection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Clear project context</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>tfgrid-compose<span class="w"> </span>unselect-project
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Commands now require project name</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>tfgrid-compose<span class="w"> </span>run<span class="w">          </span><span class="c1"># Error: No project specified</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>my-app<span class="w">   </span><span class="c1"># Works</span>
+</code></pre></div>
+<hr />
 <h2 id="workflows">Workflows<a class="headerlink" href="#workflows" title="Permanent link">&para;</a></h2>
 <h3 id="workflow-1-simple-web-app">Workflow 1: Simple Web App<a class="headerlink" href="#workflow-1-simple-web-app" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 1. Deploy</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># 2. Configure git (first time only)</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>tfgrid-compose<span class="w"> </span>login
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># 3. Create project (interactive)</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>simple-blog
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1"># Prompts for:</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># - Duration: 1h</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># - Prompt: &quot;Create a simple blog with React and Node.js&quot;</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1"># - Start now: y</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="c1"># 4. Monitor progress</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>simple-blog
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="c1"># 5. Check all projects</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>tfgrid-compose<span class="w"> </span>projects
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="c1"># 6. View results</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>tfgrid-compose<span class="w"> </span>summary<span class="w"> </span>simple-blog
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/simple-blog
-<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>ls<span class="w"> </span>-la
-<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>cat<span class="w"> </span>README.md
-<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
-<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="c1"># 7. Stop project</span>
-<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>tfgrid-compose<span class="w"> </span>stop<span class="w"> </span>simple-blog
-<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>
-<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="c1"># 8. Cleanup (if done)</span>
-<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>tfgrid-compose<span class="w"> </span>down
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># 1. Deploy</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># 2. Configure git (first time only)</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>tfgrid-compose<span class="w"> </span>login
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># 3. Create project (interactive)</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>simple-blog
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="c1"># Prompts for:</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># - Duration: 1h</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1"># - Prompt: &quot;Create a simple blog with React and Node.js&quot;</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="c1"># - Start now: y</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="c1"># 4. Monitor progress</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>simple-blog
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="c1"># 5. Check all projects</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>tfgrid-compose<span class="w"> </span>projects
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="c1"># 6. View results</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>tfgrid-compose<span class="w"> </span>summary<span class="w"> </span>simple-blog
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/simple-blog
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>ls<span class="w"> </span>-la
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>cat<span class="w"> </span>README.md
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="c1"># 7. Stop project</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>tfgrid-compose<span class="w"> </span>stop<span class="w"> </span>simple-blog
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="c1"># 8. Cleanup (if done)</span>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>tfgrid-compose<span class="w"> </span>down
 </code></pre></div>
 <h3 id="workflow-2-code-refactoring">Workflow 2: Code Refactoring<a class="headerlink" href="#workflow-2-code-refactoring" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 1. Create refactoring project</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>refactor-legacy
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Prompt: &quot;Refactor this legacy code to TypeScript with best practices&quot;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># 2. Upload existing code</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/refactor-legacy
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># Copy your files here</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>git<span class="w"> </span>add<span class="w"> </span>.
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial code to refactor&quot;</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nb">exit</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># 3. Run agent</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>refactor-legacy
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c1"># 4. Watch it work</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>refactor-legacy
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="c1"># 5. Check progress</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>tfgrid-compose<span class="w"> </span>summary<span class="w"> </span>refactor-legacy
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="c1"># 6. Review and iterate</span>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>refactor-legacy
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>tfgrid-compose<span class="w"> </span>edit<span class="w"> </span>refactor-legacy<span class="w">  </span><span class="c1"># Adjust if needed</span>
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>tfgrid-compose<span class="w"> </span>restart<span class="w"> </span>refactor-legacy
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 1. Create refactoring project</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>refactor-legacy
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># Prompt: &quot;Refactor this legacy code to TypeScript with best practices&quot;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># 2. Upload existing code</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/refactor-legacy
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># Copy your files here</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial code to refactor&quot;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="nb">exit</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="c1"># 3. Run agent</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>refactor-legacy
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="c1"># 4. Watch it work</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>refactor-legacy
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="c1"># 5. Check progress</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>tfgrid-compose<span class="w"> </span>summary<span class="w"> </span>refactor-legacy
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="c1"># 6. Review and iterate</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>refactor-legacy
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>tfgrid-compose<span class="w"> </span>edit<span class="w"> </span>refactor-legacy<span class="w">  </span><span class="c1"># Adjust if needed</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>tfgrid-compose<span class="w"> </span>restart<span class="w"> </span>refactor-legacy
 </code></pre></div>
-<h3 id="workflow-3-multiple-projects">Workflow 3: Multiple Projects<a class="headerlink" href="#workflow-3-multiple-projects" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Create several projects</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>frontend-app
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>backend-api
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>mobile-app
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># Run them all</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>frontend-app
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>backend-api
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>mobile-app
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># Check status of all</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>tfgrid-compose<span class="w"> </span>projects
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="c1"># Monitor specific one</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>frontend-app
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="c1"># Stop all when done</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>tfgrid-compose<span class="w"> </span>stopall
+<h3 id="workflow-3-multiple-projects-concurrent-execution">Workflow 3: Multiple Projects (Concurrent Execution)<a class="headerlink" href="#workflow-3-multiple-projects-concurrent-execution" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Create several projects</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>frontend-app
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>backend-api
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>mobile-app
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1"># Run them all - executes concurrently via systemd</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>frontend-app
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>backend-api
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>mobile-app
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="c1"># All three projects run simultaneously</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="c1"># Each has isolated resources: 2GB memory, 150% CPU quota</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="c1"># Auto-restart on failure with 10s delay</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="c1"># Check status of all running projects</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>tfgrid-compose<span class="w"> </span>projects
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="c1"># Monitor specific one</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>frontend-app
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="c1"># Stop all when done</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>tfgrid-compose<span class="w"> </span>stopall
 </code></pre></div>
+<p>Projects execute in parallel using systemd template services (<code>tfgrid-ai-project@{name}.service</code>). Each project runs in an isolated service instance with dedicated resource limits and automatic failure recovery.</p>
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="1-clear-prompts">1. Clear Prompts<a class="headerlink" href="#1-clear-prompts" title="Permanent link">&para;</a></h3>
 <p><strong>Good:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>&quot;Create a REST API with Express.js and PostgreSQL for a todo app with authentication&quot;
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>&quot;Refactor this code to use async/await and add error handling&quot;
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>&quot;Generate API documentation with examples for all endpoints&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>&quot;Create a REST API with Express.js and PostgreSQL for a todo app with authentication&quot;
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>&quot;Refactor this code to use async/await and add error handling&quot;
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>&quot;Generate API documentation with examples for all endpoints&quot;
 </code></pre></div></p>
 <p><strong>Bad:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&quot;Make it better&quot; (too vague)
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>&quot;Build everything&quot; (too broad)
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>&quot;Fix bugs&quot; (which bugs?)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>&quot;Make it better&quot; (too vague)
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>&quot;Build everything&quot; (too broad)
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>&quot;Fix bugs&quot; (which bugs?)
 </code></pre></div></p>
 <h3 id="2-time-constraints">2. Time Constraints<a class="headerlink" href="#2-time-constraints" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Short tasks</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>quick-fix
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># Duration: 30m</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># Medium projects</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>web-dashboard<span class="w">  </span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Duration: 2h</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="c1"># Long-running projects</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>full-refactor
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1"># Duration: indefinite</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Short tasks</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>quick-fix
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1"># Duration: 30m</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1"># Medium projects</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>web-dashboard<span class="w">  </span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1"># Duration: 2h</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="c1"># Long-running projects</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>full-refactor
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="c1"># Duration: indefinite</span>
 </code></pre></div>
 <h3 id="3-monitor-progress">3. Monitor Progress<a class="headerlink" href="#3-monitor-progress" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Always monitor long-running tasks</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>big-project<span class="w"> </span><span class="p">&amp;</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>big-project
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># Check all projects regularly</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>tfgrid-compose<span class="w"> </span>projects
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Always monitor long-running tasks</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>big-project<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>big-project
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># Check all projects regularly</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>tfgrid-compose<span class="w"> </span>projects
 </code></pre></div>
 <h3 id="4-resource-management">4. Resource Management<a class="headerlink" href="#4-resource-management" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Stop when not needed</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>stopall
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Remove completed projects</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>old-project
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># Destroy VM when done</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>tfgrid-compose<span class="w"> </span>down
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Stop when not needed</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>tfgrid-compose<span class="w"> </span>stopall
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Remove completed projects</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>old-project
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="c1"># Destroy VM when done</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>tfgrid-compose<span class="w"> </span>down
 </code></pre></div>
 <hr />
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
 <p>Set these on your local machine before deployment:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Required</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TF_VAR_mnemonic</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>~/.config/threefold/mnemonic<span class="k">)</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Optional</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">QWEN_API_KEY</span><span class="o">=</span><span class="s1">&#39;your-api-key&#39;</span><span class="w">        </span><span class="c1"># Qwen API key</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="s1">&#39;your-token&#39;</span><span class="w">           </span><span class="c1"># GitHub personal token</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_URL</span><span class="o">=</span><span class="s1">&#39;https://gitea.example&#39;</span><span class="w">   </span><span class="c1"># Gitea URL</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_TOKEN</span><span class="o">=</span><span class="s1">&#39;your-token&#39;</span><span class="w">            </span><span class="c1"># Gitea personal token</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Required</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TF_VAR_mnemonic</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>~/.config/threefold/mnemonic<span class="k">)</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Optional</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">QWEN_API_KEY</span><span class="o">=</span><span class="s1">&#39;your-api-key&#39;</span><span class="w">        </span><span class="c1"># Qwen API key</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="s1">&#39;your-token&#39;</span><span class="w">           </span><span class="c1"># GitHub personal token</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_URL</span><span class="o">=</span><span class="s1">&#39;https://gitea.example&#39;</span><span class="w">   </span><span class="c1"># Gitea URL</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITEA_TOKEN</span><span class="o">=</span><span class="s1">&#39;your-token&#39;</span><span class="w">            </span><span class="c1"># Gitea personal token</span>
 </code></pre></div>
 <h3 id="custom-resources">Custom Resources<a class="headerlink" href="#custom-resources" title="Permanent link">&para;</a></h3>
 <p>Edit <code>tfgrid-ai-agent/tfgrid-compose.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">resources</span><span class="p">:</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">minimum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w">     </span><span class="c1"># Change this</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="nt">minimum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4096</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span><span class="w">  </span><span class="c1"># Change this</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span>
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="nt">minimum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w">   </span><span class="c1"># Change this</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">minimum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w">     </span><span class="c1"># Change this</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="nt">minimum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4096</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span><span class="w">  </span><span class="c1"># Change this</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">    </span><span class="nt">minimum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w">   </span><span class="c1"># Change this</span>
 </code></pre></div>
 <p>Then redeploy:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div></p>
 <hr />
 <h2 id="git-integration">Git Integration<a class="headerlink" href="#git-integration" title="Permanent link">&para;</a></h2>
 <h3 id="setup-github">Setup GitHub<a class="headerlink" href="#setup-github" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 1. Show SSH key (from VM)</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># 2. Add to GitHub</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1"># Copy the key and add it to https://github.com/settings/keys</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="c1"># 3. Setup git remote in project</span>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user/repo.git
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># 1. Show SSH key (from VM)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1"># 2. Add to GitHub</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="c1"># Copy the key and add it to https://github.com/settings/keys</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="c1"># 3. Setup git remote in project</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user/repo.git
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <h3 id="setup-gitea">Setup Gitea<a class="headerlink" href="#setup-gitea" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># 1. Show SSH key (from VM)</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1"># 2. Add to your Gitea instance</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1"># Go to Gitea → Settings → SSH Keys</span>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="c1"># 3. Setup git remote in project</span>
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@git.example.com:user/repo.git
-<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># 1. Show SSH key (from VM)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1"># 2. Add to your Gitea instance</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="c1"># Go to Gitea → Settings → SSH Keys</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="c1"># 3. Setup git remote in project</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@git.example.com:user/repo.git
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <h3 id="manual-git-configuration">Manual Git Configuration<a class="headerlink" href="#manual-git-configuration" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># SSH into VM</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Configure git</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user/repo.git
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># SSH into VM</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1"># Configure git</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user/repo.git
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <hr />
 <h2 id="monitoring-logs">Monitoring &amp; Logs<a class="headerlink" href="#monitoring-logs" title="Permanent link">&para;</a></h2>
 <h3 id="real-time-monitoring">Real-time Monitoring<a class="headerlink" href="#real-time-monitoring" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Watch agent progress</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>my-project
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># View live logs</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>my-project
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># View project summary</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>tfgrid-compose<span class="w"> </span>summary<span class="w"> </span>my-project
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Watch agent progress</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>my-project
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># View live logs</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>my-project
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="c1"># View project summary</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>tfgrid-compose<span class="w"> </span>summary<span class="w"> </span>my-project
 </code></pre></div>
 <h3 id="ssh-access">SSH Access<a class="headerlink" href="#ssh-access" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># SSH into VM</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1"># Check running processes</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ai-agent
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="c1"># View project files</span>
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>ls<span class="w"> </span>-la<span class="w"> </span>/home/developer/code/
-<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
-<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="c1"># Check system logs  </span>
-<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>-f
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># SSH into VM</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="c1"># Check running processes</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ai-agent
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="c1"># View project files</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>ls<span class="w"> </span>-la<span class="w"> </span>/home/developer/code/
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="c1"># Check system logs (per-project systemd services)</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>tfgrid-ai-project@my-project.service<span class="w"> </span>-f
 </code></pre></div>
 <h3 id="status-overview">Status Overview<a class="headerlink" href="#status-overview" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># All projects status</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>tfgrid-compose<span class="w"> </span>projects
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Deployment status</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>tfgrid-compose<span class="w"> </span>status
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="c1"># Service status on VM</span>
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>systemctl<span class="w"> </span>status<span class="w"> </span>tfgrid-ai-agent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># All projects status</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>tfgrid-compose<span class="w"> </span>projects
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="c1"># Deployment status</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>tfgrid-compose<span class="w"> </span>status
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1"># Per-project service status on VM</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>systemctl<span class="w"> </span>status<span class="w"> </span>tfgrid-ai-project@my-project.service
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>systemctl<span class="w"> </span>list-units<span class="w"> </span><span class="s1">&#39;tfgrid-ai-project@*&#39;</span><span class="w">  </span><span class="c1"># List all project services</span>
 </code></pre></div>
 <hr />
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="agent-wont-start">Agent Won't Start<a class="headerlink" href="#agent-wont-start" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Check logs</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>my-project
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c1"># Check service status</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>systemctl<span class="w"> </span>status<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="c1"># Restart service if needed</span>
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>tfgrid-ai-agent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Check logs</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>my-project
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c1"># Check service status (per-project)</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>systemctl<span class="w"> </span>status<span class="w"> </span>tfgrid-ai-project@my-project.service
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>tfgrid-ai-project@my-project.service<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="c1"># Restart service if needed</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>tfgrid-ai-project@my-project.service
 </code></pre></div>
 <h3 id="ssh-connection-issues">SSH Connection Issues<a class="headerlink" href="#ssh-connection-issues" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Check WireGuard</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>sudo<span class="w"> </span>wg<span class="w"> </span>show
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1"># Test connectivity (get IP from status)</span>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>tfgrid-compose<span class="w"> </span>status
-<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">10</span>.1.3.2<span class="w">  </span><span class="c1"># Use your actual IP</span>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
-<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="c1"># Reconnect if needed</span>
-<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>tfgrid-compose<span class="w"> </span>ssh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Check WireGuard</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>sudo<span class="w"> </span>wg<span class="w"> </span>show
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1"># Test connectivity (get IP from status)</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>tfgrid-compose<span class="w"> </span>status
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">10</span>.1.3.2<span class="w">  </span><span class="c1"># Use your actual IP</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="c1"># Reconnect if needed</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>tfgrid-compose<span class="w"> </span>ssh
 </code></pre></div>
 <h3 id="out-of-disk-space">Out of Disk Space<a class="headerlink" href="#out-of-disk-space" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># SSH in and check</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>df<span class="w"> </span>-h
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="c1"># Clean up old projects</span>
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>old-project-name
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
-<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1"># Or increase disk size (requires redeployment)</span>
-<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="c1"># Edit app&#39;s tfgrid-compose.yaml → resources.disk</span>
-<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>tfgrid-compose<span class="w"> </span>down
-<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># SSH in and check</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>df<span class="w"> </span>-h
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="c1"># Clean up old projects</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>old-project-name
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="c1"># Or increase disk size (requires redeployment)</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="c1"># Edit app&#39;s tfgrid-compose.yaml → resources.disk</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>tfgrid-compose<span class="w"> </span>down
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <h3 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># Check resource usage</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>htop
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="c1"># Consider upgrading resources</span>
-<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1"># Edit app&#39;s tfgrid-compose.yaml → resources (cpu/memory)</span>
-<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>tfgrid-compose<span class="w"> </span>down
-<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># Check resource usage</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>htop
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="c1"># Consider upgrading resources</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="c1"># Edit app&#39;s tfgrid-compose.yaml → resources (cpu/memory)</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>tfgrid-compose<span class="w"> </span>down
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <hr />
 <h2 id="best-practices_1">Best Practices<a class="headerlink" href="#best-practices_1" title="Permanent link">&para;</a></h2>
 <h3 id="1-project-organization">1. Project Organization<a class="headerlink" href="#1-project-organization" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># Use descriptive names</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>ai-agent<span class="w"> </span>create<span class="w"> </span>webapp-dashboard<span class="w">  </span><span class="c1"># Good</span>
-<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>ai-agent<span class="w"> </span>create<span class="w"> </span>test1<span class="w">             </span><span class="c1"># Bad</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
-<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="c1"># One project per goal</span>
-<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>ai-agent<span class="w"> </span>create<span class="w"> </span>frontend-app
-<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>ai-agent<span class="w"> </span>create<span class="w"> </span>backend-api
-<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="c1"># Not: ai-agent create fullstack-everything</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># Use descriptive names</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>ai-agent<span class="w"> </span>create<span class="w"> </span>webapp-dashboard<span class="w">  </span><span class="c1"># Good</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>ai-agent<span class="w"> </span>create<span class="w"> </span>test1<span class="w">             </span><span class="c1"># Bad</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="c1"># One project per goal</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>ai-agent<span class="w"> </span>create<span class="w"> </span>frontend-app
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>ai-agent<span class="w"> </span>create<span class="w"> </span>backend-api
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="c1"># Not: ai-agent create fullstack-everything</span>
 </code></pre></div>
 <h3 id="2-prompts">2. Prompts<a class="headerlink" href="#2-prompts" title="Permanent link">&para;</a></h3>
 <p><strong>Good prompts:</strong></p>
@@ -3163,73 +3366,73 @@
 <li>"Fix bugs" (which bugs?)</li>
 </ul>
 <h3 id="3-monitoring">3. Monitoring<a class="headerlink" href="#3-monitoring" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Always monitor long-running tasks</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>big-project<span class="w"> </span><span class="p">&amp;</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>big-project
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Always monitor long-running tasks</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>big-project<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>big-project
 </code></pre></div>
 <h3 id="4-git-workflow">4. Git Workflow<a class="headerlink" href="#4-git-workflow" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Agent auto-commits to local git</span>
-<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="c1"># Review before pushing</span>
-<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
-<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>git<span class="w"> </span>log
-<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>git<span class="w"> </span>diff
-<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1"># Agent auto-commits to local git</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="c1"># Review before pushing</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="nb">cd</span><span class="w"> </span>/home/developer/code/my-project
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>git<span class="w"> </span>log
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>git<span class="w"> </span>diff
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <h3 id="5-resource-management">5. Resource Management<a class="headerlink" href="#5-resource-management" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Stop projects when not needed</span>
-<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>tfgrid-compose<span class="w"> </span>stopall
-<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
-<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c1"># Remove completed projects</span>
-<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>old-project
-<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
-<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="c1"># Destroy VM when not in use</span>
-<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>tfgrid-compose<span class="w"> </span>down
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># Stop projects when not needed</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>tfgrid-compose<span class="w"> </span>stopall
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="c1"># Remove completed projects</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>old-project
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="c1"># Destroy VM when not in use</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>tfgrid-compose<span class="w"> </span>down
 </code></pre></div>
 <hr />
 <h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
 <h3 id="multiple-projects">Multiple Projects<a class="headerlink" href="#multiple-projects" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># Create and run multiple projects</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>frontend
-<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>backend
-<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>docs
-<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
-<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>frontend<span class="w"> </span><span class="p">&amp;</span>
-<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>backend<span class="w"> </span><span class="p">&amp;</span>
-<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>docs<span class="w"> </span><span class="p">&amp;</span>
-<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>
-<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="c1"># Monitor all</span>
-<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>tfgrid-compose<span class="w"> </span>projects
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># Create and run multiple projects</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>frontend
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>backend
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>docs
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>frontend<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>backend<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>docs<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>
+<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="c1"># Monitor all</span>
+<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>tfgrid-compose<span class="w"> </span>projects
 </code></pre></div>
 <h3 id="custom-automation-scripts">Custom Automation Scripts<a class="headerlink" href="#custom-automation-scripts" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># Create local automation script</span>
-<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>~/ai-agent-batch.sh<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
-<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="s">#!/bin/bash</span>
-<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="s">for project in &quot;$@&quot;; do</span>
-<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="s">  tfgrid-compose create &quot;$project&quot;</span>
-<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="s">  tfgrid-compose run &quot;$project&quot; &amp;</span>
-<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="s">done</span>
-<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="s">tfgrid-compose projects</span>
-<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="s">EOF</span>
-<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>
-<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>chmod<span class="w"> </span>+x<span class="w"> </span>~/ai-agent-batch.sh
-<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>
-<a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="c1"># Use it</span>
-<a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a>~/ai-agent-batch.sh<span class="w"> </span>frontend<span class="w"> </span>backend<span class="w"> </span>docs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># Create local automation script</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>~/ai-agent-batch.sh<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="s">#!/bin/bash</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="s">for project in &quot;$@&quot;; do</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="s">  tfgrid-compose create &quot;$project&quot;</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="s">  tfgrid-compose run &quot;$project&quot; &amp;</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="s">done</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="s">tfgrid-compose projects</span>
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="s">EOF</span>
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a>chmod<span class="w"> </span>+x<span class="w"> </span>~/ai-agent-batch.sh
+<a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a>
+<a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a><span class="c1"># Use it</span>
+<a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a>~/ai-agent-batch.sh<span class="w"> </span>frontend<span class="w"> </span>backend<span class="w"> </span>docs
 </code></pre></div>
 <h3 id="scheduled-runs">Scheduled Runs<a class="headerlink" href="#scheduled-runs" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># SSH into VM and setup cron</span>
-<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>tfgrid-compose<span class="w"> </span>ssh
-<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>crontab<span class="w"> </span>-e
-<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
-<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="c1"># Add scheduled runs (runs on VM)</span>
-<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/ai-agent<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./scripts/run-project.sh<span class="w"> </span>nightly-refactor
-<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="m">0</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/ai-agent<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./scripts/run-project.sh<span class="w"> </span>morning-docs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="c1"># SSH into VM and setup cron</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>crontab<span class="w"> </span>-e
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="c1"># Add scheduled runs (runs on VM)</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/ai-agent<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./scripts/run-project.sh<span class="w"> </span>nightly-refactor
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="m">0</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/ai-agent<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./scripts/run-project.sh<span class="w"> </span>morning-docs
 </code></pre></div>
 <hr />
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <p><strong>Q: Can I run multiple agents simultaneously?</strong><br />
-A: Yes! Each project runs independently. Use <code>tfgrid-compose projects</code> to see all.</p>
+A: Projects run concurrently using systemd template services. Each project has dedicated resources (2GB memory, 150% CPU quota) and automatic failure recovery. Use <code>tfgrid-compose projects</code> to view all running projects.</p>
 <p><strong>Q: How much does it cost?</strong><br />
 A: Depends on ThreeFold Grid pricing. Typically $10-30/month for a 4CPU/8GB VM.</p>
 <p><strong>Q: Can I access from multiple machines?</strong><br />

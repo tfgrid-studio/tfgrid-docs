@@ -2658,13 +2658,15 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Deploy to ThreeFold Grid</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
-<p><strong>What happens:</strong>
-1. ✅ Creates Ubuntu 24.04 VM (4 CPU, 8GB RAM, 100GB disk)
-2. ✅ Configures WireGuard networking<br />
-3. ✅ Installs Node.js 20.x, Qwen CLI
-4. ✅ Prompts for git credentials (one time)
-5. ✅ Sets up workspace at <code>/home/developer/code</code>
-6. ✅ Runs health checks</p>
+<p><strong>What happens:</strong></p>
+<ol>
+<li>✅ Creates Ubuntu 24.04 VM (4 CPU, 8GB RAM, 100GB disk)</li>
+<li>✅ Configures WireGuard networking  </li>
+<li>✅ Installs Node.js 20.x, Qwen CLI</li>
+<li>✅ Prompts for git credentials (one time)</li>
+<li>✅ Sets up workspace at <code>/home/developer/code</code></li>
+<li>✅ Runs health checks</li>
+</ol>
 <p><strong>Duration:</strong> ~2-3 minutes</p>
 <p><strong>Output:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>✅ 🎉 Deployment complete!
@@ -2679,20 +2681,24 @@
 <p>If not set during deployment:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tfgrid-compose<span class="w"> </span>login
 </code></pre></div>
-<p>Prompts for:
-- Your name (for git commits)
-- Your email</p>
+<p>Prompts for:</p>
+<ul>
+<li>Your name (for git commits)</li>
+<li>Your email</li>
+</ul>
 <p><strong>Set once, used for all projects!</strong></p>
 <h3 id="3-create-your-first-project">3. Create Your First Project<a class="headerlink" href="#3-create-your-first-project" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>my-music-website
 </code></pre></div>
-<p>Interactive prompts:
-1. <strong>Project name</strong> (if not specified)
-2. <strong>Duration</strong> (30m, 1h, 2h, indefinite)
-3. <strong>Git credentials</strong> (if not configured)
-4. <strong>Prompt type</strong> (Custom or Generic template)
-5. <strong>Your coding prompt</strong>
-6. <strong>Start now?</strong> (y/N)</p>
+<p>Interactive prompts:</p>
+<ol>
+<li><strong>Project name</strong> (if not specified)</li>
+<li><strong>Duration</strong> (30m, 1h, 2h, indefinite)</li>
+<li><strong>Git credentials</strong> (if not configured)</li>
+<li><strong>Prompt type</strong> (Custom or Generic template)</li>
+<li><strong>Your coding prompt</strong></li>
+<li><strong>Start now?</strong> (y/N)</li>
+</ol>
 <p><strong>Example session:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>🚀 AI-Agent Project Creator
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>==============================

@@ -572,11 +572,13 @@ ai-agent create backend-api
 ### 2. Prompts
 
 **Good prompts:**
+
 - "Create a REST API with Express.js and PostgreSQL for a todo app"
 - "Refactor this code to use async/await instead of callbacks"
 - "Add comprehensive error handling and logging"
 
 **Bad prompts:**
+
 - "Make it better" (too vague)
 - "Build everything" (too broad)
 - "Fix bugs" (which bugs?)

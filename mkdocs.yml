@@ -124,8 +124,13 @@ nav:
     - Quick Start: getting-started/quickstart.md
     - Core Concepts: getting-started/concepts.md
   
+  - CLI Reference:
+    - App-Specific Commands: cli/app-commands.md
+    - Context System: cli/context-system.md
+    - Registry Commands: cli/registry.md
+  
   - Guides:
-    - AI Agent Deployment: guides/ai-agent.md
+    - AI Agent: guides/ai-agent.md
     - Gitea Self-Hosted Git: guides/gitea.md
     - App Registry: guides/app-registry.md
   

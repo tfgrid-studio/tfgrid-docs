@@ -182,22 +182,22 @@ If you deployed tfgrid-ai-agent:
 
 ```bash
 # Login to Qwen AI
-tfgrid-compose agent login
+tfgrid-compose login
 
 # Create a project
-tfgrid-compose agent create
+tfgrid-compose create
 # Enter project name: my-website
 # Enter duration: 30
 # Enter prompt: Create a beautiful portfolio website with React and Tailwind CSS
 
 # Monitor the AI agent working
-tfgrid-compose agent monitor my-website
+tfgrid-compose monitor my-website
 
 # List all projects
-tfgrid-compose agent list
+tfgrid-compose projects
 
 # Stop the agent when done
-tfgrid-compose agent stop my-website
+tfgrid-compose stop my-website
 ```
 
 ### View Logs
@@ -253,8 +253,8 @@ echo "app: ../tfgrid-ai-agent" > .tfgrid-compose.yaml
 tfgrid-compose up
 
 # Use
-tfgrid-compose agent create
-tfgrid-compose agent list
+tfgrid-compose create
+tfgrid-compose projects
 tfgrid-compose ssh
 
 # Clean up
@@ -284,11 +284,11 @@ tfgrid-compose exec [app] <cmd>  # Execute command
 ### AI Agent (when using tfgrid-ai-agent)
 
 ```bash
-tfgrid-compose agent list          # List projects
-tfgrid-compose agent create        # Create project (interactive)
-tfgrid-compose agent run <project> # Start AI agent
-tfgrid-compose agent monitor <project>  # Monitor progress
-tfgrid-compose agent stop <project>     # Stop agent
+tfgrid-compose projects            # List projects
+tfgrid-compose create              # Create project (interactive)
+tfgrid-compose run <project>       # Start AI agent
+tfgrid-compose monitor <project>   # Monitor progress
+tfgrid-compose stop <project>      # Stop agent
 ```
 
 ### Patterns

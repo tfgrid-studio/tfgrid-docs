@@ -33,6 +33,7 @@ tfgrid-compose up tfgrid-ai-agent
 ```
 
 **What happens:**
+
 1. ✅ Creates Ubuntu 24.04 VM (4 CPU, 8GB RAM, 100GB disk)
 2. ✅ Configures WireGuard networking  
 3. ✅ Installs Node.js 20.x, Qwen CLI
@@ -62,6 +63,7 @@ tfgrid-compose login
 ```
 
 Prompts for:
+
 - Your name (for git commits)
 - Your email
 
@@ -74,6 +76,7 @@ tfgrid-compose create my-music-website
 ```
 
 Interactive prompts:
+
 1. **Project name** (if not specified)
 2. **Duration** (30m, 1h, 2h, indefinite)
 3. **Git credentials** (if not configured)

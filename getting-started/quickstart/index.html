@@ -2502,22 +2502,22 @@ You can now deploy apps directly by name! No need to clone repositories manually
 <h3 id="ai-agent-example">AI Agent Example<a class="headerlink" href="#ai-agent-example" title="Permanent link">&para;</a></h3>
 <p>If you deployed tfgrid-ai-agent:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Login to Qwen AI</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>login
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>login
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Create a project</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>create
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tfgrid-compose<span class="w"> </span>create
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># Enter project name: my-website</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Enter duration: 30</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># Enter prompt: Create a beautiful portfolio website with React and Tailwind CSS</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># Monitor the AI agent working</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>monitor<span class="w"> </span>my-website
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>my-website
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
 <a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># List all projects</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>list
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>tfgrid-compose<span class="w"> </span>projects
 <a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
 <a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c1"># Stop the agent when done</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>stop<span class="w"> </span>my-website
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>tfgrid-compose<span class="w"> </span>stop<span class="w"> </span>my-website
 </code></pre></div>
 <h3 id="view-logs">View Logs<a class="headerlink" href="#view-logs" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># View application logs</span>
@@ -2560,8 +2560,8 @@ You can now deploy apps directly by name! No need to clone repositories manually
 <a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>tfgrid-compose<span class="w"> </span>up
 <a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
 <a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="c1"># Use</span>
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>create
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>list
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>tfgrid-compose<span class="w"> </span>create
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>tfgrid-compose<span class="w"> </span>projects
 <a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>tfgrid-compose<span class="w"> </span>ssh
 <a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>
 <a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="c1"># Clean up</span>
@@ -2580,11 +2580,11 @@ You can now deploy apps directly by name! No need to clone repositories manually
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>tfgrid-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="o">[</span>app<span class="o">]</span><span class="w"> </span>&lt;cmd&gt;<span class="w">  </span><span class="c1"># Execute command</span>
 </code></pre></div>
 <h3 id="ai-agent-when-using-tfgrid-ai-agent">AI Agent (when using tfgrid-ai-agent)<a class="headerlink" href="#ai-agent-when-using-tfgrid-ai-agent" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>list<span class="w">          </span><span class="c1"># List projects</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>create<span class="w">        </span><span class="c1"># Create project (interactive)</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>run<span class="w"> </span>&lt;project&gt;<span class="w"> </span><span class="c1"># Start AI agent</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>monitor<span class="w"> </span>&lt;project&gt;<span class="w">  </span><span class="c1"># Monitor progress</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>tfgrid-compose<span class="w"> </span>agent<span class="w"> </span>stop<span class="w"> </span>&lt;project&gt;<span class="w">     </span><span class="c1"># Stop agent</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>tfgrid-compose<span class="w"> </span>projects<span class="w">            </span><span class="c1"># List projects</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>create<span class="w">              </span><span class="c1"># Create project (interactive)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>&lt;project&gt;<span class="w">       </span><span class="c1"># Start AI agent</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>&lt;project&gt;<span class="w">   </span><span class="c1"># Monitor progress</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>tfgrid-compose<span class="w"> </span>stop<span class="w"> </span>&lt;project&gt;<span class="w">      </span><span class="c1"># Stop agent</span>
 </code></pre></div>
 <h3 id="patterns">Patterns<a class="headerlink" href="#patterns" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>tfgrid-compose<span class="w"> </span>patterns<span class="w">       </span><span class="c1"># List available patterns</span>

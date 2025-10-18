@@ -9,6 +9,7 @@ How apps define custom commands and how to use them.
 **Universal CLI, App-Specific Features**
 
 tfgrid-compose provides a **universal interface** where:
+
 - 🔧 **Generic commands** work for all apps (up, down, status, logs, ssh)
 - 🎯 **App-specific commands** are defined by each app (create, run, stop, etc.)
 - 🚀 **One CLI** to rule them all
@@ -54,6 +55,7 @@ tfgrid-compose create my-project
 ```
 
 tfgrid-compose:
+
 1. ✅ Checks if it's a generic command
 2. ✅ If not, looks in active app's manifest
 3. ✅ Finds the script path
@@ -351,6 +353,7 @@ User runs: tfgrid-compose create my-project
 ### **Script Execution**
 
 Commands run with:
+
 - **SSH TTY** - Interactive prompts work
 - **Arguments passed** - Via command line
 - **Exit codes** - Propagated to local CLI

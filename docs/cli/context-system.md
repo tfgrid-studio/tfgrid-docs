@@ -142,13 +142,16 @@ tfgrid-compose deploy
 When you run a command, tfgrid-compose checks:
 
 1. **Is it a generic command?** (up, down, status, logs, ssh, etc.)
+   
    - If yes: Execute generic command
    
 2. **Is it app-specific?** (create, run, stop for ai-agent, etc.)
+   
    - Check context (auto or explicit)
    - Route to app's command script
    
 3. **Explicit app in command?**
+
    - `tfgrid-compose tfgrid-ai-agent create` overrides context
 
 ---

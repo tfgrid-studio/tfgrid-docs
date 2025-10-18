@@ -10,8 +10,9 @@ The **context system** allows you to work with multiple deployed apps without co
 
 **Key Features:**
 - 🎯 **Smart auto-detection** - Single app? No setup needed!
-- 🔄 **Switch between apps** - `tfgrid-compose switch`
-- 📝 **Context-aware commands** - Commands use active app
+- 🔄 **Select between apps** - `tfgrid-compose select`
+- 🔄 **Select between projects** - `tfgrid-compose select-project` (for apps that support it)
+- 📝 **Context-aware commands** - Commands use active app and project
 - 🌐 **Both modes** - Explicit or contextual
 
 ---
@@ -43,7 +44,7 @@ With multiple apps, you need to set context:
 tfgrid-compose up some-web-app
 
 # Now you need to specify which app
-tfgrid-compose switch tfgrid-ai-agent
+tfgrid-compose select tfgrid-ai-agent
 
 # Commands now target tfgrid-ai-agent
 tfgrid-compose create my-project
@@ -66,13 +67,13 @@ tfgrid-compose list
 
 ## Commands
 
-### **switch** - Change Active App
+### **select** - Change Active App
 
 Set which app commands should target:
 
 ```bash
-# Switch to an app
-tfgrid-compose switch tfgrid-ai-agent
+# Select an app
+tfgrid-compose select tfgrid-ai-agent
 
 # All subsequent commands use this app
 tfgrid-compose create project1
@@ -82,6 +83,46 @@ tfgrid-compose run project1
 **When to use:**
 - You have multiple apps deployed
 - You want to work with a specific app for a while
+
+### **unselect** - Clear Active App
+
+Clear the current app selection:
+
+```bash
+# Clear app context
+tfgrid-compose unselect
+
+# Commands now require explicit app
+tfgrid-compose create project  # Error
+tfgrid-compose tfgrid-ai-agent create project  # Works
+```
+
+### **select-project** - Change Active Project
+
+For apps that manage multiple projects (like tfgrid-ai-agent):
+
+```bash
+# Interactive selection
+tfgrid-compose select-project
+
+# Direct selection
+tfgrid-compose select-project my-project
+
+# Commands now use selected project
+tfgrid-compose run       # Runs my-project
+tfgrid-compose logs      # Logs for my-project
+```
+
+### **unselect-project** - Clear Project Selection
+
+```bash
+# Clear project context
+tfgrid-compose unselect-project
+
+# Commands require project name
+tfgrid-compose run            # Error
+tfgrid-compose run my-project # Works
+```
 
 ### **list** - Show All Apps
 
@@ -124,10 +165,10 @@ tfgrid-compose list
 
 # Commands without context fail helpfully
 tfgrid-compose create project
-# → Error: Multiple apps. Use: tfgrid-compose switch <app>
+# → Error: Multiple apps. Use: tfgrid-compose select <app>
 
 # Set context
-tfgrid-compose switch web-dashboard
+tfgrid-compose select web-dashboard
 
 # Now commands work
 tfgrid-compose deploy
@@ -170,30 +211,30 @@ tfgrid-compose run project
 tfgrid-compose projects
 ```
 
-**No `switch` needed!**
+**No `select` needed!**
 
 ### **Working with Multiple Apps**
 
 ```bash
 # Set context at start of work session
-tfgrid-compose switch tfgrid-ai-agent
+tfgrid-compose select tfgrid-ai-agent
 
 # Work on multiple projects
 tfgrid-compose create project1
 tfgrid-compose create project2
 tfgrid-compose run project1
 
-# Switch when changing apps
-tfgrid-compose switch web-dashboard
+# Select when changing apps
+tfgrid-compose select web-dashboard
 tfgrid-compose deploy
 ```
 
-**One `switch` per work session**
+**One `select` per work session**
 
-### **Quick Commands Without Switching**
+### **Quick Commands Without Selection**
 
 ```bash
-# Explicit app name (no switch needed)
+# Explicit app name (no select needed)
 tfgrid-compose tfgrid-ai-agent create quick-project
 tfgrid-compose web-dashboard status
 ```
@@ -206,9 +247,15 @@ tfgrid-compose web-dashboard status
 
 ### **Context Storage**
 
-- **Location:** `~/.config/tfgrid-compose/current-app`
-- **Format:** Plain text file with app name
+- **Location:** `~/.config/tfgrid-compose/context.yaml`
+- **Format:** YAML with app and project context
 - **Scope:** Global (all directories)
+
+**Example context file:**
+```yaml
+active_app: tfgrid-ai-agent
+active_project: my-project
+```
 
 ### **Auto-Detection Logic**
 
@@ -219,7 +266,7 @@ tfgrid-compose web-dashboard status
    - No context file needed
 3. If count > 1:
    - Check context file
-   - If missing: Prompt to switch
+   - If missing: Prompt to select
 4. If count == 0:
    - Show help to deploy
 ```
@@ -248,14 +295,14 @@ tfgrid-compose up tfgrid-ai-agent
 tfgrid-compose up web-dashboard
 
 # Set context
-tfgrid-compose switch tfgrid-ai-agent
+tfgrid-compose select tfgrid-ai-agent
 
 # Work with AI agent
 tfgrid-compose create backend-api
 tfgrid-compose run backend-api
 
-# Switch to other app
-tfgrid-compose switch web-dashboard
+# Select other app
+tfgrid-compose select web-dashboard
 tfgrid-compose deploy
 ```
 
@@ -263,12 +310,12 @@ tfgrid-compose deploy
 
 ```bash
 # Have context set to ai-agent
-tfgrid-compose switch tfgrid-ai-agent
+tfgrid-compose select tfgrid-ai-agent
 
 # Use contextual commands
 tfgrid-compose create project1
 
-# Quick command on other app (no switch)
+# Quick command on other app (no selection change)
 tfgrid-compose web-dashboard status
 
 # Continue with ai-agent (context unchanged)

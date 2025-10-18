@@ -54,20 +54,23 @@ tfgrid-compose up tfgrid-ai-agent
   • Connect: tfgrid-compose ssh tfgrid-ai-agent
 ```
 
-### 2. Configure Git Credentials (Optional)
+### 2. Configure Git Identity
 
-If not set during deployment:
+Configure your git identity for commit attribution:
 
 ```bash
 tfgrid-compose login
 ```
 
-Prompts for:
+The login flow collects:
 
-- Your name (for git commits)
-- Your email
+- ThreeFold mnemonic
+- GitHub token (optional)
+- Gitea credentials (optional)
+- Git name (for commit attribution)
+- Git email (for commit attribution)
 
-**Set once, used for all projects!**
+Git identity is automatically deployed to all VMs and used for all project commits.
 
 ### 3. Create Your First Project
 
@@ -170,21 +173,24 @@ tfgrid-compose edit music-website
 
 ### All AI Agent Commands
 
-| Command | Description | Arguments |
-|---------|-------------|-----------|
-| `create` | Create new AI project | `[project-name]` |
-| `run` | Start agent loop | `[project-name]` |
-| `stop` | Stop agent loop | `[project-name]` |
-| `restart` | Restart agent | `[project-name]` |
-| `projects` | Show all projects | None |
-| `monitor` | Watch progress live | `[project-name]` |
-| `logs` | View project logs | `[project-name]` |
-| `summary` | Show project summary | `[project-name]` |
-| `edit` | Edit configuration | `[project-name]` |
-| `remove` | Delete project | `[project-name]` |
-| `stopall` | Stop all projects | None |
-| `login` | Configure git credentials | None |
-| `version` | Show agent version | None |
+| Command | Description | Arguments | Context |
+|---------|-------------|-----------|----------|
+| `create` | Create new AI project | `[project-name]` | - |
+| `select-project` | Select active project | `[project-name]` | Sets context |
+| `unselect-project` | Clear project selection | None | Clears context |
+| `run` | Start agent loop | `[project-name]` | Uses context |
+| `stop` | Stop agent loop | `[project-name]` | Uses context |
+| `restart` | Restart agent | `[project-name]` | Uses context |
+| `projects` | Show all projects | None | - |
+| `monitor` | Watch progress live | `[project-name]` | Uses context |
+| `logs` | View project logs | `[project-name]` | Uses context |
+| `summary` | Show project summary | `[project-name]` | Uses context |
+| `edit` | Edit configuration | `[project-name]` | Uses context |
+| `remove` | Delete project | `[project-name]` | Uses context |
+| `stopall` | Stop all projects | None | - |
+| `login` | Configure credentials | None | - |
+| `update-git-config` | Update git config on VM | None | - |
+| `whoami` | Check authentication | None | - |
 
 **Note:** Arguments in `[]` are optional. If omitted, interactive selection is shown.
 
@@ -199,6 +205,68 @@ tfgrid-compose tfgrid-ai-agent run my-project
 ```
 
 **Context is automatic with single app!**
+
+---
+
+## Project Selection & Context
+
+The AI agent supports project-level context for streamlined command usage.
+
+### Two-Level Context System
+
+```
+App Context (tfgrid-ai-agent)
+  └── Project Context (my-project)
+```
+
+### Select Active Project
+
+```bash
+# Interactive selection (shows all projects with status)
+tfgrid-compose select-project
+
+# Direct selection
+tfgrid-compose select-project my-project
+```
+
+### Context-Aware Commands
+
+Once a project is selected, commands use it automatically:
+
+```bash
+# Select project once
+tfgrid-compose select-project frontend-app
+
+# All subsequent commands use selected project
+tfgrid-compose run        # Runs frontend-app
+tfgrid-compose logs       # Logs for frontend-app
+tfgrid-compose monitor    # Monitors frontend-app
+tfgrid-compose stop       # Stops frontend-app
+```
+
+### Override Context
+
+Provide project name to override selection:
+
+```bash
+# Context is set to frontend-app
+tfgrid-compose select-project frontend-app
+
+# But you can still run commands on other projects
+tfgrid-compose run backend-api     # Runs backend-api
+tfgrid-compose logs mobile-app     # Logs for mobile-app
+```
+
+### Clear Selection
+
+```bash
+# Clear project context
+tfgrid-compose unselect-project
+
+# Commands now require project name
+tfgrid-compose run          # Error: No project specified
+tfgrid-compose run my-app   # Works
+```
 
 ---
 
@@ -270,7 +338,7 @@ tfgrid-compose edit refactor-legacy  # Adjust if needed
 tfgrid-compose restart refactor-legacy
 ```
 
-### Workflow 3: Multiple Projects
+### Workflow 3: Multiple Projects (Concurrent Execution)
 
 ```bash
 # Create several projects
@@ -278,12 +346,16 @@ tfgrid-compose create frontend-app
 tfgrid-compose create backend-api
 tfgrid-compose create mobile-app
 
-# Run them all
+# Run them all - executes concurrently via systemd
 tfgrid-compose run frontend-app
 tfgrid-compose run backend-api
 tfgrid-compose run mobile-app
 
-# Check status of all
+# All three projects run simultaneously
+# Each has isolated resources: 2GB memory, 150% CPU quota
+# Auto-restart on failure with 10s delay
+
+# Check status of all running projects
 tfgrid-compose projects
 
 # Monitor specific one
@@ -292,6 +364,8 @@ tfgrid-compose monitor frontend-app
 # Stop all when done
 tfgrid-compose stopall
 ```
+
+Projects execute in parallel using systemd template services (`tfgrid-ai-project@{name}.service`). Each project runs in an isolated service instance with dedicated resource limits and automatic failure recovery.
 
 ---
 
@@ -472,8 +546,8 @@ ps aux | grep ai-agent
 # View project files
 ls -la /home/developer/code/
 
-# Check system logs  
-journalctl -u tfgrid-ai-agent -f
+# Check system logs (per-project systemd services)
+journalctl -u tfgrid-ai-project@my-project.service -f
 ```
 
 ### Status Overview
@@ -485,9 +559,10 @@ tfgrid-compose projects
 # Deployment status
 tfgrid-compose status
 
-# Service status on VM
+# Per-project service status on VM
 tfgrid-compose ssh
-systemctl status tfgrid-ai-agent
+systemctl status tfgrid-ai-project@my-project.service
+systemctl list-units 'tfgrid-ai-project@*'  # List all project services
 ```
 
 ---
@@ -500,13 +575,13 @@ systemctl status tfgrid-ai-agent
 # Check logs
 tfgrid-compose logs my-project
 
-# Check service status
+# Check service status (per-project)
 tfgrid-compose ssh
-systemctl status tfgrid-ai-agent
-journalctl -u tfgrid-ai-agent -n 50
+systemctl status tfgrid-ai-project@my-project.service
+journalctl -u tfgrid-ai-project@my-project.service -n 50
 
 # Restart service if needed
-systemctl restart tfgrid-ai-agent
+systemctl restart tfgrid-ai-project@my-project.service
 ```
 
 ### SSH Connection Issues
@@ -672,7 +747,7 @@ crontab -e
 ## FAQ
 
 **Q: Can I run multiple agents simultaneously?**  
-A: Yes! Each project runs independently. Use `tfgrid-compose projects` to see all.
+A: Projects run concurrently using systemd template services. Each project has dedicated resources (2GB memory, 150% CPU quota) and automatic failure recovery. Use `tfgrid-compose projects` to view all running projects.
 
 **Q: How much does it cost?**  
 A: Depends on ThreeFold Grid pricing. Typically $10-30/month for a 4CPU/8GB VM.

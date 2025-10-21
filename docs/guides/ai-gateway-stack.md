@@ -1,4 +1,4 @@
-# AI Gateway Stack Guide
+# TFGrid AI Stack Guide
 
 **Complete AI-powered development environment with integrated Git hosting and live deployment.**
 
@@ -28,10 +28,10 @@ Deploy for personal development with internal access only:
 
 ```bash
 # Search for the stack in registry
-tfgrid-compose search ai-gateway-stack
+tfgrid-compose search tfgrid-ai-stack
 
 # Deploy private stack
-tfgrid-compose up ai-gateway-stack
+tfgrid-compose up tfgrid-ai-stack
 
 # Get access information
 tfgrid-compose launch
@@ -48,7 +48,7 @@ Deploy with public access for collaboration and live websites:
 
 ```bash
 # Deploy with custom domain
-tfgrid-compose up ai-gateway-stack --domain example.com
+tfgrid-compose up tfgrid-ai-stack --domain example.com
 
 # Initialize admin access
 tfgrid-compose init
@@ -114,10 +114,10 @@ tfgrid-compose delete portfolio
 
 #### Check Status
 ```bash
-tfgrid-compose status ai-gateway-stack
+tfgrid-compose status tfgrid-ai-stack
 
 # Output:
-# ai-gateway-stack: running
+# tfgrid-ai-stack: running
 # ├── gateway: running (example.com)
 # ├── ai-agent: running (10.1.2.3)
 # └── gitea: running (10.1.3.2)
@@ -138,7 +138,7 @@ tfgrid-compose ssh gateway
 #### View Logs
 ```bash
 # Stack-wide logs
-tfgrid-compose logs ai-gateway-stack
+tfgrid-compose logs tfgrid-ai-stack
 
 # Component-specific logs
 tfgrid-compose logs ai-agent
@@ -149,10 +149,10 @@ tfgrid-compose logs gateway
 #### Stop/Start Stack
 ```bash
 # Stop all components
-tfgrid-compose down ai-gateway-stack
+tfgrid-compose down tfgrid-ai-stack
 
 # Start all components
-tfgrid-compose up ai-gateway-stack
+tfgrid-compose up tfgrid-ai-stack
 ```
 
 ## Architecture
@@ -160,7 +160,7 @@ tfgrid-compose up ai-gateway-stack
 ### VM Layout
 
 ```
-ai-gateway-stack/
+tfgrid-ai-stack/
 ├── Gateway VM (Public IPv4 + SSL)
 │   ├── Nginx reverse proxy
 │   ├── SSL certificates (Let's Encrypt)
@@ -219,7 +219,7 @@ export GIT_USER_NAME="Your Name"
 export GIT_USER_EMAIL="you@example.com"
 
 # Deploy
-tfgrid-compose up ai-gateway-stack --domain example.com
+tfgrid-compose up tfgrid-ai-stack --domain example.com
 ```
 
 ### Resource Allocation
@@ -309,10 +309,10 @@ resources:
 tfgrid-compose doctor
 
 # View detailed logs
-tfgrid-compose logs ai-gateway-stack --verbose
+tfgrid-compose logs tfgrid-ai-stack --verbose
 
 # Retry deployment
-tfgrid-compose up ai-gateway-stack --force
+tfgrid-compose up tfgrid-ai-stack --force
 ```
 
 **Component not accessible:**
@@ -421,28 +421,28 @@ tfgrid-compose exec ai-agent curl localhost:8080/api/projects
 
 ```bash
 # Backup entire stack
-tfgrid-compose backup ai-gateway-stack
+tfgrid-compose backup tfgrid-ai-stack
 
 # Backup specific component
 tfgrid-compose backup ai-agent
 tfgrid-compose backup gitea
 
 # Restore from backup
-tfgrid-compose restore ai-gateway-stack backup-20251021.tar.gz
+tfgrid-compose restore tfgrid-ai-stack backup-20251021.tar.gz
 ```
 
 ## Examples
 
 ### Personal Blog
 ```bash
-tfgrid-compose up ai-gateway-stack --domain myblog.com
+tfgrid-compose up tfgrid-ai-stack --domain myblog.com
 tfgrid-compose create "personal blog with markdown support"
 # Access: https://myblog.com/blog and https://myblog.com/gitea
 ```
 
 ### Team Development Platform
 ```bash
-tfgrid-compose up ai-gateway-stack --domain dev.team.com
+tfgrid-compose up tfgrid-ai-stack --domain dev.team.com
 tfgrid-compose create "project management dashboard"
 tfgrid-compose create "API backend"
 tfgrid-compose create "mobile app frontend"
@@ -451,7 +451,7 @@ tfgrid-compose create "mobile app frontend"
 
 ### Learning Environment
 ```bash
-tfgrid-compose up ai-gateway-stack  # Private mode
+tfgrid-compose up tfgrid-ai-stack  # Private mode
 tfgrid-compose create "React tutorial project"
 tfgrid-compose create "Node.js API example"
 # Safe learning environment with full Git history

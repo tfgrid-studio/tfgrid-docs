@@ -69,7 +69,7 @@ Deploy AI agent + Gateway + Gitea together:
 
 ```bash
 # Complete integrated workflow
-tfgrid-compose up ai-gateway-stack --domain example.com
+tfgrid-compose up tfgrid-ai-stack --domain example.com
 
 # Access:
 # - example.com/gitea → Gitea UI
@@ -146,7 +146,7 @@ tfgrid-compose push-code my-website /path/to/ai/generated/code
 
 ```bash
 # SSH to AI agent VM
-tfgrid-compose ssh ai-gateway-stack --vm ai-agent
+tfgrid-compose ssh tfgrid-ai-stack --vm ai-agent
 
 # Configure git
 git config --global user.name "AI Agent"

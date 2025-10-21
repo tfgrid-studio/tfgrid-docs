@@ -18,7 +18,7 @@
         <link rel="prev" href="../context-system/">
       
       
-        <link rel="next" href="../../guides/ai-agent/">
+        <link rel="next" href="../../guides/getting-started-workflow/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
@@ -296,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../guides/ai-agent/" class="md-tabs__link">
+        <a href="../../guides/getting-started-workflow/" class="md-tabs__link">
           
   
   
@@ -552,6 +552,29 @@
   
   <span class="md-ellipsis">
     Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Setup
     
   </span>
   
@@ -1315,6 +1338,29 @@
             Guides
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/getting-started-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2578,7 +2624,7 @@
 <h1 id="registry-integration">Registry Integration<a class="headerlink" href="#registry-integration" title="Permanent link">&para;</a></h1>
 <p>The TFGrid Compose registry allows you to discover and deploy apps by name, without manually cloning repositories.</p>
 <p>:::info Version
-Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
+Registry integration is available in <strong>v0.13.4</strong> (current version)
 :::</p>
 <hr />
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
@@ -2586,13 +2632,13 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tfgrid-compose<span class="w"> </span>search
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Deploy an app by name</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># List deployed apps</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>tfgrid-compose<span class="w"> </span>list
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Switch between apps</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>ai-agent
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <hr />
 <h2 id="searching-apps">Searching Apps<a class="headerlink" href="#searching-apps" title="Permanent link">&para;</a></h2>
@@ -2602,36 +2648,31 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 <p><strong>Output:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Available apps:
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ai-agent             AI-powered deployment assistant
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>wordpress            WordPress CMS platform
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>nextcloud            File sharing and collaboration
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>ghost                Modern blogging platform
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>discourse            Community discussion forum
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>...
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>tfgrid-ai-agent      AI coding assistant with Qwen integration
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>tfgrid-gitea         Self-hosted Git service with web interface
 </code></pre></div></p>
 <h3 id="search-by-name">Search by Name<a class="headerlink" href="#search-by-name" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>wordpress
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <p><strong>Output:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>wordpress            WordPress CMS platform
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tfgrid-ai-agent      AI coding assistant with Qwen integration
 </code></pre></div></p>
 <h3 id="search-by-keyword">Search by Keyword<a class="headerlink" href="#search-by-keyword" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>blog
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>ai
 </code></pre></div>
 <p><strong>Output:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>wordpress            WordPress CMS platform
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ghost                Modern blogging platform
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tfgrid-ai-agent      AI coding assistant with Qwen integration
 </code></pre></div></p>
 <hr />
 <h2 id="deploying-apps">Deploying Apps<a class="headerlink" href="#deploying-apps" title="Permanent link">&para;</a></h2>
 <h3 id="deploy-by-name">Deploy by Name<a class="headerlink" href="#deploy-by-name" title="Permanent link">&para;</a></h3>
 <p>Instead of cloning repositories manually, deploy directly by name:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <p><strong>What happens:</strong>
 1. ✅ Fetches app info from registry
 2. ✅ Downloads app repository to cache
-3. ✅ Deploys the app
+3. ✅ Deploys the app (4 CPU, 8GB RAM, 100GB disk VM)
 4. ✅ Sets it as active context</p>
 <h3 id="deploy-from-local-path">Deploy from Local Path<a class="headerlink" href="#deploy-from-local-path" title="Permanent link">&para;</a></h3>
 <p>You can still deploy from local paths:</p>
@@ -2660,19 +2701,19 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 - <code>tfgrid-compose exec</code> → runs commands on ai-agent</p>
 <h3 id="context-aware-commands">Context-Aware Commands<a class="headerlink" href="#context-aware-commands" title="Permanent link">&para;</a></h3>
 <p>Once you switch, all commands operate on the active app:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Switch to WordPress</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>wordpress
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Switch to AI agent</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># These all operate on WordPress now</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># These all operate on AI agent now</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>tfgrid-compose<span class="w"> </span>logs
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>tfgrid-compose<span class="w"> </span>status
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>tfgrid-compose<span class="w"> </span>address
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>my-project
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1"># Switch to AI agent</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>ai-agent
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1"># Switch to Gitea</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-gitea
 <a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="c1"># Now these operate on ai-agent</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>tfgrid-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>login
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="c1"># Now these operate on Gitea</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>tfgrid-compose<span class="w"> </span>address
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>tfgrid-compose<span class="w"> </span>logs
 </code></pre></div>
 <hr />
@@ -2681,38 +2722,30 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Search for apps</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>tfgrid-compose<span class="w"> </span>search
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Deploy WordPress blog</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Deploy AI agent for development</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Deploy AI agent for development</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>ai-agent
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Deploy Gitea for code storage</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea
 <a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># Deploy Nextcloud for file storage</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>nextcloud
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="c1"># List all deployed apps</span>
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>tfgrid-compose<span class="w"> </span>list
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># List all deployed apps</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>tfgrid-compose<span class="w"> </span>list
 </code></pre></div>
 <p><strong>Output:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>  * nextcloud (active)
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    ai-agent
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    wordpress
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>  * tfgrid-gitea (active)
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    tfgrid-ai-agent
 </code></pre></div></p>
 <h3 id="work-with-different-apps">Work with Different Apps<a class="headerlink" href="#work-with-different-apps" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Work with AI agent</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>ai-agent
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>tfgrid-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>create<span class="w"> </span>my-project
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>tfgrid-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>run<span class="w"> </span>my-project
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>my-project
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>my-project
 <a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>tfgrid-compose<span class="w"> </span>logs
 <a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># Check WordPress status</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>wordpress
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># Check Gitea status</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-gitea
 <a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>tfgrid-compose<span class="w"> </span>address
 <a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>tfgrid-compose<span class="w"> </span>logs
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="c1"># Manage Nextcloud</span>
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>nextcloud
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>tfgrid-compose<span class="w"> </span>status
 </code></pre></div>
 <hr />
 <h2 id="app-caching">App Caching<a class="headerlink" href="#app-caching" title="Permanent link">&para;</a></h2>
@@ -2784,23 +2817,35 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 <h2 id="registry-format">Registry Format<a class="headerlink" href="#registry-format" title="Permanent link">&para;</a></h2>
 <p>The registry is a simple YAML file hosted on GitHub.</p>
 <h3 id="example-registry-entry">Example Registry Entry<a class="headerlink" href="#example-registry-entry" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">wordpress</span><span class="p">:</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WordPress CMS platform</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/tfgrid-studio/wordpress-app</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cms</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">php</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="nt">ai-agent</span><span class="p">:</span>
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI-powered deployment assistant</span>
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">  </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/tfgrid-studio/tfgrid-ai-agent</span>
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">  </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
-<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai</span>
-<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span>
-<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">tfgrid-ai-agent</span><span class="p">:</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AI coding assistant with Qwen integration</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/tfgrid-studio/tfgrid-ai-agent</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.3.0</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coding</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qwen</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">  </span><span class="nt">requirements</span><span class="p">:</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8GB</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">    </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100GB</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="nt">tfgrid-gitea</span><span class="p">:</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Self-hosted Git service with web interface</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">  </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/tfgrid-studio/tfgrid-gitea</span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">  </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.0.0</span>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git</span>
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scm</span>
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository</span>
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collaboration</span>
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="w">  </span><span class="nt">requirements</span><span class="p">:</span>
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a><span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4GB</span>
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a><span class="w">    </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50GB</span>
 </code></pre></div>
 <h3 id="registry-location">Registry Location<a class="headerlink" href="#registry-location" title="Permanent link">&para;</a></h3>
 <p><strong>Public registry:</strong> https://github.com/tfgrid-studio/registry</p>
@@ -2808,7 +2853,7 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 <h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
 <h3 id="mix-registry-and-local-apps">Mix Registry and Local Apps<a class="headerlink" href="#mix-registry-and-local-apps" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Deploy from registry</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Deploy from local path</span>
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./my-custom-app
@@ -2818,14 +2863,14 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 </code></pre></div>
 <p><strong>Output:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>  * my-custom-app (active)
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    wordpress
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    tfgrid-ai-agent
 </code></pre></div></p>
 <h3 id="deploy-same-app-multiple-times">Deploy Same App Multiple Times<a class="headerlink" href="#deploy-same-app-multiple-times" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Deploy production WordPress from registry</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Deploy production AI agent from registry</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Deploy staging WordPress from local fork</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./wordpress-staging
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Deploy staging AI agent from local fork</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./ai-agent-staging
 </code></pre></div>
 <hr />
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
@@ -2845,16 +2890,16 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 <a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>tfgrid-compose<span class="w"> </span>search
 </code></pre></div>
 <h3 id="app-already-deployed">App Already Deployed<a class="headerlink" href="#app-already-deployed" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="c1"># Error: App &#39;wordpress&#39; is already deployed</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="c1"># Error: App &#39;tfgrid-ai-agent&#39; is already deployed</span>
 </code></pre></div>
 <p><strong>Solution:</strong> Destroy first or switch to it:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># Option 1: Destroy and redeploy</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span>wordpress
-<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>wordpress
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
 <a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="c1"># Option 2: Switch to it</span>
-<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>wordpress
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>tfgrid-compose<span class="w"> </span>switch<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
@@ -2873,7 +2918,7 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
 </code></pre></div>
 <h3 id="4-clean-up-unused-apps">4. Clean Up Unused Apps<a class="headerlink" href="#4-clean-up-unused-apps" title="Permanent link">&para;</a></h3>
 <p>Destroy apps you're no longer using:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span>wordpress
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>tfgrid-compose<span class="w"> </span>down<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
@@ -2984,13 +3029,13 @@ Registry integration was added in <strong>v0.10.0</strong> (October 15, 2025)
         
         
           
-          <a href="../../guides/ai-agent/" class="md-footer__link md-footer__link--next" aria-label="Next: AI Agent">
+          <a href="../../guides/getting-started-workflow/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started Workflow">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                AI Agent
+                Getting Started Workflow
               </div>
             </div>
             <div class="md-footer__button md-icon">

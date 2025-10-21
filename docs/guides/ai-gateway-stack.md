@@ -247,24 +247,24 @@ resources:
 ### Project Creation Flow
 
 1. **AI Code Generation**
-   
+
    - AI agent analyzes requirements
    - Generates complete project code
    - Tests and validates locally
 
 2. **Git Repository Setup**
-3. 
+   
    - Creates repository in Gitea via API
    - Initializes with generated code
    - Sets up proper Git configuration
 
-4. **Live Deployment**
-5.
+3. **Live Deployment**
+
    - Copies code to gateway `/var/www/project-name/`
    - Adds Nginx location block dynamically
    - Reloads configuration without downtime
 
-5. **Access Provisioning**
+1. **Access Provisioning**
    
    - Returns repository URL for code access
    - Returns live site URL for viewing

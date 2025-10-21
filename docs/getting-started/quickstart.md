@@ -2,9 +2,9 @@
 
 Deploy your first application on ThreeFold Grid in **5 minutes**.
 
-:::tip 
-New in v0.10.0
-You can now deploy apps directly by name! No need to clone repositories manually.
+:::tip
+New in v0.13.4
+Complete workflow from installation to deployment with registry integration!
 :::
 
 ---
@@ -12,146 +12,127 @@ You can now deploy apps directly by name! No need to clone repositories manually
 ## Prerequisites
 
 Before starting, ensure you have:
-- ✅ [TFGrid Compose installed](installation.md)
-- ✅ ThreeFold mnemonic configured
-- ✅ Terraform/OpenTofu, Ansible, WireGuard installed
+- ✅ Basic command line knowledge
+- ✅ Internet connection
+- ✅ ThreeFold Grid account (get one at [threefold.io](https://threefold.io))
 
 ---
 
-## 🚀 Quick Start (Registry Method)
+## 🚀 Complete Quick Start
 
-**Fastest way to deploy** - uses the app registry (v0.10.0+):
+**Deploy an AI coding assistant in 5 minutes:**
 
-### Step 1: Configure ThreeFold (1 minute)
+### Step 1: Install TFGrid Compose (30 seconds)
 
 ```bash
-# Store mnemonic
-mkdir -p ~/.config/threefold
-echo "your twelve word mnemonic here" > ~/.config/threefold/mnemonic
-chmod 600 ~/.config/threefold/mnemonic
-
-# Set environment variable
-export TF_VAR_mnemonic=$(cat ~/.config/threefold/mnemonic)
-# Or for Fish: set -x TF_VAR_mnemonic (cat ~/.config/threefold/mnemonic)
+# One-command installation
+curl -sSL install.tfgrid.studio/install.sh | sh
 ```
 
-### Step 2: Search & Deploy (1 minute)
+This installs `tfgrid-compose` and creates a default `tfgrid` shortcut.
+
+### Step 2: Login & Configure (1 minute)
+
+```bash
+# Interactive setup (configures mnemonic, git, optional tokens)
+tfgrid-compose login
+```
+
+**What it configures:**
+- ThreeFold mnemonic (for deployments)
+- Git identity (for AI-generated commits)
+- Optional: GitHub/Gitea tokens
+
+### Step 3: Set Up Shortcuts (30 seconds)
+
+```bash
+# Create convenient shortcuts
+tfgrid-compose shortcut tfc  # Creates 'tfc' command
+```
+
+### Step 4: Explore & Deploy (2 minutes)
 
 ```bash
 # Browse available apps
-tfgrid-compose search
+tfc search
 
-# Deploy an app by name
-tfgrid-compose up ai-agent
+# Deploy AI agent by name
+tfc up tfgrid-ai-agent
 
-# Watch the magic happen! ✨
-# ✅ Fetching from registry...
-# ✅ Downloading app...
-# ✅ Provisioning infrastructure...
+# Watch deployment:
+# ✅ Validating prerequisites...
+# ✅ Downloading from registry...
+# ✅ Provisioning ThreeFold Grid VM...
+# ✅ Configuring networking...
+# ✅ Installing AI agent...
 # ✅ Deployment complete!
 ```
 
-### Step 3: Use Your App
+### Step 5: Use Your AI Agent (1 minute)
 
 ```bash
-# Check status
-tfgrid-compose status
+# Create your first AI project
+tfc create my-website
 
-# View logs
-tfgrid-compose logs
+# Monitor AI coding in real-time
+tfc monitor my-website
 
-# SSH into VM
-tfgrid-compose ssh
+# Check all projects
+tfc projects
 
-# For AI agent specifically
-tfgrid-compose exec login
+# SSH to see generated code
+tfc ssh
+cd /home/developer/code/my-website
+ls -la
 ```
 
-**That's it!** 🎉
-
-See [Registry Guide](../cli/registry.md) for more details.
+**That's it!** 🎉 Your AI agent is now autonomously coding on ThreeFold Grid.
 
 ---
 
-## 📦 Manual Method (Local Path)
+## 📦 Alternative: Manual Setup
 
-If you prefer working with local repositories:
+If you prefer working with local repositories or need custom configurations:
 
-### Step 1: Setup Workspace (2 minutes)
+### Manual Installation
 
 ```bash
 # Create workspace
 mkdir -p ~/code/github.com/tfgrid-studio
 cd ~/code/github.com/tfgrid-studio
 
-# Clone deployer
+# Clone repositories
 git clone https://github.com/tfgrid-studio/tfgrid-compose
-cd tfgrid-compose
+git clone https://github.com/tfgrid-studio/tfgrid-ai-agent
 
 # Install CLI
+cd tfgrid-compose
 make install
 
-# Clone an app to deploy (AI agent example)
-cd ~/code/github.com/tfgrid-studio
-git clone https://github.com/tfgrid-studio/tfgrid-ai-agent
-```
-
----
-
-## Step 2: Configure ThreeFold (1 minute)
-
-```bash
-# Store mnemonic
+# Configure mnemonic
 mkdir -p ~/.config/threefold
-echo "your twelve word mnemonic here" > ~/.config/threefold/mnemonic
+echo "your twelve word mnemonic" > ~/.config/threefold/mnemonic
 chmod 600 ~/.config/threefold/mnemonic
-
-# Set environment variable
 export TF_VAR_mnemonic=$(cat ~/.config/threefold/mnemonic)
-# Or for Fish: set -x TF_VAR_mnemonic (cat ~/.config/threefold/mnemonic)
-```
 
----
-
-## Step 3: Create Context File (30 seconds)
-
-Context files make deployment commands simpler:
-
-```bash
-cd ~/code/github.com/tfgrid-studio/tfgrid-compose
+# Create context file
 echo "app: ../tfgrid-ai-agent" > .tfgrid-compose.yaml
-```
 
-Now you can run `tfgrid-compose up` without specifying the app path every time!
-
----
-
-## Step 4: Deploy! (2-3 minutes)
-
-```bash
-# Deploy the application
+# Deploy
 tfgrid-compose up
-
-# Watch the deployment process:
-# ✅ Validating prerequisites...
-# ✅ Reading app manifest...
-# ✅ Provisioning infrastructure (Terraform)...
-# ✅ Setting up WireGuard network...
-# ✅ Configuring platform (Ansible)...
-# ✅ Deploying application...
-# ✅ Running health checks...
-# ✅ Deployment complete!
 ```
 
-**That's it!** Your app is now running on ThreeFold Grid. 🎉
+See [Complete Setup Guide](setup.md) for detailed manual instructions.
 
 ---
 
-## Step 5: Verify Deployment
+## Step 6: Verify & Use
+
+### Check Deployment Status
 
 ```bash
 # Check deployment status
-tfgrid-compose status
+tfc status
 
 # Output:
 # App: tfgrid-ai-agent
@@ -159,45 +140,30 @@ tfgrid-compose status
 # Pattern: single-vm
 # Network: main
 # IP Address: 10.1.3.2 (WireGuard)
-# Deployed: 2025-10-09 13:45:23
+# Deployed: 2025-10-21 15:52:00
 ```
 
----
-
-## Step 6: Use Your Application
-
-### SSH Access
+### Use Your AI Agent
 
 ```bash
-# Connect to the VM
-tfgrid-compose ssh
-
-# You're now on the deployed VM!
-# root@vm:~#
-```
-
-### AI Agent Example
-
-If you deployed tfgrid-ai-agent:
-
-```bash
-# Login to Qwen AI
-tfgrid-compose login
-
 # Create a project
-tfgrid-compose create
-# Enter project name: my-website
-# Enter duration: 30
-# Enter prompt: Create a beautiful portfolio website with React and Tailwind CSS
+tfc create my-first-app
+# Interactive prompts guide you through setup
 
-# Monitor the AI agent working
-tfgrid-compose monitor my-website
+# Monitor AI coding in real-time
+tfc monitor my-first-app
 
 # List all projects
-tfgrid-compose projects
+tfc projects
 
-# Stop the agent when done
-tfgrid-compose stop my-website
+# SSH to inspect generated code
+tfc ssh
+cd /home/developer/code/my-first-app
+ls -la
+cat README.md
+
+# Stop when done
+tfc stop my-first-app
 ```
 
 ### View Logs
@@ -227,38 +193,31 @@ tfgrid-compose down
 
 ---
 
-## Complete Example Workflow
-
-Here's the entire workflow in one go:
+## Complete Workflow Summary
 
 ```bash
-# Setup (one-time)
-mkdir -p ~/code/github.com/tfgrid-studio
-cd ~/code/github.com/tfgrid-studio
-git clone https://github.com/tfgrid-studio/tfgrid-compose
-git clone https://github.com/tfgrid-studio/tfgrid-ai-agent
-cd tfgrid-compose
-make install
+# 1. Install & Setup (one-time)
+curl -sSL install.tfgrid.studio/install.sh | sh
+tfgrid-compose login
+tfgrid-compose shortcut tfc
 
-# Configure
-mkdir -p ~/.config/threefold
-echo "your mnemonic" > ~/.config/threefold/mnemonic
-chmod 600 ~/.config/threefold/mnemonic
-export TF_VAR_mnemonic=$(cat ~/.config/threefold/mnemonic)
+# 2. Explore & Deploy
+tfc search
+tfc up tfgrid-ai-agent
 
-# Create context
-echo "app: ../tfgrid-ai-agent" > .tfgrid-compose.yaml
+# 3. Use AI Agent
+tfc create my-project
+tfc monitor my-project
+tfc projects
 
-# Deploy
-tfgrid-compose up
+# 4. Access & Inspect
+tfc ssh
+cd /home/developer/code/my-project
+ls -la
 
-# Use
-tfgrid-compose create
-tfgrid-compose projects
-tfgrid-compose ssh
-
-# Clean up
-tfgrid-compose down
+# 5. Clean up
+tfc stop my-project
+tfc down
 ```
 
 ---
@@ -410,9 +369,9 @@ Now that you've deployed your first app:
 - **[CLI Reference](../reference/cli.md)** - Complete command reference
 
 ### Deploy More Apps
-- **[Single-VM Pattern](../patterns/single-vm/)** - Deploy databases, services
-- **[AI Agent Guide](../applications/tfgrid-ai-agent/)** - Complete AI agent workflows
-- **[Create Your Own App](../applications/creating-apps.md)** - Build deployable apps
+- **[AI Agent Guide](../guides/ai-agent.md)** - Complete AI agent workflows
+- **[Gitea Guide](../guides/gitea.md)** - Self-hosted Git service
+- **[App Registry](../guides/app-registry.md)** - Discover more applications
 
 ### Advanced Topics
 - **[Advanced Deployment](../guides/deployment.md)** - Production strategies

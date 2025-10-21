@@ -3,7 +3,7 @@
 The TFGrid Compose registry allows you to discover and deploy apps by name, without manually cloning repositories.
 
 :::info Version
-Registry integration was added in **v0.10.0** (October 15, 2025)
+Registry integration is available in **v0.13.4** (current version)
 :::
 
 ---
@@ -15,13 +15,13 @@ Registry integration was added in **v0.10.0** (October 15, 2025)
 tfgrid-compose search
 
 # Deploy an app by name
-tfgrid-compose up wordpress
+tfgrid-compose up tfgrid-ai-agent
 
 # List deployed apps
 tfgrid-compose list
 
 # Switch between apps
-tfgrid-compose switch ai-agent
+tfgrid-compose switch tfgrid-ai-agent
 ```
 
 ---
@@ -38,35 +38,30 @@ tfgrid-compose search
 ```
 Available apps:
 
-ai-agent             AI-powered deployment assistant
-wordpress            WordPress CMS platform
-nextcloud            File sharing and collaboration
-ghost                Modern blogging platform
-discourse            Community discussion forum
-...
+tfgrid-ai-agent      AI coding assistant with Qwen integration
+tfgrid-gitea         Self-hosted Git service with web interface
 ```
 
 ### Search by Name
 
 ```bash
-tfgrid-compose search wordpress
+tfgrid-compose search tfgrid-ai-agent
 ```
 
 **Output:**
 ```
-wordpress            WordPress CMS platform
+tfgrid-ai-agent      AI coding assistant with Qwen integration
 ```
 
 ### Search by Keyword
 
 ```bash
-tfgrid-compose search blog
+tfgrid-compose search ai
 ```
 
 **Output:**
 ```
-wordpress            WordPress CMS platform
-ghost                Modern blogging platform
+tfgrid-ai-agent      AI coding assistant with Qwen integration
 ```
 
 ---
@@ -78,13 +73,13 @@ ghost                Modern blogging platform
 Instead of cloning repositories manually, deploy directly by name:
 
 ```bash
-tfgrid-compose up wordpress
+tfgrid-compose up tfgrid-ai-agent
 ```
 
 **What happens:**
 1. ✅ Fetches app info from registry
 2. ✅ Downloads app repository to cache
-3. ✅ Deploys the app
+3. ✅ Deploys the app (4 CPU, 8GB RAM, 100GB disk VM)
 4. ✅ Sets it as active context
 
 ### Deploy from Local Path
@@ -136,19 +131,19 @@ tfgrid-compose switch ai-agent
 Once you switch, all commands operate on the active app:
 
 ```bash
-# Switch to WordPress
-tfgrid-compose switch wordpress
+# Switch to AI agent
+tfgrid-compose switch tfgrid-ai-agent
 
-# These all operate on WordPress now
+# These all operate on AI agent now
 tfgrid-compose logs
 tfgrid-compose status
+tfgrid-compose create my-project
+
+# Switch to Gitea
+tfgrid-compose switch tfgrid-gitea
+
+# Now these operate on Gitea
 tfgrid-compose address
-
-# Switch to AI agent
-tfgrid-compose switch ai-agent
-
-# Now these operate on ai-agent
-tfgrid-compose exec login
 tfgrid-compose logs
 ```
 
@@ -162,14 +157,11 @@ tfgrid-compose logs
 # Search for apps
 tfgrid-compose search
 
-# Deploy WordPress blog
-tfgrid-compose up wordpress
-
 # Deploy AI agent for development
-tfgrid-compose up ai-agent
+tfgrid-compose up tfgrid-ai-agent
 
-# Deploy Nextcloud for file storage
-tfgrid-compose up nextcloud
+# Deploy Gitea for code storage
+tfgrid-compose up tfgrid-gitea
 
 # List all deployed apps
 tfgrid-compose list
@@ -177,28 +169,23 @@ tfgrid-compose list
 
 **Output:**
 ```
-  * nextcloud (active)
-    ai-agent
-    wordpress
+  * tfgrid-gitea (active)
+    tfgrid-ai-agent
 ```
 
 ### Work with Different Apps
 
 ```bash
 # Work with AI agent
-tfgrid-compose switch ai-agent
-tfgrid-compose exec create my-project
-tfgrid-compose exec run my-project
+tfgrid-compose switch tfgrid-ai-agent
+tfgrid-compose create my-project
+tfgrid-compose monitor my-project
 tfgrid-compose logs
 
-# Check WordPress status
-tfgrid-compose switch wordpress
+# Check Gitea status
+tfgrid-compose switch tfgrid-gitea
 tfgrid-compose address
 tfgrid-compose logs
-
-# Manage Nextcloud
-tfgrid-compose switch nextcloud
-tfgrid-compose status
 ```
 
 ---
@@ -301,23 +288,35 @@ The registry is a simple YAML file hosted on GitHub.
 ### Example Registry Entry
 
 ```yaml
-wordpress:
-  description: WordPress CMS platform
-  repo: https://github.com/tfgrid-studio/wordpress-app
-  pattern: gateway
-  tags:
-    - cms
-    - blog
-    - php
-
-ai-agent:
-  description: AI-powered deployment assistant
+tfgrid-ai-agent:
+  description: AI coding assistant with Qwen integration
   repo: https://github.com/tfgrid-studio/tfgrid-ai-agent
   pattern: single-vm
+  version: v0.3.0
   tags:
     - ai
+    - coding
     - development
-    - tools
+    - qwen
+  requirements:
+    cpu: 4
+    memory: 8GB
+    disk: 100GB
+
+tfgrid-gitea:
+  description: Self-hosted Git service with web interface
+  repo: https://github.com/tfgrid-studio/tfgrid-gitea
+  pattern: single-vm
+  version: v1.0.0
+  tags:
+    - git
+    - scm
+    - repository
+    - collaboration
+  requirements:
+    cpu: 2
+    memory: 4GB
+    disk: 50GB
 ```
 
 ### Registry Location
@@ -332,7 +331,7 @@ ai-agent:
 
 ```bash
 # Deploy from registry
-tfgrid-compose up wordpress
+tfgrid-compose up tfgrid-ai-agent
 
 # Deploy from local path
 tfgrid-compose up ./my-custom-app
@@ -344,17 +343,17 @@ tfgrid-compose list
 **Output:**
 ```
   * my-custom-app (active)
-    wordpress
+    tfgrid-ai-agent
 ```
 
 ### Deploy Same App Multiple Times
 
 ```bash
-# Deploy production WordPress from registry
-tfgrid-compose up wordpress
+# Deploy production AI agent from registry
+tfgrid-compose up tfgrid-ai-agent
 
-# Deploy staging WordPress from local fork
-tfgrid-compose up ./wordpress-staging
+# Deploy staging AI agent from local fork
+tfgrid-compose up ./ai-agent-staging
 ```
 
 ---
@@ -389,19 +388,19 @@ tfgrid-compose search
 ### App Already Deployed
 
 ```bash
-tfgrid-compose up wordpress
-# Error: App 'wordpress' is already deployed
+tfgrid-compose up tfgrid-ai-agent
+# Error: App 'tfgrid-ai-agent' is already deployed
 ```
 
 **Solution:** Destroy first or switch to it:
 
 ```bash
 # Option 1: Destroy and redeploy
-tfgrid-compose down wordpress
-tfgrid-compose up wordpress
+tfgrid-compose down tfgrid-ai-agent
+tfgrid-compose up tfgrid-ai-agent
 
 # Option 2: Switch to it
-tfgrid-compose switch wordpress
+tfgrid-compose switch tfgrid-ai-agent
 ```
 
 ---
@@ -438,7 +437,7 @@ tfgrid-compose logs
 Destroy apps you're no longer using:
 
 ```bash
-tfgrid-compose down wordpress
+tfgrid-compose down tfgrid-ai-agent
 ```
 
 ---

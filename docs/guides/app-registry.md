@@ -3,7 +3,7 @@
 The TFGrid App Registry catalogs official and verified community applications that can be deployed using `tfgrid-compose`. Applications listed here are discoverable at [registry.tfgrid.studio](https://registry.tfgrid.studio) and can be deployed with a simple command:
 
 ```bash
-# Deploy official app (v0.10.0+)
+# Deploy official app (v0.13.4+)
 tfgrid-compose up tfgrid-ai-agent
 
 # Deploy community app
@@ -37,7 +37,7 @@ Maintained by TFGrid Studio:
 
 ### tfgrid-ai-agent
 
-AI coding agent with Qwen integration.
+AI coding agent with Qwen integration and loop technique for safe AI development.
 
 ```bash
 tfgrid-compose up tfgrid-ai-agent
@@ -45,8 +45,27 @@ tfgrid-compose up tfgrid-ai-agent
 
 **Details:**
 - **Pattern**: single-vm
+- **Version**: v0.3.0
+- **Status**: Production Ready
 - **Repo**: [tfgrid-studio/tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)
 - **Docs**: [AI Agent Guide](ai-agent.md)
+- **Requirements**: 4 CPU, 8GB RAM, 100GB disk
+
+### tfgrid-gitea
+
+Self-hosted Git service with web interface - perfect for AI agent repositories.
+
+```bash
+tfgrid-compose up tfgrid-gitea
+```
+
+**Details:**
+- **Pattern**: single-vm
+- **Version**: v1.0.0
+- **Status**: Production Ready
+- **Repo**: [tfgrid-studio/tfgrid-gitea](https://github.com/tfgrid-studio/tfgrid-gitea)
+- **Docs**: [Gitea Guide](gitea.md)
+- **Requirements**: 2 CPU, 4GB RAM, 50GB disk
 
 ## Community Apps
 
@@ -64,9 +83,24 @@ Community-contributed apps that have passed verification:
 tfgrid-compose up tfgrid-ai-agent
 # → Deployment name: tfgrid-ai-agent
 
-# Deploy with custom name
-tfgrid-compose up tfgrid-ai-agent --name=dev
-# → Deployment name: dev
+# Deploy with custom name (if supported)
+tfgrid-compose up tfgrid-ai-agent --name=my-agent
+# → Deployment name: my-agent
+```
+
+### Search and Discover Apps
+
+```bash
+# List all available apps
+tfgrid-compose search
+
+# Search by keyword
+tfgrid-compose search ai
+tfgrid-compose search git
+
+# Search by tag
+tfgrid-compose search --tag development
+tfgrid-compose search --tag ai
 ```
 
 ### Deploy Community App (Unverified)
@@ -81,17 +115,14 @@ tfgrid-compose up https://gitlab.com/org/app
 
 ⚠️ **Security Note**: Always review code before deploying unverified apps!
 
-### List Available Apps
+### Get App Information
 
 ```bash
-# Search registry
-tfgrid-compose search
-
-# Search by keyword
-tfgrid-compose search ai
-
-# Get app details
+# Get detailed app information
 tfgrid-compose info tfgrid-ai-agent
+
+# View app manifest and requirements
+# Shows: version, resources, patterns, documentation
 ```
 
 ### Manage Cached Apps
@@ -140,21 +171,24 @@ See [App Manifest Reference](../development/app-manifest.md) for full specificat
 Apps are organized by verification status:
 
 ### Official Apps
-- Maintained by TFGrid Studio
-- Full support and documentation
-- Production-ready
+- ✅ Maintained by TFGrid Studio team
+- ✅ Full support and documentation
+- ✅ Production-ready and tested
+- ✅ Regular security updates
+- ✅ Example: `tfgrid-ai-agent`, `tfgrid-gitea`
 
-### Verified Apps
-- Community-contributed
-- Code reviewed by TFGrid Studio
-- Security checked
-- Documentation verified
+### Community Apps (Future)
+- ✅ Community-contributed and maintained
+- ✅ Code reviewed by TFGrid Studio team
+- ✅ Security checked and approved
+- ✅ Documentation verified
+- ✅ Listed in registry with "Community" badge
 
 ### Unverified Apps
-- Any GitHub/GitLab repo
-- Use at your own risk
-- Not listed in registry
-- Access via direct URL
+- ⚠️ Any public GitHub/GitLab repository
+- ⚠️ Use at your own risk
+- ⚠️ Not listed in official registry
+- ⚠️ Deploy via direct URL: `tfgrid-compose up https://github.com/user/repo`
 
 ## Submitting Your App
 
@@ -271,5 +305,7 @@ tfgrid-compose up ./app
 
 ---
 
-**Registry Deployment**: v0.10.0 (CLI integration coming soon)  
+**Registry Status**: ✅ Active (v0.13.4 CLI integration complete)
 **Browse Apps Now**: [registry.tfgrid.studio](https://registry.tfgrid.studio)
+**Official Apps**: 2 (tfgrid-ai-agent v0.3.0, tfgrid-gitea v1.0.0)
+**Community Apps**: Coming soon - submit yours!

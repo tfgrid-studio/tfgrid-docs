@@ -116,9 +116,10 @@ extra:
 # Navigation
 nav:
   - Home: index.md
-  
+
   - Getting Started:
     - Introduction: getting-started/introduction.md
+    - Complete Setup: getting-started/setup.md
     - Installation: getting-started/installation.md
     - ThreeFold Setup: getting-started/threefold-setup.md
     - Quick Start: getting-started/quickstart.md
@@ -130,6 +131,7 @@ nav:
     - Registry Commands: cli/registry.md
   
   - Guides:
+    - Getting Started Workflow: guides/getting-started-workflow.md
     - AI Agent: guides/ai-agent.md
     - Gitea Self-Hosted Git: guides/gitea.md
     - App Registry: guides/app-registry.md

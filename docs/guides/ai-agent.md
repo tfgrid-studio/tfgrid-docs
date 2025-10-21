@@ -15,17 +15,81 @@ The **TFGrid AI Agent** is an autonomous AI coding assistant that runs on ThreeF
 - 🔧 Refactor and optimize code
 - ⏰ Work within time constraints
 
-**Deployment time:** 2-3 minutes  
-**Cost:** Pay-as-you-go on ThreeFold Grid  
+**Deployment time:** 2-3 minutes
+**Cost:** Pay-as-you-go on ThreeFold Grid
 **Access:** Native commands via `tfgrid-compose`
 
 **Version:** 0.3.0 (Pre-1.0)
 
 ---
 
+## Prerequisites & Setup
+
+### 1. Install TFGrid Compose
+
+First, install the TFGrid Compose CLI:
+
+```bash
+# One-command installation
+curl -sSL install.tfgrid.studio/install.sh | sh
+```
+
+This installs `tfgrid-compose` to your system and creates a default `tfgrid` shortcut.
+
+### 2. Login & Configure Credentials
+
+Set up your ThreeFold Grid credentials:
+
+```bash
+# Interactive login (collects mnemonic, git config, optional tokens)
+tfgrid-compose login
+```
+
+**What it configures:**
+- ThreeFold mnemonic (required for deployments)
+- Git identity (name/email for commits)
+- GitHub token (optional, for private repos)
+- Gitea credentials (optional, for private Gitea repos)
+
+### 3. Set Up Shortcuts (Optional)
+
+Create command shortcuts for convenience:
+
+```bash
+# Create a custom shortcut (e.g., 'tfc' for tfgrid-compose)
+tfgrid-compose shortcut tfc
+
+# Now you can use: tfc up tfgrid-ai-agent
+tfc up tfgrid-ai-agent
+
+# List all shortcuts
+tfgrid-compose shortcut --list
+```
+
+### 4. Explore Available Apps
+
+Browse the app registry:
+
+```bash
+# Search all available apps
+tfgrid-compose search
+
+# Search with query
+tfgrid-compose search ai
+
+# Search by tag
+tfgrid-compose search --tag development
+```
+
+**Current official apps:**
+- `tfgrid-ai-agent` - AI coding assistant
+- `tfgrid-gitea` - Self-hosted Git service
+
+---
+
 ## Quick Start
 
-### 1. Deploy the AI Agent
+### Deploy the AI Agent
 
 ```bash
 # Deploy to ThreeFold Grid
@@ -54,157 +118,176 @@ tfgrid-compose up tfgrid-ai-agent
   • Connect: tfgrid-compose ssh tfgrid-ai-agent
 ```
 
-### 2. Configure Git Identity
+### 2. Create Your First Project
 
-Configure your git identity for commit attribution:
-
-```bash
-tfgrid-compose login
-```
-
-The login flow collects:
-
-- ThreeFold mnemonic
-- GitHub token (optional)
-- Gitea credentials (optional)
-- Git name (for commit attribution)
-- Git email (for commit attribution)
-
-Git identity is automatically deployed to all VMs and used for all project commits.
-
-### 3. Create Your First Project
+Create and start your first AI coding project:
 
 ```bash
-tfgrid-compose create my-music-website
+tfgrid-compose create my-project
 ```
 
-Interactive prompts:
-
+**Interactive prompts:**
 1. **Project name** (if not specified)
 2. **Duration** (30m, 1h, 2h, indefinite)
-3. **Git credentials** (if not configured)
+3. **Git credentials** (auto-configured from login)
 4. **Prompt type** (Custom or Generic template)
 5. **Your coding prompt**
 6. **Start now?** (y/N)
 
-**Example session:**
-```
-🚀 AI-Agent Project Creator
-==============================
+### 3. Monitor Your Project
 
-Enter project name: music-website
-
-⏱️  How long should the AI agent run?
-Examples: 30m, 1h, 2h30m, indefinite
-
-Enter duration: 1h
-
-🔧 Let's set up your git credentials (used for all projects)
-
-Enter your name (for git commits): John Doe
-Enter your email (for git commits): john@example.com
-
-✅ Git configured globally
-
-📝 Choose prompt type:
-1) Custom prompt (paste your own)
-2) Generic template (select from options)
-
-Select (1-2) [2]: 1
-
-📋 Enter your custom prompt (press Ctrl+D when done):
-Create a beautiful music website showcasing John Lennon 
-and Mozart with lyrics and biography
-
-✅ Custom prompt configured
-
-✅ Project 'music-website' created successfully!
-
-🚀 Do you want to start the AI agent now?
-Start now? (y/N): y
-
-Starting AI agent for project 'music-website'...
-
-✅ AI agent loop started with PID: 12345
-🛑 To stop the loop, run: tfgrid-compose stop music-website
-```
-
-### 4. Monitor Your Project
+Monitor progress and manage your AI coding project:
 
 ```bash
 # Check all projects
 tfgrid-compose projects
 
 # Monitor specific project in real-time
-tfgrid-compose monitor music-website
+tfgrid-compose monitor my-project
+
+# View project logs
+tfgrid-compose logs my-project
 
 # View project summary
-tfgrid-compose summary music-website
-
-# View logs
-tfgrid-compose logs music-website
+tfgrid-compose summary my-project
 ```
 
-### 5. Manage Projects
+### 4. Manage Projects
+
+Control your AI projects:
 
 ```bash
 # Run a stopped project
-tfgrid-compose run music-website
+tfgrid-compose run my-project
 
 # Stop a running project
-tfgrid-compose stop music-website
-
-# Restart project
-tfgrid-compose restart music-website
+tfgrid-compose stop my-project
 
 # Stop all projects
 tfgrid-compose stopall
 
 # Remove a project
-tfgrid-compose remove music-website
+tfgrid-compose remove my-project
 
 # Edit project configuration
-tfgrid-compose edit music-website
+tfgrid-compose edit my-project
+```
+
+### Complete Workflow Example
+
+Here's the full workflow from installation to running your first AI project:
+
+```bash
+# 1. Install TFGrid Compose
+curl -sSL install.tfgrid.studio/install.sh | sh
+
+# 2. Login and configure credentials
+tfgrid-compose login
+
+# 3. Set up a shortcut (optional)
+tfgrid-compose shortcut tfc
+
+# 4. Explore available apps
+tfgrid-compose search
+
+# 5. Deploy the AI agent
+tfc up tfgrid-ai-agent
+
+# 6. Create your first project
+tfc create my-web-app
+
+# 7. Monitor progress
+tfc monitor my-web-app
+
+# 8. Check all projects
+tfc projects
+
+# 9. View results
+tfc summary my-web-app
+
+# 10. SSH to inspect files
+tfc ssh
+cd /home/developer/code/my-web-app
+ls -la
+
+# 11. Stop when done
+tfc stop my-web-app
+
+# 12. Cleanup (optional)
+tfc down
 ```
 
 ---
 
-## Complete Command Reference
+## App Registry & Discovery
 
-### All AI Agent Commands
+### Exploring Available Apps
 
-| Command | Description | Arguments | Context |
-|---------|-------------|-----------|----------|
-| `create` | Create new AI project | `[project-name]` | - |
-| `select-project` | Select active project | `[project-name]` | Sets context |
-| `unselect-project` | Clear project selection | None | Clears context |
-| `run` | Start agent loop | `[project-name]` | Uses context |
-| `stop` | Stop agent loop | `[project-name]` | Uses context |
-| `restart` | Restart agent | `[project-name]` | Uses context |
-| `projects` | Show all projects | None | - |
-| `monitor` | Watch progress live | `[project-name]` | Uses context |
-| `logs` | View project logs | `[project-name]` | Uses context |
-| `summary` | Show project summary | `[project-name]` | Uses context |
-| `edit` | Edit configuration | `[project-name]` | Uses context |
-| `remove` | Delete project | `[project-name]` | Uses context |
-| `stopall` | Stop all projects | None | - |
-| `login` | Configure credentials | None | - |
-| `update-git-config` | Update git config on VM | None | - |
-| `whoami` | Check authentication | None | - |
-
-**Note:** Arguments in `[]` are optional. If omitted, interactive selection is shown.
+TFGrid Studio maintains a registry of deployable applications at `registry.tfgrid.studio`:
 
 ```bash
-# Short form (context-aware)
-tfgrid-compose create my-project
-tfgrid-compose run my-project
+# List all available apps
+tfgrid-compose search
 
-# Explicit form (no context needed)
-tfgrid-compose tfgrid-ai-agent create my-project
-tfgrid-compose tfgrid-ai-agent run my-project
+# Search by keyword
+tfgrid-compose search ai
+tfgrid-compose search git
+
+# Search by tag
+tfgrid-compose search --tag development
+tfgrid-compose search --tag ai
 ```
 
-**Context is automatic with single app!**
+### Current Official Apps
+
+| App | Description | Pattern | Status |
+|-----|-------------|---------|--------|
+| `tfgrid-ai-agent` | AI coding assistant with Qwen integration | single-vm | Production |
+| `tfgrid-gitea` | Self-hosted Git service for AI agent repos | single-vm | Production |
+
+### Community Apps
+
+Community-contributed apps are reviewed and approved by the TFGrid Studio team:
+
+```bash
+# Future community apps will appear here
+# Submit your app: https://github.com/tfgrid-studio/app-registry
+```
+
+## Complete Command Reference
+
+### TFGrid Compose Core Commands
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `search` | Browse app registry | `tfgrid-compose search ai` |
+| `up` | Deploy app | `tfgrid-compose up tfgrid-ai-agent` |
+| `down` | Destroy deployment | `tfgrid-compose down` |
+| `status` | Check deployment status | `tfgrid-compose status` |
+| `logs` | View deployment logs | `tfgrid-compose logs` |
+| `ssh` | SSH into deployed VM | `tfgrid-compose ssh` |
+| `exec` | Execute command on VM | `tfgrid-compose exec ls /opt` |
+| `list` | Show deployed apps | `tfgrid-compose list` |
+| `select` | Set active app context | `tfgrid-compose select tfgrid-ai-agent` |
+| `login` | Configure credentials | `tfgrid-compose login` |
+| `shortcut` | Manage command shortcuts | `tfgrid-compose shortcut tfc` |
+
+### AI Agent App-Specific Commands
+
+| Command | Description | Context |
+|---------|-------------|----------|
+| `create` | Create new AI project | App selected |
+| `run` | Start agent loop | App selected |
+| `stop` | Stop agent loop | App selected |
+| `projects` | Show all projects | App selected |
+| `monitor` | Watch progress live | App selected |
+| `logs` | View project logs | App selected |
+| `summary` | Show project summary | App selected |
+| `edit` | Edit project config | App selected |
+| `remove` | Delete project | App selected |
+| `stopall` | Stop all projects | App selected |
+
+**Note:** App-specific commands require selecting the AI agent app first: `tfgrid-compose select tfgrid-ai-agent`
 
 ---
 
@@ -272,70 +355,61 @@ tfgrid-compose run my-app   # Works
 
 ## Workflows
 
-### Workflow 1: Simple Web App
+### Workflow 1: Complete Setup to First Project
 
 ```bash
-# 1. Deploy
-tfgrid-compose up tfgrid-ai-agent
-
-# 2. Configure git (first time only)
+# 1. Install and setup
+curl -sSL install.tfgrid.studio/install.sh | sh
 tfgrid-compose login
+tfgrid-compose shortcut tfc
 
-# 3. Create project (interactive)
-tfgrid-compose create simple-blog
-# Prompts for:
-# - Duration: 1h
-# - Prompt: "Create a simple blog with React and Node.js"
-# - Start now: y
+# 2. Explore and deploy
+tfc search
+tfc up tfgrid-ai-agent
 
-# 4. Monitor progress
-tfgrid-compose monitor simple-blog
+# 3. Create and run project
+tfc create my-first-app
+# Interactive prompts guide you through setup
 
-# 5. Check all projects
-tfgrid-compose projects
+# 4. Monitor and manage
+tfc monitor my-first-app
+tfc projects
+tfc summary my-first-app
 
-# 6. View results
-tfgrid-compose summary simple-blog
-tfgrid-compose ssh
-cd /home/developer/code/simple-blog
+# 5. Access results
+tfc ssh
+cd /home/developer/code/my-first-app
 ls -la
-cat README.md
 
-# 7. Stop project
-tfgrid-compose stop simple-blog
-
-# 8. Cleanup (if done)
-tfgrid-compose down
+# 6. Cleanup
+tfc stop my-first-app
+tfc down
 ```
 
-### Workflow 2: Code Refactoring
+### Workflow 2: Multiple Concurrent Projects
 
 ```bash
-# 1. Create refactoring project
-tfgrid-compose create refactor-legacy
-# Prompt: "Refactor this legacy code to TypeScript with best practices"
+# Deploy AI agent once
+tfgrid-compose up tfgrid-ai-agent
 
-# 2. Upload existing code
-tfgrid-compose ssh
-cd /home/developer/code/refactor-legacy
-# Copy your files here
-git add .
-git commit -m "Initial code to refactor"
-exit
+# Create multiple projects
+tfgrid-compose create frontend-app
+tfgrid-compose create backend-api
+tfgrid-compose create mobile-app
 
-# 3. Run agent
-tfgrid-compose run refactor-legacy
+# Run them all concurrently (each gets dedicated resources)
+tfgrid-compose run frontend-app &
+tfgrid-compose run backend-api &
+tfgrid-compose run mobile-app &
 
-# 4. Watch it work
-tfgrid-compose monitor refactor-legacy
+# Monitor all projects
+tfgrid-compose projects
 
-# 5. Check progress
-tfgrid-compose summary refactor-legacy
+# Monitor specific project
+tfgrid-compose monitor frontend-app
 
-# 6. Review and iterate
-tfgrid-compose logs refactor-legacy
-tfgrid-compose edit refactor-legacy  # Adjust if needed
-tfgrid-compose restart refactor-legacy
+# Stop all when done
+tfgrid-compose stopall
 ```
 
 ### Workflow 3: Multiple Projects (Concurrent Execution)
@@ -785,3 +859,4 @@ A: Yes, `tfgrid-compose down` then deploy updated app from registry.
 ---
 
 **Ready to code with AI on ThreeFold Grid!** 🚀
+

@@ -7,6 +7,7 @@
 The AI Gateway Stack provides a seamless, end-to-end development experience on ThreeFold Grid. Deploy a complete environment where AI generates code, stores it in Git repositories, and serves live websites - all with a single command.
 
 **Key Features:**
+
 - 🤖 **AI-Powered Development** - Integrated tfgrid-ai-agent for code generation
 - 🏝️ **Isolated Environment** - Secure, private VMs with no external access by default
 - 🌐 **Optional Public Access** - Gateway pattern for SSL-enabled public websites and Git UI
@@ -17,6 +18,7 @@ The AI Gateway Stack provides a seamless, end-to-end development experience on T
 ## Quick Start
 
 ### Prerequisites
+
 - TFGrid account with mnemonic configured
 - `tfgrid-compose` installed (available via app registry)
 
@@ -36,6 +38,7 @@ tfgrid-compose launch
 ```
 
 **Access:**
+
 - AI Agent: `tfgrid-compose ssh ai-agent` (internal VM)
 - Gitea: `http://10.x.x.x:3000` (internal IP via WireGuard)
 
@@ -52,6 +55,7 @@ tfgrid-compose init
 ```
 
 **Access:**
+
 - AI Agent: `tfgrid-compose ssh ai-agent` (internal only)
 - Gitea: `https://example.com/gitea` (public SSL)
 - Projects: `https://example.com/project-name` (public SSL)
@@ -177,11 +181,13 @@ ai-gateway-stack/
 ### Networking
 
 **Private Mode:**
+
 - All VMs on WireGuard/Mycelium private network
 - No external IPv4 allocation
 - Access via `tfgrid-compose ssh` only
 
 **Public Mode:**
+
 - Gateway VM gets public IPv4
 - SSL/TLS for all public access
 - Gitea and projects proxied through gateway
@@ -241,21 +247,25 @@ resources:
 ### Project Creation Flow
 
 1. **AI Code Generation**
+   
    - AI agent analyzes requirements
    - Generates complete project code
    - Tests and validates locally
 
 2. **Git Repository Setup**
+3. 
    - Creates repository in Gitea via API
    - Initializes with generated code
    - Sets up proper Git configuration
 
-3. **Live Deployment**
+4. **Live Deployment**
+5.
    - Copies code to gateway `/var/www/project-name/`
    - Adds Nginx location block dynamically
    - Reloads configuration without downtime
 
-4. **Access Provisioning**
+5. **Access Provisioning**
+   
    - Returns repository URL for code access
    - Returns live site URL for viewing
    - Updates project registry
@@ -275,12 +285,14 @@ resources:
 - Perfect for personal projects and testing
 
 ### Public Mode (For Collaboration)
+
 - SSL/TLS encryption for all public access
 - Gitea authentication required for repository access
 - Projects served over HTTPS
 - Gateway VM is the only public-facing component
 
 ### Best Practices
+
 - Change default Gitea credentials immediately
 - Use strong passwords and API tokens
 - Enable 2FA on Gitea accounts

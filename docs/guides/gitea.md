@@ -24,13 +24,16 @@ Self-hosted Git service with web interface - perfect for AI agent repositories a
 # Deploy Gitea on single VM
 tfgrid-compose up tfgrid-gitea
 
+# Select the app for shorter commands
+tfgrid-compose select tfgrid-gitea
+
 # Initialize admin user (one-time setup)
-tfgrid-compose init tfgrid-gitea
+tfgrid-compose init
 
-# Launch browser automatically
-tfgrid-compose launch tfgrid-gitea
+# Get access URLs and credentials
+tfgrid-compose launch
 
-# Access at: http://<vm-ip>:3000 (opens automatically)
+# Access at the displayed URLs (WireGuard/Mycelium)
 ```
 
 ### Option 2: With Gateway (Recommended)
@@ -41,9 +44,10 @@ Deploy Gitea behind a gateway for SSL and custom domain:
 # Deploy with gateway pattern
 tfgrid-compose up tfgrid-gitea --pattern gateway --domain example.com
 
-# Initialize and launch
-tfgrid-compose init tfgrid-gitea
-tfgrid-compose launch tfgrid-gitea
+# Select and configure
+tfgrid-compose select tfgrid-gitea
+tfgrid-compose init
+tfgrid-compose launch
 
 # Access at: https://example.com/gitea
 ```
@@ -85,18 +89,21 @@ Perfect companion for tfgrid-ai-agent - automatically store generated code in Gi
 Use the new app-specific commands for easy repository management:
 
 ```bash
+# Select Gitea app for shorter commands
+tfgrid-compose select tfgrid-gitea
+
 # Create repositories easily
-tfgrid-compose create-repo tfgrid-gitea my-website --description "AI-generated website"
-tfgrid-compose create-repo tfgrid-gitea api-backend --private --description "Backend API"
+tfgrid-compose create-repo my-website --description "AI-generated website"
+tfgrid-compose create-repo api-backend --private --description "Backend API"
 
 # List all repositories
-tfgrid-compose list-repos tfgrid-gitea
+tfgrid-compose list-repos
 
 # Clone repositories
-tfgrid-compose clone-repo tfgrid-gitea my-website
+tfgrid-compose clone-repo my-website
 
 # Push code from AI agent
-tfgrid-compose push-code tfgrid-gitea my-website /path/to/ai/generated/code
+tfgrid-compose push-code my-website /path/to/ai/generated/code
 ```
 
 ### Setup Git Remote (Manual)
@@ -219,17 +226,20 @@ location /gitea/ {
 
 **Via tfgrid-compose commands (Recommended):**
 ```bash
+# Select Gitea app first
+tfgrid-compose select tfgrid-gitea
+
 # Create regular user
-tfgrid-compose create-user tfgrid-gitea developer dev@example.com
+tfgrid-compose create-user developer dev@example.com
 
 # Create admin user
-tfgrid-compose create-user tfgrid-gitea admin admin@example.com --admin
+tfgrid-compose create-user admin admin@example.com --admin
 
 # List all users
-tfgrid-compose list-users tfgrid-gitea
+tfgrid-compose list-users
 
 # Reset password
-tfgrid-compose reset-password tfgrid-gitea developer
+tfgrid-compose reset-password developer
 ```
 
 **Via Web UI:**
@@ -263,14 +273,17 @@ su - git -c "gitea admin user create \
 ### Enhanced Backup Commands
 
 ```bash
+# Select Gitea app
+tfgrid-compose select tfgrid-gitea
+
 # Create backup with timestamp
-tfgrid-compose backup tfgrid-gitea
+tfgrid-compose backup
 
 # Create named backup
-tfgrid-compose backup tfgrid-gitea my-backup-2025
+tfgrid-compose backup my-backup-2025
 
 # List available backups
-tfgrid-compose exec tfgrid-gitea ls -la /opt/gitea/backups/
+tfgrid-compose exec ls -la /opt/gitea/backups/
 ```
 
 ### Manual Backup
@@ -450,44 +463,50 @@ tfgrid-gitea provides rich command-line management through tfgrid-compose:
 
 ### Repository Management
 ```bash
+# Select Gitea app first
+tfgrid-compose select tfgrid-gitea
+
 # Create repositories
-tfgrid-compose create-repo tfgrid-gitea my-project --description "My project"
-tfgrid-compose create-repo tfgrid-gitea private-repo --private
+tfgrid-compose create-repo my-project --description "My project"
+tfgrid-compose create-repo private-repo --private
 
 # List and manage
-tfgrid-compose list-repos tfgrid-gitea
-tfgrid-compose clone-repo tfgrid-gitea my-project
-tfgrid-compose delete-repo tfgrid-gitea old-project --confirm
+tfgrid-compose list-repos
+tfgrid-compose clone-repo my-project
+# Note: delete-repo command not yet implemented
 ```
 
 ### User Management
 ```bash
 # Create users
-tfgrid-compose create-user tfgrid-gitea developer dev@example.com
-tfgrid-compose create-user tfgrid-gitea admin admin@example.com --admin
+tfgrid-compose create-user developer dev@example.com
+tfgrid-compose create-user admin admin@example.com --admin
 
 # Manage users
-tfgrid-compose list-users tfgrid-gitea
-tfgrid-compose reset-password tfgrid-gitea developer
+tfgrid-compose list-users
+# Note: reset-password command not yet implemented
 ```
 
 ### Git Operations
 ```bash
 # Push code to repositories
-tfgrid-compose push-code tfgrid-gitea my-project /path/to/code
+# Note: push-code command not yet implemented
 
-# Launch browser
-tfgrid-compose launch tfgrid-gitea
+# Launch browser and get access info
+tfgrid-compose launch
 ```
 
 ### Administrative
 ```bash
+# Initialize admin user
+tfgrid-compose init
+
 # Backup and restore
-tfgrid-compose backup tfgrid-gitea
-tfgrid-compose restore tfgrid-gitea backup-file.tar.gz
+tfgrid-compose backup
+# Note: restore command not yet implemented
 
 # Status monitoring
-tfgrid-compose status tfgrid-gitea
+tfgrid-compose status
 ```
 
 ## Next Steps

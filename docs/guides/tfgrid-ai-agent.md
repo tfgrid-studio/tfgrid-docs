@@ -1,4 +1,4 @@
-# AI Agent Guide
+# TFGrid AI Agent Guide
 
 Complete guide for deploying and using the AI coding agent on ThreeFold Grid.
 

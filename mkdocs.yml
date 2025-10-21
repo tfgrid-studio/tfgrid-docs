@@ -134,6 +134,7 @@ nav:
     - Getting Started Workflow: guides/getting-started-workflow.md
     - AI Agent: guides/ai-agent.md
     - Gitea Self-Hosted Git: guides/gitea.md
+    - AI Gateway Stack: guides/ai-gateway-stack.md
     - App Registry: guides/app-registry.md
   
   - Architecture:

@@ -46,8 +46,8 @@ tfgrid-compose up tfgrid-ai-agent
 **Output:**
 ```
 ✅ 🎉 Deployment complete!
-ℹ App: tfgrid-ai-agent v0.9.0
-ℹ Pattern: single-vm v0.9.0
+ℹ App: tfgrid-ai-agent v0.3.0
+ℹ Pattern: single-vm v1.0.0
 ℹ Next steps:
   • Check status: tfgrid-compose status tfgrid-ai-agent
   • View logs: tfgrid-compose logs tfgrid-ai-agent
@@ -365,7 +365,7 @@ tfgrid-compose monitor frontend-app
 tfgrid-compose stopall
 ```
 
-Projects execute in parallel using systemd template services (`tfgrid-ai-project@{name}.service`). Each project runs in an isolated service instance with dedicated resource limits and automatic failure recovery.
+**New Feature:** Projects execute in parallel using systemd template services (`tfgrid-ai-project@{name}.service`). Each project runs in an isolated service instance with dedicated resource limits (2GB memory, 150% CPU quota) and automatic failure recovery. You can now run unlimited concurrent AI agents simultaneously.
 
 ---
 
@@ -746,8 +746,8 @@ crontab -e
 
 ## FAQ
 
-**Q: Can I run multiple agents simultaneously?**  
-A: Projects run concurrently using systemd template services. Each project has dedicated resources (2GB memory, 150% CPU quota) and automatic failure recovery. Use `tfgrid-compose projects` to view all running projects.
+**Q: Can I run multiple agents simultaneously?**
+A: Yes! Projects run concurrently using systemd template services. Each project has dedicated resources (2GB memory, 150% CPU quota) and automatic failure recovery. You can run unlimited concurrent AI agents, each working on different projects simultaneously. Use `tfgrid-compose projects` to view all running projects.
 
 **Q: How much does it cost?**  
 A: Depends on ThreeFold Grid pricing. Typically $10-30/month for a 4CPU/8GB VM.

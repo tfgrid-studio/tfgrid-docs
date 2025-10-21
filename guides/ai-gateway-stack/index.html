@@ -2702,13 +2702,15 @@
 <p><strong>Complete AI-powered development environment with integrated Git hosting and live deployment.</strong></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The AI Gateway Stack provides a seamless, end-to-end development experience on ThreeFold Grid. Deploy a complete environment where AI generates code, stores it in Git repositories, and serves live websites - all with a single command.</p>
-<p><strong>Key Features:</strong>
-- 🤖 <strong>AI-Powered Development</strong> - Integrated tfgrid-ai-agent for code generation
-- 🏝️ <strong>Isolated Environment</strong> - Secure, private VMs with no external access by default
-- 🌐 <strong>Optional Public Access</strong> - Gateway pattern for SSL-enabled public websites and Git UI
-- 📦 <strong>Project Management</strong> - Create, manage, and deploy multiple projects concurrently
-- 🔒 <strong>Flexible Privacy</strong> - Private-only or public-facing deployments
-- ⚡ <strong>One-Command Setup</strong> - Deploy complete stack in under 10 minutes</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>🤖 <strong>AI-Powered Development</strong> - Integrated tfgrid-ai-agent for code generation</li>
+<li>🏝️ <strong>Isolated Environment</strong> - Secure, private VMs with no external access by default</li>
+<li>🌐 <strong>Optional Public Access</strong> - Gateway pattern for SSL-enabled public websites and Git UI</li>
+<li>📦 <strong>Project Management</strong> - Create, manage, and deploy multiple projects concurrently</li>
+<li>🔒 <strong>Flexible Privacy</strong> - Private-only or public-facing deployments</li>
+<li>⚡ <strong>One-Command Setup</strong> - Deploy complete stack in under 10 minutes</li>
+</ul>
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2726,9 +2728,11 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Get access information</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>tfgrid-compose<span class="w"> </span>launch
 </code></pre></div>
-<p><strong>Access:</strong>
-- AI Agent: <code>tfgrid-compose ssh ai-agent</code> (internal VM)
-- Gitea: <code>http://10.x.x.x:3000</code> (internal IP via WireGuard)</p>
+<p><strong>Access:</strong></p>
+<ul>
+<li>AI Agent: <code>tfgrid-compose ssh ai-agent</code> (internal VM)</li>
+<li>Gitea: <code>http://10.x.x.x:3000</code> (internal IP via WireGuard)</li>
+</ul>
 <h3 id="option-2-public-development-environment">Option 2: Public Development Environment<a class="headerlink" href="#option-2-public-development-environment" title="Permanent link">&para;</a></h3>
 <p>Deploy with public access for collaboration and live websites:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Deploy with custom domain</span>
@@ -2737,10 +2741,12 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Initialize admin access</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>tfgrid-compose<span class="w"> </span>init
 </code></pre></div>
-<p><strong>Access:</strong>
-- AI Agent: <code>tfgrid-compose ssh ai-agent</code> (internal only)
-- Gitea: <code>https://example.com/gitea</code> (public SSL)
-- Projects: <code>https://example.com/project-name</code> (public SSL)</p>
+<p><strong>Access:</strong></p>
+<ul>
+<li>AI Agent: <code>tfgrid-compose ssh ai-agent</code> (internal only)</li>
+<li>Gitea: <code>https://example.com/gitea</code> (public SSL)</li>
+<li>Projects: <code>https://example.com/project-name</code> (public SSL)</li>
+</ul>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="project-management">Project Management<a class="headerlink" href="#project-management" title="Permanent link">&para;</a></h3>
 <h4 id="create-a-new-project">Create a New Project<a class="headerlink" href="#create-a-new-project" title="Permanent link">&para;</a></h4>
@@ -2835,15 +2841,19 @@
 <a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>    └── User management
 </code></pre></div>
 <h3 id="networking">Networking<a class="headerlink" href="#networking" title="Permanent link">&para;</a></h3>
-<p><strong>Private Mode:</strong>
-- All VMs on WireGuard/Mycelium private network
-- No external IPv4 allocation
-- Access via <code>tfgrid-compose ssh</code> only</p>
-<p><strong>Public Mode:</strong>
-- Gateway VM gets public IPv4
-- SSL/TLS for all public access
-- Gitea and projects proxied through gateway
-- AI agent remains private</p>
+<p><strong>Private Mode:</strong></p>
+<ul>
+<li>All VMs on WireGuard/Mycelium private network</li>
+<li>No external IPv4 allocation</li>
+<li>Access via <code>tfgrid-compose ssh</code> only</li>
+</ul>
+<p><strong>Public Mode:</strong></p>
+<ul>
+<li>Gateway VM gets public IPv4</li>
+<li>SSL/TLS for all public access</li>
+<li>Gitea and projects proxied through gateway</li>
+<li>AI agent remains private</li>
+</ul>
 <h3 id="security-model">Security Model<a class="headerlink" href="#security-model" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>AI Agent:</strong> Isolated VM, no external access</li>
@@ -2887,8 +2897,12 @@
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <h3 id="project-creation-flow">Project Creation Flow<a class="headerlink" href="#project-creation-flow" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>AI Code Generation</strong></li>
-<li>AI agent analyzes requirements</li>
+<li>
+<p><strong>AI Code Generation</strong></p>
+</li>
+<li>
+<p>AI agent analyzes requirements</p>
+</li>
 <li>Generates complete project code</li>
 <li>
 <p>Tests and validates locally</p>
@@ -2896,13 +2910,15 @@
 <li>
 <p><strong>Git Repository Setup</strong></p>
 </li>
+<li></li>
 <li>Creates repository in Gitea via API</li>
 <li>Initializes with generated code</li>
 <li>
 <p>Sets up proper Git configuration</p>
 </li>
 <li>
-<p><strong>Live Deployment</strong></p>
+<p><strong>Live Deployment</strong>
+5.</p>
 </li>
 <li>Copies code to gateway <code>/var/www/project-name/</code></li>
 <li>Adds Nginx location block dynamically</li>
@@ -2912,7 +2928,9 @@
 <li>
 <p><strong>Access Provisioning</strong></p>
 </li>
-<li>Returns repository URL for code access</li>
+<li>
+<p>Returns repository URL for code access</p>
+</li>
 <li>Returns live site URL for viewing</li>
 <li>Updates project registry</li>
 </ol>

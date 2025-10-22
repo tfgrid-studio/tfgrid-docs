@@ -7,6 +7,7 @@ TFGrid Compose provides three deployment patterns that cover every use case from
 ## Pattern Philosophy
 
 Each pattern is:
+
 - ✅ **Production-ready** - Tested and verified
 - ✅ **Purpose-built** - Optimized for specific use cases
 - ✅ **Cost-effective** - Pay only for what you need
@@ -25,6 +26,7 @@ tfgrid-compose up my-app --pattern=single-vm
 ```
 
 **Best for:**
+
 - AI agents & coding environments
 - Databases and data stores
 - Internal APIs and services
@@ -67,6 +69,7 @@ tfgrid-compose up my-cluster --pattern=k3s
 ```
 
 **Best for:**
+
 - Cloud-native applications
 - Microservices architectures
 - Enterprise deployments
@@ -138,12 +141,14 @@ Your Laptop → Management Node → K3s Cluster
 Patterns are designed for easy migration:
 
 **Single-VM → Gateway**
+
 - Add public domain configuration
 - Enable SSL
 - Deploy gateway VM
 - Update DNS
 
 **Gateway → K3s**
+
 - Define Kubernetes manifests
 - Deploy K3s cluster
 - Migrate services to pods

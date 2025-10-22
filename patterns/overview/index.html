@@ -2066,22 +2066,26 @@
 <p>TFGrid Compose provides three deployment patterns that cover every use case from development to enterprise production.</p>
 <hr />
 <h2 id="pattern-philosophy">Pattern Philosophy<a class="headerlink" href="#pattern-philosophy" title="Permanent link">&para;</a></h2>
-<p>Each pattern is:
-- ✅ <strong>Production-ready</strong> - Tested and verified
-- ✅ <strong>Purpose-built</strong> - Optimized for specific use cases
-- ✅ <strong>Cost-effective</strong> - Pay only for what you need
-- ✅ <strong>Battle-tested</strong> - Based on proven implementations</p>
+<p>Each pattern is:</p>
+<ul>
+<li>✅ <strong>Production-ready</strong> - Tested and verified</li>
+<li>✅ <strong>Purpose-built</strong> - Optimized for specific use cases</li>
+<li>✅ <strong>Cost-effective</strong> - Pay only for what you need</li>
+<li>✅ <strong>Battle-tested</strong> - Based on proven implementations</li>
+</ul>
 <hr />
 <h2 id="the-three-patterns">The Three Patterns<a class="headerlink" href="#the-three-patterns" title="Permanent link">&para;</a></h2>
 <h3 id="single-vm-pattern">🔹 <a href="../single-vm/">Single-VM Pattern</a><a class="headerlink" href="#single-vm-pattern" title="Permanent link">&para;</a></h3>
 <p><strong>Simple VM deployment for development and internal services</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-app<span class="w"> </span>--pattern<span class="o">=</span>single-vm
 </code></pre></div>
-<p><strong>Best for:</strong>
-- AI agents &amp; coding environments
-- Databases and data stores
-- Internal APIs and services
-- Development environments</p>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>AI agents &amp; coding environments</li>
+<li>Databases and data stores</li>
+<li>Internal APIs and services</li>
+<li>Development environments</li>
+</ul>
 <p><strong>Deployment time:</strong> 2-3 minutes<br />
 <strong>Cost:</strong> $10-30/month</p>
 <p><a href="../single-vm/">Learn more →</a></p>
@@ -2103,11 +2107,13 @@
 <p><strong>Full Kubernetes cluster for cloud-native applications</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-cluster<span class="w"> </span>--pattern<span class="o">=</span>k3s
 </code></pre></div>
-<p><strong>Best for:</strong>
-- Cloud-native applications
-- Microservices architectures
-- Enterprise deployments
-- Production SaaS at scale</p>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Cloud-native applications</li>
+<li>Microservices architectures</li>
+<li>Enterprise deployments</li>
+<li>Production SaaS at scale</li>
+</ul>
 <p><strong>Deployment time:</strong> 10-15 minutes<br />
 <strong>Cost:</strong> $100-500/month</p>
 <p><a href="../k3s/">Learn more →</a></p>
@@ -2196,16 +2202,20 @@ Upgrade to <code>k3s</code> for cloud-native features and horizontal scaling.</p
 <hr />
 <h2 id="migration-path">Migration Path<a class="headerlink" href="#migration-path" title="Permanent link">&para;</a></h2>
 <p>Patterns are designed for easy migration:</p>
-<p><strong>Single-VM → Gateway</strong>
-- Add public domain configuration
-- Enable SSL
-- Deploy gateway VM
-- Update DNS</p>
-<p><strong>Gateway → K3s</strong>
-- Define Kubernetes manifests
-- Deploy K3s cluster
-- Migrate services to pods
-- Update ingress rules</p>
+<p><strong>Single-VM → Gateway</strong></p>
+<ul>
+<li>Add public domain configuration</li>
+<li>Enable SSL</li>
+<li>Deploy gateway VM</li>
+<li>Update DNS</li>
+</ul>
+<p><strong>Gateway → K3s</strong></p>
+<ul>
+<li>Define Kubernetes manifests</li>
+<li>Deploy K3s cluster</li>
+<li>Migrate services to pods</li>
+<li>Update ingress rules</li>
+</ul>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>

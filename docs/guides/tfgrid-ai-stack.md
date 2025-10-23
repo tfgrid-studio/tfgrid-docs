@@ -229,25 +229,25 @@ resources:
 
 ### Project Creation Flow
 
-1. **AI Code Generation**
-   - AI agent analyzes natural language requirements
-   - Generates complete project code with tests
-   - Validates code quality and functionality
+1. **AI Code Generation**  
+  1.1. AI agent analyzes natural language requirements  
+  1.2. Generates complete project code with tests  
+  1.3. Validates code quality and functionality  
 
-2. **Automatic Git Setup**
-   - Creates Gitea repository via API in `tfgrid-ai-agent` organization
-   - Configures Git credentials and remote automatically
-   - Pushes initial commit to Gitea
+2. **Automatic Git Setup**  
+  2.1. Creates Gitea repository via API in `tfgrid-ai-agent` organization  
+  2.2. Configures Git credentials and remote automatically  
+  2.3. Pushes initial commit to Gitea  
 
-3. **Continuous Development**
-   - AI agent runs iterative improvement loops
-   - Each code change committed and pushed to Gitea
-   - Real-time visibility in web interface
+3. **Continuous Development**  
+  3.1. AI agent runs iterative improvement loops  
+  3.2. Each code change committed and pushed to Gitea  
+  3.3. Real-time visibility in web interface  
 
-4. **Web Interface Access**
-   - Repository accessible at `/git/tfgrid-ai-agent/project-name/`
-   - Full Git history and file browsing
-   - Issue tracking and documentation
+4. **Web Interface Access**  
+  4.1. Repository accessible at `/git/tfgrid-ai-agent/project-name/`  
+  4.2. Full Git history and file browsing  
+  4.3. Issue tracking and documentation  
 
 ### Concurrent Projects
 

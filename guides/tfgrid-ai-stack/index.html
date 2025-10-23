@@ -2880,34 +2880,30 @@
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <h3 id="project-creation-flow">Project Creation Flow<a class="headerlink" href="#project-creation-flow" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>AI Code Generation</strong></li>
-<li>AI agent analyzes natural language requirements</li>
-<li>Generates complete project code with tests</li>
 <li>
-<p>Validates code quality and functionality</p>
+<p><strong>AI Code Generation</strong><br />
+  1.1. AI agent analyzes natural language requirements<br />
+  1.2. Generates complete project code with tests<br />
+  1.3. Validates code quality and functionality  </p>
 </li>
 <li>
-<p><strong>Automatic Git Setup</strong></p>
-</li>
-<li>Creates Gitea repository via API in <code>tfgrid-ai-agent</code> organization</li>
-<li>Configures Git credentials and remote automatically</li>
-<li>
-<p>Pushes initial commit to Gitea</p>
+<p><strong>Automatic Git Setup</strong><br />
+  2.1. Creates Gitea repository via API in <code>tfgrid-ai-agent</code> organization<br />
+  2.2. Configures Git credentials and remote automatically<br />
+  2.3. Pushes initial commit to Gitea  </p>
 </li>
 <li>
-<p><strong>Continuous Development</strong></p>
-</li>
-<li>AI agent runs iterative improvement loops</li>
-<li>Each code change committed and pushed to Gitea</li>
-<li>
-<p>Real-time visibility in web interface</p>
+<p><strong>Continuous Development</strong><br />
+  3.1. AI agent runs iterative improvement loops<br />
+  3.2. Each code change committed and pushed to Gitea<br />
+  3.3. Real-time visibility in web interface  </p>
 </li>
 <li>
-<p><strong>Web Interface Access</strong></p>
+<p><strong>Web Interface Access</strong><br />
+  4.1. Repository accessible at <code>/git/tfgrid-ai-agent/project-name/</code><br />
+  4.2. Full Git history and file browsing<br />
+  4.3. Issue tracking and documentation  </p>
 </li>
-<li>Repository accessible at <code>/git/tfgrid-ai-agent/project-name/</code></li>
-<li>Full Git history and file browsing</li>
-<li>Issue tracking and documentation</li>
 </ol>
 <h3 id="concurrent-projects">Concurrent Projects<a class="headerlink" href="#concurrent-projects" title="Permanent link">&para;</a></h3>
 <ul>

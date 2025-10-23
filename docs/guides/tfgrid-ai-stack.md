@@ -4,15 +4,15 @@
 
 ## Overview
 
-The AI Gateway Stack provides a seamless, end-to-end development experience on ThreeFold Grid. Deploy a complete environment where AI generates code, stores it in Git repositories, and serves live websites - all with a single command.
+The AI Stack provides a seamless, end-to-end development experience on ThreeFold Grid. Deploy a complete environment where AI generates code, automatically creates Git repositories, and serves live websites - all with a single command.
 
 **Key Features:**
 
 - 🤖 **AI-Powered Development** - Integrated tfgrid-ai-agent for code generation
-- 🏝️ **Isolated Environment** - Secure, private VMs with no external access by default
-- 🌐 **Optional Public Access** - Gateway pattern for SSL-enabled public websites and Git UI
+- 🏝️ **Single-VM Deployment** - All components co-located on one secure VM
+- 🌐 **Automatic Git Hosting** - Gitea repositories created automatically for every project
 - 📦 **Project Management** - Create, manage, and deploy multiple projects concurrently
-- 🔒 **Flexible Privacy** - Private-only or public-facing deployments
+- 🔒 **Flexible Privacy** - Private development with optional public access
 - ⚡ **One-Command Setup** - Deploy complete stack in under 10 minutes
 
 ## Quick Start
@@ -22,43 +22,44 @@ The AI Gateway Stack provides a seamless, end-to-end development experience on T
 - TFGrid account with mnemonic configured
 - `tfgrid-compose` installed (available via app registry)
 
-### Option 1: Private Development Environment
+### Quick Start
 
-Deploy for personal development with internal access only:
+Deploy the complete AI development environment:
 
 ```bash
-# Search for the stack in registry
-tfgrid-compose search tfgrid-ai-stack
-
-# Deploy private stack
+# Deploy the stack
 tfgrid-compose up tfgrid-ai-stack
 
-# Get access information
-tfgrid-compose launch
+# Authenticate with Qwen AI
+tfgrid-compose login
+
+# Create your first AI project
+tfgrid-compose create "modern web application"
+
+# Monitor AI development progress
+tfgrid-compose monitor web-application
+
+# View project in Gitea web interface
+tfgrid-compose projects
 ```
 
-**Access:**
+**Access URLs:**
+- Gitea Git Interface: `http://your-ip/git/`
+- AI Projects: `http://your-ip/git/tfgrid-ai-agent/project-name/`
+- API Endpoints: `http://your-ip/api/`
 
-- AI Agent: `tfgrid-compose ssh ai-agent` (internal VM)
-- Gitea: `http://10.x.x.x:3000` (internal IP via WireGuard)
+### Public Access (Optional)
 
-### Option 2: Public Development Environment
-
-Deploy with public access for collaboration and live websites:
+For public access with SSL:
 
 ```bash
-# Deploy with custom domain
-tfgrid-compose up tfgrid-ai-stack --domain example.com
+# Deploy with domain
+tfgrid-compose up tfgrid-ai-stack --domain yourdomain.com
 
-# Initialize admin access
-tfgrid-compose init
+# Access via HTTPS
+# Gitea: https://yourdomain.com/git/
+# Projects: https://yourdomain.com/git/tfgrid-ai-agent/project-name/
 ```
-
-**Access:**
-
-- AI Agent: `tfgrid-compose ssh ai-agent` (internal only)
-- Gitea: `https://example.com/gitea` (public SSL)
-- Projects: `https://example.com/project-name` (public SSL)
 
 ## Usage
 
@@ -66,17 +67,14 @@ tfgrid-compose init
 
 #### Create a New Project
 ```bash
-# Select the AI agent app
-tfgrid-compose select ai-agent
-
-# Create project with AI
+# Create project with AI (automatically creates Gitea repo)
 tfgrid-compose create "modern portfolio website"
 
 # Output:
 # ✅ Project 'portfolio' created
-# 📝 Repository: https://example.com/gitea/repos/portfolio
-# 🌐 Live site: https://example.com/portfolio
-# 🤖 AI Agent: Ready for development
+# 📝 Repository: http://your-ip/git/tfgrid-ai-agent/portfolio/
+# 🌐 Gitea Web: http://your-ip/git/tfgrid-ai-agent/portfolio/
+# 🤖 AI Agent: Running (commits automatically pushed)
 ```
 
 #### List Projects
@@ -84,9 +82,10 @@ tfgrid-compose create "modern portfolio website"
 tfgrid-compose projects
 
 # Output:
-# Projects:
-# - portfolio (https://example.com/portfolio) → https://example.com/gitea/repos/portfolio
-# - blog (https://example.com/blog) → https://example.com/gitea/repos/blog
+# 📁 portfolio
+#    Status: running
+#    🌐 Gitea: http://your-ip/git/tfgrid-ai-agent/portfolio/
+#    🏢 Organization: tfgrid-ai-agent
 ```
 
 #### Run AI Development Loop
@@ -157,49 +156,41 @@ tfgrid-compose up tfgrid-ai-stack
 
 ## Architecture
 
-### VM Layout
+### Single-VM Layout
 
 ```
-tfgrid-ai-stack/
-├── Gateway VM (Public IPv4 + SSL)
-│   ├── Nginx reverse proxy
-│   ├── SSL certificates (Let's Encrypt)
-│   ├── Dynamic route management
-│   └── Static file serving (/var/www/)
-├── AI Agent VM (Private networking)
+tfgrid-ai-stack (Single VM)
+├── Nginx Reverse Proxy (Port 80/443)
+│   ├── /git/ → Gitea Web UI (Port 3000)
+│   ├── /api/ → AI Agent API (Port 8080)
+│   └── SSL/TLS termination (optional)
+├── AI Agent Service
 │   ├── Node.js + Qwen CLI
-│   ├── Project workspaces
-│   ├── Git integration
-│   └── API clients
-└── Gitea VM (Private networking)
-    ├── Git repositories
-    ├── Web UI (port 3000)
+│   ├── Project workspaces (/home/developer/code/)
+│   ├── Automatic Git integration
+│   └── API endpoints (/api/)
+└── Gitea Git Server
+    ├── Git repositories (/var/lib/gitea/)
+    ├── Web interface (/git/)
     ├── REST API
-    └── User management
+    └── Organization: tfgrid-ai-agent
 ```
 
-### Networking
+### Key Integration Points
 
-**Private Mode:**
-
-- All VMs on WireGuard/Mycelium private network
-- No external IPv4 allocation
-- Access via `tfgrid-compose ssh` only
-
-**Public Mode:**
-
-- Gateway VM gets public IPv4
-- SSL/TLS for all public access
-- Gitea and projects proxied through gateway
-- AI agent remains private
+- **Automatic Repo Creation**: Projects get Gitea repos on creation
+- **Zero-Config Git**: Credentials and remotes configured automatically
+- **Auto-Push**: AI commits pushed to Gitea immediately
+- **Web Interface**: All repos accessible via `/git/` URLs
+- **API Integration**: Components communicate via local APIs
 
 ### Security Model
 
-- **AI Agent:** Isolated VM, no external access
-- **Gitea:** Private by default, optional public proxy
-- **Projects:** Served via gateway with SSL
-- **APIs:** Token-based authentication between components
-- **Data:** All user data on private VMs
+- **Single VM:** All components share the same secure environment
+- **Gitea:** Web interface accessible via `/git/` with authentication
+- **AI Agent:** API endpoints via `/api/` with proper access controls
+- **Projects:** Git repositories with organization-based access control
+- **Credentials:** API tokens stored securely, Git credentials configured automatically
 
 ## Configuration
 
@@ -224,22 +215,14 @@ tfgrid-compose up tfgrid-ai-stack --domain example.com
 
 ### Resource Allocation
 
-Default resources (customizable in `tfgrid-compose.yaml`):
+Single-VM deployment with all components co-located:
 
 ```yaml
+# tfgrid-compose.yaml
 resources:
-  gateway:
-    cpu: 2
-    memory: 4096  # 4GB
-    disk: 50      # 50GB
-  ai-agent:
-    cpu: 4
-    memory: 8192  # 8GB
-    disk: 100     # 100GB
-  gitea:
-    cpu: 2
-    memory: 4096  # 4GB
-    disk: 100     # 100GB
+  cpu: 8        # All components share resources
+  memory: 16384 # 16GB total
+  disk: 200     # 200GB storage
 ```
 
 ## How It Works
@@ -247,28 +230,24 @@ resources:
 ### Project Creation Flow
 
 1. **AI Code Generation**
+   - AI agent analyzes natural language requirements
+   - Generates complete project code with tests
+   - Validates code quality and functionality
 
-   - AI agent analyzes requirements
-   - Generates complete project code
-   - Tests and validates locally
+2. **Automatic Git Setup**
+   - Creates Gitea repository via API in `tfgrid-ai-agent` organization
+   - Configures Git credentials and remote automatically
+   - Pushes initial commit to Gitea
 
-2. **Git Repository Setup**
-   
-   - Creates repository in Gitea via API
-   - Initializes with generated code
-   - Sets up proper Git configuration
+3. **Continuous Development**
+   - AI agent runs iterative improvement loops
+   - Each code change committed and pushed to Gitea
+   - Real-time visibility in web interface
 
-3. **Live Deployment**
-
-   - Copies code to gateway `/var/www/project-name/`
-   - Adds Nginx location block dynamically
-   - Reloads configuration without downtime
-
-1. **Access Provisioning**
-   
-   - Returns repository URL for code access
-   - Returns live site URL for viewing
-   - Updates project registry
+4. **Web Interface Access**
+   - Repository accessible at `/git/tfgrid-ai-agent/project-name/`
+   - Full Git history and file browsing
+   - Issue tracking and documentation
 
 ### Concurrent Projects
 
@@ -354,32 +333,46 @@ tfgrid-compose ssh gitea
 sudo -u git gitea admin user list
 ```
 
-### Public Access Issues
+### Gitea Integration Issues
 
-**SSL certificate fails:**
+**Repository not created:**
 ```bash
-# Check domain DNS
-nslookup example.com
+# Check Gitea API token
+tfgrid-compose exec tfgrid-ai-stack cat /opt/tfgrid-ai-stack/config/gitea.json
 
-# Verify gateway configuration
-tfgrid-compose ssh gateway
-cat /etc/nginx/sites-available/default
+# Test API connectivity
+curl -H "Authorization: token YOUR_TOKEN" http://localhost:3000/api/v1/user
 
-# Renew certificates
-tfgrid-compose exec gateway certbot renew
+# Check Gitea service status
+systemctl status gitea
 ```
 
-**Gitea not accessible:**
+**Git push fails:**
 ```bash
-# Check gateway proxy configuration
-tfgrid-compose ssh gateway
-cat /etc/nginx/conf.d/gitea.conf
+# Check Git remote configuration
+git remote -v
 
-# Test local Gitea access
-tfgrid-compose exec gitea curl localhost:3000
+# Verify credentials
+cat ~/.git-credentials
 
-# Reload nginx
-tfgrid-compose exec gateway nginx -t && nginx -s reload
+# Test Gitea connectivity
+curl http://localhost:3000/api/v1/version
+
+# Check repository exists
+curl http://localhost:3000/api/v1/repos/tfgrid-ai-agent/project-name
+```
+
+**Web interface not accessible:**
+```bash
+# Check Nginx configuration
+cat /etc/nginx/sites-available/ai-stack
+
+# Test Nginx config
+nginx -t
+
+# Check service status
+systemctl status nginx
+systemctl status gitea
 ```
 
 ## Advanced Usage
@@ -433,28 +426,46 @@ tfgrid-compose restore tfgrid-ai-stack backup-20251021.tar.gz
 
 ## Examples
 
-### Personal Blog
+### Complete AI Development Workflow
 ```bash
-tfgrid-compose up tfgrid-ai-stack --domain myblog.com
-tfgrid-compose create "personal blog with markdown support"
-# Access: https://myblog.com/blog and https://myblog.com/gitea
+# Deploy the full stack
+tfgrid-compose up tfgrid-ai-stack
+
+# Authenticate AI
+tfgrid-compose login
+
+# Create project (AI generates code + creates Git repo)
+tfgrid-compose create "e-commerce website with React"
+
+# Monitor AI development (code pushed to Gitea automatically)
+tfgrid-compose monitor e-commerce
+
+# View results in web interface
+# Gitea: http://your-ip/git/tfgrid-ai-agent/e-commerce/
+# All commits visible immediately
 ```
 
-### Team Development Platform
+### Multiple AI Projects
 ```bash
-tfgrid-compose up tfgrid-ai-stack --domain dev.team.com
-tfgrid-compose create "project management dashboard"
-tfgrid-compose create "API backend"
-tfgrid-compose create "mobile app frontend"
-# Multiple projects accessible via sub-paths
+# Run multiple AI agents simultaneously
+tfgrid-compose create "frontend dashboard"
+tfgrid-compose create "backend API"
+tfgrid-compose create "mobile app"
+
+# All projects get automatic Git repos
+tfgrid-compose projects
+# Shows all projects with Gitea URLs
 ```
 
-### Learning Environment
+### Learning & Prototyping
 ```bash
-tfgrid-compose up tfgrid-ai-stack  # Private mode
-tfgrid-compose create "React tutorial project"
-tfgrid-compose create "Node.js API example"
-# Safe learning environment with full Git history
+# Safe environment for experimentation
+tfgrid-compose create "machine learning prototype"
+tfgrid-compose create "blockchain smart contract"
+tfgrid-compose create "IoT dashboard"
+
+# Full Git history and web interface for each
+# No setup required - just describe what you want
 ```
 
 ## Related Documentation

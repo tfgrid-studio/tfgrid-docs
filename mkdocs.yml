@@ -127,6 +127,7 @@ nav:
   
   - CLI Reference:
     - App-Specific Commands: cli/app-commands.md
+    - Node Selection & Filtering: cli/node-selection.md
     - Context System: cli/context-system.md
     - Registry Commands: cli/registry.md
   

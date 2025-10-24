@@ -112,6 +112,10 @@ min_uptime_days: 30
 ### Configuration Commands
 
 ```bash
+# Interactive configuration (recommended)
+tfgrid-compose config
+# → Shows menu to set/get values interactively
+
 # Initialize configuration
 tfgrid-compose config init
 

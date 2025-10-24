@@ -192,8 +192,8 @@ tfgrid-compose deploy
 # Check status
 tfgrid-compose status
 
-# Update configuration
-tfgrid-compose config --update
+# Update configuration (use config set instead)
+tfgrid-compose config set key value
 
 # Restart
 tfgrid-compose restart

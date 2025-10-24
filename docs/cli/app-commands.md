@@ -79,6 +79,7 @@ These work for **all apps**:
 | `exec` | Execute arbitrary command |
 | `list` | List deployed apps |
 | `switch` | Change active app |
+| `config` | Manage configuration settings |
 
 **Universal operations** - Every app supports these.
 
@@ -412,5 +413,6 @@ tfgrid-compose deploy
 ## See Also
 
 - [Context System](context-system.md) - Managing multiple apps
+- [Node Selection](node-selection.md) - Advanced node filtering and selection
 - [AI Agent Guide](../guides/ai-agent.md) - Complete AI agent reference
 - [App Development](../development/submit-app.md) - Creating your own apps

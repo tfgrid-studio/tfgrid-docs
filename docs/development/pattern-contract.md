@@ -99,6 +99,115 @@ output "connection_info" {
 
 ---
 
+## Deployment Hooks - File Access Contract
+
+### File Transfer Overview
+
+tfgrid-compose automatically transfers files to the VM during deployment:
+
+```bash
+# Files copied to VM:
+scp /src/* root@vm:/tmp/app-source/
+scp /deployment/* root@vm:/tmp/app-deployment/
+```
+
+### Available Directories
+
+Your setup.sh can access these pre-copied directories:
+
+```
+/tmp/app-deployment/     # Deployment scripts
+├── setup.sh
+├── configure.sh
+└── healthcheck.sh
+
+/tmp/app-source/         # App source files (flattened structure)
+├── scripts/             # From /src/scripts
+├── systemd/             # From /src/systemd
+├── templates/           # From /src/templates
+└── agent/               # From /src/agent
+```
+
+### Important: Flattened Structure
+
+**Key insight**: tfgrid-compose **flattens the `/src/` directory** when copying to the VM.
+
+❌ **INCORRECT ASSUMPTION:**
+```bash
+cp -r /tmp/app-source/src /opt/myapp/
+# ❌ /tmp/app-source/src/ doesn't exist!
+```
+
+✅ **CORRECT PATTERN:**
+```bash
+cp -r /tmp/app-source/* /opt/myapp/src/
+# ✅ Copies all directories from /tmp/app-source/ into /opt/myapp/src/
+```
+
+### Example: Complete File Access Pattern
+
+```bash
+# In your deployment/setup.sh:
+
+# Create app directories
+mkdir -p /opt/myapp/{src,scripts,logs}
+
+# Copy source files (flattens /tmp/app-source/ into /opt/myapp/src/)
+cp -r /tmp/app-source/* /opt/myapp/src/
+
+# Copy deployment scripts
+cp /tmp/app-deployment/*.sh /opt/myapp/scripts/
+
+# Make scripts executable
+chmod +x /opt/myapp/src/scripts/*.sh
+chmod +x /opt/myapp/scripts/*.sh
+
+# Set ownership and permissions
+chown -R myapp:myapp /opt/myapp
+chmod -R 755 /opt/myapp/scripts
+chmod -R 755 /opt/myapp/src
+
+# Create necessary log directories
+mkdir -p /var/log/myapp
+chown myapp:myapp /var/log/myapp
+```
+
+### File Type Examples
+
+**Bash Scripts:**
+```bash
+cp /tmp/app-source/scripts/*.sh /opt/myapp/scripts/
+chmod +x /opt/myapp/scripts/*.sh
+```
+
+**Systemd Services:**
+```bash
+cp /tmp/app-source/systemd/*.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable myapp
+```
+
+**Templates:**
+```bash
+cp /tmp/app-source/templates/* /etc/myapp/templates/
+```
+
+### Verification
+
+Test your file access patterns in setup.sh:
+
+```bash
+# Verify files exist
+ls -la /tmp/app-source/        # Should show directories, not /src/
+ls -la /tmp/app-source/scripts # Should show script files
+
+# Test your copy command
+cp -r /tmp/app-source/* /opt/myapp/src/
+ls -la /opt/myapp/src/         # Should have scripts/, systemd/, templates/ subdirectories
+```
+
+---
+
 ## Pattern Examples
 
 ### Single-VM Pattern

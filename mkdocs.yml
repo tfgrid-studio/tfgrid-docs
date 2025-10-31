@@ -154,6 +154,7 @@ nav:
   - Development:
     - Versioning Policy: development/versioning-policy.md
     - Pattern Contract: development/pattern-contract.md
+    - Submit Apps: development/submit-app.md
   
   - Roadmap:
     - Overview: roadmap/index.md

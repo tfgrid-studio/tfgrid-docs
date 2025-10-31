@@ -14,12 +14,31 @@ TFGrid Compose provides multiple ways to control which nodes your deployments us
 
 - **Automatic Selection**: Smart defaults based on resource requirements
 - **Manual Selection**: Specify exact node IDs
-- **Advanced Filtering**: Blacklist/whitelist nodes and farms, health-based filtering
-- **Configuration**: Persistent settings for common preferences
+- **Persistent Preferences**: ⭐ Set whitelist/blacklist once, apply to all deployments
+- **Advanced Filtering**: Health-based filtering and one-time CLI flags
+- **Interactive Setup**: Easy guided configuration with visual feedback
 
 ---
 
 ## Quick Start
+
+**🚀 NEW: Persistent Preferences (Recommended)**
+
+Set your preferences once, use everywhere:
+
+```bash
+# Interactive setup (easiest)
+tfgrid-compose whitelist
+
+# Direct setup
+tfgrid-compose whitelist nodes 920,891
+tfgrid-compose blacklist nodes 617
+
+# All deployments now auto-use your preferences
+tfgrid-compose up myapp
+```
+
+**Classic Method (Still Supported)**
 
 ```bash
 # Auto-select best node (default)
@@ -31,7 +50,7 @@ tfgrid-compose up myapp --node=574
 # Filter by health
 tfgrid-compose up myapp --max-cpu-usage=70 --min-uptime-days=30
 
-# Blacklist problematic nodes
+# One-time blacklist (deprecated - use persistent preferences above)
 tfgrid-compose up myapp --blacklist-node=617
 ```
 
@@ -108,6 +127,45 @@ max_disk_usage: 80
 # Minimum uptime requirements (days)
 min_uptime_days: 30
 ```
+### Persistent Preferences System
+
+**Set your whitelist and blacklist preferences once, apply to all deployments!**
+
+The persistent preferences system allows you to configure node and farm filtering that automatically applies to all your deployments, eliminating the need to specify the same flags repeatedly.
+
+```bash
+# Interactive setup (recommended)
+tfgrid-compose whitelist
+# → Guided menu to set whitelist and blacklist preferences
+
+# Set whitelist nodes
+tfgrid-compose whitelist nodes 920,891
+
+# Set whitelist farms
+tfgrid-compose whitelist farms FastFarm,ReliableFarm
+
+# Set blacklist nodes
+tfgrid-compose blacklist nodes 615,888
+
+# Set blacklist farms
+tfgrid-compose blacklist farms SlowFarm,ProblematicFarm
+
+# View current preferences
+tfgrid-compose preferences --status
+```
+
+**Benefits:**
+- ✅ **One-time setup** - Configure once, use everywhere
+- ✅ **Interactive mode** - Easy guided configuration
+- ✅ **Visual status** - Clear view of current preferences
+- ✅ **CLI overrides** - Can still override for special cases
+- ✅ **Team sharing** - YAML config file is shareable
+
+**Configuration file:** `~/.config/tfgrid-compose/preferences.yaml`
+
+### Legacy Configuration Commands
+
+The old `config` system is deprecated in favor of the new preference commands above:
 
 ### Configuration Commands
 
@@ -148,6 +206,193 @@ tfgrid-compose up myapp --max-cpu-usage=50
 
 Exclude specific nodes that have issues:
 
+---
+
+## Persistent Preferences Guide
+
+### Setting Up Persistent Preferences
+
+**Step 1: Interactive Setup (Recommended)**
+
+The easiest way to set up your preferences:
+
+```bash
+tfgrid-compose whitelist
+```
+
+This opens an interactive menu where you can:
+1. Add whitelist nodes
+2. Add whitelist farms  
+3. Add blacklist nodes
+4. Add blacklist farms
+5. Set deployment preferences (CPU, disk, uptime)
+6. View current preferences
+7. Clear preferences
+8. Save and exit
+
+**Step 2: Direct Commands**
+
+Or use direct commands for quick setup:
+
+```bash
+# Whitelist preferred nodes and farms
+tfgrid-compose whitelist nodes 920,891
+tfgrid-compose whitelist farms FastFarm,ReliableFarm
+
+# Blacklist problematic nodes and farms
+tfgrid-compose blacklist nodes 615,888
+tfgrid-compose blacklist farms SlowFarm,ProblematicFarm
+
+# Set deployment preferences
+tfgrid-compose whitelist  # Interactive mode for preferences
+```
+
+**Step 3: View Current Settings**
+
+```bash
+# View all preferences
+tfgrid-compose preferences --status
+
+# Shows:
+# ✅ Whitelist (preferred nodes/farms):
+#    Nodes: 920, 891
+#    Farms: FastFarm, ReliableFarm
+# ❌ Blacklist (avoided nodes/farms):
+#    Nodes: 615, 888
+#    Farms: SlowFarm, ProblematicFarm
+# ⚙️  Deployment Preferences:
+#    Max CPU Usage: 80%
+#    Max Disk Usage: 60%
+#    Min Uptime: 3 days
+```
+
+### Using Persistent Preferences
+
+Once configured, all deployments automatically use your preferences:
+
+```bash
+# These commands automatically apply your persistent preferences
+tfgrid-compose up tfgrid-ai-stack
+tfgrid-compose up tfgrid-gitea
+tfgrid-compose up tfgrid-ai-agent
+
+# Each deployment shows:
+# ✅ Applying whitelist: nodes=920,891 farms=FastFarm,ReliableFarm
+# ✅ Applying blacklist: nodes=615 farms=SlowFarm
+```
+
+### Overriding Persistent Preferences
+
+You can still override preferences for specific deployments:
+
+```bash
+# Use persistent whitelist but override with specific node
+tfgrid-compose up tfgrid-ai-stack --node=920
+
+# Override whitelist for this deployment only
+tfgrid-compose up tfgrid-ai-stack --whitelist-node=920,891 --blacklist-node=615
+
+# Override with different whitelist farm
+tfgrid-compose up tfgrid-ai-stack --whitelist-farm=PremiumFarm
+```
+
+**Precedence Order:**
+1. CLI flags (highest precedence)
+2. Persistent preferences
+3. Default behavior (lowest precedence)
+
+### Managing Preferences
+
+**Clear specific preferences:**
+```bash
+tfgrid-compose whitelist --clear      # Clear all whitelist
+tfgrid-compose blacklist --clear      # Clear all blacklist
+```
+
+**Update preferences:**
+```bash
+# Add more nodes to whitelist
+tfgrid-compose whitelist nodes 920,891,1234
+
+# Update blacklist farms
+tfgrid-compose blacklist farms SlowFarm,ProblematicFarm,BadFarm
+```
+
+**Check what will be applied:**
+```bash
+tfgrid-compose preferences --status
+```
+
+### Configuration File
+
+Preferences are stored in YAML format at:
+`~/.config/tfgrid-compose/preferences.yaml`
+
+```yaml
+# TFGrid Compose Persistent Preferences
+whitelist:
+  nodes: [920, 891]
+  farms: [FastFarm, ReliableFarm]
+
+blacklist:
+  nodes: [615, 888]
+  farms: [SlowFarm, ProblematicFarm]
+
+preferences:
+  max_cpu_usage: 80
+  max_disk_usage: 60
+  min_uptime_days: 3
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-10-31T17:03:00Z"
+```
+
+**Benefits of YAML format:**
+- ✅ **Human-readable** - Easy to edit manually
+- ✅ **Shareable** - Team members can copy preference files
+- ✅ **Version control** - Track changes over time
+- ✅ **Backup/restore** - Simple file copy
+
+### Common Use Cases
+
+**Development Environment:**
+```bash
+tfgrid-compose whitelist nodes 920,891  # Fast, reliable nodes
+tfgrid-compose whitelist farms FastFarm # Preferred farm
+```
+
+**Production Environment:**
+```bash
+# More restrictive preferences for production
+tfgrid-compose blacklist nodes 615,888  # Avoid known problematic nodes
+tfgrid-compose blacklist farms SlowFarm # Avoid slow farms
+tfgrid-compose whitelist nodes 920,891,1234  # Only use proven nodes
+```
+
+**Team Environment:**
+```bash
+# Share preferences file with team
+cp ~/.config/tfgrid-compose/preferences.yaml team-preferences.yaml
+# Team members copy to their ~/.config/tfgrid-compose/preferences.yaml
+```
+
+**Cost Optimization:**
+```bash
+# Prefer cheaper farms
+tfgrid-compose whitelist farms Freefarm,AffordableFarm
+```
+
+**Performance Optimization:**
+```bash
+# Prefer high-performance nodes
+tfgrid-compose whitelist nodes 920,891,1234  # Top-tier nodes
+tfgrid-compose blacklist farms SlowFarm      # Avoid slow farms
+```
+
+---
+
+## Filtering Options
 ```bash
 # Single node
 tfgrid-compose up myapp --blacklist-node=617

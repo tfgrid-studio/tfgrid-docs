@@ -48,6 +48,36 @@ tfgrid-compose login
 ```bash
 # Create convenient shortcuts
 tfgrid-compose shortcut tfc  # Creates 'tfc' command
+
+# Or use default shortcut 'tfgrid'
+# tfgrid-compose shortcut --default  # Creates 'tfgrid' command
+```
+
+### Step 4: Configure Node Preferences (Optional but Recommended) ⭐
+
+**Set your preferred nodes/farms once, use everywhere:**
+
+```bash
+# Interactive setup (recommended)
+tfgrid-compose whitelist
+
+# Or direct setup
+tfgrid-compose whitelist nodes 920,891  # Your favorite nodes
+tfgrid-compose whitelist farms FastFarm  # Your preferred farm
+tfgrid-compose blacklist nodes 617      # Avoid problematic nodes
+
+# View current preferences
+tfgrid-compose preferences --status
+```
+
+**This saves you from typing whitelist/blacklist flags on every deployment!**
+
+### Step 5: Deploy Your First App
+### Step 3: Set Up Shortcuts (30 seconds)
+
+```bash
+# Create convenient shortcuts
+tfgrid-compose shortcut tfc  # Creates 'tfc' command
 ```
 
 ### Step 4: Explore & Deploy (2 minutes)

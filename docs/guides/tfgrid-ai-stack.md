@@ -27,8 +27,14 @@ The AI Stack provides a seamless, end-to-end development experience on ThreeFold
 Deploy the complete AI development environment:
 
 ```bash
-# Deploy the stack
+# Basic deployment
 tfgrid-compose up tfgrid-ai-stack
+
+# Advanced deployment with node selection
+tfgrid-compose up tfgrid-ai-stack --whitelist-node=920 --whitelist-farm=FastFarm
+
+# Deployment with resource constraints
+tfgrid-compose up tfgrid-ai-stack --max-cpu-usage=80 --min-uptime-days=7
 
 # Authenticate with Qwen AI
 tfgrid-compose login
@@ -62,6 +68,73 @@ tfgrid-compose up tfgrid-ai-stack --domain yourdomain.com
 ```
 
 ## Usage
+
+### Advanced Deployment Options
+
+The tfgrid-ai-stack supports comprehensive filtering and deployment options for optimal node selection:
+
+#### Node and Farm Filtering
+```bash
+# Whitelist preferred nodes (only use these nodes)
+tfgrid-compose up tfgrid-ai-stack --whitelist-node=920,891
+
+# Whitelist preferred farms (only use farms with these names)
+tfgrid-compose up tfgrid-ai-stack --whitelist-farm=FastFarm,ReliableFarm
+
+# Blacklist problematic nodes (avoid these specific nodes)
+tfgrid-compose up tfgrid-ai-stack --blacklist-node=920,615
+
+# Blacklist specific farms (avoid farms with these names)
+tfgrid-compose up tfgrid-ai-stack --blackfarm=SlowFarm,ProblematicFarm
+
+# Combine filters for precise control
+tfgrid-compose up tfgrid-ai-stack \
+  --whitelist-farm=FastFarm \
+  --blacklist-node=920 \
+  --max-cpu-usage=80
+```
+
+#### Resource Health Filters
+```bash
+# Ensure low CPU usage for better performance
+tfgrid-compose up tfgrid-ai-stack --max-cpu-usage=70
+
+# Prefer nodes with low disk usage
+tfgrid-compose up tfgrid-ai-stack --max-disk-usage=60
+
+# Ensure minimum uptime for stability
+tfgrid-compose up tfgrid-ai-stack --min-uptime-days=7
+
+# Combine multiple health criteria
+tfgrid-compose up tfgrid-ai-stack \
+  --max-cpu-usage=80 \
+  --max-disk-usage=70 \
+  --min-uptime-days=3
+```
+
+#### Specific Deployment Targets
+```bash
+# Deploy to specific farm
+tfgrid-compose up tfgrid-ai-stack --farm-id=42
+
+# Deploy to specific node (exact match)
+tfgrid-compose up tfgrid-ai-stack --node-id=920
+
+# Private network configuration
+tfgrid-compose up tfgrid-ai-stack --network=main
+```
+
+#### Public Access Configuration
+```bash
+# Deploy with SSL domain
+tfgrid-compose up tfgrid-ai-stack --domain=yourdomain.com
+
+# Force redeployment with cache refresh
+tfgrid-compose up tfgrid-ai-stack --force --refresh
+
+# Interactive node selection
+tfgrid-compose up tfgrid-ai-stack --interactive
+```
 
 ### Project Management
 
@@ -107,6 +180,29 @@ tfgrid-compose update portfolio "add contact form and dark mode"
 ```bash
 tfgrid-compose delete portfolio
 # Removes from gateway, deletes Gitea repo, cleans up AI workspace
+```
+
+#### Monitor Project Logs
+```bash
+# Real-time monitoring of AI development
+tfgrid-compose monitor web-application
+
+# Output shows:
+# 🤖 AI Agent: Generating code for web-application
+# 📝 Creating repository: tfgrid-ai-agent/web-application
+# 🌐 Deploying to: http://your-ip/web-application
+# ✅ Project completed in 5m 32s
+```
+
+#### Backup Management
+```bash
+# Manual backup of all projects
+tfgrid-compose backup
+
+# Restore from backup
+tfgrid-compose restore backup-20251031.tar.gz
+
+# Shows backup status and progress
 ```
 
 ### Stack Management
@@ -213,9 +309,9 @@ export GIT_USER_EMAIL="you@example.com"
 tfgrid-compose up tfgrid-ai-stack --domain example.com
 ```
 
-### Resource Allocation
+### Core Configuration Options
 
-Single-VM deployment with all components co-located:
+Comprehensive configuration available via `tfgrid-compose.yaml`:
 
 ```yaml
 # tfgrid-compose.yaml
@@ -223,6 +319,64 @@ resources:
   cpu: 8        # All components share resources
   memory: 16384 # 16GB total
   disk: 200     # 200GB storage
+
+# Security & Performance Settings
+api_rate_limit: "100r/m"        # API rate limiting (requests per minute)
+max_concurrent_projects: 10     # Maximum concurrent project creations
+
+# Backup Configuration
+backup_retention_days: 30       # Backup retention period in days
+backup_schedule: "0 2 * * *"    # Backup cron schedule (daily at 2 AM)
+
+# ThreeFold Grid Deployment
+farm_id: 0                      # Preferred farm ID (0 for auto-selection)
+node_id: 0                      # Specific node ID (0 for auto-selection)
+
+# Network Configuration
+private_network_cidr: "10.1.1.0/24"  # Private network CIDR
+
+# SSL Configuration
+ssl_email: your-email@example.com    # Let's Encrypt email for SSL
+domain: yourdomain.com               # Domain for SSL (optional)
+```
+
+### Configuration Examples
+
+#### High-Performance Configuration
+```yaml
+# For production environments
+api_rate_limit: "200r/m"
+max_concurrent_projects: 20
+backup_retention_days: 90
+backup_schedule: "0 1 * * *"  # Daily at 1 AM
+```
+
+#### Development Configuration
+```yaml
+# For development and testing
+api_rate_limit: "50r/m"
+max_concurrent_projects: 5
+backup_retention_days: 7
+backup_schedule: "0 3 * * 0"  # Weekly on Sunday at 3 AM
+```
+
+#### Specific Node Deployment
+```yaml
+# Deploy to specific farm and node
+farm_id: 42
+node_id: 920
+private_network_cidr: "10.1.1.0/24"
+```
+
+#### Configuration via Environment Variables
+```bash
+# Set via export before deployment
+export TFGRID_AI_STACK_API_RATE_LIMIT="150r/m"
+export TFGRID_AI_STACK_MAX_CONCURRENT_PROJECTS=15
+export TFGRID_AI_STACK_BACKUP_RETENTION_DAYS=45
+
+# Deploy with custom configuration
+tfgrid-compose up tfgrid-ai-stack
 ```
 
 ## How It Works

@@ -18,7 +18,7 @@
         <link rel="prev" href="../versioning-policy/">
       
       
-        <link rel="next" href="../../roadmap/">
+        <link rel="next" href="../submit-app/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
@@ -1533,6 +1533,75 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deployment-hooks-file-access-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Hooks - File Access Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Hooks - File Access Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-flattened-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important: Flattened Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-complete-file-access-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Complete File Access Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-type-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Type Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pattern-examples" class="md-nav__link">
     <span class="md-ellipsis">
       Pattern Examples
@@ -1596,6 +1665,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submit-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submit Apps
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1993,6 +2085,75 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deployment-hooks-file-access-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Hooks - File Access Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Hooks - File Access Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-flattened-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important: Flattened Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-complete-file-access-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Complete File Access Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-type-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Type Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pattern-examples" class="md-nav__link">
     <span class="md-ellipsis">
       Pattern Examples
@@ -2158,75 +2319,154 @@
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
+<h2 id="deployment-hooks-file-access-contract">Deployment Hooks - File Access Contract<a class="headerlink" href="#deployment-hooks-file-access-contract" title="Permanent link">&para;</a></h2>
+<h3 id="file-transfer-overview">File Transfer Overview<a class="headerlink" href="#file-transfer-overview" title="Permanent link">&para;</a></h3>
+<p>tfgrid-compose automatically transfers files to the VM during deployment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Files copied to VM:</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>scp<span class="w"> </span>/src/*<span class="w"> </span>root@vm:/tmp/app-source/
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>scp<span class="w"> </span>/deployment/*<span class="w"> </span>root@vm:/tmp/app-deployment/
+</code></pre></div>
+<h3 id="available-directories">Available Directories<a class="headerlink" href="#available-directories" title="Permanent link">&para;</a></h3>
+<p>Your setup.sh can access these pre-copied directories:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>/tmp/app-deployment/     # Deployment scripts
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── setup.sh
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├── configure.sh
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>└── healthcheck.sh
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>/tmp/app-source/         # App source files (flattened structure)
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>├── scripts/             # From /src/scripts
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>├── systemd/             # From /src/systemd
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>├── templates/           # From /src/templates
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>└── agent/               # From /src/agent
+</code></pre></div>
+<h3 id="important-flattened-structure">Important: Flattened Structure<a class="headerlink" href="#important-flattened-structure" title="Permanent link">&para;</a></h3>
+<p><strong>Key insight</strong>: tfgrid-compose <strong>flattens the <code>/src/</code> directory</strong> when copying to the VM.</p>
+<p>❌ <strong>INCORRECT ASSUMPTION:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cp<span class="w"> </span>-r<span class="w"> </span>/tmp/app-source/src<span class="w"> </span>/opt/myapp/
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># ❌ /tmp/app-source/src/ doesn&#39;t exist!</span>
+</code></pre></div></p>
+<p>✅ <strong>CORRECT PATTERN:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cp<span class="w"> </span>-r<span class="w"> </span>/tmp/app-source/*<span class="w"> </span>/opt/myapp/src/
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># ✅ Copies all directories from /tmp/app-source/ into /opt/myapp/src/</span>
+</code></pre></div></p>
+<h3 id="example-complete-file-access-pattern">Example: Complete File Access Pattern<a class="headerlink" href="#example-complete-file-access-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># In your deployment/setup.sh:</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># Create app directories</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/myapp/<span class="o">{</span>src,scripts,logs<span class="o">}</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1"># Copy source files (flattens /tmp/app-source/ into /opt/myapp/src/)</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>cp<span class="w"> </span>-r<span class="w"> </span>/tmp/app-source/*<span class="w"> </span>/opt/myapp/src/
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1"># Copy deployment scripts</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>cp<span class="w"> </span>/tmp/app-deployment/*.sh<span class="w"> </span>/opt/myapp/scripts/
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="c1"># Make scripts executable</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>chmod<span class="w"> </span>+x<span class="w"> </span>/opt/myapp/src/scripts/*.sh
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>chmod<span class="w"> </span>+x<span class="w"> </span>/opt/myapp/scripts/*.sh
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="c1"># Set ownership and permissions</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>chown<span class="w"> </span>-R<span class="w"> </span>myapp:myapp<span class="w"> </span>/opt/myapp
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/opt/myapp/scripts
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/opt/myapp/src
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="c1"># Create necessary log directories</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/log/myapp
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>chown<span class="w"> </span>myapp:myapp<span class="w"> </span>/var/log/myapp
+</code></pre></div>
+<h3 id="file-type-examples">File Type Examples<a class="headerlink" href="#file-type-examples" title="Permanent link">&para;</a></h3>
+<p><strong>Bash Scripts:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cp<span class="w"> </span>/tmp/app-source/scripts/*.sh<span class="w"> </span>/opt/myapp/scripts/
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>/opt/myapp/scripts/*.sh
+</code></pre></div></p>
+<p><strong>Systemd Services:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cp<span class="w"> </span>/tmp/app-source/systemd/*.service<span class="w"> </span>/etc/systemd/system/
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>systemctl<span class="w"> </span>daemon-reload
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>myapp
+</code></pre></div></p>
+<p><strong>Templates:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cp<span class="w"> </span>/tmp/app-source/templates/*<span class="w"> </span>/etc/myapp/templates/
+</code></pre></div></p>
+<h3 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h3>
+<p>Test your file access patterns in setup.sh:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Verify files exist</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ls<span class="w"> </span>-la<span class="w"> </span>/tmp/app-source/<span class="w">        </span><span class="c1"># Should show directories, not /src/</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>ls<span class="w"> </span>-la<span class="w"> </span>/tmp/app-source/scripts<span class="w"> </span><span class="c1"># Should show script files</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># Test your copy command</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>cp<span class="w"> </span>-r<span class="w"> </span>/tmp/app-source/*<span class="w"> </span>/opt/myapp/src/
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>ls<span class="w"> </span>-la<span class="w"> </span>/opt/myapp/src/<span class="w">         </span><span class="c1"># Should have scripts/, systemd/, templates/ subdirectories</span>
+</code></pre></div>
+<hr />
 <h2 id="pattern-examples">Pattern Examples<a class="headerlink" href="#pattern-examples" title="Permanent link">&para;</a></h2>
 <h3 id="single-vm-pattern">Single-VM Pattern<a class="headerlink" href="#single-vm-pattern" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">grid_deployment.vm.vms[0].computedip</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;deployment_name&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.vm.name</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">var.node_id</span><span class="p">]</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">grid_deployment.vm.vms[0].computedip</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">}</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;deployment_name&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.vm.name</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="p">}</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">var.node_id</span><span class="p">]</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="gateway-pattern">Gateway Pattern<a class="headerlink" href="#gateway-pattern" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.gateway.vms[0].public_ip</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">}</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public&quot;</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;secondary_ips&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="err">for</span><span class="w"> </span><span class="err">vm</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="nv">grid_deployment.backends.vms</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">      </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.name</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">      </span><span class="na">ip</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">vm.computedip</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">      </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">      </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;backend&quot;</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="p">}</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">concat</span><span class="p">([</span><span class="nv">var.gateway_node</span><span class="p">],</span><span class="w"> </span><span class="nv">var.backend_nodes</span><span class="p">)</span>
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.gateway.vms[0].public_ip</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">}</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public&quot;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">}</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;secondary_ips&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span><span class="err">for</span><span class="w"> </span><span class="err">vm</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="nv">grid_deployment.backends.vms</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">      </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.name</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">      </span><span class="na">ip</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">vm.computedip</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">      </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">      </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;backend&quot;</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="p">}</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;node_ids&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">concat</span><span class="p">([</span><span class="nv">var.gateway_node</span><span class="p">],</span><span class="w"> </span><span class="nv">var.backend_nodes</span><span class="p">)</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="k3s-pattern">K3s Pattern<a class="headerlink" href="#k3s-pattern" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.k3s.vms[0].computedip</span><span class="c1">  # master</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;secondary_ips&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="err">for</span><span class="w"> </span><span class="err">vm</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="nf">slice</span><span class="p">(</span><span class="nv">grid_deployment.k3s.vms</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="nv">grid_deployment.k3s.vms</span><span class="p">))</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">      </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.name</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">      </span><span class="na">ip</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.computedip</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">      </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">      </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;worker&quot;</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="p">}</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;connection_info&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">  </span><span class="nb">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="na">method</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kubectl&quot;</span>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="na">kubeconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.remote_file.kubeconfig.content</span>
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">    </span><span class="na">endpoint</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://${primary_ip}:6443&quot;</span>
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">grid_deployment.k3s.vms[0].computedip</span><span class="c1">  # master</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="p">}</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;primary_ip_type&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">}</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;secondary_ips&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="err">for</span><span class="w"> </span><span class="err">vm</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="nf">slice</span><span class="p">(</span><span class="nv">grid_deployment.k3s.vms</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="nv">grid_deployment.k3s.vms</span><span class="p">))</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">      </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.name</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">      </span><span class="na">ip</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nv">vm.computedip</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">      </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wireguard&quot;</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">      </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;worker&quot;</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="p">}</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;connection_info&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">  </span><span class="nb">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">    </span><span class="na">method</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kubectl&quot;</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">    </span><span class="na">kubeconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.remote_file.kubeconfig.content</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">    </span><span class="na">endpoint</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://${primary_ip}:6443&quot;</span>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="why-this-contract">Why This Contract?<a class="headerlink" href="#why-this-contract" title="Permanent link">&para;</a></h2>
@@ -2238,11 +2478,11 @@
 <h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h2>
 <p>The orchestrator will <strong>fail</strong> deployment if <code>primary_ip</code> is not provided. All other standard outputs have sensible defaults.</p>
 <p>Test your pattern:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>patterns/my-pattern/infrastructure
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>terraform<span class="w"> </span>output<span class="w"> </span>primary_ip<span class="w">        </span><span class="c1"># MUST return an IP</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>terraform<span class="w"> </span>output<span class="w"> </span>primary_ip_type<span class="w">   </span><span class="c1"># MUST return wireguard/public/mycelium</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>terraform<span class="w"> </span>output<span class="w"> </span>deployment_name<span class="w">   </span><span class="c1"># MUST return a name</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>terraform<span class="w"> </span>output<span class="w"> </span>node_ids<span class="w">          </span><span class="c1"># MUST return JSON array</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">cd</span><span class="w"> </span>patterns/my-pattern/infrastructure
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>terraform<span class="w"> </span>output<span class="w"> </span>primary_ip<span class="w">        </span><span class="c1"># MUST return an IP</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>terraform<span class="w"> </span>output<span class="w"> </span>primary_ip_type<span class="w">   </span><span class="c1"># MUST return wireguard/public/mycelium</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>terraform<span class="w"> </span>output<span class="w"> </span>deployment_name<span class="w">   </span><span class="c1"># MUST return a name</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>terraform<span class="w"> </span>output<span class="w"> </span>node_ids<span class="w">          </span><span class="c1"># MUST return JSON array</span>
 </code></pre></div></p>
 
 
@@ -2338,13 +2578,13 @@
         
         
           
-          <a href="../../roadmap/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+          <a href="../submit-app/" class="md-footer__link md-footer__link--next" aria-label="Next: Submit Apps">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Overview
+                Submit Apps
               </div>
             </div>
             <div class="md-footer__button md-icon">

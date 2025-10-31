@@ -193,6 +193,40 @@ tfgrid-compose monitor web-application
 # 🌐 Deploying to: http://your-ip/web-application
 # ✅ Project completed in 5m 32s
 ```
+#### AI-Powered Publishing
+```bash
+# Publish project for web hosting (AI intelligently handles publishing)
+tfgrid-compose publish mathweb
+
+# Or interactive mode - select project from list
+tfgrid-compose publish
+
+# Output shows:
+# 🤖 AI-Powered Project Publisher
+# 📂 Project: mathweb
+# 🏢 Organization: tfgrid-ai-agent
+# 🚀 Starting AI agent publishing process...
+# 🧠 AI creates intelligent nginx configuration
+# 🌐 Access URLs:
+#    Git:  http://10.1.3.2/git/tfgrid-ai-agent/mathweb
+#    Web:  http://10.1.3.2/web/tfgrid-ai-agent/mathweb
+# 🎉 AI Agent publishing process completed!
+```
+
+The AI agent intelligently:
+- **Detects organization** from project Git remote URL
+- **Analyzes project type** (React, Vue, Static, API)
+- **Creates optimal nginx configuration** for the project
+- **Sets proper permissions** for web access
+- **Handles deployment URLs** automatically
+
+**Complete Workflow:**
+```bash
+tfgrid-compose create "chemistry website"    # AI builds website
+tfgrid-compose run                           # AI develops website  
+tfgrid-compose publish                       # AI agent publishes to web hosting
+# Now accessible at: http://your-ip/web/tfgrid-ai-agent/chemistry-website
+```
 
 #### Backup Management
 ```bash

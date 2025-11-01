@@ -204,6 +204,7 @@ git clone https://github.com/tfgrid-studio/tfgrid-ai-agent
 ```
 
 This structure:
+
 - ✅ Keeps everything organized
 - ✅ Makes relative paths consistent
 - ✅ Follows standard conventions

@@ -155,6 +155,7 @@ tfgrid-compose preferences --status
 ```
 
 **Benefits:**
+
 - ✅ **One-time setup** - Configure once, use everywhere
 - ✅ **Interactive mode** - Easy guided configuration
 - ✅ **Visual status** - Clear view of current preferences

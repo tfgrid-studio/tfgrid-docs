@@ -24,6 +24,7 @@ curl -sSL install.tfgrid.studio/install.sh | sh
 ```
 
 **What happens:**
+
 - Downloads TFGrid Compose CLI (v0.13.4)
 - Installs to `~/.local/bin/tfgrid-compose`
 - Adds to PATH automatically

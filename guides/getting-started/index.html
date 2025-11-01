@@ -2642,12 +2642,14 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Install everything needed</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>install.tfgrid.studio/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
-<p><strong>What happens:</strong>
-- Downloads TFGrid Compose CLI (v0.13.4)
-- Installs to <code>~/.local/bin/tfgrid-compose</code>
-- Adds to PATH automatically
-- Creates default <code>tfgrid</code> shortcut
-- Sets up configuration directories</p>
+<p><strong>What happens:</strong></p>
+<ul>
+<li>Downloads TFGrid Compose CLI (v0.13.4)</li>
+<li>Installs to <code>~/.local/bin/tfgrid-compose</code></li>
+<li>Adds to PATH automatically</li>
+<li>Creates default <code>tfgrid</code> shortcut</li>
+<li>Sets up configuration directories</li>
+</ul>
 <p><strong>Verification:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tfgrid-compose<span class="w"> </span>--version<span class="w">  </span><span class="c1"># TFGrid Compose v0.13.4</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tfgrid<span class="w"> </span>--help<span class="w">            </span><span class="c1"># Works via shortcut</span>

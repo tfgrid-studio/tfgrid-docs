@@ -12,6 +12,7 @@ Complete workflow from installation to deployment with registry integration!
 ## Prerequisites
 
 Before starting, ensure you have:
+
 - ✅ Basic command line knowledge
 - ✅ Internet connection
 - ✅ ThreeFold Grid account (get one at [threefold.io](https://threefold.io))

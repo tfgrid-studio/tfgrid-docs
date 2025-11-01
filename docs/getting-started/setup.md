@@ -7,6 +7,7 @@ This guide covers the complete setup process for TFGrid Compose, from installati
 ## Prerequisites
 
 Before starting, ensure you have:
+
 - ✅ Basic command line knowledge
 - ✅ Internet connection
 - ✅ ThreeFold Grid account ([threefold.io](https://threefold.io))

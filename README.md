@@ -16,23 +16,27 @@ This repository contains complete documentation for the TFGrid Studio platform.
 - **[Core Concepts](getting-started/concepts.md)** - Patterns, apps, manifests _(coming soon)_
 
 ### Deployment Patterns
+
 - **[Pattern Overview](patterns/overview.md)** - Understanding patterns ✅
 - **[Single-VM Pattern](patterns/single-vm/)** - ✅ Production ready
 - **[Gateway Pattern](patterns/gateway/)** - ✅ Production ready (v2.0.0)
 - **[K3s Pattern](patterns/k3s/)** - ✅ Production ready (v2.0.0)
 
 ### Applications
+
 - **[Application Overview](applications/overview.md)** - How apps work _(coming soon)_
 - **[TFGrid AI Agent](applications/tfgrid-ai-agent/)** - ✅ AI coding agent _(coming soon)_
 - **[Creating Apps](applications/creating-apps.md)** - Build deployable apps _(coming soon)_
 
 ### CLI Reference
+
 - **[CLI Commands](reference/cli.md)** - Complete command reference _(coming soon)_
 - **[App Manifest](reference/manifest.md)** - `tfgrid-compose.yaml` spec _(coming soon)_
 - **[Context File](reference/context-file.md)** - `.tfgrid-compose.yaml` usage _(coming soon)_
 - **[State Management](reference/state.md)** - State tracking _(coming soon)_
 
 ### Guides
+
 - **[Migration Guide](guides/migration.md)** - From standalone repos _(coming soon)_
 - **[Advanced Deployment](guides/deployment.md)** - Production strategies _(coming soon)_
 - **[Networking](guides/networking.md)** - WireGuard, Mycelium _(coming soon)_
@@ -40,17 +44,20 @@ This repository contains complete documentation for the TFGrid Studio platform.
 - **[Troubleshooting](guides/troubleshooting.md)** - Common issues _(coming soon)_
 
 ### Architecture
+
 - **[System Architecture](architecture/overview.md)** - How it works _(coming soon)_
 - **[Design Decisions](architecture/design-decisions.md)** - Why we built this way _(coming soon)_
 - **[Source Repositories](architecture/source-repos.md)** - ✅ Acknowledgment & credits
 - **[Comparison](architecture/comparison.md)** - vs alternatives _(coming soon)_
 
 ### Roadmap
+
 - **[Current Status](roadmap/current.md)** - ✅ v2.0.0 Complete First Layer
 - **[Planned Features](roadmap/planned.md)** - Testing & web dashboard
 - **[Changelog](roadmap/changelog.md)** - Version history _(coming soon)_
 
 ### Contributing
+
 - **[Overview](contributing/overview.md)** - How to contribute _(coming soon)_
 - **[Development](contributing/development.md)** - Dev setup _(coming soon)_
 
@@ -69,6 +76,7 @@ This repository contains complete documentation for the TFGrid Studio platform.
 3. [Contributing](contributing/overview.md) _(coming soon)_
 
 ### Current Status
+
 - **[What's Working Now](roadmap/current.md)** - v2.0.0 Complete First Layer ✅
 - **[What's Coming Next](roadmap/planned.md)** - Testing & polish
 - **[Source Acknowledgment](architecture/source-repos.md)** - Built from proven code
@@ -96,6 +104,7 @@ This repository contains complete documentation for the TFGrid Studio platform.
 ## 🎯 Current Focus
 
 ### ✅ Completed (Phase 1-2)
+
 - ✅ Main landing page (`index.md`)
 - ✅ Introduction guide
 - ✅ Installation guide
@@ -106,6 +115,7 @@ This repository contains complete documentation for the TFGrid Studio platform.
 - ✅ All 3 pattern documentation (single-vm, gateway, k3s)
 
 ### 🚧 In Progress (Phase 3)
+
 - [ ] Application guides
 - [ ] CLI reference
 - [ ] Architecture docs
@@ -131,7 +141,7 @@ The documentation will be available at:
 
 ---
 
-## 🛠️ Building Locally
+## �️ Building Locally
 
 _(Coming soon - after MkDocs setup)_
 
@@ -178,9 +188,3 @@ Apache 2.0 License - See [LICENSE](LICENSE) file for details.
 - **[tfgrid-compose](https://github.com/tfgrid-studio/tfgrid-compose)** - Main CLI tool
 - **[tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)** - AI coding agent
 - **[TFGrid Studio](https://github.com/tfgrid-studio)** - All repositories
-
----
-
-**Last Updated:** 2025-10-09  
-**Documentation Version:** 2.0.0  
-**Status:** 🔄 In Progress (35% complete - All patterns documented)

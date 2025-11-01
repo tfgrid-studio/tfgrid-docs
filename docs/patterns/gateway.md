@@ -15,6 +15,7 @@ Internet → [Gateway VM] → [Backend VMs]
 ```
 
 **Perfect For:**
+
 - Production websites & web apps
 - E-commerce sites
 - SaaS applications

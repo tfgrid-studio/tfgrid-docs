@@ -23,6 +23,7 @@ The k3s pattern deploys a complete Kubernetes cluster using K3s (lightweight Kub
 ```
 
 **Perfect For:**
+
 - Cloud-native applications
 - Microservices architectures
 - Enterprise deployments

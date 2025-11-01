@@ -44,6 +44,7 @@ tfgrid-compose up tfgrid-ai-agent
 ```
 
 **Details:**
+
 - **Pattern**: single-vm
 - **Version**: v0.3.0
 - **Status**: Production Ready

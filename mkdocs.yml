@@ -132,7 +132,7 @@ nav:
     - Registry Commands: cli/registry.md
   
   - Guides:
-    - Getting Started Workflow: guides/getting-started-workflow.md
+    - Getting Started: guides/getting-started.md
     - TFGrid Compose: guides/tfgrid-compose.md
     - TFGrid AI Agent: guides/tfgrid-ai-agent.md
     - TFGrid Gitea: guides/tfgrid-gitea.md

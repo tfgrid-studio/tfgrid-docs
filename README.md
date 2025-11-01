@@ -9,6 +9,7 @@
 This repository contains complete documentation for the TFGrid Studio platform.
 
 ### Getting Started
+
 - **[Introduction](getting-started/introduction.md)** - What is TFGrid Studio
 - **[Installation](getting-started/installation.md)** - Install and configure
 - **[Quick Start](getting-started/quickstart.md)** - Deploy in 5 minutes

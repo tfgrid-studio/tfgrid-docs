@@ -1,10 +1,10 @@
 # TFGrid Compose - Complete User Guide
 
-**Version**: 0.13.4  
-**Last Updated**: 2025-11-01  
-**Status**: Production Ready
+**Version**: 0.13.5
+**Last Updated**: 2025-11-02
+**Status**: Production Ready with Farm Browser
 
-TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, and enhanced filtering capabilities.
+TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, and enhanced filtering capabilities.
 
 ## 🚀 Quick Start
 
@@ -54,6 +54,7 @@ t up tfgrid-ai-stack
 ### Management Commands
 | Command | Description | Example |
 |---------|-------------|---------|
+| `t nodes --farm <name>` | Show all nodes from specific farm | `t nodes --farm qualiafarm` |
 | `t exec <cmd>` | Execute command on active app | `t exec ls -la` |
 | `t address [app]` | Show deployment addresses | `t address` |
 | `t clean` | Clean up local state | `t clean` |
@@ -186,12 +187,69 @@ t up tfgrid-ai-stack --min-uptime-days 3
 # Interactive node browser
 t nodes
 
+# NEW: Farm Browser - Show all nodes from specific farm
+t nodes --farm qualiafarm      # Shows 27 nodes (10 online, 17 offline)
+t nodes farm freefarm          # Alternative syntax
+t nodes --farm=qualiafarm      # Alternative syntax
+t nodes --farm QUIAFARM        # Case-insensitive matching
+
 # Node details
 t nodes show 123
 
 # Favorites (whitelist integration)
 t nodes favorites
 ```
+
+## 🌾 Farm Browser (New!)
+
+The **Farm Browser** provides comprehensive farm node exploration with real-time data and complete coverage.
+
+### Key Features
+- **Complete Coverage**: Shows ALL nodes from specified farm (up to 7000 nodes)
+- **Real-time Status**: Live online/offline status (🟢 online, 🔴 offline)
+- **Detailed Specs**: CPU, RAM, disk, IPv4, load %, uptime for each node
+- **Case-Insensitive**: `qualiafarm` = `QualiaFarm` = `QUALIAFARM`
+- **Farm Statistics**: Total, online, offline node counts
+- **Comprehensive Query**: Uses size=7000 for maximum node coverage
+
+### Usage Examples
+```bash
+# Browse QualiaFarm nodes (found 27 nodes)
+t nodes --farm qualiafarm
+
+# Browse Freefarm nodes (found 25 nodes)
+t nodes farm freefarm
+
+# Case-insensitive matching
+t nodes --farm QUIAFARM
+
+# Show specific farm with full details
+t nodes --farm=qualiafarm
+```
+
+### Output Format
+```
+🏢 Farm: QualiaFarm
+📊 Total Nodes: 27
+🟢 Online: 10
+🔴 Offline: 17
+
+🔍 ThreeFold Node Browser
+ID     Farm                 Location        CPU    RAM    Disk   IPv4   Load     Uptime
+────────────────────────────────────────────────────────────────────────────────
+7414🟢 QualiaFarm           Canada          4      15.4G   250G   Yes    0%       112d
+6499🟢 QualiaFarm           Canada          32     251.9G  500G   Yes    0%       112d
+6452🟢 QualiaFarm           Canada          8      31.3G   100G   Yes    0%       112d
+... (all 27 nodes shown)
+
+Legend: 🟢 = Online node | 🔴 = Offline node
+```
+
+### Integration with System
+- **Consistent Coverage**: All node queries use size=7000 for maximum discovery
+- **Deployment Integration**: More nodes available for deployment selection
+- **Performance Optimized**: Query optimized while maintaining comprehensive data
+- **Debug Support**: Use `TFC_DEBUG=1` for troubleshooting
 
 ## 🔧 Configuration
 

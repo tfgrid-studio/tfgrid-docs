@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -1197,6 +1197,57 @@
   <a href="#node-browser" class="md-nav__link">
     <span class="md-ellipsis">
       Node Browser
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#farm-browser-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌾 Farm Browser (New!)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌾 Farm Browser (New!)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with System
     </span>
   </a>
   
@@ -2498,6 +2549,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#farm-browser-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌾 Farm Browser (New!)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌾 Farm Browser (New!)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with System
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       🔧 Configuration
@@ -2732,10 +2834,10 @@
 
 
 <h1 id="tfgrid-compose-complete-user-guide">TFGrid Compose - Complete User Guide<a class="headerlink" href="#tfgrid-compose-complete-user-guide" title="Permanent link">&para;</a></h1>
-<p><strong>Version</strong>: 0.13.4<br />
-<strong>Last Updated</strong>: 2025-11-01<br />
-<strong>Status</strong>: Production Ready</p>
-<p>TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, and enhanced filtering capabilities.</p>
+<p><strong>Version</strong>: 0.13.5
+<strong>Last Updated</strong>: 2025-11-02
+<strong>Status</strong>: Production Ready with Farm Browser</p>
+<p>TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, and enhanced filtering capabilities.</p>
 <h2 id="quick-start">🚀 Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>tfgrid-studio/tfgrid-compose
@@ -2849,6 +2951,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>t nodes --farm &lt;name&gt;</code></td>
+<td>Show all nodes from specific farm</td>
+<td><code>t nodes --farm qualiafarm</code></td>
+</tr>
 <tr>
 <td><code>t exec &lt;cmd&gt;</code></td>
 <td>Execute command on active app</td>
@@ -2967,152 +3074,205 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Interactive node browser</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>t<span class="w"> </span>nodes
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Node details</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>t<span class="w"> </span>nodes<span class="w"> </span>show<span class="w"> </span><span class="m">123</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Favorites (whitelist integration)</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>t<span class="w"> </span>nodes<span class="w"> </span>favorites
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># NEW: Farm Browser - Show all nodes from specific farm</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>t<span class="w"> </span>nodes<span class="w"> </span>--farm<span class="w"> </span>qualiafarm<span class="w">      </span><span class="c1"># Shows 27 nodes (10 online, 17 offline)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>t<span class="w"> </span>nodes<span class="w"> </span>farm<span class="w"> </span>freefarm<span class="w">          </span><span class="c1"># Alternative syntax</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>t<span class="w"> </span>nodes<span class="w"> </span>--farm<span class="o">=</span>qualiafarm<span class="w">      </span><span class="c1"># Alternative syntax</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>t<span class="w"> </span>nodes<span class="w"> </span>--farm<span class="w"> </span>QUIAFARM<span class="w">        </span><span class="c1"># Case-insensitive matching</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1"># Node details</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>t<span class="w"> </span>nodes<span class="w"> </span>show<span class="w"> </span><span class="m">123</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="c1"># Favorites (whitelist integration)</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>t<span class="w"> </span>nodes<span class="w"> </span>favorites
 </code></pre></div>
+<h2 id="farm-browser-new">🌾 Farm Browser (New!)<a class="headerlink" href="#farm-browser-new" title="Permanent link">&para;</a></h2>
+<p>The <strong>Farm Browser</strong> provides comprehensive farm node exploration with real-time data and complete coverage.</p>
+<h3 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Complete Coverage</strong>: Shows ALL nodes from specified farm (up to 7000 nodes)</li>
+<li><strong>Real-time Status</strong>: Live online/offline status (🟢 online, 🔴 offline)</li>
+<li><strong>Detailed Specs</strong>: CPU, RAM, disk, IPv4, load %, uptime for each node</li>
+<li><strong>Case-Insensitive</strong>: <code>qualiafarm</code> = <code>QualiaFarm</code> = <code>QUALIAFARM</code></li>
+<li><strong>Farm Statistics</strong>: Total, online, offline node counts</li>
+<li><strong>Comprehensive Query</strong>: Uses size=7000 for maximum node coverage</li>
+</ul>
+<h3 id="usage-examples">Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Browse QualiaFarm nodes (found 27 nodes)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>t<span class="w"> </span>nodes<span class="w"> </span>--farm<span class="w"> </span>qualiafarm
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Browse Freefarm nodes (found 25 nodes)</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>t<span class="w"> </span>nodes<span class="w"> </span>farm<span class="w"> </span>freefarm
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># Case-insensitive matching</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>t<span class="w"> </span>nodes<span class="w"> </span>--farm<span class="w"> </span>QUIAFARM
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1"># Show specific farm with full details</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>t<span class="w"> </span>nodes<span class="w"> </span>--farm<span class="o">=</span>qualiafarm
+</code></pre></div>
+<h3 id="output-format">Output Format<a class="headerlink" href="#output-format" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>🏢 Farm: QualiaFarm
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>📊 Total Nodes: 27
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>🟢 Online: 10
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>🔴 Offline: 17
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>🔍 ThreeFold Node Browser
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>ID     Farm                 Location        CPU    RAM    Disk   IPv4   Load     Uptime
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>────────────────────────────────────────────────────────────────────────────────
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>7414🟢 QualiaFarm           Canada          4      15.4G   250G   Yes    0%       112d
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>6499🟢 QualiaFarm           Canada          32     251.9G  500G   Yes    0%       112d
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>6452🟢 QualiaFarm           Canada          8      31.3G   100G   Yes    0%       112d
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>... (all 27 nodes shown)
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>Legend: 🟢 = Online node | 🔴 = Offline node
+</code></pre></div>
+<h3 id="integration-with-system">Integration with System<a class="headerlink" href="#integration-with-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Consistent Coverage</strong>: All node queries use size=7000 for maximum discovery</li>
+<li><strong>Deployment Integration</strong>: More nodes available for deployment selection</li>
+<li><strong>Performance Optimized</strong>: Query optimized while maintaining comprehensive data</li>
+<li><strong>Debug Support</strong>: Use <code>TFC_DEBUG=1</code> for troubleshooting</li>
+</ul>
 <h2 id="configuration">🔧 Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <h3 id="preferences-file">Preferences File<a class="headerlink" href="#preferences-file" title="Permanent link">&para;</a></h3>
 <p>Location: <code>~/.config/tfgrid-compose/preferences.yaml</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">whitelist</span><span class="p">:</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">]</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">farms</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;Freefarm&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;MixNMatch&quot;</span><span class="p p-Indicator">]</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nt">blacklist</span><span class="p">:</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">615</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">888</span><span class="p p-Indicator">]</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="nt">farms</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;BadFarm&quot;</span><span class="p p-Indicator">]</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="nt">preferences</span><span class="p">:</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">  </span><span class="nt">max_cpu_usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">  </span><span class="nt">max_disk_usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">  </span><span class="nt">min_uptime_days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="nt">metadata</span><span class="p">:</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">  </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-11-01T00:00:00Z&quot;</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">  </span><span class="nt">last_updated</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-11-01T00:00:00Z&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">whitelist</span><span class="p">:</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="nt">farms</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;Freefarm&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;MixNMatch&quot;</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nt">blacklist</span><span class="p">:</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span><span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">615</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">888</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span><span class="nt">farms</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;BadFarm&quot;</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="nt">preferences</span><span class="p">:</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">  </span><span class="nt">max_cpu_usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">  </span><span class="nt">max_disk_usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">  </span><span class="nt">min_uptime_days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">  </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-11-01T00:00:00Z&quot;</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">  </span><span class="nt">last_updated</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-11-01T00:00:00Z&quot;</span>
 </code></pre></div>
 <h3 id="config-file">Config File<a class="headerlink" href="#config-file" title="Permanent link">&para;</a></h3>
 <p>Location: <code>~/.config/tfgrid-compose/config.yaml</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Farm filtering (case-insensitive)</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">whitelist_farms</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Freefarm,MixNMatch&quot;</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nt">blacklist_farms</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;BadFarm&quot;</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># Node filtering</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nt">blacklist_nodes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;615,888&quot;</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nt">whitelist_nodes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1,2,3&quot;</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="c1"># Resource thresholds</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nt">max_cpu_usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="nt">max_disk_usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="nt">min_uptime_days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Farm filtering (case-insensitive)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nt">whitelist_farms</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Freefarm,MixNMatch&quot;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nt">blacklist_farms</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;BadFarm&quot;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># Node filtering</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nt">blacklist_nodes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;615,888&quot;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="nt">whitelist_nodes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1,2,3&quot;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1"># Resource thresholds</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="nt">max_cpu_usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="nt">max_disk_usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="nt">min_uptime_days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
 </code></pre></div>
 <h2 id="tfgrid-ai-stack-workflow">🎯 TFGrid AI Stack Workflow<a class="headerlink" href="#tfgrid-ai-stack-workflow" title="Permanent link">&para;</a></h2>
 <p>Complete workflow with enhanced preferences:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 1. Setup preferences (case-insensitive)</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>Freefarm
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>t<span class="w"> </span>blacklist<span class="w"> </span>nodes<span class="w"> </span><span class="m">615</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># 2. Deploy tfgrid-ai-stack</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># 3. Use app commands</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>t<span class="w"> </span>create<span class="w">                    </span><span class="c1"># Create new project</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>t<span class="w"> </span>run<span class="w">                      </span><span class="c1"># Run the project  </span>
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>t<span class="w"> </span>publish<span class="w">                  </span><span class="c1"># Publish to web server</span>
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>t<span class="w"> </span>logs<span class="w">                     </span><span class="c1"># View logs</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>t<span class="w"> </span>status<span class="w">                   </span><span class="c1"># Check status</span>
-<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
-<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="c1"># 4. Access services</span>
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="c1"># Gitea (Git): http://10.1.3.2/git/username/reponame</span>
-<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="c1"># Web App: http://10.1.3.2/web/username/reponame</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 1. Setup preferences (case-insensitive)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>Freefarm
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>t<span class="w"> </span>blacklist<span class="w"> </span>nodes<span class="w"> </span><span class="m">615</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># 2. Deploy tfgrid-ai-stack</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1"># 3. Use app commands</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>t<span class="w"> </span>create<span class="w">                    </span><span class="c1"># Create new project</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>t<span class="w"> </span>run<span class="w">                      </span><span class="c1"># Run the project  </span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>t<span class="w"> </span>publish<span class="w">                  </span><span class="c1"># Publish to web server</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>t<span class="w"> </span>logs<span class="w">                     </span><span class="c1"># View logs</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>t<span class="w"> </span>status<span class="w">                   </span><span class="c1"># Check status</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="c1"># 4. Access services</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="c1"># Gitea (Git): http://10.1.3.2/git/username/reponame</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="c1"># Web App: http://10.1.3.2/web/username/reponame</span>
 </code></pre></div>
 <h2 id="troubleshooting">🚨 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
 <p><strong>No nodes found after applying filters</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Check current preferences</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>--status
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>t<span class="w"> </span>blacklist<span class="w"> </span>--status
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># Clear problematic filters</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>t<span class="w"> </span>whitelist<span class="w"> </span>--clear
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># or</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>t<span class="w"> </span>blacklist<span class="w"> </span>--clear
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Check current preferences</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>--status
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>t<span class="w"> </span>blacklist<span class="w"> </span>--status
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># Clear problematic filters</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>t<span class="w"> </span>whitelist<span class="w"> </span>--clear
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># or</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>t<span class="w"> </span>blacklist<span class="w"> </span>--clear
 </code></pre></div></p>
 <p><strong>Farm not found warnings</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Farm names are case-insensitive, but must exist</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>Freefarm<span class="w">    </span><span class="c1"># ✅ Works</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>freefarm<span class="w">    </span><span class="c1"># ✅ Works  </span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>nonexistent<span class="w"> </span><span class="c1"># ⚠️ Will be skipped</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Farm names are case-insensitive, but must exist</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>Freefarm<span class="w">    </span><span class="c1"># ✅ Works</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>freefarm<span class="w">    </span><span class="c1"># ✅ Works  </span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>nonexistent<span class="w"> </span><span class="c1"># ⚠️ Will be skipped</span>
 </code></pre></div></p>
 <p><strong>Deployment fails</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Try without filters</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>--clear
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--force
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># Or use interactive mode</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>-i
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Try without filters</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>--clear
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--force
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># Or use interactive mode</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>-i
 </code></pre></div></p>
 <h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Enable debug logging</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TFC_DEBUG</span><span class="o">=</span><span class="m">1</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Enable debug logging</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TFC_DEBUG</span><span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
 <h2 id="examples">📚 Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="example-1-basic-ai-development">Example 1: Basic AI Development<a class="headerlink" href="#example-1-basic-ai-development" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>t<span class="w"> </span>shortcut<span class="w"> </span>tf<span class="w">                    </span><span class="c1"># Create shortcut</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>t<span class="w"> </span>login<span class="w">                          </span><span class="c1"># Setup credentials</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>Freefarm<span class="w">       </span><span class="c1"># Use preferred farm</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w">             </span><span class="c1"># Deploy AI stack</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>t<span class="w"> </span>create<span class="w"> </span>math-calculator<span class="w">         </span><span class="c1"># Create project</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>t<span class="w"> </span>run<span class="w">                           </span><span class="c1"># Run project</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>t<span class="w"> </span>publish<span class="w">                       </span><span class="c1"># Publish to web</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>t<span class="w"> </span>shortcut<span class="w"> </span>tf<span class="w">                    </span><span class="c1"># Create shortcut</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>t<span class="w"> </span>login<span class="w">                          </span><span class="c1"># Setup credentials</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span>Freefarm<span class="w">       </span><span class="c1"># Use preferred farm</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w">             </span><span class="c1"># Deploy AI stack</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>t<span class="w"> </span>create<span class="w"> </span>math-calculator<span class="w">         </span><span class="c1"># Create project</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>t<span class="w"> </span>run<span class="w">                           </span><span class="c1"># Run project</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>t<span class="w"> </span>publish<span class="w">                       </span><span class="c1"># Publish to web</span>
 </code></pre></div>
 <h3 id="example-2-multi-farm-setup">Example 2: Multi-Farm Setup<a class="headerlink" href="#example-2-multi-farm-setup" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Add multiple farms (case-insensitive)</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span><span class="s2">&quot;Freefarm,mixnmatch,SILVERFARM&quot;</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Add specific nodes</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>t<span class="w"> </span>whitelist<span class="w"> </span>nodes<span class="w"> </span><span class="s2">&quot;1,2,3&quot;</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="c1"># Exclude problematic nodes</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>t<span class="w"> </span>blacklist<span class="w"> </span>nodes<span class="w"> </span><span class="s2">&quot;615,888&quot;</span>
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>t<span class="w"> </span>blacklist<span class="w"> </span>farms<span class="w"> </span><span class="s2">&quot;BadFarm&quot;</span>
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
-<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="c1"># Deploy</span>
-<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--force
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Add multiple farms (case-insensitive)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span><span class="s2">&quot;Freefarm,mixnmatch,SILVERFARM&quot;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Add specific nodes</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>t<span class="w"> </span>whitelist<span class="w"> </span>nodes<span class="w"> </span><span class="s2">&quot;1,2,3&quot;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># Exclude problematic nodes</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>t<span class="w"> </span>blacklist<span class="w"> </span>nodes<span class="w"> </span><span class="s2">&quot;615,888&quot;</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>t<span class="w"> </span>blacklist<span class="w"> </span>farms<span class="w"> </span><span class="s2">&quot;BadFarm&quot;</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="c1"># Deploy</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--force
 </code></pre></div>
 <h3 id="example-3-resource-aware-deployment">Example 3: Resource-Aware Deployment<a class="headerlink" href="#example-3-resource-aware-deployment" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Set resource preferences</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>t<span class="w"> </span>preferences
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1"># Choose: Max CPU usage: 70%</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Choose: Max disk usage: 50%  </span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1"># Choose: Min uptime days: 5</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># Deploy with fresh cache</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--refresh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Set resource preferences</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>t<span class="w"> </span>preferences
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1"># Choose: Max CPU usage: 70%</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1"># Choose: Max disk usage: 50%  </span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="c1"># Choose: Min uptime days: 5</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="c1"># Deploy with fresh cache</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--refresh
 </code></pre></div>
 <h2 id="integration">🔗 Integration<a class="headerlink" href="#integration" title="Permanent link">&para;</a></h2>
 <h3 id="with-tfgrid-ai-stack">With TFGrid AI Stack<a class="headerlink" href="#with-tfgrid-ai-stack" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Preferences automatically apply to deployments</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span><span class="s2">&quot;Freefarm&quot;</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w">           </span><span class="c1"># Uses whitelist automatically</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="c1"># App-specific commands</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>t<span class="w"> </span>commands<span class="w">                     </span><span class="c1"># Show available commands</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>t<span class="w"> </span><span class="k">select</span>-project<span class="w">              </span><span class="c1"># Select active project</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>t<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;npm run build&quot;</span><span class="w">        </span><span class="c1"># Run command in active project</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Preferences automatically apply to deployments</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>t<span class="w"> </span>whitelist<span class="w"> </span>farms<span class="w"> </span><span class="s2">&quot;Freefarm&quot;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w">           </span><span class="c1"># Uses whitelist automatically</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1"># App-specific commands</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>t<span class="w"> </span>commands<span class="w">                     </span><span class="c1"># Show available commands</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>t<span class="w"> </span><span class="k">select</span>-project<span class="w">              </span><span class="c1"># Select active project</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>t<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;npm run build&quot;</span><span class="w">        </span><span class="c1"># Run command in active project</span>
 </code></pre></div>
 <h3 id="with-external-tools">With External Tools<a class="headerlink" href="#with-external-tools" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Check contracts</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>t<span class="w"> </span>tfcmd-install<span class="w">               </span><span class="c1"># Install tfcmd</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>t<span class="w"> </span>contracts<span class="w"> </span>list<span class="w">              </span><span class="c1"># List contracts</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="c1"># Node verification</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>t<span class="w"> </span>nodes<span class="w"> </span>show<span class="w"> </span><span class="m">123</span><span class="w">              </span><span class="c1"># Check specific node</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>t<span class="w"> </span>nodes<span class="w"> </span>favorites<span class="w">             </span><span class="c1"># View favorite nodes</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Check contracts</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>t<span class="w"> </span>tfcmd-install<span class="w">               </span><span class="c1"># Install tfcmd</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>t<span class="w"> </span>contracts<span class="w"> </span>list<span class="w">              </span><span class="c1"># List contracts</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1"># Node verification</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>t<span class="w"> </span>nodes<span class="w"> </span>show<span class="w"> </span><span class="m">123</span><span class="w">              </span><span class="c1"># Check specific node</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>t<span class="w"> </span>nodes<span class="w"> </span>favorites<span class="w">             </span><span class="c1"># View favorite nodes</span>
 </code></pre></div>
 <h2 id="advanced-features">📈 Advanced Features<a class="headerlink" href="#advanced-features" title="Permanent link">&para;</a></h2>
 <h3 id="farm-cache-system">Farm Cache System<a class="headerlink" href="#farm-cache-system" title="Permanent link">&para;</a></h3>

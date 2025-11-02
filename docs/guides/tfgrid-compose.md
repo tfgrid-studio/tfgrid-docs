@@ -37,7 +37,8 @@ t up tfgrid-ai-stack
 | `t help` | Show help message | `t help` |
 | `t shortcut <name>` | Create command alias | `t shortcut tf` |
 | `t search [query]` | Search apps in registry | `t search ai` |
-| `t list` | List deployed apps | `t list` |
+| `t list` | List deployed apps (Docker-style) | `t list` |
+| `t ps` | Docker-style deployment inspection | `t ps` |
 | `t select [app]` | Select active app | `t select tfgrid-ai-stack` |
 | `t commands` | Show app commands | `t commands` |
 
@@ -59,7 +60,165 @@ t up tfgrid-ai-stack
 | `t address [app]` | Show deployment addresses | `t address` |
 | `t clean` | Clean up local state | `t clean` |
 
+## 🐳 Docker-Style Deployment System
+
+TFGrid Compose uses a **Docker-style deployment ID system** that provides unique identifiers for each deployment, similar to Docker container IDs.
+
+### What Are Deployment IDs?
+
+Each deployment gets a unique 16-character hexadecimal ID (e.g., `mj4y7bu4a1c2d3e4f`). This system:
+
+- **Ensures uniqueness**: No deployment name conflicts
+- **Supports multiple instances**: Deploy the same app multiple times
+- **Enables advanced management**: Better tracking and inspection
+- **Provides familiar UX**: Docker-style command experience
+
+### How It Works
+
+#### 1. Deployment Creation
+```bash
+$ t up tfgrid-ai-stack
+✅ Generated deployment ID: mj4y7bu4a1c2d3e4f
+🎉 Deployment complete!
+
+App: tfgrid-ai-stack v0.12.0-dev
+Pattern: single-vm v1.0.0
+
+ℹ 🌐 Access your application:
+  • Launch in browser: tfgrid-compose launch tfgrid-ai-stack
+```
+
+#### 2. Docker-Style Inspection
+```bash
+$ t ps
+ℹ TFGrid Compose v0.13.4 - Docker-style Deployment List
+
+Deployments (Docker-style):
+
+CONTAINER ID    APP NAME           STATUS          IP ADDRESS
+─────────────────────────────────────────────────────────────────
+mj4y7bu4a1c2d3e4f  tfgrid-ai-stack    active          10.1.3.2
+
+$ t list
+    tfgrid-ai-stack (10.1.3.2) ← Using smart context (only app deployed)
+```
+
+#### 3. App Selection
+```bash
+$ t select
+📱 Select an app:
+
+  1) mj4y7bu4a1c2d3e4f tfgrid-ai-stack (10.1.3.2) [active] ← (currently selected)
+
+Enter number [1-1] or 'q' to quit: 1
+✅ Selected tfgrid-ai-stack
+```
+
+#### 4. Command Execution
+```bash
+$ t login
+ℹ Looking up tfgrid-ai-stack in registry...
+✅ Connected to deployment mj4y7bu4a1c2d3e4f (10.1.3.2)
+[Login proceeds normally...]
+
+$ t create "math website"
+🚀 Creating project: math website
+✅ Project created successfully!
+📁 Repository: 10.1.3.2/git/mik-tf/mathweb
+🌐 Website: 10.1.3.2/web/mik-tf/mathweb
+```
+
+### Benefits
+
+#### Better Multi-Deployment Support
+```bash
+# Deploy multiple instances
+$ t up tfgrid-ai-stack --name dev
+$ t up tfgrid-ai-stack --name prod
+
+$ t ps
+CONTAINER ID    APP NAME           STATUS          IP ADDRESS
+─────────────────────────────────────────────────────────────────
+a1b2c3d4e5f6g7h8  tfgrid-ai-stack-dev  active          10.1.3.2
+i9j0k1l2m3n4o5p6  tfgrid-ai-stack-prod active          10.1.3.3
+
+$ t select tfgrid-ai-stack-dev
+```
+
+#### Enhanced Management
+- **Unique identification**: No name conflicts
+- **State isolation**: Each deployment has independent state
+- **Better debugging**: Clear deployment tracking
+- **Registry integration**: Centralized deployment management
+
+#### Smart Context System
+```bash
+# Single deployment - auto-selected
+$ t login  # Works immediately
+
+# Multiple deployments - need explicit selection
+$ t select tfgrid-ai-stack-dev
+$ t login  # Now works for selected deployment
+```
+
+### Migration from Legacy System
+
+If you have deployments created before this feature:
+
+#### Check Current Status
+```bash
+$ t list
+# Shows deployments with both ID and name
+
+$ t ps
+# Docker-style view
+```
+
+#### Automatic Migration
+- **Backward compatible**: Existing deployments work normally
+- **Gradual transition**: New features work with old deployments
+- **No data loss**: All state and configuration preserved
+
+#### Manual Migration (if needed)
+```bash
+# Force redeploy for new ID system
+$ t up tfgrid-ai-stack --force
+# Creates new deployment with Docker-style ID
+```
+
+### Commands Reference
+
+| Command | Description | Docker Equivalent |
+|---------|-------------|-------------------|
+| `t ps` | List deployments with IDs | `docker ps` |
+| `t inspect <id>` | Inspect deployment details | `docker inspect <id>` |
+| `t logs <id>` | View deployment logs | `docker logs <id>` |
+| `t exec <id> <cmd>` | Execute command in deployment | `docker exec <id> <cmd>` |
+| `t select <app>` | Select active deployment | `docker-compose ps` (interactive) |
+
+### Integration with Existing Workflows
+
+The Docker-style system seamlessly integrates with all existing features:
+
+#### App Registry
+```bash
+$ t up tfgrid-ai-stack  # Gets unique ID automatically
+```
+
+#### Preference System
+```bash
+$ t whitelist farms "Freefarm"
+$ t up tfgrid-ai-stack  # Uses preferences, gets unique ID
+```
+
+#### Smart Context
+```bash
+$ t select tfgrid-ai-stack  # Works with ID-based system
+$ t login                   # Automatically uses correct deployment
+```
+
 ## 🎯 Preference Management (Enhanced)
+## � Preference Management (Enhanced)
 
 TFGrid Compose features a powerful **case-insensitive** preference system with support for both farm names and farm IDs.
 

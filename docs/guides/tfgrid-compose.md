@@ -104,7 +104,7 @@ $ t ps
 Deployments (Docker-style):
 
 CONTAINER ID    APP NAME           STATUS          IP ADDRESS
-─────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────
 mj4y7bu4a1c2d3e4f  tfgrid-ai-stack    active          10.1.3.2
 
 $ t list
@@ -156,147 +156,138 @@ Enter number [1-2] or 'q' to quit: 1
 ✅ Selected mj4y7bu4a1c2d3e4f tfgrid-ai-stack
 ```
 
-#### 6. Contract Management
-```bash
-# Bi-directional linkage enables proper operations
-$ t down mj4
-ℹ TFGrid Compose v0.14.0
-ℹ Found deployment: mj4y7bu4a1c2d3e4f tfgrid-ai-stack
-ℹ Using contract: 1629826
-ℹ Cancelling contract via tfcmd...
-✅ Contract 1629826 cancelled successfully
-✅ Removed deployment mj4y7bu4a1c2d3e4f from registry
+## 🎯 Dual Identification System (Contract ID + Container ID)
+
+TFGrid Compose uses a **dual identification system** where each deployment gets two types of identifiers for different purposes.
+
+### Two ID Types Per Deployment
+
+Every deployment receives both:
+
+| ID Type | Purpose | Example | Usage |
+|---------|---------|---------|-------|
+| **Container ID** | User operations (Docker-style UX) | `u4lavu3x` | `t login u4`, `t inspect u4` |
+| **Contract ID** | Grid validation (authoritative) | `1631275` | `t list` validation, `t inspect 1631275` |
+
+### How It Works
+
+#### Registry Storage
+```yaml
+# Each deployment stores both IDs:
+deployments:
+  u4lavu3x:                           # Container ID (16-char hex)
+    app_name: tfgrid-ai-stack
+    contract_id: "1631275"            # Grid contract ID (authoritative)
+    vm_ip: 10.1.3.2
+    created_at: "2025-11-03T04:19:19Z"
+    status: active
 ```
 
-#### 7. Command Execution
-#### 4. Command Execution
+#### User Operations
 ```bash
-$ t login
-ℹ Looking up tfgrid-ai-stack in registry...
-✅ Connected to deployment mj4y7bu4a1c2d3e4f (10.1.3.2)
-[Login proceeds normally...]
+# Container ID (familiar Docker-style)
+t login u4                           # Resolves to: u4lavu3x
+t inspect u4lavu3x                   # Direct container ID access
 
-$ t create "math website"
-🚀 Creating project: math website
-✅ Project created successfully!
-📁 Repository: 10.1.3.2/git/mik-tf/mathweb
-🌐 Website: 10.1.3.2/web/mik-tf/mathweb
+# Contract ID (grid-authoritative)  
+t inspect 1631275                    # Direct contract ID access
+t list                               # Validates contract exists on grid
+
+# Smart resolution
+t select tfgrid-ai-stack             # Shows menu with BOTH IDs
+```
+
+#### Enhanced Display
+```bash
+CONTAINER ID    APP NAME         CONTRACT    STATUS    IP ADDRESS    AGE
+─────────────────────────────────────────────────────────────────────────
+u4lavu3x        tfgrid-ai-stack   1631274    active    10.1.3.2     10h ago
+934ab460dd5663f2 tfgrid-ai-stack   1631275    active    10.1.3.2     10h ago
 ```
 
 ### Benefits
 
-#### Better Multi-Deployment Support
-```bash
-# Deploy multiple instances
-$ t up tfgrid-ai-stack --name dev
-$ t up tfgrid-ai-stack --name prod
+#### ✅ Best of Both Worlds
+- **Container ID**: Intuitive Docker-style user experience
+- **Contract ID**: Authoritative grid validation
 
+#### ✅ Flexible Operations
+- Users can operate with either identifier
+- System automatically validates against grid contracts  
+- Clear separation: UX layer vs. validation layer
+
+#### ✅ Robust Cross-Validation
+- Registry entries always link container_id ↔ contract_id
+- Grid contracts provide definitive source of truth
+- "Ghost deployments" automatically filtered out
+
+### Cross-Validation Example
+
+```bash
+# Check grid contracts (reality)
+$ t contracts list
+Node contracts:
+ID        Node ID    Type    Name                    Project Name
+1631275   8          VM      tfgrid-ai-stack         u4lavu3x
+
+# Show all registry entries (history + debugging)  
 $ t ps
-CONTAINER ID    APP NAME           STATUS          IP ADDRESS
-─────────────────────────────────────────────────────────────────
-a1b2c3d4e5f6g7h8  tfgrid-ai-stack-dev  active          10.1.3.2
-i9j0k1l2m3n4o5p6  tfgrid-ai-stack-prod active          10.1.3.3
+CONTAINER ID    APP NAME         CONTRACT    STATUS    IP ADDRESS    AGE
+─────────────────────────────────────────────────────────────────────────
+u4lavu3x        tfgrid-ai-stack   1631275    active    10.1.3.2     10h ago
 
-$ t select tfgrid-ai-stack-dev
-```
-
-#### Enhanced Management
-- **Unique identification**: No name conflicts
-- **State isolation**: Each deployment has independent state
-- **Better debugging**: Clear deployment tracking
-- **Registry integration**: Centralized deployment management
-
-#### Smart Context System
-```bash
-# Single deployment - auto-selected
-$ t login  # Works immediately
-
-# Multiple deployments - need explicit selection
-$ t select tfgrid-ai-stack-dev
-$ t login  # Now works for selected deployment
-```
-
-### Migration from Legacy System
-
-If you have deployments created before this feature:
-
-#### Check Current Status
-```bash
+# Show only grid-valid deployments (authoritative)
 $ t list
-# Shows deployments with both ID and name
-
-$ t ps
-# Docker-style view
+tfgrid-ai-stack (10.1.3.2) ← Validated against grid contract 1631275
 ```
 
-#### Automatic Migration
-- **Backward compatible**: Existing deployments work normally
-- **Gradual transition**: New features work with old deployments
-- **No data loss**: All state and configuration preserved
+### Migration Notes
 
-#### Manual Migration (if needed)
-```bash
-# Force redeploy for new ID system
-$ t up tfgrid-ai-stack --force
-# Creates new deployment with Docker-style ID
-```
+#### For New Users
+- Both ID types work transparently
+- Use whichever is more convenient
+- System handles validation automatically
 
-### Commands Reference
+#### For Existing Users
+- Container IDs remain unchanged
+- Contract IDs are automatically added
+- Enhanced validation improves accuracy
 
-| Command | Description | Docker Equivalent |
-|---------|-------------|-------------------|
-| `t ps` | List deployments with IDs | `docker ps` |
-| `t inspect <id>` | Inspect deployment details | `docker inspect <id>` |
-| `t logs <id>` | View deployment logs | `docker logs <id>` |
-| `t exec <id> <cmd>` | Execute command in deployment | `docker exec <id> <cmd>` |
-| `t select <app>` | Select active deployment | `docker-compose ps` (interactive) |
-
-### Integration with Existing Workflows
-
-The Docker-style system seamlessly integrates with all existing features:
-
-#### App Registry
-```bash
-$ t up tfgrid-ai-stack  # Gets unique ID automatically
-```
-
-#### Preference System
-```bash
-$ t whitelist farms "Freefarm"
-$ t up tfgrid-ai-stack  # Uses preferences, gets unique ID
-```
-
-#### Smart Context
-```bash
-$ t select tfgrid-ai-stack  # Works with ID-based system
-$ t login                   # Automatically uses correct deployment
-```
-
-## 🎯 Preference Management (Enhanced)
-## � Preference Management (Enhanced)
-
-TFGrid Compose features a powerful **case-insensitive** preference system with support for both farm names and farm IDs.
-
-## 🔧 Grid-Authoritative Architecture (v0.14.0+)
-
-### Problem Solved
+#### Problem Solved
 **Before**: Dual-source truth problem where `t list` showed deployments that didn't exist on the grid
 ```bash
-t list     → Shows 4 deployments (registry)
+t ps     → Shows 4 deployments (registry)
 t contracts → Shows 0 contracts (grid reality)
 ❌ LOGICAL INCONSISTENCY
 ```
 
-**After**: Single source of truth with grid validation
+**After**: Grid-authoritative approach with contract validation
 ```bash
 t list     → Shows 0 deployments (matches grid)
 t contracts → Shows 0 contracts (authoritative)
 ✅ LOGICAL CONSISTENCY
 ```
 
-### Key Features
+## 🛠️ Installation & Dependencies
 
-#### 1. tfcmd Dependency Integration
+### Auto-Installation
+The installation script automatically checks for dependencies:
+
+#### 1. tfcmd Dependency
+```bash
+# make install will check for tfcmd and offer auto-install
+cd tfgrid-studio/tfgrid-compose
+make install
+
+# Installation process:
+🔍 Checking tfcmd dependency...
+⚠️  tfcmd not found - Required for ThreeFold Grid operations
+Install tfcmd now? (y/N): y
+🚀 Installing tfcmd...
+✅ tfcmd installed successfully
+```
+
+#### What's Included
 - **Required**: tfcmd is now essential for basic functionality
 - **Auto-install**: `make install` offers to install tfcmd automatically  
 - **Validation**: Installation script checks for tfcmd presence
@@ -324,7 +315,7 @@ deployments:
 ```bash
 $ t ps
 CONTAINER ID    APP NAME           STATUS    IP ADDRESS    CONTRACT    AGE
-───────────────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────────────────
 abc123def456   tfgrid-ai-stack     active    10.1.3.2     1629826     2h ago
 ```
 
@@ -355,455 +346,3 @@ t list         # Only shows deployments that exist in both registry AND grid
 - **Enhanced Security**: Contract-based validation
 - **Better UX**: Clear indication of actual deployment state
 - **Automatic Maintenance**: Self-cleaning registry system
-### Interactive Whitelist Management
-```bash
-t whitelist
-```
-
-**Interactive Menu Options:**
-1. **Add node to whitelist** - Add specific node IDs (e.g., "1,2,3")
-2. **Add farm to whitelist** - Add farms by name OR ID (e.g., "Freefarm,1")
-3. **Remove node from whitelist** - Remove specific nodes
-4. **Remove farm from whitelist** - Remove specific farms
-5. **View current whitelist** - See current configuration
-6. **Clear whitelist** - Remove all whitelist entries
-7. **Exit** - Leave the menu
-
-### Enhanced Farm Support
-- **Case-Insensitive**: `freefarm` = `Freefarm` = `FREEFARM` ✅
-- **Farm IDs**: Use numeric IDs like `1`, `2`, `3` ✅
-- **Farm Names**: Use names like `Freefarm`, `MixNMatch` ✅
-- **Mixed Input**: `1,Freefarm,2` works perfectly ✅
-
-### Interactive Blacklist Management
-```bash
-t blacklist
-```
-
-Same menu structure as whitelist, but for excluding nodes/farms.
-
-### Quick Commands
-```bash
-# View current preferences
-t whitelist --status
-t blacklist --status
-t preferences --status
-
-# Clear all preferences
-t whitelist --clear
-t blacklist --clear
-t preferences --clear
-
-# Set preferences directly
-t whitelist nodes 1,2,3
-t whitelist farms "Freefarm,MixNMatch"
-t blacklist farms "BadFarm"
-```
-
-## 🌐 Node Filtering Logic
-
-### Whitelist Logic (OR)
-A node is allowed if:
-- **No whitelist restrictions** OR
-- **Node ID is in whitelist** OR  
-- **Farm is in whitelist** (case-insensitive)
-
-### Blacklist Logic (Precedence)
-Blacklist **always overrides** whitelist:
-- Node excluded if in blacklist
-- Farm excluded if in blacklist
-- Works case-insensitive
-
-### Case-Insensitive Farm Matching
-```bash
-# These all work the same:
-t whitelist farms Freefarm
-t whitelist farms freefarm
-t whitelist farms FREEFARM
-t whitelist farms 1          # Using farm ID
-```
-
-## 🗂️ App Registry Integration
-
-### Official Apps
-```bash
-## 🔧 Bug Fixes & Updates
-
-### v0.13.5 (Latest) - Docker-Style Deployment Registry Fix
-
-**Critical Bug Fixed**: Deployment registration now works properly when `yq` is not available.
-
-**Previous Issue**: 
-- Deployments were created successfully but not registered in the deployment registry
-- Commands like `t ps`, `t login`, and `t select` would fail with "No deployment found"
-- Deployment state was created but not accessible to CLI commands
-
-**Resolution**: 
-- Fixed deployment registry fallback logic in `core/deployment-id.sh`
-### v0.13.5 (Latest) - Complete Docker-Style Deployment System
-
-**All Critical Bugs Fixed**: The Docker-style deployment system is now fully functional.
-
-**Previous Issues**: 
-- ✅ **Fixed**: Deployment registry fallback logic (missing `mv` command)
-- ✅ **Fixed**: Empty registry file handling (`init_deployment_registry()`)
-- ✅ **Fixed**: yq YAML syntax error (changed to JSON-like format)
-- ✅ **Fixed**: Deployment state directory structure mismatch
-
-**Resolution**: 
-- Complete deployment registry system overhaul
-- Proper file structure and state management
-- Both YAML and text-based registry support working correctly
-- All Docker-style deployment commands now functional
-
-**Verified Working Commands**:
-- ✅ `t ps` - Shows deployments: `u4lavu3x  tfgrid-ai-stack  active  10.1.3.2`
-- ✅ `t login` - Successfully connects to deployment and initiates OAuth
-- ✅ `t select` - Interactive deployment selection with proper IDs
-- ✅ `t exec` - Execute commands on deployed applications
-- ✅ App-specific commands (create, run, publish) - Full workflow functional
-
-**Final System Status**:
-- 🏗️ **Deployment Creation**: ✅ Working (generates unique IDs)
-- 📋 **Registry Management**: ✅ Working (both yq and fallback modes)
-- 🔍 **CLI Lookup**: ✅ Working (t ps, t login, t select all functional)
-- 🎯 **App Commands**: ✅ Working (t create, t run, t publish ready)
-- 🌐 **Web Services**: ✅ Working (Git at /git/, Web at /web/)
-- Added missing file move operation to properly save deployments to registry
-- All Docker-style deployment commands now work correctly
-
-**Fixed Commands**:
-- ✅ `t ps` - Shows deployments with proper IDs
-- ✅ `t login` - Connects to deployment registry successfully  
-- ✅ `t select` - Interactive deployment selection
-- ✅ `t exec` - Execute commands on deployed applications
-- ✅ App-specific commands (create, run, publish) - Work with deployment context
-
-### Registry Requirements
-- **With yq**: Full YAML registry functionality
-- **Without yq**: Simple text-based registry (automatically used fallback)
-
-## 🎯 TFGrid AI Stack Workflow
-t up tfgrid-ai-stack    # AI-powered development platform
-t up tfgrid-ai-agent    # AI coding agent
-t up tfgridgrid-gitea   # Self-hosted Git service
-```
-
-### Community Apps
-```bash
-# Deploy any GitHub repo
-t up username/repo-name
-t up https://github.com/user/app
-```
-
-### Search and Discovery
-```bash
-t search              # List all apps
-t search ai           # Search for AI apps
-t search git          # Search for Git-related apps
-```
-
-## 💻 Deployment Options
-
-### Basic Deployment
-```bash
-t up tfgrid-ai-stack
-```
-
-### Advanced Options
-```bash
-# Force fresh deployment
-t up tfgrid-ai-stack --force
-
-# Interactive node selection
-t up tfgrid-ai-stack -i
-
-# Specific node
-t up tfgrid-ai-stack --node 123
-
-# With custom filters
-t up tfgrid-ai-stack --whitelist-farms "Freefarm,MixNMatch"
-t up tfgrid-ai-stack --blacklist-nodes "615,888"
-
-# Resource limits
-t up tfgrid-ai-stack --max-cpu-usage 80
-t up tfgrid-ai-stack --max-disk-usage 60
-t up tfgrid-ai-stack --min-uptime-days 3
-```
-
-### Node Browser
-```bash
-# Interactive node browser
-t nodes
-
-# NEW: Farm Browser - Show all nodes from specific farm
-t nodes --farm qualiafarm      # Shows 27 nodes (10 online, 17 offline)
-t nodes farm freefarm          # Alternative syntax
-t nodes --farm=qualiafarm      # Alternative syntax
-t nodes --farm QUIAFARM        # Case-insensitive matching
-
-# Node details
-t nodes show 123
-
-# Favorites (whitelist integration)
-t nodes favorites
-```
-
-## 🌾 Farm Browser (New!)
-
-The **Farm Browser** provides comprehensive farm node exploration with real-time data and complete coverage.
-
-### Key Features
-- **Complete Coverage**: Shows ALL nodes from specified farm (up to 7000 nodes)
-- **Real-time Status**: Live online/offline status (🟢 online, 🔴 offline)
-- **Detailed Specs**: CPU, RAM, disk, IPv4, load %, uptime for each node
-- **Case-Insensitive**: `qualiafarm` = `QualiaFarm` = `QUALIAFARM`
-- **Farm Statistics**: Total, online, offline node counts
-- **Comprehensive Query**: Uses size=7000 for maximum node coverage
-
-### Usage Examples
-```bash
-# Browse QualiaFarm nodes (found 27 nodes)
-t nodes --farm qualiafarm
-
-# Browse Freefarm nodes (found 25 nodes)
-t nodes farm freefarm
-
-# Case-insensitive matching
-t nodes --farm QUIAFARM
-
-# Show specific farm with full details
-t nodes --farm=qualiafarm
-```
-
-### Output Format
-```
-🏢 Farm: QualiaFarm
-📊 Total Nodes: 27
-🟢 Online: 10
-🔴 Offline: 17
-
-🔍 ThreeFold Node Browser
-ID     Farm                 Location        CPU    RAM    Disk   IPv4   Load     Uptime
-────────────────────────────────────────────────────────────────────────────────
-7414🟢 QualiaFarm           Canada          4      15.4G   250G   Yes    0%       112d
-6499🟢 QualiaFarm           Canada          32     251.9G  500G   Yes    0%       112d
-6452🟢 QualiaFarm           Canada          8      31.3G   100G   Yes    0%       112d
-... (all 27 nodes shown)
-
-Legend: 🟢 = Online node | 🔴 = Offline node
-```
-
-### Integration with System
-- **Consistent Coverage**: All node queries use size=7000 for maximum discovery
-- **Deployment Integration**: More nodes available for deployment selection
-- **Performance Optimized**: Query optimized while maintaining comprehensive data
-- **Debug Support**: Use `TFC_DEBUG=1` for troubleshooting
-
-## 🔧 Configuration
-
-### Preferences File
-Location: `~/.config/tfgrid-compose/preferences.yaml`
-
-```yaml
-whitelist:
-  nodes: [1, 2, 3]
-  farms: ["Freefarm", "MixNMatch"]
-
-blacklist:
-  nodes: [615, 888]
-  farms: ["BadFarm"]
-
-preferences:
-  max_cpu_usage: 80
-  max_disk_usage: 60
-  min_uptime_days: 3
-
-metadata:
-  version: "1.0"
-  created: "2025-11-01T00:00:00Z"
-  last_updated: "2025-11-01T00:00:00Z"
-```
-
-### Config File
-Location: `~/.config/tfgrid-compose/config.yaml`
-
-```yaml
-# Farm filtering (case-insensitive)
-whitelist_farms: "Freefarm,MixNMatch"
-blacklist_farms: "BadFarm"
-
-# Node filtering
-blacklist_nodes: "615,888"
-whitelist_nodes: "1,2,3"
-
-# Resource thresholds
-max_cpu_usage: 80
-max_disk_usage: 60
-min_uptime_days: 3
-```
-
-## 🎯 TFGrid AI Stack Workflow
-
-Complete workflow with enhanced preferences:
-
-```bash
-# 1. Setup preferences (case-insensitive)
-t whitelist farms Freefarm
-t blacklist nodes 615
-
-# 2. Deploy tfgrid-ai-stack
-t up tfgrid-ai-stack
-
-# 3. Use app commands
-t create                    # Create new project
-t run                      # Run the project  
-t publish                  # Publish to web server
-t logs                     # View logs
-t status                   # Check status
-
-# 4. Access services
-# Gitea (Git): http://10.1.3.2/git/username/reponame
-# Web App: http://10.1.3.2/web/username/reponame
-```
-
-## 🚨 Troubleshooting
-
-### Common Issues
-
-**No nodes found after applying filters**
-```bash
-# Check current preferences
-t whitelist --status
-t blacklist --status
-
-# Clear problematic filters
-t whitelist --clear
-# or
-t blacklist --clear
-```
-
-**Farm not found warnings**
-```bash
-# Farm names are case-insensitive, but must exist
-t whitelist farms Freefarm    # ✅ Works
-t whitelist farms freefarm    # ✅ Works  
-t whitelist farms nonexistent # ⚠️ Will be skipped
-```
-
-**Deployment fails**
-```bash
-# Try without filters
-t whitelist --clear
-t up tfgrid-ai-stack --force
-
-# Or use interactive mode
-t up tfgrid-ai-stack -i
-```
-
-### Debug Mode
-```bash
-# Enable debug logging
-export TFC_DEBUG=1
-t up tfgrid-ai-stack
-```
-
-## 📚 Examples
-
-### Example 1: Basic AI Development
-```bash
-t shortcut tf                    # Create shortcut
-t login                          # Setup credentials
-t whitelist farms Freefarm       # Use preferred farm
-t up tfgrid-ai-stack             # Deploy AI stack
-t create math-calculator         # Create project
-t run                           # Run project
-t publish                       # Publish to web
-```
-
-### Example 2: Multi-Farm Setup
-```bash
-# Add multiple farms (case-insensitive)
-t whitelist farms "Freefarm,mixnmatch,SILVERFARM"
-
-# Add specific nodes
-t whitelist nodes "1,2,3"
-
-# Exclude problematic nodes
-t blacklist nodes "615,888"
-t blacklist farms "BadFarm"
-
-# Deploy
-t up tfgrid-ai-stack --force
-```
-
-### Example 3: Resource-Aware Deployment
-```bash
-# Set resource preferences
-t preferences
-# Choose: Max CPU usage: 70%
-# Choose: Max disk usage: 50%  
-# Choose: Min uptime days: 5
-
-# Deploy with fresh cache
-t up tfgrid-ai-stack --refresh
-```
-
-## 🔗 Integration
-
-### With TFGrid AI Stack
-```bash
-# Preferences automatically apply to deployments
-t whitelist farms "Freefarm"
-t up tfgrid-ai-stack           # Uses whitelist automatically
-
-# App-specific commands
-t commands                     # Show available commands
-t select-project              # Select active project
-t exec "npm run build"        # Run command in active project
-```
-
-### With External Tools
-```bash
-# Check contracts
-t tfcmd-install               # Install tfcmd
-t contracts list              # List contracts
-
-# Node verification
-t nodes show 123              # Check specific node
-t nodes favorites             # View favorite nodes
-```
-
-## 📈 Advanced Features
-
-### Farm Cache System
-- Automatic farm data caching (1 hour TTL)
-- Case-insensitive farm lookup
-- Farm ID ↔ Name conversion
-- Invalid farm cleanup
-
-### Smart Node Selection
-- Health-based filtering
-- Resource availability
-- Uptime optimization
-- Load balancing
-
-### Error Recovery
-- Graceful handling of invalid farms
-- Warning messages for skipped entries
-- Automatic fallback to valid entries
-- Continued operation with partial configuration
-
-## 🎉 Summary
-
-TFGrid Compose provides a **production-ready** deployment system with:
-
-✅ **Enhanced Whitelist/Blacklist** with case-insensitive matching  
-✅ **Farm ID Support** for both names and numeric IDs  
-✅ **Interactive Management** with intuitive menus  
-✅ **Smart Filtering** with OR logic and blacklist precedence  
-✅ **App Registry Integration** for seamless deployment  
-✅ **Error Recovery** with graceful handling  
-✅ **Comprehensive Documentation** and examples  
-
-**Ready for Production Use** 🚀

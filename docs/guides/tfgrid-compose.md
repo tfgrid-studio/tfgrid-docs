@@ -294,6 +294,34 @@ t whitelist farms 1          # Using farm ID
 
 ### Official Apps
 ```bash
+## 🔧 Bug Fixes & Updates
+
+### v0.13.5 (Latest) - Docker-Style Deployment Registry Fix
+
+**Critical Bug Fixed**: Deployment registration now works properly when `yq` is not available.
+
+**Previous Issue**: 
+- Deployments were created successfully but not registered in the deployment registry
+- Commands like `t ps`, `t login`, and `t select` would fail with "No deployment found"
+- Deployment state was created but not accessible to CLI commands
+
+**Resolution**: 
+- Fixed deployment registry fallback logic in `core/deployment-id.sh`
+- Added missing file move operation to properly save deployments to registry
+- All Docker-style deployment commands now work correctly
+
+**Fixed Commands**:
+- ✅ `t ps` - Shows deployments with proper IDs
+- ✅ `t login` - Connects to deployment registry successfully  
+- ✅ `t select` - Interactive deployment selection
+- ✅ `t exec` - Execute commands on deployed applications
+- ✅ App-specific commands (create, run, publish) - Work with deployment context
+
+### Registry Requirements
+- **With yq**: Full YAML registry functionality
+- **Without yq**: Simple text-based registry (automatically used fallback)
+
+## 🎯 TFGrid AI Stack Workflow
 t up tfgrid-ai-stack    # AI-powered development platform
 t up tfgrid-ai-agent    # AI coding agent
 t up tfgridgrid-gitea   # Self-hosted Git service

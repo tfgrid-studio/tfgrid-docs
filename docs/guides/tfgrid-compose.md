@@ -1,12 +1,20 @@
 # TFGrid Compose - Complete User Guide
 
-**Version**: 0.13.5
-**Last Updated**: 2025-11-02
-**Status**: Production Ready with Farm Browser
+**Version**: 0.14.0
+**Last Updated**: 2025-11-03
+**Status**: Production Ready with Grid-Authoritative Architecture
 
-TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, and enhanced filtering capabilities.
+TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, enhanced filtering capabilities, and **grid-authoritative deployment management**.
 
 ## 🚀 Quick Start
+
+### Prerequisites
+
+**Required Dependencies:**
+- **tfcmd**: Essential for grid contract management and validation
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/threefoldtech/tfcmd/main/install.sh | bash
+  ```
 
 ### Installation
 ```bash
@@ -91,7 +99,7 @@ Pattern: single-vm v1.0.0
 #### 2. Docker-Style Inspection
 ```bash
 $ t ps
-ℹ TFGrid Compose v0.13.4 - Docker-style Deployment List
+ℹ TFGrid Compose v0.14.0 - Docker-style Deployment List
 
 Deployments (Docker-style):
 
@@ -114,6 +122,53 @@ Enter number [1-1] or 'q' to quit: 1
 ✅ Selected tfgrid-ai-stack
 ```
 
+#### 4. Grid-Authoritative Architecture
+```bash
+# Contract validation ensures logical consistency
+$ t contracts list
+ℹ Fetching contracts via tfcmd...
+[Sentry] 2025/11/03 00:26:49 Using release from debug info: 171e8b2b4ddbdfcb2623c09311d317990a7e4de6
+12:26AM INF starting peer session=tf-90662 twin=6905
+
+Node contracts:
+ID        Node ID    Type    Name                    Project Name
+1629826   8          VM      tfgrid-ai-stack-mj4y7b  mj4y7bu4a1c2d3e4f
+1629827   8          VM      tfgrid-ai-stack-a94dc2  a94dc2809ed701b8
+
+Name contracts:
+ID    Name
+```
+
+#### 5. Partial ID Resolution
+```bash
+# Unique partial matches work automatically
+$ t login mj4
+✅ Logged in to mj4y7bu4a1c2d3e4f tfgrid-ai-stack
+
+# Ambiguous matches show selection menu
+$ t select tfgrid-ai-stack
+📱 Select deployment:
+
+  1) mj4y7bu4a1c2d3e4f tfgrid-ai-stack (10.1.3.2) - 2h ago
+  2) a94dc2809ed701b8 tfgrid-ai-stack (10.1.3.2) - 1h ago
+
+Enter number [1-2] or 'q' to quit: 1
+✅ Selected mj4y7bu4a1c2d3e4f tfgrid-ai-stack
+```
+
+#### 6. Contract Management
+```bash
+# Bi-directional linkage enables proper operations
+$ t down mj4
+ℹ TFGrid Compose v0.14.0
+ℹ Found deployment: mj4y7bu4a1c2d3e4f tfgrid-ai-stack
+ℹ Using contract: 1629826
+ℹ Cancelling contract via tfcmd...
+✅ Contract 1629826 cancelled successfully
+✅ Removed deployment mj4y7bu4a1c2d3e4f from registry
+```
+
+#### 7. Command Execution
 #### 4. Command Execution
 ```bash
 $ t login
@@ -222,6 +277,84 @@ $ t login                   # Automatically uses correct deployment
 
 TFGrid Compose features a powerful **case-insensitive** preference system with support for both farm names and farm IDs.
 
+## 🔧 Grid-Authoritative Architecture (v0.14.0+)
+
+### Problem Solved
+**Before**: Dual-source truth problem where `t list` showed deployments that didn't exist on the grid
+```bash
+t list     → Shows 4 deployments (registry)
+t contracts → Shows 0 contracts (grid reality)
+❌ LOGICAL INCONSISTENCY
+```
+
+**After**: Single source of truth with grid validation
+```bash
+t list     → Shows 0 deployments (matches grid)
+t contracts → Shows 0 contracts (authoritative)
+✅ LOGICAL CONSISTENCY
+```
+
+### Key Features
+
+#### 1. tfcmd Dependency Integration
+- **Required**: tfcmd is now essential for basic functionality
+- **Auto-install**: `make install` offers to install tfcmd automatically  
+- **Validation**: Installation script checks for tfcmd presence
+- **Grid operations**: Contract management, status validation, deployment linkage
+
+#### 2. Contract ID Linkage
+```yaml
+# Registry stores bidirectional mapping
+deployments:
+  abc123:
+    app_name: tfgrid-ai-stack
+    vm_ip: 10.1.3.2
+    contract_id: "1629826"  # Links to grid contract
+    created_at: "2025-11-03T12:37:27Z"
+    status: "active"
+```
+
+#### 3. Auto-Cleanup System
+- **Orphan removal**: Registry entries without corresponding grid contracts
+- **Legacy cleanup**: Old entries without contract IDs
+- **Transparent logging**: All cleanup actions are logged
+- **Grid precedence**: Grid reality always takes priority
+
+#### 4. Enhanced Docker-Style Display
+```bash
+$ t ps
+CONTAINER ID    APP NAME           STATUS    IP ADDRESS    CONTRACT    AGE
+───────────────────────────────────────────────────────────────────────────
+abc123def456   tfgrid-ai-stack     active    10.1.3.2     1629826     2h ago
+```
+
+#### 5. Smart Contract Management
+```bash
+# Bi-directional operations
+t down abc123  # Finds contract 1629826 → Cancels it → Removes registry entry
+
+# Cross-validation
+t list         # Only shows deployments that exist in both registry AND grid
+```
+
+### Migration Guide
+
+#### For Existing Users
+1. **Automatic**: Registry entries without contracts are cleaned up automatically
+2. **Transparent**: Cleanup actions are logged for visibility
+3. **Safe**: No data loss, only synchronization with grid reality
+
+#### For New Installations
+1. **Install tfcmd**: Required dependency (auto-installed via `make install`)
+2. **Login setup**: `t login` for ThreeFold Grid access
+3. **Contract validation**: All operations now validate against grid state
+
+### Benefits
+- **Logical Consistency**: No more ghost deployments
+- **Single Source of Truth**: ThreeFold Grid contracts via tfcmd
+- **Enhanced Security**: Contract-based validation
+- **Better UX**: Clear indication of actual deployment state
+- **Automatic Maintenance**: Self-cleaning registry system
 ### Interactive Whitelist Management
 ```bash
 t whitelist

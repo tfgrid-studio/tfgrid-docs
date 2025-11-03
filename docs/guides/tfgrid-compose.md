@@ -307,6 +307,35 @@ t whitelist farms 1          # Using farm ID
 
 **Resolution**: 
 - Fixed deployment registry fallback logic in `core/deployment-id.sh`
+### v0.13.5 (Latest) - Complete Docker-Style Deployment System
+
+**All Critical Bugs Fixed**: The Docker-style deployment system is now fully functional.
+
+**Previous Issues**: 
+- ✅ **Fixed**: Deployment registry fallback logic (missing `mv` command)
+- ✅ **Fixed**: Empty registry file handling (`init_deployment_registry()`)
+- ✅ **Fixed**: yq YAML syntax error (changed to JSON-like format)
+- ✅ **Fixed**: Deployment state directory structure mismatch
+
+**Resolution**: 
+- Complete deployment registry system overhaul
+- Proper file structure and state management
+- Both YAML and text-based registry support working correctly
+- All Docker-style deployment commands now functional
+
+**Verified Working Commands**:
+- ✅ `t ps` - Shows deployments: `u4lavu3x  tfgrid-ai-stack  active  10.1.3.2`
+- ✅ `t login` - Successfully connects to deployment and initiates OAuth
+- ✅ `t select` - Interactive deployment selection with proper IDs
+- ✅ `t exec` - Execute commands on deployed applications
+- ✅ App-specific commands (create, run, publish) - Full workflow functional
+
+**Final System Status**:
+- 🏗️ **Deployment Creation**: ✅ Working (generates unique IDs)
+- 📋 **Registry Management**: ✅ Working (both yq and fallback modes)
+- 🔍 **CLI Lookup**: ✅ Working (t ps, t login, t select all functional)
+- 🎯 **App Commands**: ✅ Working (t create, t run, t publish ready)
+- 🌐 **Web Services**: ✅ Working (Git at /git/, Web at /web/)
 - Added missing file move operation to properly save deployments to registry
 - All Docker-style deployment commands now work correctly
 

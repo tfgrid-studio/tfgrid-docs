@@ -28,7 +28,7 @@ make install
 t shortcut tf
 
 # 2. Login to ThreeFold
-t login
+t signin
 
 # 3. Search available apps
 t search
@@ -337,7 +337,7 @@ t list         # Only shows deployments that exist in both registry AND grid
 
 #### For New Installations
 1. **Install tfcmd**: Required dependency (auto-installed via `make install`)
-2. **Login setup**: `t login` for ThreeFold Grid access
+2. **Login setup**: `t signin` for ThreeFold Grid access
 3. **Contract validation**: All operations now validate against grid state
 
 ### Benefits

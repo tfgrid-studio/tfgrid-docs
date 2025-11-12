@@ -241,19 +241,38 @@ tfgrid-compose cache clear <unused-app>
 
 ## Migration from Old System
 
-The enhanced cache system is backward compatible. Existing cached apps will be automatically migrated and validated on first use.
+The enhanced cache system is **fully backward compatible**. Existing cached apps will be automatically migrated from the old cache_version system to the new Git-based tracking.
 
-### Manual Migration
+### Automatic Migration
 
-If you want to ensure a clean migration:
+**No manual intervention required!** The system detects and migrates automatically:
 
 ```bash
-# Clear all old cache
+# First time with new system - automatic migration
+$ t cache status
+🔄 Migrating tfgrid-ai-stack from cache_version to Git-based tracking...
+✅ tfgrid-ai-stack (migrated)
+
+# Or just run update - it will migrate if needed
+$ t update tfgrid-ai-stack
+📦 Migrating tfgrid-ai-stack from cache_version to Git-based tracking...
+📦 Updating tfgrid-ai-stack...
+✅ Updated tfgrid-ai-stack to commit abc123def456
+```
+
+### Manual Migration (Optional)
+
+If you want to force a complete refresh:
+
+```bash
+# Clear all old cache manually (optional)
 tfgrid-compose cache clear --all
 
 # Redeploy apps with new cache system
 tfgrid-compose up tfgrid-ai-stack
 ```
+
+**Most users don't need this** - the automatic migration handles everything smoothly.
 
 ## Integration with Deployment Commands
 

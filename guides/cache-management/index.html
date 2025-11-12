@@ -1507,10 +1507,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#manual-migration" class="md-nav__link">
+  <a href="#automatic-migration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manual Migration
+        Automatic Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-migration-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Migration (Optional)
       
     </span>
   </a>
@@ -2869,10 +2880,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#manual-migration" class="md-nav__link">
+  <a href="#automatic-migration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manual Migration
+        Automatic Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-migration-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Migration (Optional)
       
     </span>
   </a>
@@ -3243,105 +3265,119 @@
 <a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>tfgrid-compose<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>&lt;unused-app&gt;
 </code></pre></div>
 <h2 id="migration-from-old-system">Migration from Old System<a class="headerlink" href="#migration-from-old-system" title="Permanent link">&para;</a></h2>
-<p>The enhanced cache system is backward compatible. Existing cached apps will be automatically migrated and validated on first use.</p>
-<h3 id="manual-migration">Manual Migration<a class="headerlink" href="#manual-migration" title="Permanent link">&para;</a></h3>
-<p>If you want to ensure a clean migration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Clear all old cache</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>tfgrid-compose<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>--all
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Redeploy apps with new cache system</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<p>The enhanced cache system is <strong>fully backward compatible</strong>. Existing cached apps will be automatically migrated from the old cache_version system to the new Git-based tracking.</p>
+<h3 id="automatic-migration">Automatic Migration<a class="headerlink" href="#automatic-migration" title="Permanent link">&para;</a></h3>
+<p><strong>No manual intervention required!</strong> The system detects and migrates automatically:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># First time with new system - automatic migration</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>status
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>🔄<span class="w"> </span>Migrating<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>from<span class="w"> </span>cache_version<span class="w"> </span>to<span class="w"> </span>Git-based<span class="w"> </span>tracking...
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>✅<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span>migrated<span class="o">)</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1"># Or just run update - it will migrate if needed</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>$<span class="w"> </span>t<span class="w"> </span>update<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>📦<span class="w"> </span>Migrating<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>from<span class="w"> </span>cache_version<span class="w"> </span>to<span class="w"> </span>Git-based<span class="w"> </span>tracking...
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>📦<span class="w"> </span>Updating<span class="w"> </span>tfgrid-ai-stack...
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>✅<span class="w"> </span>Updated<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span>abc123def456
 </code></pre></div>
+<h3 id="manual-migration-optional">Manual Migration (Optional)<a class="headerlink" href="#manual-migration-optional" title="Permanent link">&para;</a></h3>
+<p>If you want to force a complete refresh:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Clear all old cache manually (optional)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>tfgrid-compose<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>--all
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Redeploy apps with new cache system</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+</code></pre></div>
+<p><strong>Most users don't need this</strong> - the automatic migration handles everything smoothly.</p>
 <h2 id="integration-with-deployment-commands">Integration with Deployment Commands<a class="headerlink" href="#integration-with-deployment-commands" title="Permanent link">&para;</a></h2>
 <h3 id="auto-refresh-on-deploy">Auto-Refresh on Deploy<a class="headerlink" href="#auto-refresh-on-deploy" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Deploy automatically checks and refreshes cache if needed</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Force fresh cache</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--refresh
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># Skip cache refresh (for testing)</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--no-refresh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Deploy automatically checks and refreshes cache if needed</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Force fresh cache</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--refresh
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># Skip cache refresh (for testing)</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--no-refresh
 </code></pre></div>
 <h3 id="cache-aware-shortcuts">Cache-Aware Shortcuts<a class="headerlink" href="#cache-aware-shortcuts" title="Permanent link">&para;</a></h3>
 <p>When using shortcuts like <code>t</code> instead of <code>tfgrid-compose</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Check cache with shortcut</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>t<span class="w"> </span>cache<span class="w"> </span>status
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Update app with shortcut</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>t<span class="w"> </span>update<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># Deploy with cache auto-refresh</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Check cache with shortcut</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>t<span class="w"> </span>cache<span class="w"> </span>status
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># Update app with shortcut</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>t<span class="w"> </span>update<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1"># Deploy with cache auto-refresh</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
 <h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
 <h3 id="custom-cache-configuration">Custom Cache Configuration<a class="headerlink" href="#custom-cache-configuration" title="Permanent link">&para;</a></h3>
 <p>Cache locations can be customized:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># View current cache location</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>tfgrid-compose<span class="w"> </span>cache<span class="w"> </span>info
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># Default locations:</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1"># Apps: ~/.config/tfgrid-compose/apps</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="c1"># Metadata: ~/.config/tfgrid-compose/cache-metadata</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># View current cache location</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>tfgrid-compose<span class="w"> </span>cache<span class="w"> </span>info
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Default locations:</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># Apps: ~/.config/tfgrid-compose/apps</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1"># Metadata: ~/.config/tfgrid-compose/cache-metadata</span>
 </code></pre></div>
 <h3 id="batch-operations">Batch Operations<a class="headerlink" href="#batch-operations" title="Permanent link">&para;</a></h3>
 <p>Update multiple apps efficiently:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Update all apps at once</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>t<span class="w"> </span>update<span class="w"> </span>--all-apps
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Or refresh only stale apps</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>t<span class="w"> </span>cache<span class="w"> </span>refresh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Update all apps at once</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>t<span class="w"> </span>update<span class="w"> </span>--all-apps
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Or refresh only stale apps</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>t<span class="w"> </span>cache<span class="w"> </span>refresh
 </code></pre></div>
 <h3 id="health-monitoring">Health Monitoring<a class="headerlink" href="#health-monitoring" title="Permanent link">&para;</a></h3>
 <p>For monitoring scripts or CI/CD:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Check cache health (exit code 0 = healthy)</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>t<span class="w"> </span>cache<span class="w"> </span>validate
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># List apps needing attention</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>t<span class="w"> </span>cache<span class="w"> </span>outdated
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Check cache health (exit code 0 = healthy)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>t<span class="w"> </span>cache<span class="w"> </span>validate
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># List apps needing attention</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>t<span class="w"> </span>cache<span class="w"> </span>outdated
 </code></pre></div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="complete-cache-management-workflow">Complete Cache Management Workflow<a class="headerlink" href="#complete-cache-management-workflow" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># 1. Check current status</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>status
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>✅<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>✅<span class="w"> </span>tfgrid-gitea
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>🔄<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span><span class="o">[</span>needs<span class="w"> </span>update<span class="o">]</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># 2. See what&#39;s outdated (shows commit hashes)</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>outdated
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>📦<span class="w"> </span>tfgrid-ai-agent:<span class="w"> </span><span class="nv">cache</span><span class="o">=</span>abc123def456,<span class="w"> </span><span class="nv">latest</span><span class="o">=</span>789ghi012jkl
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="c1"># 3. Update the outdated app</span>
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>$<span class="w"> </span>t<span class="w"> </span>update<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>📦<span class="w"> </span>Updating<span class="w"> </span>tfgrid-ai-agent...
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>✅<span class="w"> </span>Updated<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span>789ghi012jkl
-<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
-<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="c1"># 4. Verify the fix</span>
-<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>status
-<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>✅<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>✅<span class="w"> </span>tfgrid-gitea
-<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>✅<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>
-<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="c1"># 5. Deploy with confidence</span>
-<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>$<span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="o">[</span>Deploys<span class="w"> </span>using<span class="w"> </span>fresh,<span class="w"> </span>validated<span class="w"> </span>cache<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># 1. Check current status</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>status
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>✅<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>✅<span class="w"> </span>tfgrid-gitea
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>🔄<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span><span class="o">[</span>needs<span class="w"> </span>update<span class="o">]</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># 2. See what&#39;s outdated (shows commit hashes)</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>outdated
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>📦<span class="w"> </span>tfgrid-ai-agent:<span class="w"> </span><span class="nv">cache</span><span class="o">=</span>abc123def456,<span class="w"> </span><span class="nv">latest</span><span class="o">=</span>789ghi012jkl
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="c1"># 3. Update the outdated app</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>$<span class="w"> </span>t<span class="w"> </span>update<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>📦<span class="w"> </span>Updating<span class="w"> </span>tfgrid-ai-agent...
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>✅<span class="w"> </span>Updated<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span>789ghi012jkl
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="c1"># 4. Verify the fix</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>status
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>✅<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>✅<span class="w"> </span>tfgrid-gitea
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>✅<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="c1"># 5. Deploy with confidence</span>
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>$<span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="o">[</span>Deploys<span class="w"> </span>using<span class="w"> </span>fresh,<span class="w"> </span>validated<span class="w"> </span>cache<span class="o">]</span>
 </code></pre></div>
 <h3 id="development-workflow_1">Development Workflow<a class="headerlink" href="#development-workflow_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Start development session</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>status
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>✅<span class="w"> </span>All<span class="w"> </span>apps<span class="w"> </span>are<span class="w"> </span>healthy
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="c1"># Make changes to app source</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1"># (modify tfgrid-ai-stack source code)</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="c1"># Test deployment with fresh cache</span>
-<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="o">[</span>Downloads<span class="w"> </span>latest<span class="w"> </span>version<span class="w"> </span>and<span class="w"> </span>deploys<span class="o">]</span>
-<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
-<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="c1"># Or manually update cache</span>
-<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>$<span class="w"> </span>t<span class="w"> </span>update<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="o">[</span>Updates<span class="w"> </span>cache<span class="w"> </span>and<span class="w"> </span>deploys<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Start development session</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>status
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>✅<span class="w"> </span>All<span class="w"> </span>apps<span class="w"> </span>are<span class="w"> </span>healthy
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="c1"># Make changes to app source</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="c1"># (modify tfgrid-ai-stack source code)</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="c1"># Test deployment with fresh cache</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="o">[</span>Downloads<span class="w"> </span>latest<span class="w"> </span>version<span class="w"> </span>and<span class="w"> </span>deploys<span class="o">]</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="c1"># Or manually update cache</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>$<span class="w"> </span>t<span class="w"> </span>update<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="o">[</span>Updates<span class="w"> </span>cache<span class="w"> </span>and<span class="w"> </span>deploys<span class="o">]</span>
 </code></pre></div>
 <h2 id="command-reference">Command Reference<a class="headerlink" href="#command-reference" title="Permanent link">&para;</a></h2>
 <table>

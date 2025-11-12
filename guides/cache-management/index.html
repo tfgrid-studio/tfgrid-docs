@@ -1357,10 +1357,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#version-based-cache-invalidation" class="md-nav__link">
+  <a href="#git-based-version-tracking" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Version-Based Cache Invalidation
+        Git-Based Version Tracking
       
     </span>
   </a>
@@ -2719,10 +2719,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#version-based-cache-invalidation" class="md-nav__link">
+  <a href="#git-based-version-tracking" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Version-Based Cache Invalidation
+        Git-Based Version Tracking
       
     </span>
   </a>
@@ -3074,10 +3074,10 @@
 <p>The cache system speeds up deployment by locally storing app repositories, but the enhanced system prevents the common issue of stale cached apps causing deployment failures.</p>
 <h3 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Version-Based Invalidation</strong>: Cached apps update when manifest <code>cache_version</code> changes</li>
+<li><strong>Git-Based Version Tracking</strong>: Uses Git commit hashes for precise version detection</li>
 <li><strong>Smart Health Checks</strong>: Validates cached apps for syntax errors and missing files</li>
 <li><strong>Automatic Refresh</strong>: Detects and updates stale caches automatically</li>
-<li><strong>Registry Integration</strong>: Syncs with app registry metadata</li>
+<li><strong>Commit Hash Comparison</strong>: Compares cached vs current Git commit to detect changes</li>
 <li><strong>Clear Status Indicators</strong>: Visual feedback on cache health</li>
 </ul>
 <h2 id="cache-commands">Cache Commands<a class="headerlink" href="#cache-commands" title="Permanent link">&para;</a></h2>
@@ -3166,14 +3166,19 @@
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>tfgrid-compose<span class="w"> </span>update<span class="w"> </span>--all-apps
 </code></pre></div>
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<h3 id="version-based-cache-invalidation">Version-Based Cache Invalidation<a class="headerlink" href="#version-based-cache-invalidation" title="Permanent link">&para;</a></h3>
-<p>Each app manifest can specify a <code>cache_version</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># tfgrid-compose.yaml</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tfgrid-ai-stack</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v0.13.0</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nt">cache_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w">  </span><span class="c1"># ← Cache invalidation key</span>
+<h3 id="git-based-version-tracking">Git-Based Version Tracking<a class="headerlink" href="#git-based-version-tracking" title="Permanent link">&para;</a></h3>
+<p>Since all apps are in Git repositories, the cache system uses Git's native version control:</p>
+<ul>
+<li><strong>Commit Hash Comparison</strong>: Compares cached commit hash vs current Git commit</li>
+<li><strong>No Manual Versioning</strong>: Automatically detects when an app has been updated in Git</li>
+<li><strong>Precise Detection</strong>: Any commit change triggers cache refresh</li>
+<li><strong>Branch Aware</strong>: Supports both main and master branches</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Example: Cache knows when tfgrid-ai-stack is updated</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Cached: abc123def456 (from last week)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Current: 789ghi012jkl (new commit today)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># → Cache refresh triggered automatically</span>
 </code></pre></div>
-<p>When this version changes, the cache is automatically refreshed.</p>
 <h3 id="cache-health-states">Cache Health States<a class="headerlink" href="#cache-health-states" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>✅ Healthy</strong>: Up-to-date and validated</li>
@@ -3183,10 +3188,10 @@
 </ul>
 <h3 id="automatic-refresh-triggers">Automatic Refresh Triggers<a class="headerlink" href="#automatic-refresh-triggers" title="Permanent link">&para;</a></h3>
 <p>Caches are considered stale when:
-- <code>cache_version</code> differs from manifest cache_version
-- Cache is older than 24 hours
+- Git commit hash differs from cached commit hash
+- Cache is older than 24 hours (fallback mechanism)
 - Validation fails (missing files, syntax errors)
-- Registry has newer cache_version</p>
+- Repository has new commits since last cache</p>
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="regular-maintenance">Regular Maintenance<a class="headerlink" href="#regular-maintenance" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Check cache health regularly</span>
@@ -3303,14 +3308,14 @@
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>✅<span class="w"> </span>tfgrid-gitea
 <a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>🔄<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span><span class="o">[</span>needs<span class="w"> </span>update<span class="o">]</span>
 <a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># 2. See what&#39;s outdated</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># 2. See what&#39;s outdated (shows commit hashes)</span>
 <a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>outdated
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>📦<span class="w"> </span>tfgrid-ai-agent:<span class="w"> </span><span class="nv">cache</span><span class="o">=</span><span class="m">1</span>.0.0,<span class="w"> </span><span class="nv">latest</span><span class="o">=</span><span class="m">1</span>.0.1
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>📦<span class="w"> </span>tfgrid-ai-agent:<span class="w"> </span><span class="nv">cache</span><span class="o">=</span>abc123def456,<span class="w"> </span><span class="nv">latest</span><span class="o">=</span>789ghi012jkl
 <a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
 <a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="c1"># 3. Update the outdated app</span>
 <a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>$<span class="w"> </span>t<span class="w"> </span>update<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>📦<span class="w"> </span>Updating<span class="w"> </span>tfgrid-ai-agent...
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>✅<span class="w"> </span>Updated<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>✅<span class="w"> </span>Updated<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span>789ghi012jkl
 <a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
 <a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="c1"># 4. Verify the fix</span>
 <a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>status

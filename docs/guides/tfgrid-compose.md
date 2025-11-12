@@ -1,7 +1,7 @@
 # TFGrid Compose - Complete User Guide
 
-**Version**: 0.14.0
-**Last Updated**: 2025-11-03
+**Version**: 0.14.1
+**Last Updated**: 2025-11-12
 **Status**: Production Ready with Grid-Authoritative Architecture
 
 TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, enhanced filtering capabilities, and **grid-authoritative deployment management**.
@@ -67,6 +67,119 @@ t up tfgrid-ai-stack
 | `t exec <cmd>` | Execute command on active app | `t exec ls -la` |
 | `t address [app]` | Show deployment addresses | `t address` |
 | `t clean` | Clean up local state | `t clean` |
+| `t update [subcommand]` | Enhanced update system | `t update registry` |
+| `t cache [subcommand]` | Cache management system | `t cache status` |
+
+## Update and Cache Commands
+
+### Update Commands
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `t update` | Update tfgrid-compose binary | `t update` |
+| `t update registry` | Update registry and all cached apps | `t update registry` |
+| `t update <app-name>` | Update specific app | `t update tfgrid-ai-stack` |
+| `t update --all-apps` | Update all cached apps | `t update --all-apps` |
+
+### Cache Commands
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `t cache status` | Show cache health overview | `t cache status` |
+| `t cache list` | List all cached apps with status | `t cache list` |
+| `t cache outdated` | Show apps needing updates | `t cache outdated` |
+| `t cache refresh` | Auto-refresh stale apps | `t cache refresh` |
+| `t cache validate` | Validate cached apps integrity | `t cache validate` |
+| `t cache clear [app\|--all]` | Clear cache (specific app or all) | `t cache clear tfgrid-ai-stack` |
+| `t cache info` | Show cache statistics | `t cache info` |
+
+### Update System Overview
+
+#### Registry Updates
+The `t update registry` command performs two operations:
+1. Fetches the latest app registry metadata from `tfgrid-studio/app-registry`
+2. Updates all cached app repositories to their latest versions
+
+#### App Cache System
+- **Location**: Apps are cached in `~/.config/tfgrid-compose/apps/`
+- **Version Tracking**: Uses Git commit hashes to track app versions
+- **Smart Updates**: Existing git repositories are updated with `git pull`
+- **Health Monitoring**: Cache status shows if apps are healthy, stale, invalid, or not cached
+
+#### Cache Structure
+```
+~/.config/tfgrid-compose/
+├── registry/
+│   └── apps.yaml              # Registry metadata
+├── apps/
+│   ├── tfgrid-ai-stack/       # Cached app repositories
+│   ├── tfgrid-ai-agent/
+│   └── ...
+└── cache-metadata/
+    ├── tfgrid-ai-stack.json   # Version tracking data
+    └── ...
+```
+
+### Common Usage Patterns
+
+#### Initial Setup
+```bash
+# Update registry and download all apps
+t update registry
+
+# Check cache status
+t cache status
+
+# Search available apps
+t search
+
+# Deploy an app
+t up tfgrid-ai-stack
+```
+
+#### Regular Maintenance
+```bash
+# Update registry and apps
+t update registry
+
+# Check for outdated apps
+t cache outdated
+
+# Refresh stale cache
+t cache refresh
+
+# Deploy with fresh cache
+t up tfgrid-ai-stack --refresh
+```
+
+#### Troubleshooting
+```bash
+# Check cache health
+t cache status
+
+# Validate specific app
+t cache validate tfgrid-ai-stack
+
+# Clear problematic cache
+t cache clear tfgrid-ai-stack
+
+# Download fresh copy
+t cache refresh tfgrid-ai-stack
+```
+
+### Rate Limiting Protection
+
+The system includes GitHub API rate limiting:
+- 5-second delays between requests
+- 3 retry attempts per app
+- Clear error messages for rate limiting issues
+
+```bash
+# Example output when rate limited
+⚠️  GitHub rate limiting detected for tfgrid-ai-stack
+     This usually means too many requests were made to GitHub
+     Wait a few minutes and try again
+```
 
 ## 🐳 Docker-Style Deployment System
 

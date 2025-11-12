@@ -8,10 +8,10 @@ The cache system speeds up deployment by locally storing app repositories, but t
 
 ### Key Features
 
-- **Version-Based Invalidation**: Cached apps update when manifest `cache_version` changes
+- **Git-Based Version Tracking**: Uses Git commit hashes for precise version detection
 - **Smart Health Checks**: Validates cached apps for syntax errors and missing files
 - **Automatic Refresh**: Detects and updates stale caches automatically
-- **Registry Integration**: Syncs with app registry metadata
+- **Commit Hash Comparison**: Compares cached vs current Git commit to detect changes
 - **Clear Status Indicators**: Visual feedback on cache health
 
 ## Cache Commands
@@ -135,18 +135,21 @@ tfgrid-compose update --all-apps
 
 ## How It Works
 
-### Version-Based Cache Invalidation
+### Git-Based Version Tracking
 
-Each app manifest can specify a `cache_version`:
+Since all apps are in Git repositories, the cache system uses Git's native version control:
 
-```yaml
-# tfgrid-compose.yaml
-name: tfgrid-ai-stack
-version: v0.13.0
-cache_version: "1.0.0"  # ← Cache invalidation key
+- **Commit Hash Comparison**: Compares cached commit hash vs current Git commit
+- **No Manual Versioning**: Automatically detects when an app has been updated in Git
+- **Precise Detection**: Any commit change triggers cache refresh
+- **Branch Aware**: Supports both main and master branches
+
+```bash
+# Example: Cache knows when tfgrid-ai-stack is updated
+# Cached: abc123def456 (from last week)
+# Current: 789ghi012jkl (new commit today)
+# → Cache refresh triggered automatically
 ```
-
-When this version changes, the cache is automatically refreshed.
 
 ### Cache Health States
 
@@ -158,10 +161,10 @@ When this version changes, the cache is automatically refreshed.
 ### Automatic Refresh Triggers
 
 Caches are considered stale when:
-- `cache_version` differs from manifest cache_version
-- Cache is older than 24 hours
+- Git commit hash differs from cached commit hash
+- Cache is older than 24 hours (fallback mechanism)
 - Validation fails (missing files, syntax errors)
-- Registry has newer cache_version
+- Repository has new commits since last cache
 
 ## Best Practices
 
@@ -332,14 +335,14 @@ $ t cache status
 ✅ tfgrid-gitea
 🔄 tfgrid-ai-agent [needs update]
 
-# 2. See what's outdated
+# 2. See what's outdated (shows commit hashes)
 $ t cache outdated
-📦 tfgrid-ai-agent: cache=1.0.0, latest=1.0.1
+📦 tfgrid-ai-agent: cache=abc123def456, latest=789ghi012jkl
 
 # 3. Update the outdated app
 $ t update tfgrid-ai-agent
 📦 Updating tfgrid-ai-agent...
-✅ Updated tfgrid-ai-agent
+✅ Updated tfgrid-ai-agent to commit 789ghi012jkl
 
 # 4. Verify the fix
 $ t cache status

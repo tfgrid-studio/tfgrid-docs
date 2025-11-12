@@ -138,7 +138,6 @@ nav:
     - TFGrid Gitea: guides/tfgrid-gitea.md
     - TFGrid AI Stack: guides/tfgrid-ai-stack.md
     - App Registry: guides/app-registry.md
-    - Cache Management: guides/cache-management.md
   
   - Architecture:
     - System Overview: architecture/overview.md

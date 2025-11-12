@@ -129,6 +129,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 
 ### Guides
 - **[App Registry](guides/app-registry.md)** - 🆕 Deploy apps by name (v0.10.0+)
+- **[Cache Management](guides/cache-management.md)** - 🆕 Enhanced cache system with version-based invalidation (v0.13.4+)
 - **[Migration Guide](guides/migration.md)** - Migrate from standalone repos
 - **[Advanced Deployment](guides/deployment.md)** - Production deployment strategies
 - **[Networking](guides/networking.md)** - WireGuard and Mycelium setup

@@ -1,8 +1,9 @@
 # TFGrid Compose - Complete User Guide
 
-**Version**: 0.14.1
-**Last Updated**: 2025-11-12
-**Status**: Production Ready with Grid-Authoritative Architecture
+**Version**: Git commit-based (cef6d4d)
+**Semantic Version**: v0.14.1
+**Last Updated**: 2025-11-13
+**Status**: Production Ready with Git Commit Versioning & Grid-Authoritative Architecture
 
 TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, enhanced filtering capabilities, and **grid-authoritative deployment management**.
 
@@ -35,6 +36,63 @@ t search
 
 # 4. Deploy an app
 t up tfgrid-ai-stack
+```
+
+## 🎯 Git Commit-Based Versioning
+
+TFGrid Compose now uses **Git commit hashes as the primary version identifier** across the entire ecosystem, providing precise code traceability and automatic version management.
+
+### Enhanced Version Display
+
+**Tool Version:**
+```bash
+$ t --version
+TFGrid Compose cef6d4d
+Semantic version: v0.14.1
+```
+
+**Application Deployment:**
+```bash
+$ t up tfgrid-ai-stack
+✅ Application loaded: tfgrid-ai-stack 24c9148
+ℹ Git commit: 24c9148
+ℹ Last updated: 2025-11-11 22:47:49
+ℹ Branch: main
+ℹ Repository: https://github.com/tfgrid-studio/tfgrid-ai-stack.git
+```
+
+**Cache Status:**
+```bash
+$ t cache list
+✅ tfgrid-ai-stack (24c9148)
+    Last updated: 2025-11-11 22:47:49
+⚠️ tfgrid-ai-agent (0e91178) - [needs update]
+    Last updated: 2025-11-02 08:23:48
+```
+
+### Benefits
+
+- ✅ **Precise Versioning**: Every deployment has a unique, immutable version identifier
+- ✅ **Automatic Management**: No manual version bumping required - Git handles it automatically
+- ✅ **Instant Traceability**: Know exactly which code is running in each deployment
+- ✅ **Enhanced Debugging**: Can track exactly what changed between deployments
+- ✅ **Consistent Approach**: All TFGrid components use the same Git commit versioning
+- ✅ **Smart Cache**: Cache invalidation based on Git commit changes
+
+### Enhanced Error Reporting
+
+**Before:**
+```
+Application loaded: tfgrid-ai-stack v0.12.0-dev
+```
+
+**After:**
+```
+✅ Application loaded: tfgrid-ai-stack 24c9148
+ℹ Git commit: 24c9148
+ℹ Last updated: 2025-11-11 22:47:49
+ℹ Branch: main
+ℹ Repository: https://github.com/tfgrid-studio/tfgrid-ai-stack.git
 ```
 
 ## 📋 Command Structure

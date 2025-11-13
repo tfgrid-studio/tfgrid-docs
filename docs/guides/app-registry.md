@@ -23,6 +23,26 @@ tfgrid-compose up https://gitlab.com/org/app
 
 **No configuration needed** - apps include their own `tfgrid-compose.yaml`.
 
+### Git Commit Versioning
+
+TFGrid Compose now uses **Git commit hashes as the primary version identifier** for precise code traceability:
+
+```bash
+# Example deployment showing Git commit version
+✅ Application loaded: tfgrid-ai-stack 24c9148
+ℹ Git commit: 24c9148
+ℹ Last updated: 2025-11-11 22:47:49
+ℹ Branch: main
+ℹ Repository: https://github.com/tfgrid-studio/tfgrid-ai-stack.git
+```
+
+**Benefits:**
+- ✅ **Precise versioning**: Every deployment has a unique, immutable version
+- ✅ **Automatic version management**: No manual version bumping required  
+- ✅ **Instant traceability**: Know exactly which code is running
+- ✅ **Better debugging**: Can track exactly what changed between deployments
+- ✅ **Consistency**: All TFGrid components use the same versioning approach
+
 ### For Developers
 
 Apps in the registry:
@@ -46,11 +66,14 @@ tfgrid-compose up tfgrid-ai-agent
 **Details:**
 
 - **Pattern**: single-vm
-- **Version**: v0.3.0
+- **Versioning**: Git commit-based (primary) with semantic fallback
+- **Current Version**: Uses latest Git commit (e.g., `0e91178`)
 - **Status**: Production Ready
 - **Repo**: [tfgrid-studio/tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)
 - **Docs**: [AI Agent Guide](ai-agent.md)
 - **Requirements**: 4 CPU, 8GB RAM, 100GB disk
+
+> **Git Commit Versioning**: Each deployment shows exact Git commit hash for precise code traceability
 
 ### tfgrid-gitea
 
@@ -62,11 +85,14 @@ tfgrid-compose up tfgrid-gitea
 
 **Details:**
 - **Pattern**: single-vm
-- **Version**: v1.0.0
+- **Versioning**: Git commit-based (primary) with semantic fallback
+- **Current Version**: Uses latest Git commit (e.g., `4a7a91d`)
 - **Status**: Production Ready
 - **Repo**: [tfgrid-studio/tfgrid-gitea](https://github.com/tfgrid-studio/tfgrid-gitea)
 - **Docs**: [Gitea Guide](gitea.md)
 - **Requirements**: 2 CPU, 4GB RAM, 50GB disk
+
+> **Git Commit Versioning**: Each deployment shows exact Git commit hash for precise code traceability
 
 ## Community Apps
 
@@ -126,18 +152,43 @@ tfgrid-compose info tfgrid-ai-agent
 # Shows: version, resources, patterns, documentation
 ```
 
-### Manage Cached Apps
+### Enhanced Cache Management
+
+TFGrid Compose includes an advanced cache system with Git commit-based version tracking:
 
 ```bash
-# Pull/update app
-tfgrid-compose pull tfgrid-ai-agent
+# Show cache health overview
+t cache status
 
-# List cached apps
-tfgrid-compose cache
+# List all cached apps with Git commit info
+t cache list
+# Example output:
+# ✅ tfgrid-ai-stack (24c9148)
+#     Last updated: 2025-11-11 22:47:49
+# ⚠️ tfgrid-ai-agent (0e91178) - [needs update]
 
-# Clean unused apps
-tfgrid-compose prune
+# Check for apps needing updates
+t cache outdated
+
+# Auto-refresh stale apps
+t cache refresh
+
+# Validate cache integrity
+t cache validate tfgrid-ai-stack
+
+# Clear specific app cache
+t cache clear tfgrid-ai-stack
+
+# Clear all cache
+t cache clear --all
 ```
+
+**Cache Features:**
+- **Git Commit Tracking**: Each cached app shows exact Git commit hash
+- **Smart Invalidation**: Cache automatically updates when Git commits change
+- **Health Monitoring**: Shows cache status (healthy, stale, invalid, not cached)
+- **Enhanced Validation**: Detailed syntax checking with exact line numbers
+- **Rate Limiting Protection**: GitHub API rate limiting with retry logic
 
 ## App Structure
 

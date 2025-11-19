@@ -134,6 +134,7 @@ nav:
   - Guides:
     - Getting Started: guides/getting-started.md
     - TFGrid Compose: guides/tfgrid-compose.md
+    - TFGrid Dashboard: guides/tfgrid-dashboard.md
     - TFGrid AI Agent: guides/tfgrid-ai-agent.md
     - TFGrid Gitea: guides/tfgrid-gitea.md
     - TFGrid AI Stack: guides/tfgrid-ai-stack.md

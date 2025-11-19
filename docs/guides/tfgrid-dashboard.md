@@ -1,0 +1,240 @@
+# TFGrid Compose Dashboard
+
+Status: **Production Ready (local dashboard)**
+
+This guide explains how to use the `tfgrid-compose` local dashboard to manage apps and deployments visually.
+
+The dashboard is a thin web UI on top of the existing CLI, config, and registry files.
+
+---
+
+## 1. What the dashboard does
+
+- **Visual app registry**
+  - Browse registered apps (official + community) from your local registry.
+  - Deploy apps (e.g. `tfgrid-ai-stack`) with one click.
+
+- **Deployment overview**
+  - List all deployments from `~/.config/tfgrid-compose/deployments.yaml`.
+  - Show deployment ID, app name, IPs (WireGuard/Mycelium), contract ID, status, created time.
+
+- **Project actions for AI stack**
+  - For `tfgrid-ai-stack` deployments, you can:
+    - Create projects.
+    - Run projects.
+    - Publish projects.
+  - The dashboard uses `tfgrid-compose create`, `run`, and `publish` under the hood.
+
+- **Live logs**
+  - All operations (deploy, create, run, publish) stream their logs into the UI.
+
+The dashboard does **not** replace the CLI. It wraps it in a convenient local web UI.
+
+---
+
+## 2. Installation & prerequisites
+
+The dashboard is part of the normal `tfgrid-compose` install and update flow.
+
+- **Install or update**
+
+  ```bash
+  tfgrid-compose update       # or: t update
+  ```
+
+  This installs the CLI into:
+
+  - Binary launcher: `~/.local/bin/tfgrid-compose`
+  - CLI & assets: `~/.local/share/tfgrid-compose/`
+
+  The dashboard template lives under:
+
+  ```text
+  ~/.local/share/tfgrid-compose/dashboard/
+  ```
+
+- **Runtime dependencies**
+
+  - Node.js **v18+**
+  - npm
+
+  If Node.js or npm are missing, `tfgrid-compose dashboard` will print a clear error with install hints.
+
+---
+
+## 3. Where the dashboard lives
+
+The dashboard uses two locations on your machine:
+
+- **Install tree (read-only template)**
+
+  ```text
+  ~/.local/share/tfgrid-compose/dashboard/
+  ```
+
+  This directory is installed by `make install` and by `tfgrid-compose update`.
+
+- **User config tree (runtime copy)**
+
+  ```text
+  ~/.config/tfgrid-compose/dashboard/
+  ```
+
+  On first run, `tfgrid-compose dashboard` copies the template from the install tree into the config tree and runs from there. This keeps user changes isolated under `~/.config`.
+
+You do **not** need a git checkout to run the dashboard.
+
+---
+
+## 4. Basic usage
+
+### 4.1 Foreground (one-off sessions)
+
+```bash
+# Foreground dashboard, logs in the terminal
+tfgrid-compose dashboard
+# or, with shortcut
+t dashboard
+```
+
+- Bootstraps `~/.config/tfgrid-compose/dashboard` on first run.
+- Runs the Node server in the **foreground**.
+- Default base URL:
+
+  ```text
+  http://localhost:3000
+  ```
+
+- If port **3000** is already in use, the server automatically tries `3001`, `3002`, ... up to a small limit.
+- The actual bound port is logged to the terminal and to the dashboard log file.
+
+Use this mode when you are actively working and happy to keep a terminal tab open.
+
+### 4.2 Background service (start/stop/status)
+
+The dashboard can also run as a small local service.
+
+- **Start in background**
+
+  ```bash
+  tfgrid-compose dashboard start
+  # or: t dashboard start
+  ```
+
+  Behavior:
+
+  - Bootstraps and installs dependencies if needed.
+  - Starts the Node server in the background.
+  - Writes a PID file:
+
+    ```text
+    ~/.config/tfgrid-compose/dashboard/dashboard.pid
+    ```
+
+  - Writes the chosen port to:
+
+    ```text
+    ~/.config/tfgrid-compose/dashboard/dashboard-port
+    ```
+
+  - Logs a message with the final URL, for example:
+
+    ```text
+    Dashboard started at http://localhost:3001 (pid 12345)
+    ```
+
+- **Check status**
+
+  ```bash
+  tfgrid-compose dashboard status
+  # or: t dashboard status
+  ```
+
+  Shows whether the dashboard is running and which port it is bound to, e.g.:
+
+  ```text
+  Dashboard running at http://localhost:3001 (pid 12345)
+  ```
+
+- **Stop the dashboard**
+
+  ```bash
+  tfgrid-compose dashboard stop
+  # or: t dashboard stop
+  ```
+
+  - Reads the PID file.
+  - Sends a graceful `SIGTERM`.
+  - Cleans up the PID file.
+  - Prints a confirmation, or a friendly message if it was not running.
+
+- **View dashboard logs**
+
+  ```bash
+  tfgrid-compose dashboard logs
+  # or: t dashboard logs
+  ```
+
+  Tails the last 200 lines (and follows) of:
+
+  ```text
+  ~/.config/tfgrid-compose/dashboard/dashboard.log
+  ```
+
+  This is particularly useful for debugging Node/port issues or seeing backend API errors.
+
+---
+
+## 5. UI overview
+
+Once the server is running, open the dashboard in your browser:
+
+```text
+http://localhost:<port from status>
+```
+
+The UI is a single-page app with three main areas:
+
+- **Apps panel**
+  - Lists registry apps from `~/.config/tfgrid-compose/registry/apps.yaml`.
+  - One-click deploy buttons for each app.
+
+- **Deployments table**
+  - Lists deployments from `~/.config/tfgrid-compose/deployments.yaml`.
+  - Shows:
+    - Deployment ID
+    - App name
+    - IPs (vm_ip, mycelium_ip)
+    - Contract ID
+    - Status
+    - Created time
+  - For each deployment:
+    - **Address** button → wraps `tfgrid-compose address <deployment-id>` and shows all URLs.
+
+- **TFGrid AI Stack actions**
+  - For deployments of `tfgrid-ai-stack`, extra controls appear:
+    - Project name input.
+    - Buttons:
+      - **Create** → `tfgrid-compose create <project>`
+      - **Run** → `tfgrid-compose run <project>`
+      - **Publish** → `tfgrid-compose publish <project>`
+  - These actions internally:
+    - Select the deployment (`tfgrid-compose select <deployment-id>`).
+    - Run the corresponding command.
+  - All output is streamed to the log panel in the dashboard.
+
+---
+
+## 6. How it works under the hood
+
+- The dashboard backend is a small Node.js server installed with tfgrid-compose.
+- It reads existing CLI state and registry files:
+  - `~/.config/tfgrid-compose/registry/apps.yaml`
+  - `~/.config/tfgrid-compose/deployments.yaml`
+- It spawns `tfgrid-compose` commands using the same binary you use on the CLI:
+  - Deploy (`up`)
+  - Address lookup (`address`)
+  - Project actions (`create`, `run`, `publish`)
+- The UI uses simple JSON APIs on `localhost` and does not expose anything publicly.
+
+All sensitive actions (deployment, project operations) still go through the CLI and respect your existing configuration, network preferences, and registry.

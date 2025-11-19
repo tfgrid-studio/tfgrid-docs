@@ -4,109 +4,48 @@
 
 ---
 
-## Recently Completed ✅
+## Completed Core Features ✅
 
-### CLI Integration (v0.10.0 - Oct 15, 2025)
+The following building blocks of TFGrid Studio are now **shipped and available**:
 
-**Status:** ✅ **COMPLETED**
+### Patterns
 
-Deploy apps by name directly from the registry!
+- **single-vm pattern**
+  - Simple VM deployments for development and internal services.
+  - Great for AI agents, databases, and internal APIs.
 
-```bash
-# Search the registry
-tfgrid-compose search
+- **gateway pattern**
+  - Multi-VM deployments with public access and SSL.
+  - Perfect for production web apps and SaaS.
 
-# Deploy by name
-tfgrid-compose up wordpress
+- **k3s (Kubernetes) pattern**
+  - Full Kubernetes cluster on ThreeFold Grid.
+  - Suited for microservices and enterprise workloads.
 
-# Manage multiple apps
-tfgrid-compose list
-tfgrid-compose switch ai-agent
-```
+### Apps
 
-**See:** [Registry Guide](../cli/registry.md) | [Release Notes](https://github.com/tfgrid-studio/tfgrid-compose/releases/tag/v0.10.0)
+- **tfgrid-gitea**
+  - Git hosting on ThreeFold Grid.
+  - Ideal companion for AI/dev workflows.
 
----
+- **tfgrid-ai-agent**
+  - AI agent environment focused on coding and automation.
 
-## Currently Building 🔨
+- **tfgrid-ai-stack**
+  - Complete AI development stack (AI + Git + web UI).
+  - From prompt to production in one deployment.
 
-### Web Dashboard
+### Dashboard
 
-**Status:** 🔨 Planning & Design
-
-**Goal:** Visual management interface for deployments
-
-### What It Will Do
-
-```
-🖥️ Modern web interface to:
-- View all deployments at a glance
-- Deploy apps with GUI
-- Monitor resources in real-time  
-- Manage team access
-- View logs and metrics
-```
-
-### Features Planned
-
-**Visual Deployment:**
-- Browse registry in GUI
-- One-click app deployment
-- Configuration wizard
-- Pattern selection UI
-
-**Real-Time Monitoring:**
-- Resource usage graphs
-- Live log streaming
-- Health check dashboard
-- Alert notifications
-
-**Team Collaboration:**
-- Multi-user access
-- Role-based permissions
-- Deployment history
-- Activity audit log
-
-**Topology View:**
-- Visual network diagram
-- VM connections
-- Service relationships
-- Traffic flow
-
-### Architecture Preview
-
-```
-┌─────────────────────────────────────────┐
-│         Web Dashboard (React)           │
-│  ┌────────┐  ┌────────┐  ┌────────┐   │
-│  │Registry│  │Deploys │  │Monitor │   │
-│  └────────┘  └────────┘  └────────┘   │
-└─────────────────────────────────────────┘
-                    ↕️
-┌─────────────────────────────────────────┐
-│      Backend API (FastAPI/Go)           │
-│  ┌────────┐  ┌────────┐  ┌────────┐   │
-│  │ Auth  │  │  State │  │Metrics │   │
-│  └────────┘  └────────┘  └────────┘   │
-└─────────────────────────────────────────┘
-                    ↕️
-┌─────────────────────────────────────────┐
-│      tfgrid-compose CLI Engine          │
-└─────────────────────────────────────────┘
-```
-
-### Timeline
-
-- **Research:** Q4 2025
-- **Design:** Q4 2025
-- **Development:** Q1 2026
-- **Beta:** Q1 2026
+- **TFGrid Studio Dashboard (tfgrid-compose dashboard / t dashboard)**
+  - Local web dashboard on top of `tfgrid-compose`.
+  - Visual management for apps, deployments, CLI commands, preferences, and logs.
 
 ---
 
 ## Try Current Features
 
-Use the newly released CLI features:
+Use the current CLI and dashboard features:
 
 ```bash
 # Install
@@ -122,6 +61,9 @@ tfgrid-compose up app --pattern=k3s
 
 # Browse registry
 open https://registry.tfgrid.studio
+
+# Launch local dashboard
+t dashboard
 ```
 
 ---

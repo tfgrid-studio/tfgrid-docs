@@ -18,7 +18,11 @@ We organize our roadmap into three clear phases:
 
 **What we're building right now**
 
-Currently focused on **CLI Integration** - deploy apps by name from the registry.
+Currently focused on **solidifying core platform features**:
+
+- Deployment patterns (single-vm, gateway, k3s)
+- Flagship apps (tfgrid-gitea, tfgrid-ai-agent, tfgrid-ai-stack)
+- TFGrid Studio Dashboard (local GUI on top of the CLI)
 
 [View Active Features →](now.md)
 
@@ -28,7 +32,7 @@ Currently focused on **CLI Integration** - deploy apps by name from the registry
 
 **What's coming after current work**
 
-Visual management, AI assistance, and voice interfaces.
+Voice interface and fiat payments on top of the existing CLI + dashboard.
 
 [View Planned Features →](next.md)
 

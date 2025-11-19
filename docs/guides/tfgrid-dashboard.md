@@ -4,7 +4,10 @@ Status: **Production Ready (local dashboard)**
 
 This guide explains how to use the `tfgrid-compose` local dashboard to manage apps and deployments visually.
 
-The dashboard is a thin web UI on top of the existing CLI, config, and registry files.
+The dashboard is a thin web UI on top of the existing CLI, config, and registry files. You can:
+
+- Use the **command-line interface (CLI)** directly, _or_
+- Use the **TFGrid Studio Dashboard** as a user-friendly browser UI that calls the same commands under the hood.
 
 ---
 
@@ -14,9 +17,21 @@ The dashboard is a thin web UI on top of the existing CLI, config, and registry 
   - Browse registered apps (official + community) from your local registry.
   - Deploy apps (e.g. `tfgrid-ai-stack`) with one click.
 
+- **CLI commands workspace**
+  - Run almost any `tfgrid-compose` command from a **CLI Commands** panel.
+  - Fill in arguments and flags using forms instead of typing full commands.
+  - Commands are grouped as:
+    - **Global CLI** – commands that run without a deployment context.
+    - **For deployment** – commands that target a specific deployment.
+  - A **Context** bar shows whether you are running globally or against a selected deployment.
+
 - **Deployment overview**
   - List all deployments from `~/.config/tfgrid-compose/deployments.yaml`.
-  - Show deployment ID, app name, IPs (WireGuard/Mycelium), contract ID, status, created time.
+  - Show deployment ID, app name, IPs (VM/Mycelium), contract ID, status, created time.
+  - For each deployment you can:
+    - View addresses (wraps `tfgrid-compose address <deployment-id>`).
+    - Set it as the active **deployment context** for CLI Commands.
+    - Open an interactive shell (wraps `tfgrid-compose ssh <deployment-id>`).
 
 - **Project actions for AI stack**
   - For `tfgrid-ai-stack` deployments, you can:
@@ -25,10 +40,34 @@ The dashboard is a thin web UI on top of the existing CLI, config, and registry 
     - Publish projects.
   - The dashboard uses `tfgrid-compose create`, `run`, and `publish` under the hood.
 
-- **Live logs**
-  - All operations (deploy, create, run, publish) stream their logs into the UI.
+- **Preferences panel**
+  - Shows your whitelist/blacklist and thresholds from `preferences.yaml`.
+  - Provides shortcuts that open the right CLI Commands forms for editing preferences.
 
-The dashboard does **not** replace the CLI. It wraps it in a convenient local web UI.
+- **Live logs & interactive shell**
+  - All operations (deploy, create, run, publish, CLI Commands) stream their logs into the **Output** column.
+  - You can open an interactive shell per deployment; the dashboard spawns `tfgrid-compose ssh <deployment-id>` and streams output into a browser terminal.
+
+The dashboard does **not** replace the CLI. It wraps it in a convenient local web UI that stays in sync with your existing CLI config, registry and login.
+
+---
+
+## 1.1 Quick start
+
+If you just want the shortest path to the dashboard:
+
+```bash
+# 1) Install / update tfgrid-compose
+tfgrid-compose update           # or: t update
+
+# 2) Login once with the CLI (required before deploying)
+tfgrid-compose login
+
+# 3) Start the local dashboard
+t dashboard                     # or: tfgrid-compose dashboard
+```
+
+Then open the printed `http://localhost:PORT` URL in your browser.
 
 ---
 
@@ -86,7 +125,25 @@ You do **not** need a git checkout to run the dashboard.
 
 ---
 
-## 4. Basic usage
+## 4. Login & credentials
+
+The dashboard does **not** introduce a separate browser login. It reuses the same identity and configuration that you already use with the CLI.
+
+- Before deploying or running anything from the dashboard, run once in a terminal:
+
+  ```bash
+  tfgrid-compose login
+  ```
+
+- The dashboard then:
+  - Uses the same key material and config files as `tfgrid-compose`.
+  - Respects your network preferences, whitelists/blacklists, and patterns.
+
+If you can successfully deploy from the CLI, the dashboard will be able to deploy with the same credentials.
+
+---
+
+## 5. Basic usage
 
 ### 4.1 Foreground (one-off sessions)
 
@@ -185,7 +242,7 @@ The dashboard can also run as a small local service.
 
 ---
 
-## 5. UI overview
+## 6. UI overview
 
 Once the server is running, open the dashboard in your browser:
 
@@ -193,39 +250,73 @@ Once the server is running, open the dashboard in your browser:
 http://localhost:<port from status>
 ```
 
-The UI is a single-page app with three main areas:
+The UI is a split-screen single-page app with two columns:
 
-- **Apps panel**
+- **Left: Input (apps, commands, deployments, preferences)**
+- **Right: Output (logs and shell)**
+
+### 6.1 Left column – Input
+
+- **Apps from Registry**
   - Lists registry apps from `~/.config/tfgrid-compose/registry/apps.yaml`.
-  - One-click deploy buttons for each app.
+  - One-click **Deploy** buttons for each app.
+
+- **CLI Commands workspace**
+  - A primary panel titled **CLI Commands**.
+  - Shows a **Context** bar at the top:
+    - "Global (tfgrid-compose)" when no deployment is selected.
+    - The selected deployment ID (and app name) when a deployment is in context.
+  - Commands are listed in two groups:
+    - **Global CLI** – runs without deployment context.
+    - **For deployment** – uses the selected deployment ID for commands like `status`, `logs`, `ssh`, `address`, `exec`.
+  - Selecting a deployment in the **Deployments** table automatically updates the context and pre-fills deployment-scoped commands with the right ID.
+  - When you click a command:
+    - A detail form opens on the right side of the CLI Commands panel.
+    - You can fill in arguments and flags.
+    - A preview shows the exact CLI command (e.g. `tfgrid-compose ssh <deployment-id>`).
 
 - **Deployments table**
   - Lists deployments from `~/.config/tfgrid-compose/deployments.yaml`.
   - Shows:
     - Deployment ID
     - App name
-    - IPs (vm_ip, mycelium_ip)
-    - Contract ID
     - Status
-    - Created time
-  - For each deployment:
-    - **Address** button → wraps `tfgrid-compose address <deployment-id>` and shows all URLs.
+    - IPs (`vm_ip`, `mycelium_ip`)
+    - Contract ID
+  - Per-deployment actions include:
+    - **Address** → wraps `tfgrid-compose address <deployment-id>` and shows all URLs.
+    - **Commands** → sets this deployment as the current **context** for CLI Commands.
+    - **Connect** → opens an interactive shell (see below).
+  - For `tfgrid-ai-stack` deployments, additional project actions appear (Create/Run/Publish), as described earlier.
 
-- **TFGrid AI Stack actions**
-  - For deployments of `tfgrid-ai-stack`, extra controls appear:
-    - Project name input.
-    - Buttons:
-      - **Create** → `tfgrid-compose create <project>`
-      - **Run** → `tfgrid-compose run <project>`
-      - **Publish** → `tfgrid-compose publish <project>`
-  - These actions internally:
-    - Select the deployment (`tfgrid-compose select <deployment-id>`).
-    - Run the corresponding command.
-  - All output is streamed to the log panel in the dashboard.
+- **Preferences panel**
+  - Shows:
+    - Whitelist nodes/farms
+    - Blacklist nodes/farms
+    - Thresholds (CPU, disk, uptime)
+  - Includes buttons like **Edit in CLI Commands** that:
+    - Jump you into the right CLI Commands form for `whitelist`/`blacklist`.
+    - After running a preferences command, the panel auto-refreshes to reflect the new state.
+
+### 6.2 Right column – Output
+
+- **Job Output panel**
+  - Shows live logs for any background job started from the dashboard:
+    - App deploys (up)
+    - Project actions (create, run, publish)
+    - CLI Commands
+  - Logs preserve ANSI colors where possible, similar to the terminal.
+  - The subtitle shows job status and, when known, the associated deployment ID.
+
+- **Interactive Shell panel**
+  - Opened via **Connect** on a deployment row.
+  - Spawns `tfgrid-compose ssh <deployment-id>` on the backend and streams output to the browser using Server-Sent Events.
+  - You can type commands into the input box; each line is sent to the remote shell.
+  - Closing the shell panel terminates the underlying ssh process.
 
 ---
 
-## 6. How it works under the hood
+## 7. How it works under the hood
 
 - The dashboard backend is a small Node.js server installed with tfgrid-compose.
 - It reads existing CLI state and registry files:

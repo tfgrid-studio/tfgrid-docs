@@ -1171,6 +1171,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#43-desktop-launcher-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Desktop launcher (Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2311,6 +2322,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#43-desktop-launcher-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Desktop launcher (Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2477,10 +2499,16 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 2) Login once with the CLI (required before deploying)</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tfgrid-compose<span class="w"> </span>login
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 3) Start the local dashboard</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>t<span class="w"> </span>dashboard<span class="w">                     </span><span class="c1"># or: tfgrid-compose dashboard</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 3) Start the local dashboard (foreground or background)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>tfgrid-compose<span class="w"> </span>dashboard<span class="w">        </span><span class="c1"># foreground</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># or:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>tfgrid-compose<span class="w"> </span>dashboard<span class="w"> </span>start<span class="w">  </span><span class="c1"># background service</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># 4) (Optional) Install a desktop launcher on Linux</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>tfgrid-compose<span class="w"> </span>dashboard<span class="w"> </span>desktop
 </code></pre></div>
-<p>Then open the printed <code>http://localhost:PORT</code> URL in your browser.</p>
+<p>Then either open the printed <code>http://localhost:PORT</code> URL in your browser,
+or use the installed <strong>TFGrid Studio Dashboard</strong> launcher from your desktop/menu.</p>
 <hr />
 <h2 id="2-installation-prerequisites">2. Installation &amp; prerequisites<a class="headerlink" href="#2-installation-prerequisites" title="Permanent link">&para;</a></h2>
 <p>The dashboard is part of the normal <code>tfgrid-compose</code> install and update flow.</p>
@@ -2619,9 +2647,31 @@
 </code></pre></div>
 <p>This is particularly useful for debugging Node/port issues or seeing backend API errors.</p>
 <hr />
+<h3 id="43-desktop-launcher-linux">4.3 Desktop launcher (Linux)<a class="headerlink" href="#43-desktop-launcher-linux" title="Permanent link">&para;</a></h3>
+<p>On Linux desktops, you can install a launcher icon for the dashboard:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>tfgrid-compose<span class="w"> </span>dashboard<span class="w"> </span>desktop
+</code></pre></div>
+<p>This command is <strong>idempotent</strong> and will:</p>
+<ul>
+<li>Ensure the dashboard template is installed under <code>~/.config/tfgrid-compose/dashboard/</code>.</li>
+<li>Create or refresh a launcher script at <code>~/.local/bin/tfgrid-dashboard-launcher</code>.</li>
+<li>Create or refresh a desktop entry at <code>~/.local/share/applications/tfgrid-dashboard.desktop</code>.</li>
+<li>Optionally place a "TFGrid Studio Dashboard" icon on your <code>~/Desktop</code> (if it exists).</li>
+</ul>
+<p>When you click the launcher icon:</p>
+<ul>
+<li>It runs <code>tfgrid-compose dashboard start</code> to ensure the backend is running.</li>
+<li>Opens your default browser to <code>http://localhost:&lt;dashboard-port&gt;</code>.</li>
+</ul>
+<p>To stop the dashboard backend, use:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>tfgrid-compose<span class="w"> </span>dashboard<span class="w"> </span>stop
+</code></pre></div>
+<p>The launcher can be re-installed or refreshed at any time by rerunning
+<code>tfgrid-compose dashboard desktop</code>.</p>
+<hr />
 <h2 id="6-ui-overview">6. UI overview<a class="headerlink" href="#6-ui-overview" title="Permanent link">&para;</a></h2>
 <p>Once the server is running, open the dashboard in your browser:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>http://localhost:&lt;port from status&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>http://localhost:&lt;port from status&gt;
 </code></pre></div>
 <p>The UI is a split-screen single-page app with two columns:</p>
 <ul>

@@ -130,7 +130,7 @@ Runs on **ThreeFold Grid**: decentralized compute, no single point of failure, c
 **Apache 2.0 license**. Free to use, modify, and distribute. Community-driven development.
 
 ### ✅ Battle-Tested
-Built from **proven, working implementations**:
+Built from ThreeFold open-source **proven, working code implementations**:
 - Gateway pattern: Based on [mik-tf/tfgrid-gateway](https://github.com/mik-tf/tfgrid-gateway)
 - K3s pattern: Based on [ucli-tools/tfgrid-k3s](https://github.com/ucli-tools/tfgrid-k3s)
 - AI agent: Based on [mik-tf/tfgrid-ai-agent](https://github.com/mik-tf/tfgrid-ai-agent)

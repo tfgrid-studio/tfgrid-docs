@@ -63,11 +63,17 @@ tfgrid-compose update           # or: t update
 # 2) Login once with the CLI (required before deploying)
 tfgrid-compose login
 
-# 3) Start the local dashboard
-t dashboard                     # or: tfgrid-compose dashboard
+# 3) Start the local dashboard (foreground or background)
+tfgrid-compose dashboard        # foreground
+# or:
+tfgrid-compose dashboard start  # background service
+
+# 4) (Optional) Install a desktop launcher on Linux
+tfgrid-compose dashboard desktop
 ```
 
-Then open the printed `http://localhost:PORT` URL in your browser.
+Then either open the printed `http://localhost:PORT` URL in your browser,
+or use the installed **TFGrid Studio Dashboard** launcher from your desktop/menu.
 
 ---
 
@@ -239,6 +245,37 @@ The dashboard can also run as a small local service.
   ```
 
   This is particularly useful for debugging Node/port issues or seeing backend API errors.
+
+---
+
+### 4.3 Desktop launcher (Linux)
+
+On Linux desktops, you can install a launcher icon for the dashboard:
+
+```bash
+tfgrid-compose dashboard desktop
+```
+
+This command is **idempotent** and will:
+
+- Ensure the dashboard template is installed under `~/.config/tfgrid-compose/dashboard/`.
+- Create or refresh a launcher script at `~/.local/bin/tfgrid-dashboard-launcher`.
+- Create or refresh a desktop entry at `~/.local/share/applications/tfgrid-dashboard.desktop`.
+- Optionally place a "TFGrid Studio Dashboard" icon on your `~/Desktop` (if it exists).
+
+When you click the launcher icon:
+
+- It runs `tfgrid-compose dashboard start` to ensure the backend is running.
+- Opens your default browser to `http://localhost:<dashboard-port>`.
+
+To stop the dashboard backend, use:
+
+```bash
+tfgrid-compose dashboard stop
+```
+
+The launcher can be re-installed or refreshed at any time by rerunning
+`tfgrid-compose dashboard desktop`.
 
 ---
 

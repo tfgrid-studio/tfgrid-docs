@@ -521,6 +521,16 @@ t down abc123  # Finds contract 1629826 → Cancels it → Removes registry entr
 
 # Cross-validation
 t list         # Only shows deployments that exist in both registry AND grid
+
+# Contract Management CLI commands
+# List all contracts
+t contracts list
+
+# Delete a single contract
+t contracts delete <contract-id>
+
+# Delete all contracts (dangerous)
+t contracts delete --all
 ```
 
 ### Migration Guide

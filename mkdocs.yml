@@ -119,56 +119,52 @@ nav:
 
   - Getting Started:
     - Introduction: getting-started/introduction.md
-    - Complete Setup: getting-started/setup.md
     - Installation: getting-started/installation.md
     - ThreeFold Setup: getting-started/threefold-setup.md
     - Quick Start: getting-started/quickstart.md
     - Core Concepts: getting-started/concepts.md
-  
-  - CLI Reference:
-    - App-Specific Commands: cli/app-commands.md
-    - Node Selection & Filtering: cli/node-selection.md
-    - Context System: cli/context-system.md
-    - Registry Commands: cli/registry.md
+    - Complete Setup: getting-started/setup.md
   
   - Guides:
-    - Getting Started: guides/getting-started.md
+    - Getting Started (workflows): guides/getting-started.md
     - TFGrid Compose: guides/tfgrid-compose.md
     - TFGrid Dashboard: guides/tfgrid-dashboard.md
+    - TFGrid AI Stack: guides/tfgrid-ai-stack.md
     - TFGrid AI Agent: guides/tfgrid-ai-agent.md
     - TFGrid Gitea: guides/tfgrid-gitea.md
-    - TFGrid AI Stack: guides/tfgrid-ai-stack.md
     - App Registry: guides/app-registry.md
   
-  - Architecture:
-    - System Overview: architecture/overview.md
-    - Source Repositories: architecture/source-repos.md
-  
-  - Deployment Patterns:
-    - Overview: patterns/overview.md
-    - Single-VM Pattern: patterns/single-vm.md
-    - Gateway Pattern: patterns/gateway.md
-    - K3s Pattern: patterns/k3s.md
-  
-  - Troubleshooting:
-    - Complete Guide: troubleshooting/guide.md
-  
-  - Development:
-    - Versioning Policy: development/versioning-policy.md
-    - Pattern Contract: development/pattern-contract.md
-    - Submit Apps: development/submit-app.md
-  
-  - Roadmap:
-    - Overview: roadmap/index.md
-    - Now (Active): roadmap/now.md
-    - Next (Planned): roadmap/next.md
-    - Later (Concepts): roadmap/later.md
+  - Reference:
+    - CLI:
+      - App-Specific Commands: cli/app-commands.md
+      - Node Selection & Filtering: cli/node-selection.md
+      - Context System: cli/context-system.md
+      - Registry Commands: cli/registry.md
+    - Deployment Patterns:
+      - Overview: patterns/overview.md
+      - Single-VM Pattern: patterns/single-vm.md
+      - Gateway Pattern: patterns/gateway.md
+      - K3s Pattern: patterns/k3s.md
+    - Architecture:
+      - System Overview: architecture/overview.md
+      - Source Repositories: architecture/source-repos.md
+    - Troubleshooting:
+      - Complete Guide: troubleshooting/guide.md
   
   - Community:
-    - Code of Conduct: community/code-of-conduct.md
-    - Contributing Guide: community/contributing.md
-    - Security Policy: community/security.md
-  
+    - Contributing:
+      - Contributing Guide: community/contributing.md
+      - Code of Conduct: community/code-of-conduct.md
+      - Security Policy: community/security.md
+    - Development:
+      - Versioning Policy: development/versioning-policy.md
+      - Pattern Contract: development/pattern-contract.md
+      - Submit Apps: development/submit-app.md
+    - Roadmap:
+      - Overview: roadmap/index.md
+      - Now (Active): roadmap/now.md
+      - Next (Planned): roadmap/next.md
+      - Later (Concepts): roadmap/later.md
 
 # Google Analytics (optional - add your tracking ID)
 # extra:

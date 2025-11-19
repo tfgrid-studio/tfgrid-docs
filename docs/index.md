@@ -21,45 +21,6 @@ tfgrid-compose up my-app
 
 ---
 
-## ✨ Current Status
-
-### ✅ Production Ready (v0.10.0)
-
-| Component | Status | Description |
-|-----------|--------|-------------|
-| **tfgrid-compose** | ✅ v0.10.0 | Universal orchestrator with registry integration |
-| **tfgrid-ai-agent** | ✅ v0.10.0 | AI coding agent (reference application) |
-| **tfgrid-gitea** | 🆕 v1.0.0 | Self-hosted Git service with web interface |
-| **Single-VM Pattern** | ✅ Production | Deploy isolated VMs with private networking |
-| **Gateway Pattern** | ✅ Production | Multi-VM with public access and SSL |
-| **K3s Pattern** | ✅ Production | Full Kubernetes cluster deployment |
-| **App Registry** | ✅ v0.10.0 | Deploy apps by name from registry |
-| **Context Files** | ✅ Production | Simplified workflow with `.tfgrid-compose.yaml` |
-
-### 🔨 In Progress (v0.10.1) - 95% Complete!
-
-| Component | Status | Description |
-|-----------|--------|-------------|
-| **Login/Logout UX** | ✅ Complete | Enhanced credential management |
-| **ThreeFold Setup Guide** | ✅ Complete | Complete DIY onboarding documentation |
-| **Config Management** | ✅ Complete | `tfgrid-compose config` commands |
-| **Docs Command** | ✅ Complete | Open docs in browser |
-| **Enhanced Error Messages** | ✅ Complete | Helpful guidance throughout CLI |
-| **Release** | 🔄 Testing | Final testing before release |
-
-### 🚧 Coming Soon
-
-| Component | Status | Timeline | Description |
-|-----------|--------|----------|-------------|
-| **AI Gateway Integration** | 📋 Planned | v0.11.0 (Nov) | AI agent + Gateway + Gitea workflow |
-| **AI Dashboard Web UI** | 📋 Planned | v0.12.0 (Dec-Jan) | Visual project management |
-| **Voice Coding** | 📋 Planned | v0.13.0 (Feb) | "Vibe code by talking" interface |
-| **CI/CD Integration** | 📋 Planned | v0.13.0+ | GitHub Actions, GitLab CI |
-| **Web Dashboard** | 📋 Planned | Q2 2026 | Complete visual management |
-| **Managed Service** | 📋 Planned | Q3 2026+ | Email + credit card deployments |
-
----
-
 ## 🚀 Quick Start
 
 ### 1. Install tfgrid-compose
@@ -99,64 +60,31 @@ tfgrid-compose up ../tfgrid-ai-agent
 
 ---
 
-## 📚 Documentation Overview
+## 📚 Where to go next
 
-### Getting Started
-- **[Introduction](getting-started/introduction.md)** - What is TFGrid Compose and why use it
-- **[Installation](getting-started/installation.md)** - Install and configure tfgrid-compose
-- **[ThreeFold Setup](getting-started/threefold-setup.md)** - Complete DIY guide (wallet, TFT, KYC)
-- **[Quick Start](getting-started/quickstart.md)** - Deploy your first application in 5 minutes
-- **[Core Concepts](getting-started/concepts.md)** - Understand patterns, apps, and manifests
+### 1. New to TFGrid Studio?
 
-### Deployment Patterns
-- **[Pattern Overview](patterns/overview.md)** - Understanding the pattern system
-- **[Single-VM Pattern](patterns/single-vm.md)** - ✅ Production ready
-- **[Gateway Pattern](patterns/gateway.md)** - ✅ Production ready
-- **[K3s Pattern](patterns/k3s.md)** - ✅ Production ready
+- **[Introduction](getting-started/introduction.md)** – what TFGrid Studio and `tfgrid-compose` are.
+- **[Installation](getting-started/installation.md)** – install and configure `tfgrid-compose`.
+- **[ThreeFold Setup](getting-started/threefold-setup.md)** – wallet, TFT, and account setup.
+- **[Quick Start](getting-started/quickstart.md)** – deploy your first application in a few minutes.
 
-### Applications
-- **[Application Overview](applications/overview.md)** - How apps work in TFGrid Compose
-- **[TFGrid AI Agent](applications/tfgrid-ai-agent/)** - ✅ AI coding agent
-- **[TFGrid Gitea](guides/gitea.md)** - 🆕 Self-hosted Git service
-- **[Creating Apps](applications/creating-apps.md)** - Build your own deployable apps
+### 2. Prefer a visual dashboard?
 
-### CLI Reference
-- **[CLI Commands](reference/cli.md)** - Complete command reference
-- **[App Manifest](reference/manifest.md)** - `tfgrid-compose.yaml` specification
-- **[Context File](reference/context-file.md)** - `.tfgrid-compose.yaml` usage
-- **[State Management](reference/state.md)** - How state is tracked
-- **[Environment Variables](reference/environment.md)** - Configuration options
+- **[TFGrid Dashboard](guides/tfgrid-dashboard.md)** – GUI alternative to the CLI for apps, deployments, and commands.
+- **[TFGrid AI Stack](guides/tfgrid-ai-stack.md)** – full AI workspace (dashboard, agent, and Gitea).
 
-### Guides
-- **[App Registry](guides/app-registry.md)** - 🆕 Deploy apps by name (v0.10.0+)
-- **[Cache Management](guides/cache-management.md)** - 🆕 Enhanced cache system with version-based invalidation (v0.13.4+)
-- **[Migration Guide](guides/migration.md)** - Migrate from standalone repos
-- **[Advanced Deployment](guides/deployment.md)** - Production deployment strategies
-- **[Networking](guides/networking.md)** - WireGuard and Mycelium setup
-- **[Security](guides/security.md)** - Security best practices
-- **[Troubleshooting](guides/troubleshooting.md)** - Common issues and solutions
+### 3. Need more depth?
 
-### Architecture
-- **[Design Decisions](architecture/design-decisions.md)** - Why we built it this way
-- **[Source Repositories](architecture/source-repos.md)** - Acknowledgment of source work
-- **[Comparison](architecture/comparison.md)** - vs standalone repos, vs other platforms
+- **[Guides](guides/tfgrid-compose.md)** – product and workflow guides for TFGrid Compose and apps.
+- **[Deployment patterns](patterns/overview.md)** – single‑VM, gateway, and k3s patterns.
+- **[CLI reference](cli/app-commands.md)** – detailed commands and flags.
 
-### Roadmap
-- **[Platform Roadmap](roadmap/index.md)** - 🚀 Now / Next / Later
-- **[Now - Active Development](roadmap/now.md)** - What we're building
-- **[Next - Planned Features](roadmap/next.md)** - What's coming
-- **[Later - Future Concepts](roadmap/later.md)** - Long-term vision
+### 4. Building on top of TFGrid Studio?
 
-### Contributing
-- **[Contributing Guide](contributing/overview.md)** - How to contribute
-- **[Code of Conduct](community/code-of-conduct.md)** - Community guidelines
-- **[Security Policy](community/security.md)** - Report security issues
-
-### Development
-- **[Submit Your App](development/submit-app.md)** - Share your app with the community
-- **[Pattern Contract](development/pattern-contract.md)** - How patterns communicate
-- **[Pattern Development](development/pattern-development.md)** - Create custom patterns
-- **[Versioning Policy](development/versioning-policy.md)** - Version management
+- **[Submit your app](development/submit-app.md)** – share apps with the community.
+- **[Pattern contract](development/pattern-contract.md)** – how patterns communicate.
+- **[Architecture overview](architecture/overview.md)** – how the system fits together.
 
 ---
 

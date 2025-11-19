@@ -38,6 +38,29 @@ t search
 t up tfgrid-ai-stack
 ```
 
+## 🌐 Local Dashboard (Built-in UI)
+
+TFGrid Compose includes a **local web dashboard** feature for managing apps and deployments visually.
+
+- Launch the dashboard in the foreground:
+
+  ```bash
+  t dashboard
+  ```
+
+- Run it as a local service:
+
+  ```bash
+  t dashboard start
+  t dashboard status
+  t dashboard logs
+  t dashboard stop
+  ```
+
+For a full walkthrough of the dashboard UI and lifecycle commands, see the dedicated guide:
+
+- [TFGrid Dashboard](tfgrid-dashboard.md)
+
 ## 🎯 Git Commit-Based Versioning
 
 TFGrid Compose now uses **Git commit hashes as the primary version identifier** across the entire ecosystem, providing precise code traceability and automatic version management.
@@ -107,6 +130,7 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t ps` | Docker-style deployment inspection | `t ps` |
 | `t select [app]` | Select active app | `t select tfgrid-ai-stack` |
 | `t commands` | Show app commands | `t commands` |
+| `t dashboard [start\|stop\|status\|logs]` | Local web dashboard for apps and deployments | `t dashboard` |
 
 ### Deployment Commands
 | Command | Description | Example |

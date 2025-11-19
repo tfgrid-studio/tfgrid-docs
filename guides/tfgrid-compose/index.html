@@ -1105,6 +1105,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#local-dashboard-built-in-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Local Dashboard (Built-in UI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#git-commit-based-versioning" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2868,6 +2879,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#local-dashboard-built-in-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Local Dashboard (Built-in UI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#git-commit-based-versioning" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3619,28 +3641,47 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># 4. Deploy an app</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
+<h2 id="local-dashboard-built-in-ui">🌐 Local Dashboard (Built-in UI)<a class="headerlink" href="#local-dashboard-built-in-ui" title="Permanent link">&para;</a></h2>
+<p>TFGrid Compose includes a <strong>local web dashboard</strong> feature for managing apps and deployments visually.</p>
+<ul>
+<li>Launch the dashboard in the foreground:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>t<span class="w"> </span>dashboard
+</code></pre></div>
+<ul>
+<li>Run it as a local service:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>t<span class="w"> </span>dashboard<span class="w"> </span>start
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>t<span class="w"> </span>dashboard<span class="w"> </span>status
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>t<span class="w"> </span>dashboard<span class="w"> </span>logs
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>t<span class="w"> </span>dashboard<span class="w"> </span>stop
+</code></pre></div>
+<p>For a full walkthrough of the dashboard UI and lifecycle commands, see the dedicated guide:</p>
+<ul>
+<li><a href="../tfgrid-dashboard/">TFGrid Dashboard</a></li>
+</ul>
 <h2 id="git-commit-based-versioning">🎯 Git Commit-Based Versioning<a class="headerlink" href="#git-commit-based-versioning" title="Permanent link">&para;</a></h2>
 <p>TFGrid Compose now uses <strong>Git commit hashes as the primary version identifier</strong> across the entire ecosystem, providing precise code traceability and automatic version management.</p>
 <h3 id="enhanced-version-display">Enhanced Version Display<a class="headerlink" href="#enhanced-version-display" title="Permanent link">&para;</a></h3>
 <p><strong>Tool Version:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>t<span class="w"> </span>--version
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>TFGrid<span class="w"> </span>Compose<span class="w"> </span>cef6d4d
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Semantic<span class="w"> </span>version:<span class="w"> </span>v0.14.1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>t<span class="w"> </span>--version
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>TFGrid<span class="w"> </span>Compose<span class="w"> </span>cef6d4d
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Semantic<span class="w"> </span>version:<span class="w"> </span>v0.14.1
 </code></pre></div></p>
 <p><strong>Application Deployment:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>✅<span class="w"> </span>Application<span class="w"> </span>loaded:<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>24c9148
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>ℹ<span class="w"> </span>Git<span class="w"> </span>commit:<span class="w"> </span>24c9148
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>ℹ<span class="w"> </span>Last<span class="w"> </span>updated:<span class="w"> </span><span class="m">2025</span>-11-11<span class="w"> </span><span class="m">22</span>:47:49
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>ℹ<span class="w"> </span>Branch:<span class="w"> </span>main
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>ℹ<span class="w"> </span>Repository:<span class="w"> </span>https://github.com/tfgrid-studio/tfgrid-ai-stack.git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>✅<span class="w"> </span>Application<span class="w"> </span>loaded:<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>24c9148
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>ℹ<span class="w"> </span>Git<span class="w"> </span>commit:<span class="w"> </span>24c9148
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>ℹ<span class="w"> </span>Last<span class="w"> </span>updated:<span class="w"> </span><span class="m">2025</span>-11-11<span class="w"> </span><span class="m">22</span>:47:49
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>ℹ<span class="w"> </span>Branch:<span class="w"> </span>main
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>ℹ<span class="w"> </span>Repository:<span class="w"> </span>https://github.com/tfgrid-studio/tfgrid-ai-stack.git
 </code></pre></div></p>
 <p><strong>Cache Status:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>list
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>✅<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span>24c9148<span class="o">)</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>Last<span class="w"> </span>updated:<span class="w"> </span><span class="m">2025</span>-11-11<span class="w"> </span><span class="m">22</span>:47:49
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>⚠️<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span><span class="o">(</span>0e91178<span class="o">)</span><span class="w"> </span>-<span class="w"> </span><span class="o">[</span>needs<span class="w"> </span>update<span class="o">]</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span>Last<span class="w"> </span>updated:<span class="w"> </span><span class="m">2025</span>-11-02<span class="w"> </span><span class="m">08</span>:23:48
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>t<span class="w"> </span>cache<span class="w"> </span>list
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>✅<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span>24c9148<span class="o">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span>Last<span class="w"> </span>updated:<span class="w"> </span><span class="m">2025</span>-11-11<span class="w"> </span><span class="m">22</span>:47:49
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>⚠️<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span><span class="o">(</span>0e91178<span class="o">)</span><span class="w"> </span>-<span class="w"> </span><span class="o">[</span>needs<span class="w"> </span>update<span class="o">]</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span>Last<span class="w"> </span>updated:<span class="w"> </span><span class="m">2025</span>-11-02<span class="w"> </span><span class="m">08</span>:23:48
 </code></pre></div></p>
 <h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3653,14 +3694,14 @@
 </ul>
 <h3 id="enhanced-error-reporting">Enhanced Error Reporting<a class="headerlink" href="#enhanced-error-reporting" title="Permanent link">&para;</a></h3>
 <p><strong>Before:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Application loaded: tfgrid-ai-stack v0.12.0-dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Application loaded: tfgrid-ai-stack v0.12.0-dev
 </code></pre></div></p>
 <p><strong>After:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>✅ Application loaded: tfgrid-ai-stack 24c9148
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>ℹ Git commit: 24c9148
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>ℹ Last updated: 2025-11-11 22:47:49
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>ℹ Branch: main
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>ℹ Repository: https://github.com/tfgrid-studio/tfgrid-ai-stack.git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>✅ Application loaded: tfgrid-ai-stack 24c9148
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ℹ Git commit: 24c9148
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>ℹ Last updated: 2025-11-11 22:47:49
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>ℹ Branch: main
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>ℹ Repository: https://github.com/tfgrid-studio/tfgrid-ai-stack.git
 </code></pre></div></p>
 <h2 id="command-structure">📋 Command Structure<a class="headerlink" href="#command-structure" title="Permanent link">&para;</a></h2>
 <h3 id="core-commands">Core Commands<a class="headerlink" href="#core-commands" title="Permanent link">&para;</a></h3>
@@ -3707,6 +3748,11 @@
 <td><code>t commands</code></td>
 <td>Show app commands</td>
 <td><code>t commands</code></td>
+</tr>
+<tr>
+<td><code>t dashboard [start\|stop\|status\|logs]</code></td>
+<td>Local web dashboard for apps and deployments</td>
+<td><code>t dashboard</code></td>
 </tr>
 </tbody>
 </table>
@@ -3887,66 +3933,66 @@
 <li><strong>Health Monitoring</strong>: Cache status shows if apps are healthy, stale, invalid, or not cached</li>
 </ul>
 <h4 id="cache-structure">Cache Structure<a class="headerlink" href="#cache-structure" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>~/.config/tfgrid-compose/
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── registry/
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>│   └── apps.yaml              # Registry metadata
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>├── apps/
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>│   ├── tfgrid-ai-stack/       # Cached app repositories
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>│   ├── tfgrid-ai-agent/
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>│   └── ...
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>└── cache-metadata/
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    ├── tfgrid-ai-stack.json   # Version tracking data
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    └── ...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>~/.config/tfgrid-compose/
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├── registry/
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>│   └── apps.yaml              # Registry metadata
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>├── apps/
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>│   ├── tfgrid-ai-stack/       # Cached app repositories
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>│   ├── tfgrid-ai-agent/
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>│   └── ...
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>└── cache-metadata/
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    ├── tfgrid-ai-stack.json   # Version tracking data
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    └── ...
 </code></pre></div>
 <h3 id="common-usage-patterns">Common Usage Patterns<a class="headerlink" href="#common-usage-patterns" title="Permanent link">&para;</a></h3>
 <h4 id="initial-setup">Initial Setup<a class="headerlink" href="#initial-setup" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Update registry and download all apps</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>t<span class="w"> </span>update<span class="w"> </span>registry
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Check cache status</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>t<span class="w"> </span>cache<span class="w"> </span>status
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Search available apps</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>t<span class="w"> </span>search
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># Deploy an app</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Update registry and download all apps</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>t<span class="w"> </span>update<span class="w"> </span>registry
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Check cache status</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>t<span class="w"> </span>cache<span class="w"> </span>status
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Search available apps</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>t<span class="w"> </span>search
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1"># Deploy an app</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
 <h4 id="regular-maintenance">Regular Maintenance<a class="headerlink" href="#regular-maintenance" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Update registry and apps</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>t<span class="w"> </span>update<span class="w"> </span>registry
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Check for outdated apps</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>t<span class="w"> </span>cache<span class="w"> </span>outdated
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Refresh stale cache</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>t<span class="w"> </span>cache<span class="w"> </span>refresh
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="c1"># Deploy with fresh cache</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--refresh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Update registry and apps</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>t<span class="w"> </span>update<span class="w"> </span>registry
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Check for outdated apps</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>t<span class="w"> </span>cache<span class="w"> </span>outdated
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># Refresh stale cache</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>t<span class="w"> </span>cache<span class="w"> </span>refresh
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1"># Deploy with fresh cache</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--refresh
 </code></pre></div>
 <h4 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Check cache health</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>t<span class="w"> </span>cache<span class="w"> </span>status
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Validate specific app</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>t<span class="w"> </span>cache<span class="w"> </span>validate<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Clear problematic cache</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1"># Download fresh copy</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>t<span class="w"> </span>cache<span class="w"> </span>refresh<span class="w"> </span>tfgrid-ai-stack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Check cache health</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>t<span class="w"> </span>cache<span class="w"> </span>status
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Validate specific app</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>t<span class="w"> </span>cache<span class="w"> </span>validate<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Clear problematic cache</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># Download fresh copy</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>t<span class="w"> </span>cache<span class="w"> </span>refresh<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
 <h3 id="rate-limiting-protection">Rate Limiting Protection<a class="headerlink" href="#rate-limiting-protection" title="Permanent link">&para;</a></h3>
 <p>The system includes GitHub API rate limiting:
 - 5-second delays between requests
 - 3 retry attempts per app
 - Clear error messages for rate limiting issues</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Example output when rate limited</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>⚠️<span class="w">  </span>GitHub<span class="w"> </span>rate<span class="w"> </span>limiting<span class="w"> </span>detected<span class="w"> </span><span class="k">for</span><span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">     </span>This<span class="w"> </span>usually<span class="w"> </span>means<span class="w"> </span>too<span class="w"> </span>many<span class="w"> </span>requests<span class="w"> </span>were<span class="w"> </span>made<span class="w"> </span>to<span class="w"> </span>GitHub
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">     </span>Wait<span class="w"> </span>a<span class="w"> </span>few<span class="w"> </span>minutes<span class="w"> </span>and<span class="w"> </span>try<span class="w"> </span>again
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Example output when rate limited</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>⚠️<span class="w">  </span>GitHub<span class="w"> </span>rate<span class="w"> </span>limiting<span class="w"> </span>detected<span class="w"> </span><span class="k">for</span><span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">     </span>This<span class="w"> </span>usually<span class="w"> </span>means<span class="w"> </span>too<span class="w"> </span>many<span class="w"> </span>requests<span class="w"> </span>were<span class="w"> </span>made<span class="w"> </span>to<span class="w"> </span>GitHub
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">     </span>Wait<span class="w"> </span>a<span class="w"> </span>few<span class="w"> </span>minutes<span class="w"> </span>and<span class="w"> </span>try<span class="w"> </span>again
 </code></pre></div>
 <h2 id="docker-style-deployment-system">🐳 Docker-Style Deployment System<a class="headerlink" href="#docker-style-deployment-system" title="Permanent link">&para;</a></h2>
 <p>TFGrid Compose uses a <strong>Docker-style deployment ID system</strong> that provides unique identifiers for each deployment, similar to Docker container IDs.</p>
@@ -3960,67 +4006,67 @@
 </ul>
 <h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
 <h4 id="1-deployment-creation">1. Deployment Creation<a class="headerlink" href="#1-deployment-creation" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>✅<span class="w"> </span>Generated<span class="w"> </span>deployment<span class="w"> </span>ID:<span class="w"> </span>mj4y7bu4a1c2d3e4f
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>🎉<span class="w"> </span>Deployment<span class="w"> </span>complete!
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>App:<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>v0.12.0-dev
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Pattern:<span class="w"> </span>single-vm<span class="w"> </span>v1.0.0
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>ℹ<span class="w"> </span>🌐<span class="w"> </span>Access<span class="w"> </span>your<span class="w"> </span>application:
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span>•<span class="w"> </span>Launch<span class="w"> </span><span class="k">in</span><span class="w"> </span>browser:<span class="w"> </span>tfgrid-compose<span class="w"> </span>launch<span class="w"> </span>tfgrid-ai-stack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>✅<span class="w"> </span>Generated<span class="w"> </span>deployment<span class="w"> </span>ID:<span class="w"> </span>mj4y7bu4a1c2d3e4f
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>🎉<span class="w"> </span>Deployment<span class="w"> </span>complete!
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>App:<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>v0.12.0-dev
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Pattern:<span class="w"> </span>single-vm<span class="w"> </span>v1.0.0
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>ℹ<span class="w"> </span>🌐<span class="w"> </span>Access<span class="w"> </span>your<span class="w"> </span>application:
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span>•<span class="w"> </span>Launch<span class="w"> </span><span class="k">in</span><span class="w"> </span>browser:<span class="w"> </span>tfgrid-compose<span class="w"> </span>launch<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
 <h4 id="2-docker-style-inspection">2. Docker-Style Inspection<a class="headerlink" href="#2-docker-style-inspection" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>t<span class="w"> </span>ps
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>ℹ<span class="w"> </span>TFGrid<span class="w"> </span>Compose<span class="w"> </span>v0.14.0<span class="w"> </span>-<span class="w"> </span>Docker-style<span class="w"> </span>Deployment<span class="w"> </span>List
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Deployments<span class="w"> </span><span class="o">(</span>Docker-style<span class="o">)</span>:
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>CONTAINER<span class="w"> </span>ID<span class="w">    </span>APP<span class="w"> </span>NAME<span class="w">           </span>STATUS<span class="w">          </span>IP<span class="w"> </span>ADDRESS
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>────────────────────────────────────────────────────────────────
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>mj4y7bu4a1c2d3e4f<span class="w">  </span>tfgrid-ai-stack<span class="w">    </span>active<span class="w">          </span><span class="m">10</span>.1.3.2
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>$<span class="w"> </span>t<span class="w"> </span>list
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span>←<span class="w"> </span>Using<span class="w"> </span>smart<span class="w"> </span>context<span class="w"> </span><span class="o">(</span>only<span class="w"> </span>app<span class="w"> </span>deployed<span class="o">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>t<span class="w"> </span>ps
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>ℹ<span class="w"> </span>TFGrid<span class="w"> </span>Compose<span class="w"> </span>v0.14.0<span class="w"> </span>-<span class="w"> </span>Docker-style<span class="w"> </span>Deployment<span class="w"> </span>List
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Deployments<span class="w"> </span><span class="o">(</span>Docker-style<span class="o">)</span>:
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>CONTAINER<span class="w"> </span>ID<span class="w">    </span>APP<span class="w"> </span>NAME<span class="w">           </span>STATUS<span class="w">          </span>IP<span class="w"> </span>ADDRESS
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>────────────────────────────────────────────────────────────────
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>mj4y7bu4a1c2d3e4f<span class="w">  </span>tfgrid-ai-stack<span class="w">    </span>active<span class="w">          </span><span class="m">10</span>.1.3.2
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>$<span class="w"> </span>t<span class="w"> </span>list
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span>←<span class="w"> </span>Using<span class="w"> </span>smart<span class="w"> </span>context<span class="w"> </span><span class="o">(</span>only<span class="w"> </span>app<span class="w"> </span>deployed<span class="o">)</span>
 </code></pre></div>
 <h4 id="3-app-selection">3. App Selection<a class="headerlink" href="#3-app-selection" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>t<span class="w"> </span><span class="k">select</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>📱<span class="w"> </span>Select<span class="w"> </span>an<span class="w"> </span>app:
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>mj4y7bu4a1c2d3e4f<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span><span class="o">[</span>active<span class="o">]</span><span class="w"> </span>←<span class="w"> </span><span class="o">(</span>currently<span class="w"> </span>selected<span class="o">)</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Enter<span class="w"> </span>number<span class="w"> </span><span class="o">[</span><span class="m">1</span>-1<span class="o">]</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span>to<span class="w"> </span>quit:<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>✅<span class="w"> </span>Selected<span class="w"> </span>tfgrid-ai-stack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>t<span class="w"> </span><span class="k">select</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>📱<span class="w"> </span>Select<span class="w"> </span>an<span class="w"> </span>app:
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>mj4y7bu4a1c2d3e4f<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span><span class="o">[</span>active<span class="o">]</span><span class="w"> </span>←<span class="w"> </span><span class="o">(</span>currently<span class="w"> </span>selected<span class="o">)</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>Enter<span class="w"> </span>number<span class="w"> </span><span class="o">[</span><span class="m">1</span>-1<span class="o">]</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span>to<span class="w"> </span>quit:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>✅<span class="w"> </span>Selected<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
 <h4 id="4-grid-authoritative-architecture">4. Grid-Authoritative Architecture<a class="headerlink" href="#4-grid-authoritative-architecture" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Contract validation ensures logical consistency</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>$<span class="w"> </span>t<span class="w"> </span>contracts<span class="w"> </span>list
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>ℹ<span class="w"> </span>Fetching<span class="w"> </span>contracts<span class="w"> </span>via<span class="w"> </span>tfcmd...
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="o">[</span>Sentry<span class="o">]</span><span class="w"> </span><span class="m">2025</span>/11/03<span class="w"> </span><span class="m">00</span>:26:49<span class="w"> </span>Using<span class="w"> </span>release<span class="w"> </span>from<span class="w"> </span>debug<span class="w"> </span>info:<span class="w"> </span>171e8b2b4ddbdfcb2623c09311d317990a7e4de6
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="m">12</span>:26AM<span class="w"> </span>INF<span class="w"> </span>starting<span class="w"> </span>peer<span class="w"> </span><span class="nv">session</span><span class="o">=</span>tf-90662<span class="w"> </span><span class="nv">twin</span><span class="o">=</span><span class="m">6905</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>Node<span class="w"> </span>contracts:
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>ID<span class="w">        </span>Node<span class="w"> </span>ID<span class="w">    </span>Type<span class="w">    </span>Name<span class="w">                    </span>Project<span class="w"> </span>Name
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="m">1629826</span><span class="w">   </span><span class="m">8</span><span class="w">          </span>VM<span class="w">      </span>tfgrid-ai-stack-mj4y7b<span class="w">  </span>mj4y7bu4a1c2d3e4f
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="m">1629827</span><span class="w">   </span><span class="m">8</span><span class="w">          </span>VM<span class="w">      </span>tfgrid-ai-stack-a94dc2<span class="w">  </span>a94dc2809ed701b8
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>Name<span class="w"> </span>contracts:
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>ID<span class="w">    </span>Name
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Contract validation ensures logical consistency</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>$<span class="w"> </span>t<span class="w"> </span>contracts<span class="w"> </span>list
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>ℹ<span class="w"> </span>Fetching<span class="w"> </span>contracts<span class="w"> </span>via<span class="w"> </span>tfcmd...
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="o">[</span>Sentry<span class="o">]</span><span class="w"> </span><span class="m">2025</span>/11/03<span class="w"> </span><span class="m">00</span>:26:49<span class="w"> </span>Using<span class="w"> </span>release<span class="w"> </span>from<span class="w"> </span>debug<span class="w"> </span>info:<span class="w"> </span>171e8b2b4ddbdfcb2623c09311d317990a7e4de6
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="m">12</span>:26AM<span class="w"> </span>INF<span class="w"> </span>starting<span class="w"> </span>peer<span class="w"> </span><span class="nv">session</span><span class="o">=</span>tf-90662<span class="w"> </span><span class="nv">twin</span><span class="o">=</span><span class="m">6905</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>Node<span class="w"> </span>contracts:
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>ID<span class="w">        </span>Node<span class="w"> </span>ID<span class="w">    </span>Type<span class="w">    </span>Name<span class="w">                    </span>Project<span class="w"> </span>Name
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="m">1629826</span><span class="w">   </span><span class="m">8</span><span class="w">          </span>VM<span class="w">      </span>tfgrid-ai-stack-mj4y7b<span class="w">  </span>mj4y7bu4a1c2d3e4f
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="m">1629827</span><span class="w">   </span><span class="m">8</span><span class="w">          </span>VM<span class="w">      </span>tfgrid-ai-stack-a94dc2<span class="w">  </span>a94dc2809ed701b8
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>Name<span class="w"> </span>contracts:
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>ID<span class="w">    </span>Name
 </code></pre></div>
 <h4 id="5-partial-id-resolution">5. Partial ID Resolution<a class="headerlink" href="#5-partial-id-resolution" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Unique partial matches work automatically</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$<span class="w"> </span>t<span class="w"> </span>login<span class="w"> </span>mj4
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>✅<span class="w"> </span>Logged<span class="w"> </span><span class="k">in</span><span class="w"> </span>to<span class="w"> </span>mj4y7bu4a1c2d3e4f<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># Ambiguous matches show selection menu</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>$<span class="w"> </span>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>📱<span class="w"> </span>Select<span class="w"> </span>deployment:
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>mj4y7bu4a1c2d3e4f<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>2h<span class="w"> </span>ago
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>a94dc2809ed701b8<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>1h<span class="w"> </span>ago
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>Enter<span class="w"> </span>number<span class="w"> </span><span class="o">[</span><span class="m">1</span>-2<span class="o">]</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span>to<span class="w"> </span>quit:<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>✅<span class="w"> </span>Selected<span class="w"> </span>mj4y7bu4a1c2d3e4f<span class="w"> </span>tfgrid-ai-stack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Unique partial matches work automatically</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>$<span class="w"> </span>t<span class="w"> </span>login<span class="w"> </span>mj4
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>✅<span class="w"> </span>Logged<span class="w"> </span><span class="k">in</span><span class="w"> </span>to<span class="w"> </span>mj4y7bu4a1c2d3e4f<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># Ambiguous matches show selection menu</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>$<span class="w"> </span>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>📱<span class="w"> </span>Select<span class="w"> </span>deployment:
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">  </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>mj4y7bu4a1c2d3e4f<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>2h<span class="w"> </span>ago
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">  </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>a94dc2809ed701b8<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>1h<span class="w"> </span>ago
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>Enter<span class="w"> </span>number<span class="w"> </span><span class="o">[</span><span class="m">1</span>-2<span class="o">]</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="w"> </span>to<span class="w"> </span>quit:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>✅<span class="w"> </span>Selected<span class="w"> </span>mj4y7bu4a1c2d3e4f<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
 <h2 id="dual-identification-system-contract-id-container-id">🎯 Dual Identification System (Contract ID + Container ID)<a class="headerlink" href="#dual-identification-system-contract-id-container-id" title="Permanent link">&para;</a></h2>
 <p>TFGrid Compose uses a <strong>dual identification system</strong> where each deployment gets two types of identifiers for different purposes.</p>
@@ -4052,32 +4098,32 @@
 </table>
 <h3 id="how-it-works_1">How It Works<a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h3>
 <h4 id="registry-storage">Registry Storage<a class="headerlink" href="#registry-storage" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Each deployment stores both IDs:</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">deployments</span><span class="p">:</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="nt">u4lavu3x</span><span class="p">:</span><span class="w">                           </span><span class="c1"># Container ID (16-char hex)</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nt">app_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tfgrid-ai-stack</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nt">contract_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1631275&quot;</span><span class="w">            </span><span class="c1"># Grid contract ID (authoritative)</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="nt">vm_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.1.3.2</span>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="nt">created_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-11-03T04:19:19Z&quot;</span>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Each deployment stores both IDs:</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nt">deployments</span><span class="p">:</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="nt">u4lavu3x</span><span class="p">:</span><span class="w">                           </span><span class="c1"># Container ID (16-char hex)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nt">app_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tfgrid-ai-stack</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nt">contract_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1631275&quot;</span><span class="w">            </span><span class="c1"># Grid contract ID (authoritative)</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="nt">vm_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.1.3.2</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="nt">created_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-11-03T04:19:19Z&quot;</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active</span>
 </code></pre></div>
 <h4 id="user-operations">User Operations<a class="headerlink" href="#user-operations" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Container ID (familiar Docker-style)</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>t<span class="w"> </span>login<span class="w"> </span>u4<span class="w">                           </span><span class="c1"># Resolves to: u4lavu3x</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>t<span class="w"> </span>inspect<span class="w"> </span>u4lavu3x<span class="w">                   </span><span class="c1"># Direct container ID access</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># Contract ID (grid-authoritative)  </span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>t<span class="w"> </span>inspect<span class="w"> </span><span class="m">1631275</span><span class="w">                    </span><span class="c1"># Direct contract ID access</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>t<span class="w"> </span>list<span class="w">                               </span><span class="c1"># Validates contract exists on grid</span>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c1"># Smart resolution</span>
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-stack<span class="w">             </span><span class="c1"># Shows menu with BOTH IDs</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Container ID (familiar Docker-style)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>t<span class="w"> </span>login<span class="w"> </span>u4<span class="w">                           </span><span class="c1"># Resolves to: u4lavu3x</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>t<span class="w"> </span>inspect<span class="w"> </span>u4lavu3x<span class="w">                   </span><span class="c1"># Direct container ID access</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1"># Contract ID (grid-authoritative)  </span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>t<span class="w"> </span>inspect<span class="w"> </span><span class="m">1631275</span><span class="w">                    </span><span class="c1"># Direct contract ID access</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>t<span class="w"> </span>list<span class="w">                               </span><span class="c1"># Validates contract exists on grid</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="c1"># Smart resolution</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-stack<span class="w">             </span><span class="c1"># Shows menu with BOTH IDs</span>
 </code></pre></div>
 <h4 id="enhanced-display">Enhanced Display<a class="headerlink" href="#enhanced-display" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>CONTAINER<span class="w"> </span>ID<span class="w">    </span>APP<span class="w"> </span>NAME<span class="w">         </span>CONTRACT<span class="w">    </span>STATUS<span class="w">    </span>IP<span class="w"> </span>ADDRESS<span class="w">    </span>AGE
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>─────────────────────────────────────────────────────────────────────────
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>u4lavu3x<span class="w">        </span>tfgrid-ai-stack<span class="w">   </span><span class="m">1631274</span><span class="w">    </span>active<span class="w">    </span><span class="m">10</span>.1.3.2<span class="w">     </span>10h<span class="w"> </span>ago
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>934ab460dd5663f2<span class="w"> </span>tfgrid-ai-stack<span class="w">   </span><span class="m">1631275</span><span class="w">    </span>active<span class="w">    </span><span class="m">10</span>.1.3.2<span class="w">     </span>10h<span class="w"> </span>ago
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>CONTAINER<span class="w"> </span>ID<span class="w">    </span>APP<span class="w"> </span>NAME<span class="w">         </span>CONTRACT<span class="w">    </span>STATUS<span class="w">    </span>IP<span class="w"> </span>ADDRESS<span class="w">    </span>AGE
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>─────────────────────────────────────────────────────────────────────────
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>u4lavu3x<span class="w">        </span>tfgrid-ai-stack<span class="w">   </span><span class="m">1631274</span><span class="w">    </span>active<span class="w">    </span><span class="m">10</span>.1.3.2<span class="w">     </span>10h<span class="w"> </span>ago
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>934ab460dd5663f2<span class="w"> </span>tfgrid-ai-stack<span class="w">   </span><span class="m">1631275</span><span class="w">    </span>active<span class="w">    </span><span class="m">10</span>.1.3.2<span class="w">     </span>10h<span class="w"> </span>ago
 </code></pre></div>
 <h3 id="benefits_1">Benefits<a class="headerlink" href="#benefits_1" title="Permanent link">&para;</a></h3>
 <h4 id="best-of-both-worlds">✅ Best of Both Worlds<a class="headerlink" href="#best-of-both-worlds" title="Permanent link">&para;</a></h4>
@@ -4098,21 +4144,21 @@
 <li>"Ghost deployments" automatically filtered out</li>
 </ul>
 <h3 id="cross-validation-example">Cross-Validation Example<a class="headerlink" href="#cross-validation-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Check grid contracts (reality)</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>$<span class="w"> </span>t<span class="w"> </span>contracts<span class="w"> </span>list
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Node<span class="w"> </span>contracts:
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>ID<span class="w">        </span>Node<span class="w"> </span>ID<span class="w">    </span>Type<span class="w">    </span>Name<span class="w">                    </span>Project<span class="w"> </span>Name
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="m">1631275</span><span class="w">   </span><span class="m">8</span><span class="w">          </span>VM<span class="w">      </span>tfgrid-ai-stack<span class="w">         </span>u4lavu3x
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># Show all registry entries (history + debugging)  </span>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>$<span class="w"> </span>t<span class="w"> </span>ps
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>CONTAINER<span class="w"> </span>ID<span class="w">    </span>APP<span class="w"> </span>NAME<span class="w">         </span>CONTRACT<span class="w">    </span>STATUS<span class="w">    </span>IP<span class="w"> </span>ADDRESS<span class="w">    </span>AGE
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>─────────────────────────────────────────────────────────────────────────
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>u4lavu3x<span class="w">        </span>tfgrid-ai-stack<span class="w">   </span><span class="m">1631275</span><span class="w">    </span>active<span class="w">    </span><span class="m">10</span>.1.3.2<span class="w">     </span>10h<span class="w"> </span>ago
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c1"># Show only grid-valid deployments (authoritative)</span>
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>$<span class="w"> </span>t<span class="w"> </span>list
-<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span>←<span class="w"> </span>Validated<span class="w"> </span>against<span class="w"> </span>grid<span class="w"> </span>contract<span class="w"> </span><span class="m">1631275</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Check grid contracts (reality)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>$<span class="w"> </span>t<span class="w"> </span>contracts<span class="w"> </span>list
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Node<span class="w"> </span>contracts:
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>ID<span class="w">        </span>Node<span class="w"> </span>ID<span class="w">    </span>Type<span class="w">    </span>Name<span class="w">                    </span>Project<span class="w"> </span>Name
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="m">1631275</span><span class="w">   </span><span class="m">8</span><span class="w">          </span>VM<span class="w">      </span>tfgrid-ai-stack<span class="w">         </span>u4lavu3x
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="c1"># Show all registry entries (history + debugging)  </span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>$<span class="w"> </span>t<span class="w"> </span>ps
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>CONTAINER<span class="w"> </span>ID<span class="w">    </span>APP<span class="w"> </span>NAME<span class="w">         </span>CONTRACT<span class="w">    </span>STATUS<span class="w">    </span>IP<span class="w"> </span>ADDRESS<span class="w">    </span>AGE
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>─────────────────────────────────────────────────────────────────────────
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>u4lavu3x<span class="w">        </span>tfgrid-ai-stack<span class="w">   </span><span class="m">1631275</span><span class="w">    </span>active<span class="w">    </span><span class="m">10</span>.1.3.2<span class="w">     </span>10h<span class="w"> </span>ago
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="c1"># Show only grid-valid deployments (authoritative)</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>$<span class="w"> </span>t<span class="w"> </span>list
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>tfgrid-ai-stack<span class="w"> </span><span class="o">(</span><span class="m">10</span>.1.3.2<span class="o">)</span><span class="w"> </span>←<span class="w"> </span>Validated<span class="w"> </span>against<span class="w"> </span>grid<span class="w"> </span>contract<span class="w"> </span><span class="m">1631275</span>
 </code></pre></div>
 <h3 id="migration-notes">Migration Notes<a class="headerlink" href="#migration-notes" title="Permanent link">&para;</a></h3>
 <h4 id="for-new-users">For New Users<a class="headerlink" href="#for-new-users" title="Permanent link">&para;</a></h4>
@@ -4129,29 +4175,29 @@
 </ul>
 <h4 id="problem-solved">Problem Solved<a class="headerlink" href="#problem-solved" title="Permanent link">&para;</a></h4>
 <p><strong>Before</strong>: Dual-source truth problem where <code>t list</code> showed deployments that didn't exist on the grid
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>t<span class="w"> </span>ps<span class="w">     </span>→<span class="w"> </span>Shows<span class="w"> </span><span class="m">4</span><span class="w"> </span>deployments<span class="w"> </span><span class="o">(</span>registry<span class="o">)</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>t<span class="w"> </span>contracts<span class="w"> </span>→<span class="w"> </span>Shows<span class="w"> </span><span class="m">0</span><span class="w"> </span>contracts<span class="w"> </span><span class="o">(</span>grid<span class="w"> </span>reality<span class="o">)</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>❌<span class="w"> </span>LOGICAL<span class="w"> </span>INCONSISTENCY
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>t<span class="w"> </span>ps<span class="w">     </span>→<span class="w"> </span>Shows<span class="w"> </span><span class="m">4</span><span class="w"> </span>deployments<span class="w"> </span><span class="o">(</span>registry<span class="o">)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>t<span class="w"> </span>contracts<span class="w"> </span>→<span class="w"> </span>Shows<span class="w"> </span><span class="m">0</span><span class="w"> </span>contracts<span class="w"> </span><span class="o">(</span>grid<span class="w"> </span>reality<span class="o">)</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>❌<span class="w"> </span>LOGICAL<span class="w"> </span>INCONSISTENCY
 </code></pre></div></p>
 <p><strong>After</strong>: Grid-authoritative approach with contract validation
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>t<span class="w"> </span>list<span class="w">     </span>→<span class="w"> </span>Shows<span class="w"> </span><span class="m">0</span><span class="w"> </span>deployments<span class="w"> </span><span class="o">(</span>matches<span class="w"> </span>grid<span class="o">)</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>t<span class="w"> </span>contracts<span class="w"> </span>→<span class="w"> </span>Shows<span class="w"> </span><span class="m">0</span><span class="w"> </span>contracts<span class="w"> </span><span class="o">(</span>authoritative<span class="o">)</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>✅<span class="w"> </span>LOGICAL<span class="w"> </span>CONSISTENCY
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>t<span class="w"> </span>list<span class="w">     </span>→<span class="w"> </span>Shows<span class="w"> </span><span class="m">0</span><span class="w"> </span>deployments<span class="w"> </span><span class="o">(</span>matches<span class="w"> </span>grid<span class="o">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>t<span class="w"> </span>contracts<span class="w"> </span>→<span class="w"> </span>Shows<span class="w"> </span><span class="m">0</span><span class="w"> </span>contracts<span class="w"> </span><span class="o">(</span>authoritative<span class="o">)</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>✅<span class="w"> </span>LOGICAL<span class="w"> </span>CONSISTENCY
 </code></pre></div></p>
 <h2 id="installation-dependencies">🛠️ Installation &amp; Dependencies<a class="headerlink" href="#installation-dependencies" title="Permanent link">&para;</a></h2>
 <h3 id="auto-installation">Auto-Installation<a class="headerlink" href="#auto-installation" title="Permanent link">&para;</a></h3>
 <p>The installation script automatically checks for dependencies:</p>
 <h4 id="1-tfcmd-dependency">1. tfcmd Dependency<a class="headerlink" href="#1-tfcmd-dependency" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># make install will check for tfcmd and offer auto-install</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">cd</span><span class="w"> </span>tfgrid-studio/tfgrid-compose
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>make<span class="w"> </span>install
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1"># Installation process:</span>
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>🔍<span class="w"> </span>Checking<span class="w"> </span>tfcmd<span class="w"> </span>dependency...
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>⚠️<span class="w">  </span>tfcmd<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>Required<span class="w"> </span><span class="k">for</span><span class="w"> </span>ThreeFold<span class="w"> </span>Grid<span class="w"> </span>operations
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>Install<span class="w"> </span>tfcmd<span class="w"> </span>now?<span class="w"> </span><span class="o">(</span>y/N<span class="o">)</span>:<span class="w"> </span>y
-<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>🚀<span class="w"> </span>Installing<span class="w"> </span>tfcmd...
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>✅<span class="w"> </span>tfcmd<span class="w"> </span>installed<span class="w"> </span>successfully
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># make install will check for tfcmd and offer auto-install</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">cd</span><span class="w"> </span>tfgrid-studio/tfgrid-compose
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>make<span class="w"> </span>install
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="c1"># Installation process:</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>🔍<span class="w"> </span>Checking<span class="w"> </span>tfcmd<span class="w"> </span>dependency...
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>⚠️<span class="w">  </span>tfcmd<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>Required<span class="w"> </span><span class="k">for</span><span class="w"> </span>ThreeFold<span class="w"> </span>Grid<span class="w"> </span>operations
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>Install<span class="w"> </span>tfcmd<span class="w"> </span>now?<span class="w"> </span><span class="o">(</span>y/N<span class="o">)</span>:<span class="w"> </span>y
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>🚀<span class="w"> </span>Installing<span class="w"> </span>tfcmd...
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>✅<span class="w"> </span>tfcmd<span class="w"> </span>installed<span class="w"> </span>successfully
 </code></pre></div>
 <h4 id="whats-included">What's Included<a class="headerlink" href="#whats-included" title="Permanent link">&para;</a></h4>
 <ul>
@@ -4161,14 +4207,14 @@
 <li><strong>Grid operations</strong>: Contract management, status validation, deployment linkage</li>
 </ul>
 <h4 id="2-contract-id-linkage">2. Contract ID Linkage<a class="headerlink" href="#2-contract-id-linkage" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Registry stores bidirectional mapping</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nt">deployments</span><span class="p">:</span>
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="nt">abc123</span><span class="p">:</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nt">app_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tfgrid-ai-stack</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="nt">vm_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.1.3.2</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span><span class="nt">contract_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1629826&quot;</span><span class="w">  </span><span class="c1"># Links to grid contract</span>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">    </span><span class="nt">created_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-11-03T12:37:27Z&quot;</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;active&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Registry stores bidirectional mapping</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nt">deployments</span><span class="p">:</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span><span class="nt">abc123</span><span class="p">:</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nt">app_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tfgrid-ai-stack</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="nt">vm_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.1.3.2</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="nt">contract_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1629826&quot;</span><span class="w">  </span><span class="c1"># Links to grid contract</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">    </span><span class="nt">created_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-11-03T12:37:27Z&quot;</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;active&quot;</span>
 </code></pre></div>
 <h4 id="3-auto-cleanup-system">3. Auto-Cleanup System<a class="headerlink" href="#3-auto-cleanup-system" title="Permanent link">&para;</a></h4>
 <ul>
@@ -4178,17 +4224,17 @@
 <li><strong>Grid precedence</strong>: Grid reality always takes priority</li>
 </ul>
 <h4 id="4-enhanced-docker-style-display">4. Enhanced Docker-Style Display<a class="headerlink" href="#4-enhanced-docker-style-display" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span>t<span class="w"> </span>ps
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>CONTAINER<span class="w"> </span>ID<span class="w">    </span>APP<span class="w"> </span>NAME<span class="w">           </span>STATUS<span class="w">    </span>IP<span class="w"> </span>ADDRESS<span class="w">    </span>CONTRACT<span class="w">    </span>AGE
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>────────────────────────────────────────────────────────────────────────────
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>abc123def456<span class="w">   </span>tfgrid-ai-stack<span class="w">     </span>active<span class="w">    </span><span class="m">10</span>.1.3.2<span class="w">     </span><span class="m">1629826</span><span class="w">     </span>2h<span class="w"> </span>ago
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>$<span class="w"> </span>t<span class="w"> </span>ps
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>CONTAINER<span class="w"> </span>ID<span class="w">    </span>APP<span class="w"> </span>NAME<span class="w">           </span>STATUS<span class="w">    </span>IP<span class="w"> </span>ADDRESS<span class="w">    </span>CONTRACT<span class="w">    </span>AGE
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>────────────────────────────────────────────────────────────────────────────
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>abc123def456<span class="w">   </span>tfgrid-ai-stack<span class="w">     </span>active<span class="w">    </span><span class="m">10</span>.1.3.2<span class="w">     </span><span class="m">1629826</span><span class="w">     </span>2h<span class="w"> </span>ago
 </code></pre></div>
 <h4 id="5-smart-contract-management">5. Smart Contract Management<a class="headerlink" href="#5-smart-contract-management" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Bi-directional operations</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>t<span class="w"> </span>down<span class="w"> </span>abc123<span class="w">  </span><span class="c1"># Finds contract 1629826 → Cancels it → Removes registry entry</span>
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># Cross-validation</span>
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>t<span class="w"> </span>list<span class="w">         </span><span class="c1"># Only shows deployments that exist in both registry AND grid</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># Bi-directional operations</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>t<span class="w"> </span>down<span class="w"> </span>abc123<span class="w">  </span><span class="c1"># Finds contract 1629826 → Cancels it → Removes registry entry</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="c1"># Cross-validation</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>t<span class="w"> </span>list<span class="w">         </span><span class="c1"># Only shows deployments that exist in both registry AND grid</span>
 </code></pre></div>
 <h3 id="migration-guide">Migration Guide<a class="headerlink" href="#migration-guide" title="Permanent link">&para;</a></h3>
 <h4 id="for-existing-users_1">For Existing Users<a class="headerlink" href="#for-existing-users_1" title="Permanent link">&para;</a></h4>

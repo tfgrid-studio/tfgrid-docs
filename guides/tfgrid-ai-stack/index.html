@@ -1078,6 +1078,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="AI-Powered Publishing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publish-url-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish URL Scheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3064,6 +3081,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="AI-Powered Publishing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publish-url-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish URL Scheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3781,6 +3815,27 @@
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>tfgrid-compose<span class="w"> </span>publish<span class="w">                       </span><span class="c1"># AI agent publishes to web hosting</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Now accessible at: http://your-ip/web/tfgrid-ai-agent/chemistry-website</span>
 </code></pre></div></p>
+<h5 id="publish-url-scheme">Publish URL Scheme<a class="headerlink" href="#publish-url-scheme" title="Permanent link">&para;</a></h5>
+<p>When you publish a project from the AI Stack, it is always exposed using a
+simple <strong>organization / repository</strong> layout:</p>
+<ul>
+<li><strong>Git:</strong> <code>http://&lt;ip-or-mycelium&gt;/git/&lt;org&gt;/&lt;project&gt;</code></li>
+<li><strong>Web:</strong> <code>http://&lt;ip-or-mycelium&gt;/web/&lt;org&gt;/&lt;project&gt;</code></li>
+</ul>
+<p>Where:</p>
+<ul>
+<li><code>&lt;ip-or-mycelium&gt;</code> can be a WireGuard IPv4 address (for example
+  <code>10.1.3.2</code>) or a Mycelium IPv6 address.</li>
+<li><code>&lt;org&gt;</code> is typically <code>tfgrid-ai-agent</code> by default, or another
+  organization/user if you configure Gitea differently.</li>
+<li><code>&lt;project&gt;</code> is the project name you passed to <code>create</code> / <code>publish</code>
+  (for example <code>mathweb</code>).</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>http://10.1.3.2/git/tfgrid-ai-agent/mathweb</code></li>
+<li><code>http://10.1.3.2/web/tfgrid-ai-agent/mathweb</code></li>
+</ul>
 <h4 id="backup-management">Backup Management<a class="headerlink" href="#backup-management" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Manual backup of all projects</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>tfgrid-compose<span class="w"> </span>backup

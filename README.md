@@ -46,6 +46,7 @@ This repository contains complete documentation for the TFGrid Studio platform.
 ### Architecture
 
 - **[System Architecture](architecture/overview.md)** - How it works _(coming soon)_
+- **[Platform Map](architecture/platform-map.md)** - High-level view of repos & products
 - **[Design Decisions](architecture/design-decisions.md)** - Why we built this way _(coming soon)_
 - **[Source Repositories](architecture/source-repos.md)** - ✅ Acknowledgment & credits
 - **[Comparison](architecture/comparison.md)** - vs alternatives _(coming soon)_

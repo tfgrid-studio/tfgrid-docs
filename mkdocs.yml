@@ -148,6 +148,7 @@ nav:
     - Architecture:
       - System Overview: architecture/overview.md
       - Source Repositories: architecture/source-repos.md
+      - Platform Map: architecture/platform-map.md
     - Troubleshooting:
       - Complete Guide: troubleshooting/guide.md
   

@@ -131,20 +131,17 @@ This repository contains complete documentation for the TFGrid Studio platform.
 
 ## 🌐 Live Documentation Site
 
-**Coming Soon:** GitHub Pages site with MkDocs Material
+The documentation is hosted at **https://docs.tfgrid.studio** using **MkDocs Material**.
 
-The documentation will be available at:
-
-- `https://tfgrid.studio/tfgrid-docs/` (planned)
 - Beautiful, searchable, mobile-friendly interface
 - Dark mode support
-- Version switching
+- Version switching (planned)
 
 ---
 
-## �️ Building Locally
+## 🛠️ Building Locally
 
-_(Coming soon - after MkDocs setup)_
+Use MkDocs Material to build and preview the site locally:
 
 ```bash
 # Install MkDocs Material

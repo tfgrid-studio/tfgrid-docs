@@ -228,6 +228,28 @@ tfgrid-compose publish                       # AI agent publishes to web hosting
 # Now accessible at: http://your-ip/web/tfgrid-ai-agent/chemistry-website
 ```
 
+##### Publish URL Scheme
+
+When you publish a project from the AI Stack, it is always exposed using a
+simple **organization / repository** layout:
+
+- **Git:** `http://<ip-or-mycelium>/git/<org>/<project>`
+- **Web:** `http://<ip-or-mycelium>/web/<org>/<project>`
+
+Where:
+
+- `<ip-or-mycelium>` can be a WireGuard IPv4 address (for example
+  `10.1.3.2`) or a Mycelium IPv6 address.
+- `<org>` is typically `tfgrid-ai-agent` by default, or another
+  organization/user if you configure Gitea differently.
+- `<project>` is the project name you passed to `create` / `publish`
+  (for example `mathweb`).
+
+Examples:
+
+- `http://10.1.3.2/git/tfgrid-ai-agent/mathweb`
+- `http://10.1.3.2/web/tfgrid-ai-agent/mathweb`
+
 #### Backup Management
 ```bash
 # Manual backup of all projects

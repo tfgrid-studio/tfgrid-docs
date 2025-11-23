@@ -49,6 +49,8 @@ tfgrid-compose monitor web-application
 tfgrid-compose projects
 ```
 
+> **Important:** Always run `tfgrid-compose login` (or `t login` if you use the alias) **after each deployment or redeploy of tfgrid-ai-stack and before any `create`, `run`, or `publish` command**. Qwen must be authenticated for the AI agent to work.
+
 **Access URLs:**
 - Gitea Git Interface: `http://your-ip/git/`
 - AI Projects: `http://your-ip/git/tfgrid-ai-agent/project-name/`
@@ -227,6 +229,50 @@ tfgrid-compose run                           # AI develops website
 tfgrid-compose publish                       # AI agent publishes to web hosting
 # Now accessible at: http://your-ip/web/tfgrid-ai-agent/chemistry-website
 ```
+
+##### Non-interactive Automation (CLI)
+
+You can fully automate project creation, running, and publishing from the CLI
+without interactive prompts. This is useful for scripts, demos, or repeated
+workflows.
+
+**Requirements:**
+
+- Stack deployed and healthy (`tfgrid-compose up tfgrid-ai-stack ...`)
+- Qwen authenticated: `tfgrid-compose login` (must be re-run after redeploys)
+
+**Example: one-shot create → run → publish**
+
+```bash
+tfgrid-compose create \
+  --project mathweb \
+  --time 30m \
+  --prompt "create a math website about Fourier transforms" \
+  --git-name "Your Name" \
+  --git-email "you@example.com" \
+  --run yes \
+  --publish yes \
+  --non-interactive
+```
+
+This will, in order:
+
+- Create the `mathweb` project non-interactively (no prompts)
+- Start the AI agent loop for `mathweb` and wait until it finishes
+  (the same point where logs show `Stop signal received, exiting loop`)
+- After the loop completes and final commits are pushed to Gitea, run the
+  AI-powered publish flow for `mathweb`.
+
+**Notes:**
+
+- `--time` controls the time budget for the AI loop (e.g. `30m`, `1h`,
+  `2h30m`, `indefinite`).
+- Use `--prompt` for a custom project prompt, or `--template` with one of:
+  `website`, `porting`, `translation`, `editing`, `copywriting`, `other`.
+- `--git-name` and `--git-email` override the git identity for this project
+  only; if omitted, the global git config (or a safe default) is used.
+- In non-interactive mode, `--publish yes` requires `--run yes`, so the
+  publish step always runs **after** the agent has finished its loop.
 
 ##### Publish URL Scheme
 

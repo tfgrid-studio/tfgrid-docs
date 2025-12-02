@@ -315,7 +315,7 @@ Deployments (Docker-style):
 
 CONTAINER ID    APP NAME           STATUS    IP ADDRESS    CONTRACT  SOURCE    AGE
 ──────────────────────────────────────────────────────────────────────────────────
-1727260         vm                 active    N/A           1727260   outside   unknown
+1727260         ubunvm             active    N/A           1727260   outside   unknown
 ```
 
 #### 3. App Selection

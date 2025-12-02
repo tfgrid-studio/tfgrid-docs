@@ -1,8 +1,8 @@
 # TFGrid Compose - Complete User Guide
 
-**Version**: Git commit-based (cef6d4d)
+**Version**: Git commit-based (0a7195b)
 **Semantic Version**: v0.14.1
-**Last Updated**: 2025-11-13
+**Last Updated**: 2025-12-02
 **Status**: Production Ready with Git Commit Versioning & Grid-Authoritative Architecture
 
 TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, enhanced filtering capabilities, and **grid-authoritative deployment management**.
@@ -127,7 +127,9 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t shortcut <name>` | Create command alias | `t shortcut tf` |
 | `t search [query]` | Search apps in registry | `t search ai` |
 | `t list` | List deployed apps (Docker-style) | `t list` |
-| `t ps` | Docker-style deployment inspection | `t ps` |
+| `t ps` | Docker-style deployment inspection for tracked deployments | `t ps` |
+| `t ps --all` | Show all tracked deployments (including non-active) | `t ps --all` |
+| `t ps --outside` | Show grid contracts not tracked in local registry (SOURCE=outside) | `t ps --outside` |
 | `t select [app]` | Select active app | `t select tfgrid-ai-stack` |
 | `t commands` | Show app commands | `t commands` |
 | `t dashboard [start\|stop\|status\|logs]` | Local web dashboard for apps and deployments | `t dashboard` |
@@ -294,16 +296,26 @@ Pattern: single-vm v1.0.0
 #### 2. Docker-Style Inspection
 ```bash
 $ t ps
-ℹ TFGrid Compose v0.14.0 - Docker-style Deployment List
+ℹ TFGrid Compose v0a7195b - Docker-Style Deployment Listing
 
 Deployments (Docker-style):
 
-CONTAINER ID    APP NAME           STATUS          IP ADDRESS
-────────────────────────────────────────────────────────────────
-mj4y7bu4a1c2d3e4f  tfgrid-ai-stack    active          10.1.3.2
+CONTAINER ID    APP NAME           STATUS    IP ADDRESS    CONTRACT  SOURCE    AGE
+──────────────────────────────────────────────────────────────────────────────────
+mj4y7bu4a1c2d3e4f tfgrid-ai-stack   active    10.1.3.2      1631275   registry  10h ago
 
 $ t list
-    tfgrid-ai-stack (10.1.3.2) ← Using smart context (only app deployed)
+tfgrid-ai-stack (10.1.3.2) ← Using smart context (only app deployed)
+
+# Show contracts that exist on the grid but are not tracked locally
+$ t ps --outside
+ℹ TFGrid Compose v0a7195b - Docker-Style Deployment Listing
+
+Deployments (Docker-style):
+
+CONTAINER ID    APP NAME           STATUS    IP ADDRESS    CONTRACT  SOURCE    AGE
+──────────────────────────────────────────────────────────────────────────────────
+1727260         vm                 active    N/A           1727260   outside   unknown
 ```
 
 #### 3. App Selection
@@ -427,9 +439,9 @@ ID        Node ID    Type    Name                    Project Name
 
 # Show all registry entries (history + debugging)  
 $ t ps
-CONTAINER ID    APP NAME         CONTRACT    STATUS    IP ADDRESS    AGE
-─────────────────────────────────────────────────────────────────────────
-u4lavu3x        tfgrid-ai-stack   1631275    active    10.1.3.2     10h ago
+CONTAINER ID    APP NAME         STATUS    IP ADDRESS    CONTRACT  SOURCE    AGE
+────────────────────────────────────────────────────────────────────────────────
+u4lavu3x        tfgrid-ai-stack  active    10.1.3.2      1631275   registry  10h ago
 
 # Show only grid-valid deployments (authoritative)
 $ t list
@@ -509,9 +521,9 @@ deployments:
 #### 4. Enhanced Docker-Style Display
 ```bash
 $ t ps
-CONTAINER ID    APP NAME           STATUS    IP ADDRESS    CONTRACT    AGE
-────────────────────────────────────────────────────────────────────────────
-abc123def456   tfgrid-ai-stack     active    10.1.3.2     1629826     2h ago
+CONTAINER ID    APP NAME           STATUS    IP ADDRESS    CONTRACT  SOURCE    AGE
+──────────────────────────────────────────────────────────────────────────────────
+abc123def456   tfgrid-ai-stack     active    10.1.3.2     1629826   registry  2h ago
 ```
 
 #### 5. Smart Contract Management

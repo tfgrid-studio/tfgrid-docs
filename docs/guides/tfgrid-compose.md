@@ -313,9 +313,9 @@ $ t ps --outside
 
 Deployments (Docker-style):
 
-CONTAINER ID    APP NAME           STATUS    IP ADDRESS    CONTRACT  SOURCE    AGE
-──────────────────────────────────────────────────────────────────────────────────
-1727260         ubunvm             active    N/A           1727260   outside   unknown
+CONTRACT ID     APP NAME           STATUS    SOURCE
+────────────────────────────────────────────────────
+1727260         ubunvm             active    outside
 ```
 
 #### 3. App Selection

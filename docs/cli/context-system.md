@@ -330,5 +330,5 @@ tfgrid-compose run project1
 ## See Also
 
 - [App-Specific Commands](app-commands.md) - Commands unique to each app
-- [AI Agent Guide](../guides/ai-agent.md) - Using the AI coding agent
+- [AI Agent Guide](../guides/tfgrid-ai-agent.md) - Using the AI coding agent
 - [CLI Reference](../cli/registry.md) - Full command reference

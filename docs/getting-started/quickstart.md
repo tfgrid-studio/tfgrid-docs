@@ -387,7 +387,7 @@ cat .tfgrid-compose.yaml
 tfgrid-compose up ../tfgrid-ai-agent
 ```
 
-See [Troubleshooting Guide](../guides/troubleshooting.md) for more solutions.
+See [Troubleshooting Guide](../troubleshooting/guide.md) for more solutions.
 
 ---
 
@@ -398,17 +398,17 @@ Now that you've deployed your first app:
 ### Learn More
 - **[Core Concepts](concepts.md)** - Understand patterns, apps, and manifests
 - **[Pattern Documentation](../patterns/overview.md)** - Learn about deployment patterns
-- **[CLI Reference](../reference/cli.md)** - Complete command reference
+- **[CLI Reference](../cli/app-commands.md)** - Complete command reference
 
 ### Deploy More Apps
-- **[AI Agent Guide](../guides/ai-agent.md)** - Complete AI agent workflows
-- **[Gitea Guide](../guides/gitea.md)** - Self-hosted Git service
+- **[AI Agent Guide](../guides/tfgrid-ai-agent.md)** - Complete AI agent workflows
+- **[Gitea Guide](../guides/tfgrid-gitea.md)** - Self-hosted Git service
 - **[App Registry](../guides/app-registry.md)** - Discover more applications
 
 ### Advanced Topics
-- **[Advanced Deployment](../guides/deployment.md)** - Production strategies
-- **[Networking Guide](../guides/networking.md)** - WireGuard and Mycelium
-- **[Security Best Practices](../guides/security.md)** - Secure your deployments
+- **[Custom Apps](../guides/custom-apps.md)** - Create your own apps
+- **[Tarball Releases](../guides/tarball-releases.md)** - Versioned deployments with rollback
+- **[Security Best Practices](../community/security.md)** - Secure your deployments
 
 ---
 

@@ -727,11 +727,11 @@ tfgrid-compose create "IoT dashboard"
 
 ## Related Documentation
 
-- [TFGrid Compose CLI Reference](../reference/cli.md)
-- [AI Agent Guide](../applications/tfgrid-ai-agent/)
-- [Gitea Integration Guide](gitea.md)
-- [Gateway Pattern Documentation](../patterns/gateway/)
-- [Security Best Practices](../guides/security.md)
+- [TFGrid Compose CLI Reference](../cli/app-commands.md)
+- [AI Agent Guide](tfgrid-ai-agent.md)
+- [Gitea Integration Guide](tfgrid-gitea.md)
+- [Gateway Pattern Documentation](../patterns/gateway.md)
+- [Custom Apps Guide](custom-apps.md)
 
 ## Support
 

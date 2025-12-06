@@ -401,7 +401,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 - ✅ Pattern reusability
 - ✅ Better documentation
 
-[Complete migration guide →](../guides/migration.md)
+[Custom Apps Guide →](../guides/custom-apps.md)
 
 ---
 
@@ -449,4 +449,4 @@ All source repositories are properly credited in:
 
 **Thank you to all contributors who made TFGrid Compose possible!** 🙏
 
-[View current status →](../roadmap/current.md) • [View planned features →](../roadmap/planned.md)
+[View current status →](../roadmap/now.md) • [View planned features →](../roadmap/next.md)

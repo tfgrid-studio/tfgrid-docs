@@ -3,8 +3,8 @@
 The TFGrid App Registry catalogs official and verified community applications that can be deployed using `tfgrid-compose`. Applications listed here are discoverable at [registry.tfgrid.studio](https://registry.tfgrid.studio) and can be deployed with a simple command:
 
 ```bash
-# Deploy official app (v0.13.4+)
-tfgrid-compose up tfgrid-ai-agent
+# Deploy official app from registry
+tfgrid-compose up tfgrid-ai-stack
 
 # Deploy community app
 tfgrid-compose up username/app-name
@@ -18,7 +18,7 @@ tfgrid-compose up https://gitlab.com/org/app
 ### For Users
 
 1. **Browse Apps**: Visit [registry.tfgrid.studio](https://registry.tfgrid.studio)
-2. **Deploy**: Run `tfgrid-compose up <app-name>` (v0.10.0+)
+2. **Deploy**: Run `tfgrid-compose up <app-name>`
 3. **Done**: App is automatically cloned and deployed
 
 **No configuration needed** - apps include their own `tfgrid-compose.yaml`.
@@ -56,6 +56,23 @@ Apps in the registry:
 
 Maintained by TFGrid Studio:
 
+### tfgrid-ai-stack
+
+Complete AI development environment with integrated coding agent, Git hosting, and web dashboard.
+
+```bash
+tfgrid-compose up tfgrid-ai-stack
+```
+
+**Details:**
+
+- **Pattern**: single-vm
+- **Versioning**: Git commit-based
+- **Status**: Production Ready
+- **Repo**: [tfgrid-studio/tfgrid-ai-stack](https://github.com/tfgrid-studio/tfgrid-ai-stack)
+- **Docs**: [AI Stack Guide](tfgrid-ai-stack.md)
+- **Requirements**: 4 CPU, 16GB RAM, 100GB disk
+
 ### tfgrid-ai-agent
 
 AI coding agent with Qwen integration and loop technique for safe AI development.
@@ -71,7 +88,7 @@ tfgrid-compose up tfgrid-ai-agent
 - **Current Version**: Uses latest Git commit (e.g., `0e91178`)
 - **Status**: Production Ready
 - **Repo**: [tfgrid-studio/tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent)
-- **Docs**: [AI Agent Guide](ai-agent.md)
+- **Docs**: [AI Agent Guide](tfgrid-ai-agent.md)
 - **Requirements**: 4 CPU, 8GB RAM, 100GB disk
 
 > **Git Commit Versioning**: Each deployment shows exact Git commit hash for precise code traceability
@@ -91,7 +108,7 @@ tfgrid-compose up tfgrid-gitea
 - **Current Version**: Uses latest Git commit (e.g., `4a7a91d`)
 - **Status**: Production Ready
 - **Repo**: [tfgrid-studio/tfgrid-gitea](https://github.com/tfgrid-studio/tfgrid-gitea)
-- **Docs**: [Gitea Guide](gitea.md)
+- **Docs**: [Gitea Guide](tfgrid-gitea.md)
 - **Requirements**: 2 CPU, 4GB RAM, 50GB disk
 
 > **Git Commit Versioning**: Each deployment shows exact Git commit hash for precise code traceability

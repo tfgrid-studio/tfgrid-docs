@@ -46,14 +46,14 @@ tfgrid-compose login
 ### 3. Deploy an App
 
 ```bash
-# Deploy official app (v0.10.0+)
+# Deploy official app from registry
+tfgrid-compose up tfgrid-ai-stack
+
+# Or deploy by name
 tfgrid-compose up tfgrid-ai-agent
 
-# Or use local path (current)
-tfgrid-compose up ../tfgrid-ai-agent
-
-# Or specify app path
-tfgrid-compose up ../tfgrid-ai-agent
+# Or use local path
+tfgrid-compose up ./my-app
 ```
 
 **That's it!** Your application is now running on ThreeFold Grid. 🎉
@@ -153,7 +153,7 @@ Built from ThreeFold open-source **proven, working code implementations**:
 
 - **Discussions:** [GitHub Discussions](https://github.com/orgs/tfgrid-studio/discussions)
 - **Issues:** Open issues in respective repositories
-- **Contributing:** See [contributing guide](contributing/overview.md)
+- **Contributing:** See [contributing guide](community/contributing.md)
 
 ---
 

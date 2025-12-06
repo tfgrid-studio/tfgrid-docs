@@ -142,11 +142,13 @@ nav:
       - Node Selection & Filtering: cli/node-selection.md
       - Context System: cli/context-system.md
       - Registry Commands: cli/registry.md
+      - App Manifest: cli/manifest.md
     - Deployment Patterns:
       - Overview: patterns/overview.md
       - Single-VM Pattern: patterns/single-vm.md
       - Gateway Pattern: patterns/gateway.md
       - K3s Pattern: patterns/k3s.md
+      - TFGrid AI Stack: patterns/tfgrid-ai-stack.md
     - Architecture:
       - System Overview: architecture/overview.md
       - Source Repositories: architecture/source-repos.md

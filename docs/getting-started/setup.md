@@ -362,8 +362,8 @@ Now that you're set up:
 
 ### Learn More
 - **[Quick Start](quickstart.md)** - 5-minute deployment guide
-- **[AI Agent Guide](../guides/ai-agent.md)** - Complete AI agent workflows
-- **[Gitea Guide](../guides/gitea.md)** - Self-hosted Git service
+- **[AI Agent Guide](../guides/tfgrid-ai-agent.md)** - Complete AI agent workflows
+- **[Gitea Guide](../guides/tfgrid-gitea.md)** - Self-hosted Git service
 - **[App Registry](../guides/app-registry.md)** - Discover more apps
 
 ### Advanced Topics

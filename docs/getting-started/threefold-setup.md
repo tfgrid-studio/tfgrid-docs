@@ -387,8 +387,8 @@ set -o history
 
 Once you're set up:
 
-1. **Learn the CLI:** [tfgrid-compose Commands](../reference/commands.md)
-2. **Deploy Apps:** [Deployment Guide](../guides/deploying-apps.md)
+1. **Learn the CLI:** [tfgrid-compose Commands](../cli/app-commands.md)
+2. **Deploy Apps:** [Quick Start Guide](quickstart.md)
 3. **Browse Patterns:** [Available Patterns](../patterns/overview.md)
 4. **Join Community:** Share your experience!
 

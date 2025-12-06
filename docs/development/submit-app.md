@@ -65,7 +65,7 @@ hooks:
   healthcheck: deployment/healthcheck.sh
 ```
 
-See [App Manifest Reference](../reference/manifest.md) for full specification.
+See [Custom Apps Guide](../guides/custom-apps.md) for full manifest specification.
 
 ## Submission Process
 
@@ -273,9 +273,10 @@ Choose the appropriate pattern:
 ## Examples
 
 See official apps for reference:
-- [tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent) - Single-VM pattern
-- [tfgrid-gateway](https://github.com/tfgrid-studio/tfgrid-gateway) - Gateway pattern
-- [tfgrid-k3s](https://github.com/tfgrid-studio/tfgrid-k3s) - K3s pattern
+
+- [tfgrid-ai-stack](https://github.com/tfgrid-studio/tfgrid-ai-stack) - Complete AI development environment
+- [tfgrid-ai-agent](https://github.com/tfgrid-studio/tfgrid-ai-agent) - AI coding agent
+- [tfgrid-gitea](https://github.com/tfgrid-studio/tfgrid-gitea) - Self-hosted Git service
 
 ## Get Help
 

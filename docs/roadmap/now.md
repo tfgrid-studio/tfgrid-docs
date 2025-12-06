@@ -41,6 +41,25 @@ The following building blocks of TFGrid Studio are now **shipped and available**
   - Local web dashboard on top of `tfgrid-compose`.
   - Visual management for apps, deployments, CLI commands, preferences, and logs.
 
+### Developer Tooling
+
+- **Custom Apps Framework**
+  - Create your own deployable apps with `tfgrid-compose.yaml` manifests.
+  - Deployment hooks (setup, configure, healthcheck).
+  - Custom commands for app-specific operations.
+  - See [Custom Apps Guide](../guides/custom-apps.md).
+
+- **Versioned Tarball Releases**
+  - Build and ship versioned release tarballs.
+  - Atomic deployments with instant rollback.
+  - In-place updates without VM recreation.
+  - See [Tarball Releases Guide](../guides/tarball-releases.md).
+
+- **Git Commit Versioning**
+  - All apps and tools use Git commit hashes as primary version identifier.
+  - Precise code traceability for every deployment.
+  - Automatic version management without manual bumping.
+
 ---
 
 ## Try Current Features

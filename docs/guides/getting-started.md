@@ -87,8 +87,9 @@ tfgrid-compose search --tag development  # Search by tag
 
 **Current registry contents:**
 
-- **tfgrid-ai-agent** (v0.3.0): AI coding assistant
-- **tfgrid-gitea** (v1.0.0): Self-hosted Git service
+- **tfgrid-ai-stack**: Complete AI development environment
+- **tfgrid-ai-agent**: AI coding assistant
+- **tfgrid-gitea**: Self-hosted Git service
 
 **Registry features:**
 
@@ -392,15 +393,15 @@ tfgrid-compose exec sudo systemctl restart wg-quick@wg0
 ## Next Steps & Resources
 
 ### Continue Learning
-- **[AI Agent Guide](ai-agent.md)** - Deep dive into AI development
-- **[Gitea Guide](gitea.md)** - Self-hosted Git workflows
+- **[AI Agent Guide](tfgrid-ai-agent.md)** - Deep dive into AI development
+- **[Gitea Guide](tfgrid-gitea.md)** - Self-hosted Git workflows
 - **[App Registry](app-registry.md)** - Discover more applications
 - **[CLI Reference](../cli/app-commands.md)** - Complete command reference
 
 ### Advanced Topics
 - **[Pattern Documentation](../patterns/overview.md)** - Gateway and K3s patterns
-- **[Custom Apps](../development/app-manifest.md)** - Build your own deployable apps
-- **[Security Best Practices](../guides/security.md)** - Production deployments
+- **[Custom Apps](custom-apps.md)** - Build your own deployable apps
+- **[Security Best Practices](../community/security.md)** - Production deployments
 
 ### Community & Support
 - **GitHub**: [tfgrid-studio](https://github.com/tfgrid-studio)

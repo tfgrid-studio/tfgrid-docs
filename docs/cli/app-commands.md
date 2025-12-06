@@ -416,5 +416,5 @@ tfgrid-compose deploy
 
 - [Context System](context-system.md) - Managing multiple apps
 - [Node Selection](node-selection.md) - Advanced node filtering and selection
-- [AI Agent Guide](../guides/ai-agent.md) - Complete AI agent reference
+- [AI Agent Guide](../guides/tfgrid-ai-agent.md) - Complete AI agent reference
 - [App Development](../development/submit-app.md) - Creating your own apps

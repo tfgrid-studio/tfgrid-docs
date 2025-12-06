@@ -3151,11 +3151,13 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install TFGrid Compose and CLI</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>install.tfgrid.studio/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
-<p><strong>What this does:</strong>
-- Downloads and installs <code>tfgrid-compose</code> CLI
-- Adds it to your PATH automatically
-- Creates a default <code>tfgrid</code> shortcut
-- Sets up configuration directories</p>
+<p><strong>What this does:</strong></p>
+<ul>
+<li>Downloads and installs <code>tfgrid-compose</code> CLI</li>
+<li>Adds it to your PATH automatically</li>
+<li>Creates a default <code>tfgrid</code> shortcut</li>
+<li>Sets up configuration directories</li>
+</ul>
 <h3 id="verify-installation">Verify Installation<a class="headerlink" href="#verify-installation" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Check installation</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>tfgrid-compose<span class="w"> </span>--version
@@ -3211,9 +3213,11 @@
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tfgrid-compose<span class="w"> </span>shortcut<span class="w"> </span>tfc<span class="w">    </span><span class="c1"># Creates &#39;tfc&#39; command</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>tfgrid-compose<span class="w"> </span>shortcut<span class="w"> </span>grid<span class="w">   </span><span class="c1"># Creates &#39;grid&#39; command</span>
 </code></pre></div>
-<p><strong>Available shortcuts:</strong>
-- <code>tfgrid</code> (created automatically during install)
-- <code>tfc</code>, <code>grid</code>, or any custom name you choose</p>
+<p><strong>Available shortcuts:</strong></p>
+<ul>
+<li><code>tfgrid</code> (created automatically during install)</li>
+<li><code>tfc</code>, <code>grid</code>, or any custom name you choose</li>
+</ul>
 <h3 id="manage-shortcuts">Manage Shortcuts<a class="headerlink" href="#manage-shortcuts" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># List all shortcuts</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tfgrid-compose<span class="w"> </span>shortcut<span class="w"> </span>--list
@@ -3238,9 +3242,11 @@
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>--tag<span class="w"> </span>development
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>--tag<span class="w"> </span>ai
 </code></pre></div>
-<p><strong>Current official apps:</strong>
-- <code>tfgrid-ai-agent</code> - AI coding assistant (v0.3.0)
-- <code>tfgrid-gitea</code> - Self-hosted Git service (v1.0.0)</p>
+<p><strong>Current official apps:</strong></p>
+<ul>
+<li><code>tfgrid-ai-agent</code> - AI coding assistant (v0.3.0)</li>
+<li><code>tfgrid-gitea</code> - Self-hosted Git service (v1.0.0)</li>
+</ul>
 <h3 id="get-app-information">Get App Information<a class="headerlink" href="#get-app-information" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Detailed app information</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tfgrid-compose<span class="w"> </span>info<span class="w"> </span>tfgrid-ai-agent

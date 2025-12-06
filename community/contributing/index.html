@@ -3586,17 +3586,21 @@
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># - Request review</span>
 </code></pre></div>
 <h3 id="6-code-review-process">6. Code Review Process<a class="headerlink" href="#6-code-review-process" title="Permanent link">&para;</a></h3>
-<p><strong>What to expect:</strong>
-- Maintainers will review within 3-5 business days
-- You may be asked to make changes
-- CI tests must pass
-- At least one approval required</p>
-<p><strong>Responding to feedback:</strong>
-- Be receptive to suggestions
-- Ask questions if unclear
-- Make requested changes
-- Push updates to your branch
-- Re-request review when ready</p>
+<p><strong>What to expect:</strong></p>
+<ul>
+<li>Maintainers will review within 3-5 business days</li>
+<li>You may be asked to make changes</li>
+<li>CI tests must pass</li>
+<li>At least one approval required</li>
+</ul>
+<p><strong>Responding to feedback:</strong></p>
+<ul>
+<li>Be receptive to suggestions</li>
+<li>Ask questions if unclear</li>
+<li>Make requested changes</li>
+<li>Push updates to your branch</li>
+<li>Re-request review when ready</li>
+</ul>
 <h3 id="7-merge">7. Merge<a class="headerlink" href="#7-merge" title="Permanent link">&para;</a></h3>
 <p>Once approved:
 - Maintainer will merge your PR
@@ -3625,13 +3629,15 @@
 <a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="c1"># Call functions</span>
 <a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>my_function<span class="w"> </span><span class="s2">&quot;value&quot;</span>
 </code></pre></div></p>
-<p><strong>Best practices:</strong>
-- Use <code>set -e</code> for error handling
-- Quote variables: <code>"$var"</code> not <code>$var</code>
-- Use <code>local</code> for function variables
-- Add comments for complex logic
-- Use meaningful variable names
-- Check command existence: <code>command -v cmd</code></p>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Use <code>set -e</code> for error handling</li>
+<li>Quote variables: <code>"$var"</code> not <code>$var</code></li>
+<li>Use <code>local</code> for function variables</li>
+<li>Add comments for complex logic</li>
+<li>Use meaningful variable names</li>
+<li>Check command existence: <code>command -v cmd</code></li>
+</ul>
 <h3 id="terraformopentofu">Terraform/OpenTofu<a class="headerlink" href="#terraformopentofu" title="Permanent link">&para;</a></h3>
 <p><strong>Style:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Use consistent formatting</span>
@@ -3651,11 +3657,13 @@
 <a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">  </span><span class="na">value</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nv">local.primary_ip</span>
 <a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">}</span>
 </code></pre></div></p>
-<p><strong>Requirements:</strong>
-- Implement <a href="../../development/pattern-contract/">pattern contract</a>
-- Use variables for configurability
-- Document all outputs
-- Run <code>terraform fmt</code> before committing</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Implement <a href="../../development/pattern-contract/">pattern contract</a></li>
+<li>Use variables for configurability</li>
+<li>Document all outputs</li>
+<li>Run <code>terraform fmt</code> before committing</li>
+</ul>
 <h3 id="ansible">Ansible<a class="headerlink" href="#ansible" title="Permanent link">&para;</a></h3>
 <p><strong>Style:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nn">---</span>
@@ -3683,12 +3691,14 @@
 <a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
 <a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restarted</span>
 </code></pre></div></p>
-<p><strong>Best practices:</strong>
-- Use descriptive task names
-- Idempotent operations
-- Use handlers for restarts
-- Tag tasks appropriately
-- Test playbooks thoroughly</p>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Use descriptive task names</li>
+<li>Idempotent operations</li>
+<li>Use handlers for restarts</li>
+<li>Tag tasks appropriately</li>
+<li>Test playbooks thoroughly</li>
+</ul>
 <hr />
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <h3 id="manual-testing">Manual Testing<a class="headerlink" href="#manual-testing" title="Permanent link">&para;</a></h3>
@@ -3730,28 +3740,34 @@
 <hr />
 <h2 id="documentation_1">Documentation<a class="headerlink" href="#documentation_1" title="Permanent link">&para;</a></h2>
 <h3 id="when-to-update-docs">When to Update Docs<a class="headerlink" href="#when-to-update-docs" title="Permanent link">&para;</a></h3>
-<p><strong>Always update docs when:</strong>
-- Adding new features
-- Changing behavior
-- Adding CLI commands
-- Modifying configuration options
-- Fixing bugs that affect usage</p>
+<p><strong>Always update docs when:</strong></p>
+<ul>
+<li>Adding new features</li>
+<li>Changing behavior</li>
+<li>Adding CLI commands</li>
+<li>Modifying configuration options</li>
+<li>Fixing bugs that affect usage</li>
+</ul>
 <h3 id="documentation-structure">Documentation Structure<a class="headerlink" href="#documentation-structure" title="Permanent link">&para;</a></h3>
 <p><strong>tfgrid-docs/</strong> (public-facing):
 - User guides
 - API documentation
 - Tutorials
 - Troubleshooting</p>
-<p><strong>tfgrid-compose/README.md:</strong>
-- Project overview
-- Quick start
-- Links to full docs</p>
+<p><strong>tfgrid-compose/README.md:</strong></p>
+<ul>
+<li>Project overview</li>
+<li>Quick start</li>
+<li>Links to full docs</li>
+</ul>
 <h3 id="writing-style">Writing Style<a class="headerlink" href="#writing-style" title="Permanent link">&para;</a></h3>
-<p><strong>Be clear and concise:</strong>
-- Short sentences
-- Active voice
-- Clear examples
-- Step-by-step instructions</p>
+<p><strong>Be clear and concise:</strong></p>
+<ul>
+<li>Short sentences</li>
+<li>Active voice</li>
+<li>Clear examples</li>
+<li>Step-by-step instructions</li>
+</ul>
 <p><strong>Good example:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="gu">## Deploy Application</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
@@ -3775,29 +3791,37 @@
 <h2 id="community">Community<a class="headerlink" href="#community" title="Permanent link">&para;</a></h2>
 <h3 id="code-of-conduct">Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permanent link">&para;</a></h3>
 <p>All contributors must follow our <a href="../code-of-conduct/">Code of Conduct</a>.</p>
-<p><strong>Key points:</strong>
-- Be respectful
-- Be inclusive
-- Be constructive
-- Be professional</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Be respectful</li>
+<li>Be inclusive</li>
+<li>Be constructive</li>
+<li>Be professional</li>
+</ul>
 <h3 id="communication-channels">Communication Channels<a class="headerlink" href="#communication-channels" title="Permanent link">&para;</a></h3>
-<p><strong>GitHub:</strong>
-- Issues: Bug reports, feature requests
-- Discussions: Questions, ideas, help
-- Pull Requests: Code contributions</p>
-<p><strong>Maintainers:</strong>
-- Tag <code>@tfgrid-studio/maintainers</code> for urgent issues
-- Be patient - we're volunteers</p>
+<p><strong>GitHub:</strong></p>
+<ul>
+<li>Issues: Bug reports, feature requests</li>
+<li>Discussions: Questions, ideas, help</li>
+<li>Pull Requests: Code contributions</li>
+</ul>
+<p><strong>Maintainers:</strong></p>
+<ul>
+<li>Tag <code>@tfgrid-studio/maintainers</code> for urgent issues</li>
+<li>Be patient - we're volunteers</li>
+</ul>
 <h3 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h3>
 <p><strong>Before asking:</strong>
 1. Check documentation
 2. Search existing issues
 3. Read troubleshooting guide</p>
-<p><strong>When asking:</strong>
-- Provide context
-- Include error messages
-- Show what you tried
-- Be specific</p>
+<p><strong>When asking:</strong></p>
+<ul>
+<li>Provide context</li>
+<li>Include error messages</li>
+<li>Show what you tried</li>
+<li>Be specific</li>
+</ul>
 <hr />
 <h2 id="release-process">Release Process<a class="headerlink" href="#release-process" title="Permanent link">&para;</a></h2>
 <h3 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h3>
@@ -3806,10 +3830,12 @@
 - MINOR: New features (backward-compatible)
 - PATCH: Bug fixes</p>
 <h3 id="release-cycle">Release Cycle<a class="headerlink" href="#release-cycle" title="Permanent link">&para;</a></h3>
-<p><strong>Regular releases:</strong>
-- PATCH: As needed for bug fixes
-- MINOR: Monthly or when features are ready
-- MAJOR: Annually or for significant changes</p>
+<p><strong>Regular releases:</strong></p>
+<ul>
+<li>PATCH: As needed for bug fixes</li>
+<li>MINOR: Monthly or when features are ready</li>
+<li>MAJOR: Annually or for significant changes</li>
+</ul>
 <p><strong>Your contribution will be included in the next release after merge.</strong></p>
 <hr />
 <h2 id="recognition">Recognition<a class="headerlink" href="#recognition" title="Permanent link">&para;</a></h2>
@@ -3820,12 +3846,14 @@
 - Project README</p>
 <h3 id="maintainers">Maintainers<a class="headerlink" href="#maintainers" title="Permanent link">&para;</a></h3>
 <p>Outstanding contributors may be invited to become maintainers.</p>
-<p><strong>Maintainer responsibilities:</strong>
-- Review pull requests
-- Triage issues
-- Guide contributors
-- Make release decisions
-- Enforce Code of Conduct</p>
+<p><strong>Maintainer responsibilities:</strong></p>
+<ul>
+<li>Review pull requests</li>
+<li>Triage issues</li>
+<li>Guide contributors</li>
+<li>Make release decisions</li>
+<li>Enforce Code of Conduct</li>
+</ul>
 <hr />
 <h2 id="quick-reference">Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h2>
 <h3 id="common-tasks">Common Tasks<a class="headerlink" href="#common-tasks" title="Permanent link">&para;</a></h3>
@@ -3849,24 +3877,32 @@
 <a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>git<span class="w"> </span>push<span class="w"> </span>--force-with-lease<span class="w"> </span>origin<span class="w"> </span>feature/my-feature
 </code></pre></div>
 <h3 id="getting-unstuck">Getting Unstuck<a class="headerlink" href="#getting-unstuck" title="Permanent link">&para;</a></h3>
-<p><strong>Your PR isn't being reviewed?</strong>
-- Ping after 5 business days
-- Check if CI failed
-- Ensure you filled out PR template</p>
-<p><strong>Tests are failing?</strong>
-- Check CI logs
-- Run tests locally
-- Ask for help in PR comments</p>
-<p><strong>Merge conflict?</strong>
-- Rebase on latest main
-- Resolve conflicts
-- Force push to your branch</p>
+<p><strong>Your PR isn't being reviewed?</strong></p>
+<ul>
+<li>Ping after 5 business days</li>
+<li>Check if CI failed</li>
+<li>Ensure you filled out PR template</li>
+</ul>
+<p><strong>Tests are failing?</strong></p>
+<ul>
+<li>Check CI logs</li>
+<li>Run tests locally</li>
+<li>Ask for help in PR comments</li>
+</ul>
+<p><strong>Merge conflict?</strong></p>
+<ul>
+<li>Rebase on latest main</li>
+<li>Resolve conflicts</li>
+<li>Force push to your branch</li>
+</ul>
 <hr />
 <h2 id="thank-you">Thank You!<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
 <p>Thank you for contributing to TFGrid Studio! Your help makes this project better for everyone.</p>
-<p><strong>Questions?</strong>
-- Create a <a href="https://github.com/orgs/tfgrid-studio/discussions">GitHub Discussion</a>
-- Email: <a href="mailto:contact@tfgrid.studio">contact@tfgrid.studio</a></p>
+<p><strong>Questions?</strong></p>
+<ul>
+<li>Create a <a href="https://github.com/orgs/tfgrid-studio/discussions">GitHub Discussion</a></li>
+<li>Email: <a href="mailto:contact@tfgrid.studio">contact@tfgrid.studio</a></li>
+</ul>
 <hr />
 <p><strong>Happy Contributing!</strong> 🚀</p>
 

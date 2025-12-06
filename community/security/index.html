@@ -3426,16 +3426,20 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>ls<span class="w"> </span>-la<span class="w"> </span>~/.config/threefold/mnemonic
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># Should show: -rw------- (600)</span>
 </code></pre></div></p>
-<p><strong>Never:</strong>
-- ❌ Commit mnemonics to version control
-- ❌ Share mnemonics in chat/email
-- ❌ Store in publicly accessible locations
-- ❌ Use same mnemonic across environments</p>
-<p><strong>Do:</strong>
-- ✅ Use environment variables in CI/CD
-- ✅ Rotate mnemonics regularly
-- ✅ Use separate mnemonics for dev/prod
-- ✅ Back up securely (encrypted offline storage)</p>
+<p><strong>Never:</strong></p>
+<ul>
+<li>❌ Commit mnemonics to version control</li>
+<li>❌ Share mnemonics in chat/email</li>
+<li>❌ Store in publicly accessible locations</li>
+<li>❌ Use same mnemonic across environments</li>
+</ul>
+<p><strong>Do:</strong></p>
+<ul>
+<li>✅ Use environment variables in CI/CD</li>
+<li>✅ Rotate mnemonics regularly</li>
+<li>✅ Use separate mnemonics for dev/prod</li>
+<li>✅ Back up securely (encrypted offline storage)</li>
+</ul>
 <h4 id="ssh-key-management">SSH Key Management<a class="headerlink" href="#ssh-key-management" title="Permanent link">&para;</a></h4>
 <p><strong>Use strong keys:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Generate Ed25519 key (recommended)</span>
@@ -3453,14 +3457,18 @@
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>ssh-keygen<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>~/.ssh/tfgrid_ed25519
 </code></pre></div></p>
 <h4 id="wireguard-security">WireGuard Security<a class="headerlink" href="#wireguard-security" title="Permanent link">&para;</a></h4>
-<p><strong>Key management:</strong>
-- Generated keys stored in Terraform state
-- Private keys in <code>/etc/wireguard/</code> (600 permissions)
-- Don't share WireGuard configurations</p>
-<p><strong>Network isolation:</strong>
-- WireGuard creates private networks
-- No default internet routing
-- Explicitly configure external access if needed</p>
+<p><strong>Key management:</strong></p>
+<ul>
+<li>Generated keys stored in Terraform state</li>
+<li>Private keys in <code>/etc/wireguard/</code> (600 permissions)</li>
+<li>Don't share WireGuard configurations</li>
+</ul>
+<p><strong>Network isolation:</strong></p>
+<ul>
+<li>WireGuard creates private networks</li>
+<li>No default internet routing</li>
+<li>Explicitly configure external access if needed</li>
+</ul>
 <h4 id="deployment-security">Deployment Security<a class="headerlink" href="#deployment-security" title="Permanent link">&para;</a></h4>
 <p><strong>State files contain sensitive data:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Add to .gitignore</span>
@@ -3483,18 +3491,22 @@
 </code></pre></div></p>
 <h3 id="for-contributors">For Contributors<a class="headerlink" href="#for-contributors" title="Permanent link">&para;</a></h3>
 <h4 id="code-security">Code Security<a class="headerlink" href="#code-security" title="Permanent link">&para;</a></h4>
-<p><strong>Never commit:</strong>
-- API keys or tokens
-- Passwords or secrets
-- Private keys
-- Mnemonics or seed phrases
-- Personal data</p>
-<p><strong>Use secure coding practices:</strong>
-- Validate all inputs
-- Sanitize log output
-- Use parameterized commands (avoid injection)
-- Check file permissions
-- Handle errors securely</p>
+<p><strong>Never commit:</strong></p>
+<ul>
+<li>API keys or tokens</li>
+<li>Passwords or secrets</li>
+<li>Private keys</li>
+<li>Mnemonics or seed phrases</li>
+<li>Personal data</li>
+</ul>
+<p><strong>Use secure coding practices:</strong></p>
+<ul>
+<li>Validate all inputs</li>
+<li>Sanitize log output</li>
+<li>Use parameterized commands (avoid injection)</li>
+<li>Check file permissions</li>
+<li>Handle errors securely</li>
+</ul>
 <p><strong>Example - Redacting sensitive data:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># ❌ Bad: Logs mnemonic</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Using mnemonic: </span><span class="nv">$TF_VAR_mnemonic</span><span class="s2">&quot;</span>
@@ -3516,25 +3528,31 @@
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># Update to latest</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
 </code></pre></div></p>
-<p><strong>Review third-party code:</strong>
-- Audit pattern contributions
-- Review Terraform modules
-- Check Ansible roles
-- Verify scripts before execution</p>
+<p><strong>Review third-party code:</strong></p>
+<ul>
+<li>Audit pattern contributions</li>
+<li>Review Terraform modules</li>
+<li>Check Ansible roles</li>
+<li>Verify scripts before execution</li>
+</ul>
 <h3 id="for-maintainers">For Maintainers<a class="headerlink" href="#for-maintainers" title="Permanent link">&para;</a></h3>
 <h4 id="release-security">Release Security<a class="headerlink" href="#release-security" title="Permanent link">&para;</a></h4>
-<p><strong>Before release:</strong>
-- Review all PRs for security issues
-- Run security scanners
-- Check for hardcoded secrets
-- Verify dependency versions
-- Test in isolated environment</p>
-<p><strong>Release checklist:</strong>
-- [ ] No hardcoded credentials
-- [ ] Dependencies up to date
-- [ ] Security advisory reviewed
-- [ ] CHANGELOG includes security fixes
-- [ ] Version bumped appropriately</p>
+<p><strong>Before release:</strong></p>
+<ul>
+<li>Review all PRs for security issues</li>
+<li>Run security scanners</li>
+<li>Check for hardcoded secrets</li>
+<li>Verify dependency versions</li>
+<li>Test in isolated environment</li>
+</ul>
+<p><strong>Release checklist:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No hardcoded credentials</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dependencies up to date</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Security advisory reviewed</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CHANGELOG includes security fixes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Version bumped appropriately</li>
+</ul>
 <h4 id="incident-response">Incident Response<a class="headerlink" href="#incident-response" title="Permanent link">&para;</a></h4>
 <p><strong>If vulnerability found:</strong>
 1. Assess severity immediately
@@ -3548,49 +3566,65 @@
 <h2 id="common-security-issues">Common Security Issues<a class="headerlink" href="#common-security-issues" title="Permanent link">&para;</a></h2>
 <h3 id="mnemonic-exposure">Mnemonic Exposure<a class="headerlink" href="#mnemonic-exposure" title="Permanent link">&para;</a></h3>
 <p><strong>Risk:</strong> High - Can lead to fund theft</p>
-<p><strong>Vectors:</strong>
-- Logs containing mnemonics
-- Committed to version control
-- Insecure file permissions
-- Exposed in error messages</p>
-<p><strong>Prevention:</strong>
-- Redact from all logs
-- Check file permissions
-- Use <code>.gitignore</code>
-- Sanitize error output</p>
+<p><strong>Vectors:</strong></p>
+<ul>
+<li>Logs containing mnemonics</li>
+<li>Committed to version control</li>
+<li>Insecure file permissions</li>
+<li>Exposed in error messages</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Redact from all logs</li>
+<li>Check file permissions</li>
+<li>Use <code>.gitignore</code></li>
+<li>Sanitize error output</li>
+</ul>
 <h3 id="state-file-exposure">State File Exposure<a class="headerlink" href="#state-file-exposure" title="Permanent link">&para;</a></h3>
 <p><strong>Risk:</strong> Medium - Contains deployment details</p>
-<p><strong>Vectors:</strong>
-- Committed to version control
-- Publicly accessible storage
-- Insufficient file permissions</p>
-<p><strong>Prevention:</strong>
-- Add to <code>.gitignore</code>
-- Use secure state backends
-- Restrict file permissions
-- Clean up after use</p>
+<p><strong>Vectors:</strong></p>
+<ul>
+<li>Committed to version control</li>
+<li>Publicly accessible storage</li>
+<li>Insufficient file permissions</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Add to <code>.gitignore</code></li>
+<li>Use secure state backends</li>
+<li>Restrict file permissions</li>
+<li>Clean up after use</li>
+</ul>
 <h3 id="ssh-key-compromise">SSH Key Compromise<a class="headerlink" href="#ssh-key-compromise" title="Permanent link">&para;</a></h3>
 <p><strong>Risk:</strong> High - Unauthorized VM access</p>
-<p><strong>Vectors:</strong>
-- Weak key strength
-- No passphrase
-- Insecure storage
-- Shared keys</p>
-<p><strong>Prevention:</strong>
-- Use Ed25519 or RSA 4096
-- Use passphrases
-- Restrict permissions (600)
-- Unique keys per deployment</p>
+<p><strong>Vectors:</strong></p>
+<ul>
+<li>Weak key strength</li>
+<li>No passphrase</li>
+<li>Insecure storage</li>
+<li>Shared keys</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Use Ed25519 or RSA 4096</li>
+<li>Use passphrases</li>
+<li>Restrict permissions (600)</li>
+<li>Unique keys per deployment</li>
+</ul>
 <h3 id="wireguard-config-exposure">WireGuard Config Exposure<a class="headerlink" href="#wireguard-config-exposure" title="Permanent link">&para;</a></h3>
 <p><strong>Risk:</strong> Medium - Network access</p>
-<p><strong>Vectors:</strong>
-- World-readable files
-- Committed to repos
-- Shared configurations</p>
-<p><strong>Prevention:</strong>
-- 600 permissions on configs
-- Don't commit configs
-- Rotate keys regularly</p>
+<p><strong>Vectors:</strong></p>
+<ul>
+<li>World-readable files</li>
+<li>Committed to repos</li>
+<li>Shared configurations</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>600 permissions on configs</li>
+<li>Don't commit configs</li>
+<li>Rotate keys regularly</li>
+</ul>
 <hr />
 <h2 id="security-features">Security Features<a class="headerlink" href="#security-features" title="Permanent link">&para;</a></h2>
 <h3 id="current-security-measures">Current Security Measures<a class="headerlink" href="#current-security-measures" title="Permanent link">&para;</a></h3>
@@ -3634,33 +3668,43 @@
 <li>Prerequisite checks</li>
 </ol>
 <h3 id="planned-security-enhancements">Planned Security Enhancements<a class="headerlink" href="#planned-security-enhancements" title="Permanent link">&para;</a></h3>
-<p><strong>Roadmap:</strong>
-- [ ] Encrypted state backends (v0.11.0)
-- [ ] Secrets management integration (v0.12.0)
-- [ ] Automated security scanning (v1.0.0)
-- [ ] Supply chain verification (v1.1.0)
-- [ ] Zero-knowledge deployment options (v2.0.0)</p>
+<p><strong>Roadmap:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Encrypted state backends (v0.11.0)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Secrets management integration (v0.12.0)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated security scanning (v1.0.0)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Supply chain verification (v1.1.0)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Zero-knowledge deployment options (v2.0.0)</li>
+</ul>
 <hr />
 <h2 id="security-audits">Security Audits<a class="headerlink" href="#security-audits" title="Permanent link">&para;</a></h2>
 <p><strong>Status:</strong> No formal audit completed yet</p>
-<p><strong>Planned:</strong>
-- Community review: Ongoing
-- First formal audit: Planned for v1.0.0
-- Regular audits: Annually after 1.0</p>
-<p><strong>Want to help?</strong>
-- Review code for security issues
-- Report vulnerabilities responsibly
-- Contribute security improvements</p>
+<p><strong>Planned:</strong></p>
+<ul>
+<li>Community review: Ongoing</li>
+<li>First formal audit: Planned for v1.0.0</li>
+<li>Regular audits: Annually after 1.0</li>
+</ul>
+<p><strong>Want to help?</strong></p>
+<ul>
+<li>Review code for security issues</li>
+<li>Report vulnerabilities responsibly</li>
+<li>Contribute security improvements</li>
+</ul>
 <hr />
 <h2 id="hall-of-fame">Hall of Fame<a class="headerlink" href="#hall-of-fame" title="Permanent link">&para;</a></h2>
 <p>We recognize security researchers who help keep TFGrid Studio secure.</p>
-<p><strong>Contributors:</strong>
-- <em>Be the first!</em></p>
-<p><strong>Acknowledgment options:</strong>
-- GitHub profile link
-- Twitter handle
-- Company name
-- Anonymous</p>
+<p><strong>Contributors:</strong></p>
+<ul>
+<li><em>Be the first!</em></li>
+</ul>
+<p><strong>Acknowledgment options:</strong></p>
+<ul>
+<li>GitHub profile link</li>
+<li>Twitter handle</li>
+<li>Company name</li>
+<li>Anonymous</li>
+</ul>
 <hr />
 <h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
 <p><strong>Security Team:</strong> <a href="mailto:security@tfgrid.studio">security@tfgrid.studio</a><br />
@@ -3677,16 +3721,20 @@
 - Don't spam or cause disruption</p>
 <p>We will not pursue legal action against researchers who follow these guidelines.</p>
 <h3 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h3>
-<p><strong>In scope:</strong>
-- tfgrid-compose
-- tfgrid-ai-agent
-- tfgrid-docs website
-- Official infrastructure</p>
-<p><strong>Out of scope:</strong>
-- Third-party services (ThreeFold Grid itself)
-- User deployments
-- Community projects
-- Social engineering</p>
+<p><strong>In scope:</strong></p>
+<ul>
+<li>tfgrid-compose</li>
+<li>tfgrid-ai-agent</li>
+<li>tfgrid-docs website</li>
+<li>Official infrastructure</li>
+</ul>
+<p><strong>Out of scope:</strong></p>
+<ul>
+<li>Third-party services (ThreeFold Grid itself)</li>
+<li>User deployments</li>
+<li>Community projects</li>
+<li>Social engineering</li>
+</ul>
 <hr />
 <p><strong>Thank you for helping keep TFGrid Studio secure!</strong> 🔒</p>
 

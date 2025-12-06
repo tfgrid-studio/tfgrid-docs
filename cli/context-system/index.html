@@ -2930,12 +2930,14 @@
 <hr />
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The <strong>context system</strong> allows you to work with multiple deployed apps without constantly specifying which one you're targeting. It's like setting a "current directory" for your deployed apps.</p>
-<p><strong>Key Features:</strong>
-- 🎯 <strong>Smart auto-detection</strong> - Single app? No setup needed!
-- 🔄 <strong>Select between apps</strong> - <code>tfgrid-compose select</code>
-- 🔄 <strong>Select between projects</strong> - <code>tfgrid-compose select-project</code> (for apps that support it)
-- 📝 <strong>Context-aware commands</strong> - Commands use active app and project
-- 🌐 <strong>Both modes</strong> - Explicit or contextual</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>🎯 <strong>Smart auto-detection</strong> - Single app? No setup needed!</li>
+<li>🔄 <strong>Select between apps</strong> - <code>tfgrid-compose select</code></li>
+<li>🔄 <strong>Select between projects</strong> - <code>tfgrid-compose select-project</code> (for apps that support it)</li>
+<li>📝 <strong>Context-aware commands</strong> - Commands use active app and project</li>
+<li>🌐 <strong>Both modes</strong> - Explicit or contextual</li>
+</ul>
 <hr />
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <h3 id="1-smart-context-detection"><strong>1. Smart Context Detection</strong><a class="headerlink" href="#1-smart-context-detection" title="Permanent link">&para;</a></h3>
@@ -2981,9 +2983,11 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>project1
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>tfgrid-compose<span class="w"> </span>run<span class="w"> </span>project1
 </code></pre></div>
-<p><strong>When to use:</strong>
-- You have multiple apps deployed
-- You want to work with a specific app for a while</p>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>You have multiple apps deployed</li>
+<li>You want to work with a specific app for a while</li>
+</ul>
 <h3 id="unselect-clear-active-app"><strong>unselect</strong> - Clear Active App<a class="headerlink" href="#unselect-clear-active-app" title="Permanent link">&para;</a></h3>
 <p>Clear the current app selection:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Clear app context</span>
@@ -3017,10 +3021,12 @@
 <p>See all deployed apps and which is active:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>list
 </code></pre></div>
-<p><strong>Output shows:</strong>
-- ✅ All deployed apps with IPs
-- ⭐ Current active context (marked with <code>*</code>)
-- 📊 Auto-context status (single app)</p>
+<p><strong>Output shows:</strong></p>
+<ul>
+<li>✅ All deployed apps with IPs</li>
+<li>⭐ Current active context (marked with <code>*</code>)</li>
+<li>📊 Auto-context status (single app)</li>
+</ul>
 <hr />
 <h2 id="context-behavior">Context Behavior<a class="headerlink" href="#context-behavior" title="Permanent link">&para;</a></h2>
 <h3 id="single-app-scenario"><strong>Single App Scenario</strong><a class="headerlink" href="#single-app-scenario" title="Permanent link">&para;</a></h3>

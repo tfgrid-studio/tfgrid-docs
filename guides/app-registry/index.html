@@ -2949,12 +2949,14 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>ℹ<span class="w"> </span>Branch:<span class="w"> </span>main
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>ℹ<span class="w"> </span>Repository:<span class="w"> </span>https://github.com/tfgrid-studio/tfgrid-ai-stack.git
 </code></pre></div>
-<p><strong>Benefits:</strong>
-- ✅ <strong>Precise versioning</strong>: Every deployment has a unique, immutable version
-- ✅ <strong>Automatic version management</strong>: No manual version bumping required<br />
-- ✅ <strong>Instant traceability</strong>: Know exactly which code is running
-- ✅ <strong>Better debugging</strong>: Can track exactly what changed between deployments
-- ✅ <strong>Consistency</strong>: All TFGrid components use the same versioning approach</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>✅ <strong>Precise versioning</strong>: Every deployment has a unique, immutable version</li>
+<li>✅ <strong>Automatic version management</strong>: No manual version bumping required  </li>
+<li>✅ <strong>Instant traceability</strong>: Know exactly which code is running</li>
+<li>✅ <strong>Better debugging</strong>: Can track exactly what changed between deployments</li>
+<li>✅ <strong>Consistency</strong>: All TFGrid components use the same versioning approach</li>
+</ul>
 <h3 id="for-developers">For Developers<a class="headerlink" href="#for-developers" title="Permanent link">&para;</a></h3>
 <p>Apps in the registry:</p>
 <ul>
@@ -2985,14 +2987,16 @@
 <p>Self-hosted Git service with web interface - perfect for AI agent repositories.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea
 </code></pre></div>
-<p><strong>Details:</strong>
-- <strong>Pattern</strong>: single-vm
-- <strong>Versioning</strong>: Git commit-based (primary) with semantic fallback
-- <strong>Current Version</strong>: Uses latest Git commit (e.g., <code>4a7a91d</code>)
-- <strong>Status</strong>: Production Ready
-- <strong>Repo</strong>: <a href="https://github.com/tfgrid-studio/tfgrid-gitea">tfgrid-studio/tfgrid-gitea</a>
-- <strong>Docs</strong>: <a href="gitea.md">Gitea Guide</a>
-- <strong>Requirements</strong>: 2 CPU, 4GB RAM, 50GB disk</p>
+<p><strong>Details:</strong></p>
+<ul>
+<li><strong>Pattern</strong>: single-vm</li>
+<li><strong>Versioning</strong>: Git commit-based (primary) with semantic fallback</li>
+<li><strong>Current Version</strong>: Uses latest Git commit (e.g., <code>4a7a91d</code>)</li>
+<li><strong>Status</strong>: Production Ready</li>
+<li><strong>Repo</strong>: <a href="https://github.com/tfgrid-studio/tfgrid-gitea">tfgrid-studio/tfgrid-gitea</a></li>
+<li><strong>Docs</strong>: <a href="gitea.md">Gitea Guide</a></li>
+<li><strong>Requirements</strong>: 2 CPU, 4GB RAM, 50GB disk</li>
+</ul>
 <blockquote>
 <p><strong>Git Commit Versioning</strong>: Each deployment shows exact Git commit hash for precise code traceability</p>
 </blockquote>
@@ -3066,12 +3070,14 @@ See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
 <a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="c1"># Clear all cache</span>
 <a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>--all
 </code></pre></div>
-<p><strong>Cache Features:</strong>
-- <strong>Git Commit Tracking</strong>: Each cached app shows exact Git commit hash
-- <strong>Smart Invalidation</strong>: Cache automatically updates when Git commits change
-- <strong>Health Monitoring</strong>: Shows cache status (healthy, stale, invalid, not cached)
-- <strong>Enhanced Validation</strong>: Detailed syntax checking with exact line numbers
-- <strong>Rate Limiting Protection</strong>: GitHub API rate limiting with retry logic</p>
+<p><strong>Cache Features:</strong></p>
+<ul>
+<li><strong>Git Commit Tracking</strong>: Each cached app shows exact Git commit hash</li>
+<li><strong>Smart Invalidation</strong>: Cache automatically updates when Git commits change</li>
+<li><strong>Health Monitoring</strong>: Shows cache status (healthy, stale, invalid, not cached)</li>
+<li><strong>Enhanced Validation</strong>: Detailed syntax checking with exact line numbers</li>
+<li><strong>Rate Limiting Protection</strong>: GitHub API rate limiting with retry logic</li>
+</ul>
 <h2 id="app-structure">App Structure<a class="headerlink" href="#app-structure" title="Permanent link">&para;</a></h2>
 <p>All apps must include <code>tfgrid-compose.yaml</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>

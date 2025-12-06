@@ -3461,11 +3461,13 @@ Advanced node filtering is available in <strong>v0.14.0+</strong>
 <p>TFGrid Compose automatically selects the best available node:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
-<p><strong>Selection Criteria:</strong>
-- ✅ Healthy nodes only
-- ✅ Non-dedicated nodes (available for rent)
-- ✅ Sufficient resources (CPU, RAM, disk)
-- ✅ Highest uptime (most stable)</p>
+<p><strong>Selection Criteria:</strong></p>
+<ul>
+<li>✅ Healthy nodes only</li>
+<li>✅ Non-dedicated nodes (available for rent)</li>
+<li>✅ Sufficient resources (CPU, RAM, disk)</li>
+<li>✅ Highest uptime (most stable)</li>
+</ul>
 <h3 id="2-manual-node-selection">2. Manual Node Selection<a class="headerlink" href="#2-manual-node-selection" title="Permanent link">&para;</a></h3>
 <p>Specify exact node ID for precise control:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Deploy to specific node</span>
@@ -3676,11 +3678,13 @@ Advanced node filtering is available in <strong>v0.14.0+</strong>
 <a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span>
 <a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">  </span><span class="nt">last_updated</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-10-31T17:03:00Z&quot;</span>
 </code></pre></div>
-<p><strong>Benefits of YAML format:</strong>
-- ✅ <strong>Human-readable</strong> - Easy to edit manually
-- ✅ <strong>Shareable</strong> - Team members can copy preference files
-- ✅ <strong>Version control</strong> - Track changes over time
-- ✅ <strong>Backup/restore</strong> - Simple file copy</p>
+<p><strong>Benefits of YAML format:</strong></p>
+<ul>
+<li>✅ <strong>Human-readable</strong> - Easy to edit manually</li>
+<li>✅ <strong>Shareable</strong> - Team members can copy preference files</li>
+<li>✅ <strong>Version control</strong> - Track changes over time</li>
+<li>✅ <strong>Backup/restore</strong> - Simple file copy</li>
+</ul>
 <h3 id="common-use-cases">Common Use Cases<a class="headerlink" href="#common-use-cases" title="Permanent link">&para;</a></h3>
 <p><strong>Development Environment:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>tfgrid-compose<span class="w"> </span>whitelist<span class="w"> </span>nodes<span class="w"> </span><span class="m">920</span>,891<span class="w">  </span><span class="c1"># Fast, reliable nodes</span>
@@ -3737,10 +3741,12 @@ Advanced node filtering is available in <strong>v0.14.0+</strong>
 <a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="c1"># Minimum uptime requirement (days)</span>
 <a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>myapp<span class="w"> </span>--min-uptime-days<span class="o">=</span><span class="m">30</span>
 </code></pre></div>
-<p><strong>Health metrics are calculated as:</strong>
-- <strong>CPU Usage</strong>: <code>(used_resources.cru / total_resources.cru) * 100</code>
-- <strong>Disk Usage</strong>: <code>(used_resources.sru / total_resources.sru) * 100</code>
-- <strong>Uptime</strong>: <code>uptime_seconds / 86400</code> (days)</p>
+<p><strong>Health metrics are calculated as:</strong></p>
+<ul>
+<li><strong>CPU Usage</strong>: <code>(used_resources.cru / total_resources.cru) * 100</code></li>
+<li><strong>Disk Usage</strong>: <code>(used_resources.sru / total_resources.sru) * 100</code></li>
+<li><strong>Uptime</strong>: <code>uptime_seconds / 86400</code> (days)</li>
+</ul>
 <hr />
 <h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
 <h3 id="high-performance-workloads">High-Performance Workloads<a class="headerlink" href="#high-performance-workloads" title="Permanent link">&para;</a></h3>
@@ -3846,10 +3852,12 @@ Advanced node filtering is available in <strong>v0.14.0+</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>myapp<span class="w"> </span>--max-cpu-usage<span class="o">=</span><span class="m">10</span>
 <a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="c1"># Error: No nodes found after applying filters</span>
 </code></pre></div>
-<p><strong>Solutions:</strong>
-- Relax filter criteria
-- Remove restrictive filters
-- Check configuration: <code>tfgrid-compose config show</code></p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Relax filter criteria</li>
+<li>Remove restrictive filters</li>
+<li>Check configuration: <code>tfgrid-compose config show</code></li>
+</ul>
 <h3 id="configuration-not-working">Configuration Not Working<a class="headerlink" href="#configuration-not-working" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Check config file exists</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>ls<span class="w"> </span>~/.config/tfgrid-compose/config.yaml
@@ -3861,10 +3869,12 @@ Advanced node filtering is available in <strong>v0.14.0+</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>myapp<span class="w"> </span>--node<span class="o">=</span><span class="m">99999</span>
 <a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="c1"># Error: Node 99999 is not available</span>
 </code></pre></div>
-<p><strong>Solutions:</strong>
-- Use auto-selection: <code>tfgrid-compose up myapp</code>
-- Check node status on dashboard.grid.tf
-- Remove <code>--node</code> flag</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Use auto-selection: <code>tfgrid-compose up myapp</code></li>
+<li>Check node status on dashboard.grid.tf</li>
+<li>Remove <code>--node</code> flag</li>
+</ul>
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="1-start-simple">1. Start Simple<a class="headerlink" href="#1-start-simple" title="Permanent link">&para;</a></h3>

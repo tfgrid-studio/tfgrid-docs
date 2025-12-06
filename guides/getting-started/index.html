@@ -3230,25 +3230,31 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Configure all credentials interactively</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span>login
 </code></pre></div>
-<p><strong>Configuration collected:</strong>
-- <strong>ThreeFold Mnemonic</strong>: 12/24-word seed phrase (secure input)
-- <strong>Git Identity</strong>: Name and email for commits
-- <strong>Optional Tokens</strong>: GitHub/Gitea for private repos</p>
-<p><strong>Security features:</strong>
-- Hidden input for sensitive data
-- Validation of mnemonic format
-- Secure file permissions (600)
-- Encrypted storage in <code>~/.config/tfgrid-compose/credentials.yaml</code></p>
+<p><strong>Configuration collected:</strong></p>
+<ul>
+<li><strong>ThreeFold Mnemonic</strong>: 12/24-word seed phrase (secure input)</li>
+<li><strong>Git Identity</strong>: Name and email for commits</li>
+<li><strong>Optional Tokens</strong>: GitHub/Gitea for private repos</li>
+</ul>
+<p><strong>Security features:</strong></p>
+<ul>
+<li>Hidden input for sensitive data</li>
+<li>Validation of mnemonic format</li>
+<li>Secure file permissions (600)</li>
+<li>Encrypted storage in <code>~/.config/tfgrid-compose/credentials.yaml</code></li>
+</ul>
 <h3 id="step-3-command-shortcuts">Step 3: Command Shortcuts<a class="headerlink" href="#step-3-command-shortcuts" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create convenient shortcuts</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>tfgrid-compose<span class="w"> </span>shortcut<span class="w"> </span>tfc
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>tfgrid-compose<span class="w"> </span>shortcut<span class="w"> </span>grid
 </code></pre></div>
-<p><strong>Benefits:</strong>
-- Shorter commands (<code>tfc up</code> vs <code>tfgrid-compose up</code>)
-- Custom naming (<code>grid</code>, <code>tfc</code>, etc.)
-- Multiple shortcuts allowed
-- Easy management (<code>--list</code>, <code>--remove</code>)</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Shorter commands (<code>tfc up</code> vs <code>tfgrid-compose up</code>)</li>
+<li>Custom naming (<code>grid</code>, <code>tfc</code>, etc.)</li>
+<li>Multiple shortcuts allowed</li>
+<li>Easy management (<code>--list</code>, <code>--remove</code>)</li>
+</ul>
 <hr />
 <h2 id="phase-2-discovery-exploration">Phase 2: Discovery &amp; Exploration<a class="headerlink" href="#phase-2-discovery-exploration" title="Permanent link">&para;</a></h2>
 <h3 id="step-4-app-registry-exploration">Step 4: App Registry Exploration<a class="headerlink" href="#step-4-app-registry-exploration" title="Permanent link">&para;</a></h3>
@@ -3257,24 +3263,30 @@
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>ai<span class="w">     </span><span class="c1"># Search by keyword</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>--tag<span class="w"> </span>development<span class="w">  </span><span class="c1"># Search by tag</span>
 </code></pre></div>
-<p><strong>Current registry contents:</strong>
-- <strong>tfgrid-ai-agent</strong> (v0.3.0): AI coding assistant
-- <strong>tfgrid-gitea</strong> (v1.0.0): Self-hosted Git service</p>
-<p><strong>Registry features:</strong>
-- Cached locally (1-hour TTL)
-- Search by name, description, tags
-- Version information and requirements
-- Direct deployment from registry</p>
+<p><strong>Current registry contents:</strong></p>
+<ul>
+<li><strong>tfgrid-ai-agent</strong> (v0.3.0): AI coding assistant</li>
+<li><strong>tfgrid-gitea</strong> (v1.0.0): Self-hosted Git service</li>
+</ul>
+<p><strong>Registry features:</strong></p>
+<ul>
+<li>Cached locally (1-hour TTL)</li>
+<li>Search by name, description, tags</li>
+<li>Version information and requirements</li>
+<li>Direct deployment from registry</li>
+</ul>
 <h3 id="step-5-app-information-selection">Step 5: App Information &amp; Selection<a class="headerlink" href="#step-5-app-information-selection" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Get detailed app information</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tfgrid-compose<span class="w"> </span>info<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
-<p><strong>Information provided:</strong>
-- Version and status
-- Resource requirements (CPU, RAM, disk)
-- Supported patterns
-- Documentation links
-- Repository information</p>
+<p><strong>Information provided:</strong></p>
+<ul>
+<li>Version and status</li>
+<li>Resource requirements (CPU, RAM, disk)</li>
+<li>Supported patterns</li>
+<li>Documentation links</li>
+<li>Repository information</li>
+</ul>
 <hr />
 <h2 id="phase-3-deployment-usage">Phase 3: Deployment &amp; Usage<a class="headerlink" href="#phase-3-deployment-usage" title="Permanent link">&para;</a></h2>
 <h3 id="step-6-first-deployment">Step 6: First Deployment<a class="headerlink" href="#step-6-first-deployment" title="Permanent link">&para;</a></h3>
@@ -3325,12 +3337,14 @@
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Detailed status</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>tfgrid-compose<span class="w"> </span>summary<span class="w"> </span>my-website
 </code></pre></div>
-<p><strong>AI Agent features:</strong>
-- Qwen CLI integration with yolo mode
-- Git commits after each successful iteration
-- Time management and safety constraints
-- Concurrent project execution
-- Systemd service management with auto-restart</p>
+<p><strong>AI Agent features:</strong></p>
+<ul>
+<li>Qwen CLI integration with yolo mode</li>
+<li>Git commits after each successful iteration</li>
+<li>Time management and safety constraints</li>
+<li>Concurrent project execution</li>
+<li>Systemd service management with auto-restart</li>
+</ul>
 <h3 id="step-10-access-results">Step 10: Access Results<a class="headerlink" href="#step-10-access-results" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># SSH to inspect generated code</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>tfgrid-compose<span class="w"> </span>ssh
@@ -3362,11 +3376,13 @@
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1"># Monitor everything</span>
 <a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>tfgrid-compose<span class="w"> </span>projects
 </code></pre></div>
-<p><strong>Concurrent execution:</strong>
-- Each project runs in isolated systemd service
-- Dedicated resource limits (2GB memory, 150% CPU quota)
-- Automatic failure recovery
-- Independent git repositories</p>
+<p><strong>Concurrent execution:</strong></p>
+<ul>
+<li>Each project runs in isolated systemd service</li>
+<li>Dedicated resource limits (2GB memory, 150% CPU quota)</li>
+<li>Automatic failure recovery</li>
+<li>Independent git repositories</li>
+</ul>
 <h3 id="step-13-integration-workflows">Step 13: Integration Workflows<a class="headerlink" href="#step-13-integration-workflows" title="Permanent link">&para;</a></h3>
 <p><strong>AI Agent + Gitea Integration:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Configure git remote in AI projects</span>

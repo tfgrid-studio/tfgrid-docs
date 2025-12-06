@@ -3140,13 +3140,15 @@
 <p><strong>Source:</strong> <a href="https://github.com/mik-tf/tfgrid-ai-agent">mik-tf/tfgrid-ai-agent</a><br />
 <strong>Author:</strong> <a href="https://github.com/mik-tf">mik-tf</a><br />
 <strong>Status:</strong> ✅ Fully integrated into TFGrid Compose (v1.0.0)</p>
-<p><strong>What it provides:</strong>
-- Complete AI coding agent deployment
-- Qwen AI integration
-- Project management system
-- Remote execution workflows
-- Git integration
-- Developer user provisioning</p>
+<p><strong>What it provides:</strong></p>
+<ul>
+<li>Complete AI coding agent deployment</li>
+<li>Qwen AI integration</li>
+<li>Project management system</li>
+<li>Remote execution workflows</li>
+<li>Git integration</li>
+<li>Developer user provisioning</li>
+</ul>
 <p><strong>Integration:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Source: github.com/mik-tf/tfgrid-ai-agent
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ↓
@@ -3157,12 +3159,14 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ↓
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Result: tfgrid-ai-agent deployable via tfgrid-compose
 </code></pre></div></p>
-<p><strong>Changes made:</strong>
-- ✅ Extracted infrastructure as reusable pattern
-- ✅ Separated app from deployment logic
-- ✅ Created manifest system (<code>tfgrid-compose.yaml</code>)
-- ✅ Fixed project directory structure (Oct 8, 2025)
-- ✅ Unified CLI commands</p>
+<p><strong>Changes made:</strong></p>
+<ul>
+<li>✅ Extracted infrastructure as reusable pattern</li>
+<li>✅ Separated app from deployment logic</li>
+<li>✅ Created manifest system (<code>tfgrid-compose.yaml</code>)</li>
+<li>✅ Fixed project directory structure (Oct 8, 2025)</li>
+<li>✅ Unified CLI commands</li>
+</ul>
 <p><strong>Before (Standalone):</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>make<span class="w"> </span>deploy
@@ -3180,23 +3184,27 @@
 <p><strong>Source:</strong> <a href="https://github.com/mik-tf/tfgrid-gateway">mik-tf/tfgrid-gateway</a><br />
 <strong>Author:</strong> <a href="https://github.com/mik-tf">mik-tf</a><br />
 <strong>Status:</strong> 🚧 Planned for integration (Q4 2025)</p>
-<p><strong>What it provides:</strong>
-- Public IPv4 gateway deployment
-- NAT-based gateway (nftables)
-- Proxy-based gateway (HAProxy + Nginx)
-- SSL/TLS automation (Let's Encrypt)
-- WireGuard + Mycelium networking
-- Network redundancy features
-- Live demo system with status pages
-- Port forwarding configuration
-- Path-based routing</p>
-<p><strong>Key features:</strong>
-- ✅ <strong>Dual gateway modes:</strong> NAT vs Proxy
-- ✅ <strong>SSL certificates:</strong> Free Let's Encrypt with auto-renewal
-- ✅ <strong>Network redundancy:</strong> WireGuard + Mycelium both mode
-- ✅ <strong>Flexible access:</strong> Port-based or path-based
-- ✅ <strong>Security features:</strong> Disable public port forwarding
-- ✅ <strong>Production-ready:</strong> Used in real deployments</p>
+<p><strong>What it provides:</strong></p>
+<ul>
+<li>Public IPv4 gateway deployment</li>
+<li>NAT-based gateway (nftables)</li>
+<li>Proxy-based gateway (HAProxy + Nginx)</li>
+<li>SSL/TLS automation (Let's Encrypt)</li>
+<li>WireGuard + Mycelium networking</li>
+<li>Network redundancy features</li>
+<li>Live demo system with status pages</li>
+<li>Port forwarding configuration</li>
+<li>Path-based routing</li>
+</ul>
+<p><strong>Key features:</strong></p>
+<ul>
+<li>✅ <strong>Dual gateway modes:</strong> NAT vs Proxy</li>
+<li>✅ <strong>SSL certificates:</strong> Free Let's Encrypt with auto-renewal</li>
+<li>✅ <strong>Network redundancy:</strong> WireGuard + Mycelium both mode</li>
+<li>✅ <strong>Flexible access:</strong> Port-based or path-based</li>
+<li>✅ <strong>Security features:</strong> Disable public port forwarding</li>
+<li>✅ <strong>Production-ready:</strong> Used in real deployments</li>
+</ul>
 <p><strong>Planned integration:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Source: github.com/mik-tf/tfgrid-gateway
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  ↓
@@ -3211,33 +3219,39 @@
 <p><strong>Usage (after integration):</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-webapp<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>myapp.com
 </code></pre></div></p>
-<p><strong>Repository stats:</strong>
-- 1,054 commits
-- Complete Terraform + Ansible implementation
-- Comprehensive documentation
-- Production deployments validated</p>
+<p><strong>Repository stats:</strong></p>
+<ul>
+<li>1,054 commits</li>
+<li>Complete Terraform + Ansible implementation</li>
+<li>Comprehensive documentation</li>
+<li>Production deployments validated</li>
+</ul>
 <hr />
 <h4 id="3-tfgrid-k3s-ucli-tools">3. tfgrid-k3s (ucli-tools)<a class="headerlink" href="#3-tfgrid-k3s-ucli-tools" title="Permanent link">&para;</a></h4>
 <p><strong>Source:</strong> <a href="https://github.com/ucli-tools/tfgrid-k3s">ucli-tools/tfgrid-k3s</a><br />
 <strong>Organization:</strong> <a href="https://github.com/ucli-tools">ucli-tools</a><br />
 <strong>Status:</strong> 🚧 Planned for integration (Q1 2026)</p>
-<p><strong>What it provides:</strong>
-- Complete K3s cluster deployment
-- Multi-node orchestration (control + workers)
-- Management node with K9s TUI
-- MetalLB load balancer
-- Nginx Ingress controller
-- Dual-stack networking (IPv4/IPv6)
-- High availability support
-- Auto-scaling workers</p>
-<p><strong>Key features:</strong>
-- ✅ <strong>K3s lightweight Kubernetes</strong> - Production-grade
-- ✅ <strong>Management node:</strong> kubectl, K9s, Helm pre-installed
-- ✅ <strong>Load balancing:</strong> MetalLB with IPv4/IPv6 support
-- ✅ <strong>Ingress:</strong> Nginx Ingress controller
-- ✅ <strong>Networking:</strong> Flannel CNI + WireGuard + Mycelium
-- ✅ <strong>Scalability:</strong> Add nodes dynamically
-- ✅ <strong>Production-ready:</strong> Real cluster deployments</p>
+<p><strong>What it provides:</strong></p>
+<ul>
+<li>Complete K3s cluster deployment</li>
+<li>Multi-node orchestration (control + workers)</li>
+<li>Management node with K9s TUI</li>
+<li>MetalLB load balancer</li>
+<li>Nginx Ingress controller</li>
+<li>Dual-stack networking (IPv4/IPv6)</li>
+<li>High availability support</li>
+<li>Auto-scaling workers</li>
+</ul>
+<p><strong>Key features:</strong></p>
+<ul>
+<li>✅ <strong>K3s lightweight Kubernetes</strong> - Production-grade</li>
+<li>✅ <strong>Management node:</strong> kubectl, K9s, Helm pre-installed</li>
+<li>✅ <strong>Load balancing:</strong> MetalLB with IPv4/IPv6 support</li>
+<li>✅ <strong>Ingress:</strong> Nginx Ingress controller</li>
+<li>✅ <strong>Networking:</strong> Flannel CNI + WireGuard + Mycelium</li>
+<li>✅ <strong>Scalability:</strong> Add nodes dynamically</li>
+<li>✅ <strong>Production-ready:</strong> Real cluster deployments</li>
+</ul>
 <p><strong>Planned integration:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Source: github.com/ucli-tools/tfgrid-k3s
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  ↓
@@ -3254,21 +3268,25 @@
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tfgrid-compose<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>tfgrid-compose<span class="w"> </span>k9s
 </code></pre></div></p>
-<p><strong>Repository stats:</strong>
-- 522 commits
-- Complete K3s automation
-- Comprehensive K9s integration
-- Production cluster deployments</p>
+<p><strong>Repository stats:</strong></p>
+<ul>
+<li>522 commits</li>
+<li>Complete K3s automation</li>
+<li>Comprehensive K9s integration</li>
+<li>Production cluster deployments</li>
+</ul>
 <hr />
 <h3 id="ai-agent-framework-mik-tf">🔗 ai-agent Framework (mik-tf)<a class="headerlink" href="#ai-agent-framework-mik-tf" title="Permanent link">&para;</a></h3>
 <p><strong>Source:</strong> <a href="https://github.com/mik-tf/ai-agent">mik-tf/ai-agent</a><br />
 <strong>Author:</strong> <a href="https://github.com/mik-tf">mik-tf</a><br />
 <strong>Status:</strong> ✅ Dependency of tfgrid-ai-agent</p>
-<p><strong>What it provides:</strong>
-- AI coding loop technique
-- Qwen CLI integration
-- Project management framework
-- Continuous automation system</p>
+<p><strong>What it provides:</strong></p>
+<ul>
+<li>AI coding loop technique</li>
+<li>Qwen CLI integration</li>
+<li>Project management framework</li>
+<li>Continuous automation system</li>
+</ul>
 <p><strong>Inspiration:</strong>
 Based on the <a href="https://ghuntley.com/ralph/">"Ralph" coding technique</a> by <a href="https://github.com/ghuntley">Geoff Huntley</a>, extended into a production-ready automation platform.</p>
 <p><strong>Usage:</strong>
@@ -3283,10 +3301,12 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 3. ✅ WireGuard setup automated
 4. ✅ Pattern metadata created
 5. ✅ Documentation written</p>
-<p><strong>Result:</strong>
-- Reusable single-vm pattern
-- Works with any application
-- Clean separation of concerns</p>
+<p><strong>Result:</strong></p>
+<ul>
+<li>Reusable single-vm pattern</li>
+<li>Works with any application</li>
+<li>Clean separation of concerns</li>
+</ul>
 <h3 id="phase-2-gateway-pattern-q4-2025">Phase 2: Gateway Pattern (🚧 Q4 2025)<a class="headerlink" href="#phase-2-gateway-pattern-q4-2025" title="Permanent link">&para;</a></h3>
 <p><strong>Source:</strong> mik-tf/tfgrid-gateway (complete repo)</p>
 <p><strong>Plan:</strong></p>
@@ -3343,18 +3363,24 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 <hr />
 <h2 id="acknowledgments">🙏 Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permanent link">&para;</a></h2>
 <h3 id="individual-contributors">Individual Contributors<a class="headerlink" href="#individual-contributors" title="Permanent link">&para;</a></h3>
-<p><strong><a href="https://github.com/mik-tf">mik-tf</a></strong>
-- Created tfgrid-ai-agent (complete AI deployment)
-- Created tfgrid-gateway (gateway patterns, SSL, networking)
-- Created ai-agent framework (loop technique)
-- Provided foundation for TFGrid Compose</p>
-<p><strong><a href="https://github.com/ucli-tools">ucli-tools organization</a></strong>
-- Created tfgrid-k3s (complete K3s cluster deployment)
-- Advanced Kubernetes automation
-- Management node patterns</p>
-<p><strong><a href="https://github.com/ghuntley">Geoff Huntley</a></strong>
-- Pioneered "Ralph" AI coding technique
-- Inspired ai-agent framework</p>
+<p><strong><a href="https://github.com/mik-tf">mik-tf</a></strong></p>
+<ul>
+<li>Created tfgrid-ai-agent (complete AI deployment)</li>
+<li>Created tfgrid-gateway (gateway patterns, SSL, networking)</li>
+<li>Created ai-agent framework (loop technique)</li>
+<li>Provided foundation for TFGrid Compose</li>
+</ul>
+<p><strong><a href="https://github.com/ucli-tools">ucli-tools organization</a></strong></p>
+<ul>
+<li>Created tfgrid-k3s (complete K3s cluster deployment)</li>
+<li>Advanced Kubernetes automation</li>
+<li>Management node patterns</li>
+</ul>
+<p><strong><a href="https://github.com/ghuntley">Geoff Huntley</a></strong></p>
+<ul>
+<li>Pioneered "Ralph" AI coding technique</li>
+<li>Inspired ai-agent framework</li>
+</ul>
 <h3 id="threefold-community">ThreeFold Community<a class="headerlink" href="#threefold-community" title="Permanent link">&para;</a></h3>
 <ul>
 <li>ThreeFold Grid infrastructure</li>
@@ -3472,11 +3498,13 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>make<span class="w"> </span>install
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>../tfgrid-ai-agent
 </code></pre></div></p>
-<p><strong>Benefits:</strong>
-- ✅ Simpler commands
-- ✅ Context file support
-- ✅ Pattern reusability
-- ✅ Better documentation</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>✅ Simpler commands</li>
+<li>✅ Context file support</li>
+<li>✅ Pattern reusability</li>
+<li>✅ Better documentation</li>
+</ul>
 <p><a href="../guides/migration.md">Complete migration guide →</a></p>
 <hr />
 <h2 id="external-links">🔗 External Links<a class="headerlink" href="#external-links" title="Permanent link">&para;</a></h2>
@@ -3497,14 +3525,18 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 <hr />
 <h2 id="license-attribution">📜 License &amp; Attribution<a class="headerlink" href="#license-attribution" title="Permanent link">&para;</a></h2>
 <h3 id="source-code-licenses">Source Code Licenses<a class="headerlink" href="#source-code-licenses" title="Permanent link">&para;</a></h3>
-<p><strong>From source repos:</strong>
-- tfgrid-ai-agent: Apache 2.0 License
-- tfgrid-gateway: Apache 2.0 License
-- tfgrid-k3s: Apache 2.0 License</p>
-<p><strong>TFGrid Compose:</strong>
-- tfgrid-compose: Apache 2.0 License
-- tfgrid-ai-agent: Apache 2.0 License
-- Commercial repos: Business Source License / Proprietary</p>
+<p><strong>From source repos:</strong></p>
+<ul>
+<li>tfgrid-ai-agent: Apache 2.0 License</li>
+<li>tfgrid-gateway: Apache 2.0 License</li>
+<li>tfgrid-k3s: Apache 2.0 License</li>
+</ul>
+<p><strong>TFGrid Compose:</strong></p>
+<ul>
+<li>tfgrid-compose: Apache 2.0 License</li>
+<li>tfgrid-ai-agent: Apache 2.0 License</li>
+<li>Commercial repos: Business Source License / Proprietary</li>
+</ul>
 <h3 id="attribution">Attribution<a class="headerlink" href="#attribution" title="Permanent link">&para;</a></h3>
 <p>All source repositories are properly credited in:
 - ✅ README files

@@ -3292,15 +3292,19 @@
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="design-your-commands"><strong>Design Your Commands</strong><a class="headerlink" href="#design-your-commands" title="Permanent link">&para;</a></h3>
-<p>✅ <strong>DO:</strong>
-- Use clear, action-oriented names (<code>create</code>, <code>deploy</code>, <code>backup</code>)
-- Make commands idempotent when possible
-- Provide helpful error messages
-- Support both interactive and non-interactive modes</p>
-<p>❌ <strong>DON'T:</strong>
-- Use generic names that conflict (<code>status</code>, <code>logs</code> are reserved)
-- Require complex flag combinations
-- Make breaking changes without version bump</p>
+<p>✅ <strong>DO:</strong></p>
+<ul>
+<li>Use clear, action-oriented names (<code>create</code>, <code>deploy</code>, <code>backup</code>)</li>
+<li>Make commands idempotent when possible</li>
+<li>Provide helpful error messages</li>
+<li>Support both interactive and non-interactive modes</li>
+</ul>
+<p>❌ <strong>DON'T:</strong></p>
+<ul>
+<li>Use generic names that conflict (<code>status</code>, <code>logs</code> are reserved)</li>
+<li>Require complex flag combinations</li>
+<li>Make breaking changes without version bump</li>
+</ul>
 <h3 id="command-naming"><strong>Command Naming</strong><a class="headerlink" href="#command-naming" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Good (clear actions)</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>create,<span class="w"> </span>run,<span class="w"> </span>stop,<span class="w"> </span>deploy,<span class="w"> </span>backup,<span class="w"> </span>migrate

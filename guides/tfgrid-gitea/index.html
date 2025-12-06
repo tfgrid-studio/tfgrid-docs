@@ -3668,14 +3668,18 @@
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea
 </code></pre></div>
 <h3 id="resource-requirements">Resource Requirements<a class="headerlink" href="#resource-requirements" title="Permanent link">&para;</a></h3>
-<p><strong>Minimum:</strong>
-- 2 CPU cores
-- 2 GB RAM
-- 25 GB disk</p>
-<p><strong>Recommended:</strong>
-- 2 CPU cores
-- 4 GB RAM
-- 50 GB disk (for multiple large repos)</p>
+<p><strong>Minimum:</strong></p>
+<ul>
+<li>2 CPU cores</li>
+<li>2 GB RAM</li>
+<li>25 GB disk</li>
+</ul>
+<p><strong>Recommended:</strong></p>
+<ul>
+<li>2 CPU cores</li>
+<li>4 GB RAM</li>
+<li>50 GB disk (for multiple large repos)</li>
+</ul>
 <h2 id="gateway-integration">Gateway Integration<a class="headerlink" href="#gateway-integration" title="Permanent link">&para;</a></h2>
 <p>When deployed with the gateway pattern, Gitea is automatically proxied:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Gateway automatically configures nginx:</span>
@@ -3687,11 +3691,13 @@
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Proto</span><span class="w"> </span><span class="nv">$scheme</span><span class="p">;</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>Benefits:</strong>
-- SSL/TLS encryption via Let's Encrypt
-- Custom domain support
-- No port specification needed
-- Professional URL: <code>https://example.com/gitea</code></p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>SSL/TLS encryption via Let's Encrypt</li>
+<li>Custom domain support</li>
+<li>No port specification needed</li>
+<li>Professional URL: <code>https://example.com/gitea</code></li>
+</ul>
 <h2 id="user-management">User Management<a class="headerlink" href="#user-management" title="Permanent link">&para;</a></h2>
 <h3 id="creating-users">Creating Users<a class="headerlink" href="#creating-users" title="Permanent link">&para;</a></h3>
 <p><strong>Via tfgrid-compose commands (Recommended):</strong>
@@ -3899,12 +3905,14 @@
 <a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="c1"># 🔗 Mycelium:   http://[ipv6:addr]:3000</span>
 <a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="c1"># 🔑 Default login: gitadmin / changeme123</span>
 </code></pre></div>
-<p><strong>Features:</strong>
-- ✅ Automatically sources TFGrid environment variables
-- ✅ Detects WireGuard IP from system or environment
-- ✅ Detects Mycelium IPv6 address
-- ✅ Falls back to interface detection if vars not set
-- ✅ Shows default credentials</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>✅ Automatically sources TFGrid environment variables</li>
+<li>✅ Detects WireGuard IP from system or environment</li>
+<li>✅ Detects Mycelium IPv6 address</li>
+<li>✅ Falls back to interface detection if vars not set</li>
+<li>✅ Shows default credentials</li>
+</ul>
 <h3 id="status-monitoring-implemented">Status Monitoring (✅ Implemented)<a class="headerlink" href="#status-monitoring-implemented" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Check deployment status</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>tfgrid-compose<span class="w"> </span>status<span class="w"> </span>tfgrid-gitea

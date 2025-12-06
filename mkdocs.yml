@@ -126,13 +126,15 @@ nav:
     - Complete Setup: getting-started/setup.md
   
   - Guides:
-    - Getting Started (workflows): guides/getting-started.md
+    - Getting Started: guides/getting-started.md
     - TFGrid Compose: guides/tfgrid-compose.md
     - TFGrid Dashboard: guides/tfgrid-dashboard.md
     - TFGrid AI Stack: guides/tfgrid-ai-stack.md
     - TFGrid AI Agent: guides/tfgrid-ai-agent.md
     - TFGrid Gitea: guides/tfgrid-gitea.md
     - App Registry: guides/app-registry.md
+    - Custom Apps: guides/custom-apps.md
+    - Tarball Releases: guides/tarball-releases.md
   
   - Reference:
     - CLI:

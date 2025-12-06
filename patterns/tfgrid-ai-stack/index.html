@@ -12,13 +12,13 @@
         <meta name="author" content="TFGrid Studio Team">
       
       
-        <link rel="canonical" href="https://docs.tfgrid.studio/getting-started/concepts/">
+        <link rel="canonical" href="https://docs.tfgrid.studio/patterns/tfgrid-ai-stack/">
       
       
-        <link rel="prev" href="../quickstart/">
+        <link rel="prev" href="../k3s/">
       
       
-        <link rel="next" href="../setup/">
+        <link rel="next" href="../../architecture/overview/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Core Concepts - TFGrid Studio</title>
+        <title>TFGrid AI Stack - TFGrid Studio</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#core-concepts" class="md-skip">
+        <a href="#tfgrid-ai-stack-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Core Concepts
+              TFGrid AI Stack
             
           </span>
         </div>
@@ -252,13 +252,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../introduction/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../getting-started/introduction/" class="md-tabs__link">
           
   
   
@@ -294,6 +292,8 @@
   
   
   
+    
+  
   
     
     
@@ -301,10 +301,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../cli/app-commands/" class="md-tabs__link">
           
   
@@ -425,31 +427,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -467,7 +466,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -485,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
+      <a href="../../getting-started/introduction/" class="md-nav__link">
         
   
   
@@ -513,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -541,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../threefold-setup/" class="md-nav__link">
+      <a href="../../getting-started/threefold-setup/" class="md-nav__link">
         
   
   
@@ -569,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart/" class="md-nav__link">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
         
   
   
@@ -594,37 +593,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Core Concepts
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../getting-started/concepts/" class="md-nav__link">
         
   
   
@@ -640,164 +612,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Apps
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manifests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Manifests
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment Patterns
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deployment Patterns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        single-vm
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gateway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gateway
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#k3s" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        k3s
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hooks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        State Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Versioning
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#registry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Registry
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#context-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Context System
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -810,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/" class="md-nav__link">
+      <a href="../../getting-started/setup/" class="md-nav__link">
         
   
   
@@ -1155,28 +969,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1194,7 +1011,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1218,10 +1035,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1230,7 +1050,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   
@@ -1411,28 +1231,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -1450,7 +1273,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1468,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1496,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/single-vm/" class="md-nav__link">
+      <a href="../single-vm/" class="md-nav__link">
         
   
   
@@ -1524,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/gateway/" class="md-nav__link">
+      <a href="../gateway/" class="md-nav__link">
         
   
   
@@ -1552,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../patterns/k3s/" class="md-nav__link">
+      <a href="../k3s/" class="md-nav__link">
         
   
   
@@ -1577,10 +1400,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../patterns/tfgrid-ai-stack/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TFGrid AI Stack
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1596,6 +1446,403 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticate-with-qwen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authenticate with Qwen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup &amp; Restore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-other-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with Other Patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-not-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Not Starting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1622,10 +1869,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1634,7 +1884,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   
@@ -1768,10 +2018,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1780,7 +2033,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
             
   
   
@@ -2406,10 +2659,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apps" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Apps
+        Overview
       
     </span>
   </a>
@@ -2417,10 +2670,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manifests" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manifests
+        Quick Start
       
     </span>
   </a>
@@ -2428,22 +2681,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-patterns" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment Patterns
+        Features
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Deployment Patterns">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#single-vm" class="md-nav__link">
+  <a href="#components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        single-vm
+        Components
       
     </span>
   </a>
@@ -2451,21 +2715,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gateway" class="md-nav__link">
+  <a href="#network-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        gateway
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#k3s" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        k3s
+        Network Flow
       
     </span>
   </a>
@@ -2478,10 +2731,232 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hooks" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hooks
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticate-with-qwen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authenticate with Qwen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup &amp; Restore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-other-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with Other Patterns
       
     </span>
   </a>
@@ -2489,43 +2964,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-management" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        State Management
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Issues
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#project-not-starting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Versioning
+        Project Not Starting
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#registry" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#network-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Registry
+        Network Issues
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#context-system" class="md-nav__link">
+  <a href="#full-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Context System
+        Full Documentation
       
     </span>
   </a>
@@ -2561,7 +3053,7 @@
 
 
   
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/getting-started/concepts.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/edit/main/docs/patterns/tfgrid-ai-stack.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2570,215 +3062,461 @@
     
       
     
-    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/getting-started/concepts.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/tfgrid-studio/tfgrid-docs/raw/main/docs/patterns/tfgrid-ai-stack.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h1>
-<p>Understanding the key concepts behind TFGrid Compose will help you deploy and manage applications effectively.</p>
+<h1 id="tfgrid-ai-stack-pattern">TFGrid AI Stack Pattern<a class="headerlink" href="#tfgrid-ai-stack-pattern" title="Permanent link">&para;</a></h1>
+<p><strong>Complete AI development platform with integrated Git hosting</strong></p>
+<p>The TFGrid AI Stack pattern deploys a comprehensive AI-powered development environment on ThreeFold Grid, combining AI coding assistance, Git hosting, and monitoring in a single deployment.</p>
 <hr />
-<h2 id="apps">Apps<a class="headerlink" href="#apps" title="Permanent link">&para;</a></h2>
-<p>An <strong>app</strong> is a deployable unit that includes everything needed to run on ThreeFold Grid:</p>
-<ul>
-<li><strong>Manifest</strong> (<code>tfgrid-compose.yaml</code>) - Defines the app's requirements and configuration</li>
-<li><strong>Deployment hooks</strong> - Scripts that run during deployment lifecycle</li>
-<li><strong>Source code</strong> - Your application code (optional, can be pulled from git)</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>my-app/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── tfgrid-compose.yaml      # App manifest (required)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── deployment/              # Lifecycle hooks
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── setup.sh
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── configure.sh
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └── healthcheck.sh
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>└── src/                     # Your application code
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Internet
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[Gateway VM] ← nginx, APIs, monitoring, SSL
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    ↓ (WireGuard VPN)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[AI Agent VM] ← project creation, code generation
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    ↓
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[Gitea VM] ← Git repositories, web interface
 </code></pre></div>
-<p>Apps can come from:</p>
+<p><strong>Perfect For:</strong></p>
 <ul>
-<li><strong>Registry</strong> - Official and community apps (<code>tfgrid-compose up tfgrid-ai-stack</code>)</li>
-<li><strong>Local path</strong> - Your own apps (<code>tfgrid-compose up ./my-app</code>)</li>
-<li><strong>Git URL</strong> - Any git repository (<code>tfgrid-compose up https://github.com/org/app</code>)</li>
+<li>AI-assisted development workflows</li>
+<li>Team development environments</li>
+<li>Self-hosted code generation platforms</li>
+<li>Complete development stacks</li>
 </ul>
 <hr />
-<h2 id="manifests">Manifests<a class="headerlink" href="#manifests" title="Permanent link">&para;</a></h2>
-<p>The <strong>manifest</strong> (<code>tfgrid-compose.yaml</code>) is the heart of every app. It declares:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My application</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Which deployment pattern to use</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">patterns</span><span class="p">:</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">supported</span><span class="p">:</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># Resource requirements</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nt">resources</span><span class="p">:</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4096</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="c1"># Deployment lifecycle hooks</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="nt">hooks</span><span class="p">:</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="nt">setup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/setup.sh</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">  </span><span class="nt">configure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/configure.sh</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">  </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/healthcheck.sh</span>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
-<p>See the <a href="../../guides/custom-apps/">Custom Apps Guide</a> for complete manifest reference.</p>
+<p><strong>Deploy time:</strong> ~10 minutes<br />
+<strong>Cost:</strong> ~$15-20/month</p>
 <hr />
-<h2 id="deployment-patterns">Deployment Patterns<a class="headerlink" href="#deployment-patterns" title="Permanent link">&para;</a></h2>
-<p><strong>Patterns</strong> are reusable infrastructure templates that define how your app is deployed:</p>
-<h3 id="single-vm">single-vm<a class="headerlink" href="#single-vm" title="Permanent link">&para;</a></h3>
-<p>Single virtual machine with private networking.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-app<span class="w"> </span>--pattern<span class="o">=</span>single-vm
-</code></pre></div>
-<p><strong>Best for:</strong> Development, databases, AI agents, internal services</p>
-<p><strong>Features:</strong></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Private WireGuard/Mycelium networking</li>
-<li>Fast deployment (2-3 minutes)</li>
-<li>Cost-effective ($10-30/month)</li>
+<li>🤖 <strong>AI-Powered Development</strong> - Create projects with AI assistance using Qwen</li>
+<li>📦 <strong>Integrated Git Hosting</strong> - Built-in Gitea for version control</li>
+<li>🌐 <strong>Public Deployment</strong> - Automatic web deployment with SSL</li>
+<li>📊 <strong>Monitoring</strong> - Prometheus + Grafana dashboards</li>
+<li>🔒 <strong>Secure Networking</strong> - WireGuard VPN for inter-VM communication</li>
+<li>⚡ <strong>One-Click Deployment</strong> - Single command setup</li>
+<li>🔄 <strong>Automated Backups</strong> - Scheduled backups with retention policies</li>
 </ul>
-<h3 id="gateway">gateway<a class="headerlink" href="#gateway" title="Permanent link">&para;</a></h3>
-<p>Multi-VM with public IPv4, SSL, and load balancing.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-app<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>myapp.com
-</code></pre></div>
-<p><strong>Best for:</strong> Production web apps, SaaS, e-commerce</p>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Public IPv4 address</li>
-<li>Automatic SSL via Let's Encrypt</li>
-<li>Reverse proxy and load balancing</li>
-<li>Private backend network</li>
-</ul>
-<h3 id="k3s">k3s<a class="headerlink" href="#k3s" title="Permanent link">&para;</a></h3>
-<p>Kubernetes cluster using lightweight K3s.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-app<span class="w"> </span>--pattern<span class="o">=</span>k3s
-</code></pre></div>
-<p><strong>Best for:</strong> Microservices, cloud-native apps, enterprise workloads</p>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Control plane + worker nodes</li>
-<li>MetalLB load balancer</li>
-<li>Nginx Ingress Controller</li>
-<li>Management node with kubectl, helm, k9s</li>
-</ul>
-<p>See <a href="../../patterns/overview/">Deployment Patterns</a> for detailed documentation.</p>
 <hr />
-<h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
-<p><strong>Hooks</strong> are shell scripts that run at specific points during deployment:</p>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<h3 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Hook</th>
-<th>When it runs</th>
+<th>Component</th>
 <th>Purpose</th>
+<th>Default Resources</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>setup.sh</code></td>
-<td>After VM is ready</td>
-<td>Install dependencies, create directories</td>
+<td><strong>Gateway VM</strong></td>
+<td>Public API gateway, nginx, monitoring, SSL</td>
+<td>2 CPU, 4GB RAM</td>
 </tr>
 <tr>
-<td><code>configure.sh</code></td>
-<td>After setup</td>
-<td>Configure services, start application</td>
+<td><strong>AI Agent VM</strong></td>
+<td>Project creation, code generation</td>
+<td>4 CPU, 8GB RAM</td>
 </tr>
 <tr>
-<td><code>healthcheck.sh</code></td>
-<td>After configure</td>
-<td>Verify deployment is working</td>
+<td><strong>Gitea VM</strong></td>
+<td>Git repositories, web interface</td>
+<td>2 CPU, 4GB RAM</td>
 </tr>
 </tbody>
 </table>
-<p>Hooks run <strong>on the VM</strong>, not on your local machine.</p>
-<p>Example <code>setup.sh</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/usr/bin/env bash</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
+<h3 id="network-flow">Network Flow<a class="headerlink" href="#network-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>User Request → Gateway VM (Public IPv4)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>                    ↓
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>              nginx reverse proxy
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                    ↓
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>         ┌─────────┴─────────┐
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>         ↓                   ↓
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    AI Agent API        Gitea Web
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    (WireGuard)        (WireGuard)
+</code></pre></div>
+<p>All inter-VM communication uses WireGuard VPN for security.</p>
+<hr />
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Deploy with defaults</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Deploy with custom domain</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>--var<span class="w"> </span><span class="nv">domain</span><span class="o">=</span>ai.example.com<span class="w"> </span>--var<span class="w"> </span><span class="nv">ssl_email</span><span class="o">=</span>admin@example.com
+</code></pre></div>
+<h3 id="authenticate-with-qwen">Authenticate with Qwen<a class="headerlink" href="#authenticate-with-qwen" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tfgrid-compose<span class="w"> </span>login
+</code></pre></div>
+<h3 id="create-a-project">Create a Project<a class="headerlink" href="#create-a-project" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Interactive project creation</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tfgrid-compose<span class="w"> </span>create
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>apt-get<span class="w"> </span>update
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nginx<span class="w"> </span>postgresql
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/my-app
-</code></pre></div></p>
-<hr />
-<h2 id="state-management">State Management<a class="headerlink" href="#state-management" title="Permanent link">&para;</a></h2>
-<p>TFGrid Compose tracks deployment state in a <code>.tfgrid-compose/</code> directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>.tfgrid-compose/
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── state.yaml           # Deployment metadata
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── terraform/           # Infrastructure state
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>├── inventory.ini        # Ansible inventory
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>└── *.log               # Deployment logs
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Or with arguments</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>tfgrid-compose<span class="w"> </span>create<span class="w"> </span>my-portfolio<span class="w"> </span><span class="s2">&quot;A personal portfolio website&quot;</span>
 </code></pre></div>
-<p><strong>Key state information:</strong></p>
-<ul>
-<li>VM IP addresses (WireGuard, Mycelium, public)</li>
-<li>Node IDs used</li>
-<li>Deployment status</li>
-<li>Contract IDs</li>
-</ul>
-<p>Commands that use state:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>status<span class="w">    </span><span class="c1"># Show deployment status</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tfgrid-compose<span class="w"> </span>ssh<span class="w">       </span><span class="c1"># Connect to VM</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>tfgrid-compose<span class="w"> </span>logs<span class="w">      </span><span class="c1"># View logs</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>tfgrid-compose<span class="w"> </span>down<span class="w">      </span><span class="c1"># Destroy deployment</span>
+<h3 id="manage-projects">Manage Projects<a class="headerlink" href="#manage-projects" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># List all projects</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tfgrid-compose<span class="w"> </span>projects
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Monitor a project</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>tfgrid-compose<span class="w"> </span>monitor<span class="w"> </span>my-portfolio
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># View project logs</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>my-portfolio
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># Stop a project</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>tfgrid-compose<span class="w"> </span>stop<span class="w"> </span>my-portfolio
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># Remove a project</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>tfgrid-compose<span class="w"> </span>remove<span class="w"> </span>my-portfolio
+</code></pre></div>
+<h3 id="access-services">Access Services<a class="headerlink" href="#access-services" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Open web interface in browser</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tfgrid-compose<span class="w"> </span>launch
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Get deployment addresses</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>tfgrid-compose<span class="w"> </span>address
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># SSH into the stack</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>tfgrid-compose<span class="w"> </span>ssh
+</code></pre></div>
+<h3 id="backup-restore">Backup &amp; Restore<a class="headerlink" href="#backup-restore" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Manual backup</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tfgrid-compose<span class="w"> </span>backup
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Restore from backup</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>tfgrid-compose<span class="w"> </span>restore<span class="w"> </span>backup-2025-12-06.tar.gz
 </code></pre></div>
 <hr />
-<h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h2>
-<p>TFGrid Compose uses <strong>Git commit hashes</strong> as the primary version identifier:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>✅<span class="w"> </span>Application<span class="w"> </span>loaded:<span class="w"> </span>tfgrid-ai-stack<span class="w"> </span>24c9148
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>ℹ<span class="w"> </span>Git<span class="w"> </span>commit:<span class="w"> </span>24c9148
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>ℹ<span class="w"> </span>Last<span class="w"> </span>updated:<span class="w"> </span><span class="m">2025</span>-11-11<span class="w"> </span><span class="m">22</span>:47:49
-</code></pre></div>
-<p><strong>Benefits:</strong></p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>domain</code></td>
+<td>string</td>
+<td>""</td>
+<td>Domain for public access</td>
+</tr>
+<tr>
+<td><code>ssl_email</code></td>
+<td>string</td>
+<td>""</td>
+<td>Email for SSL certificate</td>
+</tr>
+<tr>
+<td><code>vm_cpu</code></td>
+<td>number</td>
+<td>8</td>
+<td>Total CPU cores</td>
+</tr>
+<tr>
+<td><code>vm_memory</code></td>
+<td>number</td>
+<td>16384</td>
+<td>Total memory (MB)</td>
+</tr>
+<tr>
+<td><code>vm_disk</code></td>
+<td>number</td>
+<td>200</td>
+<td>Total disk (GB)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>API_RATE_LIMIT</code></td>
+<td>100r/m</td>
+<td>API rate limiting</td>
+</tr>
+<tr>
+<td><code>BACKUP_RETENTION_DAYS</code></td>
+<td>30</td>
+<td>Backup retention period</td>
+</tr>
+<tr>
+<td><code>BACKUP_SCHEDULE</code></td>
+<td>0 2 * * *</td>
+<td>Backup cron schedule</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="custom-commands">Custom Commands<a class="headerlink" href="#custom-commands" title="Permanent link">&para;</a></h2>
+<p>The TFGrid AI Stack provides extensive custom commands:</p>
+<h3 id="project-management">Project Management<a class="headerlink" href="#project-management" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create</code></td>
+<td>Create a new AI coding project</td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td>Start agent loop for a project</td>
+</tr>
+<tr>
+<td><code>stop</code></td>
+<td>Stop agent loop for a project</td>
+</tr>
+<tr>
+<td><code>monitor</code></td>
+<td>Monitor project progress</td>
+</tr>
+<tr>
+<td><code>projects</code></td>
+<td>Show status of all projects</td>
+</tr>
+<tr>
+<td><code>remove</code></td>
+<td>Delete a project</td>
+</tr>
+<tr>
+<td><code>logs</code></td>
+<td>View project logs</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td>Show project summary</td>
+</tr>
+<tr>
+<td><code>restart</code></td>
+<td>Restart agent for a project</td>
+</tr>
+<tr>
+<td><code>stopall</code></td>
+<td>Stop all running projects</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>login</code></td>
+<td>Authenticate with Qwen (OAuth)</td>
+</tr>
+<tr>
+<td><code>whoami</code></td>
+<td>Check Qwen authentication status</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hosting">Hosting<a class="headerlink" href="#hosting" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>publish</code></td>
+<td>Publish project for web hosting</td>
+</tr>
+<tr>
+<td><code>unpublish</code></td>
+<td>Remove project from web hosting</td>
+</tr>
+<tr>
+<td><code>hosting-status</code></td>
+<td>Show hosting status</td>
+</tr>
+</tbody>
+</table>
+<h3 id="system">System<a class="headerlink" href="#system" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>launch</code></td>
+<td>Open web interface in browser</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Show system status</td>
+</tr>
+<tr>
+<td><code>backup</code></td>
+<td>Trigger manual backup</td>
+</tr>
+<tr>
+<td><code>restore</code></td>
+<td>Restore from backup</td>
+</tr>
+<tr>
+<td><code>set-gitea</code></td>
+<td>Configure Gitea organization</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="resource-requirements">Resource Requirements<a class="headerlink" href="#resource-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="minimum">Minimum<a class="headerlink" href="#minimum" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Precise</strong> - Every deployment has a unique, immutable version</li>
-<li><strong>Automatic</strong> - No manual version bumping required</li>
-<li><strong>Traceable</strong> - Know exactly which code is running</li>
+<li><strong>CPU</strong>: 8 cores</li>
+<li><strong>Memory</strong>: 16 GB</li>
+<li><strong>Disk</strong>: 200 GB</li>
+</ul>
+<h3 id="recommended">Recommended<a class="headerlink" href="#recommended" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>CPU</strong>: 8+ cores</li>
+<li><strong>Memory</strong>: 16+ GB</li>
+<li><strong>Disk</strong>: 200+ GB</li>
 </ul>
 <hr />
-<h2 id="registry">Registry<a class="headerlink" href="#registry" title="Permanent link">&para;</a></h2>
-<p>The <strong>App Registry</strong> is a catalog of deployable applications:</p>
-<ul>
-<li><strong>Official apps</strong> - Maintained by TFGrid Studio (tfgrid-ai-stack, tfgrid-ai-agent, tfgrid-gitea)</li>
-<li><strong>Community apps</strong> - Verified contributions from the community</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Search the registry</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>ai
+<h2 id="comparison-with-other-patterns">Comparison with Other Patterns<a class="headerlink" href="#comparison-with-other-patterns" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>single-vm</th>
+<th>gateway</th>
+<th>k3s</th>
+<th>tfgrid-ai-stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VMs</td>
+<td>1</td>
+<td>2+</td>
+<td>3+</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Public IPv4</td>
+<td>Optional</td>
+<td>✅</td>
+<td>Optional</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SSL</td>
+<td>Manual</td>
+<td>✅</td>
+<td>Via Ingress</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>AI Integration</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Git Hosting</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>❌</td>
+<td>❌</td>
+<td>Optional</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Deploy Time</td>
+<td>2-3 min</td>
+<td>5-7 min</td>
+<td>8-10 min</td>
+<td>~10 min</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="authentication-issues">Authentication Issues<a class="headerlink" href="#authentication-issues" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Re-authenticate with Qwen</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>login
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Deploy from registry</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Check authentication status</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tfgrid-compose<span class="w"> </span>whoami
 </code></pre></div>
-<p>Browse apps at <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a>.</p>
-<hr />
-<h2 id="context-system">Context System<a class="headerlink" href="#context-system" title="Permanent link">&para;</a></h2>
-<p>The <strong>context system</strong> lets you work with multiple deployments without specifying which one each time:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># With one deployment, context is automatic</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>tfgrid-compose<span class="w"> </span>ssh<span class="w">       </span><span class="c1"># Connects to the only deployment</span>
+<h3 id="project-not-starting">Project Not Starting<a class="headerlink" href="#project-not-starting" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Check project status</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>tfgrid-compose<span class="w"> </span>projects
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># With multiple deployments, select one</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>tfgrid-compose<span class="w"> </span><span class="k">select</span><span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>tfgrid-compose<span class="w"> </span>ssh<span class="w">       </span><span class="c1"># Connects to selected deployment</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># View logs</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>tfgrid-compose<span class="w"> </span>logs<span class="w"> </span>my-project
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Restart the project</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>tfgrid-compose<span class="w"> </span>restart<span class="w"> </span>my-project
 </code></pre></div>
-<p>See <a href="../../cli/context-system/">Context System</a> for details.</p>
+<h3 id="network-issues">Network Issues<a class="headerlink" href="#network-issues" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Check WireGuard status</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>tfgrid-compose<span class="w"> </span>ssh
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>sudo<span class="w"> </span>wg<span class="w"> </span>show
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># Check service status</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>systemctl<span class="w"> </span>status<span class="w"> </span>gitea
+</code></pre></div>
+<hr />
+<h2 id="full-documentation">Full Documentation<a class="headerlink" href="#full-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="../../guides/tfgrid-ai-stack/">TFGrid AI Stack Guide</a></strong> - Complete usage guide</li>
+<li><strong><a href="https://github.com/tfgrid-studio/tfgrid-ai-stack">Source Code</a></strong> - Application repository</li>
+<li><strong><a href="https://github.com/tfgrid-studio/tfgrid-compose/tree/main/patterns/tfgrid-ai-stack">Pattern Source</a></strong> - Pattern implementation</li>
+</ul>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../quickstart/">Quick Start</a></strong> - Deploy your first app</li>
-<li><strong><a href="../../guides/custom-apps/">Custom Apps Guide</a></strong> - Create your own apps</li>
-<li><strong><a href="../../patterns/overview/">Deployment Patterns</a></strong> - Learn about patterns</li>
-<li><strong><a href="../../cli/app-commands/">CLI Reference</a></strong> - Complete command reference</li>
+<li><strong><a href="../../guides/tfgrid-ai-stack/">Deploy your first project</a></strong> - Get started with AI development</li>
+<li><strong><a href="../single-vm/">Single-VM Pattern</a></strong> - Simpler deployments</li>
+<li><strong><a href="../gateway/">Gateway Pattern</a></strong> - Production web apps</li>
+<li><strong><a href="../k3s/">K3s Pattern</a></strong> - Kubernetes clusters</li>
 </ul>
 
 
@@ -2857,7 +3595,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start">
+          <a href="../k3s/" class="md-footer__link md-footer__link--prev" aria-label="Previous: K3s Pattern">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2867,20 +3605,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Quick Start
+                K3s Pattern
               </div>
             </div>
           </a>
         
         
           
-          <a href="../setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Complete Setup">
+          <a href="../../architecture/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: System Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Complete Setup
+                System Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">

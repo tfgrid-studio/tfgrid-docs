@@ -1505,6 +1505,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cli/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1666,6 +1694,34 @@
     
   
     K3s Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="patterns/tfgrid-ai-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TFGrid AI Stack
   
 
     
@@ -2823,14 +2879,14 @@
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Enter your seed phrase when prompted</span>
 </code></pre></div></p>
 <h3 id="3-deploy-an-app">3. Deploy an App<a class="headerlink" href="#3-deploy-an-app" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Deploy official app (v0.10.0+)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Deploy official app from registry</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Or use local path (current)</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>../tfgrid-ai-agent
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Or deploy by name</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Or specify app path</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>../tfgrid-ai-agent
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Or use local path</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./my-app
 </code></pre></div>
 <p><strong>That's it!</strong> Your application is now running on ThreeFold Grid. 🎉</p>
 <hr />
@@ -2907,7 +2963,7 @@
 <ul>
 <li><strong>Discussions:</strong> <a href="https://github.com/orgs/tfgrid-studio/discussions">GitHub Discussions</a></li>
 <li><strong>Issues:</strong> Open issues in respective repositories</li>
-<li><strong>Contributing:</strong> See <a href="contributing/overview.md">contributing guide</a></li>
+<li><strong>Contributing:</strong> See <a href="community/contributing/">contributing guide</a></li>
 </ul>
 <hr />
 <h2 id="license">📜 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>

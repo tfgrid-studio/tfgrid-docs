@@ -132,6 +132,9 @@ nav:
     - TFGrid AI Stack: guides/tfgrid-ai-stack.md
     - TFGrid AI Agent: guides/tfgrid-ai-agent.md
     - TFGrid Gitea: guides/tfgrid-gitea.md
+    - TFGrid WordPress: guides/tfgrid-wordpress.md
+    - TFGrid Nextcloud: guides/tfgrid-nextcloud.md
+    - TFGrid ERPNext: guides/tfgrid-erpnext.md
     - App Registry: guides/app-registry.md
     - Custom Apps: guides/custom-apps.md
     - Tarball Releases: guides/tarball-releases.md

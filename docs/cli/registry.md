@@ -122,6 +122,7 @@ tfgrid-compose switch ai-agent
 ```
 
 **After switching:**
+
 - `tfgrid-compose logs` → shows ai-agent logs
 - `tfgrid-compose status` → shows ai-agent status
 - `tfgrid-compose exec` → runs commands on ai-agent

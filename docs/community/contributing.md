@@ -219,12 +219,14 @@ git push origin feature/my-feature
 ### 6. Code Review Process
 
 **What to expect:**
+
 - Maintainers will review within 3-5 business days
 - You may be asked to make changes
 - CI tests must pass
 - At least one approval required
 
 **Responding to feedback:**
+
 - Be receptive to suggestions
 - Ask questions if unclear
 - Make requested changes
@@ -267,6 +269,7 @@ my_function "value"
 ```
 
 **Best practices:**
+
 - Use `set -e` for error handling
 - Quote variables: `"$var"` not `$var`
 - Use `local` for function variables
@@ -297,6 +300,7 @@ output "primary_ip" {
 ```
 
 **Requirements:**
+
 - Implement [pattern contract](../development/pattern-contract.md)
 - Use variables for configurability
 - Document all outputs
@@ -333,6 +337,7 @@ handlers:
 ```
 
 **Best practices:**
+
 - Use descriptive task names
 - Idempotent operations
 - Use handlers for restarts
@@ -393,6 +398,7 @@ cd tfgrid-compose
 ### When to Update Docs
 
 **Always update docs when:**
+
 - Adding new features
 - Changing behavior
 - Adding CLI commands
@@ -408,6 +414,7 @@ cd tfgrid-compose
 - Troubleshooting
 
 **tfgrid-compose/README.md:**
+
 - Project overview
 - Quick start
 - Links to full docs
@@ -415,6 +422,7 @@ cd tfgrid-compose
 ### Writing Style
 
 **Be clear and concise:**
+
 - Short sentences
 - Active voice
 - Clear examples
@@ -453,6 +461,7 @@ You can deploy stuff with the up command maybe.
 All contributors must follow our [Code of Conduct](code-of-conduct.md).
 
 **Key points:**
+
 - Be respectful
 - Be inclusive
 - Be constructive
@@ -461,11 +470,13 @@ All contributors must follow our [Code of Conduct](code-of-conduct.md).
 ### Communication Channels
 
 **GitHub:**
+
 - Issues: Bug reports, feature requests
 - Discussions: Questions, ideas, help
 - Pull Requests: Code contributions
 
 **Maintainers:**
+
 - Tag `@tfgrid-studio/maintainers` for urgent issues
 - Be patient - we're volunteers
 
@@ -477,6 +488,7 @@ All contributors must follow our [Code of Conduct](code-of-conduct.md).
 3. Read troubleshooting guide
 
 **When asking:**
+
 - Provide context
 - Include error messages
 - Show what you tried
@@ -496,6 +508,7 @@ We follow [Semantic Versioning](../development/versioning-policy.md):
 ### Release Cycle
 
 **Regular releases:**
+
 - PATCH: As needed for bug fixes
 - MINOR: Monthly or when features are ready
 - MAJOR: Annually or for significant changes
@@ -518,6 +531,7 @@ All contributors are recognized in:
 Outstanding contributors may be invited to become maintainers.
 
 **Maintainer responsibilities:**
+
 - Review pull requests
 - Triage issues
 - Guide contributors
@@ -554,16 +568,19 @@ git push --force-with-lease origin feature/my-feature
 ### Getting Unstuck
 
 **Your PR isn't being reviewed?**
+
 - Ping after 5 business days
 - Check if CI failed
 - Ensure you filled out PR template
 
 **Tests are failing?**
+
 - Check CI logs
 - Run tests locally
 - Ask for help in PR comments
 
 **Merge conflict?**
+
 - Rebase on latest main
 - Resolve conflicts
 - Force push to your branch
@@ -575,6 +592,7 @@ git push --force-with-lease origin feature/my-feature
 Thank you for contributing to TFGrid Studio! Your help makes this project better for everyone.
 
 **Questions?**
+
 - Create a [GitHub Discussion](https://github.com/orgs/tfgrid-studio/discussions)
 - Email: [contact@tfgrid.studio](mailto:contact@tfgrid.studio)
 

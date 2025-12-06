@@ -174,12 +174,14 @@ ls -la ~/.config/threefold/mnemonic
 ```
 
 **Never:**
+
 - ❌ Commit mnemonics to version control
 - ❌ Share mnemonics in chat/email
 - ❌ Store in publicly accessible locations
 - ❌ Use same mnemonic across environments
 
 **Do:**
+
 - ✅ Use environment variables in CI/CD
 - ✅ Rotate mnemonics regularly
 - ✅ Use separate mnemonics for dev/prod
@@ -209,11 +211,13 @@ ssh-keygen -p -f ~/.ssh/tfgrid_ed25519
 #### WireGuard Security
 
 **Key management:**
+
 - Generated keys stored in Terraform state
 - Private keys in `/etc/wireguard/` (600 permissions)
 - Don't share WireGuard configurations
 
 **Network isolation:**
+
 - WireGuard creates private networks
 - No default internet routing
 - Explicitly configure external access if needed
@@ -248,6 +252,7 @@ sudo rm -f /etc/wireguard/wg*.conf
 #### Code Security
 
 **Never commit:**
+
 - API keys or tokens
 - Passwords or secrets
 - Private keys
@@ -255,6 +260,7 @@ sudo rm -f /etc/wireguard/wg*.conf
 - Personal data
 
 **Use secure coding practices:**
+
 - Validate all inputs
 - Sanitize log output
 - Use parameterized commands (avoid injection)
@@ -288,6 +294,7 @@ sudo apt update && sudo apt upgrade
 ```
 
 **Review third-party code:**
+
 - Audit pattern contributions
 - Review Terraform modules
 - Check Ansible roles
@@ -298,6 +305,7 @@ sudo apt update && sudo apt upgrade
 #### Release Security
 
 **Before release:**
+
 - Review all PRs for security issues
 - Run security scanners
 - Check for hardcoded secrets
@@ -305,6 +313,7 @@ sudo apt update && sudo apt upgrade
 - Test in isolated environment
 
 **Release checklist:**
+
 - [ ] No hardcoded credentials
 - [ ] Dependencies up to date
 - [ ] Security advisory reviewed
@@ -331,12 +340,14 @@ sudo apt update && sudo apt upgrade
 **Risk:** High - Can lead to fund theft
 
 **Vectors:**
+
 - Logs containing mnemonics
 - Committed to version control
 - Insecure file permissions
 - Exposed in error messages
 
 **Prevention:**
+
 - Redact from all logs
 - Check file permissions
 - Use `.gitignore`
@@ -347,11 +358,13 @@ sudo apt update && sudo apt upgrade
 **Risk:** Medium - Contains deployment details
 
 **Vectors:**
+
 - Committed to version control
 - Publicly accessible storage
 - Insufficient file permissions
 
 **Prevention:**
+
 - Add to `.gitignore`
 - Use secure state backends
 - Restrict file permissions
@@ -362,12 +375,14 @@ sudo apt update && sudo apt upgrade
 **Risk:** High - Unauthorized VM access
 
 **Vectors:**
+
 - Weak key strength
 - No passphrase
 - Insecure storage
 - Shared keys
 
 **Prevention:**
+
 - Use Ed25519 or RSA 4096
 - Use passphrases
 - Restrict permissions (600)
@@ -378,11 +393,13 @@ sudo apt update && sudo apt upgrade
 **Risk:** Medium - Network access
 
 **Vectors:**
+
 - World-readable files
 - Committed to repos
 - Shared configurations
 
 **Prevention:**
+
 - 600 permissions on configs
 - Don't commit configs
 - Rotate keys regularly
@@ -423,6 +440,7 @@ sudo apt update && sudo apt upgrade
 ### Planned Security Enhancements
 
 **Roadmap:**
+
 - [ ] Encrypted state backends (v0.11.0)
 - [ ] Secrets management integration (v0.12.0)
 - [ ] Automated security scanning (v1.0.0)
@@ -436,11 +454,13 @@ sudo apt update && sudo apt upgrade
 **Status:** No formal audit completed yet
 
 **Planned:**
+
 - Community review: Ongoing
 - First formal audit: Planned for v1.0.0
 - Regular audits: Annually after 1.0
 
 **Want to help?**
+
 - Review code for security issues
 - Report vulnerabilities responsibly
 - Contribute security improvements
@@ -452,9 +472,11 @@ sudo apt update && sudo apt upgrade
 We recognize security researchers who help keep TFGrid Studio secure.
 
 **Contributors:**
+
 - *Be the first!*
 
 **Acknowledgment options:**
+
 - GitHub profile link
 - Twitter handle
 - Company name
@@ -486,12 +508,14 @@ We will not pursue legal action against researchers who follow these guidelines.
 ### Scope
 
 **In scope:**
+
 - tfgrid-compose
 - tfgrid-ai-agent
 - tfgrid-docs website
 - Official infrastructure
 
 **Out of scope:**
+
 - Third-party services (ThreeFold Grid itself)
 - User deployments
 - Community projects

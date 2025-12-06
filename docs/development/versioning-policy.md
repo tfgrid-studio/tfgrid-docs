@@ -273,6 +273,7 @@ v2.0.0  ← Major architectural changes (if needed)
 ### Path to 1.0.0
 
 **Requirements for 1.0.0 release:**
+
 - ✅ All core patterns production-ready
 - ✅ Comprehensive documentation
 - ✅ Test coverage >80%
@@ -344,12 +345,14 @@ tfgrid-compose update install
 ### TFGrid Studio Version Alignment
 
 **Projects:**
+
 - `tfgrid-compose`: Orchestration platform
 - `tfgrid-ai-agent`: AI agent application
 - `tfgrid-docs`: Documentation site
 - `tfgrid-web`: Web interface
 
 **Version Independence:**
+
 - Each project has its own version
 - No requirement for version alignment
 - Compatibility documented in release notes
@@ -428,6 +431,7 @@ Note: Announced in v1.2.0, removed in v2.0.0
 ### How do I stay updated?
 
 **Answer:**
+
 - Watch the GitHub repository
 - Subscribe to release notifications
 - Check changelog regularly

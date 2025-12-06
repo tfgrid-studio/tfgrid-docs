@@ -46,6 +46,7 @@ tfgrid-compose login
 ```
 
 **What it configures:**
+
 - ThreeFold mnemonic (required for deployments)
 - Git identity (name/email for commits)
 - GitHub token (optional, for private repos)
@@ -82,6 +83,7 @@ tfgrid-compose search --tag development
 ```
 
 **Current official apps:**
+
 - `tfgrid-ai-agent` - AI coding assistant
 - `tfgrid-gitea` - Self-hosted Git service
 

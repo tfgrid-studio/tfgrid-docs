@@ -52,6 +52,7 @@ tfgrid-compose projects
 > **Important:** Always run `tfgrid-compose login` (or `t login` if you use the alias) **after each deployment or redeploy of tfgrid-ai-stack and before any `create`, `run`, or `publish` command**. Qwen must be authenticated for the AI agent to work.
 
 **Access URLs:**
+
 - Gitea Git Interface: `http://your-ip/git/`
 - AI Projects: `http://your-ip/git/tfgrid-ai-agent/project-name/`
 - API Endpoints: `http://your-ip/api/`

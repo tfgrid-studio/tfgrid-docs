@@ -30,7 +30,9 @@ Monetize your applications - sell apps on the marketplace with automatic billing
 **Revenue Share:**
 
 - **85% to you**
+
 - **15% platform fee**
+
 - Payment in TFT or fiat
 - Monthly payouts
 
@@ -219,9 +221,11 @@ Advanced features for large organizations with complex requirements.
 ## Availability
 
 **Free & Open Source:**
+
 - Core CLI tools remain free forever
 
 **Premium Tiers:**
+
 - Marketplace available in all paid tiers
 - White Label for Enterprise
 

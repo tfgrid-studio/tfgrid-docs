@@ -32,6 +32,7 @@ This approach provides:
 **Status:** ✅ Fully integrated into TFGrid Compose (v1.0.0)
 
 **What it provides:**
+
 - Complete AI coding agent deployment
 - Qwen AI integration
 - Project management system
@@ -52,6 +53,7 @@ Result: tfgrid-ai-agent deployable via tfgrid-compose
 ```
 
 **Changes made:**
+
 - ✅ Extracted infrastructure as reusable pattern
 - ✅ Separated app from deployment logic
 - ✅ Created manifest system (`tfgrid-compose.yaml`)
@@ -84,6 +86,7 @@ tfgrid-compose agent create
 **Status:** 🚧 Planned for integration (Q4 2025)
 
 **What it provides:**
+
 - Public IPv4 gateway deployment
 - NAT-based gateway (nftables)
 - Proxy-based gateway (HAProxy + Nginx)
@@ -95,6 +98,7 @@ tfgrid-compose agent create
 - Path-based routing
 
 **Key features:**
+
 - ✅ **Dual gateway modes:** NAT vs Proxy
 - ✅ **SSL certificates:** Free Let's Encrypt with auto-renewal
 - ✅ **Network redundancy:** WireGuard + Mycelium both mode
@@ -121,6 +125,7 @@ tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
 ```
 
 **Repository stats:**
+
 - 1,054 commits
 - Complete Terraform + Ansible implementation
 - Comprehensive documentation
@@ -135,6 +140,7 @@ tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
 **Status:** 🚧 Planned for integration (Q1 2026)
 
 **What it provides:**
+
 - Complete K3s cluster deployment
 - Multi-node orchestration (control + workers)
 - Management node with K9s TUI
@@ -145,6 +151,7 @@ tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
 - Auto-scaling workers
 
 **Key features:**
+
 - ✅ **K3s lightweight Kubernetes** - Production-grade
 - ✅ **Management node:** kubectl, K9s, Helm pre-installed
 - ✅ **Load balancing:** MetalLB with IPv4/IPv6 support
@@ -174,6 +181,7 @@ tfgrid-compose k9s
 ```
 
 **Repository stats:**
+
 - 522 commits
 - Complete K3s automation
 - Comprehensive K9s integration
@@ -188,6 +196,7 @@ tfgrid-compose k9s
 **Status:** ✅ Dependency of tfgrid-ai-agent
 
 **What it provides:**
+
 - AI coding loop technique
 - Qwen CLI integration
 - Project management framework
@@ -215,6 +224,7 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 5. ✅ Documentation written
 
 **Result:**
+
 - Reusable single-vm pattern
 - Works with any application
 - Clean separation of concerns
@@ -284,17 +294,20 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 ### Individual Contributors
 
 **[mik-tf](https://github.com/mik-tf)**
+
 - Created tfgrid-ai-agent (complete AI deployment)
 - Created tfgrid-gateway (gateway patterns, SSL, networking)
 - Created ai-agent framework (loop technique)
 - Provided foundation for TFGrid Compose
 
 **[ucli-tools organization](https://github.com/ucli-tools)**
+
 - Created tfgrid-k3s (complete K3s cluster deployment)
 - Advanced Kubernetes automation
 - Management node patterns
 
 **[Geoff Huntley](https://github.com/ghuntley)**
+
 - Pioneered "Ralph" AI coding technique
 - Inspired ai-agent framework
 
@@ -382,6 +395,7 @@ tfgrid-compose up ../tfgrid-ai-agent
 ```
 
 **Benefits:**
+
 - ✅ Simpler commands
 - ✅ Context file support
 - ✅ Pattern reusability
@@ -412,11 +426,13 @@ tfgrid-compose up ../tfgrid-ai-agent
 ### Source Code Licenses
 
 **From source repos:**
+
 - tfgrid-ai-agent: Apache 2.0 License
 - tfgrid-gateway: Apache 2.0 License
 - tfgrid-k3s: Apache 2.0 License
 
 **TFGrid Compose:**
+
 - tfgrid-compose: Apache 2.0 License
 - tfgrid-ai-agent: Apache 2.0 License
 - Commercial repos: Business Source License / Proprietary

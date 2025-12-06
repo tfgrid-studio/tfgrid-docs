@@ -290,6 +290,7 @@ http://localhost:<port from status>
 The UI is a split-screen single-page app with two columns:
 
 - **Left: Input (apps, commands, deployments, preferences)**
+
 - **Right: Output (logs and shell)**
 
 ### 6.1 Left column – Input

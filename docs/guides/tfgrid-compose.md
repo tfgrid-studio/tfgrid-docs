@@ -12,6 +12,7 @@ TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, 
 ### Prerequisites
 
 **Required Dependencies:**
+
 - **tfcmd**: Essential for grid contract management and validation
   ```bash
   curl -fsSL https://raw.githubusercontent.com/threefoldtech/tfcmd/main/install.sh | bash

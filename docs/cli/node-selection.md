@@ -67,6 +67,7 @@ tfgrid-compose up tfgrid-ai-agent
 ```
 
 **Selection Criteria:**
+
 - ✅ Healthy nodes only
 - ✅ Non-dedicated nodes (available for rent)
 - ✅ Sufficient resources (CPU, RAM, disk)
@@ -350,6 +351,7 @@ metadata:
 ```
 
 **Benefits of YAML format:**
+
 - ✅ **Human-readable** - Easy to edit manually
 - ✅ **Shareable** - Team members can copy preference files
 - ✅ **Version control** - Track changes over time
@@ -434,6 +436,7 @@ tfgrid-compose up myapp --min-uptime-days=30
 ```
 
 **Health metrics are calculated as:**
+
 - **CPU Usage**: `(used_resources.cru / total_resources.cru) * 100`
 - **Disk Usage**: `(used_resources.sru / total_resources.sru) * 100`
 - **Uptime**: `uptime_seconds / 86400` (days)
@@ -584,6 +587,7 @@ tfgrid-compose up myapp --max-cpu-usage=10
 ```
 
 **Solutions:**
+
 - Relax filter criteria
 - Remove restrictive filters
 - Check configuration: `tfgrid-compose config show`
@@ -606,6 +610,7 @@ tfgrid-compose up myapp --node=99999
 ```
 
 **Solutions:**
+
 - Use auto-selection: `tfgrid-compose up myapp`
 - Check node status on dashboard.grid.tf
 - Remove `--node` flag

@@ -45,11 +45,13 @@ tfgrid-compose login
 ```
 
 **Configuration collected:**
+
 - **ThreeFold Mnemonic**: 12/24-word seed phrase (secure input)
 - **Git Identity**: Name and email for commits
 - **Optional Tokens**: GitHub/Gitea for private repos
 
 **Security features:**
+
 - Hidden input for sensitive data
 - Validation of mnemonic format
 - Secure file permissions (600)
@@ -64,6 +66,7 @@ tfgrid-compose shortcut grid
 ```
 
 **Benefits:**
+
 - Shorter commands (`tfc up` vs `tfgrid-compose up`)
 - Custom naming (`grid`, `tfc`, etc.)
 - Multiple shortcuts allowed
@@ -83,10 +86,12 @@ tfgrid-compose search --tag development  # Search by tag
 ```
 
 **Current registry contents:**
+
 - **tfgrid-ai-agent** (v0.3.0): AI coding assistant
 - **tfgrid-gitea** (v1.0.0): Self-hosted Git service
 
 **Registry features:**
+
 - Cached locally (1-hour TTL)
 - Search by name, description, tags
 - Version information and requirements
@@ -100,6 +105,7 @@ tfgrid-compose info tfgrid-ai-agent
 ```
 
 **Information provided:**
+
 - Version and status
 - Resource requirements (CPU, RAM, disk)
 - Supported patterns
@@ -176,6 +182,7 @@ tfgrid-compose summary my-website
 ```
 
 **AI Agent features:**
+
 - Qwen CLI integration with yolo mode
 - Git commits after each successful iteration
 - Time management and safety constraints
@@ -225,6 +232,7 @@ tfgrid-compose projects
 ```
 
 **Concurrent execution:**
+
 - Each project runs in isolated systemd service
 - Dedicated resource limits (2GB memory, 150% CPU quota)
 - Automatic failure recovery

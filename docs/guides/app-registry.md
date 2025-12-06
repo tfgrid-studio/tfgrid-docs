@@ -37,6 +37,7 @@ TFGrid Compose now uses **Git commit hashes as the primary version identifier** 
 ```
 
 **Benefits:**
+
 - ✅ **Precise versioning**: Every deployment has a unique, immutable version
 - ✅ **Automatic version management**: No manual version bumping required  
 - ✅ **Instant traceability**: Know exactly which code is running
@@ -84,6 +85,7 @@ tfgrid-compose up tfgrid-gitea
 ```
 
 **Details:**
+
 - **Pattern**: single-vm
 - **Versioning**: Git commit-based (primary) with semantic fallback
 - **Current Version**: Uses latest Git commit (e.g., `4a7a91d`)
@@ -184,6 +186,7 @@ t cache clear --all
 ```
 
 **Cache Features:**
+
 - **Git Commit Tracking**: Each cached app shows exact Git commit hash
 - **Smart Invalidation**: Cache automatically updates when Git commits change
 - **Health Monitoring**: Shows cache status (healthy, stale, invalid, not cached)

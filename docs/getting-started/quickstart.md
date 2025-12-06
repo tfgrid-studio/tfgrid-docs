@@ -40,6 +40,7 @@ tfgrid-compose login
 ```
 
 **What it configures:**
+
 - ThreeFold mnemonic (for deployments)
 - Git identity (for AI-generated commits)
 - Optional: GitHub/Gitea tokens

@@ -291,12 +291,14 @@ tfgrid-compose my-command
 ### **Design Your Commands**
 
 ✅ **DO:**
+
 - Use clear, action-oriented names (`create`, `deploy`, `backup`)
 - Make commands idempotent when possible
 - Provide helpful error messages
 - Support both interactive and non-interactive modes
 
 ❌ **DON'T:**
+
 - Use generic names that conflict (`status`, `logs` are reserved)
 - Require complex flag combinations
 - Make breaking changes without version bump

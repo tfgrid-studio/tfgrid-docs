@@ -568,6 +568,7 @@ tfgrid-compose up <app>
 ### Stuck Deployment
 
 **Symptoms:**
+
 - Deployment running but not progressing
 - Process hung on specific step
 - No error messages
@@ -602,6 +603,7 @@ tfgrid-compose down <app>
 ### Orphaned Resources
 
 **Symptoms:**
+
 - Resources exist on ThreeFold Grid but not in state
 - Billing continues but no deployment shown
 

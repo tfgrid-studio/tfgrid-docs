@@ -48,6 +48,7 @@ tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
 ```
 
 **Best for:**
+
 - Production websites
 - E-commerce sites
 - SaaS applications

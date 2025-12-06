@@ -24,6 +24,7 @@ curl -sSL install.tfgrid.studio/install.sh | sh
 ```
 
 **What this does:**
+
 - Downloads and installs `tfgrid-compose` CLI
 - Adds it to your PATH automatically
 - Creates a default `tfgrid` shortcut
@@ -105,6 +106,7 @@ tfgrid-compose shortcut grid   # Creates 'grid' command
 ```
 
 **Available shortcuts:**
+
 - `tfgrid` (created automatically during install)
 - `tfc`, `grid`, or any custom name you choose
 
@@ -141,6 +143,7 @@ tfgrid-compose search --tag ai
 ```
 
 **Current official apps:**
+
 - `tfgrid-ai-agent` - AI coding assistant (v0.3.0)
 - `tfgrid-gitea` - Self-hosted Git service (v1.0.0)
 

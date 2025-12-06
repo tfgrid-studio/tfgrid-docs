@@ -247,11 +247,13 @@ tfgrid-compose up tfgrid-gitea
 ### Resource Requirements
 
 **Minimum:**
+
 - 2 CPU cores
 - 2 GB RAM
 - 25 GB disk
 
 **Recommended:**
+
 - 2 CPU cores
 - 4 GB RAM
 - 50 GB disk (for multiple large repos)
@@ -272,6 +274,7 @@ location /gitea/ {
 ```
 
 **Benefits:**
+
 - SSL/TLS encryption via Let's Encrypt
 - Custom domain support
 - No port specification needed
@@ -530,6 +533,7 @@ tfgrid-compose launch tfgrid-gitea
 ```
 
 **Features:**
+
 - ✅ Automatically sources TFGrid environment variables
 - ✅ Detects WireGuard IP from system or environment
 - ✅ Detects Mycelium IPv6 address

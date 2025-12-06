@@ -47,12 +47,14 @@ This is the **DIY path** - you manage your own wallet and funds. For a simpler m
 ### Important Notes
 
 ⚠️ **Your seed phrase is your private key**
+
 - Never share it with anyone
 - Never store it digitally (no screenshots, no cloud)
 - If you lose it, your funds are GONE forever
 - ThreeFold cannot recover your wallet
 
 💡 **This is your TFChain address**
+
 - You'll see an address like: `5F3sa...`
 - This is where you'll receive TFT
 - You'll use your seed phrase with `tfgrid-compose`
@@ -323,12 +325,14 @@ tfgrid-compose logs
 ### Seed Phrase Security
 
 ✅ **DO:**
+
 - Write on paper, store in safe
 - Use multiple copies in different locations
 - Consider a hardware wallet (advanced)
 - Test recovery process with small amount first
 
 ❌ **DON'T:**
+
 - Screenshot or photo
 - Store in cloud (Google Drive, Dropbox, etc.)
 - Store in password manager (debated, but risky)

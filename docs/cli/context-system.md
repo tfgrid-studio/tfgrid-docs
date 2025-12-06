@@ -9,6 +9,7 @@ Learn how tfgrid-compose's context system makes managing multiple apps seamless.
 The **context system** allows you to work with multiple deployed apps without constantly specifying which one you're targeting. It's like setting a "current directory" for your deployed apps.
 
 **Key Features:**
+
 - 🎯 **Smart auto-detection** - Single app? No setup needed!
 - 🔄 **Select between apps** - `tfgrid-compose select`
 - 🔄 **Select between projects** - `tfgrid-compose select-project` (for apps that support it)
@@ -81,6 +82,7 @@ tfgrid-compose run project1
 ```
 
 **When to use:**
+
 - You have multiple apps deployed
 - You want to work with a specific app for a while
 
@@ -133,6 +135,7 @@ tfgrid-compose list
 ```
 
 **Output shows:**
+
 - ✅ All deployed apps with IPs
 - ⭐ Current active context (marked with `*`)
 - 📊 Auto-context status (single app)

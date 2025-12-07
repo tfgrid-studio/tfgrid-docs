@@ -224,10 +224,11 @@ Characteristics:
   - Running CLI commands via forms.
   - Managing AI Stack projects (`create`, `run`, `publish`).
 
-### 6.2 Planned Hosted Dashboard
+### 6.2 Hosted Portal
 
-- Repo: `tfgrid-web` (planned).
-- Purpose: SaaS-style **Web Dashboard** for users who prefer a hosted control-plane.
+- Repo: `tfgrid-portal`
+- Site: `https://portal.tfgrid.studio` (planned)
+- Purpose: SaaS-style **Web Portal** for users who prefer a hosted control-plane.
 - High-level idea:
   - Reuse much of the same UI as the local dashboard.
   - Backend runs on TFGrid and orchestrates deployments for multiple users.
@@ -252,7 +253,7 @@ This table summarizes the main repositories and how they relate to the platform 
 | `install`         | Site/Script   | One-line installer at install.tfgrid.studio       |
 | `tfgrid-docs`     | Docs          | Documentation for all components (docs.tfgrid.studio) |
 | `tfgrid-www`      | Site          | Marketing site at tfgrid.studio                  |
-| `tfgrid-web`      | App (planned) | Hosted dashboard (SaaS)                           |
+| `tfgrid-portal`   | App (planned) | Hosted web portal (SaaS)                          |
 | `tfgrid-marketplace` | App (planned) | App marketplace                                  |
 | `tfgrid-enterprise`  | App (planned) | Enterprise extensions & packaging                |
 | `community`       | Meta          | Community docs, discussions, ecosystem table      |

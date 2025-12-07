@@ -349,7 +349,7 @@ tfgrid-compose update install
 - `tfgrid-compose`: Orchestration platform
 - `tfgrid-ai-agent`: AI agent application
 - `tfgrid-docs`: Documentation site
-- `tfgrid-web`: Web interface
+- `tfgrid-portal`: Web portal
 
 **Version Independence:**
 

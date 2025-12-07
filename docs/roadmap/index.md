@@ -74,7 +74,7 @@ Marketplace monetization, white label solutions, and enterprise features.
 
 ### Try What's Available Now
 ```bash
-curl -sSL install.tfgrid.studio | sh
+curl -sSL install.tfgrid.studio/install.sh | sh
 tfgrid-compose up tfgrid-ai-agent
 ```
 

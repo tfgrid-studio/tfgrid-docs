@@ -552,54 +552,41 @@ tfgrid-compose ssh tfgrid-gitea
 tfgrid-compose logs tfgrid-gitea
 ```
 
-### Repository Management (📋 Planned)
+### Repository Management
 ```bash
-# Future commands (defined in manifest):
-tfgrid-compose create-repo my-project --description "My project"
-tfgrid-compose list-repos
-tfgrid-compose clone-repo my-project
-tfgrid-compose delete-repo old-project --confirm
+# Use Gitea web UI or API for repository management
+# SSH to VM for CLI access:
+tfgrid-compose ssh tfgrid-gitea
+
+# Create repo via Gitea CLI
+sudo -u git gitea admin repo create --owner gitadmin --name my-project
 ```
 
-**Status:** Command hooks defined, implementation pending
-
-### User Management (📋 Planned)
+### User Management
 ```bash
-# Future commands (defined in manifest):
-tfgrid-compose create-user developer dev@example.com
-tfgrid-compose list-users
-tfgrid-compose reset-password developer
-```
-
-**Status:** Command hooks defined, implementation pending
-
-### Backup & Restore (📋 Planned)
-```bash
-# Future commands (defined in manifest):
-tfgrid-compose backup tfgrid-gitea
-tfgrid-compose restore tfgrid-gitea backup-file.tar.gz
-```
-
-**Status:** Command hooks defined, implementation pending
-
-### Current Workarounds
-
-Until commands are implemented, use direct access:
-
-```bash
-# SSH and use Gitea CLI directly
+# SSH and use Gitea CLI
 tfgrid-compose ssh tfgrid-gitea
 
 # Create user
-sudo -u gitea /usr/local/bin/gitea admin user create \
+sudo -u git gitea admin user create \
   --username newuser \
   --email user@example.com \
   --password userpass \
   --config /etc/gitea/app.ini
 
 # List users
-sudo -u gitea /usr/local/bin/gitea admin user list \
-  --config /etc/gitea/app.ini
+sudo -u git gitea admin user list --config /etc/gitea/app.ini
+```
+
+### Backup & Restore
+```bash
+# Create backup
+tfgrid-compose ssh tfgrid-gitea
+sudo tar -czf /tmp/gitea-backup-$(date +%Y%m%d).tar.gz /var/lib/gitea /etc/gitea
+
+# Download backup locally
+exit
+scp root@<gitea-ip>:/tmp/gitea-backup-*.tar.gz ./
 ```
 
 ## Next Steps

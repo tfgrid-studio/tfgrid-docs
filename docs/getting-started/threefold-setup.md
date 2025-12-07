@@ -17,7 +17,7 @@ To deploy applications on ThreeFold Grid using `tfgrid-compose`, you need:
 3. ✅ Completed KYC verification
 4. ✅ Basic understanding of the process
 
-This is the **DIY path** - you manage your own wallet and funds. For a simpler managed experience, see [TFGrid Studio Cloud](./tfgrid-cloud-setup.md) (coming soon).
+This is the **DIY path** - you manage your own wallet and funds.
 
 ---
 
@@ -379,7 +379,7 @@ set -o history
 ### TFGrid Studio
 - **Documentation:** https://docs.tfgrid.studio
 - **GitHub:** https://github.com/tfgrid-studio
-- **Support:** support@tfgrid.studio (coming soon)
+- **Support:** [GitHub Discussions](https://github.com/orgs/tfgrid-studio/discussions)
 
 ---
 
@@ -391,20 +391,6 @@ Once you're set up:
 2. **Deploy Apps:** [Quick Start Guide](quickstart.md)
 3. **Browse Patterns:** [Available Patterns](../patterns/overview.md)
 4. **Join Community:** Share your experience!
-
----
-
-## Alternative: Managed Path
-
-Don't want to manage wallets and TFT?
-
-**TFGrid Studio Cloud** (coming soon) offers:
-- Email + password login
-- Credit card payment
-- We handle all the complexity
-- Same powerful deployments
-
-[Learn more →](./tfgrid-cloud-setup.md)
 
 ---
 

@@ -146,7 +146,7 @@ CI in `tfgrid-registry` keeps app versions in sync and validates registry entrie
 Typical flow:
 
 ```bash
-curl -sSL install.tfgrid.studio | sh
+curl -sSL install.tfgrid.studio/install.sh | sh
 ```
 
 This script:

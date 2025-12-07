@@ -24,16 +24,28 @@ The following building blocks of TFGrid Studio are now **shipped and available**
 
 ### Apps
 
-- **tfgrid-gitea**
-  - Git hosting on ThreeFold Grid.
-  - Ideal companion for AI/dev workflows.
+- **tfgrid-ai-stack**
+  - Complete AI development stack (AI + Git + web UI).
+  - From prompt to production in one deployment.
 
 - **tfgrid-ai-agent**
   - AI agent environment focused on coding and automation.
 
-- **tfgrid-ai-stack**
-  - Complete AI development stack (AI + Git + web UI).
-  - From prompt to production in one deployment.
+- **tfgrid-gitea**
+  - Git hosting on ThreeFold Grid.
+  - Ideal companion for AI/dev workflows.
+
+- **tfgrid-wordpress**
+  - WordPress + Caddy + MariaDB stack.
+  - Production-ready blog and CMS.
+
+- **tfgrid-nextcloud**
+  - Nextcloud All-in-One deployment.
+  - Self-hosted file sync, collaboration, and office suite.
+
+- **tfgrid-erpnext**
+  - ERPNext business ERP system.
+  - Complete business management (CRM, accounting, inventory).
 
 ### Dashboard
 
@@ -68,7 +80,7 @@ Use the current CLI and dashboard features:
 
 ```bash
 # Install
-curl -sSL install.tfgrid.studio | sh
+curl -sSL install.tfgrid.studio/install.sh | sh
 
 # Deploy from local manifest
 tfgrid-compose up ./my-app

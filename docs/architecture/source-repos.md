@@ -77,13 +77,13 @@ tfgrid-compose agent create
 
 ---
 
-### 🚧 Planned Integration (Q4 2025)
+### ✅ Integrated
 
 #### 2. tfgrid-gateway (mik-tf)
 
 **Source:** [mik-tf/tfgrid-gateway](https://github.com/mik-tf/tfgrid-gateway)  
 **Author:** [mik-tf](https://github.com/mik-tf)  
-**Status:** 🚧 Planned for integration (Q4 2025)
+**Status:** ✅ Integrated into TFGrid Compose
 
 **What it provides:**
 
@@ -106,11 +106,11 @@ tfgrid-compose agent create
 - ✅ **Security features:** Disable public port forwarding
 - ✅ **Production-ready:** Used in real deployments
 
-**Planned integration:**
+**Integration:**
 ```
 Source: github.com/mik-tf/tfgrid-gateway
   ↓
-Extract:
+Extracted:
   • Gateway infrastructure → patterns/gateway/infrastructure/
   • NAT/Proxy configs → patterns/gateway/platform/
   • SSL automation → patterns/gateway/ssl/
@@ -119,7 +119,7 @@ Extract:
 Result: Gateway pattern in tfgrid-compose
 ```
 
-**Usage (after integration):**
+**Usage:**
 ```bash
 tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
 ```
@@ -137,7 +137,7 @@ tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
 
 **Source:** [ucli-tools/tfgrid-k3s](https://github.com/ucli-tools/tfgrid-k3s)  
 **Organization:** [ucli-tools](https://github.com/ucli-tools)  
-**Status:** 🚧 Planned for integration (Q1 2026)
+**Status:** ✅ Integrated into TFGrid Compose
 
 **What it provides:**
 
@@ -160,11 +160,11 @@ tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
 - ✅ **Scalability:** Add nodes dynamically
 - ✅ **Production-ready:** Real cluster deployments
 
-**Planned integration:**
+**Integration:**
 ```
 Source: github.com/ucli-tools/tfgrid-k3s
   ↓
-Extract:
+Extracted:
   • Cluster infrastructure → patterns/k3s/infrastructure/
   • K3s playbooks → patterns/k3s/platform/
   • MetalLB/Ingress → patterns/k3s/components/
@@ -173,7 +173,7 @@ Extract:
 Result: K3s pattern in tfgrid-compose
 ```
 
-**Usage (after integration):**
+**Usage:**
 ```bash
 tfgrid-compose up my-saas --pattern=k3s
 tfgrid-compose kubectl get nodes
@@ -229,41 +229,33 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 - Works with any application
 - Clean separation of concerns
 
-### Phase 2: Gateway Pattern (🚧 Q4 2025)
+### Phase 2: Gateway Pattern (✅ Complete)
 
 **Source:** mik-tf/tfgrid-gateway (complete repo)
 
-**Plan:**
+**Completed:**
 
-- [ ] Extract Terraform multi-VM configs
-- [ ] Extract Ansible NAT/proxy playbooks
-- [ ] Extract SSL automation (certbot)
-- [ ] Create gateway pattern structure
-- [ ] Adapt to manifest system
-- [ ] Test with multiple apps
-- [ ] Write pattern documentation
+- [x] Extract Terraform multi-VM configs
+- [x] Extract Ansible NAT/proxy playbooks
+- [x] Extract SSL automation (certbot)
+- [x] Create gateway pattern structure
+- [x] Adapt to manifest system
+- [x] Test with multiple apps
+- [x] Write pattern documentation
 
-**Complexity:** Medium  
-**Timeline:** 2-4 weeks  
-**Risk:** Low (code exists and works)
-
-### Phase 3: K3s Pattern (🚧 Q1 2026)
+### Phase 3: K3s Pattern (✅ Complete)
 
 **Source:** ucli-tools/tfgrid-k3s (complete repo)
 
-**Plan:**
+**Completed:**
 
-- [ ] Extract Terraform cluster configs
-- [ ] Extract Ansible K3s playbooks
-- [ ] Extract MetalLB/Ingress configs
-- [ ] Create k3s pattern structure
-- [ ] Add Helm chart support
-- [ ] GitOps integration
-- [ ] Write pattern documentation
-
-**Complexity:** High  
-**Timeline:** 4-6 weeks  
-**Risk:** Medium (more complex integration)
+- [x] Extract Terraform cluster configs
+- [x] Extract Ansible K3s playbooks
+- [x] Extract MetalLB/Ingress configs
+- [x] Create k3s pattern structure
+- [x] Add Helm chart support
+- [x] GitOps integration
+- [x] Write pattern documentation
 
 ---
 
@@ -331,12 +323,12 @@ This framework is automatically installed on tfgrid-ai-agent VMs and provides th
 | **Context files** | TFGrid Compose | ✅ New feature |
 | **Agent subcommand** | TFGrid Compose | ✅ New feature |
 
-### Planned
+### All Patterns Integrated
 
 | Component | Source | Integration |
 |-----------|--------|-------------|
-| **Gateway pattern** | mik-tf/tfgrid-gateway | 🚧 Q4 2025 |
-| **K3s pattern** | ucli-tools/tfgrid-k3s | 🚧 Q1 2026 |
+| **Gateway pattern** | mik-tf/tfgrid-gateway | ✅ Integrated |
+| **K3s pattern** | ucli-tools/tfgrid-k3s | ✅ Integrated |
 
 ---
 

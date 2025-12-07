@@ -88,30 +88,42 @@ tfgrid-compose up ./my-app
 
 ---
 
-## 🎯 Use Cases
+## 🎯 Official Apps
 
-Deploy isolated AI coding environments on ThreeFold Grid.
-```bash
-tfgrid-compose up tfgrid-ai-agent
-```
+Deploy production-ready applications with one command:
 
-### Web Applications
-Deploy web apps with public IPv4, SSL, and reverse proxy.
+| App | Description | Command |
+|-----|-------------|--------|
+| **[tfgrid-ai-stack](guides/tfgrid-ai-stack.md)** | AI + Git + Gateway (flagship) | `tfgrid-compose up tfgrid-ai-stack` |
+| **[tfgrid-ai-agent](guides/tfgrid-ai-agent.md)** | AI coding assistant | `tfgrid-compose up tfgrid-ai-agent` |
+| **[tfgrid-gitea](guides/tfgrid-gitea.md)** | Self-hosted Git service | `tfgrid-compose up tfgrid-gitea` |
+| **[tfgrid-wordpress](guides/tfgrid-wordpress.md)** | WordPress + Caddy + MariaDB | `tfgrid-compose up tfgrid-wordpress` |
+| **[tfgrid-nextcloud](guides/tfgrid-nextcloud.md)** | File sync & collaboration | `tfgrid-compose up tfgrid-nextcloud` |
+| **[tfgrid-erpnext](guides/tfgrid-erpnext.md)** | Business ERP system | `tfgrid-compose up tfgrid-erpnext` |
+
+Browse all apps: [registry.tfgrid.studio](https://registry.tfgrid.studio)
+
+---
+
+## 🛠️ Custom Apps & Advanced Usage
+
+Build and deploy your own applications:
+
 ```bash
+# Deploy custom app from local directory
+tfgrid-compose up ./my-app
+
+# Deploy with gateway pattern (SSL + custom domain)
 tfgrid-compose up my-webapp --pattern=gateway --domain=myapp.com
-```
 
-### Cloud-Native Apps
-Deploy microservices on Kubernetes clusters.
-```bash
+# Deploy on Kubernetes cluster
 tfgrid-compose up my-saas --pattern=k3s
 ```
 
-### Databases
-Deploy databases with persistent storage and private networking.
-```bash
-tfgrid-compose up my-postgres --pattern=single-vm
-```
+**Learn more:**
+- [Custom Apps Guide](guides/custom-apps.md) - Create your own deployable apps
+- [Tarball Releases](guides/tarball-releases.md) - Versioned releases with rollback
+- [Deployment Patterns](patterns/overview.md) - single-vm, gateway, k3s
 
 ---
 

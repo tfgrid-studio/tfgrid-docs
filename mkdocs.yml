@@ -160,6 +160,7 @@ nav:
       - Complete Guide: troubleshooting/guide.md
   
   - Community:
+    - Contact: community/contact.md
     - Contributing:
       - Contributing Guide: community/contributing.md
       - Code of Conduct: community/code-of-conduct.md

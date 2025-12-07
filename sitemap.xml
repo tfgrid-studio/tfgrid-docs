@@ -2,174 +2,174 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.tfgrid.studio/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/architecture/overview/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/architecture/platform-map/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/architecture/source-repos/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/cli/app-commands/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/cli/context-system/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/cli/manifest/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/cli/node-selection/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/cli/registry/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/community/code-of-conduct/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/community/contributing/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/community/security/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/development/pattern-contract/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/development/submit-app/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/development/versioning-policy/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/concepts/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/installation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/introduction/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/quickstart/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/setup/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/getting-started/threefold-setup/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/app-registry/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/custom-apps/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/getting-started/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tarball-releases/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tfgrid-ai-agent/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tfgrid-ai-stack/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tfgrid-compose/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tfgrid-dashboard/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tfgrid-erpnext/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tfgrid-gitea/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tfgrid-nextcloud/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/guides/tfgrid-wordpress/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/gateway/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/k3s/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/overview/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/single-vm/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/patterns/tfgrid-ai-stack/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/roadmap/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/roadmap/later/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/roadmap/next/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/roadmap/now/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
     <url>
          <loc>https://docs.tfgrid.studio/troubleshooting/guide/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-07</lastmod>
     </url>
 </urlset>

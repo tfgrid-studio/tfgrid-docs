@@ -33,9 +33,10 @@ All three providers offer full API access without IP whitelisting requirements.
     - **Zone - DNS - Edit** (to create/update DNS records)
     - **Zone - Zone - Read** (to look up zone ID automatically)
 6. Zone Resources: Select "Include - All zones" or a specific zone
-7. Leave IP filtering blank (no IP whitelisting required)
-8. Click **Continue to summary** → **Create Token**
-9. Copy the generated token (shown only once)
+7. Client IP Address Filtering: Leave blank (no IP whitelisting required)
+8. TTL: Leave Start/End dates blank for a non-expiring token, or set an expiration for extra security
+9. Click **Continue to summary** → **Create Token**
+10. Copy the generated token (shown only once)
 
 !!! note
     You only need the API token. The zone ID and account ID are looked up automatically using your domain name.

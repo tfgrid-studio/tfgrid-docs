@@ -55,7 +55,7 @@ tfgrid-compose create my-project
 
 ```bash
 # List all deployed apps
-tfgrid-compose list
+tfgrid-compose ps
 
 # Output:
 #   * tfgrid-ai-agent (active) - 10.1.3.2
@@ -126,12 +126,12 @@ tfgrid-compose run            # Error
 tfgrid-compose run my-project # Works
 ```
 
-### **list** - Show All Apps
+### **ps** - Show All Apps
 
 See all deployed apps and which is active:
 
 ```bash
-tfgrid-compose list
+tfgrid-compose ps
 ```
 
 **Output shows:**
@@ -161,7 +161,7 @@ tfgrid-compose create project
 
 ```bash
 # You have multiple apps
-tfgrid-compose list
+tfgrid-compose ps
 #   * tfgrid-ai-agent (active)
 #     web-dashboard
 #     api-backend

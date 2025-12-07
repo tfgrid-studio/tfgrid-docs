@@ -18,7 +18,7 @@ tfgrid-compose search
 tfgrid-compose up tfgrid-ai-agent
 
 # List deployed apps
-tfgrid-compose list
+tfgrid-compose ps
 
 # Switch between apps
 tfgrid-compose switch tfgrid-ai-agent
@@ -101,14 +101,14 @@ tfgrid-compose up ./my-custom-app
 See all your deployed apps:
 
 ```bash
-tfgrid-compose list
+tfgrid-compose ps
 ```
 
 **Output:**
 ```
-  * wordpress (active)
-    ai-agent
-    nextcloud
+CONTAINER ID     APP NAME      STATUS    IP ADDRESS      CONTRACT  SOURCE    AGE
+────────────────────────────────────────────────────────────────────────────────
+a5dd5e8846d6abac wordpress     active    185.69.167.160  1745517   registry  4m ago
 ```
 
 The asterisk (`*`) indicates the currently active app.
@@ -165,13 +165,7 @@ tfgrid-compose up tfgrid-ai-agent
 tfgrid-compose up tfgrid-gitea
 
 # List all deployed apps
-tfgrid-compose list
-```
-
-**Output:**
-```
-  * tfgrid-gitea (active)
-    tfgrid-ai-agent
+tfgrid-compose ps
 ```
 
 ### Work with Different Apps
@@ -338,13 +332,7 @@ tfgrid-compose up tfgrid-ai-agent
 tfgrid-compose up ./my-custom-app
 
 # Both work together
-tfgrid-compose list
-```
-
-**Output:**
-```
-  * my-custom-app (active)
-    tfgrid-ai-agent
+tfgrid-compose ps
 ```
 
 ### Deploy Same App Multiple Times
@@ -421,7 +409,7 @@ tfgrid-compose search
 Keep track of deployed apps:
 
 ```bash
-tfgrid-compose list
+tfgrid-compose ps
 ```
 
 ### 3. Switch Explicitly

@@ -265,7 +265,7 @@ tfgrid-compose up tfgrid-ai-agent
 tfgrid-compose up tfgrid-gitea
 
 # List all deployments
-tfgrid-compose list
+tfgrid-compose ps
 
 # Each app runs on its own VM with dedicated resources
 ```

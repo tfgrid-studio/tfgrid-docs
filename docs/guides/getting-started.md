@@ -212,7 +212,7 @@ git log --oneline
 tfgrid-compose up tfgrid-gitea
 
 # List all deployments
-tfgrid-compose list
+tfgrid-compose ps
 ```
 
 ### Step 12: Multi-App Workflows

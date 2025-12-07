@@ -269,7 +269,7 @@ Community-contributed apps are reviewed and approved by the TFGrid Studio team:
 | `logs` | View deployment logs | `tfgrid-compose logs` |
 | `ssh` | SSH into deployed VM | `tfgrid-compose ssh` |
 | `exec` | Execute command on VM | `tfgrid-compose exec ls /opt` |
-| `list` | Show deployed apps | `tfgrid-compose list` |
+| `ps` | Show deployed apps | `tfgrid-compose ps` |
 | `select` | Set active app context | `tfgrid-compose select tfgrid-ai-agent` |
 | `login` | Configure credentials | `tfgrid-compose login` |
 | `shortcut` | Manage command shortcuts | `tfgrid-compose shortcut tfc` |

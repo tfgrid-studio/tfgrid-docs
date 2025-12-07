@@ -224,17 +224,30 @@ Characteristics:
   - Running CLI commands via forms.
   - Managing AI Stack projects (`create`, `run`, `publish`).
 
-### 6.2 Hosted Portal
+### 6.2 Hosted Portal (SaaS)
 
+The hosted portal consists of two components:
+
+**Frontend:**
 - Repo: `tfgrid-portal`
 - Site: `https://portal.tfgrid.studio` (planned)
-- Purpose: SaaS-style **Web Portal** for users who prefer a hosted control-plane.
-- High-level idea:
-  - Reuse much of the same UI as the local dashboard.
-  - Backend runs on TFGrid and orchestrates deployments for multiple users.
-  - Integrates with future marketplace and enterprise features.
+- Stack: React + Vite SPA
+- Purpose: Web dashboard for managing workspaces
 
-Details of hosted pricing, billing, and control-plane remain internal and are tracked in the `tfgrid-internal` repository.
+**Backend:**
+- Repo: `tfgrid-control-plane`
+- Stack: Node.js + Fastify + Postgres
+- Purpose: API for users, billing (Stripe), workspace orchestration
+- Calls `tfgrid-compose` to deploy workspaces on ThreeFold Grid
+
+```
+┌─────────────────┐      ┌─────────────────────┐
+│  tfgrid-portal  │ ───► │ tfgrid-control-plane │ ───► tfgrid-compose ───► ThreeFold Grid
+│   (Frontend)    │ API  │     (Backend API)    │
+└─────────────────┘      └─────────────────────┘
+```
+
+Details of hosted pricing, billing, and control-plane architecture are tracked in the `tfgrid-internal` repository.
 
 ---
 
@@ -253,7 +266,8 @@ This table summarizes the main repositories and how they relate to the platform 
 | `tfgrid-install`  | Site/Script   | One-line installer at install.tfgrid.studio       |
 | `tfgrid-docs`     | Docs          | Documentation for all components (docs.tfgrid.studio) |
 | `tfgrid-website`  | Site          | Marketing site at tfgrid.studio                  |
-| `tfgrid-portal`   | App (planned) | Hosted web portal (SaaS)                          |
+| `tfgrid-portal`   | App (planned) | Hosted web portal (SaaS frontend)                 |
+| `tfgrid-control-plane` | App (planned) | Backend API for portal (users, billing)      |
 | `tfgrid-marketplace` | App (planned) | App marketplace                                  |
 | `tfgrid-enterprise`  | App (planned) | Enterprise extensions & packaging                |
 | `community`       | Meta          | Community docs, discussions, ecosystem table      |

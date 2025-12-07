@@ -581,52 +581,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
+  <a href="#official-apps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Use Cases
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🎯 Use Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#web-applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Web Applications
+        🎯 Official Apps
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#cloud-native-apps" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#custom-apps-advanced-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud-Native Apps
+        🛠️ Custom Apps &amp; Advanced Usage
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#databases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Databases
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2746,52 +2718,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
+  <a href="#official-apps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Use Cases
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🎯 Use Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#web-applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Web Applications
+        🎯 Official Apps
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#cloud-native-apps" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#custom-apps-advanced-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud-Native Apps
+        🛠️ Custom Apps &amp; Advanced Usage
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#databases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Databases
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3000,22 +2944,66 @@
 <li><strong><a href="architecture/overview/">Architecture overview</a></strong> – how the system fits together.</li>
 </ul>
 <hr />
-<h2 id="use-cases">🎯 Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
-<p>Deploy isolated AI coding environments on ThreeFold Grid.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-</code></pre></div></p>
-<h3 id="web-applications">Web Applications<a class="headerlink" href="#web-applications" title="Permanent link">&para;</a></h3>
-<p>Deploy web apps with public IPv4, SSL, and reverse proxy.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-webapp<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>myapp.com
-</code></pre></div></p>
-<h3 id="cloud-native-apps">Cloud-Native Apps<a class="headerlink" href="#cloud-native-apps" title="Permanent link">&para;</a></h3>
-<p>Deploy microservices on Kubernetes clusters.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-saas<span class="w"> </span>--pattern<span class="o">=</span>k3s
-</code></pre></div></p>
-<h3 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">&para;</a></h3>
-<p>Deploy databases with persistent storage and private networking.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-postgres<span class="w"> </span>--pattern<span class="o">=</span>single-vm
-</code></pre></div></p>
+<h2 id="official-apps">🎯 Official Apps<a class="headerlink" href="#official-apps" title="Permanent link">&para;</a></h2>
+<p>Deploy production-ready applications with one command:</p>
+<table>
+<thead>
+<tr>
+<th>App</th>
+<th>Description</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="guides/tfgrid-ai-stack/">tfgrid-ai-stack</a></strong></td>
+<td>AI + Git + Gateway (flagship)</td>
+<td><code>tfgrid-compose up tfgrid-ai-stack</code></td>
+</tr>
+<tr>
+<td><strong><a href="guides/tfgrid-ai-agent/">tfgrid-ai-agent</a></strong></td>
+<td>AI coding assistant</td>
+<td><code>tfgrid-compose up tfgrid-ai-agent</code></td>
+</tr>
+<tr>
+<td><strong><a href="guides/tfgrid-gitea/">tfgrid-gitea</a></strong></td>
+<td>Self-hosted Git service</td>
+<td><code>tfgrid-compose up tfgrid-gitea</code></td>
+</tr>
+<tr>
+<td><strong><a href="guides/tfgrid-wordpress/">tfgrid-wordpress</a></strong></td>
+<td>WordPress + Caddy + MariaDB</td>
+<td><code>tfgrid-compose up tfgrid-wordpress</code></td>
+</tr>
+<tr>
+<td><strong><a href="guides/tfgrid-nextcloud/">tfgrid-nextcloud</a></strong></td>
+<td>File sync &amp; collaboration</td>
+<td><code>tfgrid-compose up tfgrid-nextcloud</code></td>
+</tr>
+<tr>
+<td><strong><a href="guides/tfgrid-erpnext/">tfgrid-erpnext</a></strong></td>
+<td>Business ERP system</td>
+<td><code>tfgrid-compose up tfgrid-erpnext</code></td>
+</tr>
+</tbody>
+</table>
+<p>Browse all apps: <a href="https://registry.tfgrid.studio">registry.tfgrid.studio</a></p>
+<hr />
+<h2 id="custom-apps-advanced-usage">🛠️ Custom Apps &amp; Advanced Usage<a class="headerlink" href="#custom-apps-advanced-usage" title="Permanent link">&para;</a></h2>
+<p>Build and deploy your own applications:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Deploy custom app from local directory</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./my-app
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Deploy with gateway pattern (SSL + custom domain)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-webapp<span class="w"> </span>--pattern<span class="o">=</span>gateway<span class="w"> </span>--domain<span class="o">=</span>myapp.com
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Deploy on Kubernetes cluster</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>my-saas<span class="w"> </span>--pattern<span class="o">=</span>k3s
+</code></pre></div>
+<p><strong>Learn more:</strong>
+- <a href="guides/custom-apps/">Custom Apps Guide</a> - Create your own deployable apps
+- <a href="guides/tarball-releases/">Tarball Releases</a> - Versioned releases with rollback
+- <a href="patterns/overview/">Deployment Patterns</a> - single-vm, gateway, k3s</p>
 <hr />
 <h2 id="why-tfgrid-compose">💡 Why TFGrid Compose?<a class="headerlink" href="#why-tfgrid-compose" title="Permanent link">&para;</a></h2>
 <h3 id="no-vendor-lock-in">✅ No Vendor Lock-in<a class="headerlink" href="#no-vendor-lock-in" title="Permanent link">&para;</a></h3>

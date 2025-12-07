@@ -139,7 +139,7 @@ CI in `app-registry` keeps app versions in sync and validates registry entries.
 
 ### 4.1 Install Script
 
-- Repo: `install`
+- Repo: `tfgrid-install`
 - Site: `https://install.tfgrid.studio`
 - Purpose: One-line installer for `tfgrid-compose`.
 
@@ -250,7 +250,7 @@ This table summarizes the main repositories and how they relate to the platform 
 | `tfgrid-gitea`    | App           | Standalone Gitea Git server                       |
 | `app-registry`    | Infra         | App registry consumed by `tfgrid-compose`         |
 | `registry-www`    | Site          | Frontend for registry.tfgrid.studio              |
-| `install`         | Site/Script   | One-line installer at install.tfgrid.studio       |
+| `tfgrid-install`  | Site/Script   | One-line installer at install.tfgrid.studio       |
 | `tfgrid-docs`     | Docs          | Documentation for all components (docs.tfgrid.studio) |
 | `tfgrid-www`      | Site          | Marketing site at tfgrid.studio                  |
 | `tfgrid-portal`   | App (planned) | Hosted web portal (SaaS)                          |

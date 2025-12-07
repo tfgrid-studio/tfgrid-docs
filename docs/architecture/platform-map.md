@@ -175,7 +175,7 @@ This script:
 
 ### 5.1 Marketing Site
 
-- Repo: `tfgrid-www`
+- Repo: `tfgrid-website`
 - Site: `https://tfgrid.studio`
 - Role: marketing/landing site for TFGrid Studio.
 - Highlights:
@@ -252,7 +252,7 @@ This table summarizes the main repositories and how they relate to the platform 
 | `registry-www`    | Site          | Frontend for registry.tfgrid.studio              |
 | `tfgrid-install`  | Site/Script   | One-line installer at install.tfgrid.studio       |
 | `tfgrid-docs`     | Docs          | Documentation for all components (docs.tfgrid.studio) |
-| `tfgrid-www`      | Site          | Marketing site at tfgrid.studio                  |
+| `tfgrid-website`  | Site          | Marketing site at tfgrid.studio                  |
 | `tfgrid-portal`   | App (planned) | Hosted web portal (SaaS)                          |
 | `tfgrid-marketplace` | App (planned) | App marketplace                                  |
 | `tfgrid-enterprise`  | App (planned) | Enterprise extensions & packaging                |

@@ -140,6 +140,7 @@ nav:
     - TFGrid Registry: guides/tfgrid-registry.md
     - Custom Apps: guides/custom-apps.md
     - Tarball Releases: guides/tarball-releases.md
+    - DNS Automation: guides/dns-automation.md
   
   - Reference:
     - CLI:

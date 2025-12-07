@@ -965,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/app-registry/" class="md-nav__link">
+      <a href="../../guides/tfgrid-registry.md" class="md-nav__link">
         
   
   
@@ -3039,14 +3039,14 @@
 </ul>
 <h3 id="34-app-registry-integration">3.4 App Registry Integration<a class="headerlink" href="#34-app-registry-integration" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Repo: <code>app-registry</code></li>
+<li>Repo: <code>tfgrid-registry</code></li>
 <li>Role: canonical list of apps that <code>tfgrid-compose</code> can deploy.</li>
 <li>Powers CLI commands like:</li>
 <li><code>tfgrid-compose search</code></li>
 <li><code>tfgrid-compose info &lt;app&gt;</code></li>
 <li><code>tfgrid-compose up tfgrid-ai-agent</code></li>
 </ul>
-<p>CI in <code>app-registry</code> keeps app versions in sync and validates registry entries.</p>
+<p>CI in <code>tfgrid-registry</code> keeps app versions in sync and validates registry entries.</p>
 <hr />
 <h2 id="4-registry-and-install-flow">4. Registry and Install Flow<a class="headerlink" href="#4-registry-and-install-flow" title="Permanent link">&para;</a></h2>
 <h3 id="41-install-script">4.1 Install Script<a class="headerlink" href="#41-install-script" title="Permanent link">&para;</a></h3>
@@ -3066,7 +3066,7 @@
 </ul>
 <h3 id="42-app-registry">4.2 App Registry<a class="headerlink" href="#42-app-registry" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Repo: <code>app-registry</code></li>
+<li>Repo: <code>tfgrid-registry</code></li>
 <li>Holds <code>registry/apps.yaml</code> and supporting schemas.</li>
 <li>Used by <code>tfgrid-compose</code> to:</li>
 <li>Discover apps.</li>
@@ -3074,7 +3074,7 @@
 </ul>
 <h3 id="43-registry-website">4.3 Registry Website<a class="headerlink" href="#43-registry-website" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Repo: <code>registry-www</code></li>
+<li>Repo: <code>tfgrid-registry-website</code></li>
 <li>Site: <code>https://registry.tfgrid.studio</code></li>
 <li>Small frontend for browsing registry apps in a browser, complementary to the CLI.</li>
 </ul>
@@ -3102,8 +3102,8 @@
 </ul>
 <h3 id="53-install-registry-sites">5.3 Install &amp; Registry Sites<a class="headerlink" href="#53-install-registry-sites" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>https://install.tfgrid.studio</code>  → repo <code>install</code> (one-line installer script).</li>
-<li><code>https://registry.tfgrid.studio</code> → repo <code>registry-www</code> (app catalogue frontend).</li>
+<li><code>https://install.tfgrid.studio</code>  → repo <code>tfgrid-install</code> (one-line installer script).</li>
+<li><code>https://registry.tfgrid.studio</code> → repo <code>tfgrid-registry-website</code> (app catalogue frontend).</li>
 </ul>
 <hr />
 <h2 id="6-dashboards">6. Dashboards<a class="headerlink" href="#6-dashboards" title="Permanent link">&para;</a></h2>
@@ -3171,12 +3171,12 @@
 <td>Standalone Gitea Git server</td>
 </tr>
 <tr>
-<td><code>app-registry</code></td>
+<td><code>tfgrid-registry</code></td>
 <td>Infra</td>
 <td>App registry consumed by <code>tfgrid-compose</code></td>
 </tr>
 <tr>
-<td><code>registry-www</code></td>
+<td><code>tfgrid-registry-website</code></td>
 <td>Site</td>
 <td>Frontend for registry.tfgrid.studio</td>
 </tr>

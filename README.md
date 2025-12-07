@@ -1,5 +1,9 @@
 # TFGrid Studio Documentation
 
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-docs.tfgrid.studio-blue)](https://docs.tfgrid.studio)
+[![GitHub stars](https://img.shields.io/github/stars/tfgrid-studio/tfgrid-docs)](https://github.com/tfgrid-studio/tfgrid-docs/stargazers)
+
 **Comprehensive documentation for TFGrid Studio - Complete development platform for ThreeFold Grid**
 
 ---

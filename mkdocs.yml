@@ -124,6 +124,8 @@ nav:
     - Quick Start: getting-started/quickstart.md
     - Core Concepts: getting-started/concepts.md
     - Complete Setup: getting-started/setup.md
+    - FAQ: getting-started/faq.md
+    - Glossary: getting-started/glossary.md
   
   - Guides:
     - Getting Started: guides/getting-started.md

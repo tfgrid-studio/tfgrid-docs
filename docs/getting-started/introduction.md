@@ -98,8 +98,8 @@ TFGrid Compose separates concerns into three layers:
 | Pattern | Description | Status |
 |---------|-------------|--------|
 | **single-vm** | Single VM with private networking | ✅ Production |
-| **gateway** | Gateway VM + backend VMs with public IPv4 | 🚧 Q4 2025 |
-| **k3s** | Kubernetes cluster with auto-scaling | 🚧 Q1 2026 |
+| **gateway** | Gateway VM + backend VMs with public IPv4 | ✅ Production |
+| **k3s** | Kubernetes cluster with auto-scaling | ✅ Production |
 
 ### 3. Deployer
 

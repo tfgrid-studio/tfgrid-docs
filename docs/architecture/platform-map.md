@@ -124,14 +124,14 @@ Where `<ip-or-mycelium>` can be a WireGuard IP (e.g. `10.1.3.2`) or a Mycelium a
 
 ### 3.4 App Registry Integration
 
-- Repo: `app-registry`
+- Repo: `tfgrid-registry`
 - Role: canonical list of apps that `tfgrid-compose` can deploy.
 - Powers CLI commands like:
   - `tfgrid-compose search`
   - `tfgrid-compose info <app>`
   - `tfgrid-compose up tfgrid-ai-agent`
 
-CI in `app-registry` keeps app versions in sync and validates registry entries.
+CI in `tfgrid-registry` keeps app versions in sync and validates registry entries.
 
 ---
 
@@ -157,7 +157,7 @@ This script:
 
 ### 4.2 App Registry
 
-- Repo: `app-registry`
+- Repo: `tfgrid-registry`
 - Holds `registry/apps.yaml` and supporting schemas.
 - Used by `tfgrid-compose` to:
   - Discover apps.
@@ -165,7 +165,7 @@ This script:
 
 ### 4.3 Registry Website
 
-- Repo: `registry-www`
+- Repo: `tfgrid-registry-website`
 - Site: `https://registry.tfgrid.studio`
 - Small frontend for browsing registry apps in a browser, complementary to the CLI.
 
@@ -195,8 +195,8 @@ This script:
 
 ### 5.3 Install & Registry Sites
 
-- `https://install.tfgrid.studio`  → repo `install` (one-line installer script).
-- `https://registry.tfgrid.studio` → repo `registry-www` (app catalogue frontend).
+- `https://install.tfgrid.studio`  → repo `tfgrid-install` (one-line installer script).
+- `https://registry.tfgrid.studio` → repo `tfgrid-registry-website` (app catalogue frontend).
 
 ---
 
@@ -248,8 +248,8 @@ This table summarizes the main repositories and how they relate to the platform 
 | `tfgrid-ai-agent` | App           | Standalone AI coding agent on single-vm           |
 | `tfgrid-ai-stack` | App           | AI + Git + gateway stack with `/git` and `/web`   |
 | `tfgrid-gitea`    | App           | Standalone Gitea Git server                       |
-| `app-registry`    | Infra         | App registry consumed by `tfgrid-compose`         |
-| `registry-www`    | Site          | Frontend for registry.tfgrid.studio              |
+| `tfgrid-registry` | Infra         | App registry consumed by `tfgrid-compose`         |
+| `tfgrid-registry-website` | Site    | Frontend for registry.tfgrid.studio              |
 | `tfgrid-install`  | Site/Script   | One-line installer at install.tfgrid.studio       |
 | `tfgrid-docs`     | Docs          | Documentation for all components (docs.tfgrid.studio) |
 | `tfgrid-website`  | Site          | Marketing site at tfgrid.studio                  |

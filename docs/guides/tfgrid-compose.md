@@ -182,7 +182,7 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 
 #### Registry Updates
 The `t update registry` command performs two operations:
-1. Fetches the latest app registry metadata from `tfgrid-studio/app-registry`
+1. Fetches the latest app registry metadata from `tfgrid-studio/tfgrid-registry`
 2. Updates all cached app repositories to their latest versions
 
 #### App Cache System

@@ -515,7 +515,7 @@ Once your app is stable, you can publish it to the TFGrid App Registry for other
 
 ### Registry Entry
 
-Submit a PR to [tfgrid-studio/app-registry](https://github.com/tfgrid-studio/app-registry) with:
+Submit a PR to [tfgrid-studio/tfgrid-registry](https://github.com/tfgrid-studio/tfgrid-registry) with:
 
 ```yaml
 # apps/my-app.yaml
@@ -529,7 +529,7 @@ tags:
 maintainer: your-email@example.com
 ```
 
-See the [App Registry Guide](app-registry.md) for detailed publishing instructions.
+See the [App Registry Guide](tfgrid-registry.md) for detailed publishing instructions.
 
 ---
 
@@ -617,7 +617,7 @@ tags:
 ## Next Steps
 
 - **[Tarball Releases Guide](tarball-releases.md)** - Implement versioned releases with rollback for long-lived VMs
-- **[App Registry Guide](app-registry.md)** - Publish your app for others to use
+- **[App Registry Guide](tfgrid-registry.md)** - Publish your app for others to use
 - **[TFGrid Compose Guide](tfgrid-compose.md)** - Complete CLI reference
 - **[Examples](https://github.com/tfgrid-studio/tfgrid-compose/tree/main/examples)** - More example apps
 

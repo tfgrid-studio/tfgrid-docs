@@ -395,7 +395,7 @@ tfgrid-compose exec sudo systemctl restart wg-quick@wg0
 ### Continue Learning
 - **[AI Agent Guide](tfgrid-ai-agent.md)** - Deep dive into AI development
 - **[Gitea Guide](tfgrid-gitea.md)** - Self-hosted Git workflows
-- **[App Registry](app-registry.md)** - Discover more applications
+- **[App Registry](tfgrid-registry.md)** - Discover more applications
 - **[CLI Reference](../cli/app-commands.md)** - Complete command reference
 
 ### Advanced Topics

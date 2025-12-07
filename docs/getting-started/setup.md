@@ -364,7 +364,7 @@ Now that you're set up:
 - **[Quick Start](quickstart.md)** - 5-minute deployment guide
 - **[AI Agent Guide](../guides/tfgrid-ai-agent.md)** - Complete AI agent workflows
 - **[Gitea Guide](../guides/tfgrid-gitea.md)** - Self-hosted Git service
-- **[App Registry](../guides/app-registry.md)** - Discover more apps
+- **[App Registry](../guides/tfgrid-registry.md)** - Discover more apps
 
 ### Advanced Topics
 - **[Pattern Documentation](../patterns/overview.md)** - Deployment patterns

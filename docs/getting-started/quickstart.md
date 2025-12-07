@@ -403,7 +403,7 @@ Now that you've deployed your first app:
 ### Deploy More Apps
 - **[AI Agent Guide](../guides/tfgrid-ai-agent.md)** - Complete AI agent workflows
 - **[Gitea Guide](../guides/tfgrid-gitea.md)** - Self-hosted Git service
-- **[App Registry](../guides/app-registry.md)** - Discover more applications
+- **[App Registry](../guides/tfgrid-registry.md)** - Discover more applications
 
 ### Advanced Topics
 - **[Custom Apps](../guides/custom-apps.md)** - Create your own apps

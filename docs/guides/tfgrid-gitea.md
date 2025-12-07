@@ -606,7 +606,7 @@ sudo -u gitea /usr/local/bin/gitea admin user list \
 
 - **[AI Agent Guide](tfgrid-ai-agent.md)** - Use AI agent with Gitea
 - **[Gateway Pattern](../patterns/gateway.md)** - Deploy with SSL
-- **[App Registry](app-registry.md)** - Explore more apps
+- **[App Registry](tfgrid-registry.md)** - Explore more apps
 - **[Gitea Official Docs](https://docs.gitea.com/)** - Full Gitea documentation
 
 ## Support

@@ -49,7 +49,7 @@ TFGrid Compose now uses **Git commit hashes as the primary version identifier** 
 Apps in the registry:
 
 - Include `tfgrid-compose.yaml` in their repository
-- Follow [app guidelines](https://github.com/tfgrid-studio/app-registry/blob/main/docs/app-guidelines.md)
+- Follow [app guidelines](https://github.com/tfgrid-studio/tfgrid-registry/blob/main/docs/app-guidelines.md)
 - Can be submitted for verification via PR
 
 ## Official Apps
@@ -277,7 +277,7 @@ Want to share your app with the community?
    ```
 
 3. **Submit for Verification**
-   - Fork [tfgrid-studio/app-registry](https://github.com/tfgrid-studio/app-registry)
+   - Fork [tfgrid-studio/tfgrid-registry](https://github.com/tfgrid-studio/tfgrid-registry)
    - Add your app to `registry/verified/community.yaml`
    - Create pull request
 
@@ -371,7 +371,7 @@ tfgrid-compose up ./app
 ## Resources
 
 - **Registry Website**: [registry.tfgrid.studio](https://registry.tfgrid.studio) ✅ Live
-- **Registry Data**: [tfgrid-studio/app-registry](https://github.com/tfgrid-studio/app-registry)
+- **Registry Data**: [tfgrid-studio/tfgrid-registry](https://github.com/tfgrid-studio/tfgrid-registry)
 - **Submit Your App**: [Submission Guide](../development/submit-app.md)
 - **App Manifest**: [Manifest Reference](../reference/manifest.md)
 

@@ -253,7 +253,7 @@ Community-contributed apps are reviewed and approved by the TFGrid Studio team:
 
 ```bash
 # Future community apps will appear here
-# Submit your app: https://github.com/tfgrid-studio/app-registry
+# Submit your app: https://github.com/tfgrid-studio/tfgrid-registry
 ```
 
 ## Complete Command Reference

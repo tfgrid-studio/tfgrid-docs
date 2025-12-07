@@ -705,7 +705,7 @@ ln -sfn /opt/my-app/releases/v1.0.0 /opt/my-app/releases/current
 
 - **[Custom Apps Guide](custom-apps.md)** - Create the app structure for releases
 - **[TFGrid Compose Guide](tfgrid-compose.md)** - Complete CLI reference
-- **[App Registry Guide](app-registry.md)** - Publish your app
+- **[App Registry Guide](tfgrid-registry.md)** - Publish your app
 
 ---
 

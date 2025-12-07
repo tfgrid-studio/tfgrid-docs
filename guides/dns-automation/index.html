@@ -2877,15 +2877,22 @@
 <ol>
 <li>Create a free account at <a href="https://cloudflare.com">cloudflare.com</a></li>
 <li>Add your domain to Cloudflare</li>
-<li>Go to <strong>My Profile</strong> → <strong>API Tokens</strong> → <strong>Create Token</strong></li>
+<li>Go to <strong>My Profile</strong> (top right) → <strong>API Tokens</strong> → <strong>Create Token</strong></li>
 <li>Use the <strong>"Edit zone DNS"</strong> template</li>
 <li>Set permissions:<ul>
-<li>Zone - DNS - Edit</li>
-<li>Zone - Zone - Read</li>
+<li><strong>Zone - DNS - Edit</strong> (to create/update DNS records)</li>
+<li><strong>Zone - Zone - Read</strong> (to look up zone ID automatically)</li>
 </ul>
 </li>
-<li>Copy the generated token</li>
+<li>Zone Resources: Select "Include - All zones" or a specific zone</li>
+<li>Leave IP filtering blank (no IP whitelisting required)</li>
+<li>Click <strong>Continue to summary</strong> → <strong>Create Token</strong></li>
+<li>Copy the generated token (shown only once)</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You only need the API token. The zone ID and account ID are looked up automatically using your domain name.</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-wordpress<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--env<span class="w"> </span><span class="nv">DOMAIN</span><span class="o">=</span>blog.example.com<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--env<span class="w"> </span><span class="nv">DNS_PROVIDER</span><span class="o">=</span>cloudflare<span class="w"> </span><span class="se">\</span>

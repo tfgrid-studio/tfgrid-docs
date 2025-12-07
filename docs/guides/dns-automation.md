@@ -27,12 +27,18 @@ All three providers offer full API access without IP whitelisting requirements.
 
 1. Create a free account at [cloudflare.com](https://cloudflare.com)
 2. Add your domain to Cloudflare
-3. Go to **My Profile** → **API Tokens** → **Create Token**
+3. Go to **My Profile** (top right) → **API Tokens** → **Create Token**
 4. Use the **"Edit zone DNS"** template
 5. Set permissions:
-    - Zone - DNS - Edit
-    - Zone - Zone - Read
-6. Copy the generated token
+    - **Zone - DNS - Edit** (to create/update DNS records)
+    - **Zone - Zone - Read** (to look up zone ID automatically)
+6. Zone Resources: Select "Include - All zones" or a specific zone
+7. Leave IP filtering blank (no IP whitelisting required)
+8. Click **Continue to summary** → **Create Token**
+9. Copy the generated token (shown only once)
+
+!!! note
+    You only need the API token. The zone ID and account ID are looked up automatically using your domain name.
 
 ```bash
 tfgrid-compose up tfgrid-wordpress \

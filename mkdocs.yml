@@ -137,7 +137,7 @@ nav:
     - TFGrid WordPress: guides/tfgrid-wordpress.md
     - TFGrid Nextcloud: guides/tfgrid-nextcloud.md
     - TFGrid ERPNext: guides/tfgrid-erpnext.md
-    - App Registry: guides/tfgrid-registry.md
+    - TFGrid Registry: guides/tfgrid-registry.md
     - Custom Apps: guides/custom-apps.md
     - Tarball Releases: guides/tarball-releases.md
   

@@ -1930,10 +1930,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#62-hosted-portal" class="md-nav__link">
+  <a href="#62-hosted-portal-saas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.2 Hosted Portal
+        6.2 Hosted Portal (SaaS)
       
     </span>
   </a>
@@ -2861,10 +2861,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#62-hosted-portal" class="md-nav__link">
+  <a href="#62-hosted-portal-saas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.2 Hosted Portal
+        6.2 Hosted Portal (SaaS)
       
     </span>
   </a>
@@ -3127,17 +3127,24 @@
 <li>Running CLI commands via forms.</li>
 <li>Managing AI Stack projects (<code>create</code>, <code>run</code>, <code>publish</code>).</li>
 </ul>
-<h3 id="62-hosted-portal">6.2 Hosted Portal<a class="headerlink" href="#62-hosted-portal" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Repo: <code>tfgrid-portal</code></li>
-<li>Site: <code>https://portal.tfgrid.studio</code> (planned)</li>
-<li>Purpose: SaaS-style <strong>Web Portal</strong> for users who prefer a hosted control-plane.</li>
-<li>High-level idea:</li>
-<li>Reuse much of the same UI as the local dashboard.</li>
-<li>Backend runs on TFGrid and orchestrates deployments for multiple users.</li>
-<li>Integrates with future marketplace and enterprise features.</li>
-</ul>
-<p>Details of hosted pricing, billing, and control-plane remain internal and are tracked in the <code>tfgrid-internal</code> repository.</p>
+<h3 id="62-hosted-portal-saas">6.2 Hosted Portal (SaaS)<a class="headerlink" href="#62-hosted-portal-saas" title="Permanent link">&para;</a></h3>
+<p>The hosted portal consists of two components:</p>
+<p><strong>Frontend:</strong>
+- Repo: <code>tfgrid-portal</code>
+- Site: <code>https://portal.tfgrid.studio</code> (planned)
+- Stack: React + Vite SPA
+- Purpose: Web dashboard for managing workspaces</p>
+<p><strong>Backend:</strong>
+- Repo: <code>tfgrid-control-plane</code>
+- Stack: Node.js + Fastify + Postgres
+- Purpose: API for users, billing (Stripe), workspace orchestration
+- Calls <code>tfgrid-compose</code> to deploy workspaces on ThreeFold Grid</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌─────────────────┐      ┌─────────────────────┐
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│  tfgrid-portal  │ ───► │ tfgrid-control-plane │ ───► tfgrid-compose ───► ThreeFold Grid
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   (Frontend)    │ API  │     (Backend API)    │
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>└─────────────────┘      └─────────────────────┘
+</code></pre></div>
+<p>Details of hosted pricing, billing, and control-plane architecture are tracked in the <code>tfgrid-internal</code> repository.</p>
 <hr />
 <h2 id="7-repositories-overview">7. Repositories Overview<a class="headerlink" href="#7-repositories-overview" title="Permanent link">&para;</a></h2>
 <p>This table summarizes the main repositories and how they relate to the platform map above.</p>
@@ -3198,7 +3205,12 @@
 <tr>
 <td><code>tfgrid-portal</code></td>
 <td>App (planned)</td>
-<td>Hosted web portal (SaaS)</td>
+<td>Hosted web portal (SaaS frontend)</td>
+</tr>
+<tr>
+<td><code>tfgrid-control-plane</code></td>
+<td>App (planned)</td>
+<td>Backend API for portal (users, billing)</td>
 </tr>
 <tr>
 <td><code>tfgrid-marketplace</code></td>

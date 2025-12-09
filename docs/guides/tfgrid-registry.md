@@ -44,6 +44,32 @@ TFGrid Compose now uses **Git commit hashes as the primary version identifier** 
 - ✅ **Better debugging**: Can track exactly what changed between deployments
 - ✅ **Consistency**: All TFGrid components use the same versioning approach
 
+### Automatic Registry Updates
+
+For official apps, the registry stores a pinned Git commit hash in `registry/apps.yaml`:
+
+- The `version:` field contains the full Git commit hash (not just `main`).
+- `tfgrid-compose up <app-name>` always uses that exact commit when downloading from the registry.
+
+To refresh your local registry metadata and cached apps to match the latest pins:
+
+```bash
+t update registry
+```
+
+This command:
+
+- Downloads the latest `apps.yaml` from `tfgrid-studio/tfgrid-registry`.
+- Pre-caches/updates official apps so their local clones are checked out to the commit specified in the `version` field.
+
+Official app repositories (such as `tfgrid-ai-stack`, `tfgrid-ai-agent`, `tfgrid-gitea`, `tfgrid-wordpress`, `tfgrid-nextcloud`, `tfgrid-erpnext`) include a small GitHub Actions workflow that:
+
+- Triggers on `push` to their `main` branch.
+- Sends a `repository_dispatch` event to the `tfgrid-registry` repository.
+- Causes the registry's **Auto-Update App Versions** workflow to run, which updates `registry/apps.yaml` so each app's `version` points at its latest commit.
+
+This keeps the registry, cached app repositories, and deployed apps aligned on the same Git commit without manual version bumping.
+
 ### For Developers
 
 Apps in the registry:

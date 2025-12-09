@@ -1106,6 +1106,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#automatic-registry-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Registry Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#for-developers" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2837,6 +2848,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#automatic-registry-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Registry Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#for-developers" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3221,6 +3243,27 @@
 <li>✅ <strong>Better debugging</strong>: Can track exactly what changed between deployments</li>
 <li>✅ <strong>Consistency</strong>: All TFGrid components use the same versioning approach</li>
 </ul>
+<h3 id="automatic-registry-updates">Automatic Registry Updates<a class="headerlink" href="#automatic-registry-updates" title="Permanent link">&para;</a></h3>
+<p>For official apps, the registry stores a pinned Git commit hash in <code>registry/apps.yaml</code>:</p>
+<ul>
+<li>The <code>version:</code> field contains the full Git commit hash (not just <code>main</code>).</li>
+<li><code>tfgrid-compose up &lt;app-name&gt;</code> always uses that exact commit when downloading from the registry.</li>
+</ul>
+<p>To refresh your local registry metadata and cached apps to match the latest pins:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>t<span class="w"> </span>update<span class="w"> </span>registry
+</code></pre></div>
+<p>This command:</p>
+<ul>
+<li>Downloads the latest <code>apps.yaml</code> from <code>tfgrid-studio/tfgrid-registry</code>.</li>
+<li>Pre-caches/updates official apps so their local clones are checked out to the commit specified in the <code>version</code> field.</li>
+</ul>
+<p>Official app repositories (such as <code>tfgrid-ai-stack</code>, <code>tfgrid-ai-agent</code>, <code>tfgrid-gitea</code>, <code>tfgrid-wordpress</code>, <code>tfgrid-nextcloud</code>, <code>tfgrid-erpnext</code>) include a small GitHub Actions workflow that:</p>
+<ul>
+<li>Triggers on <code>push</code> to their <code>main</code> branch.</li>
+<li>Sends a <code>repository_dispatch</code> event to the <code>tfgrid-registry</code> repository.</li>
+<li>Causes the registry's <strong>Auto-Update App Versions</strong> workflow to run, which updates <code>registry/apps.yaml</code> so each app's <code>version</code> points at its latest commit.</li>
+</ul>
+<p>This keeps the registry, cached app repositories, and deployed apps aligned on the same Git commit without manual version bumping.</p>
 <h3 id="for-developers">For Developers<a class="headerlink" href="#for-developers" title="Permanent link">&para;</a></h3>
 <p>Apps in the registry:</p>
 <ul>
@@ -3232,7 +3275,7 @@
 <p>Maintained by TFGrid Studio:</p>
 <h3 id="tfgrid-ai-stack">tfgrid-ai-stack<a class="headerlink" href="#tfgrid-ai-stack" title="Permanent link">&para;</a></h3>
 <p>Complete AI development environment with integrated coding agent, Git hosting, and web dashboard.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-stack
 </code></pre></div>
 <p><strong>Details:</strong></p>
 <ul>
@@ -3245,7 +3288,7 @@
 </ul>
 <h3 id="tfgrid-ai-agent">tfgrid-ai-agent<a class="headerlink" href="#tfgrid-ai-agent" title="Permanent link">&para;</a></h3>
 <p>AI coding agent with Qwen integration and loop technique for safe AI development.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
 </code></pre></div>
 <p><strong>Details:</strong></p>
 <ul>
@@ -3262,7 +3305,7 @@
 </blockquote>
 <h3 id="tfgrid-gitea">tfgrid-gitea<a class="headerlink" href="#tfgrid-gitea" title="Permanent link">&para;</a></h3>
 <p>Self-hosted Git service with web interface - perfect for AI agent repositories.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-gitea
 </code></pre></div>
 <p><strong>Details:</strong></p>
 <ul>
@@ -3285,67 +3328,67 @@ See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
 </blockquote>
 <h2 id="using-apps">Using Apps<a class="headerlink" href="#using-apps" title="Permanent link">&para;</a></h2>
 <h3 id="deploy-official-app">Deploy Official App<a class="headerlink" href="#deploy-official-app" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Deploy with auto-generated name</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># → Deployment name: tfgrid-ai-agent</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Deploy with custom name (if supported)</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>--name<span class="o">=</span>my-agent
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># → Deployment name: my-agent</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Deploy with auto-generated name</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># → Deployment name: tfgrid-ai-agent</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Deploy with custom name (if supported)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent<span class="w"> </span>--name<span class="o">=</span>my-agent
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># → Deployment name: my-agent</span>
 </code></pre></div>
 <h3 id="search-and-discover-apps">Search and Discover Apps<a class="headerlink" href="#search-and-discover-apps" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># List all available apps</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tfgrid-compose<span class="w"> </span>search
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Search by keyword</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>ai
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>git
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># Search by tag</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>--tag<span class="w"> </span>development
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>--tag<span class="w"> </span>ai
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># List all available apps</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tfgrid-compose<span class="w"> </span>search
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Search by keyword</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>ai
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>git
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># Search by tag</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>--tag<span class="w"> </span>development
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>tfgrid-compose<span class="w"> </span>search<span class="w"> </span>--tag<span class="w"> </span>ai
 </code></pre></div>
 <h3 id="deploy-community-app-unverified">Deploy Community App (Unverified)<a class="headerlink" href="#deploy-community-app-unverified" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># From GitHub</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>username/repo-name
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># From any git URL</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>https://gitlab.com/org/app
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># From GitHub</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>username/repo-name
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># From any git URL</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>https://gitlab.com/org/app
 </code></pre></div>
 <p>⚠️ <strong>Security Note</strong>: Always review code before deploying unverified apps!</p>
 <h3 id="get-app-information">Get App Information<a class="headerlink" href="#get-app-information" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Get detailed app information</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tfgrid-compose<span class="w"> </span>info<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># View app manifest and requirements</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># Shows: version, resources, patterns, documentation</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Get detailed app information</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tfgrid-compose<span class="w"> </span>info<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># View app manifest and requirements</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># Shows: version, resources, patterns, documentation</span>
 </code></pre></div>
 <h3 id="enhanced-cache-management">Enhanced Cache Management<a class="headerlink" href="#enhanced-cache-management" title="Permanent link">&para;</a></h3>
 <p>TFGrid Compose includes an advanced cache system with Git commit-based version tracking:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Show cache health overview</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>t<span class="w"> </span>cache<span class="w"> </span>status
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># List all cached apps with Git commit info</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>t<span class="w"> </span>cache<span class="w"> </span>list
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># Example output:</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># ✅ tfgrid-ai-stack (24c9148)</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1">#     Last updated: 2025-11-11 22:47:49</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># ⚠️ tfgrid-ai-agent (0e91178) - [needs update]</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># Check for apps needing updates</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>t<span class="w"> </span>cache<span class="w"> </span>outdated
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1"># Auto-refresh stale apps</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>t<span class="w"> </span>cache<span class="w"> </span>refresh
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="c1"># Validate cache integrity</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>t<span class="w"> </span>cache<span class="w"> </span>validate<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="c1"># Clear specific app cache</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>tfgrid-ai-stack
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="c1"># Clear all cache</span>
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>--all
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Show cache health overview</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>t<span class="w"> </span>cache<span class="w"> </span>status
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># List all cached apps with Git commit info</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>t<span class="w"> </span>cache<span class="w"> </span>list
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># Example output:</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># ✅ tfgrid-ai-stack (24c9148)</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1">#     Last updated: 2025-11-11 22:47:49</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># ⚠️ tfgrid-ai-agent (0e91178) - [needs update]</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># Check for apps needing updates</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>t<span class="w"> </span>cache<span class="w"> </span>outdated
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="c1"># Auto-refresh stale apps</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>t<span class="w"> </span>cache<span class="w"> </span>refresh
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="c1"># Validate cache integrity</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>t<span class="w"> </span>cache<span class="w"> </span>validate<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="c1"># Clear specific app cache</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>tfgrid-ai-stack
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="c1"># Clear all cache</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>t<span class="w"> </span>cache<span class="w"> </span>clear<span class="w"> </span>--all
 </code></pre></div>
 <p><strong>Cache Features:</strong></p>
 <ul>
@@ -3357,25 +3400,25 @@ See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
 </ul>
 <h2 id="app-structure">App Structure<a class="headerlink" href="#app-structure" title="Permanent link">&para;</a></h2>
 <p>All apps must include <code>tfgrid-compose.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My application</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nt">patterns</span><span class="p">:</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nt">resources</span><span class="p">:</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="nt">hooks</span><span class="p">:</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span><span class="nt">setup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/setup.sh</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">  </span><span class="nt">configure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/configure.sh</span>
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">  </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/healthcheck.sh</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My application</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nt">patterns</span><span class="p">:</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-vm</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">  </span><span class="nt">cpu</span><span class="p">:</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">  </span><span class="nt">memory</span><span class="p">:</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8192</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span><span class="nt">disk</span><span class="p">:</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="nt">hooks</span><span class="p">:</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">  </span><span class="nt">setup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/setup.sh</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span><span class="nt">configure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/configure.sh</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">  </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment/healthcheck.sh</span>
 </code></pre></div>
 <p>See <a href="../development/app-manifest.md">App Manifest Reference</a> for full specification.</p>
 <h2 id="registry-structure">Registry Structure<a class="headerlink" href="#registry-structure" title="Permanent link">&para;</a></h2>
@@ -3414,7 +3457,7 @@ See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
 </li>
 <li>
 <p><strong>Test Locally</strong>
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./my-app
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./my-app
 </code></pre></div></p>
 </li>
 <li>
@@ -3444,34 +3487,34 @@ See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
 <p><strong>Full Guide</strong>: <a href="../../development/submit-app/">How to Submit →</a></p>
 <h2 id="app-cache-location">App Cache Location<a class="headerlink" href="#app-cache-location" title="Permanent link">&para;</a></h2>
 <p>Apps are cached locally:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>~/.config/tfgrid-compose/
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>├──<span class="w"> </span>apps/<span class="w">                    </span><span class="c1"># Cached app repositories</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>│<span class="w">   </span>├──<span class="w"> </span>tfgrid-ai-agent/
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>│<span class="w">   </span>└──<span class="w"> </span>other-apps/
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>├──<span class="w"> </span>deployments/<span class="w">             </span><span class="c1"># Your deployments</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>└──<span class="w"> </span>registry.yaml<span class="w">            </span><span class="c1"># Cached registry</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>~/.config/tfgrid-compose/
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>├──<span class="w"> </span>apps/<span class="w">                    </span><span class="c1"># Cached app repositories</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>│<span class="w">   </span>├──<span class="w"> </span>tfgrid-ai-agent/
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>│<span class="w">   </span>└──<span class="w"> </span>other-apps/
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>├──<span class="w"> </span>deployments/<span class="w">             </span><span class="c1"># Your deployments</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>└──<span class="w"> </span>registry.yaml<span class="w">            </span><span class="c1"># Cached registry</span>
 </code></pre></div>
 <h2 id="version-pinning">Version Pinning<a class="headerlink" href="#version-pinning" title="Permanent link">&para;</a></h2>
 <p>Pin apps to specific versions:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Latest version (default)</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Specific version</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent:v0.9.0
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Specific branch</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent:develop
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Latest version (default)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Specific version</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent:v0.9.0
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># Specific branch</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>tfgrid-ai-agent:develop
 </code></pre></div>
 <h2 id="registry-api">Registry API<a class="headerlink" href="#registry-api" title="Permanent link">&para;</a></h2>
 <p>For automation and integrations:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># JSON API</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps.json
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># YAML API</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps.yaml
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># App details</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps/tfgrid-ai-agent.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># JSON API</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps.json
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># YAML API</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps.yaml
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># App details</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>curl<span class="w"> </span>https://registry.tfgrid.studio/api/apps/tfgrid-ai-agent.json
 </code></pre></div>
 <h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
 <h3 id="official-apps_2">Official Apps<a class="headerlink" href="#official-apps_2" title="Permanent link">&para;</a></h3>
@@ -3494,14 +3537,14 @@ See <a href="../../development/submit-app/">Submission Guidelines →</a></p>
 <li>⚠️ Check for secrets/malicious code</li>
 </ul>
 <p><strong>Best Practice</strong>: Always inspect app code before deployment:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Clone and inspect</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/app
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">cd</span><span class="w"> </span>app
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Review code, check for secrets</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>less<span class="w"> </span>deployment/setup.sh
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># Deploy if satisfied</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./app
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Clone and inspect</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/app
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nb">cd</span><span class="w"> </span>app
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Review code, check for secrets</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>less<span class="w"> </span>deployment/setup.sh
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># Deploy if satisfied</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>tfgrid-compose<span class="w"> </span>up<span class="w"> </span>./app
 </code></pre></div>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>

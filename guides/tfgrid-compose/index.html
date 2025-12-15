@@ -1003,6 +1003,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#contract-state-cleanup-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract &amp; State Cleanup Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1531,6 +1542,17 @@
     <span class="md-ellipsis">
       
         5. Smart Contract Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-state-directory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. State Directory Management
       
     </span>
   </a>
@@ -3359,6 +3381,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#contract-state-cleanup-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract &amp; State Cleanup Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3893,6 +3926,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6-state-directory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. State Directory Management
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4224,6 +4268,58 @@
 <td><code>t cache [subcommand]</code></td>
 <td>Cache management system</td>
 <td><code>t cache status</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contract-state-cleanup-commands">Contract &amp; State Cleanup Commands<a class="headerlink" href="#contract-state-cleanup-commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>t contracts list</code></td>
+<td>List all contracts</td>
+<td><code>t contracts list</code></td>
+</tr>
+<tr>
+<td><code>t contracts delete &lt;id...&gt;</code></td>
+<td>Delete contract(s) by ID</td>
+<td><code>t contracts delete 12345 67890</code></td>
+</tr>
+<tr>
+<td><code>t contracts delete -c &lt;id&gt;</code></td>
+<td>Delete by container ID (short ID)</td>
+<td><code>t contracts delete -c f13</code></td>
+</tr>
+<tr>
+<td><code>t contracts orphans</code></td>
+<td>Find orphaned contracts</td>
+<td><code>t contracts orphans</code></td>
+</tr>
+<tr>
+<td><code>t contracts orphans --delete</code></td>
+<td>Delete orphaned contracts</td>
+<td><code>t contracts orphans --delete</code></td>
+</tr>
+<tr>
+<td><code>t contracts clean -i</code></td>
+<td>Interactive cleanup</td>
+<td><code>t contracts clean -i</code></td>
+</tr>
+<tr>
+<td><code>t state list</code></td>
+<td>List state directories</td>
+<td><code>t state list</code></td>
+</tr>
+<tr>
+<td><code>t state clean</code></td>
+<td>Remove orphaned state dirs</td>
+<td><code>t state clean</code></td>
 </tr>
 </tbody>
 </table>
@@ -4640,8 +4736,38 @@
 <a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="c1"># Delete a single contract</span>
 <a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>t<span class="w"> </span>contracts<span class="w"> </span>delete<span class="w"> </span>&lt;contract-id&gt;
 <a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>
-<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="c1"># Delete all contracts (dangerous)</span>
-<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>t<span class="w"> </span>contracts<span class="w"> </span>delete<span class="w"> </span>--all
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="c1"># Delete multiple contracts</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>t<span class="w"> </span>contracts<span class="w"> </span>delete<span class="w"> </span><span class="m">12345</span><span class="w"> </span><span class="m">67890</span><span class="w"> </span><span class="m">11111</span>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="c1"># Delete by container ID (supports short IDs like Docker)</span>
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>t<span class="w"> </span>contracts<span class="w"> </span>delete<span class="w"> </span>--container<span class="w"> </span>f13
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>t<span class="w"> </span>contracts<span class="w"> </span>delete<span class="w"> </span>-c<span class="w"> </span>66b982
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="c1"># Find orphaned contracts (exist on grid but not in local state)</span>
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>t<span class="w"> </span>contracts<span class="w"> </span>orphans
+<a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>
+<a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a><span class="c1"># Delete orphaned contracts</span>
+<a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>t<span class="w"> </span>contracts<span class="w"> </span>orphans<span class="w"> </span>--delete
+<a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a>
+<a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a><span class="c1"># Interactive cleanup (shows numbered list, select which to delete)</span>
+<a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a>t<span class="w"> </span>contracts<span class="w"> </span>clean<span class="w"> </span>--interactive
+<a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a>t<span class="w"> </span>contracts<span class="w"> </span>clean<span class="w"> </span>-i
+<a id="__codelineno-29-30" name="__codelineno-29-30" href="#__codelineno-29-30"></a>
+<a id="__codelineno-29-31" name="__codelineno-29-31" href="#__codelineno-29-31"></a><span class="c1"># Delete all contracts (dangerous)</span>
+<a id="__codelineno-29-32" name="__codelineno-29-32" href="#__codelineno-29-32"></a>t<span class="w"> </span>contracts<span class="w"> </span>delete<span class="w"> </span>--all
+</code></pre></div>
+<h4 id="6-state-directory-management">6. State Directory Management<a class="headerlink" href="#6-state-directory-management" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># List all state directories</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>t<span class="w"> </span>state<span class="w"> </span>list
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c1"># Clean orphaned state directories (no active contracts)</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>t<span class="w"> </span>state<span class="w"> </span>clean
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="c1"># Dry run (see what would be removed)</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>t<span class="w"> </span>state<span class="w"> </span>clean<span class="w"> </span>--dry-run
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="c1"># Force clean without confirmation</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>t<span class="w"> </span>state<span class="w"> </span>clean<span class="w"> </span>--force
 </code></pre></div>
 <h3 id="migration-guide">Migration Guide<a class="headerlink" href="#migration-guide" title="Permanent link">&para;</a></h3>
 <h4 id="for-existing-users_1">For Existing Users<a class="headerlink" href="#for-existing-users_1" title="Permanent link">&para;</a></h4>

@@ -155,6 +155,18 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t update [subcommand]` | Enhanced update system | `t update registry` |
 | `t cache [subcommand]` | Cache management system | `t cache status` |
 
+### Contract & State Cleanup Commands
+| Command | Description | Example |
+|---------|-------------|---------|
+| `t contracts list` | List all contracts | `t contracts list` |
+| `t contracts delete <id...>` | Delete contract(s) by ID | `t contracts delete 12345 67890` |
+| `t contracts delete -c <id>` | Delete by container ID (short ID) | `t contracts delete -c f13` |
+| `t contracts orphans` | Find orphaned contracts | `t contracts orphans` |
+| `t contracts orphans --delete` | Delete orphaned contracts | `t contracts orphans --delete` |
+| `t contracts clean -i` | Interactive cleanup | `t contracts clean -i` |
+| `t state list` | List state directories | `t state list` |
+| `t state clean` | Remove orphaned state dirs | `t state clean` |
+
 ## Update and Cache Commands
 
 ### Update Commands
@@ -542,8 +554,40 @@ t contracts list
 # Delete a single contract
 t contracts delete <contract-id>
 
+# Delete multiple contracts
+t contracts delete 12345 67890 11111
+
+# Delete by container ID (supports short IDs like Docker)
+t contracts delete --container f13
+t contracts delete -c 66b982
+
+# Find orphaned contracts (exist on grid but not in local state)
+t contracts orphans
+
+# Delete orphaned contracts
+t contracts orphans --delete
+
+# Interactive cleanup (shows numbered list, select which to delete)
+t contracts clean --interactive
+t contracts clean -i
+
 # Delete all contracts (dangerous)
 t contracts delete --all
+```
+
+#### 6. State Directory Management
+```bash
+# List all state directories
+t state list
+
+# Clean orphaned state directories (no active contracts)
+t state clean
+
+# Dry run (see what would be removed)
+t state clean --dry-run
+
+# Force clean without confirmation
+t state clean --force
 ```
 
 ### Migration Guide

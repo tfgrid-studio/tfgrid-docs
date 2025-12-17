@@ -649,20 +649,18 @@ If K3s deployment fails partially, you can **retry specific ansible tasks** with
 #### Retry Commands
 
 ```bash
-# Check detailed deployment status
-cd tfgrid-studio/tfgrid-compose/patterns/k3s
-./scripts/check-status.sh
+# Check detailed deployment status (selects current/active deployment)
+tfgrid-compose status
 
-# Retry specific failing components
-./scripts/retry-playbook.sh control    # Control plane only
-./scripts/retry-playbook.sh worker     # Worker nodes only
-./scripts/retry-playbook.sh common     # Common prerequisites
-./scripts/retry-playbook.sh ingress    # Ingress nodes only
-./scripts/retry-playbook.sh all        # All components
+# Retry specific failing components on current deployment
+tfgrid-compose retry control    # Control plane only
+tfgrid-compose retry worker     # Worker nodes only
+tfgrid-compose retry common     # Common prerequisites
+tfgrid-compose retry ingress    # Ingress nodes only
+tfgrid-compose retry all        # All components
 
-# With options
-./scripts/retry-playbook.sh -v control # Verbose output
-./scripts/retry-playbook.sh --help     # Show help
+# Validate cluster health after retry
+tfgrid-compose validate
 ```
 
 #### State Tracking
@@ -692,22 +690,17 @@ ls -la /var/lib/tfgrid-compose/state/
 t up <your-app> --pattern k3s
 # ❌ Error: Worker node 2 failed to join cluster
 
-# Check what succeeded
-cd tfgrid-studio/tfgrid-compose/patterns/k3s
-./scripts/check-status.sh
-# ✅ Management: COMPLETED
-# ✅ Control Plane: COMPLETED
-# ✅ Worker node1: COMPLETED
-# ❌ Worker node2: NOT FOUND
-# ✅ Worker node3: COMPLETED
+# Check deployment status
+t status
+# Shows current deployment status and any failed components
 
-# Retry only the failed worker
-./scripts/retry-playbook.sh worker
+# Retry only the failed worker nodes
+t retry worker
 # ✅ Worker node2 successfully joined
 
-# Validate cluster
-t kubectl get nodes
-# All 6 nodes ready ✅
+# Validate cluster health
+t validate
+# ✅ Cluster validation passed: 6 nodes ready
 ```
 
 ### Error Handling Improvements

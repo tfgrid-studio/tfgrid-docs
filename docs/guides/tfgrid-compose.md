@@ -608,3 +608,123 @@ t state clean --force
 - **Enhanced Security**: Contract-based validation
 - **Better UX**: Clear indication of actual deployment state
 - **Automatic Maintenance**: Self-cleaning registry system
+
+## ☸️ K3s Cluster Deployments & Retry Mechanism
+
+TFGrid Compose supports **K3s cluster deployments** for high-availability production workloads. K3s clusters are deployed using Ansible playbooks that provision multi-node Kubernetes clusters with HA etcd, MetalLB load balancing, and Nginx ingress controllers.
+
+### K3s Pattern Overview
+
+K3s deployments use a **9-VM architecture**:
+- **1 Management Node**: Ansible orchestration, kubectl access, monitoring tools
+- **3 Control Plane Nodes**: K3s masters with HA etcd cluster
+- **3 Worker Nodes**: Application pod scheduling
+- **2 Ingress Nodes**: Nginx ingress controllers with Keepalived HA
+
+### Deployment Process
+
+```bash
+# Deploy K3s cluster using pattern
+t up <your-app> --pattern k3s
+
+# This provisions 9 VMs and runs ansible playbooks to:
+# 1. Configure common prerequisites on all nodes
+# 2. Initialize K3s control plane (HA etcd)
+# 3. Join worker nodes to the cluster
+# 4. Deploy MetalLB for load balancing
+# 5. Deploy Nginx ingress controllers
+# 6. Validate cluster health
+```
+
+### 🔄 Ansible Retry Mechanism (New Feature!)
+
+If K3s deployment fails partially, you can **retry specific ansible tasks** without redeploying all VMs. This saves significant time and cost by preserving infrastructure while fixing orchestration issues.
+
+#### Key Benefits
+- ⚡ **Fast Recovery**: Ansible retries take minutes, not hours
+- 💰 **Cost Effective**: No VM reprovisioning costs
+- 🎯 **Selective**: Fix only broken components
+- 📊 **Transparent**: Clear visibility into what succeeded/failed
+
+#### Retry Commands
+
+```bash
+# Check detailed deployment status
+cd tfgrid-studio/tfgrid-compose/patterns/k3s
+./scripts/check-status.sh
+
+# Retry specific failing components
+./scripts/retry-playbook.sh control    # Control plane only
+./scripts/retry-playbook.sh worker     # Worker nodes only
+./scripts/retry-playbook.sh common     # Common prerequisites
+./scripts/retry-playbook.sh ingress    # Ingress nodes only
+./scripts/retry-playbook.sh all        # All components
+
+# With options
+./scripts/retry-playbook.sh -v control # Verbose output
+./scripts/retry-playbook.sh --help     # Show help
+```
+
+#### State Tracking
+
+The retry system uses **state files** on the management node to track component completion:
+
+```bash
+# Check state files (run on management node)
+ls -la /var/lib/tfgrid-compose/state/
+# control_complete     - Control plane setup done
+# worker_node1_complete - Worker node1 joined
+# worker_node2_complete - Worker node2 joined
+# worker_node3_complete - Worker node3 joined
+```
+
+#### How It Works
+
+1. **Infrastructure Preserved**: VMs remain deployed, only ansible tasks are retried
+2. **Component Isolation**: Each ansible role can be retried independently
+3. **State Awareness**: System checks completion markers before running tasks
+4. **Smart Validation**: Cluster health checks run after each retry attempt
+
+#### Example Recovery Workflow
+
+```bash
+# Initial deployment fails
+t up <your-app> --pattern k3s
+# ❌ Error: Worker node 2 failed to join cluster
+
+# Check what succeeded
+cd tfgrid-studio/tfgrid-compose/patterns/k3s
+./scripts/check-status.sh
+# ✅ Management: COMPLETED
+# ✅ Control Plane: COMPLETED
+# ✅ Worker node1: COMPLETED
+# ❌ Worker node2: NOT FOUND
+# ✅ Worker node3: COMPLETED
+
+# Retry only the failed worker
+./scripts/retry-playbook.sh worker
+# ✅ Worker node2 successfully joined
+
+# Validate cluster
+t kubectl get nodes
+# All 6 nodes ready ✅
+```
+
+### Error Handling Improvements
+
+The retry system includes enhanced error handling:
+
+- **Proper Failures**: Critical errors fail immediately (no more `ignore_errors: yes`)
+- **Retry Logic**: Built-in retries with exponential backoff
+- **Clear Diagnostics**: Detailed error messages guide recovery
+- **Validation Checks**: Health checks between deployment phases
+
+### When to Use Retry vs. Redeploy
+
+| Scenario | Action | Reason |
+|----------|--------|--------|
+| VM provisioning failed | `t up <app>` (full redeploy) | Infrastructure issue |
+| Ansible task timeout | `./scripts/retry-playbook.sh <tag>` | Orchestration issue |
+| Network connectivity | `./scripts/retry-playbook.sh <tag>` | Transient network issue |
+| Single node failure | `./scripts/retry-playbook.sh worker` | Isolated component failure |
+| Control plane issue | `./scripts/retry-playbook.sh control` | Control plane specific |

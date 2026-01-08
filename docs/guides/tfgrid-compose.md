@@ -131,7 +131,8 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t ps` | Docker-style deployment inspection for tracked deployments | `t ps` |
 | `t ps --all` | Show all tracked deployments (including non-active) | `t ps --all` |
 | `t ps --outside` | Show grid contracts not tracked in local registry (SOURCE=outside) | `t ps --outside` |
-| `t select [app]` | Select active app | `t select tfgrid-ai-stack` |
+| `t select [app]` | Select active app (supports partial IDs) | `t select tfgrid-ai-stack` |
+| `t select --force [id]` | Force select incomplete/failed deployments | `t select --force e0c` |
 | `t commands` | Show app commands | `t commands` |
 | `t dashboard [start\|stop\|status\|logs]` | Local web dashboard for apps and deployments | `t dashboard` |
 
@@ -144,6 +145,7 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t status [app]` | Check application status | `t status` |
 | `t logs [app]` | Show application logs | `t logs` |
 | `t ssh [app]` | SSH into deployment | `t ssh` |
+| `t ssh --direct [id]` | Direct SSH (bypass validation, for failed deployments) | `t ssh --direct e0c` |
 
 ### Management Commands
 | Command | Description | Example |
@@ -721,3 +723,101 @@ The retry system includes enhanced error handling:
 | Network connectivity | `./scripts/retry-playbook.sh <tag>` | Transient network issue |
 | Single node failure | `./scripts/retry-playbook.sh worker` | Isolated component failure |
 | Control plane issue | `./scripts/retry-playbook.sh control` | Control plane specific |
+
+## 🔧 Troubleshooting Failed Deployments
+
+When a deployment fails mid-way (e.g., during the configure hook), the VM may be running on the grid but the local state is incomplete. TFGrid Compose provides special flags to access these deployments.
+
+### The Problem
+
+When deployment fails after VM creation but before completion:
+- VM is running on the grid with an active contract
+- IP addresses are registered in the deployment registry
+- Local state directory may be missing or incomplete
+- Standard commands like `t ssh` or `t select` fail validation
+
+### Recovery Commands
+
+#### Force Select (`--force` / `-f`)
+
+Select a deployment even if it failed validation:
+
+```bash
+# Force select by partial ID (Docker-style)
+t select --force e0c
+
+# Force select by app name
+t select -f my-app
+
+# Output shows deployment info from registry:
+# ✅ Selected e0c0418f2a8f4d5f (my-app) [forced]
+# ℹ VM IP: 10.1.2.2
+# ℹ Mycelium: 496:e335:519a:61c0:ff0f:8f18:11b7:5c1e
+# ℹ Status: active
+```
+
+After force-selecting, you can use `t address` to see deployment details.
+
+#### Direct SSH (`--direct` / `-d`)
+
+SSH directly using registry data, bypassing all validation:
+
+```bash
+# Direct SSH by partial ID
+t ssh --direct e0c
+
+# Direct SSH by app name
+t ssh -d my-app
+
+# Output:
+# ℹ Direct SSH to my-app (e0c0418f2a8f4d5f) via mycelium...
+```
+
+### When to Use These Flags
+
+| Scenario | Command | Why |
+|----------|---------|-----|
+| Configure hook failed | `t ssh --direct <id>` | VM exists, need to debug |
+| State directory missing | `t select --force <id>` | Registry has IP, state gone |
+| Need to see deployment IP | `t select -f <id>` then `t address` | Quick IP lookup |
+| Manual recovery needed | `t ssh -d <id>` | Fix deployment manually |
+
+### Recovery Workflow Example
+
+```bash
+# 1. List all deployments (including failed)
+t ps --all
+
+# 2. Force select the failed deployment
+t select --force e0c
+# ✅ Selected e0c0418f2a8f4d5f (my-app) [forced]
+
+# 3. Check the addresses
+t address
+# Shows VM IP and Mycelium IP
+
+# 4. SSH in to debug/fix
+t ssh --direct e0c
+
+# 5. Once fixed, you can retry or clean up
+t down e0c0418f2a8f4d5f  # Clean up if needed
+```
+
+### Partial ID Support (Docker-Style)
+
+Both `--force` and `--direct` support Docker-style partial ID matching:
+
+```bash
+# If you have deployments:
+# - e0c0418f2a8f4d5f (my-app)
+# - abc123def4567890 (other-app)
+
+t select --force e0c    # Matches e0c0418f2a8f4d5f
+t ssh --direct abc      # Matches abc123def4567890
+
+# Ambiguous matches show an error:
+# ❌ Ambiguous partial ID: a
+# Matches:
+#   abc123def4567890 (other-app)
+#   a1b2c3d4e5f67890 (another-app)
+```

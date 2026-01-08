@@ -183,10 +183,10 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t network test` | Test connectivity to all networks | `t network test` |
 
 **Available Networks:**
+- `mycelium` - Mycelium overlay network (global IPv6, encrypted, recommended)
+- `wireguard` - WireGuard VPN (private network, encrypted)
 - `ipv4` - Public IPv4 address (direct internet access)
 - `ipv6` - Public IPv6 address (direct internet access)
-- `mycelium` - Mycelium overlay network (global IPv6, encrypted)
-- `wireguard` - WireGuard VPN (private network)
 
 **Provisioning Examples:**
 ```bash

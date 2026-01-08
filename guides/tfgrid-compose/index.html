@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1741,6 +1741,106 @@
     <span class="md-ellipsis">
       
         When to Use Retry vs. Redeploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-failed-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Troubleshooting Failed Deployments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Troubleshooting Failed Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recovery Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-select-force-f" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force Select (--force / -f)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-ssh-direct-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct SSH (--direct / -d)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-these-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use These Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-workflow-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Workflow Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-id-support-docker-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partial ID Support (Docker-Style)
       
     </span>
   </a>
@@ -4263,6 +4363,106 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting-failed-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Troubleshooting Failed Deployments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Troubleshooting Failed Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recovery Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-select-force-f" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force Select (--force / -f)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-ssh-direct-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct SSH (--direct / -d)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-these-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use These Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-workflow-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Workflow Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-id-support-docker-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partial ID Support (Docker-Style)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4438,8 +4638,13 @@
 </tr>
 <tr>
 <td><code>t select [app]</code></td>
-<td>Select active app</td>
+<td>Select active app (supports partial IDs)</td>
 <td><code>t select tfgrid-ai-stack</code></td>
+</tr>
+<tr>
+<td><code>t select --force [id]</code></td>
+<td>Force select incomplete/failed deployments</td>
+<td><code>t select --force e0c</code></td>
 </tr>
 <tr>
 <td><code>t commands</code></td>
@@ -4492,6 +4697,11 @@
 <td><code>t ssh [app]</code></td>
 <td>SSH into deployment</td>
 <td><code>t ssh</code></td>
+</tr>
+<tr>
+<td><code>t ssh --direct [id]</code></td>
+<td>Direct SSH (bypass validation, for failed deployments)</td>
+<td><code>t ssh --direct e0c</code></td>
 </tr>
 </tbody>
 </table>
@@ -5177,6 +5387,106 @@
 </tr>
 </tbody>
 </table>
+<h2 id="troubleshooting-failed-deployments">🔧 Troubleshooting Failed Deployments<a class="headerlink" href="#troubleshooting-failed-deployments" title="Permanent link">&para;</a></h2>
+<p>When a deployment fails mid-way (e.g., during the configure hook), the VM may be running on the grid but the local state is incomplete. TFGrid Compose provides special flags to access these deployments.</p>
+<h3 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h3>
+<p>When deployment fails after VM creation but before completion:
+- VM is running on the grid with an active contract
+- IP addresses are registered in the deployment registry
+- Local state directory may be missing or incomplete
+- Standard commands like <code>t ssh</code> or <code>t select</code> fail validation</p>
+<h3 id="recovery-commands">Recovery Commands<a class="headerlink" href="#recovery-commands" title="Permanent link">&para;</a></h3>
+<h4 id="force-select-force-f">Force Select (<code>--force</code> / <code>-f</code>)<a class="headerlink" href="#force-select-force-f" title="Permanent link">&para;</a></h4>
+<p>Select a deployment even if it failed validation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Force select by partial ID (Docker-style)</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="c1"># Force select by app name</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>-f<span class="w"> </span>my-app
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="c1"># Output shows deployment info from registry:</span>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="c1"># ✅ Selected e0c0418f2a8f4d5f (my-app) [forced]</span>
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="c1"># ℹ VM IP: 10.1.2.2</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="c1"># ℹ Mycelium: 496:e335:519a:61c0:ff0f:8f18:11b7:5c1e</span>
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="c1"># ℹ Status: active</span>
+</code></pre></div>
+<p>After force-selecting, you can use <code>t address</code> to see deployment details.</p>
+<h4 id="direct-ssh-direct-d">Direct SSH (<code>--direct</code> / <code>-d</code>)<a class="headerlink" href="#direct-ssh-direct-d" title="Permanent link">&para;</a></h4>
+<p>SSH directly using registry data, bypassing all validation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1"># Direct SSH by partial ID</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>e0c
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="c1"># Direct SSH by app name</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>t<span class="w"> </span>ssh<span class="w"> </span>-d<span class="w"> </span>my-app
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="c1"># Output:</span>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="c1"># ℹ Direct SSH to my-app (e0c0418f2a8f4d5f) via mycelium...</span>
+</code></pre></div>
+<h3 id="when-to-use-these-flags">When to Use These Flags<a class="headerlink" href="#when-to-use-these-flags" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Command</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configure hook failed</td>
+<td><code>t ssh --direct &lt;id&gt;</code></td>
+<td>VM exists, need to debug</td>
+</tr>
+<tr>
+<td>State directory missing</td>
+<td><code>t select --force &lt;id&gt;</code></td>
+<td>Registry has IP, state gone</td>
+</tr>
+<tr>
+<td>Need to see deployment IP</td>
+<td><code>t select -f &lt;id&gt;</code> then <code>t address</code></td>
+<td>Quick IP lookup</td>
+</tr>
+<tr>
+<td>Manual recovery needed</td>
+<td><code>t ssh -d &lt;id&gt;</code></td>
+<td>Fix deployment manually</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recovery-workflow-example">Recovery Workflow Example<a class="headerlink" href="#recovery-workflow-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># 1. List all deployments (including failed)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>t<span class="w"> </span>ps<span class="w"> </span>--all
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="c1"># 2. Force select the failed deployment</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="c1"># ✅ Selected e0c0418f2a8f4d5f (my-app) [forced]</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="c1"># 3. Check the addresses</span>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>t<span class="w"> </span>address
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="c1"># Shows VM IP and Mycelium IP</span>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="c1"># 4. SSH in to debug/fix</span>
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>e0c
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a><span class="c1"># 5. Once fixed, you can retry or clean up</span>
+<a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>t<span class="w"> </span>down<span class="w"> </span>e0c0418f2a8f4d5f<span class="w">  </span><span class="c1"># Clean up if needed</span>
+</code></pre></div>
+<h3 id="partial-id-support-docker-style">Partial ID Support (Docker-Style)<a class="headerlink" href="#partial-id-support-docker-style" title="Permanent link">&para;</a></h3>
+<p>Both <code>--force</code> and <code>--direct</code> support Docker-style partial ID matching:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># If you have deployments:</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="c1"># - e0c0418f2a8f4d5f (my-app)</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="c1"># - abc123def4567890 (other-app)</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c<span class="w">    </span><span class="c1"># Matches e0c0418f2a8f4d5f</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>abc<span class="w">      </span><span class="c1"># Matches abc123def4567890</span>
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="c1"># Ambiguous matches show an error:</span>
+<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="c1"># ❌ Ambiguous partial ID: a</span>
+<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="c1"># Matches:</span>
+<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a><span class="c1">#   abc123def4567890 (other-app)</span>
+<a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a><span class="c1">#   a1b2c3d4e5f67890 (another-app)</span>
+</code></pre></div>
 
 
 
@@ -5347,10 +5657,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

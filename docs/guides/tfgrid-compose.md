@@ -127,9 +127,8 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t help` | Show help message | `t help` |
 | `t shortcut <name>` | Create command alias | `t shortcut tf` |
 | `t search [query]` | Search apps in registry | `t search ai` |
-| `t list` | List deployed apps (Docker-style) | `t list` |
-| `t ps` | Docker-style deployment inspection for tracked deployments | `t ps` |
-| `t ps --all` | Show all tracked deployments (including non-active) | `t ps --all` |
+| `t ps` | List deployments with timestamps & ages | `t ps` |
+| `t ps --all` | Show all deployments with active contracts (including incomplete) | `t ps --all` |
 | `t ps --outside` | Show grid contracts not tracked in local registry (SOURCE=outside) | `t ps --outside` |
 | `t select [app]` | Select active app (supports partial IDs) | `t select tfgrid-ai-stack` |
 | `t select --force [id]` | Force select incomplete/failed deployments | `t select --force e0c` |
@@ -167,7 +166,26 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t contracts orphans --delete` | Delete orphaned contracts | `t contracts orphans --delete` |
 | `t contracts clean -i` | Interactive cleanup | `t contracts clean -i` |
 | `t state list` | List state directories | `t state list` |
-| `t state clean` | Remove orphaned state dirs | `t state clean` |
+| `t state clean` | Remove orphaned state dirs and registry entries | `t state clean` |
+
+### Network Management Commands
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `t network prefer <network>` | Set preferred runtime network | `t network prefer mycelium` |
+| `t network mode <mode>` | Set provisioning mode | `t network mode mycelium-only` |
+| `t network get` | Show current network settings | `t network get` |
+| `t network list` | List available networks and modes | `t network list` |
+| `t network test` | Test connectivity to both networks | `t network test` |
+
+**Available Networks:**
+- `wireguard` - WireGuard VPN overlay network
+- `mycelium` - Mycelium global IPv6 network
+
+**Available Modes:**
+- `wireguard-only` - Only provision WireGuard network
+- `mycelium-only` - Only provision Mycelium network  
+- `both` - Provision both networks (default)
 
 ## Update and Cache Commands
 

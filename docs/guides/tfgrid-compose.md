@@ -145,6 +145,8 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t logs [app]` | Show application logs | `t logs` |
 | `t ssh [app]` | SSH into deployment | `t ssh` |
 | `t ssh --direct [id]` | Direct SSH (bypass validation, for failed deployments) | `t ssh --direct e0c` |
+| `t ssh --ipv4` | SSH forcing IPv4 network | `t ssh --ipv4` |
+| `t ssh --mycelium` | SSH forcing Mycelium network | `t ssh --mycelium` |
 
 ### Management Commands
 | Command | Description | Example |
@@ -172,20 +174,40 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 
 | Command | Description | Example |
 |---------|-------------|---------|
-| `t network prefer <network>` | Set preferred runtime network | `t network prefer mycelium` |
-| `t network mode <mode>` | Set provisioning mode | `t network mode mycelium-only` |
+| `t network provision <networks>` | Set networks to provision on VM | `t network provision ipv4,mycelium` |
+| `t network prefer <networks>` | Set connection preference order | `t network prefer mycelium,ipv4` |
 | `t network get` | Show current network settings | `t network get` |
-| `t network list` | List available networks and modes | `t network list` |
-| `t network test` | Test connectivity to both networks | `t network test` |
+| `t network list` | List available networks | `t network list` |
+| `t network test` | Test connectivity to all networks | `t network test` |
 
 **Available Networks:**
-- `wireguard` - WireGuard VPN overlay network
-- `mycelium` - Mycelium global IPv6 network
+- `ipv4` - Public IPv4 address (direct internet access)
+- `ipv6` - Public IPv6 address (direct internet access)
+- `mycelium` - Mycelium overlay network (global IPv6, encrypted)
+- `wireguard` - WireGuard VPN (private network)
 
-**Available Modes:**
-- `wireguard-only` - Only provision WireGuard network
-- `mycelium-only` - Only provision Mycelium network  
-- `both` - Provision both networks (default)
+**Provisioning Examples:**
+```bash
+t network provision ipv4,mycelium    # Provision both IPv4 and Mycelium
+t network provision mycelium         # Mycelium only (minimal)
+t network provision all              # Provision all available networks
+```
+
+**Connection Preference:**
+The prefer command sets the order in which networks are tried when connecting:
+```bash
+t network prefer mycelium,ipv4       # Try mycelium first, then IPv4
+t network prefer ipv4                # Only use IPv4
+```
+
+**SSH Network Override:**
+Force a specific network for a single SSH connection:
+```bash
+t ssh --ipv4       # or -4
+t ssh --ipv6
+t ssh --mycelium   # or -m  
+t ssh --wireguard  # or -w
+```
 
 ## Update and Cache Commands
 

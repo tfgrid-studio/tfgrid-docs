@@ -132,6 +132,8 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t ps --outside` | Show grid contracts not tracked in local registry (SOURCE=outside) | `t ps --outside` |
 | `t select [app]` | Select active app (supports partial IDs) | `t select tfgrid-ai-stack` |
 | `t select --force [id]` | Force select incomplete/failed deployments | `t select --force e0c` |
+| `t inspect <id>` | Show deployment details | `t inspect abc123` |
+| `t inspect --all` | Show entire deployments registry | `t inspect --all` |
 | `t commands` | Show app commands | `t commands` |
 | `t dashboard [start\|stop\|status\|logs]` | Local web dashboard for apps and deployments | `t dashboard` |
 

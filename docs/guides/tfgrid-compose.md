@@ -155,6 +155,8 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 | `t exec <cmd>` | Execute command on active app | `t exec ls -la` |
 | `t address [app]` | Show deployment addresses | `t address` |
 | `t clean` | Clean up local state | `t clean` |
+| `t reset` | Reset state/cache (preserves credentials) | `t reset` |
+| `t reset --all` | Full reset (removes EVERYTHING including credentials) | `t reset --all` |
 | `t update [subcommand]` | Enhanced update system | `t update registry` |
 | `t cache [subcommand]` | Cache management system | `t cache status` |
 

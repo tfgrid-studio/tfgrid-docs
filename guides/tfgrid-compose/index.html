@@ -1014,6 +1014,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#network-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Management Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3625,6 +3636,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#network-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Management Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4617,18 +4639,13 @@
 <td><code>t search ai</code></td>
 </tr>
 <tr>
-<td><code>t list</code></td>
-<td>List deployed apps (Docker-style)</td>
-<td><code>t list</code></td>
-</tr>
-<tr>
 <td><code>t ps</code></td>
-<td>Docker-style deployment inspection for tracked deployments</td>
+<td>List deployments with timestamps &amp; ages</td>
 <td><code>t ps</code></td>
 </tr>
 <tr>
 <td><code>t ps --all</code></td>
-<td>Show all tracked deployments (including non-active)</td>
+<td>Show all deployments with active contracts (including incomplete)</td>
 <td><code>t ps --all</code></td>
 </tr>
 <tr>
@@ -4794,11 +4811,55 @@
 </tr>
 <tr>
 <td><code>t state clean</code></td>
-<td>Remove orphaned state dirs</td>
+<td>Remove orphaned state dirs and registry entries</td>
 <td><code>t state clean</code></td>
 </tr>
 </tbody>
 </table>
+<h3 id="network-management-commands">Network Management Commands<a class="headerlink" href="#network-management-commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>t network prefer &lt;network&gt;</code></td>
+<td>Set preferred runtime network</td>
+<td><code>t network prefer mycelium</code></td>
+</tr>
+<tr>
+<td><code>t network mode &lt;mode&gt;</code></td>
+<td>Set provisioning mode</td>
+<td><code>t network mode mycelium-only</code></td>
+</tr>
+<tr>
+<td><code>t network get</code></td>
+<td>Show current network settings</td>
+<td><code>t network get</code></td>
+</tr>
+<tr>
+<td><code>t network list</code></td>
+<td>List available networks and modes</td>
+<td><code>t network list</code></td>
+</tr>
+<tr>
+<td><code>t network test</code></td>
+<td>Test connectivity to both networks</td>
+<td><code>t network test</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Networks:</strong>
+- <code>wireguard</code> - WireGuard VPN overlay network
+- <code>mycelium</code> - Mycelium global IPv6 network</p>
+<p><strong>Available Modes:</strong>
+- <code>wireguard-only</code> - Only provision WireGuard network
+- <code>mycelium-only</code> - Only provision Mycelium network<br />
+- <code>both</code> - Provision both networks (default)</p>
 <h2 id="update-and-cache-commands">Update and Cache Commands<a class="headerlink" href="#update-and-cache-commands" title="Permanent link">&para;</a></h2>
 <h3 id="update-commands">Update Commands<a class="headerlink" href="#update-commands" title="Permanent link">&para;</a></h3>
 <table>

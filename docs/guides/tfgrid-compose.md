@@ -1,10 +1,5 @@
 # TFGrid Compose - Complete User Guide
 
-**Version**: Git commit-based (0a7195b)
-**Semantic Version**: v0.14.1
-**Last Updated**: 2025-12-02
-**Status**: Production Ready with Git Commit Versioning & Grid-Authoritative Architecture
-
 TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, enhanced filtering capabilities, and **grid-authoritative deployment management**.
 
 ## 🚀 Quick Start
@@ -142,6 +137,7 @@ Application loaded: tfgrid-ai-stack v0.12.0-dev
 |---------|-------------|---------|
 | `t init <app>` | Initialize app configuration | `t init tfgrid-ai-stack` |
 | `t up <app>` | Deploy application | `t up tfgrid-ai-stack` |
+| `t up <app> --resume` | Resume failed deployment (skip Terraform, retry SSH/Ansible) | `t up tfgrid-ai-stack --resume` |
 | `t down [app]` | Destroy deployment | `t down` |
 | `t status [app]` | Check application status | `t status` |
 | `t logs [app]` | Show application logs | `t logs` |
@@ -771,6 +767,52 @@ The retry system includes enhanced error handling:
 ## 🔧 Troubleshooting Failed Deployments
 
 When a deployment fails mid-way (e.g., during the configure hook), the VM may be running on the grid but the local state is incomplete. TFGrid Compose provides special flags to access these deployments.
+
+### SSH Timeout During Deployment
+
+Mycelium overlay networks can take 5-10 minutes to converge, especially for new deployments. If SSH times out but the VM is actually running:
+
+#### Resume a Failed Deployment
+
+```bash
+# Resume deployment (skips Terraform, retries SSH + Ansible)
+t up <app> --resume
+
+# Or with a deployment ID
+t up abc123 --resume
+```
+
+The `--resume` flag:
+- Skips infrastructure provisioning (Terraform) if VMs already exist
+- Re-attempts SSH connectivity with extended timeouts
+- Re-runs Ansible configuration (idempotent, safe to retry)
+
+#### Configurable SSH Timeouts
+
+SSH wait timeouts can be extended via environment variables:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `MYCELIUM_SSH_MAX_ATTEMPTS` | 25 | Max SSH attempts for Mycelium network |
+| `MYCELIUM_SSH_SLEEP` | 20 | Seconds between Mycelium SSH attempts |
+| `SSH_MAX_ATTEMPTS` | 30 | Max SSH attempts for WireGuard/IPv4 |
+| `SSH_SLEEP` | 10 | Seconds between WireGuard/IPv4 attempts |
+
+Example for slow Mycelium convergence:
+```bash
+# Extend Mycelium timeout to ~15 minutes
+MYCELIUM_SSH_MAX_ATTEMPTS=45 t up <app>
+```
+
+#### Mycelium Auto-Restart
+
+If SSH fails over Mycelium and you have passwordless sudo configured, tfgrid-compose will automatically restart the local Mycelium daemon and retry.
+
+If passwordless sudo is not available, manually restart and resume:
+```bash
+sudo systemctl restart mycelium
+t up <app> --resume
+```
 
 ### The Problem
 

@@ -1776,6 +1776,56 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ssh-timeout-during-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Timeout During Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH Timeout During Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resume-a-failed-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resume a Failed Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurable-ssh-timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurable SSH Timeouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mycelium-auto-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mycelium Auto-Restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4398,6 +4448,56 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ssh-timeout-during-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Timeout During Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH Timeout During Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resume-a-failed-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resume a Failed Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurable-ssh-timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurable SSH Timeouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mycelium-auto-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mycelium Auto-Restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4520,10 +4620,6 @@
 
 
 <h1 id="tfgrid-compose-complete-user-guide">TFGrid Compose - Complete User Guide<a class="headerlink" href="#tfgrid-compose-complete-user-guide" title="Permanent link">&para;</a></h1>
-<p><strong>Version</strong>: Git commit-based (0a7195b)
-<strong>Semantic Version</strong>: v0.14.1
-<strong>Last Updated</strong>: 2025-12-02
-<strong>Status</strong>: Production Ready with Git Commit Versioning &amp; Grid-Authoritative Architecture</p>
 <p>TFGrid Compose is the universal deployment orchestrator for the ThreeFold Grid, providing intelligent node selection, app registry integration, comprehensive farm browser, enhanced filtering capabilities, and <strong>grid-authoritative deployment management</strong>.</p>
 <h2 id="quick-start">🚀 Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
@@ -4704,6 +4800,11 @@
 <td><code>t up &lt;app&gt;</code></td>
 <td>Deploy application</td>
 <td><code>t up tfgrid-ai-stack</code></td>
+</tr>
+<tr>
+<td><code>t up &lt;app&gt; --resume</code></td>
+<td>Resume failed deployment (skip Terraform, retry SSH/Ansible)</td>
+<td><code>t up tfgrid-ai-stack --resume</code></td>
 </tr>
 <tr>
 <td><code>t down [app]</code></td>
@@ -5495,6 +5596,62 @@ Force a specific network for a single SSH connection:
 </table>
 <h2 id="troubleshooting-failed-deployments">🔧 Troubleshooting Failed Deployments<a class="headerlink" href="#troubleshooting-failed-deployments" title="Permanent link">&para;</a></h2>
 <p>When a deployment fails mid-way (e.g., during the configure hook), the VM may be running on the grid but the local state is incomplete. TFGrid Compose provides special flags to access these deployments.</p>
+<h3 id="ssh-timeout-during-deployment">SSH Timeout During Deployment<a class="headerlink" href="#ssh-timeout-during-deployment" title="Permanent link">&para;</a></h3>
+<p>Mycelium overlay networks can take 5-10 minutes to converge, especially for new deployments. If SSH times out but the VM is actually running:</p>
+<h4 id="resume-a-failed-deployment">Resume a Failed Deployment<a class="headerlink" href="#resume-a-failed-deployment" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># Resume deployment (skips Terraform, retries SSH + Ansible)</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>t<span class="w"> </span>up<span class="w"> </span>&lt;app&gt;<span class="w"> </span>--resume
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="c1"># Or with a deployment ID</span>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>t<span class="w"> </span>up<span class="w"> </span>abc123<span class="w"> </span>--resume
+</code></pre></div>
+<p>The <code>--resume</code> flag:
+- Skips infrastructure provisioning (Terraform) if VMs already exist
+- Re-attempts SSH connectivity with extended timeouts
+- Re-runs Ansible configuration (idempotent, safe to retry)</p>
+<h4 id="configurable-ssh-timeouts">Configurable SSH Timeouts<a class="headerlink" href="#configurable-ssh-timeouts" title="Permanent link">&para;</a></h4>
+<p>SSH wait timeouts can be extended via environment variables:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MYCELIUM_SSH_MAX_ATTEMPTS</code></td>
+<td>25</td>
+<td>Max SSH attempts for Mycelium network</td>
+</tr>
+<tr>
+<td><code>MYCELIUM_SSH_SLEEP</code></td>
+<td>20</td>
+<td>Seconds between Mycelium SSH attempts</td>
+</tr>
+<tr>
+<td><code>SSH_MAX_ATTEMPTS</code></td>
+<td>30</td>
+<td>Max SSH attempts for WireGuard/IPv4</td>
+</tr>
+<tr>
+<td><code>SSH_SLEEP</code></td>
+<td>10</td>
+<td>Seconds between WireGuard/IPv4 attempts</td>
+</tr>
+</tbody>
+</table>
+<p>Example for slow Mycelium convergence:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># Extend Mycelium timeout to ~15 minutes</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nv">MYCELIUM_SSH_MAX_ATTEMPTS</span><span class="o">=</span><span class="m">45</span><span class="w"> </span>t<span class="w"> </span>up<span class="w"> </span>&lt;app&gt;
+</code></pre></div></p>
+<h4 id="mycelium-auto-restart">Mycelium Auto-Restart<a class="headerlink" href="#mycelium-auto-restart" title="Permanent link">&para;</a></h4>
+<p>If SSH fails over Mycelium and you have passwordless sudo configured, tfgrid-compose will automatically restart the local Mycelium daemon and retry.</p>
+<p>If passwordless sudo is not available, manually restart and resume:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>mycelium
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>t<span class="w"> </span>up<span class="w"> </span>&lt;app&gt;<span class="w"> </span>--resume
+</code></pre></div></p>
 <h3 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h3>
 <p>When deployment fails after VM creation but before completion:
 - VM is running on the grid with an active contract
@@ -5504,29 +5661,29 @@ Force a specific network for a single SSH connection:
 <h3 id="recovery-commands">Recovery Commands<a class="headerlink" href="#recovery-commands" title="Permanent link">&para;</a></h3>
 <h4 id="force-select-force-f">Force Select (<code>--force</code> / <code>-f</code>)<a class="headerlink" href="#force-select-force-f" title="Permanent link">&para;</a></h4>
 <p>Select a deployment even if it failed validation:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># Force select by partial ID (Docker-style)</span>
-<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c
-<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>
-<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="c1"># Force select by app name</span>
-<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>-f<span class="w"> </span>my-app
-<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>
-<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="c1"># Output shows deployment info from registry:</span>
-<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="c1"># ✅ Selected e0c0418f2a8f4d5f (my-app) [forced]</span>
-<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="c1"># ℹ VM IP: 10.1.2.2</span>
-<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="c1"># ℹ Mycelium: 496:e335:519a:61c0:ff0f:8f18:11b7:5c1e</span>
-<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a><span class="c1"># ℹ Status: active</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># Force select by partial ID (Docker-style)</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="c1"># Force select by app name</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>-f<span class="w"> </span>my-app
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="c1"># Output shows deployment info from registry:</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="c1"># ✅ Selected e0c0418f2a8f4d5f (my-app) [forced]</span>
+<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="c1"># ℹ VM IP: 10.1.2.2</span>
+<a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="c1"># ℹ Mycelium: 496:e335:519a:61c0:ff0f:8f18:11b7:5c1e</span>
+<a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="c1"># ℹ Status: active</span>
 </code></pre></div>
 <p>After force-selecting, you can use <code>t address</code> to see deployment details.</p>
 <h4 id="direct-ssh-direct-d">Direct SSH (<code>--direct</code> / <code>-d</code>)<a class="headerlink" href="#direct-ssh-direct-d" title="Permanent link">&para;</a></h4>
 <p>SSH directly using registry data, bypassing all validation:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># Direct SSH by partial ID</span>
-<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>e0c
-<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>
-<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="c1"># Direct SSH by app name</span>
-<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>t<span class="w"> </span>ssh<span class="w"> </span>-d<span class="w"> </span>my-app
-<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
-<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="c1"># Output:</span>
-<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="c1"># ℹ Direct SSH to my-app (e0c0418f2a8f4d5f) via mycelium...</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c1"># Direct SSH by partial ID</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>e0c
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="c1"># Direct SSH by app name</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>t<span class="w"> </span>ssh<span class="w"> </span>-d<span class="w"> </span>my-app
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="c1"># Output:</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="c1"># ℹ Direct SSH to my-app (e0c0418f2a8f4d5f) via mycelium...</span>
 </code></pre></div>
 <h3 id="when-to-use-these-flags">When to Use These Flags<a class="headerlink" href="#when-to-use-these-flags" title="Permanent link">&para;</a></h3>
 <table>
@@ -5561,37 +5718,37 @@ Force a specific network for a single SSH connection:
 </tbody>
 </table>
 <h3 id="recovery-workflow-example">Recovery Workflow Example<a class="headerlink" href="#recovery-workflow-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="c1"># 1. List all deployments (including failed)</span>
-<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>t<span class="w"> </span>ps<span class="w"> </span>--all
-<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
-<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="c1"># 2. Force select the failed deployment</span>
-<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c
-<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="c1"># ✅ Selected e0c0418f2a8f4d5f (my-app) [forced]</span>
-<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>
-<a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="c1"># 3. Check the addresses</span>
-<a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>t<span class="w"> </span>address
-<a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="c1"># Shows VM IP and Mycelium IP</span>
-<a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>
-<a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="c1"># 4. SSH in to debug/fix</span>
-<a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>e0c
-<a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a>
-<a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="c1"># 5. Once fixed, you can retry or clean up</span>
-<a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a>t<span class="w"> </span>down<span class="w"> </span>e0c0418f2a8f4d5f<span class="w">  </span><span class="c1"># Clean up if needed</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1"># 1. List all deployments (including failed)</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>t<span class="w"> </span>ps<span class="w"> </span>--all
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="c1"># 2. Force select the failed deployment</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="c1"># ✅ Selected e0c0418f2a8f4d5f (my-app) [forced]</span>
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>
+<a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="c1"># 3. Check the addresses</span>
+<a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>t<span class="w"> </span>address
+<a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="c1"># Shows VM IP and Mycelium IP</span>
+<a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a>
+<a id="__codelineno-43-12" name="__codelineno-43-12" href="#__codelineno-43-12"></a><span class="c1"># 4. SSH in to debug/fix</span>
+<a id="__codelineno-43-13" name="__codelineno-43-13" href="#__codelineno-43-13"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>e0c
+<a id="__codelineno-43-14" name="__codelineno-43-14" href="#__codelineno-43-14"></a>
+<a id="__codelineno-43-15" name="__codelineno-43-15" href="#__codelineno-43-15"></a><span class="c1"># 5. Once fixed, you can retry or clean up</span>
+<a id="__codelineno-43-16" name="__codelineno-43-16" href="#__codelineno-43-16"></a>t<span class="w"> </span>down<span class="w"> </span>e0c0418f2a8f4d5f<span class="w">  </span><span class="c1"># Clean up if needed</span>
 </code></pre></div>
 <h3 id="partial-id-support-docker-style">Partial ID Support (Docker-Style)<a class="headerlink" href="#partial-id-support-docker-style" title="Permanent link">&para;</a></h3>
 <p>Both <code>--force</code> and <code>--direct</code> support Docker-style partial ID matching:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># If you have deployments:</span>
-<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="c1"># - e0c0418f2a8f4d5f (my-app)</span>
-<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="c1"># - abc123def4567890 (other-app)</span>
-<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
-<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c<span class="w">    </span><span class="c1"># Matches e0c0418f2a8f4d5f</span>
-<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>abc<span class="w">      </span><span class="c1"># Matches abc123def4567890</span>
-<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>
-<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="c1"># Ambiguous matches show an error:</span>
-<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="c1"># ❌ Ambiguous partial ID: a</span>
-<a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="c1"># Matches:</span>
-<a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="c1">#   abc123def4567890 (other-app)</span>
-<a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a><span class="c1">#   a1b2c3d4e5f67890 (another-app)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="c1"># If you have deployments:</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="c1"># - e0c0418f2a8f4d5f (my-app)</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="c1"># - abc123def4567890 (other-app)</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>t<span class="w"> </span><span class="k">select</span><span class="w"> </span>--force<span class="w"> </span>e0c<span class="w">    </span><span class="c1"># Matches e0c0418f2a8f4d5f</span>
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>t<span class="w"> </span>ssh<span class="w"> </span>--direct<span class="w"> </span>abc<span class="w">      </span><span class="c1"># Matches abc123def4567890</span>
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>
+<a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a><span class="c1"># Ambiguous matches show an error:</span>
+<a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a><span class="c1"># ❌ Ambiguous partial ID: a</span>
+<a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a><span class="c1"># Matches:</span>
+<a id="__codelineno-44-11" name="__codelineno-44-11" href="#__codelineno-44-11"></a><span class="c1">#   abc123def4567890 (other-app)</span>
+<a id="__codelineno-44-12" name="__codelineno-44-12" href="#__codelineno-44-12"></a><span class="c1">#   a1b2c3d4e5f67890 (another-app)</span>
 </code></pre></div>
 
 
